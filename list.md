@@ -1,9 +1,11 @@
 # Proxy List
->v1.0r1 | Released: Feburary 19, 2026
+>v1.0 | Released: Feburary 19, 2026
+/
+>r1 | Last Updated: March 17, 2026
 <br>
 List by yourworstnightmare1 | https://sites.google.com/view/reblock
 >
-Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out.
+Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
 >Want to share this list? Download the official markdown on its [GitHub](https://github.com/yourworstnightmare1/proxy-list).
 <br>
 Contributions coming soon.
@@ -40,6 +42,8 @@ Contributions coming soon.
 | | https://joemadethis1-17138576.codehs.me/index.html | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://joemadethis2-17138725.codehs.me/index.html | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://joemadethis3-17138732.codehs.me/index.html | 2/19/2026 | N/A | N/A | yourworstnightmare1
+| | https://mathlessonsproski-17246090.codehs.me/index.html | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://trombone-is-da-best-intrument-17245404.codehs.me/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
 
 # 🐸 frogie's arcade
 | Locked | Link | Found Date | Username | Password | Contributor |
@@ -89,8 +93,69 @@ Contributions coming soon.
 | | https://help.brynlewis.com/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://uptime.injectoclean.com.mx/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
 
-# 🪴Fern
+# 🪴 Fern
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://produce.arrowbases.com | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://scoot.boiso.ar | 2/19/2026 | N/A | N/A | yourworstnightmare1
+
+# 🦈 Fern
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://rammermyhammer.goteeem.com/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🟣 UniUB
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://aphistorytutoring.tjarba.com/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🍄 Truffled
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://school.metropolitanstaffingsolutions.com/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🥱 Boredom
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://boredom.chiangmaiorganics.com/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 💨 Vapor
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://happynewdestenation.pintravel.ro/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://ixlwork.storage.googleapis.com/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://world-peace-volunteerformath.installgentoo.com/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 👤 Shadow
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://deepcalc.stdavidswelland.org/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://brightgrammar.drbijaytamang.com.np/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://nextbio.stdavidswelland.org/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://solidenglish.drbijaytamang.com.np/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🐶 dogub
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://storage.googleapis.com/instructure/index.html | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://storage.googleapis.com/canvas-lms/index.html | 3/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🌕 Lunar
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://ezpz.robroderia.ro/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 👻 Ghost
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://main.d39joesfd55qkg.amplifyapp.com/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🍕 PetZah
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://english.umardia.com.mx/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🏴 OverCloaked
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://fi0mlzp1.beanweb.qzz.io.cdn.cloudflare.net/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
