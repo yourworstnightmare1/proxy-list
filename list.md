@@ -1,7 +1,7 @@
 # Proxy List
 >v1.0 | Released: Feburary 19, 2026
 /
->r1 | Last Updated: March 17, 2026
+>r3 | Last Updated: March 17, 2026
 <br>
 List by yourworstnightmare1 | https://sites.google.com/view/reblock
 >
