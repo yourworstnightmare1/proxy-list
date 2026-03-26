@@ -1,14 +1,14 @@
 # Proxy List
 > [!NOTE]
->v1.01 | Released: Feburary 19, 2026
->r7 | Last Updated: March 26, 2026
+>v1.1 | Released: Feburary 19, 2026
+>r8 | Last Updated: March 26, 2026
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
 Want to share this list? Download the official markdown on its [GitHub](https://github.com/yourworstnightmare1/proxy-list).
 <br>
 List by yourworstnightmare1 | https://sites.google.com/view/reblock
 <br>
-Contributions coming soon.
+Want to contribute? Feel free to [make a pull request](https://github.com/yourworstnightmare1/proxy-list/pulls)!
 
 # 💜 Selenite
 | Locked | Link | Found Date | Username | Password | Contributor |
