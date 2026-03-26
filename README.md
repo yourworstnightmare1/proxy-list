@@ -11,6 +11,6 @@ The default version format is v[version]r[revision].
 
 # How to use
 ## Windows
-Simply download and open it in Notepad/TextEdit. If you are not on Windows 11 or macOS, you will have to go to https://markdownlivepreview.com/ to view it as markdown support is only in Windows 11+.
+Simply download and open it in Notepad/. If you are not on Windows 11 or are on macOS, you will have to go to https://markdownlivepreview.com/ to view it as markdown support is only in Windows 11+.
 ## macOS
 Once downloaded, right-click or control-click or press the spacebar on the file and select "Quick Look". This will show the file properly.
