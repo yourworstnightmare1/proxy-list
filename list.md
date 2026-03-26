@@ -1,7 +1,7 @@
 # Proxy List
 >v1.0 | Released: Feburary 19, 2026
 /
->r3 | Last Updated: March 17, 2026
+>r4 | Last Updated: March 17, 2026
 <br>
 List by yourworstnightmare1 | https://sites.google.com/view/reblock
 >
@@ -159,3 +159,15 @@ Contributions coming soon.
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://fi0mlzp1.beanweb.qzz.io.cdn.cloudflare.net/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://zinkoforever.notely.lol/ | 3/25/2026 | N/A | N/A | yourworstnightmare1
+
+# 😈 Imp Proxy
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://hi1.raisingpro.com/ | 3/25/2026 | N/A | N/A | yourworstnightmare1
+| | https://hi2.raisingpro.com/ | 3/25/2026 | N/A | N/A | yourworstnightmare1
+| | https://hi3.raisingpro.com/ | 3/25/2026 | N/A | N/A | yourworstnightmare1
+| | https://hi4.raisingpro.com/ | 3/25/2026 | N/A | N/A | yourworstnightmare1
+| | https://mouse.shitteacher.com/ | 3/25/2026 | N/A | N/A | yourworstnightmare1
+
+
