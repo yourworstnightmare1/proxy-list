@@ -1,7 +1,7 @@
 # Proxy List
 >v1.0 | Released: Feburary 19, 2026
 /
->r4 | Last Updated: March 17, 2026
+>r5 | Last Updated: March 26, 2026
 <br>
 List by yourworstnightmare1 | https://sites.google.com/view/reblock
 >
@@ -154,6 +154,7 @@ Contributions coming soon.
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://english.umardia.com.mx/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://archive.neo-space.space/ | 3/26/2026 | N/A | N/A | yourworstnightmare1
 
 # 🏴 OverCloaked
 | Locked | Link | Found Date | Username | Password | Contributor |
@@ -169,5 +170,9 @@ Contributions coming soon.
 | | https://hi3.raisingpro.com/ | 3/25/2026 | N/A | N/A | yourworstnightmare1
 | | https://hi4.raisingpro.com/ | 3/25/2026 | N/A | N/A | yourworstnightmare1
 | | https://mouse.shitteacher.com/ | 3/25/2026 | N/A | N/A | yourworstnightmare1
+| | https://g305-1.karjase.ee | 3/26/2026 | N/A | N/A | yourworstnightmare1
+| | https://g305-2.karjase.ee | 3/26/2026 | N/A | N/A | yourworstnightmare1
+| | https://g305-3.karjase.ee | 3/26/2026 | N/A | N/A | yourworstnightmare1
+| | https://g305-4.karjase.ee | 3/26/2026 | N/A | N/A | yourworstnightmare1
 
 
