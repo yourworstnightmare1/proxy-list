@@ -1,14 +1,23 @@
 # Proxy List
 > [!NOTE]
->v1.1 | Released: Feburary 19, 2026
->r10 | Last Updated: March 26, 2026
+> v1.11 | Released: March 27, 2026  
+> r11 | Last Updated: March 27, 2026
+
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
+<br>
+
 Want to share this list? Download the official markdown on its [GitHub](https://github.com/yourworstnightmare1/proxy-list).
 <br>
-List by yourworstnightmare1 | https://sites.google.com/view/reblock
+
+
+List by [yourworstnightmare1](https://github.com/yourworstnightmare1) | https://sites.google.com/view/reblock
 <br>
 Want to contribute? Read the [contribution guide](https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md).
+
+## Important Notices
+> [!IMPORTANT]
+> As of v1.11r11 (released March 27, 2026), I have noticed that links with the domain `b-cdn.net` have been shut down by the host. If you see this domain at the end of a URL ignore it. I am working on removing these links.
 
 # 💜 Selenite
 | Locked | Link | Found Date | Username | Password | Contributor |
