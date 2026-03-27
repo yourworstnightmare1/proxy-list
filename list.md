@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 >v1.1 | Released: Feburary 19, 2026
->r9 | Last Updated: March 26, 2026
+>r10 | Last Updated: March 26, 2026
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
 Want to share this list? Download the official markdown on its [GitHub](https://github.com/yourworstnightmare1/proxy-list).
@@ -30,6 +30,8 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | | https://rocky.fish.nicher.nl | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://rocket-lack.spencerportbiblechurch.org/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://ehqjdnrjwemmbugoat.blindatech.cl/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
+| | https://vlraiscoolcoolcool.examprepare.help/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+
 
 # ➗ gn-math
 | Locked | Link | Found Date | Username | Password | Contributor |
@@ -112,6 +114,14 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://school.metropolitanstaffingsolutions.com/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://iubg8iwfuebnfiuwebfiwuebfwiewfiobgryi8gb2873fh-12397g8f7gfsefhj.bestprogramsforkids.com/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://siuebfhsi9eufbevyueyfi23bhf9273gbf-awiufabgyibgsuydwadwaferghaw.metropolitanstaffingsolutions.com/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://wign9bf2q3902-q3hrf9qba8f-9312awiydvawudauwhnbguy12febvf71239vf.thepresenttraveller.com/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://wign9bf2q3902-q3hrf9qba8f-9312awiydvawudauwhnbguy12febvf71239vf.thepresenttraveller.com/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://fizzlams.snbs.dk/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://fizzylams.skills-sims.com/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://thefizzer.lecorps.ar/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://thefizzer.lecorps.ar/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
 
 # 🥱 Boredom
 | Locked | Link | Found Date | Username | Password | Contributor |
