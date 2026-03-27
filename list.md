@@ -8,7 +8,7 @@ Want to share this list? Download the official markdown on its [GitHub](https://
 <br>
 List by yourworstnightmare1 | https://sites.google.com/view/reblock
 <br>
-Want to contribute? Feel free to [make a pull request](https://github.com/yourworstnightmare1/proxy-list/pulls)!
+Want to contribute? Read the [contribution guide](https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md).
 
 # 💜 Selenite
 | Locked | Link | Found Date | Username | Password | Contributor |
