@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 >v1.1 | Released: Feburary 19, 2026
->r8 | Last Updated: March 26, 2026
+>r9 | Last Updated: March 26, 2026
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
 Want to share this list? Download the official markdown on its [GitHub](https://github.com/yourworstnightmare1/proxy-list).
