@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v1.11 | Released: March 27, 2026  
-> r12 | Last Updated: March 27, 2026
+> r13 | Last Updated: March 27, 2026
 
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -41,7 +41,11 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | | https://ehqjdnrjwemmbugoat.blindatech.cl/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://vlraiscoolcoolcool.examprepare.help/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
 | | https://vlraiscoolcoolcool.examprepare.help/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
-
+| | https://im.blue.dabade.ladida-im.blue.human.li/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://whyisvorgnottheownerofvelaraihardlyeverseewianti.azure-cost-estimator.se/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://prabhseducationalstuff.chickenkiller.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://letmesleep.gleeze.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://learning.roshanadhikary.com.np/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 
 # ➗ gn-math
 | Locked | Link | Found Date | Username | Password | Contributor |
@@ -103,6 +107,11 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | | https://manage.peakconsulting.com.au/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://help.brynlewis.com/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://uptime.injectoclean.com.mx/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
+| | https://area.forwardersoft.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://area.vm4construction.uk/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://planets.is-a.software.cdn.cloudflare.net/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://earth.is-a.software.cdn.cloudflare.net/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://matter.is-a.software.cdn.cloudflare.net/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 
 # 🪴 Fern
 | Locked | Link | Found Date | Username | Password | Contributor |
@@ -152,6 +161,20 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | | https://brightgrammar.drbijaytamang.com.np/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://nextbio.stdavidswelland.org/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://solidenglish.drbijaytamang.com.np/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://epicgeo.fineone.ru/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://epicgeo.fineone.ru/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://clevercs.fineone.ru/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://lightscience.kellerzahnarzt.ch/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://nextbio.kellerzahnarzt.ch/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://freshbio.alianza-consultora.cl/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://fastenglish.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://coolphysics.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://stellargeo.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://corescience.riaueventorganizer.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://keenus.riaueventorganizer.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://nextreading.1337.cx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://deepchem.1337.cx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://lightscience.marine1.com.my/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 
 # 🐶 dogub
 | Locked | Link | Found Date | Username | Password | Contributor |
@@ -159,7 +182,6 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | | https://storage.googleapis.com/instructure/index.html | 3/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://storage.googleapis.com/canvas-lms/index.html | 3/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://mathcow.mooo.com/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
-
 
 # 🌕 Lunar
 | Locked | Link | Found Date | Username | Password | Contributor |
@@ -176,6 +198,16 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | - | - | - | - | - | - |
 | | https://english.umardia.com.mx/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://archive.neo-space.space/ | 3/26/2026 | N/A | N/A | yourworstnightmare1
+| | https://linkdropper.zidanwaiba.com.np/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://pizza.pete.zah.alianza-consultora.cl/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://bigmoney.cc/ | 3/26/2026 | N/A | N/A | yourworstnightmare1
+| | https://math.bellydancenetwork.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://realstuff.freeddns.us/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://grandemass.riaueventorganizer.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://english.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://auth.waterloomath.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://playernation.1337.cx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://pn.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 
 # 🏴 OverCloaked
 | Locked | Link | Found Date | Username | Password | Contributor |
@@ -202,4 +234,40 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | | https://sunny-day.global.ssl.fastly.net/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
 | | https://sun.stdavidswelland.org/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
 | | https://fast.batteryeducation.xyz/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
-| | https://fast.batteryeducation.xyz/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+
+# 🍫 Endis
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://coltonhi.lunoluno.org/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://check.ursinuscollege.org/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://ajh.eats-logi.lol/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://asd.lunoluno.org/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://lunoluno.org/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://endis.ajh.wtf/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://sites.google.com/view/endisendis | 3/28/2026 | N/A | N/A | yourworstnightmare1
+
+# 🎮 Rosin
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://cleanup.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://grab.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://interested.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://sub.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+
+# 📐 Solo Central
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://aub.lat/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+
+# ⬡ TGLSC Density 4
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://tglsceducation.nanobit.org/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://science.rules.sgigestion.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://auto.dinprima.ro/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+
+# 🪐 Galaxy
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://food.gostiljerestoran.rs/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://granit.granit-union.ru/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
