@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v1.11 | Released: March 27, 2026  
-> r11 | Last Updated: March 27, 2026
+> r12 | Last Updated: March 27, 2026
 
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -39,6 +39,7 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | | https://rocky.fish.nicher.nl | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://rocket-lack.spencerportbiblechurch.org/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://ehqjdnrjwemmbugoat.blindatech.cl/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
+| | https://vlraiscoolcoolcool.examprepare.help/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
 | | https://vlraiscoolcoolcool.examprepare.help/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
 
 
@@ -157,6 +158,8 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | - | - | - | - | - | - |
 | | https://storage.googleapis.com/instructure/index.html | 3/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://storage.googleapis.com/canvas-lms/index.html | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://mathcow.mooo.com/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+
 
 # 🌕 Lunar
 | Locked | Link | Found Date | Username | Password | Contributor |
@@ -192,3 +195,11 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 | | https://g305-2.karjase.ee | 3/26/2026 | N/A | N/A | yourworstnightmare1
 | | https://g305-3.karjase.ee | 3/26/2026 | N/A | N/A | yourworstnightmare1
 | | https://g305-4.karjase.ee | 3/26/2026 | N/A | N/A | yourworstnightmare1
+
+# 🔓 OnlyLessons
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://sunny-day.global.ssl.fastly.net/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://sun.stdavidswelland.org/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://fast.batteryeducation.xyz/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://fast.batteryeducation.xyz/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
