@@ -1,7 +1,8 @@
 # Proxy List
 > [!NOTE]
-> v2.0 | Released: March 31, 2026  
+> v2.0.1 | Released: April 17, 2026  
 > r15 | Last Updated: April 17, 2026
+> Total Links: 194
 
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
