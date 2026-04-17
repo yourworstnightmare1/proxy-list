@@ -1,0 +1,49 @@
+name: Auto Update Proxy Links
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run link checker
+        run: python scripts/link_checker.py
+
+      - name: Read commit info
+        id: commitinfo
+        run: |
+          IFS="|" read version revision removed total < commit_info.txt
+          echo "version=$version" >> $GITHUB_OUTPUT
+          echo "revision=$revision" >> $GITHUB_OUTPUT
+          echo "removed=$removed" >> $GITHUB_OUTPUT
+          echo "total=$total" >> $GITHUB_OUTPUT
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "auto-link-bot"
+          git config --global user.email "bot@users.noreply.github.com"
+
+          git add .
+
+          if ! git diff --cached --quiet; then
+            git commit -m "${{ steps.commitinfo.outputs.version }}${{ steps.commitinfo.outputs.revision }} | purged ${{ steps.commitinfo.outputs.removed }} dead links, link count: ${{ steps.commitinfo.outputs.total }}"
+            git push
+          fi
