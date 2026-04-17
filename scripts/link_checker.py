@@ -1,9 +1,19 @@
 import re
 import requests
+import os
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 
-INPUT_FILE = "list-v2.0.2r17.md"
+# -----------------------
+# Auto-detect markdown file
+# -----------------------
+def find_markdown_file():
+    for file in os.listdir("."):
+        if file.endswith(".md") and file.startswith("list-"):
+            return file
+    raise FileNotFoundError("No list-*.md file found")
+
+INPUT_FILE = find_markdown_file()
 
 # -----------------------
 # Extract links
@@ -66,7 +76,6 @@ def process_markdown(content, results):
     current_section = None
 
     seen_urls = set()
-
     new_lines = []
 
     for line in content.splitlines():
@@ -90,8 +99,6 @@ def process_markdown(content, results):
                 new_lines.append(line)
                 section_counts[current_section] += 1
                 total_links += 1
-            else:
-                continue
         else:
             new_lines.append(line)
 
