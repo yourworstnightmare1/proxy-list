@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
-> v2.0.1 | Released: April 17, 2026  
-> r16 | Last Updated: April 17, 2026
+> v2.0.2 | Released: April 17, 2026  
+> r17 | Last Updated: April 17, 2026
 > Total Links: 194
 
 <br>
@@ -22,14 +22,13 @@ Want to contribute? Read the [contribution guide](https://github.com/yourworstni
 BunnyCDN (b-cdn.net) links will not be added due to the fact that they expire. I simply don't want to clutter the list with links that won't work in a few days and have to remove them, it will be easier to keep standard domains than have a bunch of Bunny links that won't work. **This also applies if you are contributing to the list**. If you are wondering, b-cdn.net links expire after 3(?) days. After that the domain gets suspended. There is no fix.
 
 ### gn-math
-gn-math is currently down due to copyright. It will be back up in the coming weeks most likely. For now ignore those links, they will stay in case they decide to work again.
+gn-math is currently down due to copyright. It will be back up in the coming weeks most likely. For now ignore those links, they will stay in case they decide to work again. This also affects websites that use gn-math for games.
 
 # 💜 Selenite
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Games | N/A | N/A
-> 
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Games | N/A | N/A | 10 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -46,10 +45,10 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🌙 Velara
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | captcha | Scramjet
-> 
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | captcha | Scramjet | 9 |
+
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://ehqjdnrjwemmbugoat.blindatech.cl/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
@@ -64,9 +63,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # ➗ gn-math
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Games | N/A | N/A
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Games | N/A | N/A | 2 |
 
 > [!IMPORTANT]
 > View importance notices section if link is broken.
@@ -78,9 +77,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🐸 frogie's arcade
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | captcha | Ultraviolet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | captcha | Ultraviolet | 4 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -91,9 +90,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # ⭐ DayDream X
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 5 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -106,9 +105,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🚀 Nebulo
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | epoxy, libcurl | Scramjet, Ultraviolet, Eclipse
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | epoxy, libcurl | Scramjet, Ultraviolet, Eclipse | 4 |
 
 > [!IMPORTANT]
 > Nebulo does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -122,9 +121,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🌑 Space
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 15 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -146,9 +145,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🪴 Fern
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | unknown | Scramjet, Ultraviolet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | Scramjet, Ultraviolet | 3 |
 
 > [!IMPORTANT]
 > Fern does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -161,9 +160,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🦈 Rammerhead
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy | captcha (with strings attached) | Rammerhead
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy | captcha | Rammerhead | 1 |
 
 > [!IMPORTANT]
 > Rammerhead has CAPTCHA support, but only if you purchase a ticket. If you are a free user, you don't have CAPTCHA access.
@@ -174,9 +173,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🟣 UniUB
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | epoxy, libcurl | Scramjet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | epoxy, libcurl | Scramjet | 1 |
 
 > [!IMPORTANT]
 > UniUB does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -187,9 +186,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🍄 Truffled
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | unknown | Scramjet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | Scramjet | 16 |
 
 > [!IMPORTANT]
 > Truffled does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -216,9 +215,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🥱 Boredom
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | unknown | Scramjet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | Scramjet | 1 |
 
 > [!IMPORTANT]
 > Boredom does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -229,9 +228,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 💨 Vapor
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | unknown | Scramjet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | Scramjet | 8 |
 
 > [!IMPORTANT]
 > Vapor does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -250,9 +249,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 👤 Shadow
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | unknown | unknown
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | unknown | 18 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -280,9 +279,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🐶 dogeub
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 16 |
 
 > [!IMPORTANT]
 > dogeub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -309,9 +308,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🌕 Lunar
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 3 |
 
 > [!IMPORTANT]
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -328,9 +327,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 👻 Ghost
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | unknown | Scramjet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | Scramjet | 1 |
 
 > [!IMPORTANT]
 > Ghost does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -341,9 +340,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🍕 PetZah
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | unknown | Scramjet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | Scramjet | 13 |
 
 > [!IMPORTANT]
 > PetZah does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -366,9 +365,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🏴 OverCloaked
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet | 2 |
 
 > [!IMPORTANT]
 > OverCloaked does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -380,9 +379,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 😈 Imp Proxy
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | Unknown | Scramjet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | Unknown | Scramjet | 12 |
 
 > [!IMPORTANT]
 > Imp Proxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -404,9 +403,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🔓 OnlyLessons
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | Unknown | Scramjet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | Unknown | Scramjet | 3 |
 
 > [!IMPORTANT]
 > OnlyLessons does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -419,9 +418,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🍫 Endis
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 7 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -435,9 +434,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🎮 Rosin
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | Unknown | Scramjet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | Unknown | Scramjet | 4 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -451,9 +450,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 📐 Solo Central
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Games | N/A | N/A
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Games | N/A | N/A | 1 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -461,9 +460,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # ⬡ TGLSC Density 4
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | epoxy, libcurl, baremux, baremod, grammaray | Scramjet, Ultraviolet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | epoxy, libcurl, baremux, baremod, grammaray | Scramjet, Ultraviolet | 3 |
 
 > [!IMPORTANT]
 > TGLSC Density 4 does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -476,9 +475,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🪐 Galaxy
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> | Proxy/Games | libcurl, epoxy, wisp | Scramjet, Ultraviolet
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | libcurl, epoxy, wisp | Scramjet, Ultraviolet | 2 |
 
 > [!IMPORTANT]
 > Galaxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -490,9 +489,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🔭 Interstellar
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> Proxy/Games | unknown | Ultraviolet |
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | Ultraviolet | 1 |
 
 > [!IMPORTANT]
 > Interstellar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -503,9 +502,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 📖 StudyHub
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> Proxy/Games | unknown | unknown |
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | unknown | 4 |
 
 > [!IMPORTANT]
 > StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -519,9 +518,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🍓 Strawberry
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> Proxy/Games | unknown | unknown |
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | unknown | 12 |
 
 > [!IMPORTANT]
 > Strawberry does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -544,9 +543,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🔼 Axiom
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> Proxy/Games | captcha | Scramjet |
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | captcha | Scramjet | 5 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -558,9 +557,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🖤 Void Network
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> Proxy/Games | unknown | Ultraviolet |
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | Ultraviolet | 2 |
 
 > [!IMPORTANT]
 > Void Network does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -572,9 +571,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🦄 Utopia Education
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> Proxy/Games | unknown | unknown |
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | unknown | 1 |
 
 > [!IMPORTANT]
 > Utopia Education does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -585,9 +584,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🌘 Lunaar
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet |
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet | 4 |
 
 > [!IMPORTANT]
 > Lunaar does has CAPTCHA support, but only under Scramjet. Attempting to launch the [Google ReCAPTCHA API Demo](https://www.google.com/recaptcha/api2/demo) just fails every time under Ultraviolet, not sure why.
@@ -601,9 +600,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 
 # 🌸 cherri
 > [!NOTE]
-> | Category | Capabilities | Protocol(s) |
-> | - | - | - |
-> Proxy/Games | libcurl, epoxy, captcha | Scramjet |
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | libcurl, epoxy, captcha | Scramjet | 1 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
