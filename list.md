@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v2.0.1 | Released: April 17, 2026  
-> r15 | Last Updated: April 17, 2026
+> r16 | Last Updated: April 17, 2026
 > Total Links: 194
 
 <br>
@@ -17,7 +17,12 @@ List by [yourworstnightmare1](https://github.com/yourworstnightmare1) | https://
 Want to contribute? Read the [contribution guide](https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md).
 
 ## Important Notices
+
+### BunnyCDN
 BunnyCDN (b-cdn.net) links will not be added due to the fact that they expire. I simply don't want to clutter the list with links that won't work in a few days and have to remove them, it will be easier to keep standard domains than have a bunch of Bunny links that won't work. **This also applies if you are contributing to the list**. If you are wondering, b-cdn.net links expire after 3(?) days. After that the domain gets suspended. There is no fix.
+
+### gn-math
+gn-math is currently down due to copyright. It will be back up in the coming weeks most likely. For now ignore those links, they will stay in case they decide to work again.
 
 # 💜 Selenite
 > [!NOTE]
@@ -62,6 +67,9 @@ BunnyCDN (b-cdn.net) links will not be added due to the fact that they expire. I
 > | Category | Capabilities | Protocol(s) |
 > | - | - | - |
 > | Games | N/A | N/A
+
+> [!IMPORTANT]
+> View importance notices section if link is broken.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
