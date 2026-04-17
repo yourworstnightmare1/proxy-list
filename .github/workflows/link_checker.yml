@@ -30,18 +30,25 @@ jobs:
       - name: Read commit info
         id: commitinfo
         run: |
-          IFS="|" read version revision removed total < commit_info.txt
-          echo "version=$version" >> $GITHUB_OUTPUT
-          echo "revision=$revision" >> $GITHUB_OUTPUT
-          echo "removed=$removed" >> $GITHUB_OUTPUT
-          echo "total=$total" >> $GITHUB_OUTPUT
+          if [ -f commit_info.txt ]; then
+            IFS="|" read version revision removed total < commit_info.txt
+            echo "version=$version" >> $GITHUB_OUTPUT
+            echo "revision=$revision" >> $GITHUB_OUTPUT
+            echo "removed=$removed" >> $GITHUB_OUTPUT
+            echo "total=$total" >> $GITHUB_OUTPUT
+          else
+            echo "version=v0.0.0" >> $GITHUB_OUTPUT
+            echo "revision=r0" >> $GITHUB_OUTPUT
+            echo "removed=0" >> $GITHUB_OUTPUT
+            echo "total=0" >> $GITHUB_OUTPUT
+          fi
 
       - name: Commit changes
         run: |
           git config --global user.name "auto-link-bot"
           git config --global user.email "bot@users.noreply.github.com"
 
-          git add .
+          git add *.md
 
           if ! git diff --cached --quiet; then
             git commit -m "${{ steps.commitinfo.outputs.version }}${{ steps.commitinfo.outputs.revision }} | purged ${{ steps.commitinfo.outputs.removed }} dead links, link count: ${{ steps.commitinfo.outputs.total }}"
