@@ -87,6 +87,10 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://highschoolmathteachers.com | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://larp.now | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://backshots.ero.is/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://playernations.casadotricolor.com.br/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://frogsvseesa.contauditor.cl/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://vcsa-yt.installgentoo.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://vcsanewvideout.npoleninetz.ru/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 # ⭐ DayDream X
 > [!NOTE]
@@ -304,6 +308,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://educationate.s3.amazonaws.com/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://mathcow.mooo.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://storage.googleapis.com/educationate/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://d1ks901xvjj2p6.cloudfront.net/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 
 # 🌕 Lunar
@@ -415,6 +420,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://sunny-day.global.ssl.fastly.net/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
 | | https://sun.stdavidswelland.org/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
 | | https://fast.batteryeducation.xyz/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://ixl.ela.nwpa.com.au/ | 4/17/2026 | N/A | N/A | yourworstnightmare13
 
 # 🍫 Endis
 > [!NOTE]
@@ -514,6 +520,15 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://guardian.grotestapelnonsens.nl/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://frames.locosxelfutbol.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://tickets.registrationgorilla.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://orar.eminescusm.ro/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://reservas.hotelesenmontilla.es/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://portfolio.nickbdonnelly.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://lighting.worldoflights.co.za/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://arts.casadotricolor.com.br/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://insights.d3hub-competencecentre.eu/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://faqs.installgentoo.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://studyfocus.npoleninetz.ru/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://cakes.casadotricolor.com.br/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://woah.wanhuiarchitect.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 # 🍓 Strawberry
@@ -607,3 +622,15 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://helptired8.notinthearchives.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
+🤍 Lucide
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | captcha | Scramjet | 2 |
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://cdn.jsdelivr.net/gh/lucideproxy/svg@latest/logo.svg#/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://wispserver.dev/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
