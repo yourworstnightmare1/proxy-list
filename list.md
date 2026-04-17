@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v2.0 | Released: March 31, 2026  
-> r14 | Last Updated: March 31, 2026
+> r15 | Last Updated: April 17, 2026
 
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -16,7 +16,7 @@ List by [yourworstnightmare1](https://github.com/yourworstnightmare1) | https://
 Want to contribute? Read the [contribution guide](https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md).
 
 ## Important Notices
-I have now added more detailed info for specific proxies that give lists of features, proxies used, and whether they are proxy or game sites. This feature is in beta and feedback would be much appreciated. If you encounter a mistake in these detailed notes, feel free to make an issue report.
+BunnyCDN (b-cdn.net) links will not be added due to the fact that they expire. I simply don't want to clutter the list with links that won't work in a few days and have to remove them, it will be easier to keep standard domains than have a bunch of Bunny links that won't work. **This also applies if you are contributing to the list**. If you are wondering, b-cdn.net links expire after 3(?) days. After that the domain gets suspended. There is no fix.
 
 # 💜 Selenite
 > [!NOTE]
@@ -54,6 +54,7 @@ I have now added more detailed info for specific proxies that give lists of feat
 | | https://prabhseducationalstuff.chickenkiller.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://letmesleep.gleeze.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://learning.roshanadhikary.com.np/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://test.www.h3fdj0xz.152.53.83.13.sslip.io/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 # ➗ gn-math
 > [!NOTE]
@@ -77,6 +78,7 @@ I have now added more detailed info for specific proxies that give lists of feat
 | | https://vallejocharterschool.org | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://highschoolmathteachers.com | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://larp.now | 2/19/2026 | N/A | N/A | yourworstnightmare1
+| | https://backshots.ero.is/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 # ⭐ DayDream X
 > [!NOTE]
@@ -87,6 +89,11 @@ I have now added more detailed info for specific proxies that give lists of feat
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://math.desmos.live.cdn.cloudflare.net/ | 2/19/2026 | N/A | N/A | yourworstnightmare1
+| | https://boykisser.rawr.africa.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://pondering.is-a.software.cdn.cloudflare.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/NightProxy/DD-Static/dist/index.svg | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://thinks.is-a.software.cdn.cloudflare.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
 
 # 🚀 Nebulo
 > [!NOTE]
@@ -124,6 +131,9 @@ I have now added more detailed info for specific proxies that give lists of feat
 | | https://planets.is-a.software.cdn.cloudflare.net/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://earth.is-a.software.cdn.cloudflare.net/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://matter.is-a.software.cdn.cloudflare.net/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://15.204.247.166.devns.me/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://test.consulting-octopus.co.uk/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://edu.rawr.africa.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 # 🪴 Fern
 > [!NOTE]
@@ -138,6 +148,7 @@ I have now added more detailed info for specific proxies that give lists of feat
 | - | - | - | - | - | - |
 | | https://produce.arrowbases.com | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://scoot.boiso.ar | 2/19/2026 | N/A | N/A | yourworstnightmare1
+| | https://d2w1kmawdyj1d6.cloudfront.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 # 🦈 Rammerhead
 > [!NOTE]
@@ -184,7 +195,15 @@ I have now added more detailed info for specific proxies that give lists of feat
 | | https://fizzlams.snbs.dk/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
 | | https://fizzylams.skills-sims.com/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
 | | https://thefizzer.lecorps.ar/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
-| | https://thefizzer.lecorps.ar/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://15412.kavellewatches.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://4354.kavellewatches.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://9087.kavellewatches.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://learning.eglobaltravelmedia.asia/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://math.whost.co.za/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://math.gianinifiestas.cl/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://thatsok.bourassa.me/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://learning.trogiang.vn/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
 
 # 🥱 Boredom
 > [!NOTE]
@@ -213,6 +232,12 @@ I have now added more detailed info for specific proxies that give lists of feat
 | | https://happynewdestenation.pintravel.ro/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://ixlwork.storage.googleapis.com/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://world-peace-volunteerformath.installgentoo.com/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://10.tellurideeducationassociation.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://5.tellurideeducationassociation.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://8.tellurideeducationassociation.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://1.tellurideeducationassociation.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://ixlwork.storage.googleapis.com/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
 
 # 👤 Shadow
 > [!NOTE]
@@ -258,6 +283,20 @@ I have now added more detailed info for specific proxies that give lists of feat
 | | https://storage.googleapis.com/instructure/index.html | 3/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://storage.googleapis.com/canvas-lms/index.html | 3/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://mathcow.mooo.com/ | 3/27/2026 | N/A | N/A | yourworstnightmare1
+| | https://edu-gov-k12-school-learn-study.sylu.cc.cdn.cloudflare.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://instructure.storage.googleapis.com/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://canvas-lms.storage.googleapis.com/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://storage.googleapis.com/educationate/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://storage.googleapis.com/dogeub/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://edu-gov-k12-school-learn-study-api.is-a.software.cdn.cloudflare.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://instructure.sylu.cc.cdn.cloudflare.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://instructure-api.sylu.net.cdn.cloudflare.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://s3.amazonaws.com/educationate/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://s3.amazonaws.com/deltamath-demo/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://educationate.s3.amazonaws.com/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://mathcow.mooo.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://storage.googleapis.com/educationate/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
 
 # 🌕 Lunar
 > [!NOTE]
@@ -267,10 +306,16 @@ I have now added more detailed info for specific proxies that give lists of feat
 
 > [!IMPORTANT]
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
-> 
+
+> [!IMPORTANT]
+> Lunar has performance issues and noticeably lags the whole browser when it's the current tab. If you have a lower-end device, you might experience problems. (tested on macOS 26.3)
+
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://ezpz.robroderia.ro/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://learning.lanschool.online/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://ixleducation.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
 
 # 👻 Ghost
 > [!NOTE]
@@ -308,6 +353,7 @@ I have now added more detailed info for specific proxies that give lists of feat
 | | https://auth.waterloomath.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://playernation.1337.cx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://pn.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://codehs.com/uploads/0b54c1966feda9db6885a632dcd9031a | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 # 🏴 OverCloaked
 > [!NOTE]
@@ -343,6 +389,9 @@ I have now added more detailed info for specific proxies that give lists of feat
 | | https://g305-2.karjase.ee | 3/26/2026 | N/A | N/A | yourworstnightmare1
 | | https://g305-3.karjase.ee | 3/26/2026 | N/A | N/A | yourworstnightmare1
 | | https://g305-4.karjase.ee | 3/26/2026 | N/A | N/A | yourworstnightmare1
+| | https://cbysk.fxchinese.ca/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://aivu.losarcos.us/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://esyk.monedita.cl/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 # 🔓 OnlyLessons
 > [!NOTE]
@@ -429,3 +478,124 @@ I have now added more detailed info for specific proxies that give lists of feat
 | - | - | - | - | - | - |
 | | https://food.gostiljerestoran.rs/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://granit.granit-union.ru/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+
+# 🔭 Interstellar
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) |
+> | - | - | - |
+> Proxy/Games | unknown | Ultraviolet |
+
+> [!IMPORTANT]
+> Interstellar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://massgrand.deborahnairn.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 📖 StudyHub
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) |
+> | - | - | - |
+> Proxy/Games | unknown | unknown |
+
+> [!IMPORTANT]
+> StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://guardian.grotestapelnonsens.nl/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://frames.locosxelfutbol.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://tickets.registrationgorilla.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://woah.wanhuiarchitect.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🍓 Strawberry
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) |
+> | - | - | - |
+> Proxy/Games | unknown | unknown |
+
+> [!IMPORTANT]
+> Strawberry does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://boys.africandmore.ch/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://math.consulting-octopus.co.uk/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://aero.losarcos.us/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://studentkeeper.alsrl.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://dashboard.bryankrawetz.ca/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://palo.dex-online.ro/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://math.thongthaitextile.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://etsy.monedita.cl/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://elements.wanhuiarchitect.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://learn.childeducation.site/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://strawberry.albrightscycling.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://repair.hondascooterparts.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
+
+# 🔼 Axiom
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) |
+> | - | - | - |
+> Proxy/Games | captcha | Scramjet |
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://storytime.goodguysav.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://read.nationalit.ru/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://family.nembahadurraskoti.com.np/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://status.xcloud.ar/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://travel.national-birdshow.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🖤 Void Network
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) |
+> | - | - | - |
+> Proxy/Games | unknown | Ultraviolet |
+
+> [!IMPORTANT]
+> Void Network does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://readandlearnllc.s3.us-east-2.amazonaws.com/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://d3griv5hi58r65.cloudfront.net/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🦄 Utopia Education
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) |
+> | - | - | - |
+> Proxy/Games | unknown | unknown |
+
+> [!IMPORTANT]
+> Utopia Education does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://hondaispeak.hondascooterparts.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🌘 Lunaar
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) |
+> | - | - | - |
+> Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet |
+
+> [!IMPORTANT]
+> Lunaar does has CAPTCHA support, but only under Scramjet. Attempting to launch the [Google ReCAPTCHA API Demo](https://www.google.com/recaptcha/api2/demo) just fails every time under Ultraviolet, not sure why.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://potato.thehustlinhomesteader.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://www.securly.com.craftyhour.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://learn.savequeechylake.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.timeless-twilight.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+
+# 🌸 cherri
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) |
+> | - | - | - |
+> Proxy/Games | libcurl, epoxy, captcha | Scramjet |
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://helptired8.notinthearchives.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
