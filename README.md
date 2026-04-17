@@ -15,6 +15,10 @@ View [CONTRIBUTING.md](https://github.com/yourworstnightmare1/proxy-list/blob/ma
 # How is CAPTCHA tested?
 CAPTCHA is tested using the official [Google ReCAPTCHA demo](https://www.google.com/recaptcha/api2/demo)
 
+# When is the list updated?
+**Automation**: The list is automatically checked every 6 hours using a Python script to check for bad links and update the total links when needed.\
+**Manual**: I will periodically update the list if I find new proxies, or if someone makes a pull request and I approve.
+
 # How to use
 ## Windows
 Simply download and open it in Notepad. If you are not on Windows 11 or are on macOS, you will have to go to https://markdownlivepreview.com/ to view it as markdown support is only in Windows 11+.
