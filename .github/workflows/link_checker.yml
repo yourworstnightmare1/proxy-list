@@ -17,10 +17,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Debug commit
-        run: echo "Commit: $GITHUB_SHA"
+        run: |
+          echo "Commit: $GITHUB_SHA"
 
       - name: Debug script
-        run: head -n 20 scripts/link_checker.py
+        run: |
+          head -n 20 scripts/link_checker.py
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,9 +30,9 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests
+        run: |
+          pip install requests
 
-      # 🔥 CRITICAL FIX: allow script to fail but continue
       - name: Run link checker
         run: |
           echo "Running script..."
@@ -40,7 +42,6 @@ jobs:
           echo "Script exit code: $EXIT_CODE"
           set -e
 
-      # 🔥 Show if file exists
       - name: Debug commit_info
         run: |
           if [ -f commit_info.txt ]; then
@@ -50,7 +51,6 @@ jobs:
             echo "commit_info.txt NOT FOUND"
           fi
 
-      # 🔥 SAFE read (never crashes)
       - name: Read commit info
         id: commitinfo
         run: |
