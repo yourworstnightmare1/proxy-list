@@ -4,6 +4,7 @@
 > r18 | Last Updated: April 17, 2026\
 > Total Links: 194
 
+(Link counts update every 6 hours via [link_checker.py](https://github.com/yourworstnightmare1/proxy-list/blob/main/scripts/link_checker.py))
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
 <br>
