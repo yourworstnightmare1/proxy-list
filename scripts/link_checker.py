@@ -1,9 +1,14 @@
 import re
+import json
 import requests
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 
 INPUT_FILE = "list.md"
+STATUS_FILE = "link_status.json"
+CHANGELOG_FILE = "CHANGELOG.md"
+
+FAIL_THRESHOLD = 3
 
 # -----------------------
 # Extract links
@@ -11,218 +16,152 @@ INPUT_FILE = "list.md"
 def extract_links(content):
     return re.findall(r'https?://[^\s|]+', content)
 
-# -----------------------
-# Normalize URL
-# -----------------------
 def normalize_url(url):
     return url.strip().rstrip("/")
 
 # -----------------------
-# Extract version + revision
+# Load/save failure state
 # -----------------------
-def extract_version_revision(content):
+def load_status():
     try:
-        v_match = re.search(r"v\d+\.\d+\.\d+", content)
-        r_match = re.search(r"r\d+", content)
-
-        version = v_match.group(0) if v_match else "v0.0.0"
-        revision = r_match.group(0) if r_match else "r0"
-
-        return version, revision
+        with open(STATUS_FILE, "r") as f:
+            return json.load(f)
     except:
-        return "v0.0.0", "r0"
+        return {}
+
+def save_status(status):
+    with open(STATUS_FILE, "w") as f:
+        json.dump(status, f, indent=2)
 
 # -----------------------
 # Test link
 # -----------------------
 def is_working(url):
     try:
-        r = requests.head(url, timeout=5, allow_redirects=True)
-        if r.status_code < 400:
-            return True
-    except:
-        pass
-
-    try:
         r = requests.get(url, timeout=5)
         return r.status_code < 400
     except:
         return False
 
-# -----------------------
-# Parallel test
-# -----------------------
 def test_links(links):
     results = {}
-    try:
-        with ThreadPoolExecutor(max_workers=25) as executor:
-            futures = {executor.submit(is_working, url): url for url in links}
-            for future in futures:
-                url = futures[future]
-                try:
-                    results[url] = future.result()
-                except:
-                    results[url] = False
-    except:
-        # fallback if threading fails
-        for url in links:
-            results[url] = False
-
+    with ThreadPoolExecutor(max_workers=25) as executor:
+        futures = {executor.submit(is_working, url): url for url in links}
+        for future in futures:
+            url = futures[future]
+            try:
+                results[url] = future.result()
+            except:
+                results[url] = False
     return results
 
 # -----------------------
 # Process markdown
 # -----------------------
-def process_markdown(content, results):
-    total_links = 0
-    section_counts = {}
+def process(content, results, status):
     current_section = None
-
-    seen_urls = set()
+    seen = set()
     new_lines = []
 
+    kept = 0
+    removed = 0
+
     for line in content.splitlines():
-        try:
-            if line.startswith("# "):
-                current_section = line
-                section_counts[current_section] = 0
+        if line.startswith("# "):
+            current_section = line
 
-            match = re.search(r'(https?://[^\s|]+)', line)
+        match = re.search(r'(https?://[^\s|]+)', line)
 
-            if match:
-                url = match.group(1)
-                normalized = normalize_url(url)
+        if match:
+            url = match.group(1)
+            norm = normalize_url(url)
 
-                # skip duplicates
-                if normalized in seen_urls:
-                    continue
-                seen_urls.add(normalized)
+            if norm in seen:
+                continue
+            seen.add(norm)
 
-                # skip dead links
-                if not results.get(url, False):
-                    continue
+            working = results.get(url, False)
 
+            if working:
+                status[url] = 0
                 new_lines.append(line)
-
-                if current_section:
-                    section_counts[current_section] += 1
-                    total_links += 1
+                kept += 1
             else:
-                new_lines.append(line)
+                status[url] = status.get(url, 0) + 1
 
-        except:
-            # never crash on bad line
+                if status[url] < FAIL_THRESHOLD:
+                    new_lines.append(line)
+                    kept += 1
+                else:
+                    removed += 1
+        else:
             new_lines.append(line)
 
-    updated = "\n".join(new_lines)
-
-    # update total links
-    try:
-        updated = re.sub(
-            r"Total Links:\s*\d+",
-            f"Total Links: {total_links}",
-            updated
-        )
-    except:
-        pass
-
-    # update section counts
-    for section, count in section_counts.items():
-        try:
-            updated = re.sub(
-                rf"({re.escape(section)}.*?\|\s*Links\s*\|\s*)(\d+)",
-                rf"\g<1>{count}",
-                updated,
-                flags=re.DOTALL
-            )
-        except:
-            pass
-
-    return updated, total_links
+    return "\n".join(new_lines), kept, removed
 
 # -----------------------
-# Versioning
+# Update counts + version
 # -----------------------
-def bump_revision(content):
-    try:
-        match = re.search(r"r(\d+)", content)
-        if match:
-            return re.sub(r"r\d+", f"r{int(match.group(1)) + 1}", content)
-    except:
-        pass
-    return content
+def update_meta(content, total):
+    content = re.sub(r"Total Links:\s*\d+", f"Total Links: {total}", content)
 
-def bump_version_if_needed(content, old_total, new_total):
-    try:
-        if new_total != old_total:
-            match = re.search(r"v(\d+)\.(\d+)\.(\d+)", content)
-            if match:
-                major, minor, patch = map(int, match.groups())
-                return re.sub(
-                    r"v\d+\.\d+\.\d+",
-                    f"v{major}.{minor}.{patch + 1}",
-                    content
-                )
-    except:
-        pass
+    today = datetime.now().strftime("%B %d, %Y")
+    content = re.sub(r"Last Updated: .*", f"Last Updated: {today}", content)
+
+    # revision bump
+    content = re.sub(
+        r"r(\d+)",
+        lambda m: f"r{int(m.group(1)) + 1}",
+        content
+    )
+
     return content
 
 # -----------------------
-# Update date
+# CHANGELOG
 # -----------------------
-def update_dates(content):
+def update_changelog(removed, total):
+    entry = f"""
+## {datetime.now().strftime('%Y-%m-%d')}
+- Removed: {removed}
+- Total: {total}
+"""
+
     try:
-        today = datetime.now().strftime("%B %d, %Y")
-        return re.sub(r"Last Updated: .*", f"Last Updated: {today}", content)
+        with open(CHANGELOG_FILE, "a") as f:
+            f.write(entry)
     except:
-        return content
+        pass
 
 # -----------------------
 # MAIN
 # -----------------------
 def main():
-    print("Starting script...")
+    with open(INPUT_FILE, "r", encoding="utf-8") as f:
+        content = f.read()
 
-    version = "v0.0.0"
-    revision = "r0"
-    removed_links = 0
-    new_total = 0
+    links = extract_links(content)
 
-    try:
-        with open(INPUT_FILE, "r", encoding="utf-8") as f:
-            content = f.read()
+    status = load_status()
 
-        links = extract_links(content)
-        old_total = len(set(normalize_url(l) for l in links))
+    results = test_links(links)
 
-        print(f"Found {len(links)} links")
+    content, kept, removed = process(content, results, status)
 
-        results = test_links(links)
+    total = kept
 
-        updated, new_total = process_markdown(content, results)
+    content = update_meta(content, total)
 
-        removed_links = max(0, old_total - new_total)
+    with open(INPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(content)
 
-        updated = bump_revision(updated)
-        updated = bump_version_if_needed(updated, old_total, new_total)
-        updated = update_dates(updated)
+    save_status(status)
 
-        version, revision = extract_version_revision(updated)
+    update_changelog(removed, total)
 
-        with open(INPUT_FILE, "w", encoding="utf-8") as f:
-            f.write(updated)
-
-    except Exception as e:
-        print("ERROR:", e)
-
-    # 🔥 ALWAYS create commit_info.txt (even on failure)
-    try:
-        with open("commit_info.txt", "w") as f:
-            f.write(f"{version}|{revision}|{removed_links}|{new_total}")
-    except:
-        pass
-
-    print("Finished script")
+    # commit info
+    with open("commit_info.txt", "w") as f:
+        f.write(f"v0.0.0|r0|{removed}|{total}")
 
 if __name__ == "__main__":
     main()
