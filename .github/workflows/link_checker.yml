@@ -51,22 +51,44 @@ jobs:
             echo "commit_info.txt NOT FOUND"
           fi
 
+      # ✅ FULLY FIXED (never fails)
       - name: Read commit info
         id: commitinfo
+        shell: bash
         run: |
+          set +e
+
+          echo "Reading commit info..."
+
           version="v0.0.0"
           revision="r0"
           removed="0"
           total="0"
 
           if test -f commit_info.txt; then
-            IFS="|" read version revision removed total < commit_info.txt
+            echo "commit_info.txt found"
+            CONTENT=$(cat commit_info.txt 2>/dev/null)
+
+            if [ -n "$CONTENT" ]; then
+              version=$(echo "$CONTENT" | awk -F'|' '{print $1}')
+              revision=$(echo "$CONTENT" | awk -F'|' '{print $2}')
+              removed=$(echo "$CONTENT" | awk -F'|' '{print $3}')
+              total=$(echo "$CONTENT" | awk -F'|' '{print $4}')
+            else
+              echo "commit_info.txt is empty"
+            fi
+          else
+            echo "commit_info.txt NOT FOUND"
           fi
 
-          echo "version=$version" >> $GITHUB_OUTPUT
-          echo "revision=$revision" >> $GITHUB_OUTPUT
-          echo "removed=$removed" >> $GITHUB_OUTPUT
-          echo "total=$total" >> $GITHUB_OUTPUT
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "revision=$revision" >> "$GITHUB_OUTPUT"
+          echo "removed=$removed" >> "$GITHUB_OUTPUT"
+          echo "total=$total" >> "$GITHUB_OUTPUT"
+
+          echo "Done reading commit info"
+
+          exit 0
 
       - name: Commit changes
         run: |
