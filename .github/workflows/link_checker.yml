@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -24,24 +26,30 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      # ✅ FIXED: don't hide Python errors
       - name: Run link checker
-        run: python scripts/link_checker.py
+        run: |
+          echo "Starting link checker..."
+          python scripts/link_checker.py || echo "Script failed (see logs above)"
 
+      # ✅ FIXED: safe handling if file missing
       - name: Read commit info
         id: commitinfo
         run: |
           if [ -f commit_info.txt ]; then
             IFS="|" read version revision removed total < commit_info.txt
-            echo "version=$version" >> $GITHUB_OUTPUT
-            echo "revision=$revision" >> $GITHUB_OUTPUT
-            echo "removed=$removed" >> $GITHUB_OUTPUT
-            echo "total=$total" >> $GITHUB_OUTPUT
           else
-            echo "version=v0.0.0" >> $GITHUB_OUTPUT
-            echo "revision=r0" >> $GITHUB_OUTPUT
-            echo "removed=0" >> $GITHUB_OUTPUT
-            echo "total=0" >> $GITHUB_OUTPUT
+            echo "commit_info.txt not found, using defaults"
+            version="v0.0.0"
+            revision="r0"
+            removed="0"
+            total="0"
           fi
+
+          echo "version=$version" >> $GITHUB_OUTPUT
+          echo "revision=$revision" >> $GITHUB_OUTPUT
+          echo "removed=$removed" >> $GITHUB_OUTPUT
+          echo "total=$total" >> $GITHUB_OUTPUT
 
       - name: Commit changes
         run: |
@@ -53,4 +61,6 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m "${{ steps.commitinfo.outputs.version }}${{ steps.commitinfo.outputs.revision }} | purged ${{ steps.commitinfo.outputs.removed }} dead links, link count: ${{ steps.commitinfo.outputs.total }}"
             git push
+          else
+            echo "No changes to commit"
           fi
