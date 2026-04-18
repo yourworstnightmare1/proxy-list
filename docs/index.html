@@ -90,6 +90,11 @@
     }
     .tag input { margin: 0; accent-color: var(--accent); }
     .tag:hover { border-color: var(--muted); }
+    .tag-count {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
     .match-mode {
       display: flex;
       gap: 0.75rem;
@@ -341,7 +346,41 @@
       return tags.map((t) => '<span class="pill">' + escapeHtml(t) + "</span>").join("");
     }
 
-    function buildCheckboxGroup(containerId, values, rows) {
+    function countRowsWithProvider(rows, value) {
+      let n = 0;
+      for (const row of rows) {
+        if ((row.provider || "") === value) n += 1;
+      }
+      return n;
+    }
+
+    function countRowsWithCategory(rows, value) {
+      let n = 0;
+      for (const row of rows) {
+        if ((row.category || "") === value) n += 1;
+      }
+      return n;
+    }
+
+    function countRowsWithProtocol(rows, value) {
+      let n = 0;
+      for (const row of rows) {
+        const pt = row.protocol_tags || [];
+        if (pt.includes(value)) n += 1;
+      }
+      return n;
+    }
+
+    function countRowsWithCapability(rows, value) {
+      let n = 0;
+      for (const row of rows) {
+        const ct = row.capability_tags || [];
+        if (ct.includes(value)) n += 1;
+      }
+      return n;
+    }
+
+    function buildCheckboxGroup(containerId, values, rows, countForValue) {
       const wrap = $(containerId);
       wrap.innerHTML = "";
       for (const v of values) {
@@ -351,14 +390,23 @@
         inp.type = "checkbox";
         inp.value = v;
         inp.addEventListener("change", () => render(rows));
+        const countEl = document.createElement("span");
+        countEl.className = "tag-count";
+        countEl.textContent = "(" + countForValue(v) + ") ";
         lab.appendChild(inp);
+        lab.appendChild(countEl);
         lab.appendChild(document.createTextNode(v));
         wrap.appendChild(lab);
       }
     }
 
     function buildCapCheckboxes(rows) {
-      buildCheckboxGroup("capTags", uniq(rows.flatMap((r) => r.capability_tags || [])), rows);
+      buildCheckboxGroup(
+        "capTags",
+        uniq(rows.flatMap((r) => r.capability_tags || [])),
+        rows,
+        (v) => countRowsWithCapability(rows, v)
+      );
     }
 
     function normalizePayload(json) {
@@ -379,12 +427,23 @@
       .then((json) => {
         const { meta, links } = normalizePayload(json);
         setFooter(meta);
-        buildCheckboxGroup("providerTags", uniq(links.map((d) => d.provider)), links);
-        buildCheckboxGroup("categoryTags", uniq(links.map((d) => d.category)), links);
+        buildCheckboxGroup(
+          "providerTags",
+          uniq(links.map((d) => d.provider)),
+          links,
+          (v) => countRowsWithProvider(links, v)
+        );
+        buildCheckboxGroup(
+          "categoryTags",
+          uniq(links.map((d) => d.category)),
+          links,
+          (v) => countRowsWithCategory(links, v)
+        );
         buildCheckboxGroup(
           "protocolTags",
           uniq(links.flatMap((d) => d.protocol_tags || [])),
-          links
+          links,
+          (v) => countRowsWithProtocol(links, v)
         );
         buildCapCheckboxes(links);
 
