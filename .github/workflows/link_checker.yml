@@ -2,7 +2,7 @@ name: Auto Update Proxy Links
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # every 6 hours
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -13,10 +13,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 🔍 Show commit being used (IMPORTANT)
+      - name: Show commit info
+        run: |
+          echo "Running on commit:"
+          echo $GITHUB_SHA
+
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      # 🔍 Verify script content (proves correct version)
+      - name: Debug script contents
+        run: |
+          echo "---- SCRIPT HEAD ----"
+          head -n 20 scripts/link_checker.py
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,20 +38,29 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      # ✅ FIXED: don't hide Python errors
+      # ✅ Run script (no hiding errors)
       - name: Run link checker
         run: |
           echo "Starting link checker..."
-          python scripts/link_checker.py || echo "Script failed (see logs above)"
+          python scripts/link_checker.py
 
-      # ✅ FIXED: safe handling if file missing
+      # 🔍 Show generated file (if exists)
+      - name: Debug commit_info
+        run: |
+          if [ -f commit_info.txt ]; then
+            echo "commit_info.txt contents:"
+            cat commit_info.txt
+          else
+            echo "commit_info.txt NOT FOUND"
+          fi
+
+      # ✅ Safe read
       - name: Read commit info
         id: commitinfo
         run: |
           if [ -f commit_info.txt ]; then
             IFS="|" read version revision removed total < commit_info.txt
           else
-            echo "commit_info.txt not found, using defaults"
             version="v0.0.0"
             revision="r0"
             removed="0"
