@@ -25,7 +25,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 10 |
+> | Games | N/A | N/A | 8 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -132,12 +132,11 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://edu4u.dyndns.berlin/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://51.222.206.184.devns.me/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
-
 # 🚀 Nebulo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl | Scramjet, Ultraviolet, Eclipse | 4 |
+> | Proxy/Games | epoxy, libcurl | Scramjet, Ultraviolet, Eclipse | 3 |
 
 > [!IMPORTANT]
 > Nebulo does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -194,18 +193,6 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://scoot.boiso.ar | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://d2w1kmawdyj1d6.cloudfront.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
-# 🦈 Rammerhead
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy | captcha | Rammerhead | 1 |
-
-> [!IMPORTANT]
-> Rammerhead has CAPTCHA support, but only if you purchase a ticket. If you are a free user, you don't have CAPTCHA access.
-> 
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-
 # 🟣 UniUB
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -256,7 +243,6 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://4354.kavellewatches.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://9087.kavellewatches.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
-
 # 🥱 Boredom
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -293,7 +279,6 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://peace.rajanu.com.np/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://camomo.i.cheat.abogaciadigital.ar/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
-
 # 👤 Shadow
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -314,7 +299,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 16 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 15 |
 
 > [!IMPORTANT]
 > dogeub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -337,12 +322,11 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://educationate.s3.amazonaws.com/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://d1ks901xvjj2p6.cloudfront.net/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
-
 # 🌕 Lunar
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 3 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 6 |
 
 > [!IMPORTANT]
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -376,7 +360,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 13 |
+> | Proxy/Games | unknown | Scramjet | 12 |
 
 > [!IMPORTANT]
 > PetZah does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -462,7 +446,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 3 |
+> | Proxy/Games | Unknown | Scramjet | 4 |
 
 > [!IMPORTANT]
 > OnlyLessons does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -550,7 +534,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Ultraviolet | 1 |
+> | Proxy/Games | unknown | Ultraviolet | 2 |
 
 > [!IMPORTANT]
 > Interstellar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -590,7 +574,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 12 |
+> | Proxy/Games | unknown | unknown | 11 |
 
 > [!IMPORTANT]
 > Strawberry does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -608,7 +592,6 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://elements.wanhuiarchitect.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://strawberry.albrightscycling.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://repair.hondascooterparts.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
-
 
 # 🔼 Axiom
 > [!NOTE]
@@ -668,15 +651,6 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://www.securly.com.craftyhour.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://learn.savequeechylake.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://cdn.timeless-twilight.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
-
-# 🌸 cherri
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy, captcha | Scramjet | 1 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
 
 # 🤍 Lucide
 > [!NOTE]
