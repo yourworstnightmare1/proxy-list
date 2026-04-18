@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
-> r25 | Last Updated: April 18, 2026
-> Total Links: 184
+> r26 | Last Updated: April 18, 2026
+> Total Links: 221
 
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -73,7 +73,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Ultraviolet | 4 |
+> | Proxy/Games | captcha | Ultraviolet | 17 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -91,12 +91,15 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://subscribenirbytes-wruoj.monedita.cl/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://subscribenirbytes-qfuen.rezonuns.de/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://tetosarcade.win/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://h2aihbtm.frogseducation.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://ynlfqehb.stmpreschool.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://rb3hwx4r.lakehillpreschool.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # ⭐ DayDream X
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 5 |
+> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 11 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -105,6 +108,12 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://pondering.is-a.software.cdn.cloudflare.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://cdn.jsdelivr.net/gh/NightProxy/DD-Static/dist/index.svg | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://thinks.is-a.software.cdn.cloudflare.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://51.222.206.184.ip.ipq.co/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://51-222-206-184.cprapid.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://51-222-206-184.plesk.page/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://51.222.206.184.nar0.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://edu4u.dyndns.berlin/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://51.222.206.184.devns.me/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 
 # 🚀 Nebulo
@@ -126,7 +135,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 15 |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 22 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -144,6 +153,14 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://15.204.247.166.devns.me/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://test.consulting-octopus.co.uk/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://edu.rawr.africa.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://15-204-247-166.anyip.dev/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://15-204-247-166.z.buglloc.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://15.204.247.166.ip.ipq.co/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://blog.free-dyndns.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://15-204-247-166.cprapid.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://15-204-247-166.plesk.page/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://15.204.247.166.nar0.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://use.dyndns.berlin/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🪴 Fern
 > [!NOTE]
@@ -189,7 +206,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 16 |
+> | Proxy/Games | unknown | Scramjet | 25 |
 
 > [!IMPORTANT]
 > Truffled does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -206,6 +223,21 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://math.gianinifiestas.cl/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://thatsok.bourassa.me/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://learning.trogiang.vn/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://docs.hospedajemariafresia.cl/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://info.alokitofaridgonj.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://pamson.pl.sophiemaslowski.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://education.metronet.se/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://learning.cde3.net/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://math.djtaylor.me/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://reading.dowgo.tw/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://science.heder.dk/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://biology.sunrise.org.uk/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://iloveschool.regularitz.ch/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://algebra.hettiarachchy.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://school.randombox.rocks/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://15412.kavellewatches.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://4354.kavellewatches.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://9087.kavellewatches.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 
 # 🥱 Boredom
@@ -412,7 +444,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 4 |
+> | Proxy/Games | Unknown | Scramjet | 5 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -423,6 +455,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://grab.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://interested.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://sub.umardia.com.mx/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
+| | https://math.free-dyndns.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 📐 Solo Central
 > [!NOTE]
@@ -481,7 +514,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 4 |
+> | Proxy/Games | unknown | unknown | 14 |
 
 > [!IMPORTANT]
 > StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -501,6 +534,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://studyfocus.npoleninetz.ru/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://cakes.casadotricolor.com.br/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://woah.wanhuiarchitect.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://guardian.consulting-octopus.co.uk/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🍓 Strawberry
 > [!NOTE]
@@ -530,7 +564,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 5 |
+> | Proxy/Games | captcha | Scramjet | 6 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -539,12 +573,13 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://family.nembahadurraskoti.com.np/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://status.xcloud.ar/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://travel.national-birdshow.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://learn.sharptutor.net/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🖤 Void Network
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Ultraviolet | 2 |
+> | Proxy/Games | unknown | Ultraviolet | 4 |
 
 > [!IMPORTANT]
 > Void Network does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -553,6 +588,8 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | - | - | - | - | - | - |
 | | https://readandlearnllc.s3.us-east-2.amazonaws.com/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://d3griv5hi58r24.cloudfront.net/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://readandlearnllc.s3.us-east-2.amazonaws.com/index.html | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://d3griv5hi58r65.cloudfront.net/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🦄 Utopia Education
 > [!NOTE]
