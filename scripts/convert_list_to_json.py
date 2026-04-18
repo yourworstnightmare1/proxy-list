@@ -39,6 +39,22 @@ def split_list_field(s: str) -> list[str]:
     return [t.strip().lower() for t in s.split(",") if t.strip()]
 
 
+def parse_list_meta(text: str) -> dict[str, str]:
+    """Read vX.Y.Z and rN from the opening blockquote under # Proxy List."""
+    version, revision = "", ""
+    for raw in text.splitlines()[:40]:
+        inner = strip_blockquote_prefix(raw).strip()
+        if inner.startswith("[!"):
+            continue
+        mv = re.match(r"^(v[\d.]+)\s*\|", inner)
+        if mv:
+            version = mv.group(1)
+        mr = re.match(r"^(r\d+)\s*\|", inner, re.IGNORECASE)
+        if mr:
+            revision = mr.group(1).lower()
+    return {"version": version, "revision": revision}
+
+
 def parse_list_md(text: str) -> list[dict]:
     rows: list[dict] = []
     current_provider: str | None = None
@@ -126,10 +142,13 @@ def main() -> int:
     if not INPUT.is_file():
         print(f"Missing {INPUT}", file=sys.stderr)
         return 1
-    data = parse_list_md(INPUT.read_text(encoding="utf-8"))
+    raw = INPUT.read_text(encoding="utf-8")
+    meta = parse_list_meta(raw)
+    links = parse_list_md(raw)
+    payload = {"meta": meta, "links": links}
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Wrote {len(data)} entries to {OUTPUT}")
+    OUTPUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"Wrote {len(links)} entries to {OUTPUT} ({meta.get('version', '')}{meta.get('revision', '')})")
     return 0
 
 

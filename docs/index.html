@@ -137,6 +137,23 @@
       color: var(--muted);
       line-height: 1.3;
     }
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 1.5rem 2rem;
+      background: #121920;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .site-footer p { margin: 0 0 0.5rem; }
+    .site-footer p:last-child { margin-bottom: 0; }
+    .site-footer a { color: var(--accent); }
+    .site-footer code {
+      font-size: 0.82em;
+      background: var(--surface);
+      padding: 0.1em 0.35em;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -181,6 +198,18 @@
       <div id="tableWrap"></div>
     </main>
   </div>
+  <footer class="site-footer">
+    <p>
+      Original list by
+      <a href="https://github.com/yourworstnightmare1" rel="noopener noreferrer" target="_blank">yourworstnightmare1</a>
+    </p>
+    <p>
+      Data from
+      <a href="https://github.com/yourworstnightmare1/proxy-list/blob/main/list.md" rel="noopener noreferrer" target="_blank">yourworstnightmare1/proxy-list</a>
+      (<code>list.md</code>)
+    </p>
+    <p id="listVersionLine"></p>
+  </footer>
   <script>
     const $ = (id) => document.getElementById(id);
 
@@ -222,14 +251,29 @@
       return selected.some((s) => tags.has(s));
     }
 
-    function render(data) {
+    function formatListVersion(meta) {
+      const v = (meta && meta.version) || "";
+      const r = (meta && meta.revision) || "";
+      if (v && r) return v + r;
+      if (v) return v;
+      if (r) return r;
+      return "—";
+    }
+
+    function setFooter(meta) {
+      const el = $("listVersionLine");
+      if (!el) return;
+      el.textContent = formatListVersion(meta);
+    }
+
+    function render(rows) {
       const q = $("q").value.trim().toLowerCase();
       const providers = selectedIn("providerTags");
       const categories = selectedIn("categoryTags");
       const protocols = selectedIn("protocolTags");
       const caps = selectedCaps();
 
-      const filtered = data.filter((row) => {
+      const filtered = rows.filter((row) => {
         if (providers.length && !providers.includes(row.provider)) return false;
         if (categories.length && !categories.includes(row.category)) return false;
         if (protocols.length) {
@@ -242,7 +286,7 @@
       });
 
       $("stats").innerHTML =
-        "Showing <strong>" + filtered.length + "</strong> of <strong>" + data.length + "</strong> links.";
+        "Showing <strong>" + filtered.length + "</strong> of <strong>" + rows.length + "</strong> links.";
 
       if (!filtered.length) {
         $("tableWrap").innerHTML = '<p class="empty">No links match these filters.</p>';
@@ -297,7 +341,7 @@
       return tags.map((t) => '<span class="pill">' + escapeHtml(t) + "</span>").join("");
     }
 
-    function buildCheckboxGroup(containerId, values, data) {
+    function buildCheckboxGroup(containerId, values, rows) {
       const wrap = $(containerId);
       wrap.innerHTML = "";
       for (const v of values) {
@@ -306,15 +350,25 @@
         const inp = document.createElement("input");
         inp.type = "checkbox";
         inp.value = v;
-        inp.addEventListener("change", () => render(data));
+        inp.addEventListener("change", () => render(rows));
         lab.appendChild(inp);
         lab.appendChild(document.createTextNode(v));
         wrap.appendChild(lab);
       }
     }
 
-    function buildCapCheckboxes(data) {
-      buildCheckboxGroup("capTags", uniq(data.flatMap((r) => r.capability_tags || [])), data);
+    function buildCapCheckboxes(rows) {
+      buildCheckboxGroup("capTags", uniq(rows.flatMap((r) => r.capability_tags || [])), rows);
+    }
+
+    function normalizePayload(json) {
+      if (Array.isArray(json)) {
+        return { meta: {}, links: json };
+      }
+      return {
+        meta: json.meta || {},
+        links: json.links || [],
+      };
     }
 
     fetch("data.json")
@@ -322,22 +376,24 @@
         if (!r.ok) throw new Error("Could not load data.json (" + r.status + ")");
         return r.json();
       })
-      .then((data) => {
-        buildCheckboxGroup("providerTags", uniq(data.map((d) => d.provider)), data);
-        buildCheckboxGroup("categoryTags", uniq(data.map((d) => d.category)), data);
+      .then((json) => {
+        const { meta, links } = normalizePayload(json);
+        setFooter(meta);
+        buildCheckboxGroup("providerTags", uniq(links.map((d) => d.provider)), links);
+        buildCheckboxGroup("categoryTags", uniq(links.map((d) => d.category)), links);
         buildCheckboxGroup(
           "protocolTags",
-          uniq(data.flatMap((d) => d.protocol_tags || [])),
-          data
+          uniq(links.flatMap((d) => d.protocol_tags || [])),
+          links
         );
-        buildCapCheckboxes(data);
+        buildCapCheckboxes(links);
 
-        $("q").addEventListener("input", () => render(data));
+        $("q").addEventListener("input", () => render(links));
         document.querySelectorAll('input[name="capMode"]').forEach((el) => {
-          el.addEventListener("change", () => render(data));
+          el.addEventListener("change", () => render(links));
         });
 
-        render(data);
+        render(links);
       })
       .catch((e) => {
         $("tableWrap").innerHTML =
