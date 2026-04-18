@@ -44,8 +44,8 @@ jobs:
 
       - name: Debug commit_info
         run: |
-          if [ -f commit_info.txt ]; then
-            echo "commit_info.txt found:"
+          if test -f commit_info.txt; then
+            echo "commit_info.txt contents:"
             cat commit_info.txt
           else
             echo "commit_info.txt NOT FOUND"
@@ -54,13 +54,13 @@ jobs:
       - name: Read commit info
         id: commitinfo
         run: |
-          if [ -f commit_info.txt ]; then
+          version="v0.0.0"
+          revision="r0"
+          removed="0"
+          total="0"
+
+          if test -f commit_info.txt; then
             IFS="|" read version revision removed total < commit_info.txt
-          else
-            version="v0.0.0"
-            revision="r0"
-            removed="0"
-            total="0"
           fi
 
           echo "version=$version" >> $GITHUB_OUTPUT
