@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v2.0.2 | Released: April 17, 2026  
-> r17 | Last Updated: April 17, 2026
+> r18 | Last Updated: April 17, 2026\
 > Total Links: 194
 
 <br>
@@ -623,7 +623,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | - | - | - | - | - | - |
 | | https://helptired8.notinthearchives.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
-🤍 Lucide
+# 🤍 Lucide
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
