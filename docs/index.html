@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proxy list</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a222d;
+      --border: #2d3a4d;
+      --text: #e7ecf3;
+      --muted: #8b9cb3;
+      --accent: #6cb3ff;
+      --ok: #3ecf8e;
+      --font: "Segoe UI", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    h1 { font-size: 1.35rem; font-weight: 600; margin: 0 0 0.35rem; }
+    .sub { color: var(--muted); font-size: 0.9rem; }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(240px, 280px) 1fr;
+      gap: 0;
+      min-height: calc(100vh - 88px);
+    }
+    @media (max-width: 840px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+    aside {
+      border-right: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+      background: #121920;
+    }
+    @media (max-width: 840px) {
+      aside { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+    label { display: block; font-size: 0.75rem; color: var(--muted); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    input[type="search"], select {
+      width: 100%;
+      padding: 0.5rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    input[type="search"]:focus, select:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+    fieldset {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin: 0 0 1rem;
+      padding: 0.65rem 0.75rem;
+    }
+    legend { font-size: 0.8rem; color: var(--muted); padding: 0 0.35rem; }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .tag {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      user-select: none;
+    }
+    .tag input { margin: 0; accent-color: var(--accent); }
+    .tag:hover { border-color: var(--muted); }
+    .match-mode {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+    .match-mode label { text-transform: none; font-size: 0.85rem; color: var(--text); margin: 0; display: flex; align-items: center; gap: 0.35rem; }
+    main { padding: 1rem 1.25rem 2rem; overflow-x: auto; }
+    .stats { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+    .stats strong { color: var(--ok); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.55rem 0.65rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th {
+      color: var(--muted);
+      font-weight: 500;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 1;
+    }
+    a { color: var(--accent); word-break: break-all; }
+    .empty { color: var(--muted); padding: 2rem; text-align: center; }
+    .err { color: #ff8a8a; padding: 1rem; }
+    .pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      background: #243044;
+      color: var(--muted);
+      margin-right: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Proxy list</h1>
+    <p class="sub">Filter by provider, category, protocols, and capability tags parsed from <code>list.md</code>.</p>
+  </header>
+  <div class="layout">
+    <aside>
+      <label for="q">Search</label>
+      <input type="search" id="q" placeholder="URL, provider, contributor…" autocomplete="off" />
+
+      <label for="provider">Provider</label>
+      <select id="provider"><option value="">All providers</option></select>
+
+      <label for="category">Category</label>
+      <select id="category"><option value="">All categories</option></select>
+
+      <label for="protocol">Protocol</label>
+      <select id="protocol"><option value="">All protocols</option></select>
+
+      <fieldset>
+        <legend>Capabilities</legend>
+        <div class="match-mode">
+          <label><input type="radio" name="capMode" value="any" checked /> Any selected</label>
+          <label><input type="radio" name="capMode" value="all" /> All selected</label>
+        </div>
+        <div class="tags" id="capTags"></div>
+      </fieldset>
+    </aside>
+    <main>
+      <div class="stats" id="stats"></div>
+      <div id="tableWrap"></div>
+    </main>
+  </div>
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    function uniq(arr) {
+      return [...new Set(arr)].filter(Boolean).sort((a, b) => a.localeCompare(b));
+    }
+
+    function haystack(row) {
+      return [
+        row.link,
+        row.provider,
+        row.category,
+        row.capabilities,
+        row.protocols,
+        row.contributor,
+        row.found,
+      ].join(" ").toLowerCase();
+    }
+
+    function selectedCaps() {
+      return [...document.querySelectorAll("#capTags input:checked")].map((i) => i.value);
+    }
+
+    function capMode() {
+      const m = document.querySelector('input[name="capMode"]:checked');
+      return m ? m.value : "any";
+    }
+
+    function rowMatchesCaps(row, selected) {
+      if (!selected.length) return true;
+      const tags = new Set(row.capability_tags || []);
+      if (capMode() === "all") {
+        return selected.every((s) => tags.has(s));
+      }
+      return selected.some((s) => tags.has(s));
+    }
+
+    function render(data) {
+      const q = $("q").value.trim().toLowerCase();
+      const provider = $("provider").value;
+      const category = $("category").value;
+      const protocol = $("protocol").value;
+      const caps = selectedCaps();
+
+      const filtered = data.filter((row) => {
+        if (provider && row.provider !== provider) return false;
+        if (category && row.category !== category) return false;
+        if (protocol && !(row.protocol_tags || []).includes(protocol)) return false;
+        if (!rowMatchesCaps(row, caps)) return false;
+        if (q && !haystack(row).includes(q)) return false;
+        return true;
+      });
+
+      $("stats").innerHTML =
+        "Showing <strong>" + filtered.length + "</strong> of <strong>" + data.length + "</strong> links.";
+
+      if (!filtered.length) {
+        $("tableWrap").innerHTML = '<p class="empty">No links match these filters.</p>';
+        return;
+      }
+
+      const rowsHtml = filtered
+        .map(
+          (r) =>
+            "<tr><td>" +
+            escapeHtml(r.provider) +
+            '</td><td><a href="' +
+            escapeAttr(r.link) +
+            '" rel="noopener noreferrer" target="_blank">' +
+            escapeHtml(r.link) +
+            "</a></td><td>" +
+            escapeHtml(r.category) +
+            "</td><td>" +
+            formatTags(r.capability_tags) +
+            "</td><td>" +
+            formatTags(r.protocol_tags) +
+            "</td><td>" +
+            escapeHtml(r.contributor) +
+            "</td></tr>"
+        )
+        .join("");
+
+      $("tableWrap").innerHTML =
+        "<table><thead><tr>" +
+        ["Provider", "Link", "Category", "Capabilities", "Protocols", "Contributor"]
+          .map((h) => "<th>" + h + "</th>")
+          .join("") +
+        "</tr></thead><tbody>" +
+        rowsHtml +
+        "</tbody></table>";
+    }
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function escapeAttr(s) {
+      return escapeHtml(s).replace(/'/g, "&#39;");
+    }
+
+    function formatTags(tags) {
+      if (!tags || !tags.length) return '<span class="pill">—</span>';
+      return tags.map((t) => '<span class="pill">' + escapeHtml(t) + "</span>").join("");
+    }
+
+    function fillSelect(sel, values, labelFn) {
+      const cur = sel.value;
+      sel.innerHTML = '<option value="">' + (labelFn || "All") + "</option>";
+      for (const v of values) {
+        const opt = document.createElement("option");
+        opt.value = v;
+        opt.textContent = v;
+        sel.appendChild(opt);
+      }
+      if (values.includes(cur)) sel.value = cur;
+    }
+
+    function buildCapCheckboxes(data) {
+      const tags = uniq(data.flatMap((r) => r.capability_tags || []));
+      const wrap = $("capTags");
+      wrap.innerHTML = "";
+      for (const t of tags) {
+        const lab = document.createElement("label");
+        lab.className = "tag";
+        const inp = document.createElement("input");
+        inp.type = "checkbox";
+        inp.value = t;
+        inp.addEventListener("change", () => render(data));
+        lab.appendChild(inp);
+        lab.appendChild(document.createTextNode(t));
+        wrap.appendChild(lab);
+      }
+    }
+
+    fetch("data.json")
+      .then((r) => {
+        if (!r.ok) throw new Error("Could not load data.json (" + r.status + ")");
+        return r.json();
+      })
+      .then((data) => {
+        fillSelect($("provider"), uniq(data.map((d) => d.provider)), "All providers");
+        fillSelect($("category"), uniq(data.map((d) => d.category)), "All categories");
+        fillSelect(
+          $("protocol"),
+          uniq(data.flatMap((d) => d.protocol_tags || [])),
+          "All protocols"
+        );
+        buildCapCheckboxes(data);
+
+        ["q", "provider", "category", "protocol"].forEach((id) => {
+          $(id).addEventListener("input", () => render(data));
+          $(id).addEventListener("change", () => render(data));
+        });
+        document.querySelectorAll('input[name="capMode"]').forEach((el) => {
+          el.addEventListener("change", () => render(data));
+        });
+
+        render(data);
+      })
+      .catch((e) => {
+        $("tableWrap").innerHTML =
+          '<p class="err">Failed to load data. Open this page via GitHub Pages or a local server so <code>data.json</code> can load (file:// blocks fetch).<br><br>' +
+          escapeHtml(e.message) +
+          "</p>";
+      });
+  </script>
+</body>
+</html>

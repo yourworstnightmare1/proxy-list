@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "0 */6 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "list.md"
+      - "scripts/link_checker.py"
+      - "scripts/convert_list_to_json.py"
 
 permissions:
   contents: write
@@ -41,6 +47,9 @@ jobs:
           EXIT_CODE=$?
           echo "Script exit code: $EXIT_CODE"
           set -e
+
+      - name: Export web data
+        run: python scripts/convert_list_to_json.py
 
       - name: Debug commit_info
         run: |
@@ -95,7 +104,7 @@ jobs:
           git config --global user.name "auto-link-bot"
           git config --global user.email "bot@users.noreply.github.com"
 
-          git add *.md
+          git add *.md docs/data.json
 
           if ! git diff --cached --quiet; then
             git commit -m "${{ steps.commitinfo.outputs.version }}${{ steps.commitinfo.outputs.revision }} | purged ${{ steps.commitinfo.outputs.removed }} dead links, link count: ${{ steps.commitinfo.outputs.total }}"

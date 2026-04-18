@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+"""Parse list.md into structured JSON for the static web UI."""
+
+from __future__ import annotations
+
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+INPUT = ROOT / "list.md"
+OUTPUT = ROOT / "docs" / "data.json"
+
+
+def strip_blockquote_prefix(line: str) -> str:
+    s = line.strip()
+    if s.startswith(">"):
+        s = s[1:].lstrip()
+    return s
+
+
+def split_pipe_row(line: str) -> list[str]:
+    """Split a markdown table row into cells (handles optional leading/trailing pipes)."""
+    s = strip_blockquote_prefix(line).strip()
+    if not s.startswith("|"):
+        return []
+    parts = [p.strip() for p in s.split("|")]
+    if parts and parts[0] == "":
+        parts = parts[1:]
+    if parts and parts[-1] == "":
+        parts = parts[:-1]
+    return parts
+
+
+def split_list_field(s: str) -> list[str]:
+    if not s or s.upper() == "N/A":
+        return []
+    return [t.strip().lower() for t in s.split(",") if t.strip()]
+
+
+def parse_list_md(text: str) -> list[dict]:
+    rows: list[dict] = []
+    current_provider: str | None = None
+    section_category = ""
+    section_capabilities = ""
+    section_protocols = ""
+    in_note_header = False
+
+    for raw in text.splitlines():
+        line = raw.rstrip("\n")
+
+        if re.match(r"^#\s+[^#]", line) and not line.startswith("##"):
+            title = re.sub(r"^#\s+", "", line).strip()
+            if title.casefold() == "proxy list".casefold():
+                current_provider = None
+            else:
+                current_provider = title
+            section_category = ""
+            section_capabilities = ""
+            section_protocols = ""
+            in_note_header = False
+            continue
+
+        inner = strip_blockquote_prefix(line)
+        if inner.strip().startswith("| Category | Capabilities |"):
+            in_note_header = True
+            continue
+        if in_note_header and re.match(r"^\s*\|?\s*-\s*\|", inner):
+            continue
+        if in_note_header and inner.strip().startswith("|"):
+            cells = split_pipe_row(line)
+            if (
+                len(cells) >= 4
+                and cells[0] != "Category"
+                and cells[0] != "-"
+                and not cells[0].replace("-", "").strip() == ""
+            ):
+                section_category = cells[0]
+                section_capabilities = cells[1]
+                section_protocols = cells[2]
+            in_note_header = False
+            continue
+
+        if not line.strip().startswith("|") or line.strip().startswith(">|"):
+            continue
+
+        cells = split_pipe_row(line)
+        if len(cells) < 6:
+            continue
+        if cells[0] == "Locked" and cells[1] == "Link":
+            continue
+        if cells[0] == "-" and cells[1] == "-":
+            continue
+
+        locked, link, found, username, password, contributor = cells[:6]
+        if not link.startswith(("http://", "https://")):
+            continue
+        if not current_provider:
+            continue
+
+        cap_tags = split_list_field(section_capabilities)
+        proto_tags = split_list_field(section_protocols)
+
+        rows.append(
+            {
+                "provider": current_provider,
+                "category": section_category,
+                "capabilities": section_capabilities,
+                "capability_tags": cap_tags,
+                "protocols": section_protocols,
+                "protocol_tags": proto_tags,
+                "locked": locked,
+                "link": link,
+                "found": found,
+                "username": username,
+                "password": password,
+                "contributor": contributor,
+            }
+        )
+
+    return rows
+
+
+def main() -> int:
+    if not INPUT.is_file():
+        print(f"Missing {INPUT}", file=sys.stderr)
+        return 1
+    data = parse_list_md(INPUT.read_text(encoding="utf-8"))
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"Wrote {len(data)} entries to {OUTPUT}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
