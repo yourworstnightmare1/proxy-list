@@ -2,7 +2,7 @@
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
 > r30 | Last Updated: April 18, 2026
-> Total Links: 271
+> Total Links: 302
 
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -42,7 +42,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 25 |
+> | Proxy/Games | captcha | Scramjet | 35 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -71,6 +71,16 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://fortifiedlearning.mathematics.qzz.io/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://mathematics.mathematics.qzz.io/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://education.mathematics.qzz.io/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://vorg-has.me-at-gun-point.cyberninja.ie/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://vorg-has.me-at-gun-point2.cyberninja.ie/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://vorg-has.me-at-gun-point3.cyberninja.ie/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://vorg-has.me-at-gun-point4.cyberninja.ie/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://vorg-has.me-at-gun-point5.cyberninja.ie/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://org-isnt-a-fem.boy.cyberninja.ie/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://vorg-isnt-a-fem.boy2.cyberninja.ie/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://vorg-isnt-a-fem.boy3.cyberninja.ie/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://vorg-isnt-a-fem.boy4.cyberninja.ie/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://vorg-isnt-a-fem.boy5.cyberninja.ie/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # ➗ gn-math
 > [!NOTE]
@@ -182,7 +192,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet, Ultraviolet | 3 |
+> | Proxy/Games | unknown | Scramjet, Ultraviolet | 5 |
 
 > [!IMPORTANT]
 > Fern does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -192,6 +202,8 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://produce.arrowbases.com | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://scoot.boiso.ar | 2/19/2026 | N/A | N/A | yourworstnightmare1
 | | https://d2w1kmawdyj1d6.cloudfront.net/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://s3.amazonaws.com/angelfern/index.html | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://s3.amazonaws.com/deaganfern/index.html | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🟣 UniUB
 > [!NOTE]
@@ -412,7 +424,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 22 |
+> | Proxy/Games | Unknown | Scramjet | 23 |
 
 > [!IMPORTANT]
 > Imp Proxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -441,6 +453,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://vwwko.monedita.cl/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://zkyhb.monedita.cl/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://math.next-education-learning.sbs/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://ela.next-education-learning.sbs/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🔓 OnlyLessons
 > [!NOTE]
@@ -597,7 +610,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 6 |
+> | Proxy/Games | captcha | Scramjet | 7 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -607,12 +620,13 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://status.xcloud.ar/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://travel.national-birdshow.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://learn.sharptutor.net/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://k12edu.duckdns.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🖤 Void Network
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Ultraviolet | 4 |
+> | Proxy/Games | unknown | Ultraviolet | 6 |
 
 > [!IMPORTANT]
 > Void Network does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -623,6 +637,8 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://d3griv5hi58r28.cloudfront.net/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://readandlearnllc.s3.us-east-2.amazonaws.com/index.html | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://d3griv5hi58r69.cloudfront.net/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://web.asthaibangla.com/?/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://web.cyberninja.ie/?/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🦄 Utopia Education
 > [!NOTE]
@@ -654,9 +670,42 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 2 |
+> | Proxy/Games | captcha | Scramjet | 6 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://cdn.jsdelivr.net/gh/lucideproxy/svg@latest/logo.svg#/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://wispserver.dev/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/ap5z/lucide-svg@6c826ca74493882b7bda928a1a4ae89a58467243/logo.svg#/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/scientific-studying/svg@main/logo.svg#/g | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://unpkg.com/browselucide@1.0.0/logo.svg#/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://unpkg.com/browselucide@1.0.1/logo.svg#/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+
+# 👥 InvisiProxy
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | libcurl, epoxy, wisp, tor, captcha | Scramjet, Ultraviolet, Rammerhead | 1 |
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://ethostulsa.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+
+# 🫘 Sea Bean
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Games | unknown | unknown | 10 |
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://cdn.jsdelivr.net/gh/carls-math-class/160164-computerscience@main/doesn.svg | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/carls-math-class/168736-science@main/doesn.svg | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/carls-math-class/339768-philosophy@main/doesn.svg | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/carls-math-class/564952-music@main/doesn.svg | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/carls-math-class/491171-physics@main/doesn.svg | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/carls-math-class/126849-science@main/doesn.svg | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/carls-math-class/669778-philosophy@main/doesn.svg | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/carls-math-class/475315-chemistry@main/doesn.svg | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/carls-math-class/319316-biology@main/doesn.svg | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://cdn.jsdelivr.net/gh/carls-math-class/481867-chemistry@main/doesn.svg | 4/18/2026 | N/A | N/A | yourworstnightmare1
