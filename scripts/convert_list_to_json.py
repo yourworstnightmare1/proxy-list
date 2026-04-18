@@ -39,6 +39,20 @@ def split_list_field(s: str) -> list[str]:
     return [t.strip().lower() for t in s.split(",") if t.strip()]
 
 
+_CONTRIBUTOR_MD = re.compile(r"^\[([^\]]+)\]\(([^)]+)\)\s*$")
+
+
+def parse_contributor_cell(raw: str) -> tuple[str, str | None]:
+    """Return (display_name, optional_profile_url) for JSON / HTML."""
+    s = raw.strip()
+    m = _CONTRIBUTOR_MD.match(s)
+    if m:
+        return m.group(1).strip(), m.group(2).strip() or None
+    if s == "yourworstnightmare1":
+        return s, "https://github.com/yourworstnightmare1"
+    return s, None
+
+
 def parse_list_meta(text: str) -> dict[str, str]:
     """Read vX.Y.Z and rN from the opening blockquote under # Proxy List."""
     version, revision = "", ""
@@ -117,6 +131,7 @@ def parse_list_md(text: str) -> list[dict]:
 
         cap_tags = split_list_field(section_capabilities)
         proto_tags = split_list_field(section_protocols)
+        contrib_label, contrib_url = parse_contributor_cell(contributor)
 
         rows.append(
             {
@@ -131,7 +146,8 @@ def parse_list_md(text: str) -> list[dict]:
                 "found": found,
                 "username": username,
                 "password": password,
-                "contributor": contributor,
+                "contributor": contrib_label,
+                "contributor_url": contrib_url,
             }
         )
 

@@ -30,6 +30,33 @@
     }
     h1 { font-size: 1.35rem; font-weight: 600; margin: 0 0 0.35rem; }
     .sub { color: var(--muted); font-size: 0.9rem; }
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.85rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-primary {
+      background: #1e3a5f;
+      border-color: #2d5588;
+      color: var(--accent);
+    }
+    .btn-primary:hover { background: #254a78; color: #9fd4ff; }
     .layout {
       display: grid;
       grid-template-columns: minmax(260px, 300px) 1fr;
@@ -165,6 +192,10 @@
   <header>
     <h1>Proxy list</h1>
     <p class="sub">Multi-select provider, category, protocol, and capability tags (parsed from <code>list.md</code>). Nothing checked means no filter on that group.</p>
+    <div class="header-actions">
+      <a class="btn btn-primary" href="https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank">Contribute on GitHub</a>
+      <a class="btn" href="https://forms.gle/SMx9EUkBeiFuLwBa8" rel="noopener noreferrer" target="_blank">Contribute via Google Form</a>
+    </div>
   </header>
   <div class="layout">
     <aside>
@@ -230,8 +261,24 @@
         row.capabilities,
         row.protocols,
         row.contributor,
+        row.contributor_url || "",
         row.found,
       ].join(" ").toLowerCase();
+    }
+
+    function formatContributorCell(r) {
+      const label = r.contributor != null ? String(r.contributor) : "";
+      const href = r.contributor_url && String(r.contributor_url).trim();
+      if (href) {
+        return (
+          '<a href="' +
+          escapeAttr(href) +
+          '" rel="noopener noreferrer" target="_blank">' +
+          escapeHtml(label) +
+          "</a>"
+        );
+      }
+      return escapeHtml(label);
     }
 
     function selectedCaps() {
@@ -314,7 +361,7 @@
             "</td><td>" +
             formatTags(r.protocol_tags) +
             "</td><td>" +
-            escapeHtml(r.contributor) +
+            formatContributorCell(r) +
             "</td></tr>"
         )
         .join("");
