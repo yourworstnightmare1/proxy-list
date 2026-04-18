@@ -10,7 +10,7 @@ The default version format is v[version]r[revision].
 [version] uses standard semantic versioning. [revision] is updated each time a new link or change is made.
 
 # Contributions
-View [CONTRIBUTING.md](https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md) for details on how to request links.
+View [CONTRIBUTING.md](https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md) for details on how to request links. You can also submit links on Google Forms if the Contributing Guide confuses you [here](https://forms.gle/NjWM3wQCKEAy6VKu6).
 
 # How is CAPTCHA tested?
 CAPTCHA is tested using the official [Google ReCAPTCHA demo](https://www.google.com/recaptcha/api2/demo)
