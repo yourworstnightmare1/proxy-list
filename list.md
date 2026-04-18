@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
-> r21 | Last Updated: April 18, 2026
+> r22 | Last Updated: April 18, 2026
 > Total Links: 172
 
 <br>
@@ -541,7 +541,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://readandlearnllc.s3.us-east-2.amazonaws.com/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
-| | https://d3griv5hi58r21.cloudfront.net/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://d3griv5hi58r22.cloudfront.net/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 # 🦄 Utopia Education
 > [!NOTE]
