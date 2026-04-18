@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "v2.0.3",
-    "revision": "r22"
+    "revision": "r23"
   },
   "links": [
     {
@@ -3076,7 +3076,7 @@
         "ultraviolet"
       ],
       "locked": "",
-      "link": "https://d3griv5hi58r22.cloudfront.net/shell.html",
+      "link": "https://d3griv5hi58r23.cloudfront.net/shell.html",
       "found": "4/17/2026",
       "username": "N/A",
       "password": "N/A",
