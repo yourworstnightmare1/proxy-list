@@ -32,7 +32,7 @@
     .sub { color: var(--muted); font-size: 0.9rem; }
     .layout {
       display: grid;
-      grid-template-columns: minmax(240px, 280px) 1fr;
+      grid-template-columns: minmax(260px, 300px) 1fr;
       gap: 0;
       min-height: calc(100vh - 88px);
     }
@@ -47,8 +47,8 @@
     @media (max-width: 840px) {
       aside { border-right: none; border-bottom: 1px solid var(--border); }
     }
-    label { display: block; font-size: 0.75rem; color: var(--muted); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.04em; }
-    input[type="search"], select {
+    label[for="q"] { display: block; font-size: 0.75rem; color: var(--muted); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    input[type="search"] {
       width: 100%;
       padding: 0.5rem 0.65rem;
       border-radius: 6px;
@@ -58,7 +58,7 @@
       font-size: 0.9rem;
       margin-bottom: 1rem;
     }
-    input[type="search"]:focus, select:focus {
+    input[type="search"]:focus {
       outline: 2px solid var(--accent);
       outline-offset: 1px;
     }
@@ -131,26 +131,41 @@
       color: var(--muted);
       margin-right: 0.25rem;
     }
+    .hint {
+      margin: 0 0 0.5rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.3;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Proxy list</h1>
-    <p class="sub">Filter by provider, category, protocols, and capability tags parsed from <code>list.md</code>.</p>
+    <p class="sub">Multi-select provider, category, protocol, and capability tags (parsed from <code>list.md</code>). Nothing checked means no filter on that group.</p>
   </header>
   <div class="layout">
     <aside>
       <label for="q">Search</label>
       <input type="search" id="q" placeholder="URL, provider, contributor…" autocomplete="off" />
 
-      <label for="provider">Provider</label>
-      <select id="provider"><option value="">All providers</option></select>
+      <fieldset>
+        <legend>Provider</legend>
+        <p class="hint">Any checked</p>
+        <div class="tags" id="providerTags"></div>
+      </fieldset>
 
-      <label for="category">Category</label>
-      <select id="category"><option value="">All categories</option></select>
+      <fieldset>
+        <legend>Category</legend>
+        <p class="hint">Any checked</p>
+        <div class="tags" id="categoryTags"></div>
+      </fieldset>
 
-      <label for="protocol">Protocol</label>
-      <select id="protocol"><option value="">All protocols</option></select>
+      <fieldset>
+        <legend>Protocol</legend>
+        <p class="hint">Row lists any checked tag</p>
+        <div class="tags" id="protocolTags"></div>
+      </fieldset>
 
       <fieldset>
         <legend>Capabilities</legend>
@@ -189,6 +204,10 @@
       return [...document.querySelectorAll("#capTags input:checked")].map((i) => i.value);
     }
 
+    function selectedIn(containerId) {
+      return [...document.querySelectorAll("#" + containerId + " input:checked")].map((i) => i.value);
+    }
+
     function capMode() {
       const m = document.querySelector('input[name="capMode"]:checked');
       return m ? m.value : "any";
@@ -205,15 +224,18 @@
 
     function render(data) {
       const q = $("q").value.trim().toLowerCase();
-      const provider = $("provider").value;
-      const category = $("category").value;
-      const protocol = $("protocol").value;
+      const providers = selectedIn("providerTags");
+      const categories = selectedIn("categoryTags");
+      const protocols = selectedIn("protocolTags");
       const caps = selectedCaps();
 
       const filtered = data.filter((row) => {
-        if (provider && row.provider !== provider) return false;
-        if (category && row.category !== category) return false;
-        if (protocol && !(row.protocol_tags || []).includes(protocol)) return false;
+        if (providers.length && !providers.includes(row.provider)) return false;
+        if (categories.length && !categories.includes(row.category)) return false;
+        if (protocols.length) {
+          const pt = row.protocol_tags || [];
+          if (!protocols.some((p) => pt.includes(p))) return false;
+        }
         if (!rowMatchesCaps(row, caps)) return false;
         if (q && !haystack(row).includes(q)) return false;
         return true;
@@ -275,33 +297,24 @@
       return tags.map((t) => '<span class="pill">' + escapeHtml(t) + "</span>").join("");
     }
 
-    function fillSelect(sel, values, labelFn) {
-      const cur = sel.value;
-      sel.innerHTML = '<option value="">' + (labelFn || "All") + "</option>";
-      for (const v of values) {
-        const opt = document.createElement("option");
-        opt.value = v;
-        opt.textContent = v;
-        sel.appendChild(opt);
-      }
-      if (values.includes(cur)) sel.value = cur;
-    }
-
-    function buildCapCheckboxes(data) {
-      const tags = uniq(data.flatMap((r) => r.capability_tags || []));
-      const wrap = $("capTags");
+    function buildCheckboxGroup(containerId, values, data) {
+      const wrap = $(containerId);
       wrap.innerHTML = "";
-      for (const t of tags) {
+      for (const v of values) {
         const lab = document.createElement("label");
         lab.className = "tag";
         const inp = document.createElement("input");
         inp.type = "checkbox";
-        inp.value = t;
+        inp.value = v;
         inp.addEventListener("change", () => render(data));
         lab.appendChild(inp);
-        lab.appendChild(document.createTextNode(t));
+        lab.appendChild(document.createTextNode(v));
         wrap.appendChild(lab);
       }
+    }
+
+    function buildCapCheckboxes(data) {
+      buildCheckboxGroup("capTags", uniq(data.flatMap((r) => r.capability_tags || [])), data);
     }
 
     fetch("data.json")
@@ -310,19 +323,16 @@
         return r.json();
       })
       .then((data) => {
-        fillSelect($("provider"), uniq(data.map((d) => d.provider)), "All providers");
-        fillSelect($("category"), uniq(data.map((d) => d.category)), "All categories");
-        fillSelect(
-          $("protocol"),
+        buildCheckboxGroup("providerTags", uniq(data.map((d) => d.provider)), data);
+        buildCheckboxGroup("categoryTags", uniq(data.map((d) => d.category)), data);
+        buildCheckboxGroup(
+          "protocolTags",
           uniq(data.flatMap((d) => d.protocol_tags || [])),
-          "All protocols"
+          data
         );
         buildCapCheckboxes(data);
 
-        ["q", "provider", "category", "protocol"].forEach((id) => {
-          $(id).addEventListener("input", () => render(data));
-          $(id).addEventListener("change", () => render(data));
-        });
+        $("q").addEventListener("input", () => render(data));
         document.querySelectorAll('input[name="capMode"]').forEach((el) => {
           el.addEventListener("change", () => render(data));
         });
