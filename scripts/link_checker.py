@@ -1,19 +1,10 @@
 import re
 import requests
-import os
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 
-# -----------------------
-# Auto-detect markdown file
-# -----------------------
-def find_markdown_file():
-    for file in os.listdir("."):
-        if file.endswith(".md") and file.startswith("list-"):
-            return file
-    raise FileNotFoundError("No list-*.md file found")
-
-INPUT_FILE = find_markdown_file()
+# ✅ FIXED: direct file reference
+INPUT_FILE = "list.md"
 
 # -----------------------
 # Extract links
