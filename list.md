@@ -2,7 +2,7 @@
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
 > r27 | Last Updated: April 18, 2026
-> Total Links: 221
+> Total Links: 271
 
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -42,7 +42,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 9 |
+> | Proxy/Games | captcha | Scramjet | 25 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -54,6 +54,23 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://letmesleep.gleeze.com/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://learning.roshanadhikary.com.np/ | 3/28/2026 | N/A | N/A | yourworstnightmare1
 | | https://test.www.h3fdj0xz.152.53.83.13.sslip.io/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://sweetcheers.freshmilk.co.za/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://conventionalweapons.ifixmowers.ca/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://dangerdays.simplysweetcakesoc.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://hardbullets.skooliebuild.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://likephantomsforever.brandonsbench.net/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://missilekid.koolkidsklub.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://liveandrare.mentealveare.it/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://deathneverstopyou.metallicstream.info/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://livingwithghosts.gostiljegroup.rs/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://mychemicalromance.totk-schematics.xyz/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://bestrockband.bangerade.us/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://twilightband.zerulight.cc/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://twintowers.thelich.monster/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://secretlyvampires.buffythevampslayer.co.uk/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://fortifiedlearning.mathematics.qzz.io/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://mathematics.mathematics.qzz.io/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://education.mathematics.qzz.io/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # ➗ gn-math
 > [!NOTE]
@@ -257,7 +274,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 8 |
+> | Proxy/Games | unknown | Scramjet | 11 |
 
 > [!IMPORTANT]
 > Vapor does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -272,19 +289,26 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://8.tellurideeducationassociation.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://1.tellurideeducationassociation.org/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://ixlwork.storage.googleapis.com/index.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://beep.dex-online.ro/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://peace.rajanu.com.np/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://camomo.i.cheat.abogaciadigital.ar/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 
 # 👤 Shadow
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 18 |
+> | Proxy/Games | unknown | unknown | 4 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
 > 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
+| | https://modernbio.tiatex.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://prowriting.tiatex.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://keengrammar.tiatex.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://classicbio.tiatex.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🐶 dogeub
 > [!NOTE]
@@ -376,19 +400,35 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet | 2 |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet | 16 |
 
 > [!IMPORTANT]
 > OverCloaked does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
 > 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
+| | https://geometry.english.chemistry.music.lecture.clerticket.cl/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://campus.computer.technology.teacher.chemistry.digimaster.srv.br/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://art.history.seminar.biology.literature.truckaday.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://library.computer.vocabulary.chemistry.studying.dosopt.ro/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://calculus.programming.library.drama.history.misf.me/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://physics.music.engineering.grammar.geometry.litescripts.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://homework.seminar.classroom.teacher.computer.harrisoninternational.us/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://physics.project.geography.student.engineering.enduringpowerofattorney.hk/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://seminar.assignment.technology.project.biology.acopiadorescba.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://algebra.calculus.history.science.programming.somgurung.com.np/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://music.calculus.geometry.project.campus.sagaradhikary.com.np/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://computer.math.campus.algebra.geography.netburst.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://literature.english.grammar.chemistry.science.astrodestin.ro/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://english.science.math.teacher.drama.oroverdesa.com.ar/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://physics.computer.teacher.vocabulary.algebra.idav.info/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://biology.library.reading.art.learning.zafa-rancho.com.ar/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 😈 Imp Proxy
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 12 |
+> | Proxy/Games | Unknown | Scramjet | 22 |
 
 > [!IMPORTANT]
 > Imp Proxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -407,6 +447,16 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://cbysk.fxchinese.ca/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://aivu.losarcos.us/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://esyk.monedita.cl/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://dpsgy.albrightscycling.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://ofkn.eastcountywireless.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://yvhv.luxuryroig.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://xcwuz.myfdistribuidora.com.ar/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://wcgcn.tiatex.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://jkzc.flextron.xyz/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://rify.hospitaldelninodif.gob.mx/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://vwwko.monedita.cl/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://zkyhb.monedita.cl/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://math.next-education-learning.sbs/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🔓 OnlyLessons
 > [!NOTE]
