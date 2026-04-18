@@ -12,7 +12,7 @@ def extract_links(content):
     return re.findall(r'https?://[^\s|]+', content)
 
 # -----------------------
-# Normalize URL (for dedupe)
+# Normalize URL
 # -----------------------
 def normalize_url(url):
     return url.strip().rstrip("/")
@@ -21,16 +21,19 @@ def normalize_url(url):
 # Extract version + revision
 # -----------------------
 def extract_version_revision(content):
-    v_match = re.search(r"v\d+\.\d+\.\d+", content)
-    r_match = re.search(r"r\d+", content)
+    try:
+        v_match = re.search(r"v\d+\.\d+\.\d+", content)
+        r_match = re.search(r"r\d+", content)
 
-    version = v_match.group(0) if v_match else "v0.0.0"
-    revision = r_match.group(0) if r_match else "r0"
+        version = v_match.group(0) if v_match else "v0.0.0"
+        revision = r_match.group(0) if r_match else "r0"
 
-    return version, revision
+        return version, revision
+    except:
+        return "v0.0.0", "r0"
 
 # -----------------------
-# Test if link works
+# Test link
 # -----------------------
 def is_working(url):
     try:
@@ -47,18 +50,24 @@ def is_working(url):
         return False
 
 # -----------------------
-# Parallel testing
+# Parallel test
 # -----------------------
 def test_links(links):
     results = {}
-    with ThreadPoolExecutor(max_workers=25) as executor:
-        futures = {executor.submit(is_working, url): url for url in links}
-        for future in futures:
-            url = futures[future]
-            try:
-                results[url] = future.result()
-            except:
-                results[url] = False
+    try:
+        with ThreadPoolExecutor(max_workers=25) as executor:
+            futures = {executor.submit(is_working, url): url for url in links}
+            for future in futures:
+                url = futures[future]
+                try:
+                    results[url] = future.result()
+                except:
+                    results[url] = False
+    except:
+        # fallback if threading fails
+        for url in links:
+            results[url] = False
+
     return results
 
 # -----------------------
@@ -73,44 +82,51 @@ def process_markdown(content, results):
     new_lines = []
 
     for line in content.splitlines():
-        if line.startswith("# "):
-            current_section = line
-            section_counts[current_section] = 0
+        try:
+            if line.startswith("# "):
+                current_section = line
+                section_counts[current_section] = 0
 
-        match = re.search(r'(https?://[^\s|]+)', line)
+            match = re.search(r'(https?://[^\s|]+)', line)
 
-        if match:
-            url = match.group(1)
-            normalized = normalize_url(url)
+            if match:
+                url = match.group(1)
+                normalized = normalize_url(url)
 
-            # skip duplicates
-            if normalized in seen_urls:
-                continue
-            seen_urls.add(normalized)
+                # skip duplicates
+                if normalized in seen_urls:
+                    continue
+                seen_urls.add(normalized)
 
-            # skip dead links
-            if not results.get(url, False):
-                continue
+                # skip dead links
+                if not results.get(url, False):
+                    continue
 
-            new_lines.append(line)
+                new_lines.append(line)
 
-            if current_section:
-                section_counts[current_section] += 1
-                total_links += 1
+                if current_section:
+                    section_counts[current_section] += 1
+                    total_links += 1
+            else:
+                new_lines.append(line)
 
-        else:
+        except:
+            # never crash on bad line
             new_lines.append(line)
 
     updated = "\n".join(new_lines)
 
-    # update total
-    updated = re.sub(
-        r"Total Links:\s*\d+",
-        f"Total Links: {total_links}",
-        updated
-    )
+    # update total links
+    try:
+        updated = re.sub(
+            r"Total Links:\s*\d+",
+            f"Total Links: {total_links}",
+            updated
+        )
+    except:
+        pass
 
-    # update section counts (safe)
+    # update section counts
     for section, count in section_counts.items():
         try:
             updated = re.sub(
@@ -128,29 +144,38 @@ def process_markdown(content, results):
 # Versioning
 # -----------------------
 def bump_revision(content):
-    match = re.search(r"r(\d+)", content)
-    if match:
-        return re.sub(r"r\d+", f"r{int(match.group(1)) + 1}", content)
+    try:
+        match = re.search(r"r(\d+)", content)
+        if match:
+            return re.sub(r"r\d+", f"r{int(match.group(1)) + 1}", content)
+    except:
+        pass
     return content
 
 def bump_version_if_needed(content, old_total, new_total):
-    if new_total != old_total:
-        match = re.search(r"v(\d+)\.(\d+)\.(\d+)", content)
-        if match:
-            major, minor, patch = map(int, match.groups())
-            return re.sub(
-                r"v\d+\.\d+\.\d+",
-                f"v{major}.{minor}.{patch + 1}",
-                content
-            )
+    try:
+        if new_total != old_total:
+            match = re.search(r"v(\d+)\.(\d+)\.(\d+)", content)
+            if match:
+                major, minor, patch = map(int, match.groups())
+                return re.sub(
+                    r"v\d+\.\d+\.\d+",
+                    f"v{major}.{minor}.{patch + 1}",
+                    content
+                )
+    except:
+        pass
     return content
 
 # -----------------------
 # Update date
 # -----------------------
 def update_dates(content):
-    today = datetime.now().strftime("%B %d, %Y")
-    return re.sub(r"Last Updated: .*", f"Last Updated: {today}", content)
+    try:
+        today = datetime.now().strftime("%B %d, %Y")
+        return re.sub(r"Last Updated: .*", f"Last Updated: {today}", content)
+    except:
+        return content
 
 # -----------------------
 # MAIN
@@ -158,33 +183,46 @@ def update_dates(content):
 def main():
     print("Starting script...")
 
-    with open(INPUT_FILE, "r", encoding="utf-8") as f:
-        content = f.read()
+    version = "v0.0.0"
+    revision = "r0"
+    removed_links = 0
+    new_total = 0
 
-    links = extract_links(content)
-    old_total = len(set(normalize_url(l) for l in links))
+    try:
+        with open(INPUT_FILE, "r", encoding="utf-8") as f:
+            content = f.read()
 
-    print(f"Found {len(links)} links")
+        links = extract_links(content)
+        old_total = len(set(normalize_url(l) for l in links))
 
-    results = test_links(links)
+        print(f"Found {len(links)} links")
 
-    updated, new_total = process_markdown(content, results)
+        results = test_links(links)
 
-    removed_links = max(0, old_total - new_total)
+        updated, new_total = process_markdown(content, results)
 
-    updated = bump_revision(updated)
-    updated = bump_version_if_needed(updated, old_total, new_total)
-    updated = update_dates(updated)
+        removed_links = max(0, old_total - new_total)
 
-    version, revision = extract_version_revision(updated)
+        updated = bump_revision(updated)
+        updated = bump_version_if_needed(updated, old_total, new_total)
+        updated = update_dates(updated)
 
-    with open(INPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(updated)
+        version, revision = extract_version_revision(updated)
 
-    with open("commit_info.txt", "w") as f:
-        f.write(f"{version}|{revision}|{removed_links}|{new_total}")
+        with open(INPUT_FILE, "w", encoding="utf-8") as f:
+            f.write(updated)
 
-    print("Finished successfully")
+    except Exception as e:
+        print("ERROR:", e)
+
+    # 🔥 ALWAYS create commit_info.txt (even on failure)
+    try:
+        with open("commit_info.txt", "w") as f:
+            f.write(f"{version}|{revision}|{removed_links}|{new_total}")
+    except:
+        pass
+
+    print("Finished script")
 
 if __name__ == "__main__":
     main()
