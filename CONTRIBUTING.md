@@ -1,6 +1,7 @@
 # Contribute to the List
 Thanks for wanting to build our list and help the community! Here's how to request your link to the list:
 
+# 1. Contribution through GitHub
 ## Requesting Links
 1. [Fork this repository](https://github.com/yourworstnightmare1/proxy-list/fork)
 2. Open the `list.md` file.
@@ -30,6 +31,9 @@ Thanks for wanting to build our list and help the community! Here's how to reque
 
 4. Commit your changes to `main` branch.
 5. Open a pull request.
+
+# 2. Contribute through Google Forms
+[Go to the form here and fill out the info](https://forms.gle/SMx9EUkBeiFuLwBa8), then submit. Your Google email and real name are not shared with us. Please make sure to give a name/alias so we can give you credit for your contribution, else I will just fill it in with "Anonymous Contributor".
 
 ## Rules
 1. Do not give links that are already on the list. It will be denied.
