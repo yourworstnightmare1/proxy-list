@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "v2.0.3",
-    "revision": "r25"
+    "revision": "r27"
   },
   "links": [
     {
@@ -541,6 +541,60 @@
       "contributor": "yourworstnightmare1"
     },
     {
+      "provider": "🐸 frogie's arcade",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://h2aihbtm.frogseducation.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🐸 frogie's arcade",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://ynlfqehb.stmpreschool.org/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🐸 frogie's arcade",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://rb3hwx4r.lakehillpreschool.org/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
       "provider": "⭐ DayDream X",
       "category": "Proxy/Games",
       "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
@@ -651,6 +705,144 @@
       "locked": "",
       "link": "https://thinks.is-a.software.cdn.cloudflare.net/",
       "found": "4/17/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://51.222.206.184.ip.ipq.co/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://51-222-206-184.cprapid.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://51-222-206-184.plesk.page/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://51.222.206.184.nar1.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://edu4u.dyndns.berlin/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://51.222.206.184.devns.me/",
+      "found": "4/18/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1"
@@ -1013,6 +1205,174 @@
       "contributor": "yourworstnightmare1"
     },
     {
+      "provider": "🌑 Space",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://15-204-247-166.anyip.dev/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌑 Space",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://15-204-247-166.z.buglloc.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌑 Space",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://15.204.247.166.ip.ipq.co/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌑 Space",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://blog.free-dyndns.org/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌑 Space",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://15-204-247-166.cprapid.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌑 Space",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://15-204-247-166.plesk.page/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌑 Space",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://15.204.247.166.nar1.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌑 Space",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://use.dyndns.berlin/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
       "provider": "🪴 Fern",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -1264,6 +1624,276 @@
       "locked": "",
       "link": "https://learning.trogiang.vn/",
       "found": "4/17/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://docs.hospedajemariafresia.cl/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://info.alokitofaridgonj.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://pamson.pl.sophiemaslowski.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://education.metronet.se/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://learning.cde3.net/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://math.djtaylor.me/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://reading.dowgo.tw/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://science.heder.dk/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://biology.sunrise.org.uk/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://iloveschool.regularitz.ch/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://algebra.hettiarachchy.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://school.randombox.rocks/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://15412.kavellewatches.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://4354.kavellewatches.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://9087.kavellewatches.com/",
+      "found": "4/18/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1"
@@ -2585,6 +3215,24 @@
       "contributor": "yourworstnightmare1"
     },
     {
+      "provider": "🎮 Rosin",
+      "category": "Proxy/Games",
+      "capabilities": "Unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://math.free-dyndns.org/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
       "provider": "📐 Solo Central",
       "category": "Games",
       "capabilities": "N/A",
@@ -2980,6 +3628,24 @@
       "contributor": "yourworstnightmare1"
     },
     {
+      "provider": "📖 StudyHub",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://guardian.consulting-octopus.co.uk/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
       "provider": "🍓 Strawberry",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -3268,6 +3934,24 @@
       "contributor": "yourworstnightmare1"
     },
     {
+      "provider": "🔼 Axiom",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://learn.sharptutor.net/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
       "provider": "🖤 Void Network",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -3297,8 +3981,44 @@
         "ultraviolet"
       ],
       "locked": "",
-      "link": "https://d3griv5hi58r24.cloudfront.net/shell.html",
+      "link": "https://d3griv5hi58r25.cloudfront.net/shell.html",
       "found": "4/17/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🖤 Void Network",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://readandlearnllc.s3.us-east-2.amazonaws.com/index.html",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🖤 Void Network",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://d3griv5hi58r66.cloudfront.net/",
+      "found": "4/18/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1"
