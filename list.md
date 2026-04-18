@@ -643,8 +643,6 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > | - | - | - | - |
 > | Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet | 4 |
 
-> [!IMPORTANT]
-
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://potato.thehustlinhomesteader.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
