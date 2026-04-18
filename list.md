@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
-> r27 | Last Updated: April 18, 2026
+> r28 | Last Updated: April 18, 2026
 > Total Links: 271
 
 <br>
@@ -128,7 +128,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://51.222.206.184.ip.ipq.co/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://51-222-206-184.cprapid.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://51-222-206-184.plesk.page/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
-| | https://51.222.206.184.nar1.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://51.222.206.184.nar2.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://edu4u.dyndns.berlin/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://51.222.206.184.devns.me/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
@@ -176,7 +176,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://blog.free-dyndns.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://15-204-247-166.cprapid.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://15-204-247-166.plesk.page/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
-| | https://15.204.247.166.nar1.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://15.204.247.166.nar2.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 | | https://use.dyndns.berlin/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🪴 Fern
@@ -637,9 +637,9 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://readandlearnllc.s3.us-east-2.amazonaws.com/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
-| | https://d3griv5hi58r25.cloudfront.net/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://d3griv5hi58r26.cloudfront.net/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://readandlearnllc.s3.us-east-2.amazonaws.com/index.html | 4/18/2026 | N/A | N/A | yourworstnightmare1
-| | https://d3griv5hi58r66.cloudfront.net/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://d3griv5hi58r67.cloudfront.net/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 🦄 Utopia Education
 > [!NOTE]
