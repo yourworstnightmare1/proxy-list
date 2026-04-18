@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
-> r23 | Last Updated: April 18, 2026
+> r24 | Last Updated: April 18, 2026
 > Total Links: 172
 
 <br>
@@ -85,6 +85,12 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://frogsvseesa.contauditor.cl/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://vcsa-yt.installgentoo.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
 | | https://vcsanewvideout.npoleninetz.ru/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://nirbytesfrogiesacrade-eux.bigriversoftware.au/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://wlwzhyvbqn.bigriversoftware.au/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://gegmbayzka.monedita.cl/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://subscribenirbytes-wruoj.monedita.cl/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://subscribenirbytes-qfuen.rezonuns.de/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://tetosarcade.win/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # ⭐ DayDream X
 > [!NOTE]
@@ -286,12 +292,16 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
 
 > [!IMPORTANT]
-> Lunar has performance issues and noticeably lags the whole browser when it's the current tab. If you have a lower-end device, you might experience problems. (tested on macOS 26.3)
+> Lunar has performance issues and noticeably lags the whole browser when it's the current tab. If you have a lower-end device, you might experience problems. (tested on MacBook M1 Pro (2020), macOS 26.3.1)
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://ezpz.robroderia.ro/ | 3/17/2026 | N/A | N/A | yourworstnightmare1
-
+| | https://lunarr.beta-core.net/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://catbear.jessicacadotte.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://domain.jessicacadotte.com/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://bananas.tuxbay.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
+| | https://lunar.tuxbay.org/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 👻 Ghost
 > [!NOTE]
@@ -465,6 +475,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://massgrand.deborahnairn.com/ | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://ca59b73ca9f64bec.euro-line.hu/ | 4/18/2026 | N/A | N/A | yourworstnightmare1
 
 # 📖 StudyHub
 > [!NOTE]
