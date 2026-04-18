@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
-> r24 | Last Updated: April 18, 2026
-> Total Links: 172
+> r25 | Last Updated: April 18, 2026
+> Total Links: 184
 
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -552,7 +552,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://readandlearnllc.s3.us-east-2.amazonaws.com/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
-| | https://d3griv5hi58r23.cloudfront.net/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
+| | https://d3griv5hi58r24.cloudfront.net/shell.html | 4/17/2026 | N/A | N/A | yourworstnightmare1
 
 # 🦄 Utopia Education
 > [!NOTE]

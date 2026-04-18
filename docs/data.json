@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "v2.0.3",
-    "revision": "r23"
+    "revision": "r25"
   },
   "links": [
     {
@@ -428,6 +428,114 @@
       "locked": "",
       "link": "https://vcsanewvideout.npoleninetz.ru/",
       "found": "4/17/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🐸 frogie's arcade",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://nirbytesfrogiesacrade-eux.bigriversoftware.au/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🐸 frogie's arcade",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://wlwzhyvbqn.bigriversoftware.au/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🐸 frogie's arcade",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://gegmbayzka.monedita.cl/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🐸 frogie's arcade",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://subscribenirbytes-wruoj.monedita.cl/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🐸 frogie's arcade",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://subscribenirbytes-qfuen.rezonuns.de/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🐸 frogie's arcade",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://tetosarcade.win/",
+      "found": "4/18/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1"
@@ -1627,6 +1735,101 @@
       "contributor": "yourworstnightmare1"
     },
     {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://lunarr.beta-core.net/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://catbear.jessicacadotte.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://domain.jessicacadotte.com/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://bananas.tuxbay.org/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://lunar.tuxbay.org/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
       "provider": "👻 Ghost",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -2525,6 +2728,24 @@
       "contributor": "yourworstnightmare1"
     },
     {
+      "provider": "🔭 Interstellar",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://ca59b73ca9f64bec.euro-line.hu/",
+      "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1"
+    },
+    {
       "provider": "📖 StudyHub",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -3076,7 +3297,7 @@
         "ultraviolet"
       ],
       "locked": "",
-      "link": "https://d3griv5hi58r23.cloudfront.net/shell.html",
+      "link": "https://d3griv5hi58r24.cloudfront.net/shell.html",
       "found": "4/17/2026",
       "username": "N/A",
       "password": "N/A",
