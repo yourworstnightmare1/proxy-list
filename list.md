@@ -905,14 +905,14 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://unpkg.com/browselucide@1.0.0/logo.svg#/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://unpkg.com/browselucide@1.0.1/logo.svg#/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# ❓ Celestial
+# 🔷 Celestial
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 7 |
+> | Proxy/Games | libcurl, epoxy | Scramjet, Ultraviolet | 7 |
 
 > [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
+> Celestial does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -924,11 +924,11 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://65.109.112.222S4.salavat.ru/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://65.109.112.222S5.salavat.ru/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# ❓ Cherri
+# 🌸 Cherri
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 10 |
+> | Proxy/Games | libcurl, epoxy, captcha | Scramjet | 10 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -946,14 +946,14 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://learning.elpsicologo.com.ar/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cleaning.eeshk.net/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# ❓ Cheesy
+# 🧀 Cheesy
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 5 |
+> | Proxy/Games | unknown | Scramjet | 5 |
 
 > [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
+> Cheesy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -963,7 +963,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://nirbytescheesy.savequeechylake.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://nirbytesisback.thelich.monster/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# ❓ AWP
+# 🔫 AWP
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
@@ -982,11 +982,11 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://awpiscrazy.7s.com.tr/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://useawp.climaref.cl/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# ❓ Afilite
+# ▲ Afilite
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 2 |
+> | Proxy/Games | pending | pending | 2 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -996,7 +996,7 @@ gn-math is currently down due to copyright. It will be back up in the coming wee
 | | https://readinghelpforelementary.online/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://teacher4biology.fit/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# ❓ Waves
+# 🌊 Waves
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
