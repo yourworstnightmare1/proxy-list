@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "v2.0.3",
-    "revision": "r35"
+    "revision": "r36"
   },
   "links": [
     {
@@ -520,25 +520,6 @@
       ],
       "locked": "",
       "link": "https://twilightband.zerulight.cc/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://twintowers.thelich.monster/",
       "found": "4/18/2026",
       "username": "N/A",
       "password": "N/A",
