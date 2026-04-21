@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "v2.0.3",
-    "revision": "r34"
+    "revision": "r35"
   },
   "links": [
     {
@@ -329,25 +329,6 @@
         "scramjet"
       ],
       "locked": "",
-      "link": "https://letmesleep.gleeze.com/",
-      "found": "3/28/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
       "link": "https://learning.roshanadhikary.com.np/",
       "found": "3/28/2026",
       "username": "N/A",
@@ -386,45 +367,7 @@
         "scramjet"
       ],
       "locked": "",
-      "link": "https://conventionalweapons.ifixmowers.ca/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
       "link": "https://dangerdays.simplysweetcakesoc.com/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://hardbullets.skooliebuild.com/",
       "found": "4/18/2026",
       "username": "N/A",
       "password": "N/A",
