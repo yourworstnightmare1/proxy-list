@@ -41,9 +41,16 @@ def url_multiset_signature(content):
 def load_status():
     try:
         with open(STATUS_FILE, "r") as f:
-            return json.load(f)
+            raw = json.load(f)
     except OSError:
         return {}
+    # Merge legacy keys (pre-normalization) into normalized keys.
+    out: dict[str, int] = {}
+    for k, v in raw.items():
+        if isinstance(v, int):
+            nk = normalize_url(str(k))
+            out[nk] = max(out.get(nk, 0), v)
+    return out
 
 
 def save_status(status):
@@ -56,22 +63,36 @@ def save_status(status):
 # -----------------------
 def is_working(url):
     try:
-        r = requests.get(url, timeout=5)
+        r = requests.get(
+            url,
+            timeout=10,
+            headers={"User-Agent": "proxy-list-link-checker/1.0"},
+        )
         return r.status_code < 400
-    except OSError:
+    except Exception:
         return False
 
 
 def test_links(links):
-    results = {}
+    """Map normalized URL -> whether any tested variant responded OK."""
+    results: dict[str, bool] = {}
+    unique: list[str] = []
+    seen_norm: set[str] = set()
+    for url in links:
+        n = normalize_url(url)
+        if n not in seen_norm:
+            seen_norm.add(n)
+            unique.append(url)
     with ThreadPoolExecutor(max_workers=25) as executor:
-        futures = {executor.submit(is_working, url): url for url in links}
+        futures = {executor.submit(is_working, url): url for url in unique}
         for future in futures:
             url = futures[future]
             try:
-                results[url] = future.result()
-            except OSError:
-                results[url] = False
+                ok = future.result()
+            except Exception:
+                ok = False
+            n = normalize_url(url)
+            results[n] = results.get(n, False) or ok
     return results
 
 
@@ -79,8 +100,14 @@ def test_links(links):
 # Process markdown (purge dead links)
 # -----------------------
 def process(content, results, status):
-    seen = set()
-    new_lines = []
+    """Drop table rows whose URL failed FAIL_THRESHOLD times (see link_status.json).
+
+    Uses normalized URLs for result lookup and for persistent failure counts so
+    trailing slashes and duplicate rows behave consistently.
+    """
+    new_lines: list[str] = []
+    # First row for this URL in this run decides keep/remove; duplicate rows match it.
+    keep_duplicate_row: dict[str, bool] = {}
 
     kept = 0
     removed = 0
@@ -92,24 +119,31 @@ def process(content, results, status):
             url = match.group(1)
             norm = normalize_url(url)
 
-            if norm in seen:
-                continue
-            seen.add(norm)
-
-            working = results.get(url, False)
-
-            if working:
-                status[url] = 0
-                new_lines.append(line)
-                kept += 1
-            else:
-                status[url] = status.get(url, 0) + 1
-
-                if status[url] < FAIL_THRESHOLD:
+            if norm in keep_duplicate_row:
+                if keep_duplicate_row[norm]:
                     new_lines.append(line)
                     kept += 1
                 else:
                     removed += 1
+                continue
+
+            working = results.get(norm, False)
+
+            if working:
+                status[norm] = 0
+                new_lines.append(line)
+                kept += 1
+                keep_duplicate_row[norm] = True
+            else:
+                status[norm] = status.get(norm, 0) + 1
+
+                if status[norm] < FAIL_THRESHOLD:
+                    new_lines.append(line)
+                    kept += 1
+                    keep_duplicate_row[norm] = True
+                else:
+                    removed += 1
+                    keep_duplicate_row[norm] = False
         else:
             new_lines.append(line)
 
@@ -281,6 +315,9 @@ def main():
     with open(INPUT_FILE, "w", encoding="utf-8") as f:
         f.write(content)
 
+    # Drop stale entries so the status file stays small.
+    still_present = set(extract_table_urls(content))
+    status = {k: v for k, v in status.items() if k in still_present}
     save_status(status)
 
     update_changelog(removed, total)
