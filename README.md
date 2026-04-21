@@ -2,7 +2,7 @@
 This is a complete list of lots of well known and probably working proxies. Check Releases for new versions of the list.
 
 # Share the list
-Feel free to download the list and share it around!
+Feel free to download the list and share it around! The list is also available at https://yourworstnightmare1.github.io/proxy-list/.
 
 # Versioning info
 The default version format is v[version]r[revision].
