@@ -1,55 +1,19 @@
 {
   "meta": {
     "version": "v2.0.3",
-    "revision": "r39",
+    "revision": "r40",
     "last_updated": "April 22, 2026",
     "unsorted_total": 0
   },
   "link_check": {
-    "checked_at": "2026-04-22T02:01:39Z",
-    "checked_at_display": "2026-04-22 02:01 UTC",
+    "checked_at": "2026-04-22T02:05:58Z",
+    "checked_at_display": "2026-04-22 02:05 UTC",
     "added_count": 0,
-    "removed_count": 38,
+    "removed_count": 2,
     "added_links": [],
     "removed_links": [
-      "https://sciencemath.gtec.ar",
-      "https://dangerdays.simplysweetcakesoc.com",
-      "https://vorg-has.me-at-gun-point.cyberninja.ie",
-      "https://vorg-has.me-at-gun-point4.cyberninja.ie",
-      "https://dxg-is-the-link-op.chickenkiller.com",
-      "https://test.consulting-octopus.co.uk",
-      "https://biology.english.technology.science.writing.incatel.cl",
-      "https://physics.programming.algebra.reading.homework.wirtschaftslexikon.org",
-      "https://science.physics.calculus.lecture.teacher.wckediden.com",
-      "https://lecture.physics.project.teacher.math.salonlucialabra.cl",
-      "https://geometry.music.project.studying.teacher.wirtschaftslexikon.org",
-      "https://library.history.english.teacher.science.wckediden.com",
-      "https://science.english.project.algebra.geometry.wirtschaftslexikon.org",
-      "https://literature.grammar.algebra.drama.classroom.wirtschaftslexikon.org",
-      "https://kelliwoodl.lightspeed-filter.agency",
-      "https://1.lightspeed-filter.agency",
-      "https://2.lightspeed-filter.agency",
-      "https://3.lightspeed-filter.agency",
-      "https://michaelwas.lightspeed-filter.agency",
-      "https://edu.heatmypool.com",
-      "https://math.learning.relaxingco.cl",
-      "https://fff.aussiepie.es",
-      "https://goizzkt3.darkroom-lang.org",
-      "https://lucide-makes-money.prmerp.ru",
-      "https://awpiscrazy.7s.com.tr",
-      "https://teacher4biology.fit",
-      "https://math.assignment.seminar.english.grammar.what3d.ru",
-      "https://engineering.technology.history.chemistry.drama.denkverbot.com",
-      "https://literature.computer.learning.writing.project.goobzkustomz.com",
-      "https://chemistry.algebra.programming.assignment.calculus.presude.hr",
-      "https://literature.engineering.campus.classroom.programming.tripmeals.com",
-      "https://physics.seminar.lecture.teacher.science.planas.cat",
-      "https://library.geometry.learning.project.geography.incatel.cl",
-      "https://engineering.algebra.history.teacher.student.denkverbot.com",
-      "https://english.literature.drama.classroom.seminar.proamerica.cl",
-      "https://chemistry.drama.computer.geometry.geography.paulomaterialelectrico.com",
-      "https://seminar.library.homework.geography.english.brdistan.net",
-      "https://assignment.seminar.music.reading.algebra.nihonkobudo.net"
+      "https://missilekid.koolkidsklub.org",
+      "https://vorg-has.me-at-gun-point2.cyberninja.ie"
     ]
   },
   "links": [
@@ -340,25 +304,6 @@
         "scramjet"
       ],
       "locked": "",
-      "link": "https://missilekid.koolkidsklub.org/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
       "link": "https://liveandrare.mentealveare.it/",
       "found": "4/18/2026",
       "username": "N/A",
@@ -493,25 +438,6 @@
       ],
       "locked": "",
       "link": "https://education.mathematics.qzz.io/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://vorg-has.me-at-gun-point2.cyberninja.ie/",
       "found": "4/18/2026",
       "username": "N/A",
       "password": "N/A",

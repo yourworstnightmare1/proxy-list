@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
-> r39 | Last Updated: April 22, 2026
-> Total Links: 549\
+> r40 | Last Updated: April 22, 2026
+> Total Links: 547\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -54,7 +54,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 22 |
+> | Proxy/Games | captcha | Scramjet | 20 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -63,7 +63,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://im.blue.dabade.ladida-im.blue.human.li/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://prabhseducationalstuff.chickenkiller.com/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learning.roshanadhikary.com.np/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://missilekid.koolkidsklub.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://liveandrare.mentealveare.it/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://deathneverstopyou.metallicstream.info/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://livingwithghosts.gostiljegroup.rs/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -72,7 +71,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://fortifiedlearning.mathematics.qzz.io/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mathematics.mathematics.qzz.io/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://education.mathematics.qzz.io/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://vorg-has.me-at-gun-point2.cyberninja.ie/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vorg-has.me-at-gun-point3.cyberninja.ie/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vorg-has.me-at-gun-point5.cyberninja.ie/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vorg-isnt-a-fem.boy2.cyberninja.ie/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
