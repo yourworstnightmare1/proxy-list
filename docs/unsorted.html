@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unsorted links</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a222d;
+      --border: #2d3a4d;
+      --text: #e7ecf3;
+      --muted: #8b9cb3;
+      --accent: #6cb3ff;
+      --ok: #3ecf8e;
+      --font: "Segoe UI", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      padding: 1.2rem 1.4rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    h1 { margin: 0 0 0.35rem; font-size: 1.3rem; }
+    .sub { color: var(--muted); margin: 0; font-size: 0.9rem; }
+    .actions { margin-top: 0.8rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.42rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.83rem;
+      background: #121920;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    main { padding: 1rem 1.4rem 2rem; }
+    .stats { color: var(--muted); margin-bottom: 1rem; font-size: 0.9rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.55rem 0.65rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 500; }
+    a { color: var(--accent); word-break: break-all; }
+    .empty { color: var(--muted); padding: 1rem 0; }
+    .err { color: #ff8a8a; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Unsorted links</h1>
+    <p class="sub">Temporary holding area for links that do not have a confirmed provider section yet.</p>
+    <div class="actions">
+      <a class="btn" href="./index.html">Back to sorted links</a>
+      <a class="btn" href="https://github.com/yourworstnightmare1/proxy-list/blob/main/unsorted.md" rel="noopener noreferrer" target="_blank">Edit unsorted source</a>
+    </div>
+  </header>
+  <main>
+    <div class="stats" id="stats"></div>
+    <div id="tableWrap"></div>
+  </main>
+  <script>
+    const stats = document.getElementById("stats");
+    const tableWrap = document.getElementById("tableWrap");
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function escapeAttr(s) {
+      return escapeHtml(s).replace(/'/g, "&#39;");
+    }
+
+    fetch("unsorted.json")
+      .then((r) => {
+        if (!r.ok) throw new Error("Could not load unsorted.json (" + r.status + ")");
+        return r.json();
+      })
+      .then((payload) => {
+        const links = Array.isArray(payload) ? payload : (payload.links || []);
+        stats.innerHTML = "Unsorted links: <strong>" + links.length + "</strong>";
+        if (!links.length) {
+          tableWrap.innerHTML = '<p class="empty">No unsorted links right now.</p>';
+          return;
+        }
+        const rows = links.map((r) => {
+          const link = typeof r === "string" ? r : r.link;
+          return (
+            "<tr><td><a href=\"" +
+            escapeAttr(link) +
+            '" rel="noopener noreferrer" target="_blank">' +
+            escapeHtml(link) +
+            "</a></td></tr>"
+          );
+        }).join("");
+        tableWrap.innerHTML = "<table><thead><tr><th>Link</th></tr></thead><tbody>" + rows + "</tbody></table>";
+      })
+      .catch((e) => {
+        tableWrap.innerHTML = '<p class="err">' + escapeHtml(e.message) + "</p>";
+      });
+  </script>
+</body>
+</html>

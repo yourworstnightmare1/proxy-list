@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / "list.md"
 OUTPUT = ROOT / "docs" / "data.json"
 LINK_CHECK_META = ROOT / "docs" / "link_check_meta.json"
+UNSORTED_INPUT = ROOT / "unsorted.md"
+UNSORTED_OUTPUT = ROOT / "docs" / "unsorted.json"
 
 
 def strip_blockquote_prefix(line: str) -> str:
@@ -80,6 +82,21 @@ def load_link_check_meta() -> dict:
         return json.loads(LINK_CHECK_META.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return {}
+
+
+def parse_unsorted_links() -> list[dict[str, str]]:
+    if not UNSORTED_INPUT.is_file():
+        return []
+    raw = UNSORTED_INPUT.read_text(encoding="utf-8")
+    links = re.findall(r"https?://[^\s|)]+", raw)
+    seen: set[str] = set()
+    out: list[dict[str, str]] = []
+    for link in links:
+        if link in seen:
+            continue
+        seen.add(link)
+        out.append({"link": link})
+    return out
 
 
 def parse_list_md(text: str) -> list[dict]:
@@ -174,10 +191,19 @@ def main() -> int:
     raw = INPUT.read_text(encoding="utf-8")
     meta = parse_list_meta(raw)
     links = parse_list_md(raw)
-    payload = {"meta": meta, "link_check": load_link_check_meta(), "links": links}
+    unsorted_links = parse_unsorted_links()
+    payload = {
+        "meta": {**meta, "unsorted_total": len(unsorted_links)},
+        "link_check": load_link_check_meta(),
+        "links": links,
+    }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    UNSORTED_OUTPUT.write_text(json.dumps({"links": unsorted_links}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     OUTPUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"Wrote {len(links)} entries to {OUTPUT} ({meta.get('version', '')}{meta.get('revision', '')})")
+    print(
+        f"Wrote {len(links)} sorted links to {OUTPUT}, {len(unsorted_links)} unsorted links to {UNSORTED_OUTPUT} "
+        f"({meta.get('version', '')}{meta.get('revision', '')})"
+    )
     return 0
 
 

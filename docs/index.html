@@ -195,6 +195,7 @@
     <h1>Proxy list</h1>
     <p class="sub">Multi-select provider, category, protocol, and capability tags (parsed from <code>list.md</code>). Nothing checked means no filter on that group.</p>
     <div class="header-actions">
+      <a class="btn" href="./unsorted.html">Unsorted links</a>
       <a class="btn btn-primary" href="https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank">Contribute on GitHub</a>
       <a class="btn" href="https://forms.gle/SMx9EUkBeiFuLwBa8" rel="noopener noreferrer" target="_blank">Contribute via Google Form</a>
     </div>
@@ -343,13 +344,22 @@
       const added = Number.isFinite(linkCheck && linkCheck.added_count) ? linkCheck.added_count : 0;
       const removed = Number.isFinite(linkCheck && linkCheck.removed_count) ? linkCheck.removed_count : 0;
       const lastUpdated = (meta && meta.last_updated) || "—";
+      const unsortedCount = Number.isFinite(meta && meta.unsorted_total) ? meta.unsorted_total : 0;
+      const combinedTotal = rows.length + unsortedCount;
 
       $("stats").innerHTML =
         '<p class="stat-line">Showing <strong>' +
         filtered.length +
         "</strong> of <strong>" +
         rows.length +
-        "</strong> links.</p>" +
+        "</strong> sorted links.</p>" +
+        '<p class="stat-line">Combined total: <strong>' +
+        rows.length +
+        "</strong> sorted + <strong>" +
+        unsortedCount +
+        "</strong> unsorted = <strong>" +
+        combinedTotal +
+        "</strong>.</p>" +
         '<p class="stat-line">Since last link check: <strong>+' +
         added +
         "</strong> added, <strong>-" +
