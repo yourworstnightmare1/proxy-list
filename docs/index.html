@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Proxy list</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
   <style>
     :root {
       --bg: #0f1419;
@@ -132,6 +133,7 @@
     main { padding: 1rem 1.25rem 2rem; overflow-x: auto; }
     .stats { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
     .stats strong { color: var(--ok); }
+    .stat-line { margin: 0.2rem 0; }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -318,7 +320,7 @@
       el.textContent = formatListVersion(meta);
     }
 
-    function render(rows) {
+    function render(rows, meta, linkCheck) {
       const q = $("q").value.trim().toLowerCase();
       const providers = selectedIn("providerTags");
       const categories = selectedIn("categoryTags");
@@ -337,8 +339,27 @@
         return true;
       });
 
+      const checkedAt = linkCheck && linkCheck.checked_at_display ? linkCheck.checked_at_display : "—";
+      const added = Number.isFinite(linkCheck && linkCheck.added_count) ? linkCheck.added_count : 0;
+      const removed = Number.isFinite(linkCheck && linkCheck.removed_count) ? linkCheck.removed_count : 0;
+      const lastUpdated = (meta && meta.last_updated) || "—";
+
       $("stats").innerHTML =
-        "Showing <strong>" + filtered.length + "</strong> of <strong>" + rows.length + "</strong> links.";
+        '<p class="stat-line">Showing <strong>' +
+        filtered.length +
+        "</strong> of <strong>" +
+        rows.length +
+        "</strong> links.</p>" +
+        '<p class="stat-line">Since last link check: <strong>+' +
+        added +
+        "</strong> added, <strong>-" +
+        removed +
+        "</strong> removed.</p>" +
+        '<p class="stat-line">Last list update: <strong>' +
+        escapeHtml(lastUpdated) +
+        '</strong> • Last link check run: <strong>' +
+        escapeHtml(checkedAt) +
+        "</strong></p>";
 
       if (!filtered.length) {
         $("tableWrap").innerHTML = '<p class="empty">No links match these filters.</p>';
@@ -427,7 +448,7 @@
       return n;
     }
 
-    function buildCheckboxGroup(containerId, values, rows, countForValue) {
+    function buildCheckboxGroup(containerId, values, rows, countForValue, meta, linkCheck) {
       const wrap = $(containerId);
       wrap.innerHTML = "";
       for (const v of values) {
@@ -436,7 +457,7 @@
         const inp = document.createElement("input");
         inp.type = "checkbox";
         inp.value = v;
-        inp.addEventListener("change", () => render(rows));
+        inp.addEventListener("change", () => render(rows, meta, linkCheck));
         const countEl = document.createElement("span");
         countEl.className = "tag-count";
         countEl.textContent = "(" + countForValue(v) + ") ";
@@ -447,21 +468,24 @@
       }
     }
 
-    function buildCapCheckboxes(rows) {
+    function buildCapCheckboxes(rows, meta, linkCheck) {
       buildCheckboxGroup(
         "capTags",
         uniq(rows.flatMap((r) => r.capability_tags || [])),
         rows,
-        (v) => countRowsWithCapability(rows, v)
+        (v) => countRowsWithCapability(rows, v),
+        meta,
+        linkCheck
       );
     }
 
     function normalizePayload(json) {
       if (Array.isArray(json)) {
-        return { meta: {}, links: json };
+        return { meta: {}, link_check: {}, links: json };
       }
       return {
         meta: json.meta || {},
+        link_check: json.link_check || {},
         links: json.links || [],
       };
     }
@@ -472,34 +496,40 @@
         return r.json();
       })
       .then((json) => {
-        const { meta, links } = normalizePayload(json);
+        const { meta, link_check, links } = normalizePayload(json);
         setFooter(meta);
         buildCheckboxGroup(
           "providerTags",
           uniq(links.map((d) => d.provider)),
           links,
-          (v) => countRowsWithProvider(links, v)
+          (v) => countRowsWithProvider(links, v),
+          meta,
+          link_check
         );
         buildCheckboxGroup(
           "categoryTags",
           uniq(links.map((d) => d.category)),
           links,
-          (v) => countRowsWithCategory(links, v)
+          (v) => countRowsWithCategory(links, v),
+          meta,
+          link_check
         );
         buildCheckboxGroup(
           "protocolTags",
           uniq(links.flatMap((d) => d.protocol_tags || [])),
           links,
-          (v) => countRowsWithProtocol(links, v)
+          (v) => countRowsWithProtocol(links, v),
+          meta,
+          link_check
         );
-        buildCapCheckboxes(links);
+        buildCapCheckboxes(links, meta, link_check);
 
-        $("q").addEventListener("input", () => render(links));
+        $("q").addEventListener("input", () => render(links, meta, link_check));
         document.querySelectorAll('input[name="capMode"]').forEach((el) => {
-          el.addEventListener("change", () => render(links));
+          el.addEventListener("change", () => render(links, meta, link_check));
         });
 
-        render(links);
+        render(links, meta, link_check);
       })
       .catch((e) => {
         $("tableWrap").innerHTML =

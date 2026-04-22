@@ -10,6 +10,7 @@ on:
       - "list.md"
       - "scripts/link_checker.py"
       - "scripts/convert_list_to_json.py"
+      - "scripts/update_link_check_meta.py"
 
 permissions:
   contents: write
@@ -49,7 +50,9 @@ jobs:
           set -e
 
       - name: Export web data
-        run: python scripts/convert_list_to_json.py
+        run: |
+          python scripts/update_link_check_meta.py
+          python scripts/convert_list_to_json.py
 
       - name: Debug commit_info
         run: |
@@ -104,7 +107,7 @@ jobs:
           git config --global user.name "auto-link-bot"
           git config --global user.email "bot@users.noreply.github.com"
 
-          git add *.md docs/data.json link_status.json
+          git add *.md docs/data.json docs/link_check_meta.json docs/link_check_snapshot.json link_status.json
 
           if ! git diff --cached --quiet; then
             git commit -m "${{ steps.commitinfo.outputs.version }}${{ steps.commitinfo.outputs.revision }} | purged ${{ steps.commitinfo.outputs.removed }} dead links, link count: ${{ steps.commitinfo.outputs.total }}"

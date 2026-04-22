@@ -11,6 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / "list.md"
 OUTPUT = ROOT / "docs" / "data.json"
+LINK_CHECK_META = ROOT / "docs" / "link_check_meta.json"
 
 
 def strip_blockquote_prefix(line: str) -> str:
@@ -54,8 +55,8 @@ def parse_contributor_cell(raw: str) -> tuple[str, str | None]:
 
 
 def parse_list_meta(text: str) -> dict[str, str]:
-    """Read vX.Y.Z and rN from the opening blockquote under # Proxy List."""
-    version, revision = "", ""
+    """Read vX.Y.Z, rN, and Last Updated from the list header blockquote."""
+    version, revision, last_updated = "", "", ""
     for raw in text.splitlines()[:40]:
         inner = strip_blockquote_prefix(raw).strip()
         if inner.startswith("[!"):
@@ -66,7 +67,19 @@ def parse_list_meta(text: str) -> dict[str, str]:
         mr = re.match(r"^(r\d+)\s*\|", inner, re.IGNORECASE)
         if mr:
             revision = mr.group(1).lower()
-    return {"version": version, "revision": revision}
+        mu = re.search(r"Last Updated:\s*(.+?)\s*\\?$", inner, re.IGNORECASE)
+        if mu:
+            last_updated = mu.group(1).strip()
+    return {"version": version, "revision": revision, "last_updated": last_updated}
+
+
+def load_link_check_meta() -> dict:
+    if not LINK_CHECK_META.is_file():
+        return {}
+    try:
+        return json.loads(LINK_CHECK_META.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
 
 
 def parse_list_md(text: str) -> list[dict]:
@@ -161,7 +174,7 @@ def main() -> int:
     raw = INPUT.read_text(encoding="utf-8")
     meta = parse_list_meta(raw)
     links = parse_list_md(raw)
-    payload = {"meta": meta, "links": links}
+    payload = {"meta": meta, "link_check": load_link_check_meta(), "links": links}
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {len(links)} entries to {OUTPUT} ({meta.get('version', '')}{meta.get('revision', '')})")
