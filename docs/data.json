@@ -1,16 +1,19 @@
 {
   "meta": {
     "version": "v2.0.3",
-    "revision": "r37",
+    "revision": "r38",
     "last_updated": "April 22, 2026"
   },
   "link_check": {
-    "checked_at": "2026-04-22T01:50:20Z",
-    "checked_at_display": "2026-04-22 01:50 UTC",
+    "checked_at": "2026-04-22T01:51:35Z",
+    "checked_at_display": "2026-04-22 01:51 UTC",
     "added_count": 0,
-    "removed_count": 0,
+    "removed_count": 2,
     "added_links": [],
-    "removed_links": []
+    "removed_links": [
+      "https://vlraiscoolcoolcool.examprepare.help",
+      "https://secretlyvampires.buffythevampslayer.co.uk"
+    ]
   },
   "links": [
     {
@@ -262,25 +265,6 @@
         "scramjet"
       ],
       "locked": "",
-      "link": "https://vlraiscoolcoolcool.examprepare.help/",
-      "found": "3/27/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
       "link": "https://im.blue.dabade.ladida-im.blue.human.li/",
       "found": "3/28/2026",
       "username": "N/A",
@@ -453,25 +437,6 @@
       ],
       "locked": "",
       "link": "https://twilightband.zerulight.cc/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://secretlyvampires.buffythevampslayer.co.uk/",
       "found": "4/18/2026",
       "username": "N/A",
       "password": "N/A",
