@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+# Appends URLs from new list.md rows to the commit message.
+#
+# Enable once per clone:
+#   git config core.hooksPath .githooks
+#
+# Disable:
+#   git config --unset core.hooksPath
+
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+exec python3 "$ROOT/scripts/prepare_commit_msg_links.py" "$@"
