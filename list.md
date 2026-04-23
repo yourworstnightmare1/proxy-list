@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
-> r45 | Last Updated: April 23, 2026
-> Total Links: 530\
+> r46 | Last Updated: April 23, 2026
+> Total Links: 529\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -932,19 +932,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://ismenirbytesm.gerenna.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://avengernirbytes.savequeechylake.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://useawp.climaref.cl/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# ▲ Afilite
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | pending | pending | 1 |
-
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://readinghelpforelementary.online/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 👥 InvisiProxy
 > [!NOTE]
