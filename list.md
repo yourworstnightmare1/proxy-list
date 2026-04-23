@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
-> r46 | Last Updated: April 23, 2026
-> Total Links: 529\
+> r47 | Last Updated: April 23, 2026
+> Total Links: 526\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -527,21 +527,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://clever.com.rodzinnawiez.pl/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://poki-boyy.firebaseapp.com/browser.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://clever.com.eastcountywireless.com/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# 🔓 OnlyLessons
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 3 |
-
-> [!IMPORTANT]
-> OnlyLessons does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
-> 
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://sunny-day.global.ssl.fastly.net/ | 3/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://fast.batteryeducation.xyz/ | 3/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ixl.ela.nwpa.com.au/ | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🍫 Endis
 > [!NOTE]

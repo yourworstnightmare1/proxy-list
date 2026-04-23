@@ -1,18 +1,20 @@
 {
   "meta": {
     "version": "v2.0.3",
-    "revision": "r46",
+    "revision": "r47",
     "last_updated": "April 23, 2026",
     "unsorted_total": 2016
   },
   "link_check": {
-    "checked_at": "2026-04-23T13:14:39Z",
-    "checked_at_display": "2026-04-23 13:14 UTC",
+    "checked_at": "2026-04-23T19:00:55Z",
+    "checked_at_display": "2026-04-23 19:00 UTC",
     "added_count": 0,
-    "removed_count": 1,
+    "removed_count": 3,
     "added_links": [],
     "removed_links": [
-      "https://readinghelpforelementary.online"
+      "https://sunny-day.global.ssl.fastly.net",
+      "https://fast.batteryeducation.xyz",
+      "https://ixl.ela.nwpa.com.au"
     ]
   },
   "links": [
@@ -5367,63 +5369,6 @@
       "locked": "",
       "link": "https://clever.com.eastcountywireless.com/",
       "found": "4/21/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🔓 OnlyLessons",
-      "category": "Proxy/Games",
-      "capabilities": "Unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://sunny-day.global.ssl.fastly.net/",
-      "found": "3/27/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🔓 OnlyLessons",
-      "category": "Proxy/Games",
-      "capabilities": "Unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://fast.batteryeducation.xyz/",
-      "found": "3/27/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🔓 OnlyLessons",
-      "category": "Proxy/Games",
-      "capabilities": "Unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://ixl.ela.nwpa.com.au/",
-      "found": "4/17/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
