@@ -1,17 +1,29 @@
 {
   "meta": {
     "version": "v2.0.3",
-    "revision": "r44",
-    "last_updated": "April 22, 2026",
+    "revision": "r45",
+    "last_updated": "April 23, 2026",
     "unsorted_total": 2016
   },
   "link_check": {
-    "checked_at": "2026-04-23T02:05:48Z",
-    "checked_at_display": "2026-04-23 02:05 UTC",
+    "checked_at": "2026-04-23T07:28:26Z",
+    "checked_at_display": "2026-04-23 07:28 UTC",
     "added_count": 0,
-    "removed_count": 0,
+    "removed_count": 11,
     "added_links": [],
-    "removed_links": []
+    "removed_links": [
+      "https://realeducation.surak.kz",
+      "https://educationate.eclipsecastellon.net",
+      "https://filterbrowser.krishokbarta24.com",
+      "https://filterbrowser.minibarnsonline.com",
+      "https://filterbrowser.adrian-hofer.at",
+      "https://filterbrowser.2sh.tw",
+      "https://learning.elpsicologo.com.ar",
+      "https://cleaning.eeshk.net",
+      "https://learning.classyportal.com/onboarding",
+      "https://unitedstates.optosupply.com/onboarding",
+      "https://tempos.flextron.xyz/onboarding"
+    ]
   },
   "links": [
     {
@@ -8900,237 +8912,6 @@
       "locked": "",
       "link": "https://celestialdevsalot.github.io/celestialisbest/",
       "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://realeducation.surak.kz/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://educationate.eclipsecastellon.net/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://filterbrowser.krishokbarta24.com/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://filterbrowser.minibarnsonline.com/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://filterbrowser.adrian-hofer.at/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://filterbrowser.2sh.tw/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://learning.elpsicologo.com.ar/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://cleaning.eeshk.net/",
-      "found": "4/18/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://learning.classyportal.com/onboarding/",
-      "found": "4/21/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://unitedstates.optosupply.com/onboarding/",
-      "found": "4/21/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌸 Cherri",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, captcha",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://tempos.flextron.xyz/onboarding/",
-      "found": "4/21/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
