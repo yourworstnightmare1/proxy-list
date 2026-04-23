@@ -6,14 +6,12 @@
     "unsorted_total": 2016
   },
   "link_check": {
-    "checked_at": "2026-04-22T19:06:27Z",
-    "checked_at_display": "2026-04-22 19:06 UTC",
+    "checked_at": "2026-04-23T02:05:48Z",
+    "checked_at_display": "2026-04-23 02:05 UTC",
     "added_count": 0,
-    "removed_count": 1,
+    "removed_count": 0,
     "added_links": [],
-    "removed_links": [
-      "https://vorg-isnt-a-fem.boy2.cyberninja.ie"
-    ]
+    "removed_links": []
   },
   "links": [
     {
