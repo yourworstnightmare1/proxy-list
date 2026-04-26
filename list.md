@@ -1406,6 +1406,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://infamous.qzz.io/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 | | https://photoshoot.estudiodebiaggi.com.ar/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
 # Cherri
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -1441,6 +1442,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://vcsayt.gdtconsultoria.cl/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://whenever.ma-dang.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://youtube.com.vcsa.lalitakc.com.np/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
 # LuminalOS
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
