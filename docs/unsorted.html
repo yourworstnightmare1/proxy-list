@@ -44,6 +44,41 @@
     }
     .btn:hover { border-color: var(--accent); color: var(--accent); }
     main { padding: 1rem 1.4rem 2rem; }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+      align-items: end;
+    }
+    .control {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      min-width: 220px;
+      flex: 1;
+    }
+    .control label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .control input,
+    .control select {
+      width: 100%;
+      padding: 0.5rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+    .control input:focus,
+    .control select:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
     .stats { color: var(--muted); margin-bottom: 1rem; font-size: 0.9rem; }
     table {
       width: 100%;
@@ -72,12 +107,29 @@
     </div>
   </header>
   <main>
+    <div class="controls">
+      <div class="control">
+        <label for="q">Search</label>
+        <input type="search" id="q" placeholder="Filter links or domains..." autocomplete="off" />
+      </div>
+      <div class="control">
+        <label for="sortMode">Sort</label>
+        <select id="sortMode">
+          <option value="none">Original order</option>
+          <option value="domain-asc">Domain (A-Z)</option>
+          <option value="domain-desc">Domain (Z-A)</option>
+        </select>
+      </div>
+    </div>
     <div class="stats" id="stats"></div>
     <div id="tableWrap"></div>
   </main>
   <script>
     const stats = document.getElementById("stats");
     const tableWrap = document.getElementById("tableWrap");
+    const q = document.getElementById("q");
+    const sortMode = document.getElementById("sortMode");
+    let allLinks = [];
 
     function escapeHtml(s) {
       return String(s)
@@ -91,6 +143,66 @@
       return escapeHtml(s).replace(/'/g, "&#39;");
     }
 
+    function safeDomain(link) {
+      try {
+        return new URL(link).hostname.toLowerCase();
+      } catch (_) {
+        return "";
+      }
+    }
+
+    function getFilteredAndSortedRows() {
+      const query = q.value.trim().toLowerCase();
+      const mode = sortMode.value;
+      const rows = allLinks
+        .filter((link) => {
+          if (!query) return true;
+          return link.toLowerCase().includes(query) || safeDomain(link).includes(query);
+        })
+        .map((link) => ({ link, domain: safeDomain(link) }));
+
+      if (mode === "domain-asc" || mode === "domain-desc") {
+        const direction = mode === "domain-asc" ? 1 : -1;
+        rows.sort((a, b) => {
+          const domainCmp = a.domain.localeCompare(b.domain);
+          if (domainCmp !== 0) return domainCmp * direction;
+          return a.link.localeCompare(b.link) * direction;
+        });
+      }
+
+      return rows;
+    }
+
+    function render() {
+      const rowsData = getFilteredAndSortedRows();
+      stats.innerHTML =
+        'Showing <strong>' +
+        rowsData.length +
+        '</strong> of <strong>' +
+        allLinks.length +
+        "</strong> unsorted links.";
+
+      if (!rowsData.length) {
+        tableWrap.innerHTML = '<p class="empty">No unsorted links match your search/filter.</p>';
+        return;
+      }
+
+      const rows = rowsData
+        .map((r) => {
+          return (
+            "<tr><td>" +
+            escapeHtml(r.domain || "—") +
+            "</td><td><a href=\"" +
+            escapeAttr(r.link) +
+            '" rel="noopener noreferrer" target="_blank">' +
+            escapeHtml(r.link) +
+            "</a></td></tr>"
+          );
+        })
+        .join("");
+      tableWrap.innerHTML = "<table><thead><tr><th>Domain</th><th>Link</th></tr></thead><tbody>" + rows + "</tbody></table>";
+    }
+
     fetch("unsorted.json")
       .then((r) => {
         if (!r.ok) throw new Error("Could not load unsorted.json (" + r.status + ")");
@@ -98,22 +210,15 @@
       })
       .then((payload) => {
         const links = Array.isArray(payload) ? payload : (payload.links || []);
-        stats.innerHTML = "Unsorted links: <strong>" + links.length + "</strong>";
         if (!links.length) {
+          stats.innerHTML = "Unsorted links: <strong>0</strong>";
           tableWrap.innerHTML = '<p class="empty">No unsorted links right now.</p>';
           return;
         }
-        const rows = links.map((r) => {
-          const link = typeof r === "string" ? r : r.link;
-          return (
-            "<tr><td><a href=\"" +
-            escapeAttr(link) +
-            '" rel="noopener noreferrer" target="_blank">' +
-            escapeHtml(link) +
-            "</a></td></tr>"
-          );
-        }).join("");
-        tableWrap.innerHTML = "<table><thead><tr><th>Link</th></tr></thead><tbody>" + rows + "</tbody></table>";
+        allLinks = links.map((r) => (typeof r === "string" ? r : r.link)).filter(Boolean);
+        q.addEventListener("input", render);
+        sortMode.addEventListener("change", render);
+        render();
       })
       .catch((e) => {
         tableWrap.innerHTML = '<p class="err">' + escapeHtml(e.message) + "</p>";
