@@ -6,11 +6,27 @@
     "unsorted_total": 2016
   },
   "link_check": {
-    "checked_at": "2026-04-25T18:41:48Z",
-    "checked_at_display": "2026-04-25 18:41 UTC",
-    "added_count": 0,
+    "checked_at": "2026-04-26T01:48:16Z",
+    "checked_at_display": "2026-04-26 01:48 UTC",
+    "added_count": 15,
     "removed_count": 0,
-    "added_links": [],
+    "added_links": [
+      "https://storage.googleapis.com/daydreaming/dist/index.html",
+      "https://update.update.really.info.north-kazakhstan.su.cdn.cloudflare.net",
+      "https://update.update.lunar.info.north-kazakhstan.su.cdn.cloudflare.net",
+      "https://update.www.hello.info.north-kazakhstan.su.cdn.cloudflare.net",
+      "https://update.www.spacce.info.north-kazakhstan.su.cdn.cloudflare.net",
+      "https://www.hjxcbshadikjsad.info.north-kazakhstan.su.cdn.cloudflare.net",
+      "https://d1w7oj52hl4x53.cloudfront.net",
+      "https://storage.googleapis.com/canvas-lms/index.html#/search",
+      "https://s3.amazonaws.com/ghst/index.html",
+      "https://cdn.jsdelivr.net/gh/pineapple-petezah/homework/main.svg",
+      "https://cdn.jsdelivr.net/gh/PeteZah-G/copy-2/main.svg",
+      "https://cdn.jsdelivr.net/gh/applebeescheese16-glitch/science@main/main.svg",
+      "https://firefrog6710.firebaseapp.com/games",
+      "https://cdn.jsdelivr.net/gh/Hydra-Network/BromineLite@main/index.svg",
+      "https://d37ddzngqz342i.cloudfront.net"
+    ],
     "removed_links": []
   },
   "links": [
@@ -1174,6 +1190,150 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://storage.googleapis.com/daydreaming/dist/index.html",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://update.update.really.info.north-kazakhstan.su.cdn.cloudflare.net/",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://update.update.lunar.info.north-kazakhstan.su.cdn.cloudflare.net/",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://update.www.hello.info.north-kazakhstan.su.cdn.cloudflare.net/",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://update.www.spacce.info.north-kazakhstan.su.cdn.cloudflare.net/",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "⭐ DayDream X",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp",
+        "captcha",
+        "reflux"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://www.hjxcbshadikjsad.info.north-kazakhstan.su.cdn.cloudflare.net/",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
       "provider": "🚀 Nebulo",
       "category": "Proxy/Games",
       "capabilities": "epoxy, libcurl",
@@ -1884,6 +2044,26 @@
       "locked": "",
       "link": "https://s3.amazonaws.com/deaganfern/index.html",
       "found": "4/18/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🪴 Fern",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://d1w7oj52hl4x53.cloudfront.net/",
+      "found": "4/25/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
@@ -3719,6 +3899,26 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🐶 dogeub",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://storage.googleapis.com/canvas-lms/index.html#/search",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
       "provider": "🌕 Lunar",
       "category": "Proxy/Games",
       "capabilities": "wisp",
@@ -3892,6 +4092,25 @@
       "locked": "",
       "link": "https://main.d39joesfd55qkg.amplifyapp.com/",
       "found": "3/17/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "👻 Ghost",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/ghst/index.html",
+      "found": "4/25/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
@@ -4272,6 +4491,101 @@
       "locked": "",
       "link": "https://nextyear.gressvikbmx.no/",
       "found": "4/21/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🍕 PetZah",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://cdn.jsdelivr.net/gh/pineapple-petezah/homework/main.svg",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🍕 PetZah",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://cdn.jsdelivr.net/gh/PeteZah-G/copy-2/main.svg",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🍕 PetZah",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://cdn.jsdelivr.net/gh/applebeescheese16-glitch/science@main/main.svg",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🕳️ Rift",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://firefrog6710.firebaseapp.com/games",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "💧 Hydra-Network",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://cdn.jsdelivr.net/gh/Hydra-Network/BromineLite@main/index.svg",
+      "found": "4/25/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
@@ -8925,6 +9239,25 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🧀 Cheesy",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://d37ddzngqz342i.cloudfront.net/",
+      "found": "4/25/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "yourworstnightmare1",
+      "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
       "provider": "🔫 AWP",
       "category": "pending",
       "capabilities": "pending",
@@ -10093,323 +10426,6 @@
       "locked": "",
       "link": "https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/real-theorem-2414@main/doesn.svg",
       "found": "4/21/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "⭐ DayDream X",
-      "category": "Proxy/Games",
-      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
-      "capability_tags": [
-        "epoxy",
-        "libcurl",
-        "wisp",
-        "captcha",
-        "reflux"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "Scramjet",
-        "Ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://storage.googleapis.com/daydreaming/dist/index.html",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "⭐ DayDream X",
-      "category": "Proxy/Games",
-      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
-      "capability_tags": [
-        "epoxy",
-        "libcurl",
-        "wisp",
-        "captcha",
-        "reflux"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "Scramjet",
-        "Ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://update.update.really.info.north-kazakhstan.su.cdn.cloudflare.net/",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "⭐ DayDream X",
-      "category": "Proxy/Games",
-      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
-      "capability_tags": [
-        "epoxy",
-        "libcurl",
-        "wisp",
-        "captcha",
-        "reflux"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "Scramjet",
-        "Ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://update.update.lunar.info.north-kazakhstan.su.cdn.cloudflare.net/",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "⭐ DayDream X",
-      "category": "Proxy/Games",
-      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
-      "capability_tags": [
-        "epoxy",
-        "libcurl",
-        "wisp",
-        "captcha",
-        "reflux"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "Scramjet",
-        "Ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://update.www.hello.info.north-kazakhstan.su.cdn.cloudflare.net/",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "⭐ DayDream X",
-      "category": "Proxy/Games",
-      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
-      "capability_tags": [
-        "epoxy",
-        "libcurl",
-        "wisp",
-        "captcha",
-        "reflux"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "Scramjet",
-        "Ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://update.www.spacce.info.north-kazakhstan.su.cdn.cloudflare.net/",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "⭐ DayDream X",
-      "category": "Proxy/Games",
-      "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
-      "capability_tags": [
-        "epoxy",
-        "libcurl",
-        "wisp",
-        "captcha",
-        "reflux"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "Scramjet",
-        "Ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://www.hjxcbshadikjsad.info.north-kazakhstan.su.cdn.cloudflare.net/",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🪴 Fern",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "Scramjet",
-        "Ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://d1w7oj52hl4x53.cloudfront.net/",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🐶 dogeub",
-      "category": "Proxy/Games",
-      "capabilities": "wisp",
-      "capability_tags": [
-        "wisp"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "Scramjet",
-        "Ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://storage.googleapis.com/canvas-lms/index.html#/search",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "👻 Ghost",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "Scramjet"
-      ],
-      "locked": "",
-      "link": "https://s3.amazonaws.com/ghst/index.html",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍕 PetZah",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "Scramjet"
-      ],
-      "locked": "",
-      "link": "https://cdn.jsdelivr.net/gh/pineapple-petezah/homework/main.svg",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍕 PetZah",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "Scramjet"
-      ],
-      "locked": "",
-      "link": "https://cdn.jsdelivr.net/gh/PeteZah-G/copy-2/main.svg",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍕 PetZah",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "Scramjet"
-      ],
-      "locked": "",
-      "link": "https://cdn.jsdelivr.net/gh/applebeescheese16-glitch/science@main/main.svg",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🕳️ Rift",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://firefrog6710.firebaseapp.com/games",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "💧 Hydra-Network",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://cdn.jsdelivr.net/gh/Hydra-Network/BromineLite@main/index.svg",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧀 Cheesy",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "Scramjet"
-      ],
-      "locked": "",
-      "link": "https://d37ddzngqz342i.cloudfront.net/",
-      "found": "4/25/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
