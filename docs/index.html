@@ -58,6 +58,19 @@
       color: var(--accent);
     }
     .btn-primary:hover { background: #254a78; color: #9fd4ff; }
+    .btn-active {
+      border-color: #2d5588;
+      color: #9fd4ff;
+      background: #1f2e42;
+    }
+    #selectFilterBtn {
+      font-weight: 600;
+    }
+    .selected-filter-label {
+      margin-top: 0.55rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
     .layout {
       display: grid;
       grid-template-columns: minmax(260px, 300px) 1fr;
@@ -188,6 +201,94 @@
       padding: 0.1em 0.35em;
       border-radius: 4px;
     }
+    .summary-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 10, 14, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 30;
+    }
+    .summary-backdrop.open { display: flex; }
+    .summary-modal {
+      width: min(760px, 100%);
+      max-height: 85vh;
+      overflow: auto;
+      background: #121920;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    }
+    .summary-head {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.65rem;
+    }
+    .summary-title { font-size: 1rem; margin: 0; }
+    .summary-body { padding: 1rem; }
+    .summary-muted { color: var(--muted); font-size: 0.84rem; margin: 0 0 0.7rem; }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 0.9rem;
+    }
+    @media (max-width: 640px) {
+      .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    .summary-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      padding: 0.55rem 0.65rem;
+    }
+    .summary-k { display: block; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .summary-v { font-size: 1.08rem; font-weight: 600; }
+    .provider-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .provider-table th, .provider-table td { border-bottom: 1px solid var(--border); padding: 0.45rem 0.5rem; }
+    .provider-table th { color: var(--muted); font-weight: 500; }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.1rem 0.42rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      border: 1px solid var(--border);
+      background: #1e2937;
+    }
+    .status-pill.blocked { color: #ff8a8a; border-color: #60333e; }
+    .status-pill.unblocked { color: #6be4a9; border-color: #305244; }
+    .status-pill.warning { color: #ffd57e; border-color: #5d4d2a; }
+    .risk-notice {
+      border: 1px solid #5f4b2d;
+      background: #2a2215;
+      color: #ffd57e;
+      border-radius: 8px;
+      padding: 0.6rem 0.7rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.84rem;
+      line-height: 1.4;
+    }
+    .risk-notice strong { color: #ffe3aa; }
+    #filterSelect {
+      width: 100%;
+      padding: 0.5rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+    #filterSelect:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
   </style>
 </head>
 <body>
@@ -196,9 +297,11 @@
     <p class="sub">Multi-select provider, category, protocol, and capability tags (parsed from <code>list.md</code>). Nothing checked means no filter on that group.</p>
     <div class="header-actions">
       <a class="btn" href="./unsorted.html">Unsorted links</a>
+      <button class="btn" id="selectFilterBtn" type="button">Select filter</button>
       <a class="btn btn-primary" href="https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank">Contribute on GitHub</a>
       <a class="btn" href="https://forms.gle/SMx9EUkBeiFuLwBa8" rel="noopener noreferrer" target="_blank">Contribute via Google Form</a>
     </div>
+    <p class="selected-filter-label" id="selectedFilterLabel">Selected gn-math filter: Any / Not selected</p>
   </header>
   <div class="layout">
     <aside>
@@ -249,8 +352,38 @@
     </p>
     <p id="listVersionLine"></p>
   </footer>
+  <div class="summary-backdrop" id="summaryBackdrop" aria-hidden="true">
+    <section class="summary-modal" role="dialog" aria-modal="true" aria-labelledby="summaryTitle">
+      <div class="summary-head">
+        <h2 class="summary-title" id="summaryTitle">Link summary</h2>
+        <button class="btn" id="summaryCloseBtn" type="button">Close</button>
+      </div>
+      <div class="summary-body" id="summaryBody"></div>
+    </section>
+  </div>
+  <div class="summary-backdrop" id="filterBackdrop" aria-hidden="true">
+    <section class="summary-modal" role="dialog" aria-modal="true" aria-labelledby="filterTitle">
+      <div class="summary-head">
+        <h2 class="summary-title" id="filterTitle">Select gn-math Filter</h2>
+        <button class="btn" id="filterCloseBtn" type="button">Close</button>
+      </div>
+      <div class="summary-body">
+        <p class="summary-muted">Choose the filter used on your network. Link summaries will show a warning when this filter reports blocked or warning.</p>
+        <select id="filterSelect">
+          <option value="">Any / Not selected</option>
+        </select>
+        <p style="margin-top:0.75rem;">
+          <button class="btn" id="hideBlockedBtn" type="button">Hide blocked links: Off</button>
+        </p>
+      </div>
+    </section>
+  </div>
   <script>
     const $ = (id) => document.getElementById(id);
+    let linkLensData = {};
+    let checkedDomains = new Set();
+    let selectedGnMathFilter = "";
+    let hideBlockedBySelectedFilter = false;
 
     function uniq(arr) {
       return [...new Set(arr)].filter(Boolean).sort((a, b) => a.localeCompare(b));
@@ -337,6 +470,7 @@
         }
         if (!rowMatchesCaps(row, caps)) return false;
         if (q && !haystack(row).includes(q)) return false;
+        if (hideBlockedBySelectedFilter && isBlockedBySelectedFilter(row.link)) return false;
         return true;
       });
 
@@ -383,7 +517,9 @@
             escapeHtml(r.provider) +
             '</td><td><a href="' +
             escapeAttr(r.link) +
-            '" rel="noopener noreferrer" target="_blank">' +
+            '" rel="noopener noreferrer" target="_blank" class="js-link-summary" data-link="' +
+            escapeAttr(r.link) +
+            '">' +
             escapeHtml(r.link) +
             "</a></td><td>" +
             escapeHtml(r.category) +
@@ -405,6 +541,204 @@
         "</tr></thead><tbody>" +
         rowsHtml +
         "</tbody></table>";
+    }
+
+    function domainOf(link) {
+      try {
+        return new URL(link).hostname.toLowerCase();
+      } catch (_) {
+        return "";
+      }
+    }
+
+    function statusClass(status) {
+      if (status === "blocked") return "blocked";
+      if (status === "unblocked") return "unblocked";
+      return "warning";
+    }
+
+    function cleanSummaryText(value) {
+      return String(value == null ? "" : value).replace(/\*\*/g, "").replace(/\s{2,}/g, " ").trim();
+    }
+
+    function normalizeFilterKey(value) {
+      return cleanSummaryText(value).toLowerCase().replace(/[^a-z0-9]+/g, "");
+    }
+
+    function updateSelectedFilterUI() {
+      const label = $("selectedFilterLabel");
+      const btn = $("selectFilterBtn");
+      const hideBtn = $("hideBlockedBtn");
+      const selected = selectedGnMathFilter ? cleanSummaryText(selectedGnMathFilter) : "Any / Not selected";
+      if (label) label.textContent = "Selected gn-math filter: " + selected;
+      if (btn) {
+        if (selectedGnMathFilter) btn.classList.add("btn-active");
+        else btn.classList.remove("btn-active");
+      }
+      if (hideBtn) {
+        hideBtn.textContent = "Hide blocked links: " + (hideBlockedBySelectedFilter ? "On" : "Off");
+        if (hideBlockedBySelectedFilter) hideBtn.classList.add("btn-active");
+        else hideBtn.classList.remove("btn-active");
+      }
+    }
+
+    function openFilterModal() {
+      $("filterBackdrop").classList.add("open");
+      $("filterBackdrop").setAttribute("aria-hidden", "false");
+    }
+
+    function closeFilterModal() {
+      $("filterBackdrop").classList.remove("open");
+      $("filterBackdrop").setAttribute("aria-hidden", "true");
+    }
+
+    function populateKnownFilters() {
+      const select = $("filterSelect");
+      if (!select) return;
+      const names = new Set();
+      for (const entry of Object.values(linkLensData || {})) {
+        if (!entry || typeof entry !== "object") continue;
+        const providers = Array.isArray(entry.providers) ? entry.providers : [];
+        for (const p of providers) {
+          const n = cleanSummaryText(p && p.provider ? p.provider : "");
+          if (n) names.add(n);
+        }
+      }
+      const sorted = [...names].sort((a, b) => a.localeCompare(b));
+      select.innerHTML = '<option value="">Any / Not selected</option>';
+      for (const name of sorted) {
+        const opt = document.createElement("option");
+        opt.value = name;
+        opt.textContent = name;
+        select.appendChild(opt);
+      }
+      if (selectedGnMathFilter && sorted.includes(selectedGnMathFilter)) {
+        select.value = selectedGnMathFilter;
+      }
+    }
+
+    function summaryEntryFor(link) {
+      const hasSignal = (entry) => {
+        if (!entry || typeof entry !== "object") return false;
+        const total = Number(entry.summary && entry.summary.total);
+        const providers = Array.isArray(entry.providers) ? entry.providers.length : 0;
+        return total > 0 || providers > 0 || entry.status === "ok";
+      };
+
+      const byExact = linkLensData[link];
+      if (hasSignal(byExact)) return byExact;
+      const domain = domainOf(link);
+      if (!domain) return byExact || null;
+      const byDomain = linkLensData["domain:" + domain] || linkLensData[domain];
+      if (hasSignal(byDomain)) return byDomain;
+      const values = Object.values(linkLensData || {});
+      for (const v of values) {
+        if (!v || typeof v !== "object") continue;
+        const d = String(v.domain || "").toLowerCase();
+        if (d && d === domain && hasSignal(v)) return v;
+      }
+      return byExact || byDomain || null;
+    }
+
+    function isBlockedBySelectedFilter(link) {
+      const selectedFilterKey = normalizeFilterKey(selectedGnMathFilter);
+      if (!selectedFilterKey) return false;
+      const entry = summaryEntryFor(link);
+      if (!entry || typeof entry !== "object") return false;
+      const providers = Array.isArray(entry.providers) ? entry.providers : [];
+      const match = providers.find((p) => normalizeFilterKey(p.provider || "") === selectedFilterKey);
+      return !!(match && match.status === "blocked");
+    }
+
+    function hasCheckedDomain(link) {
+      const d = domainOf(link);
+      if (!d) return false;
+      return checkedDomains.has(d) || checkedDomains.has(d.replace(/^www\./, ""));
+    }
+
+    function openSummary(link) {
+      const entry = summaryEntryFor(link);
+      const body = $("summaryBody");
+      if (!entry) {
+        const pendingText = hasCheckedDomain(link)
+          ? "This link was checked, but no parsable gn-math summary message was captured yet."
+          : "No gn-math data found for this link yet.";
+        body.innerHTML =
+          '<p class="summary-muted">' +
+          escapeHtml(pendingText) +
+          "</p>" +
+          '<p><a class="btn btn-primary" href="' +
+          escapeAttr(link) +
+          '" target="_blank" rel="noopener noreferrer">Open link</a></p>';
+      } else {
+        const summary = entry.summary || {};
+        const providers = Array.isArray(entry.providers) ? entry.providers : [];
+        const checkedAt = entry.checked_at || "—";
+        const status = entry.status || "unknown";
+        const selectedFilterKey = normalizeFilterKey(selectedGnMathFilter);
+        let riskNoticeHtml = "";
+        if (selectedFilterKey) {
+          const match = providers.find((p) => normalizeFilterKey(p.provider || "") === selectedFilterKey);
+          if (match && (match.status === "blocked" || match.status === "warning")) {
+            riskNoticeHtml =
+              '<div class="risk-notice">This link may be blocked on <strong>' +
+              escapeHtml(cleanSummaryText(match.provider || selectedGnMathFilter)) +
+              "</strong> for <strong>" +
+              escapeHtml(cleanSummaryText(match.category || "Unknown reason")) +
+              "</strong>.</div>";
+          }
+        }
+        const providerRows = providers.length
+          ? providers
+              .map(
+                (p) =>
+                  "<tr><td>" +
+                  escapeHtml(cleanSummaryText(p.provider || "—")) +
+                  "</td><td>" +
+                  escapeHtml(cleanSummaryText(p.category || "—")) +
+                  '</td><td><span class="status-pill ' +
+                  statusClass(p.status) +
+                  '">' +
+                  escapeHtml(p.status || "warning") +
+                  "</span></td></tr>"
+              )
+              .join("")
+          : '<tr><td colspan="3" class="summary-muted">No provider lines parsed from source message.</td></tr>';
+
+        body.innerHTML =
+          riskNoticeHtml +
+          '<p class="summary-muted">Domain: <strong>' +
+          escapeHtml(entry.domain || domainOf(link) || "—") +
+          '</strong> • Checked: <strong>' +
+          escapeHtml(checkedAt) +
+          '</strong> • Status: <strong>' +
+          escapeHtml(status) +
+          "</strong></p>" +
+          '<div class="summary-grid">' +
+          '<div class="summary-card"><span class="summary-k">Blocked</span><span class="summary-v">' +
+          escapeHtml(String(summary.blocked ?? 0)) +
+          '</span></div><div class="summary-card"><span class="summary-k">Unblocked</span><span class="summary-v">' +
+          escapeHtml(String(summary.unblocked ?? 0)) +
+          '</span></div><div class="summary-card"><span class="summary-k">Warning</span><span class="summary-v">' +
+          escapeHtml(String(summary.warning ?? 0)) +
+          '</span></div><div class="summary-card"><span class="summary-k">Total</span><span class="summary-v">' +
+          escapeHtml(String(summary.total ?? providers.length)) +
+          "</span></div></div>" +
+          '<table class="provider-table"><thead><tr><th>Provider</th><th>Category</th><th>Result</th></tr></thead><tbody>' +
+          providerRows +
+          "</tbody></table>" +
+          '<p style="margin-top:0.8rem"><a class="btn btn-primary" href="' +
+          escapeAttr(link) +
+          '" target="_blank" rel="noopener noreferrer">Open link</a></p>';
+      }
+      $("summaryTitle").textContent = "Link summary";
+      $("summaryBackdrop").classList.add("open");
+      $("summaryBackdrop").setAttribute("aria-hidden", "false");
+    }
+
+    function closeSummary() {
+      $("summaryBackdrop").classList.remove("open");
+      $("summaryBackdrop").setAttribute("aria-hidden", "true");
     }
 
     function escapeHtml(s) {
@@ -500,12 +834,30 @@
       };
     }
 
-    fetch("data.json")
-      .then((r) => {
+    Promise.all([
+      fetch("data.json").then((r) => {
         if (!r.ok) throw new Error("Could not load data.json (" + r.status + ")");
         return r.json();
-      })
-      .then((json) => {
+      }),
+      fetch("linklens.json")
+        .then((r) => (r.ok ? r.json() : {}))
+        .catch(() => ({})),
+      fetch("checked_domains.txt")
+        .then((r) => (r.ok ? r.text() : ""))
+        .catch(() => ""),
+    ])
+      .then(([json, linkLens, checkedDomainsText]) => {
+        if (linkLens && typeof linkLens === "object") {
+          linkLensData = linkLens;
+        }
+        populateKnownFilters();
+        updateSelectedFilterUI();
+        checkedDomains = new Set(
+          String(checkedDomainsText || "")
+            .split(/\r?\n/)
+            .map((s) => s.trim().toLowerCase().replace(/^www\./, ""))
+            .filter(Boolean)
+        );
         const { meta, link_check, links } = normalizePayload(json);
         setFooter(meta);
         buildCheckboxGroup(
@@ -537,6 +889,43 @@
         $("q").addEventListener("input", () => render(links, meta, link_check));
         document.querySelectorAll('input[name="capMode"]').forEach((el) => {
           el.addEventListener("change", () => render(links, meta, link_check));
+        });
+
+        $("tableWrap").addEventListener("click", (ev) => {
+          const target = ev.target;
+          if (!(target instanceof Element)) return;
+          const linkEl = target.closest("a.js-link-summary");
+          if (!linkEl) return;
+          ev.preventDefault();
+          const href = linkEl.getAttribute("data-link") || linkEl.getAttribute("href");
+          if (!href) return;
+          openSummary(href);
+        });
+
+        $("summaryCloseBtn").addEventListener("click", closeSummary);
+        $("selectFilterBtn").addEventListener("click", openFilterModal);
+        $("filterCloseBtn").addEventListener("click", closeFilterModal);
+        $("filterSelect").addEventListener("change", (ev) => {
+          selectedGnMathFilter = ev.target.value || "";
+          updateSelectedFilterUI();
+          render(links, meta, link_check);
+        });
+        $("hideBlockedBtn").addEventListener("click", () => {
+          hideBlockedBySelectedFilter = !hideBlockedBySelectedFilter;
+          updateSelectedFilterUI();
+          render(links, meta, link_check);
+        });
+        $("summaryBackdrop").addEventListener("click", (ev) => {
+          if (ev.target === $("summaryBackdrop")) closeSummary();
+        });
+        $("filterBackdrop").addEventListener("click", (ev) => {
+          if (ev.target === $("filterBackdrop")) closeFilterModal();
+        });
+        document.addEventListener("keydown", (ev) => {
+          if (ev.key === "Escape") {
+            closeSummary();
+            closeFilterModal();
+          }
         });
 
         render(links, meta, link_check);

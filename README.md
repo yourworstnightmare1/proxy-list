@@ -24,3 +24,49 @@ CAPTCHA is tested using the official [Google ReCAPTCHA demo](https://www.google.
 Simply download and open it in Notepad. If you are not on Windows 11 or are on macOS, you will have to go to https://markdownlivepreview.com/ to view it as markdown support is only in Windows 11+.
 ## macOS
 Once downloaded, right-click or control-click or press the spacebar on the file and select "Quick Look". This will show the file properly.
+
+# gn-math Discord automation (experimental)
+If gn-math has no public API, you can collect results by running a Discord bot script that sends checks in a channel and parses the reply message.
+
+## What was added
+- `scripts/linklens_collector.py`: sends a command per link and writes `docs/linklens.json`.
+- `docs/index.html`: clicking a link now opens a summary modal using data from `docs/linklens.json`.
+
+## Setup
+1. Create a Discord bot and invite it to your server.
+2. Ensure it can read message history, read messages, and send messages in the target channel.
+3. Install dependencies:
+   - `pip install discord.py`
+4. Export environment variables:
+   - `export DISCORD_BOT_TOKEN="your_bot_token"`
+   - `export DISCORD_CHANNEL_ID="1447086087079071824"`
+   - `export GN_MATH_COMMAND_TEMPLATE="/check all url {domain}"`
+   - `export GN_MATH_AUTHOR_NAMES="gn-math#8961"`
+   - Optional: `export GN_MATH_AUTHOR_ID="gn_math_bot_user_id"` to only accept replies from gn-math.
+
+## Run
+- Quick dry run (no messages sent):
+  - `python scripts/linklens_collector.py --dry-run --max-links 5`
+- Real run:
+  - `python scripts/linklens_collector.py --max-links 50`
+- History ingest only (recommended for slash-command workflows):
+  - `python scripts/linklens_collector.py --ingest-history --history-limit 4000`
+
+## Periodic sync
+You can continuously rescan Discord messages and update `docs/linklens.json`:
+
+- Required environment variables:
+  - `export DISCORD_BOT_TOKEN="your_bot_token"`
+  - `export DISCORD_CHANNEL_ID="1447086087079071824"`
+  - `export GN_MATH_AUTHOR_NAMES="gn-math#8961"`
+- Start periodic sync (every 5 minutes by default):
+  - `python scripts/linklens_periodic_sync.py`
+- Custom interval:
+  - `python scripts/linklens_periodic_sync.py --interval-seconds 120`
+- One-shot run (same script, no loop):
+  - `python scripts/linklens_periodic_sync.py --run-once`
+
+## Notes
+- The command template must match whatever gn-math listens for in that channel.
+- Keep delays/rate low to avoid spam/rate limits (defaults are conservative).
+- If gn-math response formatting changes, parsing may need small regex updates.
