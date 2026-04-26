@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
 > v2.0.3 | Released: April 17, 2026  
-> r50 | Last Updated: April 26, 2026
-> Total Links: 645\
+> r51 | Last Updated: April 26, 2026
+> Total Links: 605\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -1077,52 +1077,33 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 41 |
+> | pending | pending | pending | 22 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://inf50751.investordata.co.za | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf34268.cyberninja.ie | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf41247.1erminal.com | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf46133.investordata.co.za | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf55076.cyberninja.ie | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf91870.segurosparatransito.com | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf89425.1erminal.com | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf60664.wirtschaftslexikon.org | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf56296.presude.hr | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf36624.investordata.co.za | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf90954.cyberninja.ie | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf52274.segurosparatransito.com | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://infb711dd.myfdistribuidora.com.ar/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf6bdb04.hookextender.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://infc1a664.mchini.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf15db4e.robdon.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf0cd84e.fbsistemas.com.ar/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf843535.mchini.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf769e6f.robdon.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf707e34.unity-cleaning.fr/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf3d0813.fbsistemas.com.ar/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf0b8a4a.myfdistribuidora.com.ar/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://infb0d247.hookextender.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf1b4140.mchini.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://infd5dade.robdon.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf61c7f7.unity-cleaning.fr/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf6170c4.fbsistemas.com.ar/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf63834.myfdistribuidora.com.ar | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf33456.hookextender.com | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf12734.robdon.com | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf32900.unity-cleaning.fr | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf29323.fbsistemas.com.ar | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf23381.vngeek.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf97488.vngeek.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf53196.notinthearchives.net/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf31265.notinthearchives.net/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf15937.hobytours.co.il/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf34706.hobytours.co.il/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inf13190.hobytours.co.il/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf57697.optosupply.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://infamous.qzz.io/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
@@ -1130,14 +1111,13 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 2 |
+> | pending | pending | pending | 1 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://dopebox8.pandeybikalpa.com.np/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://helptired8.notinthearchives.net/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # LuminalOS
@@ -1157,20 +1137,13 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 43 |
+> | pending | pending | pending | 36 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://bloxians.appwrite.network/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://blox.appwrite.network/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bloxy.appwrite.network/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unblocked-games.appwrite.network/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unblockedgames.appwrite.network/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://gaming.appwrite.network/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://math-worksheets.appwrite.network/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://the-math.pages.dev/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bloxcraft-ubg-worker-js.rnkiddo.workers.dev/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://best-math-hub.pages.dev/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1208,30 +1181,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://tharun9772-gaming.pages.dev/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://tharun-9772gaming.pages.dev/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# Rammerhead
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | pending | pending | 12 |
-
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://a2.enia.net/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://a3.enia.net/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rightnow.e-c-h-o.tw/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://fridaynightday.verymad.net/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rammerheadforlife.ermestel.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://skibidibabbe.atlus.moe/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://littlesaintliz.texasmath.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ifyouseethisdrinklizdrinks.ycare.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://physics.fluxus.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://mathstudyuniversity.govt.hu/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://www.scrsa-for-study.currykarim.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://learnwithme.verymad.net/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 # Luminal
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -1249,7 +1198,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 8 |
+> | pending | pending | pending | 7 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1262,5 +1211,4 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://platform.codeshs.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://algebratests.skoolbuzz.net/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://teachme.codeshs.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://calculatemath.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://relicofficial.shop/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
