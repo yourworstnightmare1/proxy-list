@@ -1,13 +1,13 @@
 {
   "meta": {
-    "version": "v2.0.3",
+    "version": "v3.0",
     "revision": "r53",
     "last_updated": "April 26, 2026",
     "unsorted_total": 2016
   },
   "link_check": {
-    "checked_at": "2026-04-26T18:43:13Z",
-    "checked_at_display": "2026-04-26 18:43 UTC",
+    "checked_at": "2026-04-26T23:26:50Z",
+    "checked_at_display": "2026-04-26 23:26 UTC",
     "added_count": 0,
     "removed_count": 0,
     "added_links": [],
