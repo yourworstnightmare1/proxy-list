@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
 > v3.0 | Released: April 26, 2026
-> r54 | Last Updated: April 27, 2026
-> Total Links: 1030\
+> r55 | Last Updated: April 27, 2026
+> Total Links: 957\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -54,7 +54,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 22 |
+> | Proxy/Games | captcha | Scramjet | 19 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -66,9 +66,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://vorg-has.me-at-gun-point3.cyberninja.ie/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vorg-isnt-a-fem.boy3.cyberninja.ie/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vorg-isnt-a-fem.boy5.cyberninja.ie/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://mathematics.lervs.ro/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://math-help.work.streetwideassetrecoverygroup.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://math-worksheets.thuexetaxi.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learning-science.cloudfare.teimporto.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://veleranirbytes.fusionid.fi/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sunsett.cc.cdn.cloudflare.net/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -77,7 +75,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://hotmath.realkof.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://thebaconatorexchange.thekingdomexchange.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://baconmath.383.li/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://help-with.math.farmaciasamigosdelasalud.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sciencebacon.mojadelavnica.si/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://evenmore.delafuentefunerales.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
@@ -85,7 +82,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 11 |
+> | Games | N/A | N/A | 10 |
 
 > [!IMPORTANT]
 > View importance notices section if link is broken.
@@ -98,7 +95,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://shindoisbest.s3.amazonaws.com/index.html | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/shindoisbest/index.html | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | http://pullupmath.2nx.org/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cheapercuts.barberduck.ro/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | http://howtomath.mojadelavnica.si/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | http://baconatortutoring.readywintersprings.org/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | http://mathhelp.realkof.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -108,7 +104,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Ultraviolet | 27 |
+> | Proxy/Games | captcha | Ultraviolet | 24 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -135,10 +131,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://parkviewpylusd.org/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://denisonisd.org/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gloverschool.org/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://tennis.expert-courses.learn.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://homeworkstudies.phire.ca/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://enoughisenoughnownonorestupod.farmaciasamigosdelasalud.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://help.get.tutor.for-math-and-otherprofessionals.echofx.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ⭐ DayDream X
 > [!NOTE]
@@ -240,7 +233,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet, Ultraviolet | 15 |
+> | Proxy/Games | unknown | Scramjet, Ultraviolet | 11 |
 
 > [!IMPORTANT]
 > Fern does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -257,11 +250,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://ps279.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/fernisbest/index.html | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://technology.chromebook.certified.light.speed.term.gap-peace.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://trivo37-twilight.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://classroomil.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jobs.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://skibidirezz.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://clever-education.londonwhiteeagles.ca/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🟣 UniUB
 > [!NOTE]
@@ -301,7 +290,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 18 |
+> | Proxy/Games | unknown | Scramjet | 8 |
 
 > [!IMPORTANT]
 > Truffled does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -312,19 +301,9 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://artisticlife.xenopoem.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hatisthemeaningofourexistenceinourlifeofourcurrentreality.xenopoem.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vcsa-yt.blogspot.com/2026/02/82-new-websites.html | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://15412.kavellewatches.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://4354.kavellewatches.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://9087.kavellewatches.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://school.randombox.rocks/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learning.eglobaltravelmedia.asia/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://math.whost.co.za/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://christmas.fusionid.fi/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://shoeyenn.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://nyaa.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://terrariaandlcorpbyvan.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://emis-raft.echofx.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cheapcuts.barberduck.ro/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://science.learning-for-fun.space.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://icantbelieveitsnotbutter.teimporto.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🥱 Boredom
@@ -453,7 +432,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 53 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 52 |
 
 > [!IMPORTANT]
 > dogeub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -512,13 +491,12 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://math.studyhub.cam/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mathtools.rdt2.co/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/educationate/index.html#/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://loveprayeat.goroshka.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌕 Lunar
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 60 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 53 |
 
 > [!IMPORTANT]
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -543,9 +521,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://physics.saladandgo-menu.info/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://saladandgo-menu.info/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://waves.saladandgo-menu.info/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | http://clever.7772.codd70.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://office.365.thekingdomexchange.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bigeyesmath.waterloobae.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bb.nicksbb.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://material.beecroft-history.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://lunar.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -555,10 +530,8 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://man.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mondays.suck.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://elonmusk.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://froggies.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://galaxy.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://overcloaked.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rest.in.peace.my.granny.she.got.hit.by.a.bazooka.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://study.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bears.rocks.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://ixl.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -570,10 +543,8 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://learn.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://lunar.education.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://lunarv2.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://petezah.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://banana.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://free.robux.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://i.had.canes.for.dinner.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://long.name.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://not.a.wildcard.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://captcha.simulator.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -697,7 +668,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet | 26 |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet | 24 |
 
 > [!IMPORTANT]
 > OverCloaked does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -728,8 +699,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://s3.amazonaws.com/elliotslinks-tnjavxyp/exam45879/index.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/elliotslinks-tnjavxyp/essay71679/index.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/elliotslinks-tnjavxyp/quiz10430/index.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://overcloakedsucks.zinkozinko.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://lecture.english.library.vocabulary.chemistry.goblesampson.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 😈 Imp Proxy
 > [!NOTE]
@@ -898,7 +867,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy, wisp | Scramjet, Ultraviolet | 37 |
+> | Proxy/Games | libcurl, epoxy, wisp | Scramjet, Ultraviolet | 36 |
 
 > [!IMPORTANT]
 > Galaxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -937,7 +906,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://lador.ellegisladordigital.com/onboarding/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://tech.ellegisladordigital.com/onboarding/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://aside.segurosdepersonas.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://readies.yourtales.co.uk/onboarding/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vek.polden21vek.ru/onboarding/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://polden.polden21vek.ru/onboarding/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://21vek.polden21vek.ru/onboarding/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1096,7 +1064,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 18 |
+> | Proxy/Games | captcha | Scramjet | 16 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -1116,8 +1084,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://k12edu.duckdns.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bllymartw.lekhnathfb.com.np | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://compontop.jayaho.ch | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://showtime.readywintersprings.org/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://thelights.realkof.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🖤 Void Network
 > [!NOTE]
@@ -1173,7 +1139,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 10 |
+> | Proxy/Games | unknown | unknown | 9 |
 
 > [!IMPORTANT]
 > Utopia Education does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1189,7 +1155,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://burger.lain.ch/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hondaispeak.hondascooterparts.com/ | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://highschoolacademy.online/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://s.arthasarokar.com.np/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌘 Lunaar
 > [!NOTE]
@@ -1350,7 +1315,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 33 |
+> | pending | pending | pending | 4 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1361,35 +1326,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | | https://studying.student.library.lecture.teacher.archivomemoria-audiovisualcsb.org/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://physics.music.geography.homework.project.svargas.cl/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://geography.studying.art.teacher.physics.true-woman.ru/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | http://geometry.history.engineering.student.science.neolith.ar | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | http://classroom.history.technology.reading.geometry.natkajoyas.cl | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://library.assignment.math.science.campus.prestamosorion.ar/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student.physics.science.project.biology.tolosabahia.ar/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | http://seminar.technology.engineering.physics.campus.bh-r.ch/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://geometry.literature.engineering.science.lecture.teimporto.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | http://student.teacher.biology.project.programming.granit-union.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://english.literature.assignment.classroom.technology.yourtales.co.uk/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://assignment.campus.reading.english.learning.wiringshambhala.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://reading.library.math.english.homework.ramnarine.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://learning.programming.classroom.math.vocabulary.hilderbrook.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://learning.project.geography.chemistry.homework.segurosdepersonas.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://seminar.physics.geography.english.science.pjsfeed.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://drama.homework.chemistry.math.physics.hypersas.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://physics.campus.calculus.music.learning.yuanfey.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://english.chemistry.programming.grammar.technology.segurosdepersonas.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://algebra.physics.learning.english.grammar.kinemasot.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://geography.vocabulary.biology.programming.grammar.aabiskarkshetri.com.np/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://geography.calculus.seminar.chemistry.programming.ericheugel.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://grammar.geometry.english.seminar.campus.zvekan.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://reading.literature.math.geography.computer.joaogrillo.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://programming.physics.library.writing.calculus.rjara.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://technology.engineering.lecture.calculus.homework.polden21vek.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://music.history.studying.drama.technology.fusionid.fi/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://lecture.literature.art.music.seminar.sanaturale.ch/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://geography.vocabulary.lecture.grammar.history.pixelmosaic.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://programming.literature.student.teacher.assignment.kamenorezac-garic.rs/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://art.learning.technology.geometry.geography.cima-diagnosticos.com.mx/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://drama.chemistry.reading.algebra.geometry.f451.gr/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🫘 Sea Bean
 > [!NOTE]
@@ -1692,87 +1628,6 @@ gn-math is currently down due to copyright violations. It will be back up in the
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://noterplusfire02.web.app/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# Squall
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | pending | pending | 2 |
-
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://s1.ourdvd.net/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://s1-xmax.bh-r.ch/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# AnuraOS
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | pending | pending | 1 |
-
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://demo.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# Interstellar
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | pending | pending | 3 |
-
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://emis-tech.echofx.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://mhm.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://integer.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# Saturn
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | pending | pending | 1 |
-
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://vcsa-yt.blogspot.com.realkof.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# Splash
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | pending | pending | 1 |
-
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://splash.theliensaleguy.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# Dreamy
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | pending | pending | 1 |
-
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://xanderisbetter.goroshka.ru/home.html | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # Marz
 > [!NOTE]

@@ -1,23 +1,90 @@
 {
   "meta": {
     "version": "v3.0",
-    "revision": "r54",
+    "revision": "r55",
     "last_updated": "April 27, 2026",
     "unsorted_total": 2016
   },
   "link_check": {
-    "checked_at": "2026-04-27T08:13:08Z",
-    "checked_at_display": "2026-04-27 08:13 UTC",
+    "checked_at": "2026-04-27T13:27:51Z",
+    "checked_at_display": "2026-04-27 13:27 UTC",
     "added_count": 0,
-    "removed_count": 6,
+    "removed_count": 73,
     "added_links": [],
     "removed_links": [
-      "https://learning.roshanadhikary.com.np",
-      "https://vorg-has.me-at-gun-point5.cyberninja.ie",
-      "https://coltonhi.lunoluno.org",
-      "https://asd.lunoluno.org",
-      "https://lunoluno.org",
-      "https://endis.ajh.wtf"
+      "https://mathematics.lervs.ro",
+      "https://math-worksheets.thuexetaxi.com",
+      "https://help-with.math.farmaciasamigosdelasalud.com",
+      "https://cheapercuts.barberduck.ro",
+      "https://tennis.expert-courses.learn.kfa.cl",
+      "https://enoughisenoughnownonorestupod.farmaciasamigosdelasalud.com",
+      "https://help.get.tutor.for-math-and-otherprofessionals.echofx.com",
+      "https://trivo37-twilight.kfa.cl",
+      "https://classroomil.kfa.cl",
+      "https://skibidirezz.kfa.cl",
+      "https://clever-education.londonwhiteeagles.ca",
+      "https://15412.kavellewatches.com",
+      "https://4354.kavellewatches.com",
+      "https://9087.kavellewatches.com",
+      "https://school.randombox.rocks",
+      "https://shoeyenn.kfa.cl",
+      "https://nyaa.kfa.cl",
+      "https://terrariaandlcorpbyvan.kfa.cl",
+      "https://emis-raft.echofx.com",
+      "https://cheapcuts.barberduck.ro",
+      "https://science.learning-for-fun.space.kfa.cl",
+      "https://loveprayeat.goroshka.ru",
+      "http://clever.7772.codd70.ru",
+      "https://office.365.thekingdomexchange.com",
+      "https://bigeyesmath.waterloobae.com",
+      "https://froggies.ellegisladordigital.com",
+      "https://rest.in.peace.my.granny.she.got.hit.by.a.bazooka.ellegisladordigital.com",
+      "https://petezah.ellegisladordigital.com",
+      "https://i.had.canes.for.dinner.ellegisladordigital.com",
+      "https://overcloakedsucks.zinkozinko.com",
+      "https://lecture.english.library.vocabulary.chemistry.goblesampson.com",
+      "https://readies.yourtales.co.uk/onboarding",
+      "https://showtime.readywintersprings.org",
+      "https://thelights.realkof.ru",
+      "https://s.arthasarokar.com.np",
+      "http://geometry.history.engineering.student.science.neolith.ar",
+      "http://classroom.history.technology.reading.geometry.natkajoyas.cl",
+      "https://library.assignment.math.science.campus.prestamosorion.ar",
+      "https://student.physics.science.project.biology.tolosabahia.ar",
+      "http://seminar.technology.engineering.physics.campus.bh-r.ch",
+      "https://geometry.literature.engineering.science.lecture.teimporto.cl",
+      "http://student.teacher.biology.project.programming.granit-union.ru",
+      "https://english.literature.assignment.classroom.technology.yourtales.co.uk",
+      "https://assignment.campus.reading.english.learning.wiringshambhala.com",
+      "https://reading.library.math.english.homework.ramnarine.com",
+      "https://learning.programming.classroom.math.vocabulary.hilderbrook.com",
+      "https://learning.project.geography.chemistry.homework.segurosdepersonas.cl",
+      "https://seminar.physics.geography.english.science.pjsfeed.com",
+      "https://drama.homework.chemistry.math.physics.hypersas.com",
+      "https://physics.campus.calculus.music.learning.yuanfey.com",
+      "https://english.chemistry.programming.grammar.technology.segurosdepersonas.cl",
+      "https://algebra.physics.learning.english.grammar.kinemasot.cl",
+      "https://geography.vocabulary.biology.programming.grammar.aabiskarkshetri.com.np",
+      "https://geography.calculus.seminar.chemistry.programming.ericheugel.com",
+      "https://grammar.geometry.english.seminar.campus.zvekan.com",
+      "https://reading.literature.math.geography.computer.joaogrillo.com",
+      "https://programming.physics.library.writing.calculus.rjara.com",
+      "https://technology.engineering.lecture.calculus.homework.polden21vek.ru",
+      "https://music.history.studying.drama.technology.fusionid.fi",
+      "https://lecture.literature.art.music.seminar.sanaturale.ch",
+      "https://geography.vocabulary.lecture.grammar.history.pixelmosaic.ru",
+      "https://programming.literature.student.teacher.assignment.kamenorezac-garic.rs",
+      "https://art.learning.technology.geometry.geography.cima-diagnosticos.com.mx",
+      "https://drama.chemistry.reading.algebra.geometry.f451.gr",
+      "https://s1.ourdvd.net",
+      "https://s1-xmax.bh-r.ch",
+      "https://demo.kfa.cl",
+      "https://emis-tech.echofx.com",
+      "https://mhm.kfa.cl",
+      "https://integer.kfa.cl",
+      "https://vcsa-yt.blogspot.com.realkof.ru",
+      "https://splash.theliensaleguy.com",
+      "https://xanderisbetter.goroshka.ru/home.html"
     ]
   },
   "links": [
@@ -365,45 +432,7 @@
         "scramjet"
       ],
       "locked": "",
-      "link": "https://mathematics.lervs.ro/",
-      "found": "4/21/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
       "link": "https://math-help.work.streetwideassetrecoverygroup.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://math-worksheets.thuexetaxi.com/",
       "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
@@ -574,25 +603,6 @@
         "scramjet"
       ],
       "locked": "",
-      "link": "https://help-with.math.farmaciasamigosdelasalud.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌙 Velara",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
       "link": "https://sciencebacon.mojadelavnica.si/",
       "found": "4/26/2026",
       "username": "N/A",
@@ -703,21 +713,6 @@
       "protocol_tags": [],
       "locked": "",
       "link": "http://pullupmath.2nx.org/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "➗ gn-math",
-      "category": "Games",
-      "capabilities": "N/A",
-      "capability_tags": [],
-      "protocols": "N/A",
-      "protocol_tags": [],
-      "locked": "",
-      "link": "https://cheapercuts.barberduck.ro/",
       "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
@@ -1233,64 +1228,7 @@
         "ultraviolet"
       ],
       "locked": "",
-      "link": "https://tennis.expert-courses.learn.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🐸 frogie's arcade",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Ultraviolet",
-      "protocol_tags": [
-        "ultraviolet"
-      ],
-      "locked": "",
       "link": "https://homeworkstudies.phire.ca/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🐸 frogie's arcade",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Ultraviolet",
-      "protocol_tags": [
-        "ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://enoughisenoughnownonorestupod.farmaciasamigosdelasalud.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🐸 frogie's arcade",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Ultraviolet",
-      "protocol_tags": [
-        "ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://help.get.tutor.for-math-and-otherprofessionals.echofx.com/",
       "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
@@ -3024,87 +2962,7 @@
         "ultraviolet"
       ],
       "locked": "",
-      "link": "https://trivo37-twilight.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🪴 Fern",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://classroomil.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🪴 Fern",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
       "link": "https://jobs.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🪴 Fern",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://skibidirezz.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🪴 Fern",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://clever-education.londonwhiteeagles.ca/",
       "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
@@ -3639,82 +3497,6 @@
         "scramjet"
       ],
       "locked": "",
-      "link": "https://15412.kavellewatches.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍄 Truffled",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://4354.kavellewatches.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍄 Truffled",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://9087.kavellewatches.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍄 Truffled",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://school.randombox.rocks/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍄 Truffled",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
       "link": "https://learning.eglobaltravelmedia.asia/",
       "found": "4/26/2026",
       "username": "N/A",
@@ -3754,120 +3536,6 @@
       ],
       "locked": "",
       "link": "https://christmas.fusionid.fi/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍄 Truffled",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://shoeyenn.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍄 Truffled",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://nyaa.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍄 Truffled",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://terrariaandlcorpbyvan.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍄 Truffled",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://emis-raft.echofx.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍄 Truffled",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://cheapcuts.barberduck.ro/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍄 Truffled",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://science.learning-for-fun.space.kfa.cl/",
       "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
@@ -6568,26 +6236,6 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
-      "provider": "🐶 dogeub",
-      "category": "Proxy/Games",
-      "capabilities": "wisp",
-      "capability_tags": [
-        "wisp"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://loveprayeat.goroshka.ru/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
       "provider": "🌕 Lunar",
       "category": "Proxy/Games",
       "capabilities": "wisp",
@@ -6900,66 +6548,6 @@
         "ultraviolet"
       ],
       "locked": "",
-      "link": "http://clever.7772.codd70.ru/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌕 Lunar",
-      "category": "Proxy/Games",
-      "capabilities": "wisp",
-      "capability_tags": [
-        "wisp"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://office.365.thekingdomexchange.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌕 Lunar",
-      "category": "Proxy/Games",
-      "capabilities": "wisp",
-      "capability_tags": [
-        "wisp"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://bigeyesmath.waterloobae.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌕 Lunar",
-      "category": "Proxy/Games",
-      "capabilities": "wisp",
-      "capability_tags": [
-        "wisp"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
       "link": "https://bb.nicksbb.com/",
       "found": "4/26/2026",
       "username": "N/A",
@@ -7140,26 +6728,6 @@
         "ultraviolet"
       ],
       "locked": "",
-      "link": "https://froggies.ellegisladordigital.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌕 Lunar",
-      "category": "Proxy/Games",
-      "capabilities": "wisp",
-      "capability_tags": [
-        "wisp"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
       "link": "https://galaxy.ellegisladordigital.com/",
       "found": "4/26/2026",
       "username": "N/A",
@@ -7181,26 +6749,6 @@
       ],
       "locked": "",
       "link": "https://overcloaked.ellegisladordigital.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌕 Lunar",
-      "category": "Proxy/Games",
-      "capabilities": "wisp",
-      "capability_tags": [
-        "wisp"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://rest.in.peace.my.granny.she.got.hit.by.a.bazooka.ellegisladordigital.com/",
       "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
@@ -7440,26 +6988,6 @@
         "ultraviolet"
       ],
       "locked": "",
-      "link": "https://petezah.ellegisladordigital.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌕 Lunar",
-      "category": "Proxy/Games",
-      "capabilities": "wisp",
-      "capability_tags": [
-        "wisp"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
       "link": "https://banana.ellegisladordigital.com/",
       "found": "4/26/2026",
       "username": "N/A",
@@ -7481,26 +7009,6 @@
       ],
       "locked": "",
       "link": "https://free.robux.ellegisladordigital.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🌕 Lunar",
-      "category": "Proxy/Games",
-      "capabilities": "wisp",
-      "capability_tags": [
-        "wisp"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
-      "link": "https://i.had.canes.for.dinner.ellegisladordigital.com/",
       "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
@@ -9122,48 +8630,6 @@
       "locked": "",
       "link": "https://s3.amazonaws.com/elliotslinks-tnjavxyp/quiz10430/index.html",
       "found": "4/21/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🏴 OverCloaked",
-      "category": "Proxy/Games",
-      "capabilities": "epoxy, libcurl, wisp",
-      "capability_tags": [
-        "epoxy",
-        "libcurl",
-        "wisp"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://overcloakedsucks.zinkozinko.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🏴 OverCloaked",
-      "category": "Proxy/Games",
-      "capabilities": "epoxy, libcurl, wisp",
-      "capability_tags": [
-        "epoxy",
-        "libcurl",
-        "wisp"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://lecture.english.library.vocabulary.chemistry.goblesampson.com/",
-      "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
@@ -11777,28 +11243,6 @@
         "ultraviolet"
       ],
       "locked": "",
-      "link": "https://readies.yourtales.co.uk/onboarding/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🪐 Galaxy",
-      "category": "Proxy/Games",
-      "capabilities": "libcurl, epoxy, wisp",
-      "capability_tags": [
-        "libcurl",
-        "epoxy",
-        "wisp"
-      ],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "locked": "",
       "link": "https://vek.polden21vek.ru/onboarding/",
       "found": "4/26/2026",
       "username": "N/A",
@@ -14324,44 +13768,6 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
-      "provider": "🔼 Axiom",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://showtime.readywintersprings.org/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🔼 Axiom",
-      "category": "Proxy/Games",
-      "capabilities": "captcha",
-      "capability_tags": [
-        "captcha"
-      ],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "locked": "",
-      "link": "https://thelights.realkof.ru/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
       "provider": "🖤 Void Network",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -15249,25 +14655,6 @@
       "locked": "",
       "link": "https://highschoolacademy.online/",
       "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🦄 Utopia Education",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [
-        "unknown"
-      ],
-      "protocols": "unknown",
-      "protocol_tags": [
-        "unknown"
-      ],
-      "locked": "",
-      "link": "https://s.arthasarokar.com.np/",
-      "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
@@ -16438,557 +15825,6 @@
       "locked": "",
       "link": "https://geography.studying.art.teacher.physics.true-woman.ru/",
       "found": "4/21/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "http://geometry.history.engineering.student.science.neolith.ar",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "http://classroom.history.technology.reading.geometry.natkajoyas.cl",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://library.assignment.math.science.campus.prestamosorion.ar/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://student.physics.science.project.biology.tolosabahia.ar/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "http://seminar.technology.engineering.physics.campus.bh-r.ch/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://geometry.literature.engineering.science.lecture.teimporto.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "http://student.teacher.biology.project.programming.granit-union.ru/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://english.literature.assignment.classroom.technology.yourtales.co.uk/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://assignment.campus.reading.english.learning.wiringshambhala.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://reading.library.math.english.homework.ramnarine.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://learning.programming.classroom.math.vocabulary.hilderbrook.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://learning.project.geography.chemistry.homework.segurosdepersonas.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://seminar.physics.geography.english.science.pjsfeed.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://drama.homework.chemistry.math.physics.hypersas.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://physics.campus.calculus.music.learning.yuanfey.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://english.chemistry.programming.grammar.technology.segurosdepersonas.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://algebra.physics.learning.english.grammar.kinemasot.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://geography.vocabulary.biology.programming.grammar.aabiskarkshetri.com.np/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://geography.calculus.seminar.chemistry.programming.ericheugel.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://grammar.geometry.english.seminar.campus.zvekan.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://reading.literature.math.geography.computer.joaogrillo.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://programming.physics.library.writing.calculus.rjara.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://technology.engineering.lecture.calculus.homework.polden21vek.ru/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://music.history.studying.drama.technology.fusionid.fi/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://lecture.literature.art.music.seminar.sanaturale.ch/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://geography.vocabulary.lecture.grammar.history.pixelmosaic.ru/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://programming.literature.student.teacher.assignment.kamenorezac-garic.rs/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://art.learning.technology.geometry.geography.cima-diagnosticos.com.mx/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://drama.chemistry.reading.algebra.geometry.f451.gr/",
-      "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
@@ -19578,177 +18414,6 @@
       "locked": "",
       "link": "https://noterplusfire02.web.app/",
       "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "Squall",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://s1.ourdvd.net/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "Squall",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://s1-xmax.bh-r.ch/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "AnuraOS",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://demo.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "Interstellar",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://emis-tech.echofx.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "Interstellar",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://mhm.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "Interstellar",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://integer.kfa.cl/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "Saturn",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://vcsa-yt.blogspot.com.realkof.ru/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "Splash",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://splash.theliensaleguy.com/",
-      "found": "4/26/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "Dreamy",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
-      "locked": "",
-      "link": "https://xanderisbetter.goroshka.ru/home.html",
-      "found": "4/26/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
