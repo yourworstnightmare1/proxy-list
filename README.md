@@ -66,6 +66,21 @@ You can continuously rescan Discord messages and update `docs/linklens.json`:
 - One-shot run (same script, no loop):
   - `python scripts/linklens_periodic_sync.py --run-once`
 
+## Refresh unchecked links (one command)
+When you add links to `list.md`, run:
+
+- `python scripts/update_unchecked_links.py`
+
+This will:
+- rebuild `docs/data.json`
+- regenerate `links.txt`
+- print how many links remain unchecked based on `docs/linklens.json`
+
+Optional Discord alert (enabled by default when unchecked links > 0):
+- Uses `DISCORD_BOT_TOKEN` + `DISCORD_CHANNEL_ID` (or `DISCORD_NOTIFY_CHANNEL_ID`)
+- Mention/name in alert defaults to `@xgamingwithjason` and can be changed with `DISCORD_NOTIFY_MENTION`
+- Disable alerts with: `export UNCHECKED_NOTIFY_DISCORD=0`
+
 ## Notes
 - The command template must match whatever gn-math listens for in that channel.
 - Keep delays/rate low to avoid spam/rate limits (defaults are conservative).
