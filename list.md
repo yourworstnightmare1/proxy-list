@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
 > v3.0 | Released: April 27, 2026
-> r60 | Last Updated: April 29, 2026\
-> Total Links: 980\
+> r61 | Last Updated: April 29, 2026
+> Total Links: 977\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -54,7 +54,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 21 |
+> | Proxy/Games | captcha | Scramjet | 20 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -69,7 +69,6 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://sunsett.cc.cdn.cloudflare.net/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://baconatorsmath.2nx.org/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hotmath.realkof.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://thebaconatorexchange.thekingdomexchange.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://baconmath.383.li/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sciencebacon.mojadelavnica.si/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://evenmore.delafuentefunerales.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -463,7 +462,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 56 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 54 |
 
 > [!IMPORTANT]
 > dogeub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -489,11 +488,9 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://file.vise.best/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://api-services.vise.best/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://dwfo7z3f9nigf.cloudfront.net/index.html | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://storage.googleapis.com/instructure/index.html | 3/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/canvas-lms/index.html | 3/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mathcow.mooo.com/ | 3/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu-gov-k12-school-learn-study.sylu.cc.cdn.cloudflare.net/ | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://instructure.storage.googleapis.com/index.html | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://canvas-lms.storage.googleapis.com/index.html | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/educationate/index.html | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/dogeub/index.html | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
