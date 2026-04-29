@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v3.0 | Released: April 27, 2026
-> r60 | Last Updated: April 29, 2026
+> r60 | Last Updated: April 29, 2026\
 > Total Links: 980\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -18,16 +18,15 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 ### Now Available as a Website!
 **The proxy list is now able to be viewed on a webpage at https://yourworstnightmare1.github.io/proxy-list/!** All links are auto-migrated here, and the website has features that this file does not, such as filtering links by provider, category, capabilities, protocols, searching for links, easy contributions, and more! If you are currently using this file to get your links, [I strongly recommend using the website instead of this markdown](https://yourworstnightmare1.github.io/proxy-list/).
 > [!TIP]
-> Trying to view the list through a proxy? Simply copy the URL https://yourworstnightmare1.github.io/proxy-list/ into the proxy's search/URL bar, and you can see all of the links! In order to load them properly, you will have to highlight the link and copy it into your browser as normally clicking it will try to load it inside of the proxy's browsing environment, which breaks it.
-
-### Dropping Support for GitHub Releases
-New versions will no longer be releasing as standalone releases on GitHub. I did this as I don't think it's necessary and isn't used. The releases are behind anyways and it is inconvenient to publish a new release every time the list has a new update. It's easier to just view what's new here or on the website and stay updated since you won't need to download anything than go there and download a release that will become outdated after a few hours/days when new links are added.
-
-### BunnyCDN
-BunnyCDN (b-cdn.net) links will not be added due to the fact that they expire. I simply don't want to clutter the list with links that won't work in a few days and have to remove them, it will be easier to keep standard domains than have a bunch of Bunny links that won't work. **This also applies if you are contributing to the list**. If you are wondering, b-cdn.net links expire after 3(?) days. After that the domain gets suspended. There is no fix.
+> Trying to view the list through a proxy? Simply copy the URL https://yourworstnightmare1.github.io/proxy-list/ into the proxy's search/URL bar, and you can see all of the links! In order to load them properly, you will have to click the "Copy link" button and paste it into your browser.
 
 ### gn-math
 gn-math is currently down due to copyright violations. It will be back up in the coming weeks most likely. For now ignore those links, they will stay in case they decide to work again. This also affects websites that use gn-math's CDN service for game hosting, as those games won't load.
+
+**Update 4/30/2026**: There is a new version of the gn-math site that has working games now. Please use these instead as older links will be removed.
+
+### Ultraviolet Issues
+It has come to my attention that proxies that use Ultraviolet do not load sites properly anymore. This varies by filter and is inconsistent. If you are using a proxy, please consider going to its settings and switching the protocol to Scramjet, or switching to a new proxy with Scramjet support. Ultraviolet seems to have been detected and is now being "blocked" in some sort of way.
 
 # 💜 Selenite
 > [!NOTE]
