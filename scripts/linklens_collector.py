@@ -24,6 +24,7 @@ import discord
 ROOT = Path(__file__).resolve().parents[1]
 DATA_JSON = ROOT / "docs" / "data.json"
 OUTPUT_JSON = ROOT / "docs" / "linklens.json"
+CHECKED_DOMAINS_TXT = ROOT / "docs" / "checked_domains.txt"
 
 STATUS_MAP = {"✅": "unblocked", "❌": "blocked", "⚠️": "warning"}
 LINE_RE = re.compile(r"^\s*(?:[^\w\s]+)?\s*(.+?)(?:\s*\((.*?)\))?\s*([✅❌⚠️])\s*$")
@@ -105,6 +106,41 @@ def load_existing(path: Path) -> dict[str, Any]:
 def write_output(path: Path, payload: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _atomic_write_text(path: Path, body: str) -> None:
+    """Write text via temp file + rename so concurrent readers never see partial state."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(body, encoding="utf-8")
+    os.replace(tmp, path)
+
+
+def append_checked_domains(domains: list[str]) -> int:
+    """Append new domains into docs/checked_domains.txt, preserving order and deduping.
+
+    Always rewrites the whole file deduplicated, so even if entries somehow drifted
+    out of sync (manual edits, prior buggy code, crashed collector run), this call
+    self-heals the file.
+    """
+    seen: set[str] = set()
+    ordered: list[str] = []
+    if CHECKED_DOMAINS_TXT.is_file():
+        for raw in CHECKED_DOMAINS_TXT.read_text(encoding="utf-8").splitlines():
+            d = normalize_domain_text(raw)
+            if d and d not in seen:
+                seen.add(d)
+                ordered.append(d)
+    added = 0
+    for raw in domains:
+        d = normalize_domain_text(raw or "")
+        if d and d not in seen:
+            seen.add(d)
+            ordered.append(d)
+            added += 1
+    body = "\n".join(ordered) + ("\n" if ordered else "")
+    _atomic_write_text(CHECKED_DOMAINS_TXT, body)
+    return added
 
 
 def extract_message_text(message: discord.Message) -> str:
@@ -216,6 +252,7 @@ class CollectorClient(discord.Client):
         checked_at = now_iso()
         seen = 0
         matched = 0
+        new_domains: list[str] = []
         async for msg in self.channel.history(limit=self.cfg.history_limit):
             seen += 1
             if not self.author_matches(msg):
@@ -243,14 +280,30 @@ class CollectorClient(discord.Client):
             for url in urls:
                 self.output[url] = {"url": url, "domain": safe_domain(url), **record}
                 self.updated += 1
+                d = safe_domain(url)
+                if d:
+                    new_domains.append(d)
             for domain in domains:
                 self.output["domain:" + domain] = {"url": "", "domain": domain, **record}
                 self.updated += 1
+                new_domains.append(domain)
         write_output(OUTPUT_JSON, self.output)
-        print(f"History ingest done: scanned={seen} matched={matched} updated={self.updated}")
+        added = append_checked_domains(new_domains)
+        print(
+            f"History ingest done: scanned={seen} matched={matched} updated={self.updated} "
+            f"checked_domains_added={added}"
+        )
 
     async def on_ready(self) -> None:
         print(f"Connected as {self.user} ({self.user.id})")
+        # Self-heal the checked_domains file on startup. If a previous run was
+        # interrupted, or someone hand-edited the file, this drops any duplicate
+        # rows so the resume baseline is clean before we append more.
+        try:
+            healed = append_checked_domains([])
+            print(f"checked_domains.txt self-heal pass complete (added={healed}).")
+        except Exception as exc:  # pragma: no cover - non-fatal
+            print(f"checked_domains.txt self-heal failed: {exc}")
         ch = self.get_channel(self.cfg.channel_id)
         if not isinstance(ch, discord.TextChannel):
             try:
@@ -355,6 +408,8 @@ class CollectorClient(discord.Client):
             }
             self.updated += 1
             write_output(OUTPUT_JSON, self.output)
+            if status == "ok" and domain:
+                append_checked_domains([domain])
             await asyncio.sleep(self.cfg.min_delay)
 
 

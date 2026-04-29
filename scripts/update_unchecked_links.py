@@ -22,7 +22,9 @@ ROOT = Path(__file__).resolve().parents[1]
 CONVERT_SCRIPT = ROOT / "scripts" / "convert_list_to_json.py"
 DATA_JSON = ROOT / "docs" / "data.json"
 LINKLENS_JSON = ROOT / "docs" / "linklens.json"
+CHECKED_DOMAINS_TXT = ROOT / "docs" / "checked_domains.txt"
 LINKS_TXT = ROOT / "links.txt"
+UNCHECKED_TXT = ROOT / "unchecked_links.txt"
 DEFAULT_REPO_URL = "https://github.com/yourworstnightmare1/proxy-list"
 
 
@@ -75,6 +77,47 @@ def write_links_txt(links: list[str]) -> None:
     LINKS_TXT.write_text("\n".join(links) + "\n", encoding="utf-8")
 
 
+def write_unchecked_txt(links: list[str]) -> None:
+    body = "\n".join(links)
+    UNCHECKED_TXT.write_text(body + ("\n" if body else ""), encoding="utf-8")
+
+
+def load_checked_domains_txt() -> set[str]:
+    if not CHECKED_DOMAINS_TXT.is_file():
+        return set()
+    out: set[str] = set()
+    for raw in CHECKED_DOMAINS_TXT.read_text(encoding="utf-8").splitlines():
+        d = normalize_domain(raw)
+        if d:
+            out.add(d)
+    return out
+
+
+def dedupe_checked_domains_txt() -> tuple[int, int]:
+    """Rewrite checked_domains.txt with normalized, first-seen-order, deduped entries.
+
+    Returns (kept, removed) counts.
+    """
+    if not CHECKED_DOMAINS_TXT.is_file():
+        return (0, 0)
+    current = CHECKED_DOMAINS_TXT.read_text(encoding="utf-8")
+    raw_lines = current.splitlines()
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for raw in raw_lines:
+        d = normalize_domain(raw)
+        if d and d not in seen:
+            seen.add(d)
+            ordered.append(d)
+    removed = len([1 for raw in raw_lines if normalize_domain(raw)]) - len(ordered)
+    body = "\n".join(ordered) + ("\n" if ordered else "")
+    if body != current:
+        tmp = CHECKED_DOMAINS_TXT.with_suffix(CHECKED_DOMAINS_TXT.suffix + ".tmp")
+        tmp.write_text(body, encoding="utf-8")
+        os.replace(tmp, CHECKED_DOMAINS_TXT)
+    return (len(ordered), removed)
+
+
 def load_checked_domains() -> set[str]:
     if not LINKLENS_JSON.is_file():
         return set()
@@ -103,15 +146,24 @@ def main() -> int:
         return 1
 
     run_convert()
+    kept, removed = dedupe_checked_domains_txt()
+    if removed:
+        print(f"Deduped {CHECKED_DOMAINS_TXT.name}: kept={kept}, removed={removed}")
     links = load_links()
     write_links_txt(links)
 
-    checked = load_checked_domains()
+    checked_json = load_checked_domains()
+    checked_txt = load_checked_domains_txt()
+    checked = checked_json | checked_txt
     unchecked = [u for u in links if (d := domain_of_url(u)) and d not in checked]
+    write_unchecked_txt(unchecked)
 
     print(f"Updated {LINKS_TXT} with {len(links)} links.")
-    print(f"Checked domains in {LINKLENS_JSON.name}: {len(checked)}")
-    print(f"Unchecked links remaining: {len(unchecked)}")
+    print(
+        f"Checked domains: {len(checked)} "
+        f"(linklens.json={len(checked_json)}, checked_domains.txt={len(checked_txt)})"
+    )
+    print(f"Unchecked links remaining: {len(unchecked)} -> {UNCHECKED_TXT.name}")
     if unchecked:
         preview = unchecked[:10]
         print("Next unchecked samples:")

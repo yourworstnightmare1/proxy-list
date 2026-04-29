@@ -239,8 +239,22 @@
       justify-content: space-between;
       gap: 0.65rem;
       flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      background: #121920;
+      z-index: 5;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
     }
     .summary-title { font-size: 1rem; margin: 0; }
+    .summary-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-left: auto;
+    }
+    .summary-actions .btn { font-size: 0.85rem; }
     .summary-body {
       padding: 1rem;
       overflow: auto;
@@ -496,13 +510,14 @@
     <section class="summary-modal" role="dialog" aria-modal="true" aria-labelledby="summaryTitle">
       <div class="summary-head">
         <h2 class="summary-title" id="summaryTitle">Link summary</h2>
-        <button class="btn" id="summaryCloseBtn" type="button">Close</button>
+        <div class="summary-actions">
+          <a class="btn btn-primary" id="summaryOpenBtn" href="#" target="_blank" rel="noopener noreferrer">Open link</a>
+          <button class="btn" id="summaryCopyBtn" type="button">Copy link</button>
+          <button class="btn" id="summaryCloseBtn" type="button">Close</button>
+        </div>
       </div>
       <div class="summary-body" id="summaryBody"></div>
-      <div class="summary-footer" id="summaryFooter">
-        <button class="btn" id="summaryCopyBtn" type="button">Copy link</button>
-        <a class="btn btn-primary" id="summaryOpenBtn" href="#" target="_blank" rel="noopener noreferrer">Open link</a>
-      </div>
+      <div class="summary-footer" id="summaryFooter"></div>
     </section>
   </div>
   <div class="summary-backdrop" id="updateBackdrop" aria-hidden="true">
@@ -932,9 +947,10 @@
     function setSummaryFooterLink(link) {
       const openBtn = $("summaryOpenBtn");
       const copyBtn = $("summaryCopyBtn");
-      if (openBtn) openBtn.href = link;
+      const href = link || "#";
+      if (openBtn) openBtn.setAttribute("href", href);
       if (copyBtn) {
-        copyBtn.dataset.link = link;
+        copyBtn.dataset.link = link || "";
         copyBtn.classList.remove("copied");
         copyBtn.textContent = "Copy link";
       }
@@ -1360,8 +1376,8 @@
           if (!link || link === "#") return;
           if (!confirmMalwareAction(link, "open")) ev.preventDefault();
         });
-        $("summaryCopyBtn").addEventListener("click", async () => {
-          const btn = $("summaryCopyBtn");
+        $("summaryCopyBtn").addEventListener("click", async (ev) => {
+          const btn = ev.currentTarget;
           const link = (btn && btn.dataset && btn.dataset.link) || "";
           if (!link) return;
           if (!confirmMalwareAction(link, "copy")) return;
@@ -1370,6 +1386,16 @@
             if (navigator.clipboard && navigator.clipboard.writeText) {
               await navigator.clipboard.writeText(link);
               ok = true;
+            } else {
+              const ta = document.createElement("textarea");
+              ta.value = link;
+              ta.setAttribute("readonly", "");
+              ta.style.position = "absolute";
+              ta.style.left = "-9999px";
+              document.body.appendChild(ta);
+              ta.select();
+              ok = document.execCommand("copy");
+              document.body.removeChild(ta);
             }
           } catch (_) {
             ok = false;
