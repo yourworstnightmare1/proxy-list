@@ -7,8 +7,8 @@
     "important_notices": "### Now Available as a Website!\n**The proxy list is now able to be viewed on a webpage at https://yourworstnightmare1.github.io/proxy-list/!** All links are auto-migrated here, and the website has features that this file does not, such as filtering links by provider, category, capabilities, protocols, searching for links, easy contributions, and more! If you are currently using this file to get your links, [I strongly recommend using the website instead of this markdown](https://yourworstnightmare1.github.io/proxy-list/).\nTrying to view the list through a proxy? Simply copy the URL https://yourworstnightmare1.github.io/proxy-list/ into the proxy's search/URL bar, and you can see all of the links! In order to load them properly, you will have to click the \"Copy link\" button and paste it into your browser.\n### gn-math\ngn-math is currently down due to copyright violations. It will be back up in the coming weeks most likely. For now ignore those links, they will stay in case they decide to work again. This also affects websites that use gn-math's CDN service for game hosting, as those games won't load.\n**Update 4/30/2026**: There is a new version of the gn-math site that has working games now. Please use these instead as older links will be removed.\n### Ultraviolet Issues\nIt has come to my attention that proxies that use Ultraviolet do not load sites properly anymore. This varies by filter and is inconsistent. If you are using a proxy, please consider going to its settings and switching the protocol to Scramjet, or switching to a new proxy with Scramjet support."
   },
   "link_check": {
-    "checked_at": "2026-04-30T02:28:58Z",
-    "checked_at_display": "2026-04-30 02:28 UTC",
+    "checked_at": "2026-04-30T03:41:15Z",
+    "checked_at_display": "2026-04-30 03:41 UTC",
     "added_count": 0,
     "removed_count": 0,
     "added_links": [],
