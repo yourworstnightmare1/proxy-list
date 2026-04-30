@@ -1,6 +1,6 @@
 # Proxy List
 > [!NOTE]
-> v3.0 | Released: April 27, 2026
+> v3.0.1 | Released: April 27, 2026
 > r61 | Last Updated: April 29, 2026
 > Total Links: 977\
 > https://yourworstnightmare1.github.io/proxy-list/
