@@ -56,6 +56,38 @@ def parse_contributor_cell(raw: str) -> tuple[str, str | None]:
     return s, None
 
 
+_IMPORTANT_NOTICES_H2 = re.compile(r"^##\s+Important Notices\s*$", re.IGNORECASE)
+
+
+def parse_important_notices(text: str) -> str:
+    """Return markdown-lite body for ## Important Notices … until next H1/H2 heading."""
+    lines = text.splitlines()
+    start = -1
+    for i, raw in enumerate(lines):
+        if _IMPORTANT_NOTICES_H2.match(raw.strip()):
+            start = i + 1
+            break
+    if start < 0:
+        return ""
+
+    out_lines: list[str] = []
+    for raw in lines[start:]:
+        if re.match(r"^##\s+", raw):
+            break
+        if re.match(r"^#\s+", raw) and not raw.startswith("##"):
+            break
+        inner = strip_blockquote_prefix(raw).strip()
+        if inner.startswith("[!") and inner.endswith("]"):
+            continue
+        if inner == "":
+            continue
+        if inner.casefold() == "<br>":
+            continue
+        out_lines.append(inner)
+
+    return "\n".join(out_lines).strip()
+
+
 def parse_list_meta(text: str) -> dict[str, str]:
     """Read vX.Y.Z, rN, and Last Updated from the list header blockquote."""
     version, revision, last_updated = "", "", ""
@@ -190,10 +222,11 @@ def main() -> int:
         return 1
     raw = INPUT.read_text(encoding="utf-8")
     meta = parse_list_meta(raw)
+    important = parse_important_notices(raw)
     links = parse_list_md(raw)
     unsorted_links = parse_unsorted_links()
     payload = {
-        "meta": {**meta, "unsorted_total": len(unsorted_links)},
+        "meta": {**meta, "unsorted_total": len(unsorted_links), "important_notices": important},
         "link_check": load_link_check_meta(),
         "links": links,
     }

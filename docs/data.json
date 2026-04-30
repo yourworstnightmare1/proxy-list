@@ -3,7 +3,8 @@
     "version": "v3.0",
     "revision": "r60",
     "last_updated": "April 29, 2026",
-    "unsorted_total": 1989
+    "unsorted_total": 1989,
+    "important_notices": "### Now Available as a Website!\n**The proxy list is now able to be viewed on a webpage at https://yourworstnightmare1.github.io/proxy-list/!** All links are auto-migrated here, and the website has features that this file does not, such as filtering links by provider, category, capabilities, protocols, searching for links, easy contributions, and more! If you are currently using this file to get your links, [I strongly recommend using the website instead of this markdown](https://yourworstnightmare1.github.io/proxy-list/).\nTrying to view the list through a proxy? Simply copy the URL https://yourworstnightmare1.github.io/proxy-list/ into the proxy's search/URL bar, and you can see all of the links! In order to load them properly, you will have to click the \"Copy link\" button and paste it into your browser.\n### gn-math\ngn-math is currently down due to copyright violations. It will be back up in the coming weeks most likely. For now ignore those links, they will stay in case they decide to work again. This also affects websites that use gn-math's CDN service for game hosting, as those games won't load.\n**Update 4/30/2026**: There is a new version of the gn-math site that has working games now. Please use these instead as older links will be removed.\n### Ultraviolet Issues\nIt has come to my attention that proxies that use Ultraviolet do not load sites properly anymore. This varies by filter and is inconsistent. If you are using a proxy, please consider going to its settings and switching the protocol to Scramjet, or switching to a new proxy with Scramjet support."
   },
   "link_check": {
     "checked_at": "2026-04-29T19:16:48Z",
@@ -1325,14 +1326,15 @@
     },
     {
       "provider": "🍌 Jordan's Math Work",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet, Ultraviolet",
       "protocol_tags": [
-        "pending"
+        "scramjet",
+        "ultraviolet"
       ],
       "locked": "",
       "link": "https://sleepy.thakuraiarman.com.np/",
@@ -8308,15 +8310,11 @@
     },
     {
       "provider": "🕳️ Rift",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
       "locked": "",
       "link": "https://firefrog6710.firebaseapp.com/games",
       "found": "4/25/2026",
@@ -8327,15 +8325,11 @@
     },
     {
       "provider": "💧 Hydra-Network",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
       "locked": "",
       "link": "https://cdn.jsdelivr.net/gh/Hydra-Network/BromineLite@main/index.svg",
       "found": "4/25/2026",
@@ -8346,14 +8340,15 @@
     },
     {
       "provider": "⛰️ Everest",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet, Ultraviolet",
       "protocol_tags": [
-        "pending"
+        "scramjet",
+        "ultraviolet"
       ],
       "locked": "",
       "link": "https://light.everest.speed.gressvikbmx.no/",
@@ -9867,15 +9862,11 @@
     },
     {
       "provider": "🏛️ Dominum",
-      "category": "pending",
-      "capabilities": "pending",
-      "capability_tags": [
-        "pending"
-      ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
+      "category": "Proxy/Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
       "locked": "",
       "link": "https://unpkg.com/bluebook-testing@3.1.3/index.html",
       "found": "4/21/2026",
@@ -11613,15 +11604,13 @@
     },
     {
       "provider": "♈ Zodiac",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
       "capability_tags": [
-        "pending"
+        "wisp"
       ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
+      "protocols": "N/A",
+      "protocol_tags": [],
       "locked": "",
       "link": "https://sites.google.com/view/psycholigy/home",
       "found": "4/21/2026",
@@ -11632,15 +11621,13 @@
     },
     {
       "provider": "♈ Zodiac",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
       "capability_tags": [
-        "pending"
+        "wisp"
       ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
+      "protocols": "N/A",
+      "protocol_tags": [],
       "locked": "",
       "link": "https://cdn.statically.io/gh/darkdragonzxs/zd-pages@main/svg.svg",
       "found": "4/21/2026",
@@ -11651,15 +11638,13 @@
     },
     {
       "provider": "♈ Zodiac",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
       "capability_tags": [
-        "pending"
+        "wisp"
       ],
-      "protocols": "pending",
-      "protocol_tags": [
-        "pending"
-      ],
+      "protocols": "N/A",
+      "protocol_tags": [],
       "locked": "",
       "link": "https://cdn.jsdelivr.net/gh/darkdragonzxs/zd-pages@latest/svg.svg",
       "found": "4/21/2026",
@@ -13779,14 +13764,14 @@
     },
     {
       "provider": "🧱 Noblocc",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://noblocc.co.uk/",
@@ -13798,14 +13783,14 @@
     },
     {
       "provider": "🧱 Noblocc",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://noblocc.com/",
@@ -13817,14 +13802,14 @@
     },
     {
       "provider": "🧱 Noblocc",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://cokezero.uk/",
@@ -13836,14 +13821,14 @@
     },
     {
       "provider": "🧱 Noblocc",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://vanillacoke.co.uk/",
@@ -15494,14 +15479,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://bull.vixenlights.com/",
@@ -15513,14 +15498,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://s3.amazonaws.com/slantsite/index.html",
@@ -15532,14 +15517,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://cavtalk.org/",
@@ -15551,14 +15536,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://craftingwithmimi.com/",
@@ -15570,14 +15555,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://cves359.com/",
@@ -15589,14 +15574,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://kcomeacademy.org/",
@@ -15608,14 +15593,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://schoolimprovementtips.com/",
@@ -15627,14 +15612,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://uni-learning.machophd.org/",
@@ -15646,14 +15631,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://lightspedmaster9e7re928394739.fdmtechnika.pl/",
@@ -15665,14 +15650,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://contentkeepermaster3009.deltacompy.com.br/",
@@ -15684,14 +15669,14 @@
     },
     {
       "provider": "✨ Quasar",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://securelymaster2000934.greatgiftlists.com/",
@@ -15817,14 +15802,14 @@
     },
     {
       "provider": "🔫 AWP",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://nirbytesqwo.2hintranet.hu/",
@@ -15836,14 +15821,14 @@
     },
     {
       "provider": "🔫 AWP",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://nirbytesmpv.bogie.me/",
@@ -15855,14 +15840,14 @@
     },
     {
       "provider": "🔫 AWP",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://subscribenirbytesyt.fxgaming.eu/",
@@ -15874,14 +15859,14 @@
     },
     {
       "provider": "🔫 AWP",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://ismenirbytesm.gerenna.com/",
@@ -15893,14 +15878,14 @@
     },
     {
       "provider": "🔫 AWP",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://avengernirbytes.savequeechylake.org/",
@@ -15912,14 +15897,14 @@
     },
     {
       "provider": "🔫 AWP",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://useawp.climaref.cl/",
@@ -15931,14 +15916,14 @@
     },
     {
       "provider": "🔫 AWP",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://useawp.developer.li/",
@@ -15975,14 +15960,14 @@
     },
     {
       "provider": "📡 CanLite",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://nzltavxzreim.orgic.cc/proxe",
@@ -15994,14 +15979,14 @@
     },
     {
       "provider": "📡 CanLite",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://j7yq0hxpvm1z.blueprintdigital.ca/proxe",
@@ -16013,14 +15998,14 @@
     },
     {
       "provider": "📡 CanLite",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://bh3om2enegua.kompaniet.nu/",
@@ -16032,14 +16017,14 @@
     },
     {
       "provider": "📡 CanLite",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://2p0iv6mlokvj.hana.web.id/proxe",
@@ -16051,14 +16036,14 @@
     },
     {
       "provider": "📡 CanLite",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://wxxp5796wwsw.pbdjarum.info/games",
@@ -16070,14 +16055,14 @@
     },
     {
       "provider": "📡 CanLite",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://macczrbwv9hm.commwebworks.com/proxe",
@@ -16089,14 +16074,14 @@
     },
     {
       "provider": "📡 CanLite",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://xlx17ih9jjxe.pjabbari.com/proxe",
@@ -16108,14 +16093,14 @@
     },
     {
       "provider": "📡 CanLite",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://01s86gjvslsk.frazzydee.ca/proxe",
@@ -16127,14 +16112,14 @@
     },
     {
       "provider": "📡 CanLite",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://wpp6g1pnw9ob.stremar.cl/proxe",
@@ -16146,14 +16131,14 @@
     },
     {
       "provider": "📡 CanLite",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "unknown",
       "protocol_tags": [
-        "pending"
+        "unknown"
       ],
       "locked": "",
       "link": "https://otofa2e9co5s.toconline.ch/proxe",
@@ -16165,14 +16150,14 @@
     },
     {
       "provider": "🔺 Vertix",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
       "capability_tags": [
-        "pending"
+        "unknown"
       ],
-      "protocols": "pending",
+      "protocols": "Ultraviolet",
       "protocol_tags": [
-        "pending"
+        "ultraviolet"
       ],
       "locked": "",
       "link": "https://div7ikqm4o515.cloudfront.net/",
@@ -16184,14 +16169,14 @@
     },
     {
       "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://student.grammar.writing.programming.lecture.installgentoo.com/",
@@ -16203,14 +16188,14 @@
     },
     {
       "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://studying.student.library.lecture.teacher.archivomemoria-audiovisualcsb.org/",
@@ -16222,14 +16207,14 @@
     },
     {
       "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://physics.music.geography.homework.project.svargas.cl/",
@@ -16241,14 +16226,14 @@
     },
     {
       "provider": "🧭 Ontonic",
-      "category": "pending",
-      "capabilities": "pending",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "Scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://geography.studying.art.teacher.physics.true-woman.ru/",

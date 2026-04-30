@@ -26,7 +26,7 @@ gn-math is currently down due to copyright violations. It will be back up in the
 **Update 4/30/2026**: There is a new version of the gn-math site that has working games now. Please use these instead as older links will be removed.
 
 ### Ultraviolet Issues
-It has come to my attention that proxies that use Ultraviolet do not load sites properly anymore. This varies by filter and is inconsistent. If you are using a proxy, please consider going to its settings and switching the protocol to Scramjet, or switching to a new proxy with Scramjet support. Ultraviolet seems to have been detected and is now being "blocked" in some sort of way.
+It has come to my attention that proxies that use Ultraviolet do not load sites properly anymore. This varies by filter and is inconsistent. If you are using a proxy, please consider going to its settings and switching the protocol to Scramjet, or switching to a new proxy with Scramjet support.
 
 # 💜 Selenite
 > [!NOTE]
@@ -146,7 +146,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 1 |
+> | Proxy/Games | unknown | Scramjet, Ultraviolet | 1 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -657,7 +657,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 1 |
+> | Games | N/A | N/A | 1 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -670,7 +670,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 1 |
+> | Games | N/A | N/A | 1 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -683,7 +683,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 1 |
+> | Proxy/Games | captcha | Scramjet, Ultraviolet | 1 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -805,7 +805,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 1 |
+> | Proxy/Games | N/A | N/A | 1 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -946,7 +946,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 3 |
+> | Proxy/Games | wisp | N/A | 3 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1096,7 +1096,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 4 |
+> | Proxy/Games | unknown | unknown | 4 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1260,7 +1260,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 11 |
+> | Proxy/Games | captcha | Scramjet | 11 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1301,7 +1301,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 7 |
+> | Proxy/Games | unknown | Scramjet | 7 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1330,7 +1330,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 10 |
+> | Proxy | unknown | unknown | 10 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1352,7 +1352,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 1 |
+> | Proxy/Games | unknown | Ultraviolet | 1 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1365,7 +1365,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 4 |
+> | Proxy/Games | captcha | Scramjet | 4 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.

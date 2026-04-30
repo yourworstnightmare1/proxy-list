@@ -71,6 +71,13 @@
       font-size: 0.78rem;
       color: var(--muted);
     }
+    .selected-filter-disclaimer {
+      margin: 0.25rem 0 0;
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.4;
+      max-width: 70ch;
+    }
     .layout {
       display: grid;
       grid-template-columns: minmax(260px, 300px) 1fr;
@@ -215,11 +222,13 @@
     .summary-modal {
       width: min(760px, 100%);
       max-height: 85vh;
-      overflow: auto;
+      display: flex;
+      flex-direction: column;
       background: #121920;
       border: 1px solid var(--border);
       border-radius: 10px;
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
     }
     .summary-head {
       padding: 0.9rem 1rem;
@@ -228,9 +237,30 @@
       align-items: center;
       justify-content: space-between;
       gap: 0.65rem;
+      flex-shrink: 0;
     }
     .summary-title { font-size: 1rem; margin: 0; }
-    .summary-body { padding: 1rem; }
+    .summary-body {
+      padding: 1rem;
+      overflow: auto;
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+    .summary-footer {
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--border);
+      background: #0f161e;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+    .summary-footer:empty { display: none; }
+    #summaryCopyBtn.copied {
+      color: var(--ok);
+      border-color: #305244;
+    }
     .summary-muted { color: var(--muted); font-size: 0.84rem; margin: 0 0 0.7rem; }
     .summary-grid {
       display: grid;
@@ -276,6 +306,36 @@
       line-height: 1.4;
     }
     .risk-notice strong { color: #ffe3aa; }
+    .important-notices {
+      border: 1px solid #2d5588;
+      background: #152030;
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      max-height: min(50vh, 28rem);
+      overflow-y: auto;
+    }
+    .important-notices h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0.65rem 0 0.4rem;
+      color: var(--accent);
+    }
+    .important-notices h3:first-child {
+      margin-top: 0;
+    }
+    .important-notices p {
+      margin: 0 0 0.55rem;
+      color: var(--text);
+    }
+    .important-notices p:last-child {
+      margin-bottom: 0;
+    }
+    .important-notices a {
+      word-break: break-all;
+    }
     #filterSelect {
       width: 100%;
       padding: 0.5rem 0.65rem;
@@ -302,6 +362,7 @@
       <a class="btn" href="https://forms.gle/SMx9EUkBeiFuLwBa8" rel="noopener noreferrer" target="_blank">Contribute via Google Form</a>
     </div>
     <p class="selected-filter-label" id="selectedFilterLabel">Selected gn-math filter: Any / Not selected</p>
+    <p class="selected-filter-disclaimer">This does not determine if a link is blocked, it is just a highly reliable estimation on knowing whether or not a link is blocked. Some links may still be blocked despite showing unblocked in the summary.</p>
   </header>
   <div class="layout">
     <aside>
@@ -336,6 +397,7 @@
       </fieldset>
     </aside>
     <main>
+      <section class="important-notices" id="importantNotices" aria-label="Important notices" hidden></section>
       <div class="stats" id="stats"></div>
       <div id="tableWrap"></div>
     </main>
@@ -359,6 +421,10 @@
         <button class="btn" id="summaryCloseBtn" type="button">Close</button>
       </div>
       <div class="summary-body" id="summaryBody"></div>
+      <div class="summary-footer" id="summaryFooter">
+        <button class="btn" id="summaryCopyBtn" type="button">Copy link</button>
+        <a class="btn btn-primary" id="summaryOpenBtn" href="#" target="_blank" rel="noopener noreferrer">Open link</a>
+      </div>
     </section>
   </div>
   <div class="summary-backdrop" id="filterBackdrop" aria-hidden="true">
@@ -439,6 +505,72 @@
       return selected.some((s) => tags.has(s));
     }
 
+    function rowMatchesGroup(row, group, selected, mode) {
+      if (!selected.length) return true;
+      if (group === "providerTags") return selected.includes(row.provider || "");
+      if (group === "categoryTags") return selected.includes(row.category || "");
+      if (group === "protocolTags") {
+        const pt = row.protocol_tags || [];
+        return selected.some((p) => pt.includes(p));
+      }
+      if (group === "capTags") {
+        const tags = new Set(row.capability_tags || []);
+        if (mode === "all") return selected.every((s) => tags.has(s));
+        return selected.some((s) => tags.has(s));
+      }
+      return true;
+    }
+
+    function filterRows(rows, opts) {
+      const exclude = (opts && opts.excludeGroup) || "";
+      const q = $("q").value.trim().toLowerCase();
+      const selections = {
+        providerTags: selectedIn("providerTags"),
+        categoryTags: selectedIn("categoryTags"),
+        protocolTags: selectedIn("protocolTags"),
+        capTags: selectedCaps(),
+      };
+      const mode = capMode();
+      return rows.filter((row) => {
+        if (q && !haystack(row).includes(q)) return false;
+        if (hideBlockedBySelectedFilter && isBlockedBySelectedFilter(row.link)) return false;
+        for (const group of ["providerTags", "categoryTags", "protocolTags", "capTags"]) {
+          if (group === exclude) continue;
+          if (!rowMatchesGroup(row, group, selections[group], mode)) return false;
+        }
+        return true;
+      });
+    }
+
+    const FILTER_GROUP_VALUES = {
+      providerTags: (r) => [r.provider || ""],
+      categoryTags: (r) => [r.category || ""],
+      protocolTags: (r) => r.protocol_tags || [],
+      capTags: (r) => r.capability_tags || [],
+    };
+
+    function updateFilterCounts(rows) {
+      for (const containerId of Object.keys(FILTER_GROUP_VALUES)) {
+        const wrap = $(containerId);
+        if (!wrap) continue;
+        const subset = filterRows(rows, { excludeGroup: containerId });
+        const counts = new Map();
+        const valuesOf = FILTER_GROUP_VALUES[containerId];
+        for (const row of subset) {
+          for (const v of valuesOf(row)) {
+            counts.set(v, (counts.get(v) || 0) + 1);
+          }
+        }
+        wrap.querySelectorAll(".tag").forEach((label) => {
+          const inp = label.querySelector("input");
+          const cEl = label.querySelector(".tag-count");
+          if (!inp || !cEl) return;
+          const n = counts.get(inp.value) || 0;
+          cEl.textContent = "(" + n + ") ";
+        });
+      }
+    }
+
     function formatListVersion(meta) {
       const v = (meta && meta.version) || "";
       const r = (meta && meta.revision) || "";
@@ -455,24 +587,8 @@
     }
 
     function render(rows, meta, linkCheck) {
-      const q = $("q").value.trim().toLowerCase();
-      const providers = selectedIn("providerTags");
-      const categories = selectedIn("categoryTags");
-      const protocols = selectedIn("protocolTags");
-      const caps = selectedCaps();
-
-      const filtered = rows.filter((row) => {
-        if (providers.length && !providers.includes(row.provider)) return false;
-        if (categories.length && !categories.includes(row.category)) return false;
-        if (protocols.length) {
-          const pt = row.protocol_tags || [];
-          if (!protocols.some((p) => pt.includes(p))) return false;
-        }
-        if (!rowMatchesCaps(row, caps)) return false;
-        if (q && !haystack(row).includes(q)) return false;
-        if (hideBlockedBySelectedFilter && isBlockedBySelectedFilter(row.link)) return false;
-        return true;
-      });
+      const filtered = filterRows(rows, {});
+      updateFilterCounts(rows);
 
       const checkedAt = linkCheck && linkCheck.checked_at_display ? linkCheck.checked_at_display : "—";
       const added = Number.isFinite(linkCheck && linkCheck.added_count) ? linkCheck.added_count : 0;
@@ -640,6 +756,35 @@
       return byExact || byDomain || null;
     }
 
+    const MALWARE_CATEGORY_RX = /\b(malware|phish(?:ing)?|spyware|virus(?:es)?|trojan|ransom(?:ware)?|botnet|adware|exploit|c2|command[- ]and[- ]control|spam[ _-]?urls?|threat|malicious)\b/i;
+
+    function malwareCategoryFor(link) {
+      const selectedFilterKey = normalizeFilterKey(selectedGnMathFilter);
+      if (!selectedFilterKey) return "";
+      const entry = summaryEntryFor(link);
+      if (!entry || typeof entry !== "object") return "";
+      const providers = Array.isArray(entry.providers) ? entry.providers : [];
+      const match = providers.find((p) => normalizeFilterKey(p.provider || "") === selectedFilterKey);
+      if (!match) return "";
+      const cat = cleanSummaryText(match.category || "");
+      return MALWARE_CATEGORY_RX.test(cat) ? cat : "";
+    }
+
+    function malwareWarningMessage(action) {
+      const filterName = cleanSummaryText(selectedGnMathFilter) || "The selected filter";
+      return (
+        filterName +
+        " has detected that this site may have malware. " +
+        "If you go to this site, your network administrator may be notified. Visit at your own risk." +
+        "\n\nDo you still want to " + action + " this link?"
+      );
+    }
+
+    function confirmMalwareAction(link, action) {
+      if (!malwareCategoryFor(link)) return true;
+      return window.confirm(malwareWarningMessage(action));
+    }
+
     function isBlockedBySelectedFilter(link) {
       const selectedFilterKey = normalizeFilterKey(selectedGnMathFilter);
       if (!selectedFilterKey) return false;
@@ -656,20 +801,27 @@
       return checkedDomains.has(d) || checkedDomains.has(d.replace(/^www\./, ""));
     }
 
+    function setSummaryFooterLink(link) {
+      const openBtn = $("summaryOpenBtn");
+      const copyBtn = $("summaryCopyBtn");
+      if (openBtn) openBtn.href = link;
+      if (copyBtn) {
+        copyBtn.dataset.link = link;
+        copyBtn.classList.remove("copied");
+        copyBtn.textContent = "Copy link";
+      }
+    }
+
     function openSummary(link) {
       const entry = summaryEntryFor(link);
       const body = $("summaryBody");
+      setSummaryFooterLink(link);
       if (!entry) {
         const pendingText = hasCheckedDomain(link)
           ? "This link was checked, but no parsable gn-math summary message was captured yet."
           : "No gn-math data found for this link yet.";
         body.innerHTML =
-          '<p class="summary-muted">' +
-          escapeHtml(pendingText) +
-          "</p>" +
-          '<p><a class="btn btn-primary" href="' +
-          escapeAttr(link) +
-          '" target="_blank" rel="noopener noreferrer">Open link</a></p>';
+          '<p class="summary-muted">' + escapeHtml(pendingText) + "</p>";
       } else {
         const summary = entry.summary || {};
         const providers = Array.isArray(entry.providers) ? entry.providers : [];
@@ -726,10 +878,7 @@
           "</span></div></div>" +
           '<table class="provider-table"><thead><tr><th>Provider</th><th>Category</th><th>Result</th></tr></thead><tbody>' +
           providerRows +
-          "</tbody></table>" +
-          '<p style="margin-top:0.8rem"><a class="btn btn-primary" href="' +
-          escapeAttr(link) +
-          '" target="_blank" rel="noopener noreferrer">Open link</a></p>';
+          "</tbody></table>";
       }
       $("summaryTitle").textContent = "Link summary";
       $("summaryBackdrop").classList.add("open");
@@ -751,6 +900,104 @@
 
     function escapeAttr(s) {
       return escapeHtml(s).replace(/'/g, "&#39;");
+    }
+
+    /** Markdown-lite: **bold**, `code`, [label](https…), bare https URLs. */
+    function renderMarkdownInline(raw) {
+      const s = String(raw);
+      let out = "";
+      let i = 0;
+      while (i < s.length) {
+        if (s.startsWith("**", i)) {
+          const end = s.indexOf("**", i + 2);
+          if (end !== -1) {
+            out += "<strong>" + escapeHtml(s.slice(i + 2, end)) + "</strong>";
+            i = end + 2;
+            continue;
+          }
+        }
+        if (s.charCodeAt(i) === 96) {
+          const end = s.indexOf("`", i + 1);
+          if (end !== -1) {
+            out += "<code>" + escapeHtml(s.slice(i + 1, end)) + "</code>";
+            i = end + 1;
+            continue;
+          }
+        }
+        const slice = s.slice(i);
+        const lm = slice.match(/^\[([^\]]*)\]\(([^)]+)\)/);
+        if (lm) {
+          const href = lm[2].trim();
+          if (/^https?:\/\//i.test(href)) {
+            out +=
+              '<a href="' +
+              escapeAttr(href) +
+              '" rel="noopener noreferrer" target="_blank">' +
+              escapeHtml(lm[1]) +
+              "</a>";
+            i += lm[0].length;
+            continue;
+          }
+        }
+        const um = slice.match(/^https?:\/\/[^\s<)\]"']+/i);
+        if (um) {
+          const u = um[0];
+          out +=
+            '<a href="' +
+            escapeAttr(u) +
+            '" rel="noopener noreferrer" target="_blank">' +
+            escapeHtml(u) +
+            "</a>";
+          i += u.length;
+          continue;
+        }
+        out += escapeHtml(s[i]);
+        i += 1;
+      }
+      return out;
+    }
+
+    function renderMarkdownLiteNotices(noticesText) {
+      const text = String(noticesText || "").trim();
+      if (!text) return "";
+      const sections = text.split(/(?=^### )/m);
+      const chunks = [];
+      for (const sec of sections) {
+        const s = sec.trim();
+        if (!s) continue;
+        if (s.startsWith("###")) {
+          const rest = s.replace(/^###\s+/, "");
+          const nl = rest.indexOf("\n");
+          const title = (nl === -1 ? rest : rest.slice(0, nl)).trim();
+          const body = nl === -1 ? "" : rest.slice(nl + 1).trim();
+          chunks.push("<h3>" + renderMarkdownInline(title) + "</h3>");
+          if (body) {
+            for (const para of body.split(/\n{2,}/)) {
+              const p = para.replace(/\n+/g, " ").trim();
+              if (p) chunks.push("<p>" + renderMarkdownInline(p) + "</p>");
+            }
+          }
+        } else {
+          for (const para of s.split(/\n{2,}/)) {
+            const p = para.replace(/\n+/g, " ").trim();
+            if (p) chunks.push("<p>" + renderMarkdownInline(p) + "</p>");
+          }
+        }
+      }
+      return chunks.join("");
+    }
+
+    function applyImportantNotices(meta) {
+      const el = $("importantNotices");
+      if (!el) return;
+      const md = meta && meta.important_notices;
+      if (!md || !String(md).trim()) {
+        el.innerHTML = "";
+        el.hidden = true;
+        return;
+      }
+      el.innerHTML = renderMarkdownLiteNotices(String(md));
+      el.hidden = false;
     }
 
     function formatTags(tags) {
@@ -859,6 +1106,7 @@
             .filter(Boolean)
         );
         const { meta, link_check, links } = normalizePayload(json);
+        applyImportantNotices(meta);
         setFooter(meta);
         buildCheckboxGroup(
           "providerTags",
@@ -903,6 +1151,42 @@
         });
 
         $("summaryCloseBtn").addEventListener("click", closeSummary);
+        $("summaryOpenBtn").addEventListener("click", (ev) => {
+          const link = ev.currentTarget.getAttribute("href") || "";
+          if (!link || link === "#") return;
+          if (!confirmMalwareAction(link, "open")) ev.preventDefault();
+        });
+        $("summaryCopyBtn").addEventListener("click", async () => {
+          const btn = $("summaryCopyBtn");
+          const link = (btn && btn.dataset && btn.dataset.link) || "";
+          if (!link) return;
+          if (!confirmMalwareAction(link, "copy")) return;
+          let ok = false;
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(link);
+              ok = true;
+            }
+          } catch (_) {
+            ok = false;
+          }
+          if (!ok) {
+            const ta = document.createElement("textarea");
+            ta.value = link;
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            try { ok = document.execCommand("copy"); } catch (_) { ok = false; }
+            document.body.removeChild(ta);
+          }
+          btn.textContent = ok ? "Copied!" : "Copy failed";
+          if (ok) btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = "Copy link";
+            btn.classList.remove("copied");
+          }, 1500);
+        });
         $("selectFilterBtn").addEventListener("click", openFilterModal);
         $("filterCloseBtn").addEventListener("click", closeFilterModal);
         $("filterSelect").addEventListener("change", (ev) => {
