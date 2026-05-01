@@ -1,3 +1,4 @@
+import os
 import re
 import json
 import requests
@@ -108,6 +109,11 @@ def process(content, results, status):
     Uses normalized URLs for result lookup and for persistent failure counts so
     trailing slashes and duplicate rows behave consistently.
     """
+    # CI runners often get blocked / timeout / TLS noise — purging from GitHub Actions
+    # deletes hundreds of working links. Set LINK_CHECK_NO_PURGE=true (default in workflow).
+    if os.environ.get("LINK_CHECK_NO_PURGE", "").lower() in ("1", "true", "yes"):
+        return content, 0, 0
+
     new_lines: list[str] = []
     # First row for this URL in this run decides keep/remove; duplicate rows match it.
     keep_duplicate_row: dict[str, bool] = {}
@@ -175,7 +181,9 @@ def join_sections(sections: list[str]) -> str:
 
 
 def is_proxy_list_preamble(section: str) -> bool:
-    return section.lstrip().startswith("# Proxy List")
+    # UTF-8 BOM at file start breaks startswith("# ") unless stripped
+    s = section.lstrip("\ufeff \t")
+    return s.startswith("# Proxy List")
 
 
 def section_has_locked_table(section: str) -> bool:
@@ -249,24 +257,38 @@ def extract_proxy_list_preamble(content: str) -> str:
     return "\n".join(lines_out)
 
 
-def parse_list_version_revision(content: str) -> tuple[str, str, int]:
-    """Returns (version like v2.0.3, revision like r29, revision int)."""
+def _parse_v_r_from_blockquote_lines(lines: list[str]) -> tuple[str, str, int]:
+    """Scan blockquote lines for `> vX |` and `> rN |` metadata."""
     version, rev_str, rev_num = "v0.0.0", "r0", 0
-    preamble = extract_proxy_list_preamble(content)
-    for raw in preamble.splitlines():
+    # ASCII | or fullwidth ｜ (some editors / pastes)
+    pipe = r"[\|\uFF5C]"
+    for raw in lines:
         s = raw.strip()
         if not s.startswith(">"):
             continue
         inner = s[1:].lstrip()
         if inner.startswith("[!"):
             continue
-        mv = re.match(r"^(v[\d.]+)\s*\|", inner)
+        mv = re.match(rf"^(v[\d.]+)\s*{pipe}", inner)
         if mv:
             version = mv.group(1)
-        mr = re.match(r"^(r(\d+))\s*\|", inner, re.IGNORECASE)
+        mr = re.match(rf"^(r(\d+))\s*{pipe}", inner, re.IGNORECASE)
         if mr:
             rev_str = mr.group(1).lower()
             rev_num = int(mr.group(2))
+    return version, rev_str, rev_num
+
+
+def parse_list_version_revision(content: str) -> tuple[str, str, int]:
+    """Returns (version like v2.0.3, revision like r29, revision int)."""
+    text = content.lstrip("\ufeff")
+    # Prefer scanning the top of the file (works even if # Proxy List block was missing briefly)
+    version, rev_str, rev_num = _parse_v_r_from_blockquote_lines(text.splitlines()[:250])
+    if version == "v0.0.0":
+        preamble = extract_proxy_list_preamble(text)
+        version, rev_str, rev_num = _parse_v_r_from_blockquote_lines(
+            preamble.splitlines() if preamble.strip() else []
+        )
     return version, rev_str, rev_num
 
 
@@ -305,6 +327,8 @@ def update_changelog(removed, total):
 def main():
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
         raw = f.read()
+    if raw.startswith("\ufeff"):
+        raw = raw.lstrip("\ufeff")
 
     before_sig = url_multiset_signature(raw)
     _, _, rev_num = parse_list_version_revision(raw)
@@ -342,6 +366,14 @@ def main():
     update_changelog(removed, total)
 
     final_version, final_rev, _ = parse_list_version_revision(content)
+    commit_meta = {
+        "version": final_version,
+        "revision": final_rev,
+        "removed": removed,
+        "total": total,
+    }
+    with open("commit_info.json", "w", encoding="utf-8") as f:
+        json.dump(commit_meta, f, indent=2)
     with open("commit_info.txt", "w", encoding="utf-8") as f:
         f.write(f"{final_version}|{final_rev}|{removed}|{total}")
 

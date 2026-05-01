@@ -41,7 +41,12 @@ jobs:
         run: |
           pip install requests
 
+      # Do not remove rows from list.md here: GitHub-hosted runners are often blocked or
+      # get non-2xx from sites that work for real users, which purged hundreds of links.
+      # To allow purging from CI, set secret/variable LINK_CHECK_NO_PURGE=false and use caution.
       - name: Run link checker
+        env:
+          LINK_CHECK_NO_PURGE: "true"
         run: |
           echo "Running script..."
           set +e
@@ -57,48 +62,61 @@ jobs:
 
       - name: Debug commit_info
         run: |
+          if test -f commit_info.json; then
+            echo "commit_info.json:"; cat commit_info.json
+          fi
           if test -f commit_info.txt; then
-            echo "commit_info.txt contents:"
-            cat commit_info.txt
-          else
-            echo "commit_info.txt NOT FOUND"
+            echo "commit_info.txt:"; cat commit_info.txt
           fi
 
-      # Pipe-separated commit_info.txt — parse with Python (robust vs CRLF / awk edge cases)
+      # Prefer JSON from link_checker (no pipe/awk ambiguity). Fallback to legacy .txt
       - name: Read commit info
         id: commitinfo
         shell: bash
         run: |
           python3 << 'PY'
+          import json
           import os
           from pathlib import Path
 
-          version = revision = removed = total = None
-          defaults = ("v0.0.0", "r0", "0", "0")
+          defaults_version, defaults_revision = "v0.0.0", "r0"
+          defaults_removed, defaults_total = "0", "0"
 
-          p = Path("commit_info.txt")
-          if p.is_file():
-              raw = p.read_text(encoding="utf-8").strip().replace("\r\n", "\n").replace("\r", "\n")
-              parts = [x.strip() for x in raw.split("|")]
-              if len(parts) >= 4:
-                  version, revision, removed, total = parts[0], parts[1], parts[2], parts[3]
-                  print("commit_info:", version, revision, removed, total)
-              else:
-                  print("commit_info.txt malformed, fields:", len(parts))
-          else:
-              print("commit_info.txt NOT FOUND")
+          version = revision = None
+          removed_str = total_str = None
 
-          version = version or defaults[0]
-          revision = revision or defaults[1]
-          removed = removed or defaults[2]
-          total = total or defaults[3]
+          jp = Path("commit_info.json")
+          if jp.is_file():
+              meta = json.loads(jp.read_text(encoding="utf-8"))
+              version = meta.get("version")
+              revision = meta.get("revision")
+              r, t = meta.get("removed"), meta.get("total")
+              if r is not None:
+                  removed_str = str(r)
+              if t is not None:
+                  total_str = str(t)
+              print("commit_info.json:", version, revision, removed_str, total_str)
+
+          if version is None:
+              tp = Path("commit_info.txt")
+              if tp.is_file():
+                  raw = tp.read_text(encoding="utf-8").strip().replace("\r\n", "\n").replace("\r", "\n")
+                  parts = [x.strip() for x in raw.split("|")]
+                  if len(parts) >= 4:
+                      version, revision = parts[0], parts[1]
+                      removed_str, total_str = parts[2], parts[3]
+
+          version = version or defaults_version
+          revision = revision or defaults_revision
+          removed_str = removed_str if removed_str is not None else defaults_removed
+          total_str = total_str if total_str is not None else defaults_total
 
           out = Path(os.environ["GITHUB_OUTPUT"])
           with out.open("a", encoding="utf-8") as f:
               f.write(f"version={version}\n")
               f.write(f"revision={revision}\n")
-              f.write(f"removed={removed}\n")
-              f.write(f"total={total}\n")
+              f.write(f"removed={removed_str}\n")
+              f.write(f"total={total_str}\n")
           PY
 
       - name: Commit changes
