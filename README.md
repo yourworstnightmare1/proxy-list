@@ -78,7 +78,7 @@ This will:
 
 Optional Discord alert (enabled by default when unchecked links > 0):
 - Uses `DISCORD_BOT_TOKEN` + `DISCORD_CHANNEL_ID` (or `DISCORD_NOTIFY_CHANNEL_ID`)
-- Mention/name in alert defaults to `@xgamingwithjason` and can be changed with `DISCORD_NOTIFY_MENTION`
+- Mention/name in alert defaults to `@your_username` and can be changed with `DISCORD_NOTIFY_MENTION`
 - Disable alerts with: `export UNCHECKED_NOTIFY_DISCORD=0`
 
 ## Notes
