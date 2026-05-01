@@ -54,7 +54,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 17 |
+> | Proxy/Games | captcha | Scramjet | 23 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -75,12 +75,18 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://securelyplsspeedineedthis8weudidhske.suwal.com.np/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://velara.my/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learning.msspsparaguay.org/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://zenith-sites.13.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://dangerdays.simplysweetcakesoc.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://algebra.seidocosmetics.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://math.rcdx93.net/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://recession.gressvikbmx.no/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://hvtzw.reformarchive.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # ➗ gn-math
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 17 |
+> | Games | N/A | N/A | 19 |
 
 > [!IMPORTANT]
 > View importance notices section if link is broken.
@@ -104,12 +110,14 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://happyhappy.kamenorezac-garic.rs/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hellomath.kamenorezac-garic.rs/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://kamenmath.kamenorezac-garic.rs/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://robottransition.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://ro.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🐸 frogie's arcade
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Ultraviolet | 24 |
+> | Proxy/Games | captcha | Ultraviolet | 25 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -137,6 +145,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://denisonisd.org/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gloverschool.org/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://homeworkstudies.phire.ca/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://ilovemath.budda.lv/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🍌 Jordan's Math Work
 > [!NOTE]
@@ -155,7 +164,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 31 |
+> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 33 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -190,6 +199,8 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://member.electricpiano.xyz.cdn.cloudflare.net | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://outerspace.boiso.ar | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://51.222.206.184.nar0.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://dreaming.thenaturenews.space/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://thoughts.vm4construction.uk/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🚀 Nebulo
 > [!NOTE]
@@ -256,7 +267,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet, Ultraviolet | 9 |
+> | Proxy/Games | unknown | Scramjet, Ultraviolet | 11 |
 
 > [!IMPORTANT]
 > Fern does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -272,12 +283,14 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://storage.googleapis.com/fernisbest/index.html | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://technology.chromebook.certified.light.speed.term.gap-peace.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jobs.kfa.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://fer.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://fernisbest.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🟣 UniUB
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl | Scramjet | 23 |
+> | Proxy/Games | epoxy, libcurl | Scramjet | 24 |
 
 > [!IMPORTANT]
 > UniUB does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -307,12 +320,13 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://14.schoolsandtravel.com/#home | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://15.schoolsandtravel.com/#home | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://apsciencetutoring.luhe.tw/#home | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bull.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🍄 Truffled
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 7 |
+> | Proxy/Games | unknown | Scramjet | 8 |
 
 > [!IMPORTANT]
 > Truffled does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -326,6 +340,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://christmas.fusionid.fi/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://icantbelieveitsnotbutter.teimporto.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://info.stoke-park.co.uk/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://ewfasdfadfs.simplysweetcakesoc.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🥱 Boredom
 > [!NOTE]
@@ -358,7 +373,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 48 |
+> | Proxy/Games | unknown | Scramjet | 49 |
 
 > [!IMPORTANT]
 > Vapor does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -413,12 +428,13 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://sealsareintelligent.lat/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://watervapor.space/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://nahidontneed.help/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://schooleducation.classyportal.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 👤 Shadow
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 27 |
+> | Proxy/Games | unknown | unknown | 36 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -452,6 +468,15 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://topcalc.kelownaembroidery.ca/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://us-history-png-book.takh.ee/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://virtualgeo.letiatours.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://bull-learning.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://construction-tools.infamous-bypass.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://science.chem.bio.history.bull.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://soccer.gressvikbmx.no/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://acechem.reformarchive.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://brightgeo.reformarchive.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://keengrammar.reformarchive.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://topgrammar.reformarchive.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://truelogic.reformarchive.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🐶 dogeub
 > [!NOTE]
@@ -523,7 +548,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 46 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 55 |
 
 > [!IMPORTANT]
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -579,12 +604,21 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://best.pr0xy.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://downdetector.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://smartbio.budda.lv/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://going.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://education.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://learning.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://shop.seidocosmetics.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://gawd.rcdx93.net/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://lunnar.gressvikbmx.no/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://ramzankhan.mwbread.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://math.reformarchive.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 👻 Ghost
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 3 |
+> | Proxy/Games | unknown | Scramjet | 4 |
 
 > [!IMPORTANT]
 > Ghost does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -594,12 +628,13 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://main.d39joesfd55qkg.amplifyapp.com/ | 3/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/ghst/index.html | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://ghst.codetrail.co/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://gree.greenbaynz.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🍕 PetZah
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 37 |
+> | Proxy/Games | unknown | Scramjet | 41 |
 
 > [!IMPORTANT]
 > PetZah does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -643,6 +678,11 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://hm2.agatab.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hm3.agatab.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hm4.agatab.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://math.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://science.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://math.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://science.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://science.gressvikbmx.no/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🕳️ Rift
 > [!NOTE]
@@ -674,7 +714,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet, Ultraviolet | 1 |
+> | Proxy/Games | captcha | Scramjet, Ultraviolet | 6 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -682,12 +722,17 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://light.everest.speed.gressvikbmx.no/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://everrrestt.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://generate.iwo.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://generate.eea.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://generate.dwq.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://light.mountain.whencloudsfail.org/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🏴 OverCloaked
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet | 24 |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet | 27 |
 
 > [!IMPORTANT]
 > OverCloaked does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -718,12 +763,15 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://s3.amazonaws.com/elliotslinks-tnjavxyp/exam45879/index.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/elliotslinks-tnjavxyp/essay71679/index.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/elliotslinks-tnjavxyp/quiz10430/index.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://history.classroom.geometry.student.project.chroniclesoftimes.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://wnewlink.gsxpress.com.my/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://biology.calculus.writing.reading.learning.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 😈 Imp Proxy
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 50 |
+> | Proxy/Games | Unknown | Scramjet | 69 |
 
 > [!IMPORTANT]
 > Imp Proxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -780,6 +828,25 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://const.ng1.uk/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://let.ng1.uk/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://try.ng1.uk/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://ajvp.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://fkhk.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://mfgqf.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://onaiy.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://pwuki.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://sdvfb.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://svqmm.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://txvfl.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://uytp.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://voeda.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://zyyhh.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://ivtx.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://vnni.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://xvwui.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://ainkq.simplysweetcakesoc.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://uinj.simplysweetcakesoc.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://mffkp.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://ocdmy.gressvikbmx.no/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://qcico.gressvikbmx.no/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🍫 Endis
 > [!NOTE]
@@ -809,7 +876,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 36 |
+> | Proxy/Games | Unknown | Scramjet | 40 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -852,6 +919,10 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://analytics.echofx.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quick.echofx.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vcsa-sub.fhoster.ru/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://hoologan.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://lullabytouches.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://rosetreats.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://supercakes.simplysweetcakesoc.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 📐 Solo Central
 > [!NOTE]
@@ -887,7 +958,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy, wisp | Scramjet, Ultraviolet | 33 |
+> | Proxy/Games | libcurl, epoxy, wisp | Scramjet, Ultraviolet | 37 |
 
 > [!IMPORTANT]
 > Galaxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -927,6 +998,10 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://21.polden21vek.ru/onboarding/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://glacier-water.waterloobae.com/onboarding/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://crops.primeflk.ch/onboarding/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://computer.project.science.engineering.student.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://studying.calculus.drama.teacher.reading.greenbaynz.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://lights.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://seminar.geography.learning.computer.assignment.mwbread.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # ♈ Zodiac
 > [!NOTE]
@@ -947,7 +1022,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 71 |
+> | Proxy/Games | unknown | unknown | 74 |
 
 > [!IMPORTANT]
 > StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1025,12 +1100,15 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://tutoring.kelownaembroidery.ca/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vector.iratl.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://whatever.ma-dang.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://texts.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://vcsayt.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://mathwork.chroniclesoftimes.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🍓 Strawberry
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 40 |
+> | Proxy/Games | unknown | unknown | 50 |
 
 > [!IMPORTANT]
 > Strawberry does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1077,12 +1155,22 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://ramzanschool.gressvikbmx.no/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learning.gressvikbmx.no/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://strawberry.chakadmap.ir/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://greatest.budda.lv/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://great.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://booking.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://realistic.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://smartbio.quattro.net.ru/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://education.fugas.pl/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://strawberry.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://heavy.simplysweetcakesoc.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://climate.weatherpixel.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://support.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🧱 Noblocc
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 4 |
+> | Proxy/Games | unknown | unknown | 5 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1093,6 +1181,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://noblocc.com/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cokezero.uk/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vanillacoke.co.uk/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://noblo.cc/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🔼 Axiom
 > [!NOTE]
@@ -1123,7 +1212,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Ultraviolet | 36 |
+> | Proxy/Games | unknown | Ultraviolet | 43 |
 
 > [!IMPORTANT]
 > Void Network does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1166,12 +1255,19 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://wjmi.true-woman.ru/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vcsa-yt.ellegisladordigital.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rules.fhoster.ru/?/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://sfmp.budda.lv/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://igc.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://rooms.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://ydisc.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://web.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://szf.gressvikbmx.no/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://readandlearnbooks.reformarchive.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🦄 Utopia Education
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 11 |
+> | Proxy/Games | unknown | unknown | 14 |
 
 > [!IMPORTANT]
 > Utopia Education does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1189,6 +1285,9 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://highschoolacademy.online/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mathstudy.hotelconsuladoinn.com/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://login.guide.hotelconsuladoinn.com/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://edu.terms.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://essay.lab.chroniclesoftimes.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://theme.arts.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🌘 Lunaar
 > [!NOTE]
@@ -1274,7 +1373,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 7 |
+> | Proxy/Games | unknown | Scramjet | 12 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1288,6 +1387,11 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://avengernirbytes.savequeechylake.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://useawp.climaref.cl/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://useawp.developer.li/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://abcya.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://hi.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://ulas.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://yaleadmissions.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://calc.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 👥 InvisiProxy
 > [!NOTE]
@@ -1338,7 +1442,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 4 |
+> | Proxy/Games | captcha | Scramjet | 20 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1349,6 +1453,22 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://studying.student.library.lecture.teacher.archivomemoria-audiovisualcsb.org/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://physics.music.geography.homework.project.svargas.cl/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://geography.studying.art.teacher.physics.true-woman.ru/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://calculus.engineering.seminar.math.campus.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://computer.technology.studying.english.chemistry.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://english.campus.studying.calculus.physics.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://learning.history.computer.teacher.writing.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://lecture.geometry.english.campus.algebra.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://library.student.teacher.lecture.chemistry.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://reading.learning.programming.classroom.physics.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://technology.homework.lecture.algebra.learning.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://vocabulary.english.geometry.art.studying.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://vocabulary.geography.campus.reading.library.gsxpress.com.my/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://library.student.writing.english.project.fugas.pl/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://biology.calculus.computer.vocabulary.writing.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://classroom.library.biology.science.lecture.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://drama.algebra.biology.campus.physics.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://physics.music.science.chemistry.lecture.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://science.vocabulary.art.technology.geometry.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🫘 Sea Bean
 > [!NOTE]
@@ -1414,7 +1534,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 22 |
+> | pending | pending | pending | 23 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1439,28 +1559,28 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://inf29323.fbsistemas.com.ar | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://inf31265.notinthearchives.net/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://infamous.qzz.io/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 | | https://photoshoot.estudiodebiaggi.com.ar/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://clever.com.dmc219.com/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://clever.com.londonwhiteeagles.ca/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://clever.com.srijanakhadka.com.np/ | 4/27/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://infamous-common0.boom.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # Cherri
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 4 |
+> | pending | pending | pending | 5 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-
 | | https://cherri.lalitakc.com.np/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://playernation.darkroom-lang.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://realvcsa.castemag.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://youtube.com.vcsa.lalitakc.com.np/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://cherri.cc/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # LuminalOS
 > [!NOTE]
@@ -1626,7 +1746,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 1 |
+> | pending | pending | pending | 3 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1634,6 +1754,8 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | http://learning.music.teacher.technology.student.thegleasons.net | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://reading.physics.library.learning.technology.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://bull.there.whencloudsfail.org/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # Nexora
 > [!NOTE]
@@ -1666,7 +1788,7 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 5 |
+> | pending | pending | pending | 17 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1678,6 +1800,18 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://programming.teacher.grammar.physics.vocabulary.natkajoyas.cl/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://technology.english.classroom.science.computer.yuanfey.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://chemistry.computer.english.geography.reading.ramnarine.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://science.campus.music.geometry.history.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://seminar.geography.reading.campus.geometry.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://chemistry.reading.literature.grammar.biology.verandahotels.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://teacher.lecture.engineering.english.science.quattro.net.ru/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://engineering.teacher.reading.library.math.s4w.us/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://campus.writing.drama.homework.reading.greenbaynz.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://samiscool.greenbaynz.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://science.assignment.reading.calculus.math.greenbaynz.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://studying.computer.music.math.english.greenbaynz.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://vocabulary.algebra.literature.homework.history.classyportal.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://seminar.assignment.history.reading.art.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://seminar.history.music.campus.biology.mwbread.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # Totally Science
 > [!NOTE]
@@ -1693,3 +1827,246 @@ It has come to my attention that proxies that use Ultraviolet do not load sites 
 | | https://wemath.realkof.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://portascience.realkof.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://wecode.realkof.ru/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+
+# Rammerhead
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 5 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://archive.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://disguise.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://divincilaw.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://headcanon.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://tinkerbot.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Aspen
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 2 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://api.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://educational-site.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Injex
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 3 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://studying.campus.reading.programming.engineering.arionskyclub.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://geometry.studying.calculus.music.chemistry.greenbaynz.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://injex.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Rhodium
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 2 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://pythagoras.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://mathematics.calculus.reformarchive.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Starlight
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 2 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://duisburg.hoohaamelbourne.com.au/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://hagia.gressvikbmx.no/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Bromine
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://clever.com.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# BrunysIXL
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://8q09mjmdh229.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Duck Math
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://support.vm4construction.uk/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Equinox
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://eqbull.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Koopbin
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://chilly.antartica.ice.wall.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Korona
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://blooket.rush.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Krypton
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://lwklaiww.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Luna
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://finleyisabum.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Mizu
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://studyhall.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Nocturne
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://kronos.onl.academinctools.pw/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Peak
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://nova.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Vortex
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://con.classyportal.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# Zinko Inc
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | pending | pending | pending | 1 |
+
+> [!IMPORTANT]
+> This section has not been categorized or checked for protocol(s) and capabilities.
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://zink.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
