@@ -1,11 +1,8 @@
 {
-  "checked_at": "2026-05-01T02:34:03Z",
-  "checked_at_display": "2026-05-01 02:34 UTC",
+  "checked_at": "2026-05-01T08:06:25Z",
+  "checked_at_display": "2026-05-01 08:06 UTC",
   "added_count": 0,
-  "removed_count": 2,
+  "removed_count": 0,
   "added_links": [],
-  "removed_links": [
-    "http://classroom.monedita.cl",
-    "https://baconmath.383.li"
-  ]
+  "removed_links": []
 }
