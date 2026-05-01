@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "v3.0.1",
-    "revision": "r64",
+    "revision": "r65",
     "last_updated": "May 01, 2026",
     "unsorted_total": 1989,
     "important_notices": "### Now Available as a Website!\n**The proxy list is now able to be viewed on a webpage at https://yourworstnightmare1.github.io/proxy-list/!** All links are auto-migrated here, and the website has features that this file does not, such as filtering links by provider, category, capabilities, protocols, searching for links, easy contributions, and more! If you are currently using this file to get your links, [I strongly recommend using the website instead of this markdown](https://yourworstnightmare1.github.io/proxy-list/).\nTrying to view the list through a proxy? Simply copy the URL https://yourworstnightmare1.github.io/proxy-list/ into the proxy's search/URL bar, and you can see all of the links! In order to load them properly, you will have to click the \"Copy link\" button and paste it into your browser.\n### gn-math\ngn-math is currently down due to copyright violations. It will be back up in the coming weeks most likely. For now ignore those links, they will stay in case they decide to work again. This also affects websites that use gn-math's CDN service for game hosting, as those games won't load.\n**Update 4/30/2026**: There is a new version of the gn-math site that has working games now. Please use these instead as older links will be removed.\n### Ultraviolet Issues\nIt has come to my attention that proxies that use Ultraviolet do not load sites properly anymore. This varies by filter and is inconsistent. If you are using a proxy, please consider going to its settings and switching the protocol to Scramjet, or switching to a new proxy with Scramjet support.",
@@ -2697,6 +2697,177 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🌙 Velara",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://calculus.math.chemistry.geometry.seminar.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌙 Velara",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://classroom.english.grammar.geography.algebra.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌙 Velara",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://classroom.physics.chemistry.campus.programming.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌙 Velara",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://geometry.grammar.history.assignment.lecture.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌙 Velara",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://seminar.homework.engineering.calculus.art.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌙 Velara",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://jyg.fritsche.org",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌙 Velara",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://rchbr.fritsche.org",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌙 Velara",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://ktxcfvocsm.meshtastic.hu",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌙 Velara",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://mathematics.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "➗ gn-math",
       "category": "Games",
       "capabilities": "N/A",
@@ -3025,6 +3196,21 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "➗ gn-math",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://canindia.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "🐸 frogie's arcade",
@@ -3578,6 +3764,25 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🐸 frogie's arcade",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Ultraviolet",
+      "protocol_tags": [
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://volcanicfrog2.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "🍌 Jordan's Math Work",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -3676,6 +3881,46 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🍌 Jordan's Math Work",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://raw.esm.sh/gh/NightProxy/DD-Static@3775f24/dist/index.svg",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍌 Jordan's Math Work",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://dy3.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "⭐ DayDream X",
@@ -6036,6 +6281,754 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://hint.bamastuff.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://math.bamastuff.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://trig.bamastuff.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://trigg.bamastuff.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://triggg.bamastuff.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://lsrelay-extension-production.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/lsrelay-extension-production/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/bullisgoated/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://bullisgoated.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://iloveliteratures.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/iloveliteratures/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://macrologoat.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/macrologoat/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://bullubg.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/bullubg/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://volcanicfern.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/bullmath/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://bullmath.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://macrolo.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/macrolo/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://ilovemaths.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/ilovemaths/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://deaganfern.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://bulledu.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/bulledu/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://bullguardian.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/bullguardian/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://bulllightspeed.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/bulllightspeed/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://angelfern.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://macrolomath.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/macrolomath/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://clevereducation.samymadethis.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🚀 Nebulo",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Eclipse",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "eclipse"
+      ],
+      "locked": "",
+      "link": "https://mathpracticedrawing.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "🌑 Space",
@@ -8412,6 +9405,26 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🟣 UniUB",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl",
+      "capability_tags": [
+        "epoxy",
+        "libcurl"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://learnaboutbillclinton.scrapitsoftware.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "🍄 Truffled",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -9229,6 +10242,101 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://waguri.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://chance.bull.luck.poloniacruz.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://homeworkhelp.mb.doris-safety.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://somewhere.find.bull.doris-safety.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍄 Truffled",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://mathematics1.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "🥱 Boredom",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -9626,6 +10734,25 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🥱 Boredom",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://cunkikemunsteerpls.yishayit.co.il",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "💨 Vapor",
@@ -10654,6 +11781,196 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "💨 Vapor",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://lions.rome2.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "💨 Vapor",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://lions.rome3.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "💨 Vapor",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://oil-america3.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "💨 Vapor",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://oil-america4.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "💨 Vapor",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://oil-america5.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "💨 Vapor",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://pies.lol3.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "💨 Vapor",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://pies.lol4.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "💨 Vapor",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://pies.lol5.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "💨 Vapor",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://rocky.pionr.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "💨 Vapor",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://rocky.pionr1.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "👤 Shadow",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -11659,6 +12976,158 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "👤 Shadow",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://nextus.metallicstream.pro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "👤 Shadow",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://novaphysics.metallicstream.pro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "👤 Shadow",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://stellargrammar.metallicstream.pro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "👤 Shadow",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://keenphysics.recreatinganew.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "👤 Shadow",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://neatalgebra.recreatinganew.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "👤 Shadow",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://neatcalc.recreatinganew.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "👤 Shadow",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://shadow.fritsche.org",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "👤 Shadow",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://visit.epsteinisland.fiveorseven.japan.goonsquad.fritsche.org",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "🐶 dogeub",
@@ -13219,6 +14688,126 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🐶 dogeub",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://storage.googleapis.com/instructure/index.svg",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🐶 dogeub",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://instructure.storage.googleapis.com/index.svg",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🐶 dogeub",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://follownirbytes-lnbepfa.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🐶 dogeub",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://learning-games-that-are-fun.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🐶 dogeub",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://nsodbxnwos.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🐶 dogeub",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://youshoulddefgivemesomemoney.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "🌕 Lunar",
@@ -14801,6 +16390,126 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://mathew.recreatinganew.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://life.dunia-artikel.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://nah.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://netanyahu.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://ramzankhanyt.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌕 Lunar",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://so.back.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "👻 Ghost",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -14875,6 +16584,44 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "👻 Ghost",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://home.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "👻 Ghost",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://learningpolicy.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "🍕 PetZah",
@@ -15941,6 +17688,63 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🍕 PetZah",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://cdn.jsdelivr.net/gh/deviceillusion-cyber/bca-redpara@main/new.svg",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍕 PetZah",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://axiom.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍕 PetZah",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://cdn.jsdelivr.net/gh/Eraclio28/PeteZahStaticDone@main/new.svg",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "🕳️ Rift",
       "category": "Games",
       "capabilities": "N/A",
@@ -15954,6 +17758,111 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🕳️ Rift",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://1928.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🕳️ Rift",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://1929.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🕳️ Rift",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://676767.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🕳️ Rift",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://everest-bot-is-being-verified-by-discord.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🕳️ Rift",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://gerthewths.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🕳️ Rift",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://mrchiaisgoated.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🕳️ Rift",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://oiplslahguys.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "💧 Hydra-Network",
@@ -17207,6 +19116,216 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🏴 OverCloaked",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://filterbrowser.agreca.com.ar",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🏴 OverCloaked",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://thisissotuffbull.meshtastic.hu",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🏴 OverCloaked",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://seminar.calculus.algebra.history.assignment.doris-safety.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🏴 OverCloaked",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://discord.gg.7kctr7pdpp.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🏴 OverCloaked",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://elit3-loves-lightspeed.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🏴 OverCloaked",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://gokuloverachud.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🏴 OverCloaked",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://ideadlift6700lbs.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🏴 OverCloaked",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://idonotbench500kg.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🏴 OverCloaked",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://overcloakedachud.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🏴 OverCloaked",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "wisp"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://xonktoldmetomakethese.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "😈 Imp Proxy",
@@ -19432,6 +21551,101 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "😈 Imp Proxy",
+      "category": "Proxy/Games",
+      "capabilities": "Unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://gote.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "😈 Imp Proxy",
+      "category": "Proxy/Games",
+      "capabilities": "Unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://qlsp.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "😈 Imp Proxy",
+      "category": "Proxy/Games",
+      "capabilities": "Unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://tfvsi.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "😈 Imp Proxy",
+      "category": "Proxy/Games",
+      "capabilities": "Unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://uesln.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "😈 Imp Proxy",
+      "category": "Proxy/Games",
+      "capabilities": "Unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://zjdrv.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "🍫 Endis",
       "category": "Proxy/Games",
       "capabilities": "epoxy, libcurl, captcha, wisp",
@@ -19478,6 +21692,126 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🍫 Endis",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, captcha, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "captcha",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Rammerhead",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "rammerhead"
+      ],
+      "locked": "",
+      "link": "https://todeepinthechoppahouse.recreatinganew.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍫 Endis",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, captcha, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "captcha",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Rammerhead",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "rammerhead"
+      ],
+      "locked": "",
+      "link": "https://shoottokiller.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍫 Endis",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, captcha, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "captcha",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Rammerhead",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "rammerhead"
+      ],
+      "locked": "",
+      "link": "https://slayerbeensosa.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍫 Endis",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, captcha, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "captcha",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Rammerhead",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "rammerhead"
+      ],
+      "locked": "",
+      "link": "https://slayerthehardest.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍫 Endis",
+      "category": "Proxy/Games",
+      "capabilities": "epoxy, libcurl, captcha, wisp",
+      "capability_tags": [
+        "epoxy",
+        "libcurl",
+        "captcha",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Rammerhead",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "rammerhead"
+      ],
+      "locked": "",
+      "link": "https://touchdatbread.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "🏛️ Dominum",
@@ -20591,6 +22925,21 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "📐 Solo Central",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://eladesceelasobe.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "⬡ TGLSC Density 4",
@@ -24417,6 +26766,50 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🪐 Galaxy",
+      "category": "Proxy/Games",
+      "capabilities": "libcurl, epoxy, wisp",
+      "capability_tags": [
+        "libcurl",
+        "epoxy",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://doyourwork.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🪐 Galaxy",
+      "category": "Proxy/Games",
+      "capabilities": "libcurl, epoxy, wisp",
+      "capability_tags": [
+        "libcurl",
+        "epoxy",
+        "wisp"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://fdfggdfgdf.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "♈ Zodiac",
       "category": "Proxy/Games",
       "capabilities": "wisp",
@@ -24466,6 +26859,23 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "♈ Zodiac",
+      "category": "Proxy/Games",
+      "capabilities": "wisp",
+      "capability_tags": [
+        "wisp"
+      ],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://vcsa-yt.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "📖 StudyHub",
@@ -27565,6 +29975,63 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🍓 Strawberry",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://Strawberryv2.sbs",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍓 Strawberry",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://playernation.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🍓 Strawberry",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://ramzankhan.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "🧱 Noblocc",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -27639,6 +30106,63 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🧱 Noblocc",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://colds.recreatinganew.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🧱 Noblocc",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://jzqo.yishayit.co.il",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🧱 Noblocc",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://shakespeare-english.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "🔼 Axiom",
@@ -29978,6 +32502,82 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "🦄 Utopia Education",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://theory.grade.bamastuff.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🦄 Utopia Education",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://grid.skills.geckobungalow.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🦄 Utopia Education",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://sub.to.square-hippo.fritsche.org",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🦄 Utopia Education",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://sub.to.square-hippo.meshtastic.hu",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "🌘 Lunaar",
       "category": "Proxy/Games",
       "capabilities": "libcurl, epoxy, bare, captcha",
@@ -30229,6 +32829,75 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🌘 Lunaar",
+      "category": "Proxy/Games",
+      "capabilities": "libcurl, epoxy, bare, captcha",
+      "capability_tags": [
+        "libcurl",
+        "epoxy",
+        "bare",
+        "captcha"
+      ],
+      "protocols": "Ultraviolet, Scramjet",
+      "protocol_tags": [
+        "ultraviolet",
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://cdn.jsdelivr.net/gh/coinbaselarper/svg@latest/logo.svg",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌘 Lunaar",
+      "category": "Proxy/Games",
+      "capabilities": "libcurl, epoxy, bare, captcha",
+      "capability_tags": [
+        "libcurl",
+        "epoxy",
+        "bare",
+        "captcha"
+      ],
+      "protocols": "Ultraviolet, Scramjet",
+      "protocol_tags": [
+        "ultraviolet",
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://math.drama.engineering.lecture.reading.agreca.com.ar",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🌘 Lunaar",
+      "category": "Proxy/Games",
+      "capabilities": "libcurl, epoxy, bare, captcha",
+      "capability_tags": [
+        "libcurl",
+        "epoxy",
+        "bare",
+        "captcha"
+      ],
+      "protocols": "Ultraviolet, Scramjet",
+      "protocol_tags": [
+        "ultraviolet",
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://history.drama.classroom.technology.science.doris-safety.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "🤍 Lucide",
@@ -30579,6 +33248,48 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🔷 Celestial",
+      "category": "Proxy/Games",
+      "capabilities": "libcurl, epoxy",
+      "capability_tags": [
+        "libcurl",
+        "epoxy"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://everestty.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🔷 Celestial",
+      "category": "Proxy/Games",
+      "capabilities": "libcurl, epoxy",
+      "capability_tags": [
+        "libcurl",
+        "epoxy"
+      ],
+      "protocols": "Scramjet, Ultraviolet",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet"
+      ],
+      "locked": "",
+      "link": "https://harvard.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "✨ Quasar",
@@ -31252,6 +33963,56 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "👥 InvisiProxy",
+      "category": "Proxy/Games",
+      "capabilities": "libcurl, epoxy, wisp, tor, captcha",
+      "capability_tags": [
+        "libcurl",
+        "epoxy",
+        "wisp",
+        "tor",
+        "captcha"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Rammerhead",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "rammerhead"
+      ],
+      "locked": "",
+      "link": "https://math.questions.agreca.com.ar",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "👥 InvisiProxy",
+      "category": "Proxy/Games",
+      "capabilities": "libcurl, epoxy, wisp, tor, captcha",
+      "capability_tags": [
+        "libcurl",
+        "epoxy",
+        "wisp",
+        "tor",
+        "captcha"
+      ],
+      "protocols": "Scramjet, Ultraviolet, Rammerhead",
+      "protocol_tags": [
+        "scramjet",
+        "ultraviolet",
+        "rammerhead"
+      ],
+      "locked": "",
+      "link": "https://xx6w8j79xw5q.fritsche.org",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "📡 CanLite",
       "category": "Proxy",
       "capabilities": "unknown",
@@ -31535,6 +34296,101 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🧭 Ontonic",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://algebra.lecture.teacher.engineering.science.bamastuff.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🧭 Ontonic",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://d.clever.com.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🧭 Ontonic",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://physics.art.english.campus.project.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🧭 Ontonic",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://reading.geography.lecture.drama.engineering.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🧭 Ontonic",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
+      "capability_tags": [
+        "captcha"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://signup.clever.com.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "🫘 Sea Bean",
@@ -32300,6 +35156,66 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "🫘 Sea Bean",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://inf65982.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🫘 Sea Bean",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://inf68704.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🫘 Sea Bean",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://inf93381.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "🫘 Sea Bean",
+      "category": "Games",
+      "capabilities": "N/A",
+      "capability_tags": [],
+      "protocols": "N/A",
+      "protocol_tags": [],
+      "locked": "",
+      "link": "https://2.discord.gg.7kctr7pdpp.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "Infamous",
@@ -33271,6 +36187,25 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "Cherri",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://cherri.altonhabitat.info",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "💙 LuminalOS",
       "category": "Proxy/Games",
       "capabilities": "unknown",
@@ -33288,6 +36223,25 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "💙 LuminalOS",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "Scramjet",
+      "protocol_tags": [
+        "scramjet"
+      ],
+      "locked": "",
+      "link": "https://relics.fritsche.org",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "❤️ BloxCraft Games",
@@ -34582,6 +37536,500 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://geometry.physics.learning.studying.reading.bamastuff.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://homework.writing.grammar.programming.music.scrapitsoftware.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://geography.library.grammar.calculus.student.agreca.com.ar",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://algebra.math.music.vocabulary.project.real3m.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://aporzsblci.bvhoa.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://algebra.grammar.calculus.homework.geography.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://art.technology.engineering.homework.writing.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://classroom.seminar.homework.writing.campus.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://computer.calculus.drama.music.math.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://geography.history.technology.art.physics.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://grammar.biology.homework.geometry.math.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://learning.biology.geometry.math.teacher.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://library.science.assignment.student.grammar.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://math.science.programming.student.art.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://math.studying.drama.art.classroom.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://music.teacher.studying.drama.technology.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://reading.assignment.science.student.music.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://reading.chemistry.grammar.math.music.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://student.learning.literature.homework.drama.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://studying.biology.homework.library.lecture.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://teacher.drama.music.geography.computer.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://vocabulary.campus.history.library.grammar.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://writing.project.campus.seminar.biology.srivaishnavam.org.au",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://classroom.math.reading.english.art.poloniacruz.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://engineering.homework.geometry.biology.drama.poloniacruz.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nexora",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://greenbaypackerssuck.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "Marz",
       "category": "pending",
       "capabilities": "pending",
@@ -34962,6 +38410,25 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "Totally Science",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://rammer.nana.meshtastic.hu",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "Holy Unblocker",
       "category": "pending",
       "capabilities": "pending",
@@ -35036,6 +38503,82 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "The Pizza Edition",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://fritsche.1.fritsche.org",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "The Pizza Edition",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://fritsche.2.fritsche.org",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "The Pizza Edition",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://fritsche.4.fritsche.org",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "The Pizza Edition",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://english.study.slides.meshtastic.hu",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "Vortex",
@@ -36425,6 +39968,25 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
+      "provider": "Duckmath",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://weqweqw.meshtastic.hu",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
       "provider": "Interstellar",
       "category": "pending",
       "capabilities": "pending",
@@ -36670,6 +40232,25 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "Interstellar",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://plss.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     },
     {
       "provider": "Hunter's Proxy",
@@ -37050,6 +40631,652 @@
       "password": "N/A",
       "contributor": "yourworstnightmare1",
       "contributor_url": "https://github.com/yourworstnightmare1"
+    },
+    {
+      "provider": "Aspen",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://api.academinctools.pw/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Aspen",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://educational-site.academinctools.pw/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Injex",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://studying.campus.reading.programming.engineering.arionskyclub.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Injex",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://geometry.studying.calculus.music.chemistry.greenbaynz.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Injex",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://injex.academinctools.pw/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Rhodium",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://pythagoras.academinctools.pw/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Rhodium",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://mathematics.calculus.reformarchive.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Rhodium",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://english.seminar.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Rhodium",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://math.science.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Starlight",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://duisburg.hoohaamelbourne.com.au/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Starlight",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://hagia.gressvikbmx.no/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "BrunysIXL",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://8q09mjmdh229.academinctools.pw/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Equinox",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://eqbull.thongthaitextile.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Koopbin",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://chilly.antartica.ice.wall.vixenlights.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Korona",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://blooket.rush.honufon.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Krypton",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://lwklaiww.honufon.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Luna",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://finleyisabum.vixenlights.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Mizu",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://studyhall.honufon.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Nocturne",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://kronos.onl.academinctools.pw/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Peak",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://nova.vixenlights.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Zinko Inc",
+      "category": "pending",
+      "capabilities": "pending",
+      "capability_tags": [
+        "pending"
+      ],
+      "protocols": "pending",
+      "protocol_tags": [
+        "pending"
+      ],
+      "locked": "",
+      "link": "https://zink.thongthaitextile.com/",
+      "found": "4/30/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Artic",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://arctic.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Artic",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://jasonvisor.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Axis",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://ax7.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Mist",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/misting2/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Mist",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://misting2.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Mist",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/macmist/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Mist",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://macmist.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Mist",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/mistmac/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Mist",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://mistmac.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Mist",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://s3.amazonaws.com/ilovecalc/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Mist",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://ilovecalc.s3.amazonaws.com/index.html",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Splash",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://earthscience.lervs.ro",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
+    },
+    {
+      "provider": "Z-Kit",
+      "category": "Proxy/Games",
+      "capabilities": "unknown",
+      "capability_tags": [
+        "unknown"
+      ],
+      "protocols": "unknown",
+      "protocol_tags": [
+        "unknown"
+      ],
+      "locked": "",
+      "link": "https://math.poloniacruz.com",
+      "found": "5/1/2026",
+      "username": "N/A",
+      "password": "N/A",
+      "contributor": "1NobleCyber",
+      "contributor_url": "https://github.com/1NobleCyber"
     }
   ]
 }
