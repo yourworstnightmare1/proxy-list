@@ -13,6 +13,9 @@ FAIL_THRESHOLD = 3
 NOTE_CATEGORY_LINE = "> | Category | Capabilities | Protocol(s) | Links |"
 NOTE_SEP_LINE_RE = re.compile(r"^> \| - \|")
 
+# Only proxy table rows should be purged by link failure — not blockquotes or prose with URLs.
+_TABLE_LINK_ROW = re.compile(r"^\|\s*\|\s*(https?://[^\s|]+)", re.IGNORECASE)
+
 
 # -----------------------
 # Extract links
@@ -113,7 +116,7 @@ def process(content, results, status):
     removed = 0
 
     for line in content.splitlines():
-        match = re.search(r"(https?://[^\s|]+)", line)
+        match = _TABLE_LINK_ROW.search(line)
 
         if match:
             url = match.group(1)
@@ -232,22 +235,38 @@ def sync_all_section_counts(content: str) -> str:
 # -----------------------
 # Version / revision (list header only)
 # -----------------------
+def extract_proxy_list_preamble(content: str) -> str:
+    """Lines from the start of the file until the first top-level H1 that is not `# Proxy List`.
+
+    Stops before the first provider section (e.g. `# 💜 Selenite`). `##` sections stay in the preamble.
+    """
+    lines_out: list[str] = []
+    for line in content.splitlines():
+        if line.startswith("# ") and not line.startswith("##"):
+            if line.strip() != "# Proxy List":
+                break
+        lines_out.append(line)
+    return "\n".join(lines_out)
+
+
 def parse_list_version_revision(content: str) -> tuple[str, str, int]:
     """Returns (version like v2.0.3, revision like r29, revision int)."""
     version, rev_str, rev_num = "v0.0.0", "r0", 0
-    for raw in content.splitlines()[:50]:
+    preamble = extract_proxy_list_preamble(content)
+    for raw in preamble.splitlines():
         s = raw.strip()
-        if s.startswith(">"):
-            inner = s[1:].lstrip()
-            if inner.startswith("[!"):
-                continue
-            mv = re.match(r"^(v[\d.]+)\s*\|", inner)
-            if mv:
-                version = mv.group(1)
-            mr = re.match(r"^(r(\d+))\s*\|", inner, re.IGNORECASE)
-            if mr:
-                rev_str = mr.group(1).lower()
-                rev_num = int(mr.group(2))
+        if not s.startswith(">"):
+            continue
+        inner = s[1:].lstrip()
+        if inner.startswith("[!"):
+            continue
+        mv = re.match(r"^(v[\d.]+)\s*\|", inner)
+        if mv:
+            version = mv.group(1)
+        mr = re.match(r"^(r(\d+))\s*\|", inner, re.IGNORECASE)
+        if mr:
+            rev_str = mr.group(1).lower()
+            rev_num = int(mr.group(2))
     return version, rev_str, rev_num
 
 
