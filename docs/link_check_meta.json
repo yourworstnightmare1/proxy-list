@@ -1,8 +1,18 @@
 {
-  "checked_at": "2026-05-01T08:06:25Z",
-  "checked_at_display": "2026-05-01 08:06 UTC",
+  "checked_at": "2026-05-01T13:07:39Z",
+  "checked_at_display": "2026-05-01 13:07 UTC",
   "added_count": 0,
-  "removed_count": 0,
+  "removed_count": 9,
   "added_links": [],
-  "removed_links": []
+  "removed_links": [
+    "https://computer.ellegisladordigital.com/onboarding",
+    "https://digital.ellegisladordigital.com/onboarding",
+    "https://ellegis.ellegisladordigital.com/onboarding",
+    "https://lador.ellegisladordigital.com/onboarding",
+    "https://tech.ellegisladordigital.com/onboarding",
+    "https://bull.vixenlights.com",
+    "https://lightspedmaster9e7re928394739.fdmtechnika.pl",
+    "https://contentkeepermaster3009.deltacompy.com.br",
+    "https://securelymaster2000934.greatgiftlists.com"
+  ]
 }
