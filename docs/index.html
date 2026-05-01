@@ -153,6 +153,7 @@
     main { padding: 1rem 1.25rem 2rem; overflow-x: auto; }
     .stats { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
     .stats strong { color: var(--ok); }
+    .stats strong.removed { color: #ff7a7a; }
     .stat-line { margin: 0.2rem 0; }
     table {
       width: 100%;
@@ -306,6 +307,24 @@
       line-height: 1.4;
     }
     .risk-notice strong { color: #ffe3aa; }
+    .removal-notice {
+      border: 1px solid #5d3a3a;
+      background: #2a1414;
+      color: #ffb3b3;
+      border-radius: 8px;
+      padding: 0.6rem 0.7rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.84rem;
+      line-height: 1.4;
+    }
+    .removal-notice.warn {
+      border-color: #5f4b2d;
+      background: #2a2215;
+      color: #ffd57e;
+    }
+    .removal-notice strong { color: #ffe3aa; }
+    .removal-notice.severe { color: #ff8a8a; }
+    .removal-notice.severe strong { color: #ffd2d2; }
     .important-notices {
       border: 1px solid #2d5588;
       background: #152030;
@@ -349,15 +368,74 @@
       outline: 2px solid var(--accent);
       outline-offset: 1px;
     }
+
+    .orientation-warning {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem 1.5rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .orientation-warning .orientation-icon {
+      width: 96px;
+      height: auto;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      animation: orientation-rotate 2.4s ease-in-out infinite;
+    }
+    @keyframes orientation-rotate {
+      0%, 35% { transform: rotate(0deg); }
+      55%, 100% { transform: rotate(-90deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .orientation-warning .orientation-icon {
+        animation: none;
+        transform: rotate(-90deg);
+      }
+    }
+    .orientation-warning h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+    }
+    .orientation-warning p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 28ch;
+      line-height: 1.5;
+    }
+    @media (max-width: 768px) and (orientation: portrait) {
+      .orientation-warning { display: flex; }
+      body.orientation-locked {
+        overflow: hidden;
+        height: 100vh;
+      }
+      body.orientation-locked > :not(.orientation-warning) {
+        display: none !important;
+      }
+    }
   </style>
 </head>
-<body>
+<body class="orientation-locked">
+  <div class="orientation-warning" role="alertdialog" aria-labelledby="orientationTitle">
+    <svg class="orientation-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 106.43" aria-hidden="true" focusable="false">
+      <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M11.1,0h35.63c3.05,0,5.85,1.25,7.85,3.25c2.03,2.03,3.25,4.8,3.25,7.85v31.46h-3.19V12.18H3.15v75.26l0,0h7.61v11.61c0,1.58,0.27,3.1,0.77,4.51H11.1c-3.05,0-5.85-1.25-7.85-3.25C1.22,98.27,0,95.51,0,92.45V11.1c0-3.05,1.25-5.85,3.25-7.85C5.28,1.22,8.04,0,11.1,0L11.1,0L11.1,0z M94.95,33.45c-0.37-5.8-2.64-10.56-6.06-13.97c-3.64-3.63-8.59-5.74-13.94-5.93l2.46,2.95c0.73,0.88,0.62,2.18-0.26,2.91c-0.88,0.73-2.18,0.62-2.91-0.26l-5.72-6.85l0,0c-0.72-0.86-0.62-2.14,0.22-2.88l6.71-5.89c0.86-0.75,2.16-0.66,2.91,0.19c0.75,0.86,0.66,2.16-0.19,2.91l-3.16,2.78c6.43,0.21,12.4,2.75,16.8,7.13c4.07,4.06,6.79,9.69,7.25,16.49l2.58-3.08c0.73-0.88,2.04-0.99,2.91-0.26c0.88,0.73,0.99,2.04,0.26,2.91l-5.73,6.84c-0.72,0.86-1.99,0.99-2.87,0.29l-6.98-5.56c-0.89-0.71-1.04-2.01-0.33-2.91c0.71-0.89,2.01-1.04,2.91-0.33L94.95,33.45L94.95,33.45z M122.88,59.7v35.63c0,3.05-1.25,5.85-3.25,7.85c-2.03,2.03-4.8,3.25-7.85,3.25h-78.9c-3.05,0-5.85-1.25-7.85-3.25c-2.03-2.03-3.25-4.8-3.25-7.85V59.7c0-3.05,1.25-5.85,3.25-7.85c2.03-2.03,4.79-3.25,7.85-3.25h78.9c3.05,0,5.85,1.25,7.85,3.25C121.66,53.88,122.88,56.64,122.88,59.7L122.88,59.7L122.88,59.7z M35.41,77.49c0,2.51-2.03,4.57-4.57,4.57c-2.51,0-4.57-2.03-4.57-4.57c0-2.51,2.03-4.57,4.57-4.57C33.36,72.92,35.41,74.95,35.41,77.49L35.41,77.49L35.41,77.49z M37.88,51.75v51.49h72.82V51.75H37.88L37.88,51.75z"/>
+    </svg>
+    <h2 id="orientationTitle">Please rotate your device</h2>
+    <p>This site must be viewed in landscape mode to display properly.</p>
+  </div>
   <header>
     <h1>Proxy list</h1>
     <p class="sub">Multi-select provider, category, protocol, and capability tags (parsed from <code>list.md</code>). Nothing checked means no filter on that group.</p>
     <div class="header-actions">
       <a class="btn" href="./unsorted.html">Unsorted links</a>
       <button class="btn" id="selectFilterBtn" type="button">Select filter</button>
+      <button class="btn" id="updateNoticeBtn" type="button">Update Notice</button>
       <a class="btn btn-primary" href="https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank">Contribute on GitHub</a>
       <a class="btn" href="https://forms.gle/SMx9EUkBeiFuLwBa8" rel="noopener noreferrer" target="_blank">Contribute via Google Form</a>
     </div>
@@ -427,6 +505,21 @@
       </div>
     </section>
   </div>
+  <div class="summary-backdrop" id="updateBackdrop" aria-hidden="true">
+    <section class="summary-modal" role="dialog" aria-modal="true" aria-labelledby="updateTitle">
+      <div class="summary-head">
+        <h2 class="summary-title" id="updateTitle">What's new</h2>
+        <button class="btn" id="updateCloseBtn" type="button">Close</button>
+      </div>
+      <div class="summary-body">
+        <p class="summary-muted" id="updateIntro">The proxy list has been updated.</p>
+        <div id="updateNoticesBody"></div>
+      </div>
+      <div class="summary-footer">
+        <button class="btn btn-primary" id="updateGotItBtn" type="button">Got it</button>
+      </div>
+    </section>
+  </div>
   <div class="summary-backdrop" id="filterBackdrop" aria-hidden="true">
     <section class="summary-modal" role="dialog" aria-modal="true" aria-labelledby="filterTitle">
       <div class="summary-head">
@@ -450,6 +543,8 @@
     let checkedDomains = new Set();
     let selectedGnMathFilter = "";
     let hideBlockedBySelectedFilter = false;
+    let failingLinks = {};
+    let failThreshold = 3;
 
     function uniq(arr) {
       return [...new Set(arr)].filter(Boolean).sort((a, b) => a.localeCompare(b));
@@ -612,7 +707,7 @@
         "</strong>.</p>" +
         '<p class="stat-line">Since last link check: <strong>+' +
         added +
-        "</strong> added, <strong>-" +
+        '</strong> added, <strong class="removed">-' +
         removed +
         "</strong> removed.</p>" +
         '<p class="stat-line">Last list update: <strong>' +
@@ -801,6 +896,39 @@
       return checkedDomains.has(d) || checkedDomains.has(d.replace(/^www\./, ""));
     }
 
+    function normalizeLinkForCheck(link) {
+      return String(link || "").trim().replace(/\/+$/, "");
+    }
+
+    function failCountFor(link) {
+      const key = normalizeLinkForCheck(link);
+      if (!key) return 0;
+      const v = failingLinks[key];
+      return Number.isFinite(v) ? Math.max(0, v) : 0;
+    }
+
+    function removalNoticeHtml(link) {
+      const fails = failCountFor(link);
+      if (fails <= 0) return "";
+      const threshold = Number.isFinite(failThreshold) && failThreshold > 0 ? failThreshold : 3;
+      const remaining = Math.max(0, threshold - fails);
+      const severe = remaining <= 1;
+      const cls = severe ? "removal-notice severe" : "removal-notice warn";
+      const failsLabel = fails === 1 ? "1 link check" : fails + " consecutive link checks";
+      const remainingLabel = remaining === 0
+        ? "It will be removed on the next failed link check run."
+        : remaining === 1
+          ? "It will be removed if it fails <strong>1 more link check</strong>."
+          : "It will be removed if it fails <strong>" + remaining + " more link checks</strong>.";
+      return (
+        '<div class="' + cls + '"><strong>Heads up:</strong> this link has failed <strong>' +
+        failsLabel +
+        "</strong> in a row. " +
+        remainingLabel +
+        "</div>"
+      );
+    }
+
     function setSummaryFooterLink(link) {
       const openBtn = $("summaryOpenBtn");
       const copyBtn = $("summaryCopyBtn");
@@ -816,11 +944,13 @@
       const entry = summaryEntryFor(link);
       const body = $("summaryBody");
       setSummaryFooterLink(link);
+      const removalHtml = removalNoticeHtml(link);
       if (!entry) {
         const pendingText = hasCheckedDomain(link)
           ? "This link was checked, but no parsable gn-math summary message was captured yet."
           : "No gn-math data found for this link yet.";
         body.innerHTML =
+          removalHtml +
           '<p class="summary-muted">' + escapeHtml(pendingText) + "</p>";
       } else {
         const summary = entry.summary || {};
@@ -858,6 +988,7 @@
           : '<tr><td colspan="3" class="summary-muted">No provider lines parsed from source message.</td></tr>';
 
         body.innerHTML =
+          removalHtml +
           riskNoticeHtml +
           '<p class="summary-muted">Domain: <strong>' +
           escapeHtml(entry.domain || domainOf(link) || "—") +
@@ -987,6 +1118,72 @@
       return chunks.join("");
     }
 
+    const UPDATE_SEEN_KEY = "proxylist:last-seen-version";
+
+    function versionOnly(meta) {
+      return ((meta && meta.version) || "").trim();
+    }
+
+    function readSeenVersion() {
+      try {
+        return localStorage.getItem(UPDATE_SEEN_KEY);
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function writeSeenVersion(value) {
+      try {
+        localStorage.setItem(UPDATE_SEEN_KEY, value);
+      } catch (_) {
+        /* storage may be disabled; ignore */
+      }
+    }
+
+    function openUpdateModal(meta, fromVersion) {
+      const titleEl = $("updateTitle");
+      const introEl = $("updateIntro");
+      const bodyEl = $("updateNoticesBody");
+      const current = versionOnly(meta) || "the latest version";
+      if (titleEl) titleEl.textContent = "What's new in " + current;
+      if (introEl) {
+        if (fromVersion && fromVersion !== current) {
+          introEl.textContent =
+            "The proxy list was updated from " + fromVersion + " to " + current + ".";
+        } else {
+          introEl.textContent = "Currently on " + current + ".";
+        }
+      }
+      if (bodyEl) {
+        const md = meta && meta.update_notice;
+        bodyEl.innerHTML = md && String(md).trim()
+          ? renderMarkdownLiteNotices(String(md))
+          : '<p class="summary-muted">No update notice is available for this version.</p>';
+      }
+      $("updateBackdrop").classList.add("open");
+      $("updateBackdrop").setAttribute("aria-hidden", "false");
+    }
+
+    function closeUpdateModal(meta) {
+      const current = versionOnly(meta);
+      if (current) writeSeenVersion(current);
+      $("updateBackdrop").classList.remove("open");
+      $("updateBackdrop").setAttribute("aria-hidden", "true");
+    }
+
+    function maybeShowUpdateModal(meta) {
+      const current = versionOnly(meta);
+      if (!current) return;
+      const stored = readSeenVersion();
+      if (stored === current) return;
+      if (stored === null) {
+        // First-time visitor: silently mark current version so the modal only auto-triggers on real updates.
+        writeSeenVersion(current);
+        return;
+      }
+      openUpdateModal(meta, stored);
+    }
+
     function applyImportantNotices(meta) {
       const el = $("importantNotices");
       if (!el) return;
@@ -1106,8 +1303,15 @@
             .filter(Boolean)
         );
         const { meta, link_check, links } = normalizePayload(json);
+        if (json && typeof json.failing_links === "object" && json.failing_links) {
+          failingLinks = json.failing_links;
+        }
+        if (meta && Number.isFinite(meta.fail_threshold) && meta.fail_threshold > 0) {
+          failThreshold = meta.fail_threshold;
+        }
         applyImportantNotices(meta);
         setFooter(meta);
+        maybeShowUpdateModal(meta);
         buildCheckboxGroup(
           "providerTags",
           uniq(links.map((d) => d.provider)),
@@ -1205,10 +1409,17 @@
         $("filterBackdrop").addEventListener("click", (ev) => {
           if (ev.target === $("filterBackdrop")) closeFilterModal();
         });
+        $("updateBackdrop").addEventListener("click", (ev) => {
+          if (ev.target === $("updateBackdrop")) closeUpdateModal(meta);
+        });
+        $("updateCloseBtn").addEventListener("click", () => closeUpdateModal(meta));
+        $("updateGotItBtn").addEventListener("click", () => closeUpdateModal(meta));
+        $("updateNoticeBtn").addEventListener("click", () => openUpdateModal(meta, readSeenVersion()));
         document.addEventListener("keydown", (ev) => {
           if (ev.key === "Escape") {
             closeSummary();
             closeFilterModal();
+            closeUpdateModal(meta);
           }
         });
 

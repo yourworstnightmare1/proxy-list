@@ -12,8 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / "list.md"
 OUTPUT = ROOT / "docs" / "data.json"
 LINK_CHECK_META = ROOT / "docs" / "link_check_meta.json"
+LINK_STATUS = ROOT / "link_status.json"
 UNSORTED_INPUT = ROOT / "unsorted.md"
 UNSORTED_OUTPUT = ROOT / "docs" / "unsorted.json"
+
+LINK_CHECK_FAIL_THRESHOLD = 3
 
 
 def strip_blockquote_prefix(line: str) -> str:
@@ -57,14 +60,15 @@ def parse_contributor_cell(raw: str) -> tuple[str, str | None]:
 
 
 _IMPORTANT_NOTICES_H2 = re.compile(r"^##\s+Important Notices\s*$", re.IGNORECASE)
+_UPDATE_NOTICE_H2 = re.compile(r"^##\s+Update Notice\s*$", re.IGNORECASE)
 
 
-def parse_important_notices(text: str) -> str:
-    """Return markdown-lite body for ## Important Notices … until next H1/H2 heading."""
+def _extract_md_section(text: str, heading_re: re.Pattern[str]) -> str:
+    """Return markdown-lite body for a `## Heading` block until next H1/H2 heading."""
     lines = text.splitlines()
     start = -1
     for i, raw in enumerate(lines):
-        if _IMPORTANT_NOTICES_H2.match(raw.strip()):
+        if heading_re.match(raw.strip()):
             start = i + 1
             break
     if start < 0:
@@ -86,6 +90,14 @@ def parse_important_notices(text: str) -> str:
         out_lines.append(inner)
 
     return "\n".join(out_lines).strip()
+
+
+def parse_important_notices(text: str) -> str:
+    return _extract_md_section(text, _IMPORTANT_NOTICES_H2)
+
+
+def parse_update_notice(text: str) -> str:
+    return _extract_md_section(text, _UPDATE_NOTICE_H2)
 
 
 def parse_list_meta(text: str) -> dict[str, str]:
@@ -114,6 +126,24 @@ def load_link_check_meta() -> dict:
         return json.loads(LINK_CHECK_META.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return {}
+
+
+def load_failing_links() -> dict[str, int]:
+    """Return {normalized_url -> consecutive_fail_count} for URLs with count > 0."""
+    if not LINK_STATUS.is_file():
+        return {}
+    try:
+        raw = json.loads(LINK_STATUS.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    out: dict[str, int] = {}
+    for k, v in raw.items():
+        if not isinstance(v, int) or v <= 0:
+            continue
+        nk = str(k).strip().rstrip("/")
+        if nk:
+            out[nk] = max(out.get(nk, 0), v)
+    return out
 
 
 def parse_unsorted_links() -> list[dict[str, str]]:
@@ -223,11 +253,19 @@ def main() -> int:
     raw = INPUT.read_text(encoding="utf-8")
     meta = parse_list_meta(raw)
     important = parse_important_notices(raw)
+    update_notice = parse_update_notice(raw)
     links = parse_list_md(raw)
     unsorted_links = parse_unsorted_links()
     payload = {
-        "meta": {**meta, "unsorted_total": len(unsorted_links), "important_notices": important},
+        "meta": {
+            **meta,
+            "unsorted_total": len(unsorted_links),
+            "important_notices": important,
+            "update_notice": update_notice,
+            "fail_threshold": LINK_CHECK_FAIL_THRESHOLD,
+        },
         "link_check": load_link_check_meta(),
+        "failing_links": load_failing_links(),
         "links": links,
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
