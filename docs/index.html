@@ -1061,6 +1061,21 @@
       return cleanSummaryText(value).toLowerCase().replace(/[^a-z0-9]+/g, "");
     }
 
+    /** Strip gn-math status suffixes like " (Timed out) ⚠" so one product = one filter row. */
+    function canonicalProviderLabel(raw) {
+      let s = cleanSummaryText(raw);
+      if (!s) return "";
+      s = s.replace(/[\s\uFEFF]*(?:⚠️|⚠)\s*$/gu, "").trim();
+      while (/\([^)]*\)\s*$/.test(s)) {
+        s = s.replace(/\s*\([^)]*\)\s*$/, "").trim();
+      }
+      return s;
+    }
+
+    function providerFilterKey(raw) {
+      return normalizeFilterKey(canonicalProviderLabel(raw));
+    }
+
     function updateSelectedFilterUI() {
       const label = $("selectedFilterLabel");
       const btn = $("selectFilterBtn");
@@ -1091,16 +1106,20 @@
     function populateKnownFilters() {
       const select = $("filterSelect");
       if (!select) return;
-      const names = new Set();
+      const byKey = new Map();
       for (const entry of Object.values(linkLensData || {})) {
         if (!entry || typeof entry !== "object") continue;
         const providers = Array.isArray(entry.providers) ? entry.providers : [];
         for (const p of providers) {
-          const n = cleanSummaryText(p && p.provider ? p.provider : "");
-          if (n) names.add(n);
+          const raw = cleanSummaryText(p && p.provider ? p.provider : "");
+          if (!raw) continue;
+          const canon = canonicalProviderLabel(raw);
+          if (!canon) continue;
+          const k = normalizeFilterKey(canon);
+          if (!byKey.has(k)) byKey.set(k, canon);
         }
       }
-      const sorted = [...names].sort((a, b) => a.localeCompare(b));
+      const sorted = [...byKey.values()].sort((a, b) => a.localeCompare(b));
       select.innerHTML = '<option value="">Any / Not selected</option>';
       for (const name of sorted) {
         const opt = document.createElement("option");
@@ -1108,8 +1127,16 @@
         opt.textContent = name;
         select.appendChild(opt);
       }
-      if (selectedGnMathFilter && sorted.includes(selectedGnMathFilter)) {
-        select.value = selectedGnMathFilter;
+      if (selectedGnMathFilter) {
+        const selKey = providerFilterKey(selectedGnMathFilter);
+        const hit = sorted.find((x) => normalizeFilterKey(x) === selKey);
+        if (hit) {
+          selectedGnMathFilter = hit;
+          select.value = hit;
+        } else {
+          selectedGnMathFilter = "";
+          select.value = "";
+        }
       }
     }
 
@@ -1144,10 +1171,12 @@
       const entry = summaryEntryFor(link);
       if (!entry || typeof entry !== "object") return "";
       const providers = Array.isArray(entry.providers) ? entry.providers : [];
-      const match = providers.find((p) => normalizeFilterKey(p.provider || "") === selectedFilterKey);
-      if (!match) return "";
-      const cat = cleanSummaryText(match.category || "");
-      return MALWARE_CATEGORY_RX.test(cat) ? cat : "";
+      const matches = providers.filter((p) => providerFilterKey(p.provider || "") === selectedFilterKey);
+      for (const m of matches) {
+        const cat = cleanSummaryText(m.category || "");
+        if (MALWARE_CATEGORY_RX.test(cat)) return cat;
+      }
+      return "";
     }
 
     function malwareWarningMessage(action) {
@@ -1171,8 +1200,9 @@
       const entry = summaryEntryFor(link);
       if (!entry || typeof entry !== "object") return false;
       const providers = Array.isArray(entry.providers) ? entry.providers : [];
-      const match = providers.find((p) => normalizeFilterKey(p.provider || "") === selectedFilterKey);
-      return !!(match && match.status === "blocked");
+      return providers.some(
+        (p) => providerFilterKey(p.provider || "") === selectedFilterKey && p.status === "blocked"
+      );
     }
 
     function hasCheckedDomain(link) {
@@ -1247,11 +1277,14 @@
         const selectedFilterKey = normalizeFilterKey(selectedGnMathFilter);
         let riskNoticeHtml = "";
         if (selectedFilterKey) {
-          const match = providers.find((p) => normalizeFilterKey(p.provider || "") === selectedFilterKey);
+          const matches = providers.filter((p) => providerFilterKey(p.provider || "") === selectedFilterKey);
+          const rank = (s) => (s === "blocked" ? 0 : s === "warning" ? 1 : 2);
+          matches.sort((a, b) => rank(String(a.status)) - rank(String(b.status)));
+          const match = matches[0];
           if (match && (match.status === "blocked" || match.status === "warning")) {
             riskNoticeHtml =
               '<div class="risk-notice">This link may be blocked on <strong>' +
-              escapeHtml(cleanSummaryText(match.provider || selectedGnMathFilter)) +
+              escapeHtml(canonicalProviderLabel(match.provider || "") || cleanSummaryText(selectedGnMathFilter)) +
               "</strong> for <strong>" +
               escapeHtml(cleanSummaryText(match.category || "Unknown reason")) +
               "</strong>.</div>";

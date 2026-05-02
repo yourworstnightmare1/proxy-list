@@ -27,8 +27,10 @@ DATA_JSON = ROOT / "docs" / "data.json"
 OUTPUT_JSON = ROOT / "docs" / "linklens.json"
 CHECKED_DOMAINS_TXT = ROOT / "docs" / "checked_domains.txt"
 
-STATUS_MAP = {"✅": "unblocked", "❌": "blocked", "⚠️": "warning"}
-LINE_RE = re.compile(r"^\s*(?:[^\w\s]+)?\s*(.+?)(?:\s*\((.*?)\))?\s*([✅❌⚠️])\s*$")
+STATUS_MAP = {"✅": "unblocked", "❌": "blocked", "⚠️": "warning", "⚠": "warning"}
+LINE_RE = re.compile(r"^\s*(?:[^\w\s]+)?\s*(.+?)(?:\s*\((.*?)\))?\s*([✅❌⚠️⚠])\s*$")
+# gn-math often ends lines with Discord custom emoji, e.g. <:blocked:1234567890>
+DISCORD_VERDICT_TAIL = re.compile(r"<a?:([A-Za-z0-9_]+):(\d+)>\s*$")
 
 
 def now_iso() -> str:
@@ -161,6 +163,39 @@ def extract_message_text(message: discord.Message) -> str:
     return "\n".join(chunks)
 
 
+def _verdict_status_from_discord_emoji_name(e_name: str) -> str:
+    n = (e_name or "").lower().replace("-", "_")
+    if n == "blocked":
+        return "blocked"
+    if n == "unblocked":
+        return "unblocked"
+    if n in ("warning", "warn", "timeout", "error", "inconclusive"):
+        return "warning"
+    if n.startswith("unblock"):
+        return "unblocked"
+    if "block" in n and "unblock" not in n:
+        return "blocked"
+    return "warning"
+
+
+def _parse_markdown_discord_verdict_line(line: str, clean_field) -> tuple[str, str, str, str] | None:
+    m = DISCORD_VERDICT_TAIL.search(line)
+    if not m:
+        return None
+    e_name = m.group(1)
+    before = line[: m.start()].strip()
+    mm = re.search(r"\*\*([^*]+)\*\*", before)
+    if not mm:
+        return None
+    name = clean_field(mm.group(1))
+    cat_raw = before[mm.end() :].strip()
+    category = clean_field(cat_raw) if cat_raw else "Unknown"
+    if category != "Unknown" and re.fullmatch(r"\([^()]+\)", category):
+        category = category[1:-1].strip()
+    status = _verdict_status_from_discord_emoji_name(e_name)
+    return name, category, status, f":{e_name}:"
+
+
 def parse_provider_lines(text: str) -> tuple[list[dict[str, str]], dict[str, int]]:
     def clean_field(value: str) -> str:
         cleaned = value.replace("**", "").strip()
@@ -174,20 +209,58 @@ def parse_provider_lines(text: str) -> tuple[list[dict[str, str]], dict[str, int
         if not line:
             continue
         m = LINE_RE.match(line)
-        if not m:
+        if m:
+            name, category, icon = m.groups()
+            status = STATUS_MAP.get(icon, "warning")
+            summary[status] += 1
+            providers.append(
+                {
+                    "provider": clean_field(name),
+                    "category": clean_field(category or "Unknown"),
+                    "status": status,
+                    "icon": icon,
+                }
+            )
             continue
-        name, category, icon = m.groups()
-        status = STATUS_MAP.get(icon, "warning")
-        summary[status] += 1
-        providers.append(
-            {
-                "provider": clean_field(name),
-                "category": clean_field(category or "Unknown"),
-                "status": status,
-                "icon": icon,
-            }
-        )
+        dv = _parse_markdown_discord_verdict_line(line, clean_field)
+        if dv:
+            name, category, status, icon_repr = dv
+            summary[status] += 1
+            providers.append(
+                {
+                    "provider": name,
+                    "category": category,
+                    "status": status,
+                    "icon": icon_repr,
+                }
+            )
     return providers, summary
+
+
+def reparse_linklens_from_raw_excerpts(path: Path) -> tuple[int, int]:
+    """Rebuild providers/summary from stored raw_excerpt (fixes older parses that missed <:blocked:> lines)."""
+    data = load_existing(path)
+    if not data:
+        return 0, 0
+    keys = 0
+    updated = 0
+    for _key, entry in data.items():
+        if not isinstance(entry, dict):
+            continue
+        keys += 1
+        raw = str(entry.get("raw_excerpt") or "").strip()
+        if not raw:
+            continue
+        providers, summary = parse_provider_lines(raw)
+        if not providers:
+            continue
+        total = summary["blocked"] + summary["unblocked"] + summary["warning"]
+        entry["providers"] = providers
+        entry["summary"] = {**summary, "total": total}
+        entry["status"] = "ok" if total else "parsed_empty"
+        updated += 1
+    write_output(path, data)
+    return updated, keys
 
 
 def is_stale(entry: dict[str, Any], max_age_days: float) -> bool:
@@ -486,6 +559,11 @@ def parse_args() -> argparse.Namespace:
         default=int(os.getenv("GN_MATH_HISTORY_LIMIT", os.getenv("LINKLENS_HISTORY_LIMIT", "200"))),
     )
     p.add_argument("--ingest-history", action="store_true", help="Parse existing summary messages from channel history.")
+    p.add_argument(
+        "--reparse-from-raw",
+        action="store_true",
+        help="Rewrite providers/summary in linklens.json from each entry's raw_excerpt (no Discord).",
+    )
     p.add_argument("--force", action="store_true", help="Re-check links even if fresh in output file.")
     p.add_argument("--dry-run", action="store_true", help="Print commands without sending Discord messages.")
     return p.parse_args()
@@ -517,6 +595,12 @@ def validate_args(args: argparse.Namespace) -> Config:
 def main() -> int:
     apply_dot_token_env()
     args = parse_args()
+    if args.reparse_from_raw:
+        if not OUTPUT_JSON.is_file():
+            raise SystemExit(f"Missing {OUTPUT_JSON}")
+        updated, keys = reparse_linklens_from_raw_excerpts(OUTPUT_JSON)
+        print(f"Reparse from raw_excerpt: updated={updated} linklens keys (scanned {keys} top-level keys).")
+        return 0
     cfg = validate_args(args)
     if not DATA_JSON.is_file():
         raise SystemExit(f"Missing {DATA_JSON}. Run scripts/convert_list_to_json.py first.")
