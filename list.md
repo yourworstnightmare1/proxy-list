@@ -2,7 +2,7 @@
 > [!NOTE]
 > v3.0.1 | Released: April 27, 2026
 > r66 | Last Updated: May 02, 2026
-> Total Links: 2026\
+> Total Links: 2025\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -1438,12 +1438,10 @@ You can always view [Unsorted Links](https://yourworstnightmare1.github.io/proxy
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 2 |
+> | Games | N/A | N/A | 1 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://aub.lat/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 | | https://eladesceelasobe.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # ⬡ TGLSC Density 4
