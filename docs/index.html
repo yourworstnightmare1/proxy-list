@@ -110,6 +110,10 @@
       outline: 2px solid var(--accent);
       outline-offset: 1px;
     }
+    .filter-reset {
+      margin: 0.25rem 0 0;
+    }
+    .filter-reset .btn { width: 100%; }
     fieldset {
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -487,6 +491,10 @@
         </div>
         <div class="tags" id="capTags"></div>
       </fieldset>
+
+      <p class="filter-reset">
+        <button class="btn" id="resetFiltersBtn" type="button">Reset filters</button>
+      </p>
     </aside>
     <main>
       <section class="important-notices" id="importantNotices" aria-label="Important notices" hidden></section>
@@ -1354,7 +1362,28 @@
         );
         buildCapCheckboxes(links, meta, link_check);
 
+        function resetAllFilters() {
+          const q = $("q");
+          if (q) q.value = "";
+          for (const id of ["providerTags", "categoryTags", "protocolTags", "capTags"]) {
+            const wrap = $(id);
+            if (!wrap) continue;
+            wrap.querySelectorAll('input[type="checkbox"]').forEach((inp) => {
+              inp.checked = false;
+            });
+          }
+          const anyCap = document.querySelector('input[name="capMode"][value="any"]');
+          if (anyCap) anyCap.checked = true;
+          selectedGnMathFilter = "";
+          const filterSel = $("filterSelect");
+          if (filterSel) filterSel.value = "";
+          hideBlockedBySelectedFilter = false;
+          updateSelectedFilterUI();
+          render(links, meta, link_check);
+        }
+
         $("q").addEventListener("input", () => render(links, meta, link_check));
+        $("resetFiltersBtn").addEventListener("click", resetAllFilters);
         document.querySelectorAll('input[name="capMode"]').forEach((el) => {
           el.addEventListener("change", () => render(links, meta, link_check));
         });
