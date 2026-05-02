@@ -1,0 +1,11 @@
+rules_version = '2';
+// Deploy in Firebase Console → Firestore → Rules.
+// Uses Anonymous Auth from the site; tighten further if you enable App Check.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /link_clicks/{docId} {
+      allow read: if true;
+      allow create, update: if request.auth != null;
+    }
+  }
+}

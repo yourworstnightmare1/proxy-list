@@ -114,6 +114,56 @@
       margin: 0.25rem 0 0;
     }
     .filter-reset .btn { width: 100%; }
+    .popular-section {
+      margin-bottom: 1rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .popular-section h2 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0 0 0.35rem;
+    }
+    .popular-section .popular-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0 0 0.65rem;
+      line-height: 1.4;
+      max-width: 72ch;
+    }
+    .popular-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      align-items: center;
+    }
+    .popular-chip {
+      font-size: 0.78rem;
+      padding: 0.35rem 0.6rem;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .popular-chip .chip-host {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .popular-chip .chip-count {
+      margin-left: 0.35rem;
+      font-size: 0.68rem;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    td.click-cell {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
     fieldset {
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -496,8 +546,13 @@
         <button class="btn" id="resetFiltersBtn" type="button">Reset filters</button>
       </p>
     </aside>
-    <main>
+    <main id="mainContent">
       <section class="important-notices" id="importantNotices" aria-label="Important notices" hidden></section>
+      <section class="popular-section" id="popularSection" aria-labelledby="popularHeading" hidden>
+        <h2 id="popularHeading">Popular picks</h2>
+        <p class="popular-note" id="popularNote" hidden></p>
+        <div class="popular-chips" id="popularChips"></div>
+      </section>
       <div class="stats" id="stats"></div>
       <div id="tableWrap"></div>
     </main>
@@ -560,6 +615,10 @@
       </div>
     </section>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
   <script>
     const $ = (id) => document.getElementById(id);
     let linkLensData = {};
@@ -568,6 +627,162 @@
     let hideBlockedBySelectedFilter = false;
     let failingLinks = {};
     let failThreshold = 3;
+    let useFirebaseClicks = false;
+    let firebaseDb = null;
+
+    const LS_CLICK_KEY = "proxyList_link_clicks_v1";
+
+    function normalizeUrlKeyForClicks(u) {
+      return String(u || "")
+        .trim()
+        .replace(/\/+$/, "")
+        .toLowerCase();
+    }
+
+    function localClickGet(norm) {
+      try {
+        const raw = localStorage.getItem(LS_CLICK_KEY);
+        if (!raw) return 0;
+        const o = JSON.parse(raw);
+        return Number(o[norm]) || 0;
+      } catch (_) {
+        return 0;
+      }
+    }
+
+    function localClickInc(norm) {
+      try {
+        const raw = localStorage.getItem(LS_CLICK_KEY);
+        const o = raw ? JSON.parse(raw) : {};
+        o[norm] = (Number(o[norm]) || 0) + 1;
+        localStorage.setItem(LS_CLICK_KEY, JSON.stringify(o));
+        return o[norm];
+      } catch (_) {
+        return 0;
+      }
+    }
+
+    async function sha256Hex(text) {
+      const buf = new TextEncoder().encode(text);
+      const hash = await crypto.subtle.digest("SHA-256", buf);
+      return Array.from(new Uint8Array(hash))
+        .map((b) => b.toString(16).padStart(2, "0"))
+        .join("");
+    }
+
+    function initClickTracking() {
+      const cfg = typeof window !== "undefined" && window.__FIREBASE_CONFIG__;
+      if (!cfg || !cfg.apiKey || typeof firebase === "undefined") {
+        useFirebaseClicks = false;
+        firebaseDb = null;
+        return Promise.resolve(false);
+      }
+      try {
+        if (!firebase.apps.length) {
+          firebase.initializeApp(cfg);
+        }
+        firebaseDb = firebase.firestore();
+        return firebase
+          .auth()
+          .signInAnonymously()
+          .then(() => {
+            useFirebaseClicks = true;
+            return true;
+          })
+          .catch(() => {
+            useFirebaseClicks = false;
+            firebaseDb = null;
+            return false;
+          });
+      } catch (_) {
+        useFirebaseClicks = false;
+        firebaseDb = null;
+        return Promise.resolve(false);
+      }
+    }
+
+    async function recordLinkClick(url) {
+      const norm = normalizeUrlKeyForClicks(url);
+      if (!norm) return;
+      if (useFirebaseClicks && firebaseDb) {
+        try {
+          const id = await sha256Hex(norm);
+          await firebaseDb
+            .collection("link_clicks")
+            .doc(id)
+            .set(
+              {
+                url: String(url).trim(),
+                count: firebase.firestore.FieldValue.increment(1),
+                updated: firebase.firestore.FieldValue.serverTimestamp(),
+              },
+              { merge: true }
+            );
+          return;
+        } catch (e) {
+          console.warn("Firebase click increment failed", e);
+        }
+      }
+      localClickInc(norm);
+    }
+
+    async function fetchClickCounts(urls) {
+      const norms = [...new Set(urls.map((u) => normalizeUrlKeyForClicks(u)).filter(Boolean))];
+      const map = new Map();
+      if (!norms.length) return map;
+
+      if (useFirebaseClicks && firebaseDb) {
+        for (let i = 0; i < norms.length; i += 10) {
+          const chunk = norms.slice(i, i + 10);
+          try {
+            const ids = await Promise.all(chunk.map((n) => sha256Hex(n)));
+            const snaps = await Promise.all(
+              ids.map((id) => firebaseDb.collection("link_clicks").doc(id).get())
+            );
+            snaps.forEach((snap, idx) => {
+              const data = snap.data();
+              const cnt = data && Number.isFinite(data.count) ? data.count : 0;
+              map.set(chunk[idx], cnt);
+            });
+          } catch (_) {
+            chunk.forEach((n) => map.set(n, localClickGet(n)));
+          }
+        }
+        return map;
+      }
+
+      norms.forEach((n) => map.set(n, localClickGet(n)));
+      return map;
+    }
+
+    function countForUrl(map, url) {
+      const k = normalizeUrlKeyForClicks(url);
+      return map.has(k) ? map.get(k) : 0;
+    }
+
+    function formatClickLineLabel() {
+      return useFirebaseClicks ? "Opens (all visitors)" : "Opens (this browser only)";
+    }
+
+    async function refreshClickCells(filtered) {
+      if (!filtered || !filtered.length) return;
+      const map = await fetchClickCounts(filtered.map((r) => r.link));
+      document.querySelectorAll("#tableWrap td.click-cell").forEach((td) => {
+        const u = td.getAttribute("data-click-url");
+        if (!u) return;
+        td.textContent = String(countForUrl(map, u));
+      });
+    }
+
+    async function refreshPopularClickCounts(entries) {
+      if (!entries || !entries.length) return;
+      const map = await fetchClickCounts(entries.map((r) => r.link));
+      document.querySelectorAll("#popularChips .chip-count").forEach((span) => {
+        const u = span.getAttribute("data-click-url");
+        if (!u) return;
+        span.textContent = String(countForUrl(map, u));
+      });
+    }
 
     function uniq(arr) {
       return [...new Set(arr)].filter(Boolean).sort((a, b) => a.localeCompare(b));
@@ -704,6 +919,49 @@
       el.textContent = formatListVersion(meta);
     }
 
+    function renderPopularSection(meta) {
+      const sec = $("popularSection");
+      const noteEl = $("popularNote");
+      const chips = $("popularChips");
+      if (!sec || !chips) return;
+      const entries = (meta && meta.popular_links) || [];
+      if (!entries.length) {
+        sec.hidden = true;
+        return;
+      }
+      sec.hidden = false;
+      const note = (meta && meta.popular_note) || "";
+      if (noteEl) {
+        if (note) {
+          noteEl.textContent = note;
+          noteEl.hidden = false;
+        } else {
+          noteEl.textContent = "";
+          noteEl.hidden = true;
+        }
+      }
+      chips.innerHTML = entries
+        .map((r) => {
+          const href = r.link || "";
+          const label = domainOf(href) || href;
+          return (
+            '<a href="' +
+            escapeAttr(href) +
+            '" class="btn popular-chip js-link-summary" data-link="' +
+            escapeAttr(href) +
+            '" rel="noopener noreferrer" target="_blank" title="' +
+            escapeAttr(href) +
+            '"><span class="chip-host">' +
+            escapeHtml(label) +
+            '</span><span class="chip-count" data-click-url="' +
+            escapeAttr(href) +
+            '">…</span></a>'
+          );
+        })
+        .join("");
+      refreshPopularClickCounts(entries);
+    }
+
     function render(rows, meta, linkCheck) {
       const filtered = filterRows(rows, {});
       updateFilterCounts(rows);
@@ -755,7 +1013,9 @@
             escapeAttr(r.link) +
             '">' +
             escapeHtml(r.link) +
-            "</a></td><td>" +
+            '</a></td><td class="click-cell" data-click-url="' +
+            escapeAttr(r.link) +
+            '">…</td><td>' +
             escapeHtml(r.category) +
             "</td><td>" +
             formatTags(r.capability_tags) +
@@ -769,12 +1029,14 @@
 
       $("tableWrap").innerHTML =
         "<table><thead><tr>" +
-        ["Provider", "Link", "Category", "Capabilities", "Protocols", "Contributor"]
+        ["Provider", "Link", "Clicks", "Category", "Capabilities", "Protocols", "Contributor"]
           .map((h) => "<th>" + h + "</th>")
           .join("") +
         "</tr></thead><tbody>" +
         rowsHtml +
         "</tbody></table>";
+
+      refreshClickCells(filtered);
     }
 
     function domainOf(link) {
@@ -964,18 +1226,19 @@
       }
     }
 
-    function openSummary(link) {
+    async function openSummary(link) {
+      await recordLinkClick(link);
       const entry = summaryEntryFor(link);
       const body = $("summaryBody");
       setSummaryFooterLink(link);
       const removalHtml = removalNoticeHtml(link);
+      const clickStub = '<p class="summary-muted" id="summaryClickLine">…</p>';
       if (!entry) {
         const pendingText = hasCheckedDomain(link)
           ? "This link was checked, but no parsable gn-math summary message was captured yet."
           : "No gn-math data found for this link yet.";
         body.innerHTML =
-          removalHtml +
-          '<p class="summary-muted">' + escapeHtml(pendingText) + "</p>";
+          removalHtml + clickStub + '<p class="summary-muted">' + escapeHtml(pendingText) + "</p>";
       } else {
         const summary = entry.summary || {};
         const providers = Array.isArray(entry.providers) ? entry.providers : [];
@@ -1014,6 +1277,7 @@
         body.innerHTML =
           removalHtml +
           riskNoticeHtml +
+          clickStub +
           '<p class="summary-muted">Domain: <strong>' +
           escapeHtml(entry.domain || domainOf(link) || "—") +
           '</strong> • Checked: <strong>' +
@@ -1038,6 +1302,16 @@
       $("summaryTitle").textContent = "Link summary";
       $("summaryBackdrop").classList.add("open");
       $("summaryBackdrop").setAttribute("aria-hidden", "false");
+      try {
+        const map = await fetchClickCounts([link]);
+        const line = $("summaryClickLine");
+        if (line) {
+          line.textContent = formatClickLineLabel() + ": " + countForUrl(map, link);
+        }
+      } catch (_) {
+        const line = $("summaryClickLine");
+        if (line) line.textContent = formatClickLineLabel() + ": —";
+      }
     }
 
     function closeSummary() {
@@ -1314,7 +1588,8 @@
         .then((r) => (r.ok ? r.text() : ""))
         .catch(() => ""),
     ])
-      .then(([json, linkLens, checkedDomainsText]) => {
+      .then(([json, linkLens, checkedDomainsText]) =>
+        initClickTracking().then(() => {
         if (linkLens && typeof linkLens === "object") {
           linkLensData = linkLens;
         }
@@ -1335,6 +1610,7 @@
         }
         applyImportantNotices(meta);
         setFooter(meta);
+        renderPopularSection(meta);
         maybeShowUpdateModal(meta);
         buildCheckboxGroup(
           "providerTags",
@@ -1388,7 +1664,7 @@
           el.addEventListener("change", () => render(links, meta, link_check));
         });
 
-        $("tableWrap").addEventListener("click", (ev) => {
+        $("mainContent").addEventListener("click", (ev) => {
           const target = ev.target;
           if (!(target instanceof Element)) return;
           const linkEl = target.closest("a.js-link-summary");
@@ -1479,7 +1755,8 @@
         });
 
         render(links, meta, link_check);
-      })
+        })
+      )
       .catch((e) => {
         $("tableWrap").innerHTML =
           '<p class="err">Failed to load data. Open this page via GitHub Pages or a local server so <code>data.json</code> can load (file:// blocks fetch).<br><br>' +

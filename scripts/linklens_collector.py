@@ -22,6 +22,7 @@ from urllib.parse import urlparse
 import discord
 
 ROOT = Path(__file__).resolve().parents[1]
+TOKEN_FILE = ROOT / ".token"
 DATA_JSON = ROOT / "docs" / "data.json"
 OUTPUT_JSON = ROOT / "docs" / "linklens.json"
 CHECKED_DOMAINS_TXT = ROOT / "docs" / "checked_domains.txt"
@@ -413,6 +414,38 @@ class CollectorClient(discord.Client):
             await asyncio.sleep(self.cfg.min_delay)
 
 
+def apply_dot_token_env() -> None:
+    """Fill DISCORD_BOT_TOKEN / DISCORD_CHANNEL_ID from .token if env vars are empty.
+
+    Supports simple KEY=value lines (optional double/single quotes), # comments,
+    and blank lines — same layout as a minimal dotenv file.
+    """
+    have_tok = bool((os.getenv("DISCORD_BOT_TOKEN") or "").strip())
+    have_ch = bool((os.getenv("DISCORD_CHANNEL_ID") or "").strip())
+    if have_tok and have_ch:
+        return
+    if not TOKEN_FILE.is_file():
+        return
+    parsed: dict[str, str] = {}
+    try:
+        for raw in TOKEN_FILE.read_text(encoding="utf-8").splitlines():
+            line = raw.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, rest = line.partition("=")
+            key = key.strip()
+            val = rest.strip()
+            if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+                val = val[1:-1]
+            parsed[key] = val
+    except OSError:
+        return
+    if not have_tok and parsed.get("DISCORD_BOT_TOKEN", "").strip():
+        os.environ["DISCORD_BOT_TOKEN"] = parsed["DISCORD_BOT_TOKEN"].strip()
+    if not have_ch and parsed.get("DISCORD_CHANNEL_ID", "").strip():
+        os.environ["DISCORD_CHANNEL_ID"] = parsed["DISCORD_CHANNEL_ID"].strip()
+
+
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Collect gn-math link safety summaries from Discord messages.")
     p.add_argument("--channel-id", type=int, default=int(os.getenv("DISCORD_CHANNEL_ID", "0") or "0"))
@@ -460,9 +493,9 @@ def parse_args() -> argparse.Namespace:
 
 def validate_args(args: argparse.Namespace) -> Config:
     if not args.token:
-        raise SystemExit("Missing Discord token. Set DISCORD_BOT_TOKEN or --token.")
+        raise SystemExit("Missing Discord token. Set DISCORD_BOT_TOKEN, --token, or DISCORD_BOT_TOKEN in .token.")
     if not args.channel_id:
-        raise SystemExit("Missing channel id. Set DISCORD_CHANNEL_ID or --channel-id.")
+        raise SystemExit("Missing channel id. Set DISCORD_CHANNEL_ID, --channel-id, or DISCORD_CHANNEL_ID in .token.")
     return Config(
         token=args.token,
         channel_id=args.channel_id,
@@ -482,6 +515,7 @@ def validate_args(args: argparse.Namespace) -> Config:
 
 
 def main() -> int:
+    apply_dot_token_env()
     args = parse_args()
     cfg = validate_args(args)
     if not DATA_JSON.is_file():

@@ -13,6 +13,7 @@ INPUT = ROOT / "list.md"
 OUTPUT = ROOT / "docs" / "data.json"
 LINK_CHECK_META = ROOT / "docs" / "link_check_meta.json"
 LINK_STATUS = ROOT / "link_status.json"
+POPULAR_LINKS = ROOT / "docs" / "popular_links.json"
 UNSORTED_INPUT = ROOT / "unsorted.md"
 UNSORTED_OUTPUT = ROOT / "docs" / "unsorted.json"
 
@@ -126,6 +127,47 @@ def load_link_check_meta() -> dict:
         return json.loads(LINK_CHECK_META.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return {}
+
+
+def _normalize_url_key(u: str) -> str:
+    return str(u or "").strip().rstrip("/").casefold()
+
+
+def load_popular_config() -> tuple[list[str], str]:
+    """Return (ordered urls, optional note) from popular_links.json."""
+    if not POPULAR_LINKS.is_file():
+        return [], ""
+    try:
+        raw = json.loads(POPULAR_LINKS.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return [], ""
+    urls = raw.get("urls")
+    if not isinstance(urls, list):
+        return [], ""
+    note = raw.get("note")
+    note_s = str(note).strip() if isinstance(note, str) else ""
+    out_urls: list[str] = []
+    for u in urls:
+        s = str(u).strip()
+        if s.startswith(("http://", "https://")):
+            out_urls.append(s)
+    return out_urls, note_s
+
+
+def resolve_popular_entries(all_links: list[dict], urls: list[str]) -> list[dict]:
+    """Map curated URL list to full row dicts from list.md (preserves order, skips missing)."""
+    by_key: dict[str, dict] = {}
+    for row in all_links:
+        link = row.get("link")
+        if not link:
+            continue
+        by_key[_normalize_url_key(link)] = row
+    out: list[dict] = []
+    for u in urls:
+        row = by_key.get(_normalize_url_key(u))
+        if row:
+            out.append(row)
+    return out
 
 
 def load_failing_links() -> dict[str, int]:
@@ -256,6 +298,8 @@ def main() -> int:
     update_notice = parse_update_notice(raw)
     links = parse_list_md(raw)
     unsorted_links = parse_unsorted_links()
+    popular_urls, popular_note = load_popular_config()
+    popular_entries = resolve_popular_entries(links, popular_urls)
     payload = {
         "meta": {
             **meta,
@@ -263,6 +307,8 @@ def main() -> int:
             "important_notices": important,
             "update_notice": update_notice,
             "fail_threshold": LINK_CHECK_FAIL_THRESHOLD,
+            "popular_note": popular_note,
+            "popular_links": popular_entries,
         },
         "link_check": load_link_check_meta(),
         "failing_links": load_failing_links(),

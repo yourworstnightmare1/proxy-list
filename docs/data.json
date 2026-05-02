@@ -6,7 +6,165 @@
     "unsorted_total": 1989,
     "important_notices": "### Now Available as a Website!\n**The proxy list is now able to be viewed on a webpage at https://yourworstnightmare1.github.io/proxy-list/!** All links are auto-migrated here, and the website has features that this file does not, such as filtering links by provider, category, capabilities, protocols, searching for links, easy contributions, and more! If you are currently using this file to get your links, [I strongly recommend using the website instead of this markdown](https://yourworstnightmare1.github.io/proxy-list/).\nTrying to view the list through a proxy? Simply copy the URL https://yourworstnightmare1.github.io/proxy-list/ into the proxy's search/URL bar, and you can see all of the links! In order to load them properly, you will have to click the \"Copy link\" button and paste it into your browser.\n### gn-math\ngn-math is currently down due to copyright violations. It will be back up in the coming weeks most likely. For now ignore those links, they will stay in case they decide to work again. This also affects websites that use gn-math's CDN service for game hosting, as those games won't load.\n**Update 4/30/2026**: There is a new version of the gn-math site that has working games now. Please use these instead as older links will be removed.\n### Ultraviolet Issues\nIt has come to my attention that proxies that use Ultraviolet do not load sites properly anymore. This varies by filter and is inconsistent. If you are using a proxy, please consider going to its settings and switching the protocol to Scramjet, or switching to a new proxy with Scramjet support.",
     "update_notice": "### Forget About Testing Links\nYou can now see if links are blocked/unblocked, making it way easier to find working links (there's a lot of them!) You can also select your web filter and get alerted if they are blocked, and hide links that may be blocked.\n### Always Be In The Know\nYou can now view important announcements from this page instead of having to go to the README.md to view them.\n### Sorted Links Don't Fit Your Needs?\nYou can always view [Unsorted Links](https://yourworstnightmare1.github.io/proxy-list/unsorted.html) to view a random assortment of nearly 2000+ links. Note that these links are not checked for filter blocks.",
-    "fail_threshold": 3
+    "fail_threshold": 3,
+    "popular_note": "Hand-picked links that tend to work well — not ranked by site traffic (this page has no analytics). Edit docs/popular_links.json and run scripts/convert_list_to_json.py.",
+    "popular_links": [
+      {
+        "provider": "💜 Selenite",
+        "category": "Games",
+        "capabilities": "N/A",
+        "capability_tags": [],
+        "protocols": "N/A",
+        "protocol_tags": [],
+        "locked": "",
+        "link": "https://mit-technology.comaschitech.com/",
+        "found": "4/18/2026",
+        "username": "N/A",
+        "password": "N/A",
+        "contributor": "yourworstnightmare1",
+        "contributor_url": "https://github.com/yourworstnightmare1"
+      },
+      {
+        "provider": "💜 Selenite",
+        "category": "Games",
+        "capabilities": "N/A",
+        "capability_tags": [],
+        "protocols": "N/A",
+        "protocol_tags": [],
+        "locked": "",
+        "link": "https://highschoolcalculus.centromariapolis.cl/",
+        "found": "4/18/2026",
+        "username": "N/A",
+        "password": "N/A",
+        "contributor": "yourworstnightmare1",
+        "contributor_url": "https://github.com/yourworstnightmare1"
+      },
+      {
+        "provider": "💜 Selenite",
+        "category": "Games",
+        "capabilities": "N/A",
+        "capability_tags": [],
+        "protocols": "N/A",
+        "protocol_tags": [],
+        "locked": "",
+        "link": "https://learnvcsa.loretosapiain.cl/",
+        "found": "4/27/2026",
+        "username": "N/A",
+        "password": "N/A",
+        "contributor": "yourworstnightmare1",
+        "contributor_url": "https://github.com/yourworstnightmare1"
+      },
+      {
+        "provider": "⭐ DayDream X",
+        "category": "Proxy/Games",
+        "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+        "capability_tags": [
+          "epoxy",
+          "libcurl",
+          "wisp",
+          "captcha",
+          "reflux"
+        ],
+        "protocols": "Scramjet, Ultraviolet",
+        "protocol_tags": [
+          "scramjet",
+          "ultraviolet"
+        ],
+        "locked": "",
+        "link": "https://ideas.vjason.com/",
+        "found": "4/18/2026",
+        "username": "N/A",
+        "password": "N/A",
+        "contributor": "yourworstnightmare1",
+        "contributor_url": "https://github.com/yourworstnightmare1"
+      },
+      {
+        "provider": "🌙 Velara",
+        "category": "Proxy/Games",
+        "capabilities": "captcha",
+        "capability_tags": [
+          "captcha"
+        ],
+        "protocols": "Scramjet",
+        "protocol_tags": [
+          "scramjet"
+        ],
+        "locked": "",
+        "link": "https://deathneverstopyou.metallicstream.info/",
+        "found": "4/18/2026",
+        "username": "N/A",
+        "password": "N/A",
+        "contributor": "yourworstnightmare1",
+        "contributor_url": "https://github.com/yourworstnightmare1"
+      },
+      {
+        "provider": "🐸 frogie's arcade",
+        "category": "Proxy/Games",
+        "capabilities": "captcha",
+        "capability_tags": [
+          "captcha"
+        ],
+        "protocols": "Ultraviolet",
+        "protocol_tags": [
+          "ultraviolet"
+        ],
+        "locked": "",
+        "link": "https://phi.bz/",
+        "found": "4/25/2026",
+        "username": "N/A",
+        "password": "N/A",
+        "contributor": "yourworstnightmare1",
+        "contributor_url": "https://github.com/yourworstnightmare1"
+      },
+      {
+        "provider": "⭐ DayDream X",
+        "category": "Proxy/Games",
+        "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+        "capability_tags": [
+          "epoxy",
+          "libcurl",
+          "wisp",
+          "captcha",
+          "reflux"
+        ],
+        "protocols": "Scramjet, Ultraviolet",
+        "protocol_tags": [
+          "scramjet",
+          "ultraviolet"
+        ],
+        "locked": "",
+        "link": "https://cdn.jsdelivr.net/gh/NightProxy/DD-Static/dist/index.svg",
+        "found": "4/17/2026",
+        "username": "N/A",
+        "password": "N/A",
+        "contributor": "yourworstnightmare1",
+        "contributor_url": "https://github.com/yourworstnightmare1"
+      },
+      {
+        "provider": "⭐ DayDream X",
+        "category": "Proxy/Games",
+        "capabilities": "epoxy, libcurl, wisp, captcha, reflux",
+        "capability_tags": [
+          "epoxy",
+          "libcurl",
+          "wisp",
+          "captcha",
+          "reflux"
+        ],
+        "protocols": "Scramjet, Ultraviolet",
+        "protocol_tags": [
+          "scramjet",
+          "ultraviolet"
+        ],
+        "locked": "",
+        "link": "https://math.desmos.live.cdn.cloudflare.net/",
+        "found": "2/19/2026",
+        "username": "N/A",
+        "password": "N/A",
+        "contributor": "yourworstnightmare1",
+        "contributor_url": "https://github.com/yourworstnightmare1"
+      }
+    ]
   },
   "link_check": {
     "checked_at": "2026-05-02T18:51:56Z",

@@ -1,0 +1,13 @@
+{
+  "note": "Hand-picked links that tend to work well — not ranked by site traffic (this page has no analytics). Edit docs/popular_links.json and run scripts/convert_list_to_json.py.",
+  "urls": [
+    "https://mit-technology.comaschitech.com/",
+    "https://highschoolcalculus.centromariapolis.cl/",
+    "https://learnvcsa.loretosapiain.cl/",
+    "https://ideas.vjason.com/",
+    "https://deathneverstopyou.metallicstream.info/",
+    "https://phi.bz/",
+    "https://cdn.jsdelivr.net/gh/NightProxy/DD-Static/dist/index.svg",
+    "https://math.desmos.live.cdn.cloudflare.net/"
+  ]
+}
