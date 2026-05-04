@@ -31,12 +31,6 @@
     }
     h1 { font-size: 1.35rem; font-weight: 600; margin: 0 0 0.35rem; }
     .sub { color: var(--muted); font-size: 0.9rem; }
-    .header-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.85rem;
-    }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -63,20 +57,30 @@
       color: #9fd4ff;
       background: #1f2e42;
     }
-    #selectFilterBtn {
-      font-weight: 600;
+    .sidebar-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
     }
-    .selected-filter-label {
-      margin-top: 0.55rem;
+    .sidebar-actions .btn {
+      width: 100%;
+      justify-content: flex-start;
+      text-align: left;
+    }
+    aside .sidebar-menu-fieldset {
+      margin-bottom: 1rem;
+    }
+    aside .selected-filter-label {
+      margin: 0.65rem 0 0;
       font-size: 0.78rem;
       color: var(--muted);
+      line-height: 1.35;
     }
-    .selected-filter-disclaimer {
-      margin: 0.25rem 0 0;
+    aside .selected-filter-disclaimer {
+      margin: 0.35rem 0 1rem;
       font-size: 0.72rem;
       color: var(--muted);
       line-height: 1.4;
-      max-width: 70ch;
     }
     .layout {
       display: grid;
@@ -263,6 +267,41 @@
       padding: 0.1em 0.35em;
       border-radius: 4px;
     }
+    #contentLoadingOverlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 20, 25, 0.78);
+      backdrop-filter: blur(2px);
+    }
+    #contentLoadingOverlay.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+    #contentLoadingOverlay img {
+      width: min(100px, 26vw);
+      height: auto;
+      display: block;
+    }
+    .content-loading-msg {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .table-chunk-wrap {
+      position: relative;
+    }
+    .table-load-sentinel {
+      height: 2px;
+      width: 100%;
+      pointer-events: none;
+    }
     .summary-backdrop {
       position: fixed;
       inset: 0;
@@ -420,6 +459,16 @@
     .important-notices p:last-child {
       margin-bottom: 0;
     }
+    .important-notices ul,
+    #updateNoticesBody ul {
+      margin: 0 0 0.55rem 1.15rem;
+      padding: 0;
+      color: var(--text);
+    }
+    .important-notices li,
+    #updateNoticesBody li {
+      margin-bottom: 0.2rem;
+    }
     .important-notices a {
       word-break: break-all;
     }
@@ -500,18 +549,22 @@
   <header>
     <h1>Proxy list</h1>
     <p class="sub">Multi-select provider, category, protocol, and capability tags (parsed from <code>list.md</code>). Nothing checked means no filter on that group.</p>
-    <div class="header-actions">
-      <a class="btn" href="./unsorted.html">Unsorted links</a>
-      <button class="btn" id="selectFilterBtn" type="button">Select filter</button>
-      <button class="btn" id="updateNoticeBtn" type="button">Update Notice</button>
-      <a class="btn btn-primary" href="https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank">Contribute on GitHub</a>
-      <a class="btn" href="https://forms.gle/SMx9EUkBeiFuLwBa8" rel="noopener noreferrer" target="_blank">Contribute via Google Form</a>
-    </div>
-    <p class="selected-filter-label" id="selectedFilterLabel">Selected gn-math filter: Any / Not selected</p>
-    <p class="selected-filter-disclaimer">This does not determine if a link is blocked, it is just a highly reliable estimation on knowing whether or not a link is blocked. Some links may still be blocked despite showing unblocked in the summary.</p>
   </header>
   <div class="layout">
-    <aside>
+    <aside aria-label="Filters and site menu">
+      <fieldset class="sidebar-menu-fieldset">
+        <legend>Site</legend>
+        <nav class="sidebar-actions" aria-label="Site links and tools">
+          <a class="btn" href="./unsorted.html">Unsorted links</a>
+          <button class="btn" id="selectFilterBtn" type="button">Select filter</button>
+          <button class="btn" id="updateNoticeBtn" type="button">Update Notice</button>
+          <a class="btn btn-primary" href="https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank">Contribute on GitHub</a>
+          <a class="btn" href="https://forms.gle/SMx9EUkBeiFuLwBa8" rel="noopener noreferrer" target="_blank">Contribute via Google Form</a>
+        </nav>
+        <p class="selected-filter-label" id="selectedFilterLabel">Selected gn-math filter: Any / Not selected</p>
+        <p class="selected-filter-disclaimer">This does not determine if a link is blocked, it is just a highly reliable estimation on knowing whether or not a link is blocked. Some links may still be blocked despite showing unblocked in the summary.</p>
+      </fieldset>
+
       <label for="q">Search</label>
       <input type="search" id="q" placeholder="URL, provider, contributor…" autocomplete="off" />
 
@@ -548,10 +601,10 @@
     </aside>
     <main id="mainContent">
       <section class="important-notices" id="importantNotices" aria-label="Important notices" hidden></section>
-      <section class="popular-section" id="popularSection" aria-labelledby="popularHeading" hidden>
-        <h2 id="popularHeading">Popular picks</h2>
-        <p class="popular-note" id="popularNote" hidden></p>
-        <div class="popular-chips" id="popularChips"></div>
+      <section class="popular-section" id="mostOpenedSection" aria-labelledby="mostOpenedHeading" hidden>
+        <h2 id="mostOpenedHeading">Most opened</h2>
+        <p class="popular-note" id="mostOpenedNote" hidden></p>
+        <div class="popular-chips" id="mostOpenedChips"></div>
       </section>
       <div class="stats" id="stats"></div>
       <div id="tableWrap"></div>
@@ -612,8 +665,15 @@
         <p style="margin-top:0.75rem;">
           <button class="btn" id="hideBlockedBtn" type="button">Hide blocked links: Off</button>
         </p>
+        <p style="margin-top:0.5rem;">
+          <button class="btn" id="hideUncheckedBtn" type="button">Hide unchecked links: Off</button>
+        </p>
       </div>
     </section>
+  </div>
+  <div id="contentLoadingOverlay" aria-hidden="true" role="status">
+    <img src="loading-spinner.gif" width="80" height="80" alt="" decoding="async" />
+    <p class="content-loading-msg">Getting data...</p>
   </div>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
@@ -622,9 +682,17 @@
   <script>
     const $ = (id) => document.getElementById(id);
     let linkLensData = {};
+    /** Set true after linklens.json has been fetched at least once (lazy). */
+    let linkLensHydrated = false;
+    let linkLensFetchPromise = null;
+    /** Filled on main data load so we can re-render after lazy linklens arrives. */
+    let pageContext = null;
+    let summaryEntryCache = new Map();
+    let lensDomainSignalFirst = new Map();
     let checkedDomains = new Set();
     let selectedGnMathFilter = "";
     let hideBlockedBySelectedFilter = false;
+    let hideLinksWithoutLensCheck = false;
     let failingLinks = {};
     let failThreshold = 3;
     let useFirebaseClicks = false;
@@ -689,12 +757,17 @@
             useFirebaseClicks = true;
             return true;
           })
-          .catch(() => {
+          .catch((err) => {
+            console.error(
+              "[proxy-list] Firebase anonymous sign-in failed — click counts stay in this browser only. In Firebase Console: Authentication → Sign-in method → enable Anonymous. Error:",
+              err
+            );
             useFirebaseClicks = false;
             firebaseDb = null;
             return false;
           });
-      } catch (_) {
+      } catch (e) {
+        console.error("[proxy-list] Firebase initializeApp / firestore() failed:", e);
         useFirebaseClicks = false;
         firebaseDb = null;
         return Promise.resolve(false);
@@ -764,24 +837,93 @@
       return useFirebaseClicks ? "Opens (all visitors)" : "Opens (this browser only)";
     }
 
-    async function refreshClickCells(filtered) {
-      if (!filtered || !filtered.length) return;
-      const map = await fetchClickCounts(filtered.map((r) => r.link));
-      document.querySelectorAll("#tableWrap td.click-cell").forEach((td) => {
-        const u = td.getAttribute("data-click-url");
-        if (!u) return;
-        td.textContent = String(countForUrl(map, u));
-      });
+    const TOP_OPENS_DISPLAY = 15;
+    const TOP_OPENS_FETCH_CAP = 80;
+
+    function buildLinkNormIndex(rows) {
+      const m = new Map();
+      for (const r of rows || []) {
+        const k = normalizeUrlKeyForClicks(r.link);
+        if (k && !m.has(k)) m.set(k, r);
+      }
+      return m;
     }
 
-    async function refreshPopularClickCounts(entries) {
-      if (!entries || !entries.length) return;
-      const map = await fetchClickCounts(entries.map((r) => r.link));
-      document.querySelectorAll("#popularChips .chip-count").forEach((span) => {
-        const u = span.getAttribute("data-click-url");
-        if (!u) return;
-        span.textContent = String(countForUrl(map, u));
-      });
+    async function fetchTopOpenedFromFirestore(limit) {
+      if (!useFirebaseClicks || !firebaseDb) return [];
+      try {
+        const cap = Math.max(1, Math.min(limit, 100));
+        const snap = await firebaseDb
+          .collection("link_clicks")
+          .orderBy("count", "desc")
+          .limit(cap)
+          .get();
+        return snap.docs.map((doc) => {
+          const d = doc.data() || {};
+          const url = d.url != null ? String(d.url).trim() : "";
+          const count = Number(d.count);
+          return { url, count: Number.isFinite(count) ? count : 0 };
+        }).filter((x) => x.url && x.count > 0);
+      } catch (e) {
+        console.warn(
+          "Most opened: Firestore query failed (ensure rules allow read for authenticated users and index exists on link_clicks.count).",
+          e
+        );
+        return [];
+      }
+    }
+
+    async function renderMostOpenedForList(links) {
+      const sec = $("mostOpenedSection");
+      const noteEl = $("mostOpenedNote");
+      const chips = $("mostOpenedChips");
+      if (!sec || !chips) return;
+      if (!useFirebaseClicks || !firebaseDb) {
+        sec.hidden = true;
+        return;
+      }
+      const byNorm = buildLinkNormIndex(links);
+      const docs = await fetchTopOpenedFromFirestore(TOP_OPENS_FETCH_CAP);
+      const picked = [];
+      for (const { url, count } of docs) {
+        const row = byNorm.get(normalizeUrlKeyForClicks(url));
+        if (row) picked.push({ link: row.link, count });
+        if (picked.length >= TOP_OPENS_DISPLAY) break;
+      }
+      if (!picked.length) {
+        sec.hidden = true;
+        if (noteEl) {
+          noteEl.textContent = "";
+          noteEl.hidden = true;
+        }
+        chips.innerHTML = "";
+        return;
+      }
+      sec.hidden = false;
+      if (noteEl) {
+        noteEl.textContent =
+          "Ranked by link-summary opens across visitors. Only URLs that appear in the list below are shown.";
+        noteEl.hidden = false;
+      }
+      chips.innerHTML = picked
+        .map((r) => {
+          const href = r.link || "";
+          const label = domainOf(href) || href;
+          return (
+            '<a href="' +
+            escapeAttr(href) +
+            '" class="btn popular-chip js-link-summary" data-link="' +
+            escapeAttr(href) +
+            '" rel="noopener noreferrer" target="_blank" title="' +
+            escapeAttr(href) +
+            '"><span class="chip-host">' +
+            escapeHtml(label) +
+            '</span><span class="chip-count">' +
+            escapeHtml(String(r.count)) +
+            "</span></a>"
+          );
+        })
+        .join("");
     }
 
     function uniq(arr) {
@@ -867,6 +1009,13 @@
       return rows.filter((row) => {
         if (q && !haystack(row).includes(q)) return false;
         if (hideBlockedBySelectedFilter && isBlockedBySelectedFilter(row.link)) return false;
+        if (
+          hideLinksWithoutLensCheck &&
+          linkLensHydrated &&
+          !linkHasParsableLensCheck(row.link)
+        ) {
+          return false;
+        }
         for (const group of ["providerTags", "categoryTags", "protocolTags", "capTags"]) {
           if (group === exclude) continue;
           if (!rowMatchesGroup(row, group, selections[group], mode)) return false;
@@ -919,50 +1068,134 @@
       el.textContent = formatListVersion(meta);
     }
 
-    function renderPopularSection(meta) {
-      const sec = $("popularSection");
-      const noteEl = $("popularNote");
-      const chips = $("popularChips");
-      if (!sec || !chips) return;
-      const entries = (meta && meta.popular_links) || [];
-      if (!entries.length) {
-        sec.hidden = true;
-        return;
+    const TABLE_CHUNK_SIZE = 80;
+    let tableInfiniteObserver = null;
+    let tableInfiniteState = null;
+
+    function disconnectTableInfinite() {
+      if (tableInfiniteObserver) {
+        tableInfiniteObserver.disconnect();
+        tableInfiniteObserver = null;
       }
-      sec.hidden = false;
-      const note = (meta && meta.popular_note) || "";
-      if (noteEl) {
-        if (note) {
-          noteEl.textContent = note;
-          noteEl.hidden = false;
-        } else {
-          noteEl.textContent = "";
-          noteEl.hidden = true;
-        }
-      }
-      chips.innerHTML = entries
-        .map((r) => {
-          const href = r.link || "";
-          const label = domainOf(href) || href;
-          return (
-            '<a href="' +
-            escapeAttr(href) +
-            '" class="btn popular-chip js-link-summary" data-link="' +
-            escapeAttr(href) +
-            '" rel="noopener noreferrer" target="_blank" title="' +
-            escapeAttr(href) +
-            '"><span class="chip-host">' +
-            escapeHtml(label) +
-            '</span><span class="chip-count" data-click-url="' +
-            escapeAttr(href) +
-            '">…</span></a>'
-          );
-        })
-        .join("");
-      refreshPopularClickCounts(entries);
+      tableInfiniteState = null;
     }
 
-    function render(rows, meta, linkCheck) {
+    function buildRowTrHtml(r) {
+      return (
+        "<tr><td>" +
+        escapeHtml(r.provider) +
+        '</td><td><a href="' +
+        escapeAttr(r.link) +
+        '" rel="noopener noreferrer" target="_blank" class="js-link-summary" data-link="' +
+        escapeAttr(r.link) +
+        '">' +
+        escapeHtml(r.link) +
+        '</a></td><td class="click-cell" data-click-url="' +
+        escapeAttr(r.link) +
+        '">…</td><td>' +
+        escapeHtml(r.category) +
+        "</td><td>" +
+        formatTags(r.capability_tags) +
+        "</td><td>" +
+        formatTags(r.protocol_tags) +
+        "</td><td>" +
+        formatContributorCell(r) +
+        "</td></tr>"
+      );
+    }
+
+    async function refreshClickCellsForSlice(rowsSlice) {
+      if (!rowsSlice || !rowsSlice.length) return;
+      const map = await fetchClickCounts(rowsSlice.map((r) => r.link));
+      const tbody = $("linksTableBody");
+      if (!tbody || !tbody.isConnected) return;
+      const start = Math.max(0, tbody.children.length - rowsSlice.length);
+      for (let i = start; i < tbody.children.length; i++) {
+        const tr = tbody.children[i];
+        if (!tr || !tr.querySelector) continue;
+        const td = tr.querySelector("td.click-cell");
+        if (!td) continue;
+        const u = td.getAttribute("data-click-url");
+        if (!u) continue;
+        td.textContent = String(countForUrl(map, u));
+      }
+    }
+
+    async function appendNextTableChunk() {
+      const st = tableInfiniteState;
+      if (!st || st.chunkInFlight || st.rendered >= st.filtered.length) return;
+      if (!st.tbody.isConnected) return;
+      st.chunkInFlight = true;
+      try {
+        const next = Math.min(st.rendered + TABLE_CHUNK_SIZE, st.filtered.length);
+        const slice = st.filtered.slice(st.rendered, next);
+        const html = slice.map(buildRowTrHtml).join("");
+        st.tbody.insertAdjacentHTML("beforeend", html);
+        st.rendered = next;
+        if (tableInfiniteState !== st) return;
+        await refreshClickCellsForSlice(slice);
+        if (tableInfiniteState !== st || !st.tbody.isConnected) return;
+        if (st.rendered >= st.filtered.length && st.sentinel && st.sentinel.parentNode) {
+          st.sentinel.remove();
+        }
+        if (st.rendered >= st.filtered.length && tableInfiniteObserver) {
+          tableInfiniteObserver.disconnect();
+          tableInfiniteObserver = null;
+        }
+      } finally {
+        if (tableInfiniteState === st) st.chunkInFlight = false;
+      }
+    }
+
+    function setupTableInfiniteScroll(filtered, initialRendered) {
+      const sentinel = $("tableLoadSentinel");
+      const tbody = $("linksTableBody");
+      if (!sentinel || !tbody || initialRendered >= filtered.length) return;
+      tableInfiniteState = {
+        filtered,
+        rendered: initialRendered,
+        tbody,
+        sentinel,
+        chunkInFlight: false,
+      };
+      tableInfiniteObserver = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) void appendNextTableChunk();
+          }
+        },
+        { root: null, rootMargin: "400px", threshold: 0 }
+      );
+      tableInfiniteObserver.observe(sentinel);
+    }
+
+    function setContentLoading(on) {
+      const el = $("contentLoadingOverlay");
+      if (!el) return;
+      el.classList.toggle("open", on);
+      el.setAttribute("aria-hidden", on ? "false" : "true");
+    }
+
+    function waitNextPaint() {
+      return new Promise((resolve) => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(resolve);
+        });
+      });
+    }
+
+    async function renderAfterHeavyFilter(rows, meta, linkCheck) {
+      setContentLoading(true);
+      await waitNextPaint();
+      try {
+        await render(rows, meta, linkCheck);
+      } finally {
+        setContentLoading(false);
+      }
+    }
+
+    async function render(rows, meta, linkCheck) {
+      disconnectTableInfinite();
       const filtered = filterRows(rows, {});
       updateFilterCounts(rows);
 
@@ -995,48 +1228,46 @@
         escapeHtml(lastUpdated) +
         '</strong> • Last link check run: <strong>' +
         escapeHtml(checkedAt) +
-        "</strong></p>";
+        "</strong></p>" +
+        '<p class="stat-line">Open counts: <strong>' +
+        (useFirebaseClicks
+          ? "Firestore (shared across visitors)"
+          : "this browser only — if you expected Firestore, enable Anonymous sign-in and reload; see browser console.") +
+        "</strong></p>" +
+        (filtered.length > TABLE_CHUNK_SIZE
+          ? '<p class="stat-line">More rows load in chunks as you scroll down.</p>'
+          : "");
 
       if (!filtered.length) {
         $("tableWrap").innerHTML = '<p class="empty">No links match these filters.</p>';
         return;
       }
 
-      const rowsHtml = filtered
-        .map(
-          (r) =>
-            "<tr><td>" +
-            escapeHtml(r.provider) +
-            '</td><td><a href="' +
-            escapeAttr(r.link) +
-            '" rel="noopener noreferrer" target="_blank" class="js-link-summary" data-link="' +
-            escapeAttr(r.link) +
-            '">' +
-            escapeHtml(r.link) +
-            '</a></td><td class="click-cell" data-click-url="' +
-            escapeAttr(r.link) +
-            '">…</td><td>' +
-            escapeHtml(r.category) +
-            "</td><td>" +
-            formatTags(r.capability_tags) +
-            "</td><td>" +
-            formatTags(r.protocol_tags) +
-            "</td><td>" +
-            formatContributorCell(r) +
-            "</td></tr>"
-        )
-        .join("");
-
-      $("tableWrap").innerHTML =
-        "<table><thead><tr>" +
+      const initial = Math.min(TABLE_CHUNK_SIZE, filtered.length);
+      const firstChunk = filtered.slice(0, initial);
+      const firstHtml = firstChunk.map(buildRowTrHtml).join("");
+      const theadRow =
+        "<tr>" +
         ["Provider", "Link", "Clicks", "Category", "Capabilities", "Protocols", "Contributor"]
           .map((h) => "<th>" + h + "</th>")
           .join("") +
-        "</tr></thead><tbody>" +
-        rowsHtml +
-        "</tbody></table>";
+        "</tr>";
+      const sentinelHtml =
+        filtered.length > TABLE_CHUNK_SIZE
+          ? '<div id="tableLoadSentinel" class="table-load-sentinel" aria-hidden="true"></div>'
+          : "";
 
-      refreshClickCells(filtered);
+      $("tableWrap").innerHTML =
+        '<div class="table-chunk-wrap"><table><thead>' +
+        theadRow +
+        '</thead><tbody id="linksTableBody">' +
+        firstHtml +
+        "</tbody></table>" +
+        sentinelHtml +
+        "</div>";
+
+      await refreshClickCellsForSlice(firstChunk);
+      setupTableInfiniteScroll(filtered, initial);
     }
 
     function domainOf(link) {
@@ -1080,6 +1311,7 @@
       const label = $("selectedFilterLabel");
       const btn = $("selectFilterBtn");
       const hideBtn = $("hideBlockedBtn");
+      const hideUncheckedBtn = $("hideUncheckedBtn");
       const selected = selectedGnMathFilter ? cleanSummaryText(selectedGnMathFilter) : "Any / Not selected";
       if (label) label.textContent = "Selected gn-math filter: " + selected;
       if (btn) {
@@ -1091,9 +1323,40 @@
         if (hideBlockedBySelectedFilter) hideBtn.classList.add("btn-active");
         else hideBtn.classList.remove("btn-active");
       }
+      if (hideUncheckedBtn) {
+        hideUncheckedBtn.textContent =
+          "Hide unchecked links: " + (hideLinksWithoutLensCheck ? "On" : "Off");
+        if (hideLinksWithoutLensCheck) hideUncheckedBtn.classList.add("btn-active");
+        else hideUncheckedBtn.classList.remove("btn-active");
+      }
     }
 
-    function openFilterModal() {
+    function ensureLinkLensLoaded() {
+      if (linkLensHydrated) return Promise.resolve();
+      if (!linkLensFetchPromise) {
+        linkLensFetchPromise = fetch("linklens.json")
+          .then((r) => (r.ok ? r.json() : {}))
+          .catch(() => ({}))
+          .then((linkLens) => {
+            if (linkLens && typeof linkLens === "object") {
+              linkLensData = linkLens;
+            }
+            rebuildLinkLensIndexes();
+            populateKnownFilters();
+            updateSelectedFilterUI();
+            const wasFirstHydrate = !linkLensHydrated;
+            linkLensHydrated = true;
+            linkLensFetchPromise = null;
+            if (wasFirstHydrate && pageContext) {
+              void render(pageContext.links, pageContext.meta, pageContext.link_check);
+            }
+          });
+      }
+      return linkLensFetchPromise;
+    }
+
+    async function openFilterModal() {
+      await ensureLinkLensLoaded();
       $("filterBackdrop").classList.add("open");
       $("filterBackdrop").setAttribute("aria-hidden", "false");
     }
@@ -1140,27 +1403,51 @@
       }
     }
 
-    function summaryEntryFor(link) {
-      const hasSignal = (entry) => {
-        if (!entry || typeof entry !== "object") return false;
-        const total = Number(entry.summary && entry.summary.total);
-        const providers = Array.isArray(entry.providers) ? entry.providers.length : 0;
-        return total > 0 || providers > 0 || entry.status === "ok";
-      };
+    function lensHasSignal(entry) {
+      if (!entry || typeof entry !== "object") return false;
+      const total = Number(entry.summary && entry.summary.total);
+      const providers = Array.isArray(entry.providers) ? entry.providers.length : 0;
+      return total > 0 || providers > 0 || entry.status === "ok";
+    }
 
-      const byExact = linkLensData[link];
-      if (hasSignal(byExact)) return byExact;
-      const domain = domainOf(link);
-      if (!domain) return byExact || null;
-      const byDomain = linkLensData["domain:" + domain] || linkLensData[domain];
-      if (hasSignal(byDomain)) return byDomain;
-      const values = Object.values(linkLensData || {});
-      for (const v of values) {
+    function rebuildLinkLensIndexes() {
+      summaryEntryCache = new Map();
+      lensDomainSignalFirst = new Map();
+      for (const v of Object.values(linkLensData || {})) {
         if (!v || typeof v !== "object") continue;
         const d = String(v.domain || "").toLowerCase();
-        if (d && d === domain && hasSignal(v)) return v;
+        if (!d || !lensHasSignal(v)) continue;
+        if (!lensDomainSignalFirst.has(d)) lensDomainSignalFirst.set(d, v);
       }
-      return byExact || byDomain || null;
+    }
+
+    function summaryEntryFor(link) {
+      if (summaryEntryCache.has(link)) return summaryEntryCache.get(link);
+      const byExact = linkLensData[link];
+      if (lensHasSignal(byExact)) {
+        summaryEntryCache.set(link, byExact);
+        return byExact;
+      }
+      const domain = domainOf(link);
+      if (!domain) {
+        const out = byExact || null;
+        summaryEntryCache.set(link, out);
+        return out;
+      }
+      const byDomain = linkLensData["domain:" + domain] || linkLensData[domain];
+      if (lensHasSignal(byDomain)) {
+        summaryEntryCache.set(link, byDomain);
+        return byDomain;
+      }
+      const fromScan = lensDomainSignalFirst.get(domain) || null;
+      const out = fromScan || byExact || byDomain || null;
+      summaryEntryCache.set(link, out);
+      return out;
+    }
+
+    /** True when linklens has a parsed gn-math summary (provider rows or totals), not only a stub. */
+    function linkHasParsableLensCheck(link) {
+      return lensHasSignal(summaryEntryFor(link));
     }
 
     const MALWARE_CATEGORY_RX = /\b(malware|phish(?:ing)?|spyware|virus(?:es)?|trojan|ransom(?:ware)?|botnet|adware|exploit|c2|command[- ]and[- ]control|spam[ _-]?urls?|threat|malicious)\b/i;
@@ -1257,84 +1544,96 @@
     }
 
     async function openSummary(link) {
-      await recordLinkClick(link);
-      const entry = summaryEntryFor(link);
-      const body = $("summaryBody");
-      setSummaryFooterLink(link);
-      const removalHtml = removalNoticeHtml(link);
-      const clickStub = '<p class="summary-muted" id="summaryClickLine">…</p>';
-      if (!entry) {
-        const pendingText = hasCheckedDomain(link)
-          ? "This link was checked, but no parsable gn-math summary message was captured yet."
-          : "No gn-math data found for this link yet.";
-        body.innerHTML =
-          removalHtml + clickStub + '<p class="summary-muted">' + escapeHtml(pendingText) + "</p>";
-      } else {
-        const summary = entry.summary || {};
-        const providers = Array.isArray(entry.providers) ? entry.providers : [];
-        const checkedAt = entry.checked_at || "—";
-        const status = entry.status || "unknown";
-        const selectedFilterKey = normalizeFilterKey(selectedGnMathFilter);
-        let riskNoticeHtml = "";
-        if (selectedFilterKey) {
-          const matches = providers.filter((p) => providerFilterKey(p.provider || "") === selectedFilterKey);
-          const rank = (s) => (s === "blocked" ? 0 : s === "warning" ? 1 : 2);
-          matches.sort((a, b) => rank(String(a.status)) - rank(String(b.status)));
-          const match = matches[0];
-          if (match && (match.status === "blocked" || match.status === "warning")) {
-            riskNoticeHtml =
-              '<div class="risk-notice">This link may be blocked on <strong>' +
-              escapeHtml(canonicalProviderLabel(match.provider || "") || cleanSummaryText(selectedGnMathFilter)) +
-              "</strong> for <strong>" +
-              escapeHtml(cleanSummaryText(match.category || "Unknown reason")) +
-              "</strong>.</div>";
+      const overlay = $("contentLoadingOverlay");
+      const loadMsg = overlay && overlay.querySelector(".content-loading-msg");
+      const prevLoadMsg = loadMsg ? loadMsg.textContent : "";
+      if (loadMsg) loadMsg.textContent = "Loading summary…";
+      try {
+        setContentLoading(true);
+        await waitNextPaint();
+        await recordLinkClick(link);
+        await ensureLinkLensLoaded();
+        const entry = summaryEntryFor(link);
+        const body = $("summaryBody");
+        setSummaryFooterLink(link);
+        const removalHtml = removalNoticeHtml(link);
+        const clickStub = '<p class="summary-muted" id="summaryClickLine">…</p>';
+        if (!entry) {
+          const pendingText = hasCheckedDomain(link)
+            ? "This link was checked, but no parsable gn-math summary message was captured yet."
+            : "No gn-math data found for this link yet.";
+          body.innerHTML =
+            removalHtml + clickStub + '<p class="summary-muted">' + escapeHtml(pendingText) + "</p>";
+        } else {
+          const summary = entry.summary || {};
+          const providers = Array.isArray(entry.providers) ? entry.providers : [];
+          const checkedAt = entry.checked_at || "—";
+          const status = entry.status || "unknown";
+          const selectedFilterKey = normalizeFilterKey(selectedGnMathFilter);
+          let riskNoticeHtml = "";
+          if (selectedFilterKey) {
+            const matches = providers.filter((p) => providerFilterKey(p.provider || "") === selectedFilterKey);
+            const rank = (s) => (s === "blocked" ? 0 : s === "warning" ? 1 : 2);
+            matches.sort((a, b) => rank(String(a.status)) - rank(String(b.status)));
+            const match = matches[0];
+            if (match && (match.status === "blocked" || match.status === "warning")) {
+              riskNoticeHtml =
+                '<div class="risk-notice">This link may be blocked on <strong>' +
+                escapeHtml(canonicalProviderLabel(match.provider || "") || cleanSummaryText(selectedGnMathFilter)) +
+                "</strong> for <strong>" +
+                escapeHtml(cleanSummaryText(match.category || "Unknown reason")) +
+                "</strong>.</div>";
+            }
           }
-        }
-        const providerRows = providers.length
-          ? providers
-              .map(
-                (p) =>
-                  "<tr><td>" +
-                  escapeHtml(cleanSummaryText(p.provider || "—")) +
-                  "</td><td>" +
-                  escapeHtml(cleanSummaryText(p.category || "—")) +
-                  '</td><td><span class="status-pill ' +
-                  statusClass(p.status) +
-                  '">' +
-                  escapeHtml(p.status || "warning") +
-                  "</span></td></tr>"
-              )
-              .join("")
-          : '<tr><td colspan="3" class="summary-muted">No provider lines parsed from source message.</td></tr>';
+          const providerRows = providers.length
+            ? providers
+                .map(
+                  (p) =>
+                    "<tr><td>" +
+                    escapeHtml(cleanSummaryText(p.provider || "—")) +
+                    "</td><td>" +
+                    escapeHtml(cleanSummaryText(p.category || "—")) +
+                    '</td><td><span class="status-pill ' +
+                    statusClass(p.status) +
+                    '">' +
+                    escapeHtml(p.status || "warning") +
+                    "</span></td></tr>"
+                )
+                .join("")
+            : '<tr><td colspan="3" class="summary-muted">No provider lines parsed from source message.</td></tr>';
 
-        body.innerHTML =
-          removalHtml +
-          riskNoticeHtml +
-          clickStub +
-          '<p class="summary-muted">Domain: <strong>' +
-          escapeHtml(entry.domain || domainOf(link) || "—") +
-          '</strong> • Checked: <strong>' +
-          escapeHtml(checkedAt) +
-          '</strong> • Status: <strong>' +
-          escapeHtml(status) +
-          "</strong></p>" +
-          '<div class="summary-grid">' +
-          '<div class="summary-card"><span class="summary-k">Blocked</span><span class="summary-v">' +
-          escapeHtml(String(summary.blocked ?? 0)) +
-          '</span></div><div class="summary-card"><span class="summary-k">Unblocked</span><span class="summary-v">' +
-          escapeHtml(String(summary.unblocked ?? 0)) +
-          '</span></div><div class="summary-card"><span class="summary-k">Warning</span><span class="summary-v">' +
-          escapeHtml(String(summary.warning ?? 0)) +
-          '</span></div><div class="summary-card"><span class="summary-k">Total</span><span class="summary-v">' +
-          escapeHtml(String(summary.total ?? providers.length)) +
-          "</span></div></div>" +
-          '<table class="provider-table"><thead><tr><th>Provider</th><th>Category</th><th>Result</th></tr></thead><tbody>' +
-          providerRows +
-          "</tbody></table>";
+          body.innerHTML =
+            removalHtml +
+            riskNoticeHtml +
+            clickStub +
+            '<p class="summary-muted">Domain: <strong>' +
+            escapeHtml(entry.domain || domainOf(link) || "—") +
+            '</strong> • Checked: <strong>' +
+            escapeHtml(checkedAt) +
+            '</strong> • Status: <strong>' +
+            escapeHtml(status) +
+            "</strong></p>" +
+            '<div class="summary-grid">' +
+            '<div class="summary-card"><span class="summary-k">Blocked</span><span class="summary-v">' +
+            escapeHtml(String(summary.blocked ?? 0)) +
+            '</span></div><div class="summary-card"><span class="summary-k">Unblocked</span><span class="summary-v">' +
+            escapeHtml(String(summary.unblocked ?? 0)) +
+            '</span></div><div class="summary-card"><span class="summary-k">Warning</span><span class="summary-v">' +
+            escapeHtml(String(summary.warning ?? 0)) +
+            '</span></div><div class="summary-card"><span class="summary-k">Total</span><span class="summary-v">' +
+            escapeHtml(String(summary.total ?? providers.length)) +
+            "</span></div></div>" +
+            '<table class="provider-table"><thead><tr><th>Provider</th><th>Category</th><th>Result</th></tr></thead><tbody>' +
+            providerRows +
+            "</tbody></table>";
+        }
+        $("summaryTitle").textContent = "Link summary";
+        $("summaryBackdrop").classList.add("open");
+        $("summaryBackdrop").setAttribute("aria-hidden", "false");
+      } finally {
+        setContentLoading(false);
+        if (loadMsg) loadMsg.textContent = prevLoadMsg;
       }
-      $("summaryTitle").textContent = "Link summary";
-      $("summaryBackdrop").classList.add("open");
-      $("summaryBackdrop").setAttribute("aria-hidden", "false");
       try {
         const map = await fetchClickCounts([link]);
         const line = $("summaryClickLine");
@@ -1419,6 +1718,49 @@
       return out;
     }
 
+    function pushNoticeListItems(chunks, bullets) {
+      if (!bullets.length) return;
+      chunks.push(
+        "<ul>" +
+          bullets
+            .map((line) => "<li>" + renderMarkdownInline(line.replace(/^-\s+/, "")) + "</li>")
+            .join("") +
+          "</ul>"
+      );
+      bullets.length = 0;
+    }
+
+    function pushNoticeProseLines(chunks, proseLines) {
+      if (!proseLines.length) return;
+      const t = proseLines.join(" ").trim();
+      if (t) chunks.push("<p>" + renderMarkdownInline(t) + "</p>");
+      proseLines.length = 0;
+    }
+
+    function renderNoticeSectionBody(chunks, body) {
+      for (const para of body.split(/\n{2,}/)) {
+        const lines = para.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        if (!lines.length) continue;
+        if (lines.every((l) => /^-\s/.test(l))) {
+          pushNoticeListItems(chunks, lines);
+          continue;
+        }
+        const prose = [];
+        const bullets = [];
+        for (const line of lines) {
+          if (/^-\s/.test(line)) {
+            pushNoticeProseLines(chunks, prose);
+            bullets.push(line);
+          } else {
+            pushNoticeListItems(chunks, bullets);
+            prose.push(line);
+          }
+        }
+        pushNoticeListItems(chunks, bullets);
+        pushNoticeProseLines(chunks, prose);
+      }
+    }
+
     function renderMarkdownLiteNotices(noticesText) {
       const text = String(noticesText || "").trim();
       if (!text) return "";
@@ -1433,12 +1775,7 @@
           const title = (nl === -1 ? rest : rest.slice(0, nl)).trim();
           const body = nl === -1 ? "" : rest.slice(nl + 1).trim();
           chunks.push("<h3>" + renderMarkdownInline(title) + "</h3>");
-          if (body) {
-            for (const para of body.split(/\n{2,}/)) {
-              const p = para.replace(/\n+/g, " ").trim();
-              if (p) chunks.push("<p>" + renderMarkdownInline(p) + "</p>");
-            }
-          }
+          if (body) renderNoticeSectionBody(chunks, body);
         } else {
           for (const para of s.split(/\n{2,}/)) {
             const p = para.replace(/\n+/g, " ").trim();
@@ -1614,18 +1951,13 @@
         if (!r.ok) throw new Error("Could not load data.json (" + r.status + ")");
         return r.json();
       }),
-      fetch("linklens.json")
-        .then((r) => (r.ok ? r.json() : {}))
-        .catch(() => ({})),
       fetch("checked_domains.txt")
         .then((r) => (r.ok ? r.text() : ""))
         .catch(() => ""),
     ])
-      .then(([json, linkLens, checkedDomainsText]) =>
+      .then(([json, checkedDomainsText]) =>
         initClickTracking().then(() => {
-        if (linkLens && typeof linkLens === "object") {
-          linkLensData = linkLens;
-        }
+        rebuildLinkLensIndexes();
         populateKnownFilters();
         updateSelectedFilterUI();
         checkedDomains = new Set(
@@ -1635,6 +1967,7 @@
             .filter(Boolean)
         );
         const { meta, link_check, links } = normalizePayload(json);
+        pageContext = { links, meta, link_check };
         if (json && typeof json.failing_links === "object" && json.failing_links) {
           failingLinks = json.failing_links;
         }
@@ -1643,7 +1976,7 @@
         }
         applyImportantNotices(meta);
         setFooter(meta);
-        renderPopularSection(meta);
+        void renderMostOpenedForList(links);
         maybeShowUpdateModal(meta);
         buildCheckboxGroup(
           "providerTags",
@@ -1687,6 +2020,7 @@
           const filterSel = $("filterSelect");
           if (filterSel) filterSel.value = "";
           hideBlockedBySelectedFilter = false;
+          hideLinksWithoutLensCheck = false;
           updateSelectedFilterUI();
           render(links, meta, link_check);
         }
@@ -1755,17 +2089,22 @@
             btn.classList.remove("copied");
           }, 1500);
         });
-        $("selectFilterBtn").addEventListener("click", openFilterModal);
+        $("selectFilterBtn").addEventListener("click", () => void openFilterModal());
         $("filterCloseBtn").addEventListener("click", closeFilterModal);
         $("filterSelect").addEventListener("change", (ev) => {
           selectedGnMathFilter = ev.target.value || "";
           updateSelectedFilterUI();
-          render(links, meta, link_check);
+          void renderAfterHeavyFilter(links, meta, link_check);
         });
         $("hideBlockedBtn").addEventListener("click", () => {
           hideBlockedBySelectedFilter = !hideBlockedBySelectedFilter;
           updateSelectedFilterUI();
-          render(links, meta, link_check);
+          void renderAfterHeavyFilter(links, meta, link_check);
+        });
+        $("hideUncheckedBtn").addEventListener("click", () => {
+          hideLinksWithoutLensCheck = !hideLinksWithoutLensCheck;
+          updateSelectedFilterUI();
+          void renderAfterHeavyFilter(links, meta, link_check);
         });
         $("summaryBackdrop").addEventListener("click", (ev) => {
           if (ev.target === $("summaryBackdrop")) closeSummary();

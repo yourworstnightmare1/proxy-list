@@ -146,6 +146,33 @@
         display: none !important;
       }
     }
+    #contentLoadingOverlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 20, 25, 0.78);
+      backdrop-filter: blur(2px);
+    }
+    #contentLoadingOverlay.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+    #contentLoadingOverlay img {
+      width: min(100px, 26vw);
+      height: auto;
+      display: block;
+    }
+    .content-loading-msg {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
   </style>
 </head>
 <body class="orientation-locked">
@@ -155,6 +182,10 @@
     </svg>
     <h2 id="orientationTitle">Please rotate your device</h2>
     <p>This site must be viewed in landscape mode to display properly.</p>
+  </div>
+  <div id="contentLoadingOverlay" aria-hidden="true" role="status">
+    <img src="loading-spinner.gif" width="80" height="80" alt="" decoding="async" />
+    <p class="content-loading-msg">Getting data...</p>
   </div>
   <header>
     <h1>Unsorted links</h1>
@@ -187,7 +218,32 @@
     const tableWrap = document.getElementById("tableWrap");
     const q = document.getElementById("q");
     const sortMode = document.getElementById("sortMode");
+    const contentLoadingOverlay = document.getElementById("contentLoadingOverlay");
     let allLinks = [];
+
+    function setContentLoading(on) {
+      if (!contentLoadingOverlay) return;
+      contentLoadingOverlay.classList.toggle("open", on);
+      contentLoadingOverlay.setAttribute("aria-hidden", on ? "false" : "true");
+    }
+
+    function waitNextPaint() {
+      return new Promise((resolve) => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(resolve);
+        });
+      });
+    }
+
+    async function renderAfterSortChange() {
+      setContentLoading(true);
+      await waitNextPaint();
+      try {
+        render();
+      } finally {
+        setContentLoading(false);
+      }
+    }
 
     function escapeHtml(s) {
       return String(s)
@@ -275,7 +331,9 @@
         }
         allLinks = links.map((r) => (typeof r === "string" ? r : r.link)).filter(Boolean);
         q.addEventListener("input", render);
-        sortMode.addEventListener("change", render);
+        sortMode.addEventListener("change", () => {
+          void renderAfterSortChange();
+        });
         render();
       })
       .catch((e) => {
