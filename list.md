@@ -15,6 +15,9 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 
 ## Important Notices
 
+### Selenite Shutting Down
+Unfortunately due to personal conflicts with Selenite's owner, they are choosing to shut it down. All Selenite links will be removed automatically May 5, 7 PM CDT. To see the full message from sky, [click here](https://discord.com/channels/1148719137238040606/1148721472785874964/1500945995935256776).
+
 ### Now Available as a Website!
 **The proxy list is now able to be viewed on a webpage at https://yourworstnightmare1.github.io/proxy-list/!** All links are auto-migrated here, and the website has features that this file does not, such as filtering links by provider, category, capabilities, protocols, searching for links, easy contributions, and more! If you are currently using this file to get your links, [I strongly recommend using the website instead of this markdown](https://yourworstnightmare1.github.io/proxy-list/).
 > [!TIP]
