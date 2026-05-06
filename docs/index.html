@@ -837,7 +837,7 @@
       return useFirebaseClicks ? "Opens (all visitors)" : "Opens (this browser only)";
     }
 
-    const TOP_OPENS_DISPLAY = 15;
+    const TOP_OPENS_DISPLAY = 10;
     const TOP_OPENS_FETCH_CAP = 80;
 
     function buildLinkNormIndex(rows) {
@@ -908,7 +908,7 @@
       chips.innerHTML = picked
         .map((r) => {
           const href = r.link || "";
-          const label = domainOf(href) || href;
+          const label = href;
           return (
             '<a href="' +
             escapeAttr(href) +

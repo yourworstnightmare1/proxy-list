@@ -15,21 +15,13 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 
 ## Important Notices
 
-### Selenite Shutting Down
-Unfortunately due to personal conflicts with Selenite's owner, they are choosing to shut it down. All Selenite links will be removed automatically May 5, 7 PM CDT. To see the full message from sky, [click here](https://discord.com/channels/1148719137238040606/1148721472785874964/1500945995935256776).
+### Selenite
+The owner has announced that Selenite is here to stay! The changes made to those links have been reverted and there is currently no plans to remove or change them. Enjoy!
 
 ### Now Available as a Website!
 **The proxy list is now able to be viewed on a webpage at https://yourworstnightmare1.github.io/proxy-list/!** All links are auto-migrated here, and the website has features that this file does not, such as filtering links by provider, category, capabilities, protocols, searching for links, easy contributions, and more! If you are currently using this file to get your links, [I strongly recommend using the website instead of this markdown](https://yourworstnightmare1.github.io/proxy-list/).
 > [!TIP]
 > Trying to view the list through a proxy? Simply copy the URL https://yourworstnightmare1.github.io/proxy-list/ into the proxy's search/URL bar, and you can see all of the links! In order to load them properly, you will have to click the "Copy link" button and paste it into your browser.
-
-### gn-math
-gn-math is currently down due to copyright violations. It will be back up in the coming weeks most likely. For now ignore those links, they will stay in case they decide to work again. This also affects websites that use gn-math's CDN service for game hosting, as those games won't load.
-
-**Update 4/30/2026**: There is a new version of the gn-math site that has working games now. Please use these instead as older links will be removed.
-
-### Ultraviolet Issues
-It has come to my attention that proxies that use Ultraviolet do not load sites properly anymore. This varies by filter and is inconsistent. If you are using a proxy, please consider going to its settings and switching the protocol to Scramjet, or switching to a new proxy with Scramjet support.
 
 ## Update Notice
 

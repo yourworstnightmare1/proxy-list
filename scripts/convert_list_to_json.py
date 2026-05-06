@@ -93,8 +93,38 @@ def _extract_md_section(text: str, heading_re: re.Pattern[str]) -> str:
     return "\n".join(out_lines).strip()
 
 
+# Subsections under ## Important Notices (### ...) excluded from docs/data.json only.
+# list.md keeps full text for markdown readers.
+_SITE_EXCLUDED_IMPORTANT_HEADINGS = frozenset(
+    {
+        "now available as a website!",
+    }
+)
+
+
+def _exclude_subsections_for_site(md: str, excluded_titles: frozenset[str]) -> str:
+    """Remove ### blocks whose title (first line) matches excluded_titles (casefold)."""
+    body = md.strip()
+    if not body:
+        return ""
+    parts = re.split(r"(?=^### )", body, flags=re.MULTILINE)
+    kept: list[str] = []
+    for part in parts:
+        s = part.strip()
+        if not s:
+            continue
+        if s.startswith("###"):
+            title_line = s.split("\n", 1)[0]
+            inner = title_line.replace("###", "", 1).strip().casefold()
+            if inner in excluded_titles:
+                continue
+        kept.append(s)
+    return "\n\n".join(kept).strip()
+
+
 def parse_important_notices(text: str) -> str:
-    return _extract_md_section(text, _IMPORTANT_NOTICES_H2)
+    raw = _extract_md_section(text, _IMPORTANT_NOTICES_H2)
+    return _exclude_subsections_for_site(raw, _SITE_EXCLUDED_IMPORTANT_HEADINGS)
 
 
 def parse_update_notice(text: str) -> str:
