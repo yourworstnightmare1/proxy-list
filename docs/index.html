@@ -36,6 +36,7 @@
       align-items: center;
       justify-content: center;
       padding: 0.45rem 0.85rem;
+      font-family: inherit;
       font-size: 0.82rem;
       font-weight: 500;
       border-radius: 6px;
@@ -137,29 +138,42 @@
       line-height: 1.4;
       max-width: 72ch;
     }
-    .popular-chips {
+    .most-opened-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin: 0 0 0.65rem;
+    }
+    .most-opened-toolbar {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.45rem;
       align-items: center;
+      gap: 0.45rem 0.65rem;
     }
-    .popular-chip {
+    .most-opened-sort-label {
       font-size: 0.78rem;
-      padding: 0.35rem 0.6rem;
-      max-width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .popular-chip .chip-host {
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .popular-chip .chip-count {
-      margin-left: 0.35rem;
-      font-size: 0.68rem;
       color: var(--muted);
-      font-variant-numeric: tabular-nums;
+    }
+    .most-opened-sort-select {
+      flex: 1 1 12rem;
+      min-width: 10rem;
+      max-width: 22rem;
+      padding: 0.4rem 0.55rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.82rem;
+      font-family: inherit;
+    }
+    .popular-section .table-chunk-wrap {
+      overflow-x: auto;
+      margin: 0 -0.15rem;
+    }
+    #mostOpenedSection:not([hidden]) + #stats {
+      margin-top: 1.25rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid var(--border);
     }
     td.click-cell {
       font-size: 0.78rem;
@@ -234,6 +248,46 @@
     }
     a { color: var(--accent); word-break: break-all; }
     .empty { color: var(--muted); padding: 2rem; text-align: center; }
+    .table-empty-host {
+      min-height: min(58vh, 26rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+    }
+    .empty-state {
+      text-align: center;
+      max-width: 38rem;
+      margin: 0 auto;
+    }
+    .empty-state--in-panel {
+      padding: 1.5rem 0.5rem 0.75rem;
+      min-height: 12rem;
+    }
+    .empty-state-icon {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 1rem;
+      opacity: 0.9;
+    }
+    .empty-state-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .empty-state-desc {
+      margin: 0 0 1.35rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .empty-state .empty-state-reset-btn {
+      margin: 0 auto;
+    }
     .err { color: #ff8a8a; padding: 1rem; }
     .pill {
       display: inline-block;
@@ -414,6 +468,19 @@
       line-height: 1.4;
     }
     .risk-notice strong { color: #ffe3aa; }
+    #backToTopBtn {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 25;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    }
+    @media (max-width: 640px) {
+      #backToTopBtn {
+        right: 0.75rem;
+        bottom: 0.75rem;
+      }
+    }
     .removal-notice {
       border: 1px solid #5d3a3a;
       background: #2a1414;
@@ -603,8 +670,36 @@
       <section class="important-notices" id="importantNotices" aria-label="Important notices" hidden></section>
       <section class="popular-section" id="mostOpenedSection" aria-labelledby="mostOpenedHeading" hidden>
         <h2 id="mostOpenedHeading">Most opened</h2>
+        <div class="most-opened-controls">
+          <div class="most-opened-toolbar">
+            <label class="most-opened-sort-label" for="mostOpenedSortSelect">Sort</label>
+            <select id="mostOpenedSortSelect" class="most-opened-sort-select" aria-label="Sort most opened links">
+              <option value="opens">By opens (global)</option>
+              <option value="filter">By selected filter</option>
+              <option value="provider">By provider (A–Z)</option>
+            </select>
+          </div>
+          <div class="most-opened-toolbar" id="mostOpenedProviderWrap" hidden>
+            <label class="most-opened-sort-label" for="mostOpenedProviderSelect">Provider</label>
+            <select
+              id="mostOpenedProviderSelect"
+              class="most-opened-sort-select"
+              aria-label="Choose provider for most opened list"
+            >
+              <option value="">All providers</option>
+            </select>
+          </div>
+        </div>
         <p class="popular-note" id="mostOpenedNote" hidden></p>
-        <div class="popular-chips" id="mostOpenedChips"></div>
+        <div class="table-chunk-wrap">
+          <div id="mostOpenedEmptyState" class="empty-state empty-state--in-panel" role="status" hidden></div>
+          <div id="mostOpenedTableMount">
+            <table aria-labelledby="mostOpenedHeading">
+              <thead id="mostOpenedThead"></thead>
+              <tbody id="mostOpenedTableBody"></tbody>
+            </table>
+          </div>
+        </div>
       </section>
       <div class="stats" id="stats"></div>
       <div id="tableWrap"></div>
@@ -675,6 +770,7 @@
     <img src="loading-spinner.gif" width="80" height="80" alt="" decoding="async" />
     <p class="content-loading-msg">Getting data...</p>
   </div>
+  <button class="btn" id="backToTopBtn" type="button" aria-label="Back to top">Back to top</button>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
@@ -839,6 +935,57 @@
 
     const TOP_OPENS_DISPLAY = 10;
     const TOP_OPENS_FETCH_CAP = 80;
+    const MO_SORT_STORAGE_KEY = "proxyList_mostOpenedSort_v1";
+    const MO_SORT_OPENS = "opens";
+    const MO_SORT_FILTER = "filter";
+    const MO_SORT_PROVIDER = "provider";
+    const MO_PROVIDER_STORAGE_KEY = "proxyList_mostOpenedProvider_v1";
+
+    function getMostOpenedSortMode() {
+      try {
+        const v = localStorage.getItem(MO_SORT_STORAGE_KEY);
+        if (v === MO_SORT_FILTER || v === MO_SORT_PROVIDER || v === MO_SORT_OPENS) return v;
+      } catch (_) {}
+      return MO_SORT_OPENS;
+    }
+
+    function persistMostOpenedSortMode(mode) {
+      try {
+        localStorage.setItem(MO_SORT_STORAGE_KEY, mode);
+      } catch (_) {}
+    }
+
+    function getMostOpenedProviderChoice() {
+      try {
+        return localStorage.getItem(MO_PROVIDER_STORAGE_KEY) || "";
+      } catch (_) {
+        return "";
+      }
+    }
+
+    function persistMostOpenedProviderChoice(value) {
+      try {
+        localStorage.setItem(MO_PROVIDER_STORAGE_KEY, value || "");
+      } catch (_) {}
+    }
+
+    function syncMostOpenedProviderOptions(links) {
+      const sel = $("mostOpenedProviderSelect");
+      if (!sel) return;
+      const prev = getMostOpenedProviderChoice();
+      const providers = uniq(links.map((d) => d.provider));
+      sel.innerHTML =
+        '<option value="">All providers</option>' +
+        providers
+          .map(
+            (p) =>
+              '<option value="' + escapeAttr(p) + '">' + escapeHtml(p) + "</option>"
+          )
+          .join("");
+      const pick = prev && providers.includes(prev) ? prev : "";
+      sel.value = pick;
+      if (pick !== prev) persistMostOpenedProviderChoice(pick);
+    }
 
     function buildLinkNormIndex(rows) {
       const m = new Map();
@@ -876,54 +1023,132 @@
     async function renderMostOpenedForList(links) {
       const sec = $("mostOpenedSection");
       const noteEl = $("mostOpenedNote");
-      const chips = $("mostOpenedChips");
-      if (!sec || !chips) return;
+      const thead = $("mostOpenedThead");
+      const tbody = $("mostOpenedTableBody");
+      const moEmpty = $("mostOpenedEmptyState");
+      const moMount = $("mostOpenedTableMount");
+      const sortEl = $("mostOpenedSortSelect");
+      const provWrap = $("mostOpenedProviderWrap");
+      const provSel = $("mostOpenedProviderSelect");
+      if (!sec || !thead || !tbody) return;
+      if (moEmpty) {
+        moEmpty.hidden = true;
+        moEmpty.innerHTML = "";
+      }
+      if (moMount) moMount.hidden = false;
       if (!useFirebaseClicks || !firebaseDb) {
         sec.hidden = true;
         return;
       }
+      const mode =
+        sortEl && sortEl.value && [MO_SORT_OPENS, MO_SORT_FILTER, MO_SORT_PROVIDER].includes(sortEl.value)
+          ? sortEl.value
+          : getMostOpenedSortMode();
+      if (sortEl && sortEl.value !== mode) sortEl.value = mode;
+
+      if (provWrap) provWrap.hidden = mode !== MO_SORT_PROVIDER;
+
+      let providerFilter = "";
+      if (mode === MO_SORT_PROVIDER && provSel && provSel.value) {
+        providerFilter = String(provSel.value);
+      }
+
       const byNorm = buildLinkNormIndex(links);
       const docs = await fetchTopOpenedFromFirestore(TOP_OPENS_FETCH_CAP);
-      const picked = [];
+      const candidates = [];
       for (const { url, count } of docs) {
         const row = byNorm.get(normalizeUrlKeyForClicks(url));
-        if (row) picked.push({ link: row.link, count });
-        if (picked.length >= TOP_OPENS_DISPLAY) break;
+        if (row) candidates.push({ row, count });
       }
+
+      let pool = candidates;
+      if (mode === MO_SORT_PROVIDER && providerFilter) {
+        pool = candidates.filter((c) => String(c.row.provider || "") === providerFilter);
+      }
+
+      if (mode === MO_SORT_OPENS) {
+        pool.sort((a, b) => b.count - a.count);
+      } else if (mode === MO_SORT_FILTER) {
+        pool.sort((a, b) => {
+          const dr = mostOpenedFilterSortRank(a.row.link) - mostOpenedFilterSortRank(b.row.link);
+          if (dr !== 0) return dr;
+          return b.count - a.count;
+        });
+      } else if (mode === MO_SORT_PROVIDER) {
+        if (providerFilter) {
+          pool.sort((a, b) => b.count - a.count);
+        } else {
+          pool.sort((a, b) => {
+            const pr = String(a.row.provider || "").localeCompare(String(b.row.provider || ""), undefined, {
+              sensitivity: "base",
+            });
+            if (pr !== 0) return pr;
+            return b.count - a.count;
+          });
+        }
+      }
+
+      const picked = pool.slice(0, TOP_OPENS_DISPLAY);
+
       if (!picked.length) {
+        if (mode === MO_SORT_PROVIDER && providerFilter) {
+          sec.hidden = false;
+          if (noteEl) {
+            noteEl.textContent = "";
+            noteEl.hidden = true;
+          }
+          thead.innerHTML = "";
+          tbody.innerHTML = "";
+          if (moEmpty) {
+            moEmpty.innerHTML = emptyStateNoResultsInnerHtml();
+            moEmpty.hidden = false;
+          }
+          if (moMount) moMount.hidden = true;
+          return;
+        }
         sec.hidden = true;
         if (noteEl) {
           noteEl.textContent = "";
           noteEl.hidden = true;
         }
-        chips.innerHTML = "";
+        thead.innerHTML = "";
+        tbody.innerHTML = "";
         return;
       }
       sec.hidden = false;
       if (noteEl) {
-        noteEl.textContent =
-          "Ranked by link-summary opens across visitors. Only URLs that appear in the list below are shown.";
+        let note =
+          "Only URLs that appear in the sorted list below are shown. Counts are link-summary opens from all visitors.";
+        if (mode === MO_SORT_OPENS) {
+          note = "Ranked by opens (highest first). " + note;
+        } else if (mode === MO_SORT_FILTER) {
+          if (normalizeFilterKey(selectedGnMathFilter)) {
+            note =
+              "Sorted by your selected gn-math filter: unblocked first, then warning, then blocked; links without that check rank last. Tie-break: opens. " +
+              note;
+          } else {
+            note =
+              "Choose a filter under Site → Select filter to rank by estimated status. Until then, order matches opens. " +
+              note;
+          }
+        } else if (mode === MO_SORT_PROVIDER) {
+          if (providerFilter) {
+            note =
+              "Provider: " +
+              providerFilter +
+              ". Ranked by opens within this provider (among the current top-opened scan). " +
+              note;
+          } else {
+            note =
+              "Sorted by provider name (A–Z). Pick a provider above to only show that provider’s top opens. Tie-break: opens. " +
+              note;
+          }
+        }
+        noteEl.textContent = note;
         noteEl.hidden = false;
       }
-      chips.innerHTML = picked
-        .map((r) => {
-          const href = r.link || "";
-          const label = href;
-          return (
-            '<a href="' +
-            escapeAttr(href) +
-            '" class="btn popular-chip js-link-summary" data-link="' +
-            escapeAttr(href) +
-            '" rel="noopener noreferrer" target="_blank" title="' +
-            escapeAttr(href) +
-            '"><span class="chip-host">' +
-            escapeHtml(label) +
-            '</span><span class="chip-count">' +
-            escapeHtml(String(r.count)) +
-            "</span></a>"
-          );
-        })
-        .join("");
+      thead.innerHTML = linkTableTheadRowHtml();
+      tbody.innerHTML = picked.map(({ row, count }) => buildRowTrHtml(row, count)).join("");
     }
 
     function uniq(arr) {
@@ -1069,6 +1294,7 @@
     }
 
     const TABLE_CHUNK_SIZE = 80;
+    const TABLE_PREFETCH_PX = 400;
     let tableInfiniteObserver = null;
     let tableInfiniteState = null;
 
@@ -1080,7 +1306,22 @@
       tableInfiniteState = null;
     }
 
-    function buildRowTrHtml(r) {
+    function linkTableTheadRowHtml() {
+      return (
+        "<tr>" +
+        ["Provider", "Link", "Clicks", "Category", "Capabilities", "Protocols", "Contributor"]
+          .map((h) => "<th>" + h + "</th>")
+          .join("") +
+        "</tr>"
+      );
+    }
+
+    /** @param fixedClickCount if set, skips async click refresh for this row */
+    function buildRowTrHtml(r, fixedClickCount) {
+      const clickCell =
+        fixedClickCount !== undefined
+          ? '<td class="click-cell">' + escapeHtml(String(fixedClickCount)) + "</td>"
+          : '<td class="click-cell" data-click-url="' + escapeAttr(r.link) + '">…</td>';
       return (
         "<tr><td>" +
         escapeHtml(r.provider) +
@@ -1090,9 +1331,9 @@
         escapeAttr(r.link) +
         '">' +
         escapeHtml(r.link) +
-        '</a></td><td class="click-cell" data-click-url="' +
-        escapeAttr(r.link) +
-        '">…</td><td>' +
+        "</a></td>" +
+        clickCell +
+        "<td>" +
         escapeHtml(r.category) +
         "</td><td>" +
         formatTags(r.capability_tags) +
@@ -1143,7 +1384,21 @@
           tableInfiniteObserver = null;
         }
       } finally {
-        if (tableInfiniteState === st) st.chunkInFlight = false;
+        if (tableInfiniteState === st) {
+          st.chunkInFlight = false;
+          if (
+            st.rendered < st.filtered.length &&
+            st.sentinel &&
+            st.sentinel.isConnected
+          ) {
+            const rect = st.sentinel.getBoundingClientRect();
+            if (rect.top <= window.innerHeight + TABLE_PREFETCH_PX) {
+              requestAnimationFrame(() => {
+                if (tableInfiniteState === st) void appendNextTableChunk();
+              });
+            }
+          }
+        }
       }
     }
 
@@ -1164,7 +1419,7 @@
             if (e.isIntersecting) void appendNextTableChunk();
           }
         },
-        { root: null, rootMargin: "400px", threshold: 0 }
+        { root: null, rootMargin: TABLE_PREFETCH_PX + "px", threshold: 0 }
       );
       tableInfiniteObserver.observe(sentinel);
     }
@@ -1239,19 +1494,14 @@
           : "");
 
       if (!filtered.length) {
-        $("tableWrap").innerHTML = '<p class="empty">No links match these filters.</p>';
+        $("tableWrap").innerHTML = emptyStateNoResultsHtml();
         return;
       }
 
       const initial = Math.min(TABLE_CHUNK_SIZE, filtered.length);
       const firstChunk = filtered.slice(0, initial);
-      const firstHtml = firstChunk.map(buildRowTrHtml).join("");
-      const theadRow =
-        "<tr>" +
-        ["Provider", "Link", "Clicks", "Category", "Capabilities", "Protocols", "Contributor"]
-          .map((h) => "<th>" + h + "</th>")
-          .join("") +
-        "</tr>";
+      const firstHtml = firstChunk.map((r) => buildRowTrHtml(r)).join("");
+      const theadRow = linkTableTheadRowHtml();
       const sentinelHtml =
         filtered.length > TABLE_CHUNK_SIZE
           ? '<div id="tableLoadSentinel" class="table-load-sentinel" aria-hidden="true"></div>'
@@ -1349,6 +1599,7 @@
             linkLensFetchPromise = null;
             if (wasFirstHydrate && pageContext) {
               void render(pageContext.links, pageContext.meta, pageContext.link_check);
+              void renderMostOpenedForList(pageContext.links);
             }
           });
       }
@@ -1490,6 +1741,22 @@
       return providers.some(
         (p) => providerFilterKey(p.provider || "") === selectedFilterKey && p.status === "blocked"
       );
+    }
+
+    /** Lower sorts first: unblocked → warning → blocked → unknown (for most-opened filter sort). */
+    function mostOpenedFilterSortRank(link) {
+      const selectedFilterKey = normalizeFilterKey(selectedGnMathFilter);
+      if (!selectedFilterKey) return 0;
+      const entry = summaryEntryFor(link);
+      if (!entry || typeof entry !== "object") return 4;
+      const providers = Array.isArray(entry.providers) ? entry.providers : [];
+      const match = providers.find((p) => providerFilterKey(p.provider || "") === selectedFilterKey);
+      if (!match) return 3;
+      const s = String(match.status || "warning").toLowerCase();
+      if (s === "unblocked") return 0;
+      if (s === "warning") return 1;
+      if (s === "blocked") return 2;
+      return 3;
     }
 
     function hasCheckedDomain(link) {
@@ -1661,6 +1928,29 @@
 
     function escapeAttr(s) {
       return escapeHtml(s).replace(/'/g, "&#39;");
+    }
+
+    const EMPTY_STATE_ICON_URL =
+      "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/common-actions/question-mark-sqok8vg2o1dd9g07du59d.png/question-mark-fh239k9aqe5ayqfowratid.png?_a=DATAiZAAZAA0";
+
+    function emptyStateNoResultsInnerHtml() {
+      return (
+        '<img class="empty-state-icon" src="' +
+        escapeAttr(EMPTY_STATE_ICON_URL) +
+        '" width="120" height="120" alt="" decoding="async" />' +
+        '<h2 class="empty-state-title">No results found</h2>' +
+        '<p class="empty-state-desc">Your likely have too many sort filters selected, or all links for your system&#39;s web filter are blocked.</p>' +
+        '<button type="button" class="btn btn-primary empty-state-reset-btn">Reset filters</button>'
+      );
+    }
+
+    function emptyStateNoResultsHtml() {
+      return (
+        '<div class="table-empty-host">' +
+        '<div class="empty-state" role="status">' +
+        emptyStateNoResultsInnerHtml() +
+        "</div></div>"
+      );
     }
 
     /** Markdown-lite: **bold**, `code`, [label](https…), bare https URLs. */
@@ -1976,6 +2266,10 @@
         }
         applyImportantNotices(meta);
         setFooter(meta);
+        syncMostOpenedProviderOptions(links);
+        const moSortSel = $("mostOpenedSortSelect");
+        const moProvSel = $("mostOpenedProviderSelect");
+        if (moSortSel) moSortSel.value = getMostOpenedSortMode();
         void renderMostOpenedForList(links);
         maybeShowUpdateModal(meta);
         buildCheckboxGroup(
@@ -2022,7 +2316,12 @@
           hideBlockedBySelectedFilter = false;
           hideLinksWithoutLensCheck = false;
           updateSelectedFilterUI();
+          if (moProvSel) {
+            moProvSel.value = "";
+            persistMostOpenedProviderChoice("");
+          }
           render(links, meta, link_check);
+          void renderMostOpenedForList(links);
         }
 
         $("q").addEventListener("input", () => render(links, meta, link_check));
@@ -2034,6 +2333,11 @@
         $("mainContent").addEventListener("click", (ev) => {
           const target = ev.target;
           if (!(target instanceof Element)) return;
+          if (target.closest(".empty-state-reset-btn")) {
+            ev.preventDefault();
+            resetAllFilters();
+            return;
+          }
           const linkEl = target.closest("a.js-link-summary");
           if (!linkEl) return;
           ev.preventDefault();
@@ -2095,7 +2399,20 @@
           selectedGnMathFilter = ev.target.value || "";
           updateSelectedFilterUI();
           void renderAfterHeavyFilter(links, meta, link_check);
+          void renderMostOpenedForList(links);
         });
+        if (moSortSel) {
+          moSortSel.addEventListener("change", () => {
+            persistMostOpenedSortMode(moSortSel.value);
+            void renderMostOpenedForList(links);
+          });
+        }
+        if (moProvSel) {
+          moProvSel.addEventListener("change", () => {
+            persistMostOpenedProviderChoice(moProvSel.value);
+            void renderMostOpenedForList(links);
+          });
+        }
         $("hideBlockedBtn").addEventListener("click", () => {
           hideBlockedBySelectedFilter = !hideBlockedBySelectedFilter;
           updateSelectedFilterUI();
@@ -2118,6 +2435,9 @@
         $("updateCloseBtn").addEventListener("click", () => closeUpdateModal(meta));
         $("updateGotItBtn").addEventListener("click", () => closeUpdateModal(meta));
         $("updateNoticeBtn").addEventListener("click", () => openUpdateModal(meta, readSeenVersion()));
+        $("backToTopBtn").addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
         document.addEventListener("keydown", (ev) => {
           if (ev.key === "Escape") {
             closeSummary();

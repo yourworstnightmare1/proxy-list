@@ -1,11 +1,11 @@
 {
   "meta": {
-    "version": "v4.0.1",
-    "revision": "r68",
-    "last_updated": "May 05, 2026",
+    "version": "v4.1",
+    "revision": "r69",
+    "last_updated": "May 06, 2026",
     "unsorted_total": 1989,
     "important_notices": "### Selenite\nThe owner has announced that Selenite is here to stay! The changes made to those links have been reverted and there is currently no plans to remove or change them. Enjoy!",
-    "update_notice": "### Bugfix\nQuick update to fix an issue causing links to not be checked and removed when dead.",
+    "update_notice": "### Sort Popular Links\nYou can now sort most open links by providers, filters, and opens. This should make it easier for you to find working links faster.\n### UI Improvements\nAdded a back to top button, which takes you back to the top of the webpage\n### Bugfixes\n- Fixed an issue where scrolling did not load the next chunk properly, leading to the list to abruptly end\n- Fixed an issue where the dead link checker wasn't finding links properly\n- Fixed an issue where certain text/buttons were the incorrect font",
     "fail_threshold": 3,
     "popular_note": "Hand-picked links that tend to work well — not ranked by site traffic (this page has no analytics). Edit docs/popular_links.json and run scripts/convert_list_to_json.py.",
     "popular_links": [
@@ -50919,15 +50919,15 @@
       "contributor_url": "https://github.com/1NobleCyber"
     },
     {
-      "provider": "🌲 Aspen",
-      "category": "pending",
-      "capabilities": "pending",
+      "provider": "🌴 aspen",
+      "category": "proxy/games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://api.academinctools.pw/",
@@ -50938,15 +50938,15 @@
       "contributor_url": "https://github.com/1NobleCyber"
     },
     {
-      "provider": "🌲 Aspen",
-      "category": "pending",
-      "capabilities": "pending",
+      "provider": "🌴 aspen",
+      "category": "proxy/games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://educational-site.academinctools.pw/",
@@ -51508,7 +51508,7 @@
       "contributor_url": "https://github.com/1NobleCyber"
     },
     {
-      "provider": "🐻‍❄️ Artic",
+      "provider": "🧊 arctic",
       "category": "Proxy/Games",
       "capabilities": "unknown",
       "capability_tags": [
@@ -51527,7 +51527,7 @@
       "contributor_url": "https://github.com/1NobleCyber"
     },
     {
-      "provider": "🐻‍❄️ Artic",
+      "provider": "🧊 arctic",
       "category": "Proxy/Games",
       "capabilities": "unknown",
       "capability_tags": [
@@ -51546,7 +51546,7 @@
       "contributor_url": "https://github.com/1NobleCyber"
     },
     {
-      "provider": "🐻‍❄️ Artic",
+      "provider": "🧊 arctic",
       "category": "Proxy/Games",
       "capabilities": "unknown",
       "capability_tags": [
@@ -51565,7 +51565,7 @@
       "contributor_url": "https://github.com/1NobleCyber"
     },
     {
-      "provider": "🐻‍❄️ Artic",
+      "provider": "🧊 arctic",
       "category": "Proxy/Games",
       "capabilities": "unknown",
       "capability_tags": [
@@ -52534,15 +52534,15 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
-      "provider": "55gms",
-      "category": "pending",
-      "capabilities": "pending",
+      "provider": "5️⃣ 55gms",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://lkjdbhuvudj.tokenfatguy.com",
@@ -52553,15 +52553,15 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
-      "provider": "55gms",
-      "category": "pending",
-      "capabilities": "pending",
+      "provider": "5️⃣ 55gms",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://fb8y8wbfi.nutansharma.com.np",
@@ -52572,15 +52572,15 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
-      "provider": "55gms",
-      "category": "pending",
-      "capabilities": "pending",
+      "provider": "5️⃣ 55gms",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://108192.xyz.cdn.cloudflare.net",
@@ -52591,15 +52591,15 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
-      "provider": "55gms",
-      "category": "pending",
-      "capabilities": "pending",
+      "provider": "5️⃣ 55gms",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://flickbox.sbs",
@@ -52610,15 +52610,15 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
-      "provider": "55gms",
-      "category": "pending",
-      "capabilities": "pending",
+      "provider": "5️⃣ 55gms",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://brutemath.kavellewatches.com",
@@ -52629,15 +52629,15 @@
       "contributor_url": "https://github.com/yourworstnightmare1"
     },
     {
-      "provider": "55gms",
-      "category": "pending",
-      "capabilities": "pending",
+      "provider": "5️⃣ 55gms",
+      "category": "Proxy/Games",
+      "capabilities": "captcha",
       "capability_tags": [
-        "pending"
+        "captcha"
       ],
-      "protocols": "pending",
+      "protocols": "scramjet",
       "protocol_tags": [
-        "pending"
+        "scramjet"
       ],
       "locked": "",
       "link": "https://think-straight.nexus-computing.com",

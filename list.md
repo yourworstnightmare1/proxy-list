@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
-> v4.0.1 | Released: May 05, 2026
-> r68 | Last Updated: May 05, 2026
+> v4.1 | Released: May 06, 2026
+> r69 | Last Updated: May 06, 2026
 > Total onsite links: 4546 (sorted list + unsorted page)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -25,8 +25,16 @@ The owner has announced that Selenite is here to stay! The changes made to those
 
 ## Update Notice
 
-### Bugfix
-Quick update to fix an issue causing links to not be checked and removed when dead.
+### Sort Popular Links
+You can now sort most open links by providers, filters, and opens. This should make it easier for you to find working links faster.
+
+### UI Improvements
+Added a back to top button, which takes you back to the top of the webpage
+
+### Bugfixes
+- Fixed an issue where scrolling did not load the next chunk properly, leading to the list to abruptly end
+- Fixed an issue where the dead link checker wasn't finding links properly
+- Fixed an issue where certain text/buttons were the incorrect font
 
 # 💜 Selenite
 > [!NOTE]
@@ -3456,14 +3464,11 @@ Quick update to fix an issue causing links to not be checked and removed when de
 | | https://rammer.nana.supermario.gq | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://rammer.nana.meshtastic.hu | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# 🌲 Aspen
+# 🌴 aspen
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 2 |
-
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
+> | proxy/games | captcha | scramjet | 2 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3655,7 +3660,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 | | https://zink.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://market.thenookfactory.com | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# 🐻‍❄️ Artic
+# 🧊 arctic
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
@@ -3765,13 +3770,11 @@ Quick update to fix an issue causing links to not be checked and removed when de
 | | https://gabrielultrakill.bestar.sg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://suntree.alex.rf.gd | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 
-# 55gms
+# 5️⃣ 55gms
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 6 |
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
+> | Proxy/Games | captcha | scramjet | 6 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
