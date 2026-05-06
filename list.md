@@ -225,7 +225,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet, Ultraviolet | 7 |
+> | Proxy/Games | unknown | Scramjet, Ultraviolet | 5 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -242,7 +242,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 48 |
+> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 50 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -301,7 +301,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl | Scramjet, Ultraviolet, Eclipse | 114 |
+> | Proxy/Games | epoxy, libcurl | Scramjet, Ultraviolet, Eclipse | 80 |
 
 > [!IMPORTANT]
 > Nebulo does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -450,7 +450,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet, Ultraviolet | 52 |
+> | Proxy/Games | unknown | Scramjet, Ultraviolet | 86 |
 
 > [!IMPORTANT]
 > Fern does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -655,7 +655,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 34 |
+> | Proxy/Games | unknown | Scramjet | 37 |
 
 > [!IMPORTANT]
 > Boredom does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1128,7 +1128,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 63 |
+> | Proxy/Games | unknown | Scramjet | 65 |
 
 > [!IMPORTANT]
 > PetZah does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1205,7 +1205,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 8 |
+> | Games | N/A | N/A | 1 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1232,7 +1232,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet, Ultraviolet | 1 |
+> | Proxy/Games | captcha | Scramjet, Ultraviolet | 8 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1342,7 +1342,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 128 |
+> | Proxy/Games | Unknown | Scramjet | 124 |
 
 > [!IMPORTANT]
 > Imp Proxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1478,13 +1478,12 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 7 |
+> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 2 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://check.ursinuscollege.org/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sites.google.com/view/endisendis | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 
 # 🏛️ Dominum
 > [!NOTE]
@@ -1503,7 +1502,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 85 |
+> | Proxy/Games | Unknown | Scramjet | 90 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1601,21 +1600,11 @@ Quick update to fix an issue causing links to not be checked and removed when de
 | | https://slayerthehardest.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://touchdatbread.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# 📐 Solo Central
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Games | N/A | N/A | 1 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-
-
 # ⬡ TGLSC Density 4
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, baremux, baremod, grammaray | Scramjet, Ultraviolet | 18 |
+> | Proxy/Games | epoxy, libcurl, baremux, baremod, grammaray | Scramjet, Ultraviolet | 19 |
 
 > [!IMPORTANT]
 > TGLSC Density 4 does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1843,7 +1832,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | N/A | 4 |
+> | Proxy/Games | wisp | N/A | 3 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1858,7 +1847,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 118 |
+> | Proxy/Games | unknown | unknown | 119 |
 
 > [!IMPORTANT]
 > StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2087,7 +2076,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 7 |
+> | Proxy/Games | unknown | unknown | 5 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -2152,7 +2141,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Ultraviolet | 63 |
+> | Proxy/Games | unknown | Ultraviolet | 66 |
 
 > [!IMPORTANT]
 > Void Network does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2292,7 +2281,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet | 14 |
+> | Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet | 11 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2312,7 +2301,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 21 |
+> | Proxy/Games | captcha | Scramjet | 22 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2479,7 +2468,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy, wisp, tor, captcha | Scramjet, Ultraviolet, Rammerhead | 3 |
+> | Proxy/Games | libcurl, epoxy, wisp, tor, captcha | Scramjet, Ultraviolet, Rammerhead | 1 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2489,7 +2478,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | unknown | unknown | 174 |
+> | Proxy | unknown | unknown | 176 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -2690,7 +2679,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 9 |
+> | Proxy/Games | captcha | Scramjet | 11 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -2713,7 +2702,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 55 |
+> | Games | N/A | N/A | 51 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2773,7 +2762,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 47 |
+> | pending | pending | pending | 51 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -2863,12 +2852,11 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 2 |
+> | Proxy/Games | unknown | Scramjet | 1 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://scramupdate.cfd/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 
 # ❤️ BloxCraft Games
 > [!NOTE]
@@ -2939,7 +2927,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | unknown | 8 |
+> | Proxy/Games | captcha | unknown | 9 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2997,7 +2985,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 1 |
+> | pending | pending | pending | 3 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -3021,7 +3009,6 @@ Quick update to fix an issue causing links to not be checked and removed when de
 | - | - | - | - | - | - |
 | | https://noterplusfire02.web.app/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-
 # Marz
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -3040,7 +3027,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 21 |
+> | pending | pending | pending | 47 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -3099,7 +3086,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 12 |
+> | pending | pending | pending | 11 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -3441,7 +3428,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 19 |
+> | pending | pending | pending | 20 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -3782,7 +3769,7 @@ Quick update to fix an issue causing links to not be checked and removed when de
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 5 |
+> | pending | pending | pending | 6 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -3831,7 +3818,6 @@ Quick update to fix an issue causing links to not be checked and removed when de
 | | https://books.sunbirdgoodly.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://warm-cloud.k12biology.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://h.shuttlemath.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-
 
 # ✖️ Xylora
 > [!NOTE]
