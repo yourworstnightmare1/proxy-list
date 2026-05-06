@@ -111,7 +111,7 @@ I may edit the pull request if there is a mistake or small error, then push thos
 Yes, they are automatically synced.
 
 ### What if a link I submit no longer works?
-It will be removed eventually by the link check bot after 3 failed checks (18 hours).
+After three consecutive failed HTTP checks (runs every six hours), a link is eligible to be removed from `list.md`. The scheduled job usually keeps **purging** off on GitHub runners so temporary blocks do not delete working links; `link_status.json` still tracks failures. To drop dead rows from the repo, run `python scripts/link_checker.py` locally without `LINK_CHECK_NO_PURGE`, or set the Actions variable `LINK_CHECK_NO_PURGE` to `false`.
 
 ### What if a link I submit is blocked?
 It will stay, it will just be likely unusable by users on that filter.

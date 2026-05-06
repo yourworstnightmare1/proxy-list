@@ -104,15 +104,21 @@ def test_links(links):
 # Process markdown (purge dead links)
 # -----------------------
 def process(content, results, status):
-    """Drop table rows whose URL failed FAIL_THRESHOLD times (see link_status.json).
+    """Update failure counts; optionally drop rows that hit FAIL_THRESHOLD.
 
     Uses normalized URLs for result lookup and for persistent failure counts so
     trailing slashes and duplicate rows behave consistently.
+
+    CI sets LINK_CHECK_NO_PURGE=true so flaky runner/network errors do not delete
+    table rows from list.md. Failure counts in link_status.json still advance each
+    run so a local run (or CI with purging enabled) can remove links after the
+    threshold is reached.
     """
-    # CI runners often get blocked / timeout / TLS noise — purging from GitHub Actions
-    # deletes hundreds of working links. Set LINK_CHECK_NO_PURGE=true (default in workflow).
-    if os.environ.get("LINK_CHECK_NO_PURGE", "").lower() in ("1", "true", "yes"):
-        return content, 0, 0
+    no_purge = os.environ.get("LINK_CHECK_NO_PURGE", "").lower() in (
+        "1",
+        "true",
+        "yes",
+    )
 
     new_lines: list[str] = []
     # First row for this URL in this run decides keep/remove; duplicate rows match it.
@@ -145,14 +151,15 @@ def process(content, results, status):
                 keep_duplicate_row[norm] = True
             else:
                 status[norm] = status.get(norm, 0) + 1
+                purge = (not no_purge) and status[norm] >= FAIL_THRESHOLD
 
-                if status[norm] < FAIL_THRESHOLD:
+                if purge:
+                    removed += 1
+                    keep_duplicate_row[norm] = False
+                else:
                     new_lines.append(line)
                     kept += 1
                     keep_duplicate_row[norm] = True
-                else:
-                    removed += 1
-                    keep_duplicate_row[norm] = False
         else:
             new_lines.append(line)
 

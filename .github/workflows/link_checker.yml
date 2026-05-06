@@ -41,12 +41,13 @@ jobs:
         run: |
           pip install requests
 
-      # Do not remove rows from list.md here: GitHub-hosted runners are often blocked or
-      # get non-2xx from sites that work for real users, which purged hundreds of links.
-      # To allow purging from CI, set secret/variable LINK_CHECK_NO_PURGE=false and use caution.
+      # Default: do not remove table rows on the runner (often flaky vs real browsers).
+      # Failure counts in link_status.json still update every run (see scripts/link_checker.py).
+      # To let CI purge dead rows after FAIL_THRESHOLD consecutive failures, set
+      # LINK_CHECK_NO_PURGE to false under repo Settings → Secrets and variables → Actions → Variables.
       - name: Run link checker
         env:
-          LINK_CHECK_NO_PURGE: "true"
+          LINK_CHECK_NO_PURGE: ${{ vars.LINK_CHECK_NO_PURGE == 'false' && 'false' || 'true' }}
         run: |
           echo "Running script..."
           set +e

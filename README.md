@@ -18,7 +18,7 @@ View [CONTRIBUTING.md](https://github.com/yourworstnightmare1/proxy-list/blob/ma
 CAPTCHA is tested using the official [Google ReCAPTCHA demo](https://www.google.com/recaptcha/api2/demo)
 
 # When is the list updated?
-**Automation**: The list is automatically checked every 6 hours using a Python script to check for bad links and update the total links when needed. A URL is removed after it fails the HTTP check three runs in a row; `link_status.json` in the repo stores those counts so each scheduled run can advance toward removal (previously the counter reset every run, so nothing was ever purged).\
+**Automation**: The list is automatically checked every six hours. Each run re-checks HTTP for links in `list.md` and updates per-URL failure counts in `link_status.json`. After three consecutive failing runs for the same URL, that row is eligible to be removed from `list.md`. The scheduled workflow keeps purging **off** by default (`LINK_CHECK_NO_PURGE`, so flaky CI does not mass-delete working proxies); counters still advance. To have the bot purge dead links from the repo, set the Actions repository variable `LINK_CHECK_NO_PURGE` to `false`, or run `python scripts/link_checker.py` locally with that variable unset.\
 **Manual**: I will periodically update the list if I find new proxies, or if someone makes a pull request and I approve.
 
 # How to use
