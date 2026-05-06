@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
-> v4.0 | Released: May 02, 2026
-> r67 | Last Updated: May 02, 2026
+> v4.0.1 | Released: May 05, 2026
+> r68 | Last Updated: May 05, 2026
 > Total onsite links: 4546 (sorted list + unsorted page)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -25,37 +25,8 @@ The owner has announced that Selenite is here to stay! The changes made to those
 
 ## Update Notice
 
-### Firebase Integration
-The Proxy List is now fully integrated with Firebase, and you can now see the site's most popular links.
-
-### UI Changes
-The UI has been slightly changed to make the site cleaner and more user-friendly. We have moved the top buttons to the side. Oh, and there's loading screens now.
-
-### Hide Unchecked Links
-You can now hide links that have not been checked for blocked filters, giving a more accurate link count estimate when hiding blocked links and making it easier to actually find unblocked links.
-
-### New Filter Options
-I have added support for the following filters now:
-
-- CleanBrowsing
-
-- Control D
-
-- Gaggle
-
-- Hapara
-
-- Smoothwall
-
-- Zscaler
-
-(Smoothwall and Zscaler users: The link check bot has been having issues checking your filter for blocked/unblocked status, so most links will probably just show warning. This is a relatively new filter to the bot, so it is likely being fixed as of now.)
-
-### Performance Improvements
-Much needed performance improvements were done, which has lowered the site's estimated memory usage from ~400MB to only ~150MB to allow breathing room for lower-end devices that will access the site.
-
-### More Links
-As usual with most updates, we of course gave you some more links. This time we have 500+ links added, with the total onsite links (as of the time of writing this message) being 4,546.
+### Bugfix
+Quick update to fix an issue causing links to not be checked and removed when dead.
 
 # 💜 Selenite
 > [!NOTE]
