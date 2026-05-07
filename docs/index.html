@@ -774,7 +774,32 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script src="firebase-config.js"></script>
+  <script>
+    // Load local firebase config (ignored by git); fallback to tracked example.
+    (function loadFirebaseConfig() {
+      function appendScript(src, onload, onerror) {
+        const s = document.createElement("script");
+        s.src = src;
+        s.onload = onload;
+        s.onerror = onerror;
+        document.head.appendChild(s);
+      }
+
+      appendScript(
+        "firebase-config.local.js",
+        function () {},
+        function () {
+          appendScript(
+            "firebase-config.example.js",
+            function () {},
+            function () {
+              window.__FIREBASE_CONFIG__ = window.__FIREBASE_CONFIG__ || {};
+            }
+          );
+        }
+      );
+    })();
+  </script>
   <script>
     const $ = (id) => document.getElementById(id);
     let linkLensData = {};
