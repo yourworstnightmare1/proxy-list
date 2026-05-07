@@ -1,12 +1,7 @@
-/* Tracked placeholder shipped with the site (e.g. GitHub Pages). The page loads
-   firebase-config.local.js first, then falls back to this file if local is missing.
+/* Copy this file to firebase-config.local.js and fill in your Firebase web app config.
+   firebase-config.local.js is gitignored so secrets do not get committed.
 
-   firebase-config.local.js is gitignored — it is not deployed, so the live site only
-   sees this file. Leave apiKey empty for browser-only counts, or set real Firebase
-   web app values here (restrict the key by HTTP referrer in Google Cloud) if you
-   want Firestore on the hosted URL.
-
-   For local dev, you can copy this file to firebase-config.local.js and fill in config.
+   Leave apiKey empty to use browser-only click counts (localStorage) instead of Firestore.
 
    For the live "Most opened" section (index.html), Firestore must allow the client to run:
    collection("link_clicks").orderBy("count", "desc").limit(...)
@@ -19,12 +14,12 @@
 
    Writes already use signInAnonymously; if reads were get()-only before, add the same read
    rule so list queries work. */
-window.__FIREBASE_CONFIG__ = {
-  apiKey: "",
-  authDomain: "your-project.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project.appspot.com",
-  messagingSenderId: "000000000000",
-  appId: "1:000000000000:web:0000000000000000000000",
-  measurementId: "G-XXXXXXXXXX"
-};
+   window.__FIREBASE_CONFIG__ = {
+    apiKey: "AIzaSyBPXPOxZeezDBn2YtgzTsj-Dxje62lYYOQ",
+    authDomain: "proxy-list-c06ea.firebaseapp.com",
+    projectId: "proxy-list-c06ea",
+    storageBucket: "proxy-list-c06ea.firebasestorage.app",
+    messagingSenderId: "31862303655",
+    appId: "1:31862303655:web:d3e93df7a86ce31cf1e482",
+    measurementId: "G-P51BKTLW18"
+  };
