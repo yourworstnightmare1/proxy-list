@@ -34,6 +34,7 @@
 window.__FIREBASE_CONFIG__ = {
   apiKey: "AIzaSyBPXPOxZeezDBn2YtgzTsj-Dxje62lYYOQ",
   authDomain: "proxy-list-c06ea.firebaseapp.com",
+  databaseURL: "https://proxy-list-c06ea-default-rtdb.firebaseio.com",
   projectId: "proxy-list-c06ea",
   storageBucket: "proxy-list-c06ea.firebasestorage.app",
   messagingSenderId: "31862303655",
