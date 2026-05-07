@@ -475,10 +475,39 @@
       z-index: 25;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
     }
+    #activeUsersFooterLine {
+      position: fixed;
+      left: 50%;
+      bottom: 1rem;
+      transform: translateX(-50%);
+      z-index: 24;
+      margin: 0;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(18, 25, 32, 0.92);
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.2;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      white-space: nowrap;
+    }
+    #activeUsersFooterLine .active-users-count {
+      color: var(--ok);
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
     @media (max-width: 640px) {
       #backToTopBtn {
         right: 0.75rem;
         bottom: 0.75rem;
+      }
+      #activeUsersFooterLine {
+        bottom: 0.75rem;
+        font-size: 0.74rem;
+        max-width: calc(100vw - 7rem);
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
     .removal-notice {
@@ -702,9 +731,6 @@
         </div>
       </section>
       <div class="stats" id="stats"></div>
-      <div class="stats" id="activeUsersWrap" hidden>
-        <p class="stat-line" id="activeUsersLine" aria-live="polite"></p>
-      </div>
       <div id="tableWrap"></div>
     </main>
   </div>
@@ -719,6 +745,7 @@
       (<code>list.md</code>)
     </p>
     <p id="listVersionLine"></p>
+    <p id="activeUsersFooterLine" aria-live="polite" hidden></p>
   </footer>
   <div class="summary-backdrop" id="summaryBackdrop" aria-hidden="true">
     <section class="summary-modal" role="dialog" aria-modal="true" aria-labelledby="summaryTitle">
@@ -953,17 +980,20 @@
     }
 
     function updateActiveUsersDisplay() {
-      const wrap = $("activeUsersWrap");
-      const line = $("activeUsersLine");
-      if (!wrap || !line) return;
+      const line = $("activeUsersFooterLine");
+      if (!line) return;
       if (!useFirebaseClicks || activeSessionsCount === null) {
-        wrap.hidden = true;
+        line.hidden = true;
         line.textContent = "";
         return;
       }
-      wrap.hidden = false;
-      line.textContent =
-        "Active now (approx. open tabs / sessions): " + activeSessionsCount;
+      line.hidden = false;
+      setHtml(
+        line,
+        'Active Users: <span class="active-users-count">' +
+          escapeHtml(String(activeSessionsCount)) +
+          "</span>"
+      );
     }
 
     function startPresenceTracking() {
@@ -1480,20 +1510,27 @@
       );
     }
 
-    async function refreshClickCellsForSlice(rowsSlice) {
+    async function refreshClickCellsForSlice(rowsSlice, startIndex) {
       if (!rowsSlice || !rowsSlice.length) return;
-      const map = await fetchClickCounts(rowsSlice.map((r) => r.link));
       const tbody = $("linksTableBody");
       if (!tbody || !tbody.isConnected) return;
-      const start = Math.max(0, tbody.children.length - rowsSlice.length);
-      for (let i = start; i < tbody.children.length; i++) {
-        const tr = tbody.children[i];
+      const start = Number.isFinite(startIndex) ? Math.max(0, startIndex) : 0;
+      const targets = [];
+      for (let i = 0; i < rowsSlice.length; i++) {
+        const tr = tbody.children[start + i];
         if (!tr || !tr.querySelector) continue;
         const td = tr.querySelector("td.click-cell");
         if (!td) continue;
-        const u = td.getAttribute("data-click-url");
-        if (!u) continue;
-        td.textContent = String(countForUrl(map, u));
+        const link = rowsSlice[i] && rowsSlice[i].link ? String(rowsSlice[i].link) : "";
+        if (!link) continue;
+        targets.push({ td, link });
+      }
+      if (!targets.length) return;
+      const map = await fetchClickCounts(targets.map((t) => t.link));
+      if (!tbody.isConnected) return;
+      for (const t of targets) {
+        if (!t.td || !t.td.isConnected) continue;
+        t.td.textContent = String(countForUrl(map, t.link));
       }
     }
 
@@ -1503,13 +1540,14 @@
       if (!st.tbody.isConnected) return;
       st.chunkInFlight = true;
       try {
+        const startIndex = st.rendered;
         const next = Math.min(st.rendered + TABLE_CHUNK_SIZE, st.filtered.length);
         const slice = st.filtered.slice(st.rendered, next);
         const html = slice.map(buildRowTrHtml).join("");
         insertAdjacentHtmlSafe(st.tbody, "beforeend", html);
         st.rendered = next;
         if (tableInfiniteState !== st) return;
-        await refreshClickCellsForSlice(slice);
+        await refreshClickCellsForSlice(slice, startIndex);
         if (tableInfiniteState !== st || !st.tbody.isConnected) return;
         if (st.rendered >= st.filtered.length && st.sentinel && st.sentinel.parentNode) {
           st.sentinel.remove();
@@ -1655,7 +1693,7 @@
           "</div>"
       );
 
-      await refreshClickCellsForSlice(firstChunk);
+      await refreshClickCellsForSlice(firstChunk, 0);
       setupTableInfiniteScroll(filtered, initial);
     }
 
