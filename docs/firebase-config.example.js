@@ -11,6 +11,25 @@
    match /link_clicks/{id} {
      allow read: if request.auth != null;
      allow create, update: if request.auth != null;
+   }
+
+   Active user count uses Realtime Database (not Firestore). In Firebase Console:
+   Build → Realtime Database → Create database. If the SDK cannot connect, add
+   databaseURL from that screen to the config object below, e.g.:
+   databaseURL: "https://<projectId>-default-rtdb.firebaseio.com"
+
+   Example Realtime Database rules for path "presence/{sessionId}":
+
+   {
+     "rules": {
+       "presence": {
+         ".read": "auth != null",
+         "$key": {
+           ".write": "auth != null && ((!data.exists() && newData.child('uid').val() === auth.uid) || (data.exists() && !newData.exists() && data.child('uid').val() === auth.uid))",
+           ".validate": "!newData.exists() || newData.hasChildren(['uid', 'ts'])"
+         }
+       }
+     }
    } */
 window.__FIREBASE_CONFIG__ = {
   apiKey: "AIzaSyBPXPOxZeezDBn2YtgzTsj-Dxje62lYYOQ",

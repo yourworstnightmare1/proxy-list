@@ -702,6 +702,9 @@
         </div>
       </section>
       <div class="stats" id="stats"></div>
+      <div class="stats" id="activeUsersWrap" hidden>
+        <p class="stat-line" id="activeUsersLine" aria-live="polite"></p>
+      </div>
       <div id="tableWrap"></div>
     </main>
   </div>
@@ -774,6 +777,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
   <!-- Example must load first: onerror+src swap is async, so the inline app could run before fallback executed. Local override is optional (404 on Pages is harmless). -->
   <script src="firebase-config.example.js"></script>
   <script src="firebase-config.local.js"></script>
@@ -857,6 +861,10 @@
     let failThreshold = 3;
     let useFirebaseClicks = false;
     let firebaseDb = null;
+    /** Realtime DB: session nodes under presence/ for approximate “active now” count. */
+    let firebasePresenceDb = null;
+    let activeSessionsCount = null;
+    let presenceListenerAttached = false;
 
     const LS_CLICK_KEY = "proxyList_link_clicks_v1";
 
@@ -915,6 +923,7 @@
           .signInAnonymously()
           .then(() => {
             useFirebaseClicks = true;
+            startPresenceTracking();
             return true;
           })
           .catch((err) => {
@@ -929,13 +938,68 @@
             );
             useFirebaseClicks = false;
             firebaseDb = null;
+            activeSessionsCount = null;
+            updateActiveUsersDisplay();
             return false;
           });
       } catch (e) {
         console.error("[proxy-list] Firebase initializeApp / firestore() failed:", e);
         useFirebaseClicks = false;
         firebaseDb = null;
+        activeSessionsCount = null;
+        updateActiveUsersDisplay();
         return Promise.resolve(false);
+      }
+    }
+
+    function updateActiveUsersDisplay() {
+      const wrap = $("activeUsersWrap");
+      const line = $("activeUsersLine");
+      if (!wrap || !line) return;
+      if (!useFirebaseClicks || activeSessionsCount === null) {
+        wrap.hidden = true;
+        line.textContent = "";
+        return;
+      }
+      wrap.hidden = false;
+      line.textContent =
+        "Active now (approx. open tabs / sessions): " + activeSessionsCount;
+    }
+
+    function startPresenceTracking() {
+      if (!useFirebaseClicks || typeof firebase === "undefined" || !firebase.auth().currentUser) return;
+      if (typeof firebase.database !== "function") {
+        console.warn("[proxy-list] firebase-database-compat.js not loaded; skipping presence.");
+        return;
+      }
+      try {
+        if (!firebasePresenceDb) {
+          firebasePresenceDb = firebase.database();
+        }
+        const uid = firebase.auth().currentUser.uid;
+        const sessRef = firebasePresenceDb.ref("presence").push();
+        sessRef
+          .set({
+            uid: uid,
+            ts: firebase.database.ServerValue.TIMESTAMP,
+          })
+          .catch(function (err) {
+            console.warn(
+              "[proxy-list] Presence write failed — create Realtime Database in Firebase Console and add rules (see firebase-config.example.js).",
+              err
+            );
+          });
+        sessRef.onDisconnect().remove();
+
+        if (!presenceListenerAttached) {
+          presenceListenerAttached = true;
+          firebasePresenceDb.ref("presence").on("value", function (snap) {
+            activeSessionsCount = snap.numChildren();
+            updateActiveUsersDisplay();
+          });
+        }
+      } catch (err) {
+        console.warn("[proxy-list] Realtime Database unavailable for presence:", err);
       }
     }
 
