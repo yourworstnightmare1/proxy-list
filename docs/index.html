@@ -786,17 +786,61 @@
   ></script>
   <script>
     const $ = (id) => document.getElementById(id);
+    /**
+     * DOMPurify drops orphan <tr>/<th>/<td> (not under <table>), which broke "Most opened" rows.
+     * Wrap table child fragments, sanitize, then take the inner HTML of thead/tbody.
+     */
+    function sanitizeTheadInnerFragment(raw) {
+      if (!raw) return "";
+      if (!window.DOMPurify) return raw;
+      const clean = DOMPurify.sanitize("<table><thead>" + raw + "</thead></table>");
+      const tpl = document.createElement("template");
+      tpl.innerHTML = clean;
+      const thead = tpl.content.querySelector("thead");
+      return thead ? thead.innerHTML : "";
+    }
+
+    function sanitizeTbodyInnerFragment(raw) {
+      if (!raw) return "";
+      if (!window.DOMPurify) return raw;
+      const clean = DOMPurify.sanitize("<table><tbody>" + raw + "</tbody></table>");
+      const tpl = document.createElement("template");
+      tpl.innerHTML = clean;
+      const tbody = tpl.content.querySelector("tbody");
+      return tbody ? tbody.innerHTML : "";
+    }
+
     /** Assign HTML after sanitization so static analysis (e.g. CodeQL) sees a guarded DOM sink. */
     function setHtml(el, html) {
       if (!el) return;
       const raw = html == null ? "" : String(html);
-      el.innerHTML = window.DOMPurify ? DOMPurify.sanitize(raw) : raw;
+      let out = raw;
+      if (window.DOMPurify) {
+        const tag = el.tagName;
+        if (tag === "THEAD") {
+          out = sanitizeTheadInnerFragment(raw);
+        } else if (tag === "TBODY") {
+          out = sanitizeTbodyInnerFragment(raw);
+        } else {
+          out = DOMPurify.sanitize(raw);
+        }
+      }
+      el.innerHTML = out;
     }
 
     function insertAdjacentHtmlSafe(el, position, html) {
       if (!el) return;
       const raw = html == null ? "" : String(html);
-      const clean = window.DOMPurify ? DOMPurify.sanitize(raw) : raw;
+      let clean;
+      if (window.DOMPurify) {
+        if (el.tagName === "TBODY" && position === "beforeend") {
+          clean = sanitizeTbodyInnerFragment(raw);
+        } else {
+          clean = DOMPurify.sanitize(raw);
+        }
+      } else {
+        clean = raw;
+      }
       el.insertAdjacentHTML(position, clean);
     }
     let linkLensData = {};
