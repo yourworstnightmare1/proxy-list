@@ -40,7 +40,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 22 |
+> | Games | N/A | N/A | 24 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -66,12 +66,14 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://vcsa.easycharge-batteries.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://account.englishbridalcouture.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mail.adriapartners.net/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://garlandisd.ultradec.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://tourguide.potomacriversafetycommittee.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🌙 Velara
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 67 |
+> | Proxy/Games | captcha | Scramjet | 68 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -142,6 +144,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | http://education.worldplus-intl.org | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://stopsign8.enjoywalensee.ch | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://lightspeedsotuff.recepist.fi | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://art.programming.drama.assignment.geography.geckobungalow.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # ➗ gn-math
 > [!NOTE]
@@ -193,7 +196,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Ultraviolet | 40 |
+> | Proxy/Games | captcha | Ultraviolet | 45 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -237,6 +240,11 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://schoologywork.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://uwubakaheh.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://yassersokawaii.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://idk.eaglercraft.cc | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://me-when-i-dont-lie.eaglercraft.cc | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://cleverstaff.ultradec.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://learningaboutriversafety.potomacriversafetycommittee.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://oliversabaddie.potomacriversafetycommittee.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🍌 Jordan's Math Work
 > [!NOTE]
@@ -318,7 +326,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl | Scramjet, Ultraviolet, Eclipse | 80 |
+> | Proxy/Games | epoxy, libcurl | Scramjet, Ultraviolet, Eclipse | 81 |
 
 > [!IMPORTANT]
 > Nebulo does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -405,6 +413,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://study-achievement.expedicionesytrekking.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://revision-system.fiedleracres.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://study-control.wayner.ca | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://external-content.tongllfoundation.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🌑 Space
 > [!NOTE]
@@ -467,7 +476,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet, Ultraviolet | 87 |
+> | Proxy/Games | unknown | Scramjet, Ultraviolet | 93 |
 
 > [!IMPORTANT]
 > Fern does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -561,6 +570,12 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://clevereducation.samymadethis.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://mathpracticedrawing.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://d1ow0xcl2w4e9a.cloudfront.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://readvc.s3.amazonaws.com/index.html | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://writevc.s3.amazonaws.com/index.html | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://fsmath.s3.amazonaws.com/index.html | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://s3.amazonaws.com/readvc/index.html | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://s3.amazonaws.com/writevc/index.html | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://s3.amazonaws.com/fsmath/index.html | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🟣 UniUB
 > [!NOTE]
@@ -610,7 +625,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 53 |
+> | Proxy/Games | unknown | Scramjet | 54 |
 
 > [!IMPORTANT]
 > Truffled does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -670,6 +685,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://mathematics1.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://n8-math.dev | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://tutoring-services.org | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://hullos-pizza-restaurant.chanka.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🥱 Boredom
 > [!NOTE]
@@ -727,7 +743,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 78 |
+> | Proxy/Games | unknown | Scramjet | 79 |
 
 > [!IMPORTANT]
 > Vapor does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -812,12 +828,13 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://timer.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://wikipedia.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://water.zwanenwater48.nl | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://yoko.wheels.for.tire.is | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 👤 Shadow
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 89 |
+> | Proxy/Games | unknown | unknown | 92 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -913,12 +930,15 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://primepoems.metallicstream.pro | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://coolhistory.metallicstream.pro | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://kupno.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://fastbio.prs7.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://nextlogic.prs7.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://topscience.prs7.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🐶 dogeub
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 96 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 97 |
 
 > [!IMPORTANT]
 > dogeub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1021,6 +1041,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://edu.italianish.beltfrog.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://tub.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://vlargestinks.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://nirbytesofficial-vuuwlhc.fxgaming.eu | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🌕 Lunar
 > [!NOTE]
@@ -1291,7 +1312,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet | 82 |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet | 83 |
 
 > [!IMPORTANT]
 > OverCloaked does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1380,6 +1401,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://student.vocabulary.physics.art.writing.colloky.com.pe | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://overcloaked.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://algebra.physics.computer.assignment.project.dirtchicvt.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://music.geography.biology.geometry.assignment.pubradius.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 😈 Imp Proxy
 > [!NOTE]
@@ -1549,7 +1571,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 97 |
+> | Proxy/Games | Unknown | Scramjet | 99 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1653,6 +1675,8 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://qmzkd.recepist.fi | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://runningatrap.recepist.fi | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://supereader.recepist.fi | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://educatiin.prs7.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://efagmzlrku.fxgaming.eu | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # ⬡ TGLSC Density 4
 > [!NOTE]
@@ -1696,7 +1720,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy, wisp | Scramjet, Ultraviolet | 189 |
+> | Proxy/Games | libcurl, epoxy, wisp | Scramjet, Ultraviolet | 191 |
 
 > [!IMPORTANT]
 > Galaxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1892,6 +1916,8 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://classroom.library.chemistry.learning.music.glenoriebakery.com.au | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://geography.seminar.campus.engineering.learning.easternstamps.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://moreinfo.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://filterbrowser.tire.is | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://geometry.student.physics.teacher.project.bo-kite.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # ♈ Zodiac
 > [!NOTE]
@@ -1912,7 +1938,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 119 |
+> | Proxy/Games | unknown | unknown | 122 |
 
 > [!IMPORTANT]
 > StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2038,12 +2064,15 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://vcsa.babypos.hk | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://filterbrowse.thenookfactory.com | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://vcsa-yt.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://studyhub.alexanderthegreater.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://healthislife.peperepara.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://guardian.consulting-octopus.co.uk | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🍓 Strawberry
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 86 |
+> | Proxy/Games | unknown | unknown | 88 |
 
 > [!IMPORTANT]
 > Strawberry does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2136,6 +2165,8 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://smartbio.reformarchive.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://strawberryistuff.recreatinganew.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://coding.metallicstream.pro | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://strawberry.alexanderthegreater.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://math.consulting-octopus.co.uk | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🧱 Noblocc
 > [!NOTE]
@@ -2294,7 +2325,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 52 |
+> | Proxy/Games | unknown | unknown | 54 |
 
 > [!IMPORTANT]
 > Utopia Education does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2353,12 +2384,14 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://field.paper.preys.nl | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://grade.recap.europeserv.org | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://know.tech.europeserv.org | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://chart.recap.connorliam.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://info.history.bo-kite.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🌘 Lunaar
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet | 11 |
+> | Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet | 12 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2373,12 +2406,13 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://panel.2345dh.com | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learning.lanschool.online | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://ixleducation.org/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://memory-builder.connorliam.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🤍 Lucide
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 22 |
+> | Proxy/Games | captcha | Scramjet | 23 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2404,6 +2438,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://note-taking.mjfinancialservices.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://active-learning.onapon.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://cdn.jsdelivr.net/gh/coinbaselarper/svg@latest/logo.svg | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://ninja.good.subscriber.eilong.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🔷 Celestial
 > [!NOTE]
@@ -2557,7 +2592,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | unknown | unknown | 177 |
+> | Proxy | unknown | unknown | 178 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -2741,6 +2776,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://math.questions.agreca.com.ar | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://xx6w8j79xw5q.fritsche.org | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://jamesbondwantshamburgers.colloky.com.pe | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://nirbytescanlite-cji.fxgaming.eu | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🔺 Vertix
 > [!NOTE]
@@ -2759,7 +2795,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 16 |
+> | Proxy/Games | captcha | Scramjet | 17 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -2782,6 +2818,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://biology.student.assignment.algebra.history.galtex.ca | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://classroom.project.calculus.programming.music.recepist.fi | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://assignment.geometry.physics.lecture.drama.rusticrivergear.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://engineering.english.homework.physics.literature.eilong.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🫘 Sea Bean
 > [!NOTE]
@@ -2848,7 +2885,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 53 |
+> | pending | pending | pending | 55 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -2908,6 +2945,8 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://2.discord.gg.7kctr7pdpp.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://inf85830.colloky.com.pe | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://computers.recepist.fi | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://lanafundementalpapereducation.potomacriversafetycommittee.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://abstractart.peperepara.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🌸 Cherri
 > [!NOTE]
@@ -2946,11 +2985,13 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 1 |
+> | Proxy/Games | unknown | Scramjet | 3 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://scramupdate.cfd/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://index.delia-derbyshire.net | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://grigger.eaglercraft.cc | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # ❤️ BloxCraft Games
 > [!NOTE]
@@ -3004,7 +3045,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://gaming.appwrite.network/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://math-worksheets.appwrite.network/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# Luminal
+# 💡 Luminal
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
@@ -3051,7 +3092,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 18 |
+> | Proxy/Games | unknown | unknown | 19 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3073,6 +3114,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://knowledge-flow.maverickden.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://focus-system.ncknms.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://study-performance.wayner.ca | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://study-hard-smart.derekcturner.net | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # Suntree
 > [!NOTE]
@@ -3119,7 +3161,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | - | - | - | - | - | - |
 | | https://noterplusfire02.web.app/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# Marz
+# 🍫 Marz
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
@@ -3133,11 +3175,11 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://trim.barberduck.ro/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://trimmer.barberduck.ro/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# Strongdog
+# 🐕‍🦺 Strongdog
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 60 |
+> | pending | pending | pending | 63 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -3151,6 +3193,30 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://chemistry.computer.english.geography.reading.ramnarine.com/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://kingvonprime.boiso.ar/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://oliuzzxewu.mrwheeler.uk/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://jmehynqnvt.aura-alcove.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://tvufcmkxyp.plik-perm.ru/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://okvrlsgvsq.pcrage2000.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://zgdhgzrcjx.stonestackstrategies.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://pucjpeaavu.bitmagazin.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://niehhoefly.boba.org/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://seminar.campus.assignment.vocabulary.grammar.mckenziemds.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://art.literature.homework.science.student.derementeria.cl | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://technology.reading.drama.programming.geometry.kormann.name | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://project.studying.geography.homework.seminar.mckenziemds.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://computer.biology.teacher.campus.seminar.ianmaffett.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://geography.physics.classroom.engineering.computer.cwbots.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://lecture.campus.chemistry.science.music.onachile.cl | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://geometry.grammar.math.seminar.english.nabinkhadka.com.np | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://vocabulary.studying.physics.art.history.clinicamarshaka.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://lecture.literature.art.learning.science.forkfront.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://vocabulary.seminar.project.engineering.writing.ih4a.co.za | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://geometry.studying.english.seminar.computer.megamor.com.br | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://writing.engineering.computer.classroom.calculus.retrolegends.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://science.teacher.assignment.physics.homework.shatrughansingh.com.np | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://library.literature.geometry.student.project.mwbread.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://history.algebra.science.classroom.campus.recruitment7.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://algebra.geometry.campus.reading.calculus.catril.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://algebra.science.vocabulary.geometry.writing.recepist.fi | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://art.reading.biology.geometry.drama.renaca.com | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://history.math.geometry.english.teacher.babypos.hk | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://math.art.technology.drama.assignment.babypos.hk | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -3204,6 +3270,9 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://library.seminar.vocabulary.drama.learning.recepist.fi | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://homework.learning.drama.lecture.grammar.dirtchicvt.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://drama.classroom.geography.seminar.lecture.coosemansla.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://vocabulary.calculus.music.classroom.homework.ultradec.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://vlgmymwqjn.alexanderthegreater.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://clever.com.consulting-octopus.co.uk | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🧪 Totally Science
 > [!NOTE]
@@ -3450,42 +3519,6 @@ Added a back to top button, which takes you back to the top of the webpage
 | - | - | - | - | - | - |
 | | http://mintys.edu.liceotajamar.cl/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# SDXP
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | pending | pending | 24 |
-
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://jmehynqnvt.aura-alcove.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://tvufcmkxyp.plik-perm.ru/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://okvrlsgvsq.pcrage2000.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://zgdhgzrcjx.stonestackstrategies.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://pucjpeaavu.bitmagazin.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://niehhoefly.boba.org/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://seminar.campus.assignment.vocabulary.grammar.mckenziemds.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://art.literature.homework.science.student.derementeria.cl | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://technology.reading.drama.programming.geometry.kormann.name | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://project.studying.geography.homework.seminar.mckenziemds.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://computer.biology.teacher.campus.seminar.ianmaffett.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://geography.physics.classroom.engineering.computer.cwbots.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://lecture.campus.chemistry.science.music.onachile.cl | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://geometry.grammar.math.seminar.english.nabinkhadka.com.np | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://vocabulary.studying.physics.art.history.clinicamarshaka.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://lecture.literature.art.learning.science.forkfront.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://vocabulary.seminar.project.engineering.writing.ih4a.co.za | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://geometry.studying.english.seminar.computer.megamor.com.br | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://writing.engineering.computer.classroom.calculus.retrolegends.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://science.teacher.assignment.physics.homework.shatrughansingh.com.np | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://library.literature.geometry.student.project.mwbread.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://history.algebra.science.classroom.campus.recruitment7.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://algebra.geometry.campus.reading.calculus.catril.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://algebra.science.vocabulary.geometry.writing.recepist.fi | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-
 # 🦆 Duckmath
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -3530,7 +3563,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://m.wobwob.duckdns.org | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://dashboard.wobwob.duckdns.org | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 
-# Hunter's Proxy
+# 🏹 Hunter's Proxy
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
@@ -3553,7 +3586,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 20 |
+> | pending | pending | pending | 25 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -3580,6 +3613,11 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://pausd.schooloqy.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://rammer.nana.supermario.gq | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://rammer.nana.meshtastic.hu | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://classroom.pubradius.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://epsteins-left-ball.pubradius.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://goldennectar.pubradius.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://nuclear-rubber-ducky-ventriloquism.pubradius.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://rammer.nana.nealtacular.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🌴 aspen
 > [!NOTE]
@@ -3664,7 +3702,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | - | - | - | - | - | - |
 | | https://eqbull.thongthaitextile.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# Koopbin
+# 🐢 Koopbin
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
@@ -3677,7 +3715,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | - | - | - | - | - | - |
 | | https://chilly.antartica.ice.wall.vixenlights.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# Korona
+# 🍾 Korona
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
@@ -3704,7 +3742,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | - | - | - | - | - | - |
 | | https://lwklaiww.honufon.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# Luna
+# 🌛 Luna
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
@@ -3891,11 +3929,11 @@ Added a back to top button, which takes you back to the top of the webpage
 | - | - | - | - | - | - |
 | | https://math.poloniacruz.com | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# 📚 Only lessons
+# 📚 Only Lessons
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 2 |
+> | pending | pending | pending | 3 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -3903,12 +3941,15 @@ Added a back to top button, which takes you back to the top of the webpage
 | - | - | - | - | - | - |
 | | https://gabrielultrakill.bestar.sg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://suntree.alex.rf.gd | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
+| | https://ixlpapi.logyca.com.mx | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://education.math.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://study-smart-daily.bigheadpromo.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 5️⃣ 55gms
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | scramjet | 7 |
+> | Proxy/Games | captcha | scramjet | 8 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3919,12 +3960,13 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://brutemath.kavellewatches.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://think-straight.nexus-computing.com | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://www.tasktuna.sbs | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://xn--hq1bm8jfyfl8gvra0a172r.potomacriversafetycommittee.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # ❄️ Frosted
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 10 |
+> | pending | pending | pending | 15 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -3940,6 +3982,11 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://frosted.numbercraftacademy.com | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://api.notariamelipilla.cl | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://frosted.vta-international.com | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://frosted.tongllfoundation.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://frosted.torontowestpsychotherapy.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://education.potomacriversafetycommittee.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://starr.bijayakilla.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://info.alexanderthegreater.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 🚀 Shuttle
 > [!NOTE]
@@ -3961,7 +4008,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 15 |
+> | Proxy/Games | unknown | unknown | 18 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3980,6 +4027,9 @@ Added a back to top button, which takes you back to the top of the webpage
 | | https://vcsa.easternstamps.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://xylora.searching.dirtchicvt.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://xylora.rust.rusticrivergear.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://days.delia-derbyshire.net | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://xylora.tvlinux.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+| | https://clever.chanka.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
 # 👟 Nikehub
 > [!NOTE]
@@ -3991,7 +4041,7 @@ Added a back to top button, which takes you back to the top of the webpage
 | - | - | - | - | - | - |
 | | https://quiz.numbercraftacademy.com/page.html | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# Veil
+# 🙈 Veil
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
@@ -4031,17 +4081,6 @@ Added a back to top button, which takes you back to the top of the webpage
 | - | - | - | - | - | - |
 | | https://poki-boyy.firebaseapp.com/browser.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# OnlyLessons
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 2 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://ixlpapi.logyca.com.mx | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://education.math.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-
 # Chicken Kings Vault
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -4066,3 +4105,23 @@ Added a back to top button, which takes you back to the top of the webpage
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://ixlmathteacherpanel.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# 🐸 NowGG.fun
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | unknown | 1 |
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://mathimformatiopa.potomacriversafetycommittee.org | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
+
+# 🤖 Cyber-Slate
+> [!NOTE]
+> | Category | Capabilities | Protocol(s) | Links |
+> | - | - | - | - |
+> | Proxy/Games | unknown | unknown | 1 |
+
+| Locked | Link | Found Date | Username | Password | Contributor |
+| - | - | - | - | - | - |
+| | https://mfr.alexanderthegreater.com | 5/7/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
