@@ -3454,7 +3454,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 23 |
+> | pending | pending | pending | 24 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -3789,7 +3789,7 @@ Added a back to top button, which takes you back to the top of the webpage
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 4 |
+> | Proxy/Games | unknown | unknown | 8 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -4030,7 +4030,6 @@ Added a back to top button, which takes you back to the top of the webpage
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://poki-boyy.firebaseapp.com/browser.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 
 # OnlyLessons
 > [!NOTE]
