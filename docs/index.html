@@ -774,34 +774,31 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <script>
-    // Load local firebase config (ignored by git); fallback to tracked example.
-    (function loadFirebaseConfig() {
-      function appendScript(src, onload, onerror) {
-        const s = document.createElement("script");
-        s.src = src;
-        s.onload = onload;
-        s.onerror = onerror;
-        document.head.appendChild(s);
-      }
-
-      appendScript(
-        "firebase-config.local.js",
-        function () {},
-        function () {
-          appendScript(
-            "firebase-config.example.js",
-            function () {},
-            function () {
-              window.__FIREBASE_CONFIG__ = window.__FIREBASE_CONFIG__ || {};
-            }
-          );
-        }
-      );
-    })();
-  </script>
+  <!-- Local config is gitignored; 404 falls back to tracked example (loads before inline app). -->
+  <script
+    src="firebase-config.local.js"
+    onerror="this.removeAttribute('onerror'); this.src='firebase-config.example.js';"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"
+    integrity="sha384-+VfUPEb0PdtChMwmBcBmykRMDd+v6D/oFmB3rZM/puCMDYcIvF968OimRh4KQY9a"
+    crossorigin="anonymous"
+  ></script>
   <script>
     const $ = (id) => document.getElementById(id);
+    /** Assign HTML after sanitization so static analysis (e.g. CodeQL) sees a guarded DOM sink. */
+    function setHtml(el, html) {
+      if (!el) return;
+      const raw = html == null ? "" : String(html);
+      el.innerHTML = window.DOMPurify ? DOMPurify.sanitize(raw) : raw;
+    }
+
+    function insertAdjacentHtmlSafe(el, position, html) {
+      if (!el) return;
+      const raw = html == null ? "" : String(html);
+      const clean = window.DOMPurify ? DOMPurify.sanitize(raw) : raw;
+      el.insertAdjacentHTML(position, clean);
+    }
     let linkLensData = {};
     /** Set true after linklens.json has been fetched at least once (lazy). */
     let linkLensHydrated = false;
@@ -879,8 +876,13 @@
             return true;
           })
           .catch((err) => {
+            const msg = String(err?.message || err?.code || "");
+            const referrerBlocked = /referer|referrer/i.test(msg);
             console.error(
-              "[proxy-list] Firebase anonymous sign-in failed — click counts stay in this browser only. In Firebase Console: Authentication → Sign-in method → enable Anonymous. Error:",
+              "[proxy-list] Firebase anonymous sign-in failed — click counts stay in this browser only." +
+                (referrerBlocked
+                  ? " This error usually means the browser API key has HTTP referrer restrictions that exclude this page. Google Cloud Console → APIs & Services → Credentials → your key → Application restrictions → HTTP referrers — add e.g. http://localhost:8080/* and your hosted site (https://….github.io/*)."
+                  : " Firebase Console → Authentication → Sign-in method → enable Anonymous; Settings → Authorized domains must include this host."),
               err
             );
             useFirebaseClicks = false;
@@ -999,14 +1001,16 @@
       if (!sel) return;
       const prev = getMostOpenedProviderChoice();
       const providers = uniq(links.map((d) => d.provider));
-      sel.innerHTML =
+      setHtml(
+        sel,
         '<option value="">All providers</option>' +
-        providers
-          .map(
-            (p) =>
-              '<option value="' + escapeAttr(p) + '">' + escapeHtml(p) + "</option>"
-          )
-          .join("");
+          providers
+            .map(
+              (p) =>
+                '<option value="' + escapeAttr(p) + '">' + escapeHtml(p) + "</option>"
+            )
+            .join("")
+      );
       const pick = prev && providers.includes(prev) ? prev : "";
       sel.value = pick;
       if (pick !== prev) persistMostOpenedProviderChoice(pick);
@@ -1058,7 +1062,7 @@
       if (!sec || !thead || !tbody) return;
       if (moEmpty) {
         moEmpty.hidden = true;
-        moEmpty.innerHTML = "";
+        setHtml(moEmpty, "");
       }
       if (moMount) moMount.hidden = false;
       if (!useFirebaseClicks || !firebaseDb) {
@@ -1122,10 +1126,10 @@
             noteEl.textContent = "";
             noteEl.hidden = true;
           }
-          thead.innerHTML = "";
-          tbody.innerHTML = "";
+          setHtml(thead, "");
+          setHtml(tbody, "");
           if (moEmpty) {
-            moEmpty.innerHTML = emptyStateNoResultsInnerHtml();
+            setHtml(moEmpty, emptyStateNoResultsInnerHtml());
             moEmpty.hidden = false;
           }
           if (moMount) moMount.hidden = true;
@@ -1136,8 +1140,8 @@
           noteEl.textContent = "";
           noteEl.hidden = true;
         }
-        thead.innerHTML = "";
-        tbody.innerHTML = "";
+        setHtml(thead, "");
+        setHtml(tbody, "");
         return;
       }
       sec.hidden = false;
@@ -1172,8 +1176,8 @@
         noteEl.textContent = note;
         noteEl.hidden = false;
       }
-      thead.innerHTML = linkTableTheadRowHtml();
-      tbody.innerHTML = picked.map(({ row, count }) => buildRowTrHtml(row, count)).join("");
+      setHtml(thead, linkTableTheadRowHtml());
+      setHtml(tbody, picked.map(({ row, count }) => buildRowTrHtml(row, count)).join(""));
     }
 
     function uniq(arr) {
@@ -1396,7 +1400,7 @@
         const next = Math.min(st.rendered + TABLE_CHUNK_SIZE, st.filtered.length);
         const slice = st.filtered.slice(st.rendered, next);
         const html = slice.map(buildRowTrHtml).join("");
-        st.tbody.insertAdjacentHTML("beforeend", html);
+        insertAdjacentHtmlSafe(st.tbody, "beforeend", html);
         st.rendered = next;
         if (tableInfiniteState !== st) return;
         await refreshClickCellsForSlice(slice);
@@ -1486,7 +1490,8 @@
       const unsortedCount = Number.isFinite(meta && meta.unsorted_total) ? meta.unsorted_total : 0;
       const combinedTotal = rows.length + unsortedCount;
 
-      $("stats").innerHTML =
+      setHtml(
+        $("stats"),
         '<p class="stat-line">Showing <strong>' +
         filtered.length +
         "</strong> of <strong>" +
@@ -1516,10 +1521,11 @@
         "</strong></p>" +
         (filtered.length > TABLE_CHUNK_SIZE
           ? '<p class="stat-line">More rows load in chunks as you scroll down.</p>'
-          : "");
+          : "")
+      );
 
       if (!filtered.length) {
-        $("tableWrap").innerHTML = emptyStateNoResultsHtml();
+        setHtml($("tableWrap"), emptyStateNoResultsHtml());
         return;
       }
 
@@ -1532,14 +1538,16 @@
           ? '<div id="tableLoadSentinel" class="table-load-sentinel" aria-hidden="true"></div>'
           : "";
 
-      $("tableWrap").innerHTML =
+      setHtml(
+        $("tableWrap"),
         '<div class="table-chunk-wrap"><table><thead>' +
-        theadRow +
-        '</thead><tbody id="linksTableBody">' +
-        firstHtml +
-        "</tbody></table>" +
-        sentinelHtml +
-        "</div>";
+          theadRow +
+          '</thead><tbody id="linksTableBody">' +
+          firstHtml +
+          "</tbody></table>" +
+          sentinelHtml +
+          "</div>"
+      );
 
       await refreshClickCellsForSlice(firstChunk);
       setupTableInfiniteScroll(filtered, initial);
@@ -1659,7 +1667,7 @@
         }
       }
       const sorted = [...byKey.values()].sort((a, b) => a.localeCompare(b));
-      select.innerHTML = '<option value="">Any / Not selected</option>';
+      setHtml(select, '<option value="">Any / Not selected</option>');
       for (const name of sorted) {
         const opt = document.createElement("option");
         opt.value = name;
@@ -1854,8 +1862,10 @@
           const pendingText = hasCheckedDomain(link)
             ? "This link was checked, but no parsable gn-math summary message was captured yet."
             : "No gn-math data found for this link yet.";
-          body.innerHTML =
-            removalHtml + clickStub + '<p class="summary-muted">' + escapeHtml(pendingText) + "</p>";
+          setHtml(
+            body,
+            removalHtml + clickStub + '<p class="summary-muted">' + escapeHtml(pendingText) + "</p>"
+          );
         } else {
           const summary = entry.summary || {};
           const providers = Array.isArray(entry.providers) ? entry.providers : [];
@@ -1894,10 +1904,11 @@
                 .join("")
             : '<tr><td colspan="3" class="summary-muted">No provider lines parsed from source message.</td></tr>';
 
-          body.innerHTML =
+          setHtml(
+            body,
             removalHtml +
-            riskNoticeHtml +
-            clickStub +
+              riskNoticeHtml +
+              clickStub +
             '<p class="summary-muted">Domain: <strong>' +
             escapeHtml(entry.domain || domainOf(link) || "—") +
             '</strong> • Checked: <strong>' +
@@ -1916,8 +1927,9 @@
             escapeHtml(String(summary.total ?? providers.length)) +
             "</span></div></div>" +
             '<table class="provider-table"><thead><tr><th>Provider</th><th>Category</th><th>Result</th></tr></thead><tbody>' +
-            providerRows +
-            "</tbody></table>";
+              providerRows +
+              "</tbody></table>"
+          );
         }
         $("summaryTitle").textContent = "Link summary";
         $("summaryBackdrop").classList.add("open");
@@ -2139,9 +2151,12 @@
       }
       if (bodyEl) {
         const md = meta && meta.update_notice;
-        bodyEl.innerHTML = md && String(md).trim()
-          ? renderMarkdownLiteNotices(String(md))
-          : '<p class="summary-muted">No update notice is available for this version.</p>';
+        setHtml(
+          bodyEl,
+          md && String(md).trim()
+            ? renderMarkdownLiteNotices(String(md))
+            : '<p class="summary-muted">No update notice is available for this version.</p>'
+        );
       }
       $("updateBackdrop").classList.add("open");
       $("updateBackdrop").setAttribute("aria-hidden", "false");
@@ -2172,11 +2187,11 @@
       if (!el) return;
       const md = meta && meta.important_notices;
       if (!md || !String(md).trim()) {
-        el.innerHTML = "";
+        setHtml(el, "");
         el.hidden = true;
         return;
       }
-      el.innerHTML = renderMarkdownLiteNotices(String(md));
+      setHtml(el, renderMarkdownLiteNotices(String(md)));
       el.hidden = false;
     }
 
@@ -2221,7 +2236,7 @@
 
     function buildCheckboxGroup(containerId, values, rows, countForValue, meta, linkCheck) {
       const wrap = $(containerId);
-      wrap.innerHTML = "";
+      setHtml(wrap, "");
       for (const v of values) {
         const lab = document.createElement("label");
         lab.className = "tag";
@@ -2475,10 +2490,12 @@
         })
       )
       .catch((e) => {
-        $("tableWrap").innerHTML =
+        setHtml(
+          $("tableWrap"),
           '<p class="err">Failed to load data. Open this page via GitHub Pages or a local server so <code>data.json</code> can load (file:// blocks fetch).<br><br>' +
-          escapeHtml(e.message) +
-          "</p>";
+            escapeHtml(e.message) +
+            "</p>"
+        );
       });
   </script>
 </body>

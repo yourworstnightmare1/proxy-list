@@ -213,6 +213,11 @@
     <div class="stats" id="stats"></div>
     <div id="tableWrap"></div>
   </main>
+  <script
+    src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"
+    integrity="sha384-+VfUPEb0PdtChMwmBcBmykRMDd+v6D/oFmB3rZM/puCMDYcIvF968OimRh4KQY9a"
+    crossorigin="anonymous"
+  ></script>
   <script>
     const stats = document.getElementById("stats");
     const tableWrap = document.getElementById("tableWrap");
@@ -220,6 +225,12 @@
     const sortMode = document.getElementById("sortMode");
     const contentLoadingOverlay = document.getElementById("contentLoadingOverlay");
     let allLinks = [];
+
+    function setHtml(el, html) {
+      if (!el) return;
+      const raw = html == null ? "" : String(html);
+      el.innerHTML = window.DOMPurify ? DOMPurify.sanitize(raw) : raw;
+    }
 
     function setContentLoading(on) {
       if (!contentLoadingOverlay) return;
@@ -289,15 +300,17 @@
 
     function render() {
       const rowsData = getFilteredAndSortedRows();
-      stats.innerHTML =
+      setHtml(
+        stats,
         'Showing <strong>' +
-        rowsData.length +
-        '</strong> of <strong>' +
-        allLinks.length +
-        "</strong> unsorted links.";
+          rowsData.length +
+          '</strong> of <strong>' +
+          allLinks.length +
+          "</strong> unsorted links."
+      );
 
       if (!rowsData.length) {
-        tableWrap.innerHTML = '<p class="empty">No unsorted links match your search/filter.</p>';
+        setHtml(tableWrap, '<p class="empty">No unsorted links match your search/filter.</p>');
         return;
       }
 
@@ -314,7 +327,10 @@
           );
         })
         .join("");
-      tableWrap.innerHTML = "<table><thead><tr><th>Domain</th><th>Link</th></tr></thead><tbody>" + rows + "</tbody></table>";
+      setHtml(
+        tableWrap,
+        "<table><thead><tr><th>Domain</th><th>Link</th></tr></thead><tbody>" + rows + "</tbody></table>"
+      );
     }
 
     fetch("unsorted.json")
@@ -325,8 +341,8 @@
       .then((payload) => {
         const links = Array.isArray(payload) ? payload : (payload.links || []);
         if (!links.length) {
-          stats.innerHTML = "Unsorted links: <strong>0</strong>";
-          tableWrap.innerHTML = '<p class="empty">No unsorted links right now.</p>';
+          setHtml(stats, "Unsorted links: <strong>0</strong>");
+          setHtml(tableWrap, '<p class="empty">No unsorted links right now.</p>');
           return;
         }
         allLinks = links.map((r) => (typeof r === "string" ? r : r.link)).filter(Boolean);
@@ -337,7 +353,7 @@
         render();
       })
       .catch((e) => {
-        tableWrap.innerHTML = '<p class="err">' + escapeHtml(e.message) + "</p>";
+        setHtml(tableWrap, '<p class="err">' + escapeHtml(e.message) + "</p>");
       });
   </script>
 </body>
