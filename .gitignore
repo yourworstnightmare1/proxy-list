@@ -3,5 +3,4 @@
 __pycache__/
 node_modules/
 docs/firebase-config.local.js
-docs/firebase-config.example.js
 secrets
