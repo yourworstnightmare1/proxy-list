@@ -774,11 +774,9 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <!-- Local config is gitignored; 404 falls back to tracked example (loads before inline app). -->
-  <script
-    src="firebase-config.local.js"
-    onerror="this.removeAttribute('onerror'); this.src='firebase-config.example.js';"
-  ></script>
+  <!-- Example must load first: onerror+src swap is async, so the inline app could run before fallback executed. Local override is optional (404 on Pages is harmless). -->
+  <script src="firebase-config.example.js"></script>
+  <script src="firebase-config.local.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"
     integrity="sha384-+VfUPEb0PdtChMwmBcBmykRMDd+v6D/oFmB3rZM/puCMDYcIvF968OimRh4KQY9a"
