@@ -6,6 +6,12 @@
 
    Leave apiKey empty for browser-only click counts (localStorage).
 
+   Google Cloud → APIs & Services → Credentials → your browser API key →
+   HTTP referrers must include ALL of: your GitHub Pages origin (e.g.
+   https://USER.github.io/*), localhost (e.g. http://localhost:8080/*), AND
+   https://<projectId>.firebaseapp.com/* — Auth runs helper iframes from
+   authDomain; without this, Identity Toolkit returns API_KEY_HTTP_REFERRER_BLOCKED.
+
    For "Most opened", Firestore must allow authenticated clients, e.g.:
 
    match /link_clicks/{id} {
