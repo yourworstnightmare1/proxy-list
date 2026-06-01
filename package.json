@@ -1,5 +1,12 @@
 {
   "dependencies": {
     "firebase": "^12.12.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.96.0"
+  },
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   }
 }
