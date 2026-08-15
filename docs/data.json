@@ -240,20 +240,18 @@
     ]
   },
   "link_check": {
-    "checked_at": "2026-08-15T00:54:39Z",
-    "checked_at_display": "2026-08-15 00:54 UTC",
+    "checked_at": "2026-08-15T06:27:07Z",
+    "checked_at_display": "2026-08-15 06:27 UTC",
     "added_count": 0,
-    "removed_count": 0,
+    "removed_count": 3,
     "added_links": [],
-    "removed_links": []
+    "removed_links": [
+      "https://amd74.gpu74.ru",
+      "https://limto.riesgocrediticio.com",
+      "https://mathstudy.hotelconsuladoinn.com"
+    ]
   },
-  "failing_links": {
-    "https://mathstudy.hotelconsuladoinn.com": 2,
-    "https://amd74.gpu74.ru": 2,
-    "https://limto.riesgocrediticio.com": 2,
-    "https://canva.link/gn-math": 1,
-    "https://nobloccstatus.mattle.uk": 2
-  },
+  "failing_links": {},
   "links": [
     {
       "provider": "💜 Selenite",
@@ -4514,44 +4512,6 @@
       "locked": "",
       "link": "https://bit.frog.ac/",
       "found": "8/3/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍌 Jordan's Math Work",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "additional_notes": "",
-      "locked": "",
-      "link": "https://amd74.gpu74.ru/",
-      "found": "4/30/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🍌 Jordan's Math Work",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "additional_notes": "",
-      "locked": "",
-      "link": "https://limto.riesgocrediticio.com/",
-      "found": "4/30/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
@@ -26527,22 +26487,6 @@
       "locked": "",
       "link": "https://hondaispeak.hondascooterparts.com/",
       "found": "4/17/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🦄 Utopia Education",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [],
-      "protocols": "unknown",
-      "protocol_tags": [],
-      "additional_notes": "this site uses highly detectable domains, very likely all of these are blocked for you",
-      "locked": "",
-      "link": "https://mathstudy.hotelconsuladoinn.com/",
-      "found": "4/27/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
