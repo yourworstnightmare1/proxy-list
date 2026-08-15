@@ -240,33 +240,19 @@
     ]
   },
   "link_check": {
-    "checked_at": "2026-08-14T18:45:09Z",
-    "checked_at_display": "2026-08-14 18:45 UTC",
+    "checked_at": "2026-08-15T00:54:39Z",
+    "checked_at_display": "2026-08-15 00:54 UTC",
     "added_count": 0,
     "removed_count": 0,
     "added_links": [],
     "removed_links": []
   },
   "failing_links": {
-    "https://mathstudy.hotelconsuladoinn.com": 1,
-    "https://amd74.gpu74.ru": 1,
-    "https://limto.riesgocrediticio.com": 1,
-    "https://nobloccstatus.mattle.uk": 1,
-    "https://bestspark.indevs.in": 1,
-    "https://bestspark.sryze.cc": 1,
-    "https://studyready.ryzedns.org": 1,
-    "https://studyready.zone.id": 1,
-    "https://bestspark.nett.to": 1,
-    "https://bestspark.bielenberg.id.au": 1,
-    "https://bestspark.buf2.com": 1,
-    "https://bestspark.krepche.com": 1,
-    "https://bestspark.worldmicroscope.com": 1,
-    "https://bestspark.cafemeridiano.com.br": 1,
-    "https://bestspark.freshmilk.co.za": 1,
-    "https://bestspark.gparente.net.br": 1,
-    "https://bestspark.oxsec.com.mx": 1,
-    "https://bestspark.windowpublication.com.np": 1,
-    "https://quantil.jsdelivr.net/combine/npm/ubzone@1.0.0/assets/index.svg": 1
+    "https://mathstudy.hotelconsuladoinn.com": 2,
+    "https://amd74.gpu74.ru": 2,
+    "https://limto.riesgocrediticio.com": 2,
+    "https://canva.link/gn-math": 1,
+    "https://nobloccstatus.mattle.uk": 2
   },
   "links": [
     {
