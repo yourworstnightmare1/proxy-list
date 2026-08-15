@@ -240,18 +240,16 @@
     ]
   },
   "link_check": {
-    "checked_at": "2026-08-15T06:27:07Z",
-    "checked_at_display": "2026-08-15 06:27 UTC",
+    "checked_at": "2026-08-15T12:26:00Z",
+    "checked_at_display": "2026-08-15 12:26 UTC",
     "added_count": 0,
-    "removed_count": 3,
+    "removed_count": 0,
     "added_links": [],
-    "removed_links": [
-      "https://amd74.gpu74.ru",
-      "https://limto.riesgocrediticio.com",
-      "https://mathstudy.hotelconsuladoinn.com"
-    ]
+    "removed_links": []
   },
-  "failing_links": {},
+  "failing_links": {
+    "https://aintveentry.medscience.cl": 1
+  },
   "links": [
     {
       "provider": "💜 Selenite",
