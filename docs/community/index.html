@@ -374,6 +374,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
   <script src="../firebase-config.example.js"></script>
   <script src="../firebase-config.local.js"></script>
+  <script src="../firebase-auth-ready.js"></script>
   <script>
     (function () {
       const SORT_LS = "proxyList_community_folder_sort_v1";
@@ -895,9 +896,13 @@
 
         var auth = firebase.auth();
         try {
-          await waitForFirebaseAuth(auth);
-          if (!auth.currentUser) {
-            await auth.signInAnonymously();
+          if (window.ProxyListAuth && typeof window.ProxyListAuth.ensureAnonymous === "function") {
+            await window.ProxyListAuth.ensureAnonymous(auth);
+          } else {
+            await waitForFirebaseAuth(auth);
+            if (!auth.currentUser) {
+              await auth.signInAnonymously();
+            }
           }
         } catch (e) {
           showError("Sign-in failed (anonymous). Check Auth is enabled and API key referrer rules: " + (e && e.message ? e.message : String(e)));

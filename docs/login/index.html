@@ -449,6 +449,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
   <script src="../firebase-config.example.js"></script>
   <script src="../firebase-config.local.js"></script>
+  <script src="../firebase-auth-ready.js"></script>
   <script>
     (function () {
       const signedOutPanel = document.getElementById("signedOutPanel");
@@ -818,6 +819,9 @@
       }
 
       function ensureAnonymousSession(auth) {
+        if (window.ProxyListAuth && typeof window.ProxyListAuth.ensureAnonymous === "function") {
+          return window.ProxyListAuth.ensureAnonymous(auth);
+        }
         const waitReady =
           typeof auth.authStateReady === "function" ? auth.authStateReady() : Promise.resolve();
         return waitReady.then(() => {
@@ -941,13 +945,21 @@
       if (!firebase.apps.length) firebase.initializeApp(config);
       const auth = firebase.auth();
       const db = firebase.firestore();
-      try {
-        auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-      } catch (_) {}
+      const authReady =
+        window.ProxyListAuth && typeof window.ProxyListAuth.prepare === "function"
+          ? window.ProxyListAuth.prepare(auth)
+          : Promise.resolve().then(() => {
+              try {
+                auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+              } catch (_) {}
+            });
 
-      auth.onAuthStateChanged((user) => {
-        updatePanels(user);
-        if (isSignedInUser(user)) void afterSignIn(auth, db, false);
+      authReady.finally(() => {
+        auth.onAuthStateChanged((user) => {
+          updatePanels(user);
+          if (isSignedInUser(user)) void afterSignIn(auth, db, false);
+        });
+        updatePanels(auth.currentUser);
       });
 
       githubSignInBtn.addEventListener("click", () => {

@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
-> v6.3 | Released: August 13, 2026
-> r266 | Last Updated: August 13, 2026
-> Total onsite links: 4820 (4478 sorted + 342 unsorted)\
+> v6.3.1 | Released: August 15, 2026
+> r267 | Last Updated: August 15, 2026
+> Total onsite links: 4633 (4291 sorted + 342 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -16,31 +16,9 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 ## Important Notices
 
 ## Update Notice
-
-# Offline downloading
-You can now save the Proxy List as an HTML, text, or markdown file for offline viewing when the list is blocked or not accessable. Note that the offline version has all online features stripped and is really just the bare bones of the list.
-
-# Random link
-You can now choose a random link by clicking the "Random link" button highlighted in purple on the sidebar. It will go through every provider and once it lands on one, you will get a random link from that provider.
-
-# Developer/debug settings
-There is now debug mode for developers and also to improve development. You can fire test notifications, view your user agent, see memory and CPU estimations, and console warnings, errors, and chunk loadtime data.
-
-# Manual resizing
-You can now manually select the mode you want the site to format the site to (mobile, desktop, or auto detect).
-
-# Save data
-You can now import and export your saved filter and settings data in the Settings menu.
-
-## Bugfixes
-Fixed typos where "LinkLens" was used instead of gn-math
-Fixed a bug where the user would be signed out after an update
-Fixed a bug where the user statistics wouldn't track
-Fixed a bug where links wouldn't get pushed automatically and link check workflows would fail
-Fixed a bug where the setting "Grab Link Clicks Per Chunk" had a description that did not match what the setting's options did
-Fixed a bug where some users on mobile would see the "Rotate your device" message even when their device was already in landscape
-Fixed a bug where the filter select dropdown box was substantially larger than intended
-Fixed a bug where the filter select dropdown box in the settings menu showed no options other than any/none
+Fixed a bug that causes you to be repeatedly signed out when going on different pages within the site.
+Added the ability to copy HTML code and text of the offline versions of the site
+Security fixes
 
 # 💜 Selenite
 > [!NOTE]

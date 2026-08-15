@@ -14,6 +14,9 @@
     "offlineExportFullBtn",
     "offlineExportMdBtn",
     "offlineExportTxtBtn",
+    "offlineCopyHtmlLiteBtn",
+    "offlineCopyHtmlFullBtn",
+    "offlineCopyTxtBtn",
   ];
 
   function $(id) {
@@ -43,7 +46,7 @@
   function openModal() {
     var backdrop = $("offlineExportBackdrop");
     if (!backdrop) return;
-    setProgress("Choose a download option above.", 0);
+    setProgress("Choose a download or copy option above.", 0);
     setBusy(false);
     abortController = null;
     backdrop.classList.add("open");
@@ -244,9 +247,38 @@
     var parts = withPurify.split("<!--OFFLINE_BUNDLE_INJECTION-->");
     if (parts.length !== 2) throw new Error("Could not split shell at bundle marker");
 
-    var blob = new Blob([parts[0], bundleBlock, parts[1]], { type: "text/html;charset=utf-8" });
-    setProgress("Download starting…", 100);
-    return blob;
+    var html = parts[0] + bundleBlock + parts[1];
+    setProgress("Ready…", 100);
+    return html;
+  }
+
+  async function buildOfflineHtmlBlob(mode, signal) {
+    var html = await buildOfflineHtml(mode, signal);
+    return new Blob([html], { type: "text/html;charset=utf-8" });
+  }
+
+  async function copyTextToClipboard(text) {
+    var value = String(text == null ? "" : text);
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+      try {
+        await navigator.clipboard.writeText(value);
+        return true;
+      } catch (_) {}
+    }
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = value;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      ta.remove();
+      return !!ok;
+    } catch (_) {
+      return false;
+    }
   }
 
   function buildPlainTextList(data) {
@@ -374,7 +406,7 @@
       var blob;
       var name;
       if (kind === "lite" || kind === "full") {
-        blob = await buildOfflineHtml(kind, signal);
+        blob = await buildOfflineHtmlBlob(kind, signal);
         name = "proxy-list-offline-" + kind + "-" + stampDate() + ".html";
       } else if (kind === "md") {
         var md = await buildListMarkdown(signal);
@@ -402,6 +434,50 @@
     }
   }
 
+  async function runCopy(kind) {
+    if (abortController) return;
+    abortController = new AbortController();
+    setBusy(true);
+    try {
+      var signal = abortController.signal;
+      var text = "";
+      var label = "";
+      if (kind === "html-lite" || kind === "html-full") {
+        var mode = kind === "html-full" ? "full" : "lite";
+        setProgress("Building HTML to copy…", 5);
+        text = await buildOfflineHtml(mode, signal);
+        label = "HTML (" + mode + ")";
+      } else if (kind === "txt") {
+        text = await buildListText(signal);
+        label = "plain text";
+      } else {
+        throw new Error("Unknown copy kind: " + kind);
+      }
+      setProgress("Copying " + label + " to clipboard…", 95);
+      var ok = await copyTextToClipboard(text);
+      if (!ok) {
+        throw new Error(
+          "Clipboard rejected the copy" +
+            (kind === "html-full" ? " (Full HTML is very large — try Lite or Download instead)" : "")
+        );
+      }
+      setProgress(
+        "Copied " + label + " (~" + formatBytesLabel(new Blob([text]).size) + ") to clipboard.",
+        100
+      );
+    } catch (err) {
+      if (err && err.name === "AbortError") {
+        setProgress("Cancelled.", 0);
+      } else {
+        console.warn("[proxy-list] Offline copy failed", err);
+        setProgress("Copy failed: " + (err && err.message ? err.message : String(err)), 0);
+      }
+    } finally {
+      abortController = null;
+      setBusy(false);
+    }
+  }
+
   function wire() {
     var openBtn = $("offlineExportOpenBtn");
     if (openBtn) openBtn.addEventListener("click", openModal);
@@ -418,6 +494,17 @@
     if (mdBtn) mdBtn.addEventListener("click", function () { void runExport("md"); });
     var txtBtn = $("offlineExportTxtBtn");
     if (txtBtn) txtBtn.addEventListener("click", function () { void runExport("txt"); });
+
+    var copyHtmlLiteBtn = $("offlineCopyHtmlLiteBtn");
+    if (copyHtmlLiteBtn) {
+      copyHtmlLiteBtn.addEventListener("click", function () { void runCopy("html-lite"); });
+    }
+    var copyHtmlFullBtn = $("offlineCopyHtmlFullBtn");
+    if (copyHtmlFullBtn) {
+      copyHtmlFullBtn.addEventListener("click", function () { void runCopy("html-full"); });
+    }
+    var copyTxtBtn = $("offlineCopyTxtBtn");
+    if (copyTxtBtn) copyTxtBtn.addEventListener("click", function () { void runCopy("txt"); });
 
     var cancelBtn = $("offlineExportCancelBtn");
     if (cancelBtn) {
@@ -441,6 +528,7 @@
     open: openModal,
     close: closeModal,
     start: runExport,
+    copy: runCopy,
   };
 
   if (document.readyState === "loading") {

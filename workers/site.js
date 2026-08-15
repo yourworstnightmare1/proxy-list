@@ -366,7 +366,7 @@ async function firestoreIncrementDailyClick(env, token, project, docId, displayU
   const day = utcDateId();
   const dailyName = `projects/${project}/databases/(default)/documents/click_daily/${day}`;
   const commitUrl = `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents:commit`;
-  const countPath = `counts.${docId}`;
+  const countPath = firestoreMapFieldPath("counts", docId);
 
   const transformWrite = {
     transform: {
@@ -464,17 +464,22 @@ async function firestoreGetCounts(env, norms) {
   // Public Firestore REST get does not need auth when rules allow read: if true
   await Promise.all(
     norms.map(async (norm) => {
-      const id = await sha256Hex(norm);
-      const res = await fetch(
-        `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents/link_clicks/${id}`
-      );
-      if (!res.ok) {
+      try {
+        const id = await sha256Hex(norm);
+        const res = await fetch(
+          `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents/link_clicks/${id}`
+        );
+        if (!res.ok) {
+          out[norm] = 0;
+          return;
+        }
+        const doc = await res.json();
+        const n = doc.fields && doc.fields.count && doc.fields.count.integerValue;
+        out[norm] = n != null ? Number(n) : 0;
+      } catch (err) {
+        console.error("get_click_one_failed", norm, err);
         out[norm] = 0;
-        return;
       }
-      const doc = await res.json();
-      const n = doc.fields && doc.fields.count && doc.fields.count.integerValue;
-      out[norm] = n != null ? Number(n) : 0;
     })
   );
   return out;
@@ -591,6 +596,12 @@ async function firestoreCommitOrCreate(env, token, project, collection, docId, t
   }
 }
 
+function firestoreMapFieldPath(mapField, key) {
+  // Numeric / hex map keys must be backtick-quoted for Firestore field transforms.
+  const safeKey = String(key || "").replace(/\\/g, "\\\\").replace(/`/g, "\\`");
+  return `${mapField}.\`${safeKey}\``;
+}
+
 async function firestoreRecordPresence(env, opts) {
   const token = await getGoogleAccessToken(env);
   const project = env.FIREBASE_PROJECT_ID;
@@ -598,8 +609,8 @@ async function firestoreRecordPresence(env, opts) {
   const day = utcDateId(now);
   const month = day.slice(0, 7);
   const hour = String(now.getUTCHours()).padStart(2, "0");
-  const hourPath = `hourHeartbeats.${hour}`;
-  const hourUniquePath = `hourUniques.${hour}`;
+  const hourPath = firestoreMapFieldPath("hourHeartbeats", hour);
+  const hourUniquePath = firestoreMapFieldPath("hourUniques", hour);
 
   const dailyTransforms = [
     { fieldPath: "heartbeats", increment: { integerValue: "1" } },

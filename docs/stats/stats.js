@@ -1530,6 +1530,12 @@
   async function ensureAuth(db) {
     if (!db || typeof firebase === "undefined") return;
     var auth = firebase.auth();
+    if (window.ProxyListAuth && typeof window.ProxyListAuth.ensureAnonymous === "function") {
+      try {
+        await window.ProxyListAuth.ensureAnonymous(auth);
+      } catch (_) {}
+      return;
+    }
     if (typeof auth.authStateReady === "function") {
       await auth.authStateReady();
     }

@@ -2762,12 +2762,27 @@
           </div>
         </div>
 
+        <div class="offline-export-section">
+          <h3 class="offline-export-section-title">Copy to clipboard</h3>
+          <div class="offline-export-choice">
+            <button class="btn" id="offlineCopyHtmlLiteBtn" type="button">
+              Copy HTML (Lite) — paste into a .html file
+            </button>
+            <button class="btn" id="offlineCopyHtmlFullBtn" type="button">
+              Copy HTML (Full) — large; may fail in some browsers
+            </button>
+            <button class="btn" id="offlineCopyTxtBtn" type="button">
+              Copy Text — all links as plain text
+            </button>
+          </div>
+        </div>
+
         <p class="offline-export-dev-note">
           Note to developers: It is not recommended you use this file to self-host the Proxy List as this is very limited by design for small download size and use when the normal list is unavailable.
           <a href="https://github.com/yourworstnightmare1/proxy-list" target="_blank" rel="noopener noreferrer">View the README.md on the official repo</a>
           to learn how to self-host the list.
         </p>
-        <p class="summary-muted" id="offlineExportProgress" aria-live="polite">Choose a download option above.</p>
+        <p class="summary-muted" id="offlineExportProgress" aria-live="polite">Choose a download or copy option above.</p>
         <div class="offline-export-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
           <div class="offline-export-progress-bar" id="offlineExportProgressBar"></div>
         </div>
@@ -2805,6 +2820,7 @@
   <!-- Example must load first: onerror+src swap is async, so the inline app could run before fallback executed. Local override is optional (404 on Pages is harmless). -->
   <script src="firebase-config.example.js"></script>
   <script src="firebase-config.local.js"></script>
+  <script src="firebase-auth-ready.js"></script>
   <script src="debug-overlays.js"></script>
   <script src="presence-client.js"></script>
   <script src="submission-utils.js"></script>
@@ -6090,15 +6106,7 @@
         } catch (_) {}
 
         const auth = firebase.auth();
-        // Keep signed-in accounts across update refreshes / reloads.
-        const persistLocal = () => {
-          try {
-            return auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-          } catch (_) {
-            return Promise.resolve();
-          }
-        };
-
+        // Keep signed-in accounts across update refreshes / reloads / page navigations.
         if (!window.__proxyListAuthListenerAttached) {
           window.__proxyListAuthListenerAttached = true;
           auth.onAuthStateChanged((user) => {
@@ -6110,14 +6118,23 @@
           });
         }
 
-        return persistLocal()
-          .then(() => {
-            // Wait until IndexedDB session restore finishes before any anonymous sign-in.
-            if (typeof auth.authStateReady === "function") {
-              return auth.authStateReady();
-            }
-            return authStateReadyPromise;
-          })
+        const prepareAuth =
+          window.ProxyListAuth && typeof window.ProxyListAuth.prepare === "function"
+            ? window.ProxyListAuth.prepare(auth)
+            : Promise.resolve()
+                .then(() => {
+                  try {
+                    return auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+                  } catch (_) {
+                    return null;
+                  }
+                })
+                .then(() => {
+                  if (typeof auth.authStateReady === "function") return auth.authStateReady();
+                  return authStateReadyPromise;
+                });
+
+        return prepareAuth
           .then(() => {
             if (!authStateReady) {
               authStateReady = true;
