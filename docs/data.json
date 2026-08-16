@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "v6.3.1",
-    "revision": "r268",
+    "revision": "r269",
     "last_updated": "August 16, 2026",
     "unsorted_total": 342,
     "important_notices": "",
@@ -9,7 +9,7 @@
     "update_changelog": [
       {
         "version": "v6.3.1",
-        "revision": "r268",
+        "revision": "r269",
         "released": "August 16, 2026",
         "update_notice": "Fixed a bug that causes you to be repeatedly signed out when going on different pages within the site.\nAdded the ability to copy HTML code and text of the offline versions of the site\nSecurity fixes"
       },
@@ -252,29 +252,24 @@
     ]
   },
   "link_check": {
-    "checked_at": "2026-08-16T12:27:22Z",
-    "checked_at_display": "2026-08-16 12:27 UTC",
+    "checked_at": "2026-08-16T18:19:45Z",
+    "checked_at_display": "2026-08-16 18:19 UTC",
     "added_count": 0,
-    "removed_count": 0,
+    "removed_count": 2,
     "added_links": [],
-    "removed_links": []
+    "removed_links": [
+      "https://bobbydongschreinerus8.weebly.com/my-work.html",
+      "https://fastly.jsdelivr.net/gh/mrdavidzs/svgfrosted@A4/surgeray2343.svg"
+    ]
   },
   "failing_links": {
-    "https://bobbydongschreinerus8.weebly.com/my-work.html": 2,
-    "https://account.englishbridalcouture.com": 1,
-    "https://mail.adriapartners.net": 1,
-    "https://cdn.jsdelivr.net/gh/mrdavidzs/svgfrosted@main/alphacore6840.svg": 1,
-    "https://fastly.jsdelivr.net/gh/mrdavidzs/svgfrosted@A4/surgeray2343.svg": 2,
-    "https://niche-site.nichesite.org/?i=1": 1,
-    "https://victor.is-great.org/?i=1": 1,
-    "https://spanish-4b-peak.page.gd/?i=2": 1,
-    "https://mathhomeworkhelperthingy.free.nf/?i=1": 1,
-    "https://securely-is-ahh.fwh.is": 1,
-    "https://slnt.newlifesanctuarychurch.com": 1,
-    "https://slnt.frenchchurch.org": 1,
-    "https://learn.englishbridalcouture.com": 1,
-    "https://potatoesryummy.space": 1,
-    "https://ti108-calculator.hstn.me": 1
+    "https://music.prep.zap3.net": 1,
+    "https://account.englishbridalcouture.com": 2,
+    "https://mail.adriapartners.net": 2,
+    "https://cdn.jsdelivr.net/gh/mrdavidzs/svgfrosted@main/alphacore6840.svg": 2,
+    "https://slnt.newlifesanctuarychurch.com": 2,
+    "https://slnt.frenchchurch.org": 2,
+    "https://learn.englishbridalcouture.com": 2
   },
   "links": [
     {
@@ -30012,22 +30007,6 @@
       "protocol_tags": [],
       "additional_notes": "",
       "locked": "",
-      "link": "https://bobbydongschreinerus8.weebly.com/my-work.html",
-      "found": "4/25/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🫘 Sea Bean",
-      "category": "Games",
-      "capabilities": "N/A",
-      "capability_tags": [],
-      "protocols": "N/A",
-      "protocol_tags": [],
-      "additional_notes": "",
-      "locked": "",
       "link": "https://seabeanixlmath.wikidelia.net",
       "found": "5/6/2026",
       "username": "N/A",
@@ -58518,25 +58497,6 @@
       "additional_notes": "",
       "locked": "",
       "link": "https://cdn.jsdelivr.net/gh/mrdavidzs/svgfrosted@main/alphacore6840.svg",
-      "found": "5/2/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "❄️ Frosted",
-      "category": "Proxy",
-      "capabilities": "unknown",
-      "capability_tags": [],
-      "protocols": "Scramjet, Ultraviolet",
-      "protocol_tags": [
-        "scramjet",
-        "ultraviolet"
-      ],
-      "additional_notes": "",
-      "locked": "",
-      "link": "https://fastly.jsdelivr.net/gh/mrdavidzs/svgfrosted@A4/surgeray2343.svg",
       "found": "5/2/2026",
       "username": "N/A",
       "password": "N/A",

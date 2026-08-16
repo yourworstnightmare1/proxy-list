@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v6.3.1 | Released: August 15, 2026
-> r268 | Last Updated: August 16, 2026
+> r269 | Last Updated: August 16, 2026
 > Total onsite links: 4633 (4291 sorted + 342 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -2014,7 +2014,7 @@ Security fixes
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 67 |
+> | Games | N/A | N/A | 66 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2068,7 +2068,6 @@ Security fixes
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/prime-integral-3530@main/doesn.svg | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/stochastic-combinatorics-7358@main/doesn.svg | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/real-theorem-2414@main/doesn.svg | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bobbydongschreinerus8.weebly.com/my-work.html | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://seabeanixlmath.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/modular-primes-5536@main/doesn.svg | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/iterative-set-theory-8142@main/doesn.svg | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -3971,12 +3970,11 @@ Security fixes
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | unknown | Scramjet, Ultraviolet | 7 |
+> | Proxy | unknown | Scramjet, Ultraviolet | 6 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://cdn.jsdelivr.net/gh/mrdavidzs/svgfrosted@main/alphacore6840.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://fastly.jsdelivr.net/gh/mrdavidzs/svgfrosted@A4/surgeray2343.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://gcore.jsdelivr.net/gh/mrdavidsz/svgfrosted@main/deltarealm6357.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://gcore.jsdelivr.net/gh/mrdavidsz/svgfrosted@main/neonmesh6933.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://sites.google.com/view/frostedbrowserstatic/frosted | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
