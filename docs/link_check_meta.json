@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-08-16T00:57:11Z",
-  "checked_at_display": "2026-08-16 00:57 UTC",
+  "checked_at": "2026-08-16T06:30:19Z",
+  "checked_at_display": "2026-08-16 06:30 UTC",
   "added_count": 0,
-  "removed_count": 0,
+  "removed_count": 1,
   "added_links": [],
-  "removed_links": []
+  "removed_links": [
+    "https://learn.hr24.ro"
+  ]
 }

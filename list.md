@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v6.3.1 | Released: August 15, 2026
-> r267 | Last Updated: August 15, 2026
+> r268 | Last Updated: August 16, 2026
 > Total onsite links: 4633 (4291 sorted + 342 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -366,7 +366,7 @@ Security fixes
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 27 |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 26 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -375,7 +375,6 @@ Security fixes
 | - | - | - | - | - | - |
 | | https://places.vjason.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://ilovenirbytes.savequeechylake.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://learn.hr24.ro/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://area.forwardersoft.com/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://area.vm4construction.uk/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu.rawr.africa.com/ | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
