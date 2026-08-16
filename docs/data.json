@@ -252,32 +252,29 @@
     ]
   },
   "link_check": {
-    "checked_at": "2026-08-16T06:30:19Z",
-    "checked_at_display": "2026-08-16 06:30 UTC",
+    "checked_at": "2026-08-16T12:27:22Z",
+    "checked_at_display": "2026-08-16 12:27 UTC",
     "added_count": 0,
-    "removed_count": 1,
+    "removed_count": 0,
     "added_links": [],
-    "removed_links": [
-      "https://learn.hr24.ro"
-    ]
+    "removed_links": []
   },
   "failing_links": {
-    "https://bobbydongschreinerus8.weebly.com/my-work.html": 1,
-    "https://fastly.jsdelivr.net/gh/mrdavidzs/svgfrosted@A4/surgeray2343.svg": 1,
-    "https://bestspark.indevs.in": 1,
-    "https://bestspark.sryze.cc": 1,
-    "https://studyready.ryzedns.org": 1,
-    "https://studyready.zone.id": 1,
-    "https://bestspark.nett.to": 1,
-    "https://bestspark.bielenberg.id.au": 1,
-    "https://bestspark.buf2.com": 1,
-    "https://bestspark.krepche.com": 1,
-    "https://bestspark.worldmicroscope.com": 1,
-    "https://bestspark.cafemeridiano.com.br": 1,
-    "https://bestspark.freshmilk.co.za": 1,
-    "https://bestspark.gparente.net.br": 1,
-    "https://bestspark.oxsec.com.mx": 1,
-    "https://bestspark.windowpublication.com.np": 1
+    "https://bobbydongschreinerus8.weebly.com/my-work.html": 2,
+    "https://account.englishbridalcouture.com": 1,
+    "https://mail.adriapartners.net": 1,
+    "https://cdn.jsdelivr.net/gh/mrdavidzs/svgfrosted@main/alphacore6840.svg": 1,
+    "https://fastly.jsdelivr.net/gh/mrdavidzs/svgfrosted@A4/surgeray2343.svg": 2,
+    "https://niche-site.nichesite.org/?i=1": 1,
+    "https://victor.is-great.org/?i=1": 1,
+    "https://spanish-4b-peak.page.gd/?i=2": 1,
+    "https://mathhomeworkhelperthingy.free.nf/?i=1": 1,
+    "https://securely-is-ahh.fwh.is": 1,
+    "https://slnt.newlifesanctuarychurch.com": 1,
+    "https://slnt.frenchchurch.org": 1,
+    "https://learn.englishbridalcouture.com": 1,
+    "https://potatoesryummy.space": 1,
+    "https://ti108-calculator.hstn.me": 1
   },
   "links": [
     {
