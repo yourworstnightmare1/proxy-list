@@ -252,28 +252,22 @@
     ]
   },
   "link_check": {
-    "checked_at": "2026-08-17T00:55:03Z",
-    "checked_at_display": "2026-08-17 00:55 UTC",
+    "checked_at": "2026-08-17T06:41:27Z",
+    "checked_at_display": "2026-08-17 06:41 UTC",
     "added_count": 0,
-    "removed_count": 5,
+    "removed_count": 1,
     "added_links": [],
     "removed_links": [
-      "https://account.englishbridalcouture.com",
-      "https://mail.adriapartners.net",
-      "https://slnt.newlifesanctuarychurch.com",
-      "https://slnt.frenchchurch.org",
-      "https://cdn.jsdelivr.net/gh/mrdavidzs/svgfrosted@main/alphacore6840.svg"
+      "https://music.prep.zap3.net"
     ]
   },
   "failing_links": {
-    "https://music.prep.zap3.net": 2,
-    "https://mathematics.calculus.reformarchive.com": 1,
-    "https://english.seminar.lervs.ro": 1,
-    "https://math.science.lervs.ro": 1,
-    "https://rhodium.thenme.net": 1,
-    "https://edu.paschools.cfd": 1,
-    "https://fastly.jsdelivr.net/gh/avaisadev/github.com@latest/index.svg": 1,
-    "https://aintveentry.medscience.cl": 1
+    "https://mathematics.calculus.reformarchive.com": 2,
+    "https://english.seminar.lervs.ro": 2,
+    "https://math.science.lervs.ro": 2,
+    "https://rhodium.thenme.net": 2,
+    "https://learn.englishbridalcouture.com": 1,
+    "https://edu.paschools.cfd": 2
   },
   "links": [
     {
@@ -26343,22 +26337,6 @@
       "locked": "",
       "link": "https://nobloccstatus.mattle.uk",
       "found": "7/10/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "🦄 Utopia Education",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [],
-      "protocols": "unknown",
-      "protocol_tags": [],
-      "additional_notes": "this site uses highly detectable domains, very likely all of these are blocked for you",
-      "locked": "",
-      "link": "https://music.prep.zap3.net/",
-      "found": "4/18/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",
