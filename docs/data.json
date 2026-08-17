@@ -252,22 +252,23 @@
     ]
   },
   "link_check": {
-    "checked_at": "2026-08-17T06:41:27Z",
-    "checked_at_display": "2026-08-17 06:41 UTC",
+    "checked_at": "2026-08-17T12:32:05Z",
+    "checked_at_display": "2026-08-17 12:32 UTC",
     "added_count": 0,
-    "removed_count": 1,
+    "removed_count": 5,
     "added_links": [],
     "removed_links": [
-      "https://music.prep.zap3.net"
+      "https://mathematics.calculus.reformarchive.com",
+      "https://english.seminar.lervs.ro",
+      "https://math.science.lervs.ro",
+      "https://rhodium.thenme.net",
+      "https://edu.paschools.cfd"
     ]
   },
   "failing_links": {
-    "https://mathematics.calculus.reformarchive.com": 2,
-    "https://english.seminar.lervs.ro": 2,
-    "https://math.science.lervs.ro": 2,
-    "https://rhodium.thenme.net": 2,
-    "https://learn.englishbridalcouture.com": 1,
-    "https://edu.paschools.cfd": 2
+    "https://learn.englishbridalcouture.com": 2,
+    "https://testingcf.jsdelivr.net/gh/avaisadev/github.com@latest/index.svg": 1,
+    "https://aintveentry.medscience.cl": 1
   },
   "links": [
     {
@@ -45937,96 +45938,6 @@
       "locked": "",
       "link": "https://assets.editor.p5js.org/6a5a227ea603889ed3109c62/8b2d6b59-5ce0-434f-86ac-e94066bc8d09.html",
       "found": "8/11/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
-    {
-      "provider": "⚛️ Rhodium",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "additional_notes": "",
-      "locked": "",
-      "link": "https://mathematics.calculus.reformarchive.com/",
-      "found": "4/30/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "1NobleCyber",
-      "contributor_url": "https://github.com/1NobleCyber"
-    },
-    {
-      "provider": "⚛️ Rhodium",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "additional_notes": "",
-      "locked": "",
-      "link": "https://english.seminar.lervs.ro",
-      "found": "5/1/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "1NobleCyber",
-      "contributor_url": "https://github.com/1NobleCyber"
-    },
-    {
-      "provider": "⚛️ Rhodium",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "additional_notes": "",
-      "locked": "",
-      "link": "https://math.science.lervs.ro",
-      "found": "5/1/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "1NobleCyber",
-      "contributor_url": "https://github.com/1NobleCyber"
-    },
-    {
-      "provider": "⚛️ Rhodium",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "additional_notes": "",
-      "locked": "",
-      "link": "https://rhodium.thenme.net",
-      "found": "5/11/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "1NobleCyber",
-      "contributor_url": "https://github.com/1NobleCyber"
-    },
-    {
-      "provider": "⚛️ Rhodium",
-      "category": "Proxy/Games",
-      "capabilities": "unknown",
-      "capability_tags": [],
-      "protocols": "Scramjet",
-      "protocol_tags": [
-        "scramjet"
-      ],
-      "additional_notes": "",
-      "locked": "",
-      "link": "https://edu.paschools.cfd/",
-      "found": "8/1/2026",
       "username": "N/A",
       "password": "N/A",
       "contributor": "yourworstnightmare1",

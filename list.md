@@ -3139,20 +3139,6 @@ Security fixes
 | | https://storage.googleapis.com/mathlearning/ilovessp/fckyoukiz/duckmath_416 | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://assets.editor.p5js.org/6a5a227ea603889ed3109c62/8b2d6b59-5ce0-434f-86ac-e94066bc8d09.html | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# ⚛️ Rhodium
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 5 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://mathematics.calculus.reformarchive.com/ | 4/30/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://english.seminar.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://math.science.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://rhodium.thenme.net | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://edu.paschools.cfd/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 # ✨ Equinox
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
