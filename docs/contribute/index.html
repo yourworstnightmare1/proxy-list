@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+    <script src="../data-loader.js"></script>
     <script src="../debug-overlays.js"></script>
-<meta name="google-adsense-account" content="ca-pub-8449488085448128" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449488085448128" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contribute | Proxy list</title>
   <link rel="icon" type="image/png" href="../favicon.png" />
@@ -745,10 +744,12 @@
           }
         }
 
-        const res = await fetch("../data.json");
-        if (!res.ok) throw new Error("Could not load data.json (" + res.status + ")");
-        const payload = await res.json();
-        const links = Array.isArray(payload) ? payload : (payload.links || []);
+        const json = await ProxyListData.fetchListPayload();
+        const links = ProxyListData.isCompactPayload(json)
+          ? ProxyListData.expandAllLinks(json)
+          : Array.isArray(json)
+            ? json
+            : json.links || [];
         const byName = new Map();
         let totalRows = 0;
         for (const row of links) {

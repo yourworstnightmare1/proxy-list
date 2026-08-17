@@ -2,13 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <!-- AdSense: use site URL https://yourworstnightmare1.github.io/proxy-list/ so ads.txt resolves at …/proxy-list/ads.txt -->
-  <meta name="google-adsense-account" content="ca-pub-8449488085448128" />
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449488085448128"
-    crossorigin="anonymous"
-  ></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
     (function () {
@@ -790,31 +783,6 @@
       transition: none !important;
       scroll-behavior: auto !important;
     }
-    /* Bottom_01 — responsive display ad above site footer */
-    .page-bottom-ad {
-      border-top: 1px solid var(--border);
-      padding: 1.25rem 1rem 1.5rem;
-      background: var(--bg);
-      text-align: center;
-    }
-    .page-bottom-ad-inner {
-      max-width: min(1100px, 100%);
-      width: 100%;
-      margin: 0 auto;
-    }
-    .page-bottom-ad-inner ins.adsbygoogle {
-      display: block;
-      width: 100%;
-    }
-    .page-bottom-ad-placeholder {
-      margin: 0;
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.45;
-      padding: 1rem;
-      border: 1px dashed var(--border);
-      border-radius: 8px;
-    }
     label[for="q"] { display: block; font-size: 0.75rem; color: var(--muted); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.04em; }
     .search-wrap {
       position: relative;
@@ -1033,6 +1001,13 @@
       background: var(--bg);
       z-index: 1;
     }
+    tr.virtual-pad-top td,
+    tr.virtual-pad-bottom td {
+      padding: 0 !important;
+      border: none !important;
+      line-height: 0;
+      background: var(--bg) !important;
+    }
     a {
       color: var(--accent);
       overflow-wrap: anywhere;
@@ -1181,7 +1156,7 @@
       min-width: 52rem;
     }
     .table-load-sentinel {
-      height: 2px;
+      height: 16px;
       width: 100%;
       pointer-events: none;
     }
@@ -2037,7 +2012,6 @@
     html.embed-mode body.orientation-locked > :not(.orientation-warning) {
       display: revert !important;
     }
-    html.embed-mode .page-bottom-ad,
     html.embed-mode #siteUpdateBanner,
     html.embed-mode .account-corner,
     html.embed-mode .embed-hide { display: none !important; }
@@ -2312,26 +2286,6 @@
       </div>
       <div id="tableWrap"></div>
     </main>
-  </div>
-  <div class="page-bottom-ad" aria-label="Advertisement">
-    <div class="page-bottom-ad-inner">
-      <!-- Bottom_01 -->
-      <ins
-        id="pageFooterAdIns"
-        class="adsbygoogle"
-        style="display: block"
-        data-ad-client="ca-pub-8449488085448128"
-        data-ad-slot="3038848022"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <p class="page-bottom-ad-placeholder" id="pageFooterAdPlaceholder" hidden>
-        Configure AdSense IDs on the ad unit above if ads do not appear.
-      </p>
-    </div>
   </div>
   <footer class="site-footer">
     <p>
@@ -2821,11 +2775,28 @@
   <script src="firebase-config.example.js"></script>
   <script src="firebase-config.local.js"></script>
   <script src="firebase-auth-ready.js"></script>
-  <script src="debug-overlays.js"></script>
+  <script src="data-loader.js"></script>
+  <script>
+    (function () {
+      var debug = false;
+      try {
+        var raw = localStorage.getItem("proxyList_app_settings_v1");
+        if (raw) debug = !!JSON.parse(raw).debugMode;
+        if (!debug) {
+          var mirror = localStorage.getItem("proxyList_debug_overlays_v1");
+          if (mirror) debug = !!JSON.parse(mirror).debugMode;
+        }
+      } catch (_) {}
+      if (debug) {
+        var s = document.createElement("script");
+        s.src = "debug-overlays.js";
+        document.head.appendChild(s);
+      }
+    })();
+  </script>
   <script src="presence-client.js"></script>
   <script src="submission-utils.js"></script>
-  <script src="site-notifications.js"></script>
-  <script src="offline-export.js"></script>
+  <script defer src="site-notifications.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"
     integrity="sha384-+VfUPEb0PdtChMwmBcBmykRMDd+v6D/oFmB3rZM/puCMDYcIvF968OimRh4KQY9a"
@@ -2833,28 +2804,6 @@
   ></script>
   <script>
     const $ = (id) => document.getElementById(id);
-
-    /** Bottom_01: validate IDs / placeholder only; push runs in inline script after the ins. */
-    function initPageFooterAd() {
-      const ins = document.getElementById("pageFooterAdIns");
-      const placeholder = document.getElementById("pageFooterAdPlaceholder");
-      if (!ins) return;
-      const client = String(ins.getAttribute("data-ad-client") || "").trim();
-      const slot = String(ins.getAttribute("data-ad-slot") || "").trim();
-      const looksConfigured =
-        /^ca-pub-\d{10,20}$/.test(client) &&
-        /^\d+$/.test(slot) &&
-        slot.length >= 8 &&
-        !client.includes("XXXX");
-      if (!looksConfigured) {
-        ins.style.display = "none";
-        if (placeholder) placeholder.hidden = false;
-        return;
-      }
-      if (placeholder) placeholder.hidden = true;
-    }
-
-    initPageFooterAd();
 
     /**
      * DOMPurify drops orphan <tr>/<th>/<td> (not under <table>), which broke "Most opened" rows.
@@ -3579,10 +3528,17 @@
       if (!appSettings.saveSettingsLocally) return;
       const db = await openSettingsDb();
       if (!db) return;
-      try {
-        const tx = db.transaction(IDB_APP_SETTINGS_STORE, "readwrite");
-        tx.objectStore(IDB_APP_SETTINGS_STORE).put(settings, "default");
-      } catch (_) {}
+      await new Promise((resolve) => {
+        try {
+          const tx = db.transaction(IDB_APP_SETTINGS_STORE, "readwrite");
+          tx.objectStore(IDB_APP_SETTINGS_STORE).put(settings, "default");
+          tx.oncomplete = () => resolve();
+          tx.onerror = () => resolve();
+          tx.onabort = () => resolve();
+        } catch (_) {
+          resolve();
+        }
+      });
     }
 
     function writeAppSettingsToLocalStorage(settings) {
@@ -3634,7 +3590,12 @@
       if (fromLs && fromLs.saveSettingsLocally) {
         const fromIdb = await readAppSettingsFromIdb();
         if (fromIdb && typeof fromIdb === "object") {
-          merged = Object.assign({}, fromLs, fromIdb);
+          // localStorage is written synchronously; IndexedDB can lag a reload.
+          merged = Object.assign({}, fromIdb, fromLs);
+          if (fromLs.debugMode === true || fromIdb.debugMode === true) merged.debugMode = true;
+          if (fromLs.debugPerfGraph === true || fromIdb.debugPerfGraph === true) {
+            merged.debugPerfGraph = true;
+          }
           appSettingsLoadedFromIdb = true;
         }
       }
@@ -3788,7 +3749,7 @@
         throw new Error("unsupported_format");
       }
       if (data.settings && typeof data.settings === "object") {
-        applyUserSettings(data.settings);
+        applyUserSettings(data.settings, { applyDebugFromRemote: true });
       } else if (data.app && typeof data.app === "object") {
         applyAppSettings(data.app);
       }
@@ -4711,7 +4672,7 @@
       });
     }
 
-    function applyUserSettings(settings) {
+    function applyUserSettings(settings, options) {
       if (!settings || typeof settings !== "object") return;
       applyingUserSettings = true;
       try {
@@ -4762,7 +4723,18 @@
           if (linkSortSel) linkSortSel.value = listSortMode;
         }
         if (settings.app && typeof settings.app === "object") {
-          applyAppSettings(settings.app, { skipUi: true });
+          const remoteApp = settings.app;
+          // Debug overlays are device-local. Cloud/profile settings must not turn
+          // them off after Enable & Refresh (profile fetch lands after reload).
+          const app =
+            options && options.applyDebugFromRemote
+              ? remoteApp
+              : Object.assign({}, remoteApp, {
+                  debugMode: appSettings.debugMode,
+                  debugShowUserAgent: appSettings.debugShowUserAgent,
+                  debugPerfGraph: appSettings.debugPerfGraph,
+                });
+          applyAppSettings(app, { skipUi: true });
         }
       } finally {
         applyingUserSettings = false;
@@ -5191,6 +5163,9 @@
 
     const LS_CLICK_KEY = "proxyList_link_clicks_v1";
     const LS_SAVED_LINKS_KEY = "proxyList_saved_links_v1";
+    const LS_CLICK_COUNT_DISK = "proxyList_clickCountDisk_v1";
+    /** Latest counts returned by POST /api/link-click (before read quota catches up). */
+    const clickCountCache = new Map();
 
     function isFirestorePermissionDenied(err) {
       const code = err && err.code ? String(err.code) : "";
@@ -5253,10 +5228,59 @@
     }
 
     function normalizeUrlKeyForClicks(u) {
+      if (
+        typeof window.ProxyListPresence !== "undefined" &&
+        typeof window.ProxyListPresence.normalizeClickUrl === "function"
+      ) {
+        return window.ProxyListPresence.normalizeClickUrl(u);
+      }
+      let url = String(u || "").trim();
+      if (!url) return "";
+      if (!/^https?:\/\//i.test(url)) url = "https://" + url;
+      try {
+        const parsed = new URL(url);
+        if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return "";
+        let out = parsed.href;
+        if (out.endsWith("/") && (out.match(/\//g) || []).length > 3) out = out.replace(/\/+$/, "");
+        return out.slice(0, 2048);
+      } catch (_) {
+        return "";
+      }
+    }
+
+    function legacyNormalizeUrlKey(u) {
+      if (
+        typeof window.ProxyListPresence !== "undefined" &&
+        typeof window.ProxyListPresence.legacyNormalizeClickUrl === "function"
+      ) {
+        return window.ProxyListPresence.legacyNormalizeClickUrl(u);
+      }
       return String(u || "")
         .trim()
         .replace(/\/+$/, "")
         .toLowerCase();
+    }
+
+    function urlKeyVariants(u) {
+      if (
+        typeof window.ProxyListPresence !== "undefined" &&
+        typeof window.ProxyListPresence.clickUrlVariants === "function"
+      ) {
+        return window.ProxyListPresence.clickUrlVariants(u);
+      }
+      const modern = normalizeUrlKeyForClicks(u);
+      const legacy = legacyNormalizeUrlKey(u);
+      const out = [];
+      if (modern) out.push(modern);
+      if (legacy && legacy !== modern) out.push(legacy);
+      return out;
+    }
+
+    function clicksAreSharedGlobally() {
+      if (typeof window.ProxyListPresence !== "undefined" && window.ProxyListPresence.apiUrl) {
+        return true;
+      }
+      return !!firebaseDb;
     }
 
     function localClickGet(norm) {
@@ -5395,6 +5419,71 @@
         if (!Number.isFinite(up) || !Number.isFinite(down)) continue;
         linkRatingAggByHash.set(h, { up, down });
       }
+    }
+
+    /** When Firestore reads are paused, reuse the last cached rating aggregates by hash. */
+    function hydrateLinkRatingAggFromDiskCacheRelaxed(hashes) {
+      if (!hashes || !hashes.length) return;
+      const o = readJsonLocalDisk(LS_LINK_RATING_AGG_DISK);
+      if (!o || !o.byHash || typeof o.byHash !== "object") return;
+      if (typeof o.savedAt === "number" && Date.now() - o.savedAt > LINK_AGG_DISK_CACHE_MAX_MS) return;
+      for (const h of hashes) {
+        if (linkRatingAggByHash.has(h)) continue;
+        const row = o.byHash[h];
+        if (!row || typeof row !== "object") continue;
+        const up = Number(row.u);
+        const down = Number(row.d);
+        if (!Number.isFinite(up) || !Number.isFinite(down)) continue;
+        if (up > 0 || down > 0) linkRatingAggByHash.set(h, { up, down });
+      }
+    }
+
+    function hydrateClickCountDiskCache(stamp, norms) {
+      if (!stamp || !norms || !norms.length) return;
+      const o = readJsonLocalDisk(LS_CLICK_COUNT_DISK);
+      if (!o || o.stamp !== stamp || typeof o.savedAt !== "number") return;
+      if (Date.now() - o.savedAt > LINK_AGG_DISK_CACHE_MAX_MS) return;
+      const byNorm = o.byNorm;
+      if (!byNorm || typeof byNorm !== "object") return;
+      for (const n of norms) {
+        const c = Number(byNorm[n]);
+        if (!Number.isFinite(c) || c <= 0) continue;
+        const prev = clickCountCache.has(n) ? clickCountCache.get(n) : 0;
+        clickCountCache.set(n, Math.max(Number(prev) || 0, c));
+      }
+    }
+
+    function hydrateClickCountDiskCacheRelaxed(norms) {
+      if (!norms || !norms.length) return;
+      const o = readJsonLocalDisk(LS_CLICK_COUNT_DISK);
+      if (!o || !o.byNorm || typeof o.byNorm !== "object") return;
+      if (typeof o.savedAt === "number" && Date.now() - o.savedAt > LINK_AGG_DISK_CACHE_MAX_MS) return;
+      for (const n of norms) {
+        const c = Number(o.byNorm[n]);
+        if (!Number.isFinite(c) || c <= 0) continue;
+        const prev = clickCountCache.has(n) ? clickCountCache.get(n) : 0;
+        clickCountCache.set(n, Math.max(Number(prev) || 0, c));
+      }
+    }
+
+    function persistClickCountDiskCache(stamp, norms) {
+      if (!stamp || !norms || !norms.length) return;
+      try {
+        const prev = readJsonLocalDisk(LS_CLICK_COUNT_DISK);
+        const byNorm =
+          prev && prev.stamp === stamp && prev.byNorm && typeof prev.byNorm === "object"
+            ? { ...prev.byNorm }
+            : {};
+        for (const n of norms) {
+          const c = clickCountCache.get(n);
+          if (!Number.isFinite(c) || c <= 0) continue;
+          byNorm[n] = Math.max(Number(byNorm[n]) || 0, c);
+        }
+        const payload = { stamp, savedAt: Date.now(), byNorm };
+        const s = JSON.stringify(payload);
+        if (s.length > 4.5e6) return;
+        localStorage.setItem(LS_CLICK_COUNT_DISK, s);
+      } catch (_) {}
     }
 
     function hydrateLinkSaveCountFromDiskCache(stamp, hashes) {
@@ -5647,32 +5736,27 @@
       const stamp = ((opts && opts.listVersionStamp) || currentListVersionStamp || "").trim();
 
       try {
-        const normsNeedHash = rawNorms.filter((n) => !normToHashCache.has(n));
-        const HASH_BATCH = 64;
-        const HASH_LANES = 4;
-        for (let i = 0; i < normsNeedHash.length; i += HASH_BATCH * HASH_LANES) {
-          await Promise.all(
-            Array.from({ length: HASH_LANES }, (_, lane) => {
-              const lo = i + lane * HASH_BATCH;
-              if (lo >= normsNeedHash.length) return Promise.resolve();
-              const slice = normsNeedHash.slice(lo, Math.min(lo + HASH_BATCH, normsNeedHash.length));
-              return Promise.all(
-                slice.map(async (n) => {
-                  const h = await sha256Hex(n);
-                  return { n, h };
-                })
-              ).then((pairs) => {
-                pairs.forEach(({ n, h }) => {
-                  normToHashCache.set(n, h);
-                  hashToNormMap.set(h, n);
-                });
-              });
-            })
-          );
+        const normToHashList = new Map();
+        const allHashSet = new Set();
+        for (const n of rawNorms) {
+          const variants = urlKeyVariants(n);
+          const hashList = [];
+          for (const v of variants) {
+            let h = normToHashCache.get(v);
+            if (!h) {
+              h = await sha256Hex(v);
+              normToHashCache.set(v, h);
+              hashToNormMap.set(h, v);
+            }
+            hashList.push(h);
+            allHashSet.add(h);
+          }
+          normToHashList.set(n, [...new Set(hashList)]);
         }
+        const hashes = [...allHashSet];
 
-        const hashes = rawNorms.map((n) => normToHashCache.get(n)).filter(Boolean);
         hydrateLinkRatingAggFromDiskCache(stamp, hashes);
+        hydrateLinkRatingAggFromDiskCacheRelaxed(hashes);
         if (!opts || !opts.skipLinkSaveCounts) hydrateLinkSaveCountFromDiskCache(stamp, hashes);
 
         // When Spark quota is exhausted, rely on disk cache only so votes can still write.
@@ -5692,6 +5776,19 @@
             linkRatingAggByHash.set(h, { up: 0, down: 0 });
           }
         });
+
+        // Copy legacy-hash aggregates onto the modern norm key when only the old doc exists.
+        for (const n of rawNorms) {
+          const list = normToHashList.get(n) || [];
+          let best = null;
+          for (const h of list) {
+            const ag = linkRatingAggByHash.get(h);
+            if (!ag) continue;
+            if (!best || ag.up > best.up || ag.down > best.down) best = ag;
+          }
+          const primary = list[0];
+          if (best && primary) linkRatingAggByHash.set(primary, best);
+        }
 
         const toFetchSave =
           opts && opts.skipLinkSaveCounts ? [] : hashes.filter((h) => !linkSaveCountByHash.has(h));
@@ -5740,14 +5837,32 @@
       }
     }
 
+    function ratingAggForNorm(norm) {
+      if (!norm) return null;
+      const variants = urlKeyVariants(norm);
+      let best = null;
+      for (const v of variants) {
+        const h = normToHashCache.get(v);
+        if (!h) continue;
+        const ag = linkRatingAggByHash.get(h);
+        if (!ag) continue;
+        if (!best || ag.up > best.up || ag.down > best.down) best = ag;
+      }
+      const primary = normToHashCache.get(norm) || normToHashCache.get(variants[0] || "");
+      if (best && primary && !linkRatingAggByHash.has(primary)) {
+        linkRatingAggByHash.set(primary, best);
+      }
+      return best;
+    }
+
     function ratingCellInnerHtmlForLinkUrl(link) {
       const norm = normalizeUrlKeyForClicks(link);
       if (!norm) return "—";
-      const hash = normToHashCache.get(norm) || "";
-      const agg = hash ? linkRatingAggByHash.get(hash) : null;
+      const agg = ratingAggForNorm(norm);
       const up = agg ? Number(agg.up) || 0 : 0;
       const down = agg ? Number(agg.down) || 0 : 0;
-      const self = hash ? linkRatingSelfByHash.get(hash) || 0 : 0;
+      const primaryHash = normToHashCache.get(norm) || "";
+      const self = primaryHash ? linkRatingSelfByHash.get(primaryHash) || 0 : 0;
       const upOn = self === 1 ? " is-active" : "";
       const dnOn = self === -1 ? " is-active" : "";
       const net = up - down;
@@ -6167,7 +6282,6 @@
                   err
                 );
                 useFirebaseClicks = false;
-                firebaseDb = null;
                 activeSessionsCount = null;
                 updateActiveUsersDisplay();
                 startPresenceWorkerPings();
@@ -6331,10 +6445,25 @@
       }
     }
 
+    function syncClickCountInUi(url, count) {
+      const norm = normalizeUrlKeyForClicks(url);
+      if (!norm || !Number.isFinite(count)) return;
+      clickCountCache.set(norm, count);
+      if (bulkClickCountCache) {
+        bulkClickCountCache.set(norm, Math.max(Number(bulkClickCountCache.get(norm)) || 0, count));
+      }
+      const stamp = (currentListVersionStamp || "").trim();
+      if (stamp) persistClickCountDiskCache(stamp, [norm]);
+      document.querySelectorAll("td.click-cell[data-click-url]").forEach((td) => {
+        const link = td.getAttribute("data-click-url") || "";
+        if (normalizeUrlKeyForClicks(link) !== norm) return;
+        td.textContent = String(count);
+      });
+    }
+
     async function recordLinkClick(url) {
       const norm = normalizeUrlKeyForClicks(url);
-      if (!norm) return;
-      const displayUrl = String(url || "").trim() || norm;
+      if (!norm) return null;
 
       // Prefer Cloudflare Worker IP-rate-limited API (no account required).
       try {
@@ -6345,28 +6474,56 @@
           {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ url: displayUrl }),
+          body: JSON.stringify({ url: norm }),
+          mode: "cors",
+          keepalive: true,
           }
         );
         if (res.status === 429) {
           console.warn("[proxy-list] Click rate limit reached for this IP");
-          return;
+          return null;
         }
         if (res.ok) {
           const data = await res.json().catch(() => ({}));
-          if (data && data.ok) return;
+          if (data && data.ok) {
+            const key = normalizeUrlKeyForClicks(data.norm || norm);
+            if (key && Number.isFinite(data.count)) {
+              syncClickCountInUi(url, data.count);
+              return data.count;
+            }
+            if (key) {
+              const prev = clickCountCache.get(key);
+              const next = (Number(prev) || 0) + 1;
+              syncClickCountInUi(url, next);
+              return next;
+            }
+            return true;
+          }
         }
       } catch (_) {
         /* Worker unavailable (e.g. GitHub Pages) — fall back below */
       }
 
       // Fallback: local-only counter when the IP-rate-limited API is not deployed.
-      localClickInc(norm);
+      const local = localClickInc(norm);
+      syncClickCountInUi(url, local);
+      return local;
     }
 
     async function fetchClickCounts(urls, onProgress, options) {
       const norms = [...new Set(urls.map((u) => normalizeUrlKeyForClicks(u)).filter(Boolean))];
       const map = new Map();
+      const stamp = (currentListVersionStamp || "").trim();
+      hydrateClickCountDiskCache(stamp, norms);
+      hydrateClickCountDiskCacheRelaxed(norms);
+      const mergeClickCountCache = () => {
+        norms.forEach((n) => {
+          if (!clickCountCache.has(n)) return;
+          const cached = clickCountCache.get(n);
+          const prev = map.has(n) ? map.get(n) : 0;
+          map.set(n, Math.max(Number(prev) || 0, Number(cached) || 0));
+        });
+      };
       const shouldContinue = options && typeof options.shouldContinue === "function" ? options.shouldContinue : null;
       const stillGoing = () => !shouldContinue || shouldContinue();
       if (!norms.length) {
@@ -6399,6 +6556,7 @@
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ urls: displayUrls }),
+            mode: "cors",
             signal: controller ? controller.signal : undefined,
             }
           );
@@ -6411,9 +6569,30 @@
           if (!stillGoing()) return map;
           if (data && data.ok && data.counts && typeof data.counts === "object") {
             norms.forEach((n) => {
-              const v = data.counts[n];
-              map.set(n, Number.isFinite(v) ? v : 0);
+              const workerKey = normalizeUrlKeyForClicks(n);
+              let best = 0;
+              for (const v of urlKeyVariants(n)) {
+                const k = normalizeUrlKeyForClicks(v);
+                const val =
+                  data.counts[k] != null
+                    ? data.counts[k]
+                    : data.counts[v] != null
+                      ? data.counts[v]
+                      : null;
+                if (Number.isFinite(val)) best = Math.max(best, val);
+              }
+              if (best <= 0) {
+                const v =
+                  data.counts[workerKey] != null
+                    ? data.counts[workerKey]
+                    : data.counts[n];
+                if (Number.isFinite(v)) best = v;
+              }
+              map.set(n, best);
+              if (best > 0) clickCountCache.set(n, best);
             });
+            mergeClickCountCache();
+            if (stamp) persistClickCountDiskCache(stamp, norms);
             if (onProgress) onProgress(norms.length, norms.length);
             return map;
           }
@@ -6424,7 +6603,7 @@
 
       if (!stillGoing()) return map;
 
-      if (useFirebaseClicks && firebaseDb) {
+      if (firebaseDb) {
         for (let i = 0; i < norms.length; i += 10) {
           if (!stillGoing()) return map;
           if (isFirestoreReadCooled()) {
@@ -6434,16 +6613,23 @@
           }
           const chunk = norms.slice(i, i + 10);
           try {
-            const ids = await Promise.all(chunk.map((n) => sha256Hex(n)));
+            const countForNorm = async (n) => {
+              let best = 0;
+              for (const v of urlKeyVariants(n)) {
+                const id = await sha256Hex(v);
+                const snap = await firebaseDb.collection("link_clicks").doc(id).get();
+                if (!snap.exists) continue;
+                const data = snap.data();
+                const cnt = data && Number.isFinite(data.count) ? data.count : 0;
+                best = Math.max(best, cnt);
+              }
+              return best;
+            };
+            const counts = await Promise.all(chunk.map((n) => countForNorm(n)));
             if (!stillGoing()) return map;
-            const snaps = await Promise.all(
-              ids.map((id) => firebaseDb.collection("link_clicks").doc(id).get())
-            );
-            if (!stillGoing()) return map;
-            snaps.forEach((snap, idx) => {
-              const data = snap.data();
-              const cnt = data && Number.isFinite(data.count) ? data.count : 0;
+            counts.forEach((cnt, idx) => {
               map.set(chunk[idx], cnt);
+              if (cnt > 0) clickCountCache.set(chunk[idx], cnt);
             });
             if (firebaseQuotaExceededVisible) markFirestoreQuotaRecovered();
           } catch (err) {
@@ -6452,16 +6638,25 @@
           }
           if (onProgress) onProgress(Math.min(i + chunk.length, norms.length), norms.length);
         }
+        mergeClickCountCache();
+        if (stamp) persistClickCountDiskCache(stamp, norms);
         return map;
       }
 
       norms.forEach((n) => map.set(n, localClickGet(n)));
       if (onProgress) onProgress(norms.length, norms.length);
+      mergeClickCountCache();
+      if (stamp) persistClickCountDiskCache(stamp, norms);
       return map;
     }
 
     function countForUrl(map, url) {
       const k = normalizeUrlKeyForClicks(url);
+      if (clickCountCache.has(k)) {
+        const cached = clickCountCache.get(k);
+        const fetched = map.has(k) ? map.get(k) : 0;
+        return Math.max(Number(cached) || 0, Number(fetched) || 0);
+      }
       return map.has(k) ? map.get(k) : 0;
     }
 
@@ -6476,7 +6671,7 @@
     }
 
     function formatClickLineLabel() {
-      return useFirebaseClicks
+      return clicksAreSharedGlobally()
         ? "Opens (all visitors, IP rate-limited)"
         : "Opens (this browser only)";
     }
@@ -6547,7 +6742,7 @@
     }
 
     async function fetchTopOpenedFromFirestore(limit) {
-      if (!useFirebaseClicks || !firebaseDb) return [];
+      if (!firebaseDb) return [];
       try {
         const cap = Math.max(1, Math.min(limit, 100));
         const snap = await firebaseDb
@@ -6591,7 +6786,7 @@
         setHtml(moEmpty, "");
       }
       if (moMount) moMount.hidden = false;
-      if (!useFirebaseClicks || !firebaseDb) {
+      if (!firebaseDb) {
         sec.hidden = true;
         return;
       }
@@ -6718,7 +6913,7 @@
       });
     }
 
-    function haystack(row) {
+    function buildHaystack(row) {
       const provider = String(row.provider || "");
       return [
         row.link,
@@ -6731,6 +6926,24 @@
         row.contributor_url || "",
         row.found,
       ].join(" ").toLowerCase();
+    }
+
+    const haystackCache = new Map();
+    const HAYSTACK_CACHE_MAX = 2500;
+
+    function haystack(row) {
+      const link = row && row.link;
+      if (link && haystackCache.has(link)) return haystackCache.get(link);
+      const hs = buildHaystack(row);
+      if (link) {
+        if (haystackCache.size >= HAYSTACK_CACHE_MAX) haystackCache.clear();
+        haystackCache.set(link, hs);
+      }
+      return hs;
+    }
+
+    function clearHaystackCache() {
+      haystackCache.clear();
     }
 
     const SEARCH_SUGGEST_LIMIT = 8;
@@ -6747,8 +6960,6 @@
     function buildSearchSuggestIndex(rows) {
       const providers = new Map();
       const contributors = new Map();
-      const links = [];
-      const seenLinks = new Set();
       for (const row of rows || []) {
         const provider = String((row && row.provider) || "").trim();
         if (provider) {
@@ -6774,6 +6985,21 @@
             });
           }
         }
+      }
+      searchSuggestIndex = {
+        providers: [...providers.values()].sort((a, b) => a.label.localeCompare(b.label)),
+        contributors: [...contributors.values()].sort((a, b) => a.label.localeCompare(b.label)),
+        links: null,
+        rowsRef: rows || null,
+      };
+    }
+
+    function ensureUrlSuggestIndex() {
+      if (!searchSuggestIndex || searchSuggestIndex.links) return;
+      const rows = searchSuggestIndex.rowsRef || [];
+      const links = [];
+      const seenLinks = new Set();
+      for (const row of rows) {
         const link = String((row && row.link) || "").trim();
         if (!link) continue;
         const nk = link.toLowerCase();
@@ -6786,11 +7012,8 @@
           match: nk,
         });
       }
-      searchSuggestIndex = {
-        providers: [...providers.values()].sort((a, b) => a.label.localeCompare(b.label)),
-        contributors: [...contributors.values()].sort((a, b) => a.label.localeCompare(b.label)),
-        links,
-      };
+      searchSuggestIndex.links = links;
+      delete searchSuggestIndex.rowsRef;
     }
 
     function rankSuggestMatch(item, q) {
@@ -6818,9 +7041,13 @@
         const rank = rankSuggestMatch(item, q);
         if (rank < 9) scored.push({ item, rank, tie: 1 });
       }
-      for (const item of searchSuggestIndex.links) {
-        const rank = rankSuggestMatch(item, q);
-        if (rank < 9) scored.push({ item, rank, tie: 2 });
+      const scanUrls = q.length >= 3 || q.includes(".") || q.includes("/");
+      if (scanUrls) {
+        ensureUrlSuggestIndex();
+        for (const item of searchSuggestIndex.links || []) {
+          const rank = rankSuggestMatch(item, q);
+          if (rank < 9) scored.push({ item, rank, tie: 2 });
+        }
       }
       scored.sort((a, b) => a.rank - b.rank || a.tie - b.tie || a.item.label.localeCompare(b.item.label));
       return scored.slice(0, SEARCH_SUGGEST_LIMIT).map((x) => x.item);
@@ -7756,9 +7983,33 @@
       }
     }
 
+    function filterRowsBase(rows, opts) {
+      const q = $("q").value.trim().toLowerCase();
+      const applyHideUnchecked =
+        hideLinksWithoutLensCheck &&
+        linkLensHydrated &&
+        !q &&
+        !(opts && opts.selections && opts.selections.providerTags && opts.selections.providerTags.length);
+      return rows.filter((row) => {
+        if (q && !haystack(row).includes(q)) return false;
+        if (hideBlockedBySelectedFilter && isBlockedBySelectedFilter(row.link)) return false;
+        if (applyHideUnchecked && !linkHasParsableLensCheck(row.link)) return false;
+        const folderNormSet = opts && opts.folderNormSet;
+        if (folderNormSet) {
+          const norm = normalizeUrlKeyForClicks(row.link);
+          if (!norm || !folderNormSet.has(norm)) return false;
+        }
+        if (savedLinksViewOnly) {
+          if (!isSignedInUser()) return false;
+          const norm = normalizeUrlKeyForClicks(row.link);
+          if (!norm || !savedLinks.has(norm)) return false;
+        }
+        return true;
+      });
+    }
+
     function filterRows(rows, opts) {
       const exclude = (opts && opts.excludeGroup) || "";
-      const q = $("q").value.trim().toLowerCase();
       const selections = {
         providerTags: selectedIn("providerTags"),
         categoryTags: selectedIn("categoryTags"),
@@ -7766,19 +8017,16 @@
         capTags: selectedCaps(),
       };
       const mode = capMode();
-      // Keep hide-unchecked for browsing, but never hide matches when the user is
-      // searching or has pinned specific providers (new submissions are unchecked).
       const applyHideUnchecked =
         hideLinksWithoutLensCheck &&
         linkLensHydrated &&
-        !q &&
+        !$("q").value.trim() &&
         !selections.providerTags.length;
       return rows.filter((row) => {
+        const q = $("q").value.trim().toLowerCase();
         if (q && !haystack(row).includes(q)) return false;
         if (hideBlockedBySelectedFilter && isBlockedBySelectedFilter(row.link)) return false;
-        if (applyHideUnchecked && !linkHasParsableLensCheck(row.link)) {
-          return false;
-        }
+        if (applyHideUnchecked && !linkHasParsableLensCheck(row.link)) return false;
         for (const group of ["providerTags", "categoryTags", "protocolTags", "capTags"]) {
           if (group === exclude) continue;
           if (!rowMatchesGroup(row, group, selections[group], mode)) return false;
@@ -7805,13 +8053,29 @@
     };
 
     function updateFilterCounts(rows) {
+      const selections = {
+        providerTags: selectedIn("providerTags"),
+        categoryTags: selectedIn("categoryTags"),
+        protocolTags: selectedIn("protocolTags"),
+        capTags: selectedCaps(),
+      };
+      const mode = capMode();
+      const base = filterRowsBase(rows, { selections });
       for (const containerId of Object.keys(FILTER_GROUP_VALUES)) {
         const wrap = $(containerId);
         if (!wrap) continue;
-        const subset = filterRows(rows, { excludeGroup: containerId });
         const counts = new Map();
         const valuesOf = FILTER_GROUP_VALUES[containerId];
-        for (const row of subset) {
+        for (const row of base) {
+          let ok = true;
+          for (const group of ["providerTags", "categoryTags", "protocolTags", "capTags"]) {
+            if (group === containerId) continue;
+            if (!rowMatchesGroup(row, group, selections[group], mode)) {
+              ok = false;
+              break;
+            }
+          }
+          if (!ok) continue;
           for (const v of valuesOf(row)) {
             counts.set(v, (counts.get(v) || 0) + 1);
           }
@@ -7824,6 +8088,36 @@
           cEl.textContent = "(" + n + ") ";
         });
       }
+    }
+
+    function scheduleUpdateFilterCounts(rows) {
+      if (typeof requestIdleCallback === "function") {
+        if (filterCountsIdleHandle) cancelIdleCallback(filterCountsIdleHandle);
+        filterCountsIdleHandle = requestIdleCallback(
+          () => {
+            filterCountsIdleHandle = null;
+            updateFilterCounts(rows);
+          },
+          { timeout: 400 }
+        );
+        return;
+      }
+      updateFilterCounts(rows);
+    }
+
+    function scheduleRender(rows, meta, linkCheck, options) {
+      const opts = options || {};
+      const delay = Number.isFinite(opts.debounceMs) ? Math.max(0, opts.debounceMs) : 0;
+      if (renderDebounceTimer) clearTimeout(renderDebounceTimer);
+      if (delay <= 0) {
+        renderDebounceTimer = null;
+        void render(rows, meta, linkCheck);
+        return;
+      }
+      renderDebounceTimer = setTimeout(() => {
+        renderDebounceTimer = null;
+        void render(rows, meta, linkCheck);
+      }, delay);
     }
 
     function formatListVersion(meta) {
@@ -7844,11 +8138,160 @@
     /** Smaller batches so the main thread can paint skeleton rows between inserts. */
     const TABLE_ROW_APPEND_BATCH = 25;
     const TABLE_PREFETCH_PX = 400;
+    /** Switch to windowed rendering above this many filtered rows. */
+    const TABLE_VIRTUAL_THRESHOLD = 200;
+    const TABLE_ROW_HEIGHT = 50;
+    const TABLE_VIRTUAL_BUFFER = 30;
+    /** Max table rows shown while a search query is active. */
+    const SEARCH_RENDER_LIMIT = 20;
     let tableInfiniteObserver = null;
     let tableInfiniteState = null;
+    let tableInfiniteScrollFallback = null;
+    let tableVirtualState = null;
+    let tableVirtualScrollHandler = null;
+    let tableVirtualResizeHandler = null;
+    let renderDebounceTimer = null;
+    let filterCountsIdleHandle = null;
     let bulkClickCountCache = null;
 
+    function disconnectTableVirtual() {
+      if (tableVirtualScrollHandler) {
+        window.removeEventListener("scroll", tableVirtualScrollHandler);
+        if (typeof window.removeEventListener === "function") {
+          window.removeEventListener("scrollend", tableVirtualScrollHandler);
+        }
+        tableVirtualScrollHandler = null;
+      }
+      if (tableVirtualResizeHandler) {
+        window.removeEventListener("resize", tableVirtualResizeHandler);
+        tableVirtualResizeHandler = null;
+      }
+      tableVirtualState = null;
+    }
+
+    function isSearchQueryActive() {
+      const q = $("q");
+      return !!(q && String(q.value || "").trim());
+    }
+
+    /** Cap visible rows during search; returns { rows, totalMatches, limited }. */
+    function applySearchRenderLimit(filtered) {
+      const totalMatches = filtered.length;
+      if (!isSearchQueryActive() || totalMatches <= SEARCH_RENDER_LIMIT) {
+        return { rows: filtered, totalMatches, limited: false };
+      }
+      return {
+        rows: filtered.slice(0, SEARCH_RENDER_LIMIT),
+        totalMatches,
+        limited: true,
+      };
+    }
+
+    function shouldUseVirtualTable(filteredLen) {
+      if (isSearchQueryActive()) return false;
+      return !isUnoptimizedTableRender() && filteredLen > TABLE_VIRTUAL_THRESHOLD;
+    }
+
+    function getTableChunkWrapTop() {
+      const wrap = document.querySelector(".table-chunk-wrap");
+      if (!wrap) return 0;
+      return wrap.getBoundingClientRect().top + window.scrollY;
+    }
+
+    function paintVirtualTableWindow(force) {
+      const st = tableVirtualState;
+      if (!st || !st.tbody || !st.tbody.isConnected) return;
+      const wrapTop = getTableChunkWrapTop();
+      const table = st.tbody.closest("table");
+      const thead = table && table.querySelector("thead");
+      const headerHeight = thead ? thead.offsetHeight : 40;
+      const rowH = virtualTableRowHeight(st);
+      const relativeScroll = Math.max(0, window.scrollY - wrapTop + headerHeight);
+      const visibleCount = Math.ceil(window.innerHeight / rowH) + TABLE_VIRTUAL_BUFFER * 2;
+      let start = Math.max(0, Math.floor(relativeScroll / rowH) - TABLE_VIRTUAL_BUFFER);
+      let end = Math.min(st.filtered.length, start + visibleCount);
+      const nearBottom =
+        window.scrollY + window.innerHeight >=
+        wrapTop + headerHeight + st.filtered.length * rowH - rowH * 2;
+      if (nearBottom) {
+        end = st.filtered.length;
+        start = Math.max(0, end - visibleCount);
+      }
+      if (!force && st.windowStart === start && st.windowEnd === end) return;
+      st.windowStart = start;
+      st.windowEnd = end;
+      const topPad = start * rowH;
+      const bottomPad = Math.max(0, (st.filtered.length - end) * rowH);
+      const slice = st.filtered.slice(start, end);
+      const rowsHtml = slice
+        .map((r, i) => buildRowTrHtml(r, undefined, folderRowOptsAt(start + i)))
+        .join("");
+      const html =
+        '<tr class="virtual-pad-top" aria-hidden="true"><td colspan="8" style="height:' +
+        topPad +
+        'px"></td></tr>' +
+        rowsHtml +
+        '<tr class="virtual-pad-bottom" aria-hidden="true"><td colspan="8" style="height:' +
+        bottomPad +
+        'px"></td></tr>';
+      setHtml(st.tbody, html);
+      if (!st.rowHeightMeasured) {
+        const sample = st.tbody.querySelector("tr:not(.virtual-pad-top):not(.virtual-pad-bottom)");
+        if (sample && sample.offsetHeight > 0) {
+          const measured = sample.offsetHeight;
+          if (measured > TABLE_ROW_HEIGHT) {
+            st.rowHeight = measured;
+            st.rowHeightMeasured = true;
+            paintVirtualTableWindow(true);
+            return;
+          }
+          st.rowHeightMeasured = true;
+        }
+      }
+      if (shouldLoadLinkClicks()) {
+        void refreshClickCellsForSlice(slice, 0, { silent: true, virtualSlice: true });
+      }
+      notifyEmbedHeight();
+    }
+
+    function virtualTableRowHeight(st) {
+      return st && st.rowHeight > 0 ? st.rowHeight : TABLE_ROW_HEIGHT;
+    }
+
+    function setupTableVirtualScroll(filtered) {
+      const tbody = $("linksTableBody");
+      if (!tbody) return;
+      tableVirtualState = {
+        filtered,
+        windowStart: -1,
+        windowEnd: -1,
+        tbody,
+        rowHeight: TABLE_ROW_HEIGHT,
+        rowHeightMeasured: false,
+      };
+      let raf = 0;
+      tableVirtualScrollHandler = () => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          paintVirtualTableWindow(false);
+        });
+      };
+      tableVirtualResizeHandler = tableVirtualScrollHandler;
+      window.addEventListener("scroll", tableVirtualScrollHandler, { passive: true });
+      window.addEventListener("resize", tableVirtualResizeHandler, { passive: true });
+      if (typeof window.addEventListener === "function") {
+        window.addEventListener("scrollend", tableVirtualScrollHandler, { passive: true });
+      }
+      paintVirtualTableWindow(true);
+    }
+
     function disconnectTableInfinite() {
+      disconnectTableVirtual();
+      if (tableInfiniteScrollFallback) {
+        window.removeEventListener("scroll", tableInfiniteScrollFallback);
+        tableInfiniteScrollFallback = null;
+      }
       if (tableInfiniteObserver) {
         tableInfiniteObserver.disconnect();
         tableInfiniteObserver = null;
@@ -7954,9 +8397,18 @@
       if (!tbody || !tbody.isConnected) return;
       const start = Number.isFinite(startIndex) ? Math.max(0, startIndex) : 0;
       const shouldContinue = options && typeof options.shouldContinue === "function" ? options.shouldContinue : null;
+      const virtualSlice = !!(options && options.virtualSlice);
       const targets = [];
       for (let i = 0; i < rowsSlice.length; i++) {
-        const tr = tbody.children[start + i];
+        let tr;
+        if (virtualSlice) {
+          const dataRows = tbody.querySelectorAll(
+            "tr:not(.virtual-pad-top):not(.virtual-pad-bottom):not(.table-row-skeleton)"
+          );
+          tr = dataRows[i];
+        } else {
+          tr = tbody.children[start + i];
+        }
         if (!tr || !tr.querySelector) continue;
         const td = tr.querySelector("td.click-cell");
         if (!td) continue;
@@ -8027,6 +8479,7 @@
         const tClicks0 = performance.now();
         await refreshClickCellsForSlice(slice, startIndex);
         const clicksMs = performance.now() - tClicks0;
+        notifyEmbedHeight();
         if (effectiveClickLoadMode() === "preload" && tableInfiniteState === st) {
           const preloadSize = getTableChunkSize() * 3;
           const preloadEnd = Math.min(st.rendered + preloadSize, st.filtered.length);
@@ -8104,6 +8557,16 @@
         { root: null, rootMargin: TABLE_PREFETCH_PX + "px", threshold: 0 }
       );
       tableInfiniteObserver.observe(sentinel);
+      tableInfiniteScrollFallback = () => {
+        const s = tableInfiniteState;
+        if (!s || s.chunkInFlight || s.rendered >= s.filtered.length) return;
+        if (!s.sentinel || !s.sentinel.isConnected) return;
+        const rect = s.sentinel.getBoundingClientRect();
+        if (rect.top <= window.innerHeight + TABLE_PREFETCH_PX) {
+          void appendNextTableChunk();
+        }
+      };
+      window.addEventListener("scroll", tableInfiniteScrollFallback, { passive: true });
     }
 
     function setContentLoadingProgress(percent, message) {
@@ -8273,6 +8736,7 @@
     async function render(rows, meta, linkCheck) {
       currentListVersionStamp = versionStamp(meta) || "";
       bulkClickCountCache = null;
+      clearHaystackCache();
       disconnectTableInfinite();
       reportContentLoadingProgress(12, "Filtering links…");
       let filtered;
@@ -8309,7 +8773,10 @@
         await prefetchLinkRatingsForNorms(quickNorms, { skipLinkSaveCounts: true });
       }
       filtered = sortFilteredRowsByListSort(filtered);
-      updateFilterCounts(rows);
+      const searchLimit = applySearchRenderLimit(filtered);
+      const totalSearchMatches = searchLimit.totalMatches;
+      filtered = searchLimit.rows;
+      scheduleUpdateFilterCounts(rows);
 
       const checkedAt = linkCheck && linkCheck.checked_at_display ? linkCheck.checked_at_display : "—";
       const added = Number.isFinite(linkCheck && linkCheck.added_count) ? linkCheck.added_count : 0;
@@ -8350,12 +8817,24 @@
           (isSignedInUser() ? "" : " — sign in to load your saved links.") +
           ".</p>";
       } else {
-        statsPrimary =
+        let statsLine =
           '<p class="stat-line">Showing <strong>' +
           filtered.length +
           "</strong> of <strong>" +
           rows.length +
-          "</strong> sorted links.</p>";
+          "</strong> sorted links.";
+        if (searchLimit.limited) {
+          statsLine =
+            '<p class="stat-line">Showing <strong>' +
+            filtered.length +
+            "</strong> of <strong>" +
+            totalSearchMatches +
+            '</strong> search matches <span class="muted">(refine your search to narrow results)</span>.</p>' +
+            '<p class="stat-line">Sorted list total: <strong>' +
+            rows.length +
+            "</strong> links.</p>";
+        }
+        statsPrimary = statsLine;
       }
 
       const statsCombined =
@@ -8384,12 +8863,15 @@
         escapeHtml(checkedAt) +
         "</strong></p>" +
         '<p class="stat-line">Open counts: <strong>' +
-        (useFirebaseClicks
-          ? "Firestore (shared across visitors)"
-          : "this browser only — if you expected Firestore, enable Anonymous sign-in and reload; see browser console.") +
+        (clicksAreSharedGlobally()
+          ? "shared across visitors (Worker + Firestore)"
+          : "this browser only — deploy the Cloudflare Worker or enable Firebase for shared counts.") +
         "</strong></p>" +
-        (filtered.length > getTableChunkSize() && !isUnoptimizedTableRender()
+        (filtered.length > getTableChunkSize() && !isUnoptimizedTableRender() && !shouldUseVirtualTable(filtered.length)
           ? '<p class="stat-line">More rows load in chunks as you scroll down.</p>'
+          : "") +
+        (shouldUseVirtualTable(filtered.length)
+          ? '<p class="stat-line">Large list — only visible rows are rendered while scrolling.</p>'
           : "")
       );
 
@@ -8402,10 +8884,39 @@
 
       reportContentLoadingProgress(45, "Building table…");
       const chunkSize = getTableChunkSize();
+      const useVirtual = shouldUseVirtualTable(filtered.length);
+      const theadRow = linkTableTheadRowHtml();
+
+      if (useVirtual) {
+        setHtml(
+          $("tableWrap"),
+          '<div class="table-chunk-wrap"><table><thead>' +
+            theadRow +
+            '</thead><tbody id="linksTableBody"></tbody></table></div>'
+        );
+        reportContentLoadingProgress(90, "Loading open counts…");
+        setupTableVirtualScroll(filtered);
+        if (shouldLoadLinkClicks()) {
+          const boot = beginClickBootLoad();
+          try {
+            const st = tableVirtualState;
+            if (st && boot.isActive()) {
+              const slice = st.filtered.slice(st.windowStart, st.windowEnd);
+              await refreshClickCellsForSlice(slice, st.windowStart, {
+                shouldContinue: () => boot.isActive(),
+              });
+            }
+          } finally {
+            boot.done();
+          }
+        }
+        notifyEmbedHeight();
+        return;
+      }
+
       const initial = isUnoptimizedTableRender() ? filtered.length : Math.min(chunkSize, filtered.length);
       const firstChunk = filtered.slice(0, initial);
       const firstHtml = firstChunk.map((r, i) => buildRowTrHtml(r, undefined, folderRowOptsAt(i))).join("");
-      const theadRow = linkTableTheadRowHtml();
       const sentinelHtml =
         !isUnoptimizedTableRender() && filtered.length > initial
           ? '<div id="tableLoadSentinel" class="table-load-sentinel" aria-hidden="true"></div>'
@@ -8653,11 +9164,18 @@
       return total > 0 || providers > 0 || entry.status === "ok";
     }
 
+    let lensByDomainFast = null;
+
     function rebuildLinkLensIndexes() {
       summaryEntryCache = new Map();
       lensDomainSignalFirst = new Map();
-      for (const v of Object.values(linkLensData || {})) {
+      lensByDomainFast = new Map();
+      for (const [k, v] of Object.entries(linkLensData || {})) {
         if (!v || typeof v !== "object") continue;
+        if (k.startsWith("domain:")) {
+          const d = k.slice(7).toLowerCase();
+          if (d && lensHasSignal(v)) lensByDomainFast.set(d, v);
+        }
         const d = String(v.domain || "").toLowerCase();
         if (!d || !lensHasSignal(v)) continue;
         if (!lensDomainSignalFirst.has(d)) lensDomainSignalFirst.set(d, v);
@@ -8673,17 +9191,16 @@
       }
       const domain = domainOf(link);
       if (!domain) {
-        const out = byExact || null;
-        summaryEntryCache.set(link, out);
-        return out;
+        summaryEntryCache.set(link, byExact || null);
+        return byExact || null;
       }
-      const byDomain = linkLensData["domain:" + domain] || linkLensData[domain];
-      if (lensHasSignal(byDomain)) {
-        summaryEntryCache.set(link, byDomain);
-        return byDomain;
-      }
-      const fromScan = lensDomainSignalFirst.get(domain) || null;
-      const out = fromScan || byExact || byDomain || null;
+      const byDomain =
+        (lensByDomainFast && lensByDomainFast.get(domain)) ||
+        linkLensData["domain:" + domain] ||
+        linkLensData[domain] ||
+        lensDomainSignalFirst.get(domain) ||
+        null;
+      const out = lensHasSignal(byDomain) ? byDomain : byExact || byDomain || null;
       summaryEntryCache.set(link, out);
       return out;
     }
@@ -9373,6 +9890,7 @@
             const ok = await copyPlainTextToClipboard(out);
             flashSummaryCopyButtonState(ok);
           } else {
+            void recordLinkClick(out);
             window.open(out, "_blank", "noopener,noreferrer");
           }
         });
@@ -9932,6 +10450,29 @@
     }
 
     function normalizePayload(json) {
+      if (window.ProxyListData && typeof window.ProxyListData.normalizePayload === "function") {
+        const normalized = window.ProxyListData.normalizePayload(json);
+        if (normalized.compact) {
+          const expanded = window.ProxyListData.expandAllLinks({
+            format: 2,
+            providers: normalized.compact.providers,
+            contributors: normalized.compact.contributors,
+            links: normalized.compact.links,
+          });
+          return {
+            meta: normalized.meta,
+            link_check: normalized.link_check,
+            links: expanded,
+            failing_links: normalized.failing_links,
+          };
+        }
+        return {
+          meta: normalized.meta,
+          link_check: normalized.link_check,
+          links: normalized.links || [],
+          failing_links: normalized.failing_links,
+        };
+      }
       if (Array.isArray(json)) {
         return { meta: {}, link_check: {}, links: json };
       }
@@ -9953,12 +10494,37 @@
       };
     }
 
+    let offlineExportScriptPromise = null;
+    function ensureOfflineExportScript() {
+      if (window.ProxyListOfflineExport) return Promise.resolve(window.ProxyListOfflineExport);
+      if (!offlineExportScriptPromise) {
+        offlineExportScriptPromise = new Promise((resolve, reject) => {
+          const s = document.createElement("script");
+          s.src = "offline-export.js";
+          s.onload = () => resolve(window.ProxyListOfflineExport);
+          s.onerror = () => reject(new Error("Could not load offline-export.js"));
+          document.head.appendChild(s);
+        });
+      }
+      return offlineExportScriptPromise;
+    }
+
     setContentLoading(true, { progress: 0, message: "Getting data..." });
     bindClickLoadSlowPromptButtons();
     initSavedLinksView();
     initEmbedMode();
     setupAccountUI();
     restoreFirebaseQuotaBannerFromSession();
+    if (location.protocol === "file:") {
+      setContentLoading(false);
+      setHtml(
+        $("tableWrap"),
+        '<p class="err">This site must be served over HTTP — opening <code>index.html</code> directly will not work.<br><br>' +
+          'Run a local server from the <code>docs</code> folder, for example:<br>' +
+          "<code>python -m http.server 8080</code><br><br>" +
+          'Then open <code>http://localhost:8080/</code> in your browser.</p>'
+      );
+    } else {
     try {
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
         if ((appSettings.theme || "dark") === "auto") applyThemeSetting("auto");
@@ -9967,9 +10533,14 @@
 
     loadAppSettings().then(() =>
     Promise.all([
-      fetch("data.json").then((r) => {
-        if (!r.ok) throw new Error("Could not load data.json (" + r.status + ")");
-        return r.json();
+      (window.ProxyListData && window.ProxyListData.fetchListPayload
+        ? window.ProxyListData.fetchListPayload()
+        : fetch("data.json").then((r) => {
+            if (!r.ok) throw new Error("Could not load data.json (" + r.status + ")");
+            return r.json();
+          })
+      ).catch((err) => {
+        throw err && err.message ? err : new Error("Could not load list data");
       }),
       fetch("checked_domains.txt")
         .then((r) => (r.ok ? r.text() : ""))
@@ -10073,7 +10644,7 @@
 
         wireSearchAutocomplete(links);
         $("q").addEventListener("input", () => {
-          render(links, meta, link_check);
+          scheduleRender(links, meta, link_check, { debounceMs: 200 });
           scheduleUserProfileWrite();
         });
         try {
@@ -10498,12 +11069,13 @@
     }))
       .catch((e) => {
         setContentLoading(false);
+        if (location.protocol === "file:") return;
         const msg = e && e.message ? String(e.message) : String(e);
         let lead =
-          "Something went wrong while loading the app. If you opened this file as file://, use a local server or GitHub Pages so <code>data.json</code> can load.";
-        if (/Failed to fetch|NetworkError|Load failed|blocked by CORS|file:\/\//i.test(msg)) {
+          "Something went wrong while loading the app. Check that <code>docs/data.json</code> exists and your local server is running from the <code>docs</code> folder.";
+        if (/Failed to fetch|NetworkError|Load failed|blocked by CORS/i.test(msg)) {
           lead =
-            "Could not load <code>data.json</code>. Browsers block <code>fetch</code> from <code>file://</code>; run a local server (for example <code>python3 -m http.server</code> in the <code>docs</code> folder) or use the hosted site.";
+            "Could not reach <code>data.json</code>. Start a local server in the <code>docs</code> folder (for example <code>python -m http.server 8080</code>) and open <code>http://localhost:8080/</code>.";
         } else if (isFirestorePermissionDenied(e)) {
           lead =
             "Firestore reported permission denied. Deploy the latest <code>docs/firestore.rules</code> to your Firebase project (including <code>linkRatings</code>, <code>linkRatingVotes</code>, <code>linkSaveCounts</code> if you use thumbs / “most saved”), and ensure Authentication is enabled for this host.";
@@ -10513,6 +11085,7 @@
           '<p class="err">' + lead + "<br><br><strong>Details:</strong> " + escapeHtml(msg) + "</p>"
         );
       });
+    }
   </script>
 </body>
 </html>

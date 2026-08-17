@@ -2,9 +2,15 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v6.4",
+      "revision": "r269",
+      "released": "August 17, 2026",
+      "update_notice": "# Thousands of Links\nOver 25,000 links were added, making this the biggest link drop ever. Most of them are Cherri and Arctic mirrors, and should generally be unblocked by most filters.\n\n# Optimizations\nTo handle all of these links, optimizations have been made in order to keep performance reasonable while also hosting all of these links. Lower-end devices may experience problems as memory usage naturally will be higher now.\n\n# Bugfixes\n- Fixed a bug where clicks were not tracked.\n- Fixed a bug where jsdelivr link clicks weren't tracked.\n- Removed unused Google AdSense embeds to improve performance.\n- Optimized the search bar, although I am aware there might be some issues with performance while using it due to the massive amount of links that are loaded that will be fixed at a later point.\n- Fixed a bug where ratings weren't tracked.\n- Fixed a bug where user statistics weren't tracked properly.\n- Fixed a bug where provider/domain statistics were broken or weren't tracked properly.\n- Fixed a bug where scrolling would show a white box at the bottom of the screen.\n- Fixed a bug where there was a slight delay between loads or the chunk wouldn't load at all.\n- Firebase bugfixes"
+    },
+    {
       "version": "v6.3.1",
-      "revision": "r267",
-      "released": "August 15, 2026",
+      "revision": "r268",
+      "released": "August 17, 2026",
       "update_notice": "Fixed a bug that causes you to be repeatedly signed out when going on different pages within the site.\nAdded the ability to copy HTML code and text of the offline versions of the site\nSecurity fixes"
     },
     {

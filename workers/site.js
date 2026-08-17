@@ -98,6 +98,22 @@ function normalizeUrl(raw) {
   }
 }
 
+function legacyNormalizeUrl(raw) {
+  return String(raw || "")
+    .trim()
+    .replace(/\/+$/, "")
+    .toLowerCase();
+}
+
+function clickUrlVariants(raw) {
+  const modern = normalizeUrl(raw);
+  const legacy = legacyNormalizeUrl(raw);
+  const out = [];
+  if (modern) out.push(modern);
+  if (legacy && legacy !== modern) out.push(legacy);
+  return out;
+}
+
 async function sha256Hex(text) {
   const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
   return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
@@ -269,6 +285,18 @@ async function getGoogleAccessToken(env) {
   return access;
 }
 
+function parseCountFromCommitJson(body) {
+  if (!body || !Array.isArray(body.writeResults)) return null;
+  for (const wr of body.writeResults) {
+    const tr = wr.transformResults;
+    if (!Array.isArray(tr)) continue;
+    for (const t of tr) {
+      if (t && t.integerValue != null) return Number(t.integerValue);
+    }
+  }
+  return null;
+}
+
 async function firestoreIncrementClick(env, docId, displayUrl) {
   const token = await getGoogleAccessToken(env);
   const project = env.FIREBASE_PROJECT_ID;
@@ -309,10 +337,11 @@ async function firestoreIncrementClick(env, docId, displayUrl) {
   });
 
   if (commitRes.ok) {
+    const commitBody = await commitRes.json().catch(() => ({}));
     await firestoreIncrementDailyClick(env, token, project, docId, displayUrl).catch((err) => {
       console.error("daily_click_failed", err);
     });
-    return { created: false };
+    return { created: false, count: parseCountFromCommitJson(commitBody) };
   }
 
   const createRes = await fetch(
@@ -336,7 +365,7 @@ async function firestoreIncrementClick(env, docId, displayUrl) {
     await firestoreIncrementDailyClick(env, token, project, docId, displayUrl).catch((err) => {
       console.error("daily_click_failed", err);
     });
-    return { created: true };
+    return { created: true, count: 1 };
   }
 
   const retry = await fetch(commitUrl, {
@@ -351,10 +380,11 @@ async function firestoreIncrementClick(env, docId, displayUrl) {
     const t = await retry.text();
     throw new Error(`firestore write failed: ${createRes.status}/${retry.status} ${t}`);
   }
+  const retryBody = await retry.json().catch(() => ({}));
   await firestoreIncrementDailyClick(env, token, project, docId, displayUrl).catch((err) => {
     console.error("daily_click_failed", err);
   });
-  return { created: false };
+  return { created: false, count: parseCountFromCommitJson(retryBody) };
 }
 
 function utcDateId(d = new Date()) {
@@ -458,30 +488,83 @@ async function edgeGetCounts(norms) {
   return out;
 }
 
+async function firestoreReadClickCount(env, docId, token) {
+  const project = env.FIREBASE_PROJECT_ID;
+  const authToken = token || (await getGoogleAccessToken(env));
+  const res = await fetch(
+    `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents/link_clicks/${docId}`,
+    { headers: { Authorization: `Bearer ${authToken}` } }
+  );
+  if (!res.ok) return null;
+  const doc = await res.json();
+  const n = doc.fields && doc.fields.count && doc.fields.count.integerValue;
+  return n != null ? Number(n) : null;
+}
+
 async function firestoreGetCounts(env, norms) {
   const project = env.FIREBASE_PROJECT_ID;
   const out = {};
-  // Public Firestore REST get does not need auth when rules allow read: if true
-  await Promise.all(
-    norms.map(async (norm) => {
-      try {
-        const id = await sha256Hex(norm);
-        const res = await fetch(
-          `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents/link_clicks/${id}`
-        );
-        if (!res.ok) {
-          out[norm] = 0;
-          return;
-        }
-        const doc = await res.json();
-        const n = doc.fields && doc.fields.count && doc.fields.count.integerValue;
-        out[norm] = n != null ? Number(n) : 0;
-      } catch (err) {
-        console.error("get_click_one_failed", norm, err);
-        out[norm] = 0;
+  for (const norm of norms) out[norm] = 0;
+  if (!project || !norms.length) return out;
+
+  const useAdmin = hasFirebaseAdmin(env);
+  let token = null;
+  if (useAdmin) {
+    try {
+      token = await getGoogleAccessToken(env);
+    } catch (err) {
+      console.error("get_clicks_token_failed", err);
+    }
+  }
+
+  const normVariantIds = new Map();
+  const idToCount = new Map();
+  for (const norm of norms) {
+    const ids = [];
+    for (const variant of clickUrlVariants(norm)) {
+      ids.push(await sha256Hex(variant));
+    }
+    normVariantIds.set(norm, [...new Set(ids)]);
+  }
+  const allIds = [...new Set([].concat(...[...normVariantIds.values()]))];
+  const batchUrl = `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents:batchGet`;
+
+  for (let i = 0; i < allIds.length; i += 100) {
+    const chunk = allIds.slice(i, i + 100);
+    try {
+      const headers = { "Content-Type": "application/json" };
+      if (token) headers.Authorization = `Bearer ${token}`;
+      const res = await fetch(batchUrl, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          documents: chunk.map(
+            (id) => `projects/${project}/databases/(default)/documents/link_clicks/${id}`
+          ),
+        }),
+      });
+      if (!res.ok) continue;
+      const rows = await res.json();
+      if (!Array.isArray(rows)) continue;
+      for (const row of rows) {
+        const found = row && row.found;
+        if (!found || !found.name) continue;
+        const id = found.name.split("/").pop();
+        const n = found.fields && found.fields.count && found.fields.count.integerValue;
+        idToCount.set(id, n != null ? Number(n) : 0);
       }
-    })
-  );
+    } catch (err) {
+      console.error("get_clicks_batch_failed", err);
+    }
+  }
+
+  for (const norm of norms) {
+    let best = 0;
+    for (const id of normVariantIds.get(norm) || []) {
+      best = Math.max(best, idToCount.get(id) || 0);
+    }
+    out[norm] = best;
+  }
   return out;
 }
 
@@ -510,8 +593,24 @@ async function handleRecordClick(request, env, ctx) {
   const docId = await sha256Hex(norm);
   try {
     if (hasFirebaseAdmin(env)) {
-      await firestoreIncrementClick(env, docId, displayUrl || norm);
-      return json({ ok: true, via: "firestore", rate: { count: rate.count, limit: rate.limit } });
+      const result = await firestoreIncrementClick(env, docId, displayUrl || norm);
+      let count = Number.isFinite(result.count) ? result.count : null;
+      if (count == null) {
+        try {
+          count = await firestoreReadClickCount(env, docId);
+        } catch (err) {
+          console.error("read_click_after_write_failed", err);
+        }
+      }
+      const edgeCount = await edgeIncrement(norm, ctx);
+      if (count == null && edgeCount) count = edgeCount;
+      return json({
+        ok: true,
+        via: "firestore",
+        norm,
+        count,
+        rate: { count: rate.count, limit: rate.limit },
+      });
     }
     const count = await edgeIncrement(norm, ctx);
     return json({
@@ -538,10 +637,16 @@ async function handleGetClicks(request, env) {
   const norms = [...new Set(urls.map(normalizeUrl).filter((u) => u && u.length >= 10))];
   try {
     let counts;
-    if (env.FIREBASE_PROJECT_ID) {
+    if (hasFirebaseAdmin(env) || env.FIREBASE_PROJECT_ID) {
       counts = await firestoreGetCounts(env, norms);
     } else {
-      counts = await edgeGetCounts(norms);
+      counts = {};
+    }
+    const edgeCounts = await edgeGetCounts(norms);
+    for (const norm of norms) {
+      const fs = counts[norm] || 0;
+      const edge = edgeCounts[norm] || 0;
+      counts[norm] = Math.max(fs, edge);
     }
     return json({ ok: true, counts });
   } catch (err) {

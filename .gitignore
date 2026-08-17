@@ -10,3 +10,4 @@ vsce-debug.log
 .dev.vars
 deploy/webhook/.env
 .venv/proxy-list/
+scripts/batch_links_*.txt

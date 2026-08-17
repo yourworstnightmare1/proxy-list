@@ -805,12 +805,19 @@
     return total > 0 || providers > 0 || entry.status === "ok";
   }
 
+  var lensByDomainFast = null;
+
   function rebuildLinkLensIndexes() {
     summaryEntryCache = new Map();
     lensDomainSignalFirst = new Map();
+    lensByDomainFast = new Map();
     Object.keys(linkLensData || {}).forEach(function (k) {
       var v = linkLensData[k];
       if (!v || typeof v !== "object") return;
+      if (k.indexOf("domain:") === 0) {
+        var dk = k.slice(7).toLowerCase();
+        if (dk && lensHasSignal(v)) lensByDomainFast.set(dk, v);
+      }
       var d = String(v.domain || "").toLowerCase();
       if (!d || !lensHasSignal(v)) return;
       if (!lensDomainSignalFirst.has(d)) lensDomainSignalFirst.set(d, v);
@@ -823,10 +830,13 @@
     if (lensHasSignal(byExact)) { summaryEntryCache.set(link, byExact); return byExact; }
     var domain = domainOf(link);
     if (!domain) { summaryEntryCache.set(link, byExact || null); return byExact || null; }
-    var byDomain = linkLensData["domain:" + domain] || linkLensData[domain];
-    if (lensHasSignal(byDomain)) { summaryEntryCache.set(link, byDomain); return byDomain; }
-    var fromScan = lensDomainSignalFirst.get(domain) || null;
-    var out = fromScan || byExact || byDomain || null;
+    var byDomain =
+      (lensByDomainFast && lensByDomainFast.get(domain)) ||
+      linkLensData["domain:" + domain] ||
+      linkLensData[domain] ||
+      lensDomainSignalFirst.get(domain) ||
+      null;
+    var out = lensHasSignal(byDomain) ? byDomain : byExact || byDomain || null;
     summaryEntryCache.set(link, out);
     return out;
   }

@@ -89,10 +89,7 @@
   }
 
   function normalizeUrlKey(u) {
-    return String(u || "")
-      .trim()
-      .replace(/\/+$/, "")
-      .toLowerCase();
+    return normalizeUrlForHash(u);
   }
 
   /** Match Worker normalizeUrl used for link_clicks / click_daily doc ids. */
@@ -1953,9 +1950,12 @@
 
     var data;
     try {
-      var res = await fetch("../data.json", { cache: "no-cache" });
-      if (!res.ok) throw new Error("Could not load data.json (" + res.status + ")");
-      data = await res.json();
+      var json = await ProxyListData.fetchListPayload({ fetchInit: { cache: "no-cache" } });
+      var normalized = ProxyListData.normalizePayload(json);
+      data = {
+        meta: normalized.meta || (json && json.meta) || {},
+        links: ProxyListData.resolveExpandedLinks(normalized.compact ? normalized : json),
+      };
     } catch (err) {
       setNotice((err && err.message) || "Failed to load list data.", "err");
       return;

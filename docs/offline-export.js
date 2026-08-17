@@ -143,6 +143,29 @@
     var data = getInMemoryData();
     if (data) return data;
     setProgress("Fetching list data…", 30);
+    if (global.ProxyListData && typeof global.ProxyListData.fetchListPayload === "function") {
+      var json = await global.ProxyListData.fetchListPayload({ fetchInit: { signal: signal } });
+      var normalized = global.ProxyListData.normalizePayload(json);
+      if (normalized.compact) {
+        return {
+          meta: normalized.meta,
+          link_check: normalized.link_check,
+          failing_links: normalized.failing_links,
+          links: global.ProxyListData.expandAllLinks({
+            format: 2,
+            providers: normalized.compact.providers,
+            contributors: normalized.compact.contributors,
+            links: normalized.compact.links,
+          }),
+        };
+      }
+      return {
+        meta: normalized.meta,
+        link_check: normalized.link_check,
+        failing_links: normalized.failing_links,
+        links: normalized.links || [],
+      };
+    }
     return await fetchJson("data.json", signal, function (done, total) {
       var pct = 30 + Math.min(40, Math.round((done / Math.max(1, total)) * 40));
       setProgress(
@@ -172,6 +195,65 @@
     return (size / 1048576).toFixed(1) + " MB";
   }
 
+  function domainFromLink(link) {
+    try {
+      var h = new URL(link).hostname.toLowerCase();
+      return h.indexOf("www.") === 0 ? h.slice(4) : h;
+    } catch (_) {
+      return "";
+    }
+  }
+
+  function lensEntryHasSignal(entry) {
+    if (!entry || typeof entry !== "object") return false;
+    var total = Number(entry.summary && entry.summary.total);
+    var providers = Array.isArray(entry.providers) ? entry.providers.length : 0;
+    return total > 0 || providers > 0 || entry.status === "ok";
+  }
+
+  /** Keep exact URL entries only when needed; bulk domains (e.g. storage.googleapis.com) share one domain: key. */
+  function slimLinklensForBundle(fullLens, data) {
+    if (!fullLens || typeof fullLens !== "object") return {};
+    var links = (data && data.links) || [];
+    var slim = {};
+    var domainsNeeded = Object.create(null);
+
+    for (var i = 0; i < links.length; i++) {
+      var link = links[i] && links[i].link;
+      if (!link) continue;
+      var exact = fullLens[link];
+      if (exact && lensEntryHasSignal(exact)) {
+        slim[link] = exact;
+        continue;
+      }
+      var d = domainFromLink(link);
+      if (d) domainsNeeded[d] = true;
+    }
+
+    Object.keys(fullLens).forEach(function (key) {
+      if (key.indexOf("domain:") !== 0) return;
+      var d = key.slice(7).toLowerCase();
+      if (!domainsNeeded[d]) return;
+      var entry = fullLens[key];
+      if (entry && lensEntryHasSignal(entry)) slim[key] = entry;
+    });
+
+    Object.keys(domainsNeeded).forEach(function (d) {
+      if (slim["domain:" + d]) return;
+      for (var key in fullLens) {
+        if (!Object.prototype.hasOwnProperty.call(fullLens, key)) continue;
+        var entry = fullLens[key];
+        if (!entry || typeof entry !== "object") continue;
+        if (String(entry.domain || "").toLowerCase() === d && lensEntryHasSignal(entry)) {
+          slim["domain:" + d] = entry;
+          break;
+        }
+      }
+    });
+
+    return slim;
+  }
+
   async function buildOfflineHtml(mode, signal) {
     setProgress("Fetching offline shell…", 5);
     var shellText = await fetchText("offline-shell.html", signal);
@@ -183,14 +265,7 @@
     if (data) {
       setProgress("Using loaded list data…", 30);
     } else {
-      setProgress("Fetching list data…", 25);
-      data = await fetchJson("data.json", signal, function (done, total) {
-        var pct = 25 + Math.min(20, Math.round((done / Math.max(1, total)) * 20));
-        setProgress(
-          "Fetching list data… " + Math.round(done / 1048576) + " / " + Math.round(total / 1048576) + " MB",
-          pct
-        );
-      });
+      data = await ensureListData(signal);
     }
 
     setProgress("Fetching checked domains…", 50);
@@ -220,6 +295,7 @@
           );
         });
       }
+      linklens = slimLinklensForBundle(linklens || {}, data);
     }
 
     setProgress("Building offline file…", 90);

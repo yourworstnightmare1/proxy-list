@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+    <script src="../data-loader.js"></script>
     <script src="../debug-overlays.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Proxy list</title>
@@ -290,19 +291,16 @@
         return String(Math.max(0, Math.floor(n)));
       }
 
-      fetch("../data.json")
-        .then(function (r) {
-          if (!r.ok) throw new Error("Could not load data.json (" + r.status + ")");
-          return r.json();
-        })
+      ProxyListData.fetchListPayload()
         .then(function (json) {
           var meta = (json && json.meta) || {};
-          var links = Array.isArray(json)
-            ? json
-            : Array.isArray(json.links)
-              ? json.links
-              : [];
-          var sorted = links.length;
+          var sorted = ProxyListData.isCompactPayload(json)
+            ? json.links.length
+            : Array.isArray(json)
+              ? json.length
+              : Array.isArray(json.links)
+                ? json.links.length
+                : 0;
           var unsorted = Number(meta.unsorted_total);
           if (!Number.isFinite(unsorted)) unsorted = 0;
 

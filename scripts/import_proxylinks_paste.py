@@ -11,9 +11,9 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 MD_PATH = ROOT / "list.md"
-INPUT = Path(__file__).resolve().parent / "batch_links_aug11_2026.txt"
+DEFAULT_INPUT = Path(__file__).resolve().parent / "batch_links_aug17_2026.txt"
 
-DATE = "8/11/2026"
+DATE = "8/17/2026"
 CONTRIB = "[yourworstnightmare1](https://github.com/yourworstnightmare1)"
 
 FILTER_LABELS = re.compile(
@@ -148,6 +148,20 @@ def host_of(u: str) -> str:
     return h[4:] if h.startswith("www.") else h
 
 
+STORAGE_SECTION_RE = re.compile(
+    r"/(?:500klinks|fckyoukiz)/(cherri|arctic)_", re.IGNORECASE
+)
+
+
+def infer_section_from_url(url: str) -> str | None:
+    """Route bulk storage URLs to Cherri / Arctic when path contains the slug."""
+    m = STORAGE_SECTION_RE.search(url)
+    if not m:
+        return None
+    slug = m.group(1).lower()
+    return SECTION_ALIASES.get(slug)
+
+
 def should_skip_url(u: str) -> str | None:
     if not u or "chrome://" in u:
         return "invalid"
@@ -225,12 +239,25 @@ def is_domain_only_line(line: str) -> bool:
 
 def should_skip_entire_line(line: str) -> bool:
     """Filter-report / instructional lines with no salvageable section+url structure."""
+    stripped = line.strip()
     if SKIP_FROM_MARKER.search(line):
+        return True
+    if re.match(r"^after opening the link", stripped, re.I):
+        return True
+    if re.match(r"^Library/[^\s]+\.txt$", stripped, re.I):
+        return True
+    if stripped in {"Announcements", "|"} or re.match(r"^\d+$", stripped):
+        return True
+    if re.match(r"^Avatar of ", stripped, re.I):
+        return True
+    if re.match(r"^Aug \d+, \d{4}", stripped):
+        return True
+    if "arctic the sequel" in stripped.lower() or "lots of links like" in stripped.lower():
         return True
     # Pure filter emoji report blocks
     if ("✅" in line or "❌" in line) and FILTER_LABELS.search(line) and "http" not in line.lower():
         return True
-    if line.strip().startswith("(gn="):
+    if stripped.startswith("(gn="):
         return True
     return False
 
@@ -259,6 +286,22 @@ def tokenize_line(line: str) -> list[str]:
     return [p for p in parts if p and p not in {"+", "|", "-", "—", "/", "&", "..."}]
 
 
+def append_urls(
+    groups: OrderedDict[str, list[str]],
+    current: str | None,
+    urls: list[str],
+) -> str | None:
+    for u in urls:
+        inferred = infer_section_from_url(u)
+        section = inferred or current
+        if not section:
+            continue
+        groups.setdefault(section, []).append(u)
+        if inferred:
+            current = inferred
+    return current
+
+
 def parse_tokens_into(
     groups: OrderedDict[str, list[str]], current: str | None, tokens: list[str]
 ) -> str | None:
@@ -282,9 +325,7 @@ def parse_tokens_into(
             i += consumed
             continue
         if is_url_token(tok):
-            if current:
-                for u in extract_urls_from_token(tok):
-                    groups[current].append(u)
+            current = append_urls(groups, current, extract_urls_from_token(tok))
             i += 1
             continue
         # Unknown prose — skip
@@ -338,10 +379,10 @@ def parse_input(text: str) -> OrderedDict[str, list[str]]:
             continue
 
         if is_domain_only_line(line):
-            if current:
-                for p in line.split():
-                    for u in extract_urls_from_token(p):
-                        groups[current].append(u)
+            urls: list[str] = []
+            for p in line.split():
+                urls.extend(extract_urls_from_token(p))
+            current = append_urls(groups, current, urls)
             continue
 
         tokens = tokenize_line(line)
@@ -438,10 +479,25 @@ def make_pending_section(name: str, items: list[str]) -> str:
 
 
 def main() -> None:
+    import argparse
+
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-    text = INPUT.read_text(encoding="utf-8")
+    parser = argparse.ArgumentParser(description="Import batch link paste into list.md")
+    parser.add_argument(
+        "input",
+        nargs="?",
+        default=str(DEFAULT_INPUT),
+        help="Batch paste file (default: scripts/batch_links_aug17_2026.txt)",
+    )
+    args = parser.parse_args()
+    input_path = Path(args.input)
+    if not input_path.is_file():
+        print(f"Input file not found: {input_path}", file=sys.stderr)
+        sys.exit(1)
+
+    text = input_path.read_text(encoding="utf-8")
     md = MD_PATH.read_text(encoding="utf-8")
     existing_map = load_existing_sections(md)
     existing_titles = set(existing_map.values())

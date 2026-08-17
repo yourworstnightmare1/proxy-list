@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import gzip
 import json
 import re
 import sys
@@ -13,6 +14,7 @@ from submission_url_key import submission_url_key
 ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / "list.md"
 OUTPUT = ROOT / "docs" / "data.json"
+OUTPUT_GZ = ROOT / "docs" / "data.json.gz"
 CONTRIBUTOR_TOTALS = ROOT / "docs" / "contributor_link_totals.json"
 LINK_CHECK_META = ROOT / "docs" / "link_check_meta.json"
 LINK_STATUS = ROOT / "link_status.json"
@@ -569,6 +571,75 @@ def write_contributor_totals(path: Path, merged: dict[str, dict[str, object | No
     path.write_text(json.dumps(body, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def build_compact_payload(payload: dict) -> dict:
+    """Format v2: intern providers/contributors; links are [providerIdx, contributorIdx, url, found]."""
+    links = payload.get("links") or []
+    providers_list: list[dict] = []
+    provider_index: dict[str, int] = {}
+    contributors_list: list[dict] = []
+    contributor_index: dict[tuple[str, str | None], int] = {}
+
+    def provider_idx(row: dict) -> int:
+        name = str(row.get("provider") or "")
+        if name not in provider_index:
+            provider_index[name] = len(providers_list)
+            providers_list.append(
+                {
+                    "name": name,
+                    "category": row.get("category") or "",
+                    "capabilities": row.get("capabilities") or "",
+                    "capability_tags": row.get("capability_tags") or [],
+                    "protocols": row.get("protocols") or "",
+                    "protocol_tags": row.get("protocol_tags") or [],
+                    "additional_notes": row.get("additional_notes") or "",
+                }
+            )
+        return provider_index[name]
+
+    def contributor_idx(row: dict) -> int:
+        label = str(row.get("contributor") or "")
+        url = row.get("contributor_url")
+        url_s = url.strip() if isinstance(url, str) and url.strip() else None
+        key = (label, url_s)
+        if key not in contributor_index:
+            contributor_index[key] = len(contributors_list)
+            contributors_list.append({"name": label, "url": url_s})
+        return contributor_index[key]
+
+    compact_links: list[list[object]] = []
+    for row in links:
+        compact_links.append(
+            [
+                provider_idx(row),
+                contributor_idx(row),
+                row.get("link") or "",
+                row.get("found") or "",
+            ]
+        )
+
+    meta = dict(payload.get("meta") or {})
+    meta.pop("update_changelog", None)
+
+    return {
+        "format": 2,
+        "meta": meta,
+        "link_check": payload.get("link_check") or {},
+        "failing_links": payload.get("failing_links") or {},
+        "providers": providers_list,
+        "contributors": contributors_list,
+        "links": compact_links,
+    }
+
+
+def write_list_data(path: Path, gz_path: Path, payload: dict) -> tuple[int, int]:
+    body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(body)
+    with gzip.open(gz_path, "wb", compresslevel=9) as gz:
+        gz.write(body)
+    return len(body), gz_path.stat().st_size
+
+
 def write_submission_url_keys(path: Path, links: list[dict], unsorted_links: list[dict], meta: dict) -> None:
     """Compact index for on-site submission duplicate checks (full URL keys, not domains)."""
     keys: set[str] = set()
@@ -616,7 +687,6 @@ def main() -> int:
             "unsorted_total": len(unsorted_links),
             "important_notices": important,
             "update_notice": update_notice,
-            "update_changelog": changelog_entries,
             "fail_threshold": LINK_CHECK_FAIL_THRESHOLD,
             "popular_note": popular_note,
             "popular_links": popular_entries,
@@ -625,13 +695,14 @@ def main() -> int:
         "failing_links": load_failing_links(),
         "links": links,
     }
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    compact = build_compact_payload(payload)
+    raw_bytes, gz_bytes = write_list_data(OUTPUT, OUTPUT_GZ, compact)
     UNSORTED_OUTPUT.write_text(json.dumps({"links": unsorted_links}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    OUTPUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     all_keys_rows = links + unsorted_links
     write_submission_url_keys(SUBMISSION_URL_KEYS, links, unsorted_links, meta)
     print(
-        f"Wrote {len(links)} sorted links to {OUTPUT}, {len(unsorted_links)} unsorted links to {UNSORTED_OUTPUT}, "
+        f"Wrote {len(links)} sorted links to {OUTPUT} ({raw_bytes / 1048576:.2f} MB, "
+        f"gz {gz_bytes / 1048576:.2f} MB), {len(unsorted_links)} unsorted links to {UNSORTED_OUTPUT}, "
         f"{len(merged_totals)} contributor totals to {CONTRIBUTOR_TOTALS}, "
         f"{len({submission_url_key(r.get('link', '')) for r in all_keys_rows if r.get('link')})} submission URL keys to {SUBMISSION_URL_KEYS} "
         f"({meta.get('version', '')}{meta.get('revision', '')})"

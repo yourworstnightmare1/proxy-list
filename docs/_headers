@@ -1,2 +1,8 @@
 /*
   Content-Security-Policy: frame-ancestors *;
+
+/data.json.gz
+  Cache-Control: public, max-age=300
+
+/data.json
+  Cache-Control: public, max-age=300

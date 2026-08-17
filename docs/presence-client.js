@@ -33,11 +33,53 @@
     }
   }
 
+  function hostIsLocalDev() {
+    try {
+      var host = String((global.location && global.location.hostname) || "").toLowerCase();
+      return host === "localhost" || host === "127.0.0.1" || host === "[::1]";
+    } catch (_) {
+      return false;
+    }
+  }
+
+  /** Match workers/site.js normalizeUrl — used for link_clicks doc ids. */
+  function normalizeClickUrl(raw) {
+    var u = String(raw || "").trim();
+    if (!u) return "";
+    if (!/^https?:\/\//i.test(u)) u = "https://" + u;
+    try {
+      var parsed = new URL(u);
+      if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return "";
+      var out = parsed.href;
+      if (out.endsWith("/") && (out.match(/\//g) || []).length > 3) out = out.replace(/\/+$/, "");
+      return out.slice(0, 2048);
+    } catch (_) {
+      return "";
+    }
+  }
+
+  /** Pre-2026 client key (lowercase) — ratings and older click docs may use this hash. */
+  function legacyNormalizeClickUrl(raw) {
+    return String(raw || "")
+      .trim()
+      .replace(/\/+$/, "")
+      .toLowerCase();
+  }
+
+  function clickUrlVariants(raw) {
+    var modern = normalizeClickUrl(raw);
+    var legacy = legacyNormalizeClickUrl(raw);
+    var out = [];
+    if (modern) out.push(modern);
+    if (legacy && legacy !== modern) out.push(legacy);
+    return out;
+  }
+
   function resolveApiUrl(path) {
     var p = path.charAt(0) === "/" ? path : "/" + path;
     var configured = configuredApiOrigin();
     if (configured) return configured + p;
-    if (hostIsGitHubPages()) return DEFAULT_WORKER_ORIGIN + p;
+    if (hostIsGitHubPages() || hostIsLocalDev()) return DEFAULT_WORKER_ORIGIN + p;
     try {
       var pathname = String((global.location && global.location.pathname) || "");
       if (
@@ -132,5 +174,8 @@
     ping: ping,
     getSessionId: getSessionId,
     apiUrl: apiUrl,
+    normalizeClickUrl: normalizeClickUrl,
+    legacyNormalizeClickUrl: legacyNormalizeClickUrl,
+    clickUrlVariants: clickUrlVariants,
   };
 })(typeof window !== "undefined" ? window : globalThis);
