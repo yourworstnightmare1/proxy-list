@@ -20,16 +20,6 @@ Fixed a bug that causes you to be repeatedly signed out when going on different 
 Added the ability to copy HTML code and text of the offline versions of the site
 Security fixes
 
-# 💜 Selenite
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Games | N/A | N/A | 1 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://learn.englishbridalcouture.com/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 # 🌙 Velara
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |

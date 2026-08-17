@@ -252,41 +252,27 @@
     ]
   },
   "link_check": {
-    "checked_at": "2026-08-17T12:32:05Z",
-    "checked_at_display": "2026-08-17 12:32 UTC",
+    "checked_at": "2026-08-17T18:30:00Z",
+    "checked_at_display": "2026-08-17 18:30 UTC",
     "added_count": 0,
-    "removed_count": 5,
+    "removed_count": 1,
     "added_links": [],
     "removed_links": [
-      "https://mathematics.calculus.reformarchive.com",
-      "https://english.seminar.lervs.ro",
-      "https://math.science.lervs.ro",
-      "https://rhodium.thenme.net",
-      "https://edu.paschools.cfd"
+      "https://learn.englishbridalcouture.com"
     ]
   },
   "failing_links": {
-    "https://learn.englishbridalcouture.com": 2,
-    "https://testingcf.jsdelivr.net/gh/avaisadev/github.com@latest/index.svg": 1,
-    "https://aintveentry.medscience.cl": 1
+    "https://fastly.jsdelivr.net/gh/AetherGamesOfficial/sldjlsjflskj@main/studyhub.svg": 1,
+    "https://quantil.jsdelivr.net/gh/googleaccountuser/myfirstrepo/windows10background.svg": 1,
+    "https://originfastly.jsdelivr.net/gh/googleaccountuser/myfirstrepo/windows10background.svg": 1,
+    "https://originfastly.jsdelivr.net/combine/gh/googleaccountuser/myfirstrepo@latest/windows10background.svg": 1,
+    "https://quantil.jsdelivr.net/npm/ubzone@latest/assets/index.svg": 1,
+    "https://quantil.jsdelivr.net/combine/npm/ubzone@latest/assets/index.svg": 1,
+    "https://quantil.jsdelivr.net/combine/npm/ubzone/assets/index.svg": 1,
+    "https://rosin.ayresinn.com": 1,
+    "https://jsdelivr.b-cdn.net/gh/googleaccountuser/myfirstrepo/windows10background.svg": 1
   },
   "links": [
-    {
-      "provider": "💜 Selenite",
-      "category": "Games",
-      "capabilities": "N/A",
-      "capability_tags": [],
-      "protocols": "N/A",
-      "protocol_tags": [],
-      "additional_notes": "",
-      "locked": "",
-      "link": "https://learn.englishbridalcouture.com/",
-      "found": "8/1/2026",
-      "username": "N/A",
-      "password": "N/A",
-      "contributor": "yourworstnightmare1",
-      "contributor_url": "https://github.com/yourworstnightmare1"
-    },
     {
       "provider": "🌙 Velara",
       "category": "Proxy/Games",
