@@ -913,7 +913,9 @@
     .popular-section .table-chunk-wrap {
       margin: 0 -0.15rem;
     }
-    #mostOpenedSection:not([hidden]) + #stats {
+    #mostOpenedSection:not([hidden]) + #stats,
+    #popularLinksSection:not([hidden]) + #stats,
+    #popularLinksSection:not([hidden]) + #mostOpenedSection {
       margin-top: 1.25rem;
       padding-top: 1.15rem;
       border-top: 1px solid var(--border);
@@ -2977,6 +2979,8 @@
     const PRESENCE_HEARTBEAT_MS = 60 * 1000;
     let firebasePresenceDb = null;
     let activeSessionsCount = null;
+    /** Live count from the Cloudflare Worker (works without Firebase / inside web proxies). */
+    let workerActiveSessionsCount = null;
     let presenceListenerAttached = false;
     let presenceSessionRef = null;
     let presenceHeartbeatTimer = null;
@@ -3146,14 +3150,15 @@
       );
     }
 
-    function loadExternalScript(src) {
-      return new Promise((resolve, reject) => {
+    function loadExternalScript(src, timeoutMs) {
+      const load = new Promise((resolve, reject) => {
         const s = document.createElement("script");
         s.src = src;
         s.onload = () => resolve();
         s.onerror = () => reject(new Error("Could not load " + src));
         document.head.appendChild(s);
       });
+      return promiseWithTimeout(load, timeoutMs != null ? timeoutMs : 8000, "Could not load " + src);
     }
 
     let firebaseSdkPromise = null;
@@ -4412,39 +4417,39 @@
     }
 
     function shouldHideMostOpenedSection() {
-      return !!(viewingFolderId || savedLinksViewOnly || listViewMode === "popular");
+      return !!(viewingFolderId || savedLinksViewOnly);
+    }
+
+    function shouldHidePopularLinksSection() {
+      return !!(viewingFolderId || savedLinksViewOnly);
     }
 
     function setListViewMode(mode) {
       const next = mode === "popular" ? "popular" : "full";
-      if (listViewMode === next) {
-        applyListViewModeUi();
-        return;
-      }
       listViewMode = next;
       applyListViewModeUi();
-      if (listViewMode === "full" && pageContext) {
-        void render(pageContext.links, pageContext.meta, pageContext.link_check);
+      if (next === "popular") {
+        const sec = $("popularLinksSection");
+        if (sec && !sec.hidden) {
+          try {
+            sec.scrollIntoView({ block: "start", behavior: "smooth" });
+          } catch (_) {
+            sec.scrollIntoView();
+          }
+        }
       }
     }
 
     function applyListViewModeUi() {
       const popular = listViewMode === "popular";
-      const sec = $("popularLinksSection");
-      const table = $("tableWrap");
-      const statsEl = $("stats");
       const navBtn = $("popularLinksNavBtn");
-      if (sec) sec.hidden = !popular;
-      if (table) table.hidden = popular;
-      if (statsEl) statsEl.hidden = popular;
-      if (popular) hideMostOpenedSection();
       if (navBtn) {
         navBtn.classList.toggle("btn-primary", popular);
         navBtn.setAttribute("aria-pressed", popular ? "true" : "false");
       }
       const backMain = $("sidebarBackToMainList");
       if (backMain) {
-        const onPlainMainList = !viewingFolderId && !savedLinksViewOnly && !popular;
+        const onPlainMainList = !viewingFolderId && !savedLinksViewOnly;
         backMain.hidden = onPlainMainList;
       }
     }
@@ -4457,6 +4462,10 @@
       const emptyEl = $("popularLinksEmptyState");
       const mount = $("popularLinksTableMount");
       if (!sec || !thead || !tbody) return;
+      if (shouldHidePopularLinksSection()) {
+        sec.hidden = true;
+        return;
+      }
       const rows = Array.isArray(meta && meta.popular_links) ? meta.popular_links.filter((r) => r && r.link) : [];
       const note = meta && meta.popular_note ? String(meta.popular_note).trim() : "";
       if (noteEl) {
@@ -4464,14 +4473,7 @@
         noteEl.hidden = false;
       }
       if (!rows.length) {
-        setHtml(thead, "");
-        setHtml(tbody, "");
-        if (emptyEl) {
-          setHtml(emptyEl, emptyStateNoResultsInnerHtml());
-          emptyEl.hidden = false;
-        }
-        if (mount) mount.hidden = true;
-        if (listViewMode === "popular") sec.hidden = false;
+        sec.hidden = true;
         return;
       }
       if (emptyEl) {
@@ -4481,7 +4483,7 @@
       if (mount) mount.hidden = false;
       setHtml(thead, linkTableTheadRowHtml());
       setHtml(tbody, rows.map((r) => buildRowTrHtml(r)).join(""));
-      if (listViewMode === "popular") sec.hidden = false;
+      sec.hidden = false;
     }
 
     function hideMostOpenedSection() {
@@ -4560,7 +4562,7 @@
       }
       const backMain = $("sidebarBackToMainList");
       if (backMain) {
-        const onPlainMainList = !viewingFolderId && !savedLinksViewOnly && listViewMode !== "popular";
+        const onPlainMainList = !viewingFolderId && !savedLinksViewOnly;
         backMain.hidden = onPlainMainList;
       }
       renderFolderChromeIntoHost();
@@ -6533,7 +6535,13 @@
     function updateActiveUsersDisplay() {
       const line = $("activeUsersFooterLine");
       if (!line) return;
-      if (!useFirebaseClicks || activeSessionsCount === null) {
+      const n =
+        Number.isFinite(activeSessionsCount) && activeSessionsCount > 0
+          ? activeSessionsCount
+          : Number.isFinite(workerActiveSessionsCount)
+            ? workerActiveSessionsCount
+            : null;
+      if (n == null) {
         line.hidden = true;
         line.textContent = "";
         return;
@@ -6542,7 +6550,7 @@
       setHtml(
         line,
         'Active Users: <span class="active-users-count">' +
-          escapeHtml(String(activeSessionsCount)) +
+          escapeHtml(String(n)) +
           "</span>"
       );
     }
@@ -6581,6 +6589,13 @@
         anonymous: anonymous,
         displayName: displayName,
         force: !!force,
+      }).then(function (data) {
+        if (!data || data.ok === false) return;
+        const n = Number(data.active);
+        if (Number.isFinite(n) && n >= 0) {
+          workerActiveSessionsCount = n;
+          updateActiveUsersDisplay();
+        }
       });
     }
 
@@ -6592,6 +6607,16 @@
       presenceWorkerPingTimer = setInterval(function () {
         presencePingToWorker(false);
       }, PRESENCE_HEARTBEAT_MS);
+      if (
+        typeof window.ProxyListPresence !== "undefined" &&
+        typeof window.ProxyListPresence.fetchActiveCount === "function"
+      ) {
+        void window.ProxyListPresence.fetchActiveCount().then(function (n) {
+          if (n == null) return;
+          workerActiveSessionsCount = n;
+          updateActiveUsersDisplay();
+        });
+      }
     }
 
     function presenceHeartbeat() {
@@ -10779,6 +10804,7 @@
     initEmbedMode();
     setupAccountUI();
     restoreFirebaseQuotaBannerFromSession();
+    startPresenceWorkerPings();
     if (isFileProtocol()) {
       setContentLoading(false);
       setHtml(
@@ -11322,15 +11348,16 @@
         const popularLinksNavBtn = $("popularLinksNavBtn");
         if (popularLinksNavBtn) {
           popularLinksNavBtn.addEventListener("click", () => {
-            setListViewMode(listViewMode === "popular" ? "full" : "popular");
+            setListViewMode("popular");
           });
         }
         const sidebarBackToMainList = $("sidebarBackToMainList");
         if (sidebarBackToMainList) {
           sidebarBackToMainList.addEventListener("click", (ev) => {
-            if (listViewMode === "popular") {
+            if (!viewingFolderId && !savedLinksViewOnly) {
               ev.preventDefault();
               setListViewMode("full");
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }
           });
         }
@@ -11359,6 +11386,7 @@
         });
       })
       .then((rendered) => {
+        startPresenceWorkerPings();
         void ensureFirebaseSdk()
           .then((ok) => (ok ? initClickTracking() : false))
           .catch((err) => {
