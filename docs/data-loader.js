@@ -244,6 +244,69 @@
     return out;
   }
 
+  function yieldToMainThread() {
+    return new Promise(function (resolve) {
+      if (typeof requestAnimationFrame === "function") {
+        requestAnimationFrame(function () {
+          setTimeout(resolve, 0);
+        });
+      } else {
+        setTimeout(resolve, 0);
+      }
+    });
+  }
+
+  /** Expand compact rows in chunks so web proxies and low-end devices stay responsive. */
+  async function expandAllLinksAsync(payload, options) {
+    if (!isCompactPayload(payload)) {
+      return Array.isArray(payload) ? payload : payload.links || [];
+    }
+    var opts = Object.assign({ shareProviderArrays: true, yieldEvery: 500 }, options || {});
+    var total = payload.links.length;
+    var out = new Array(total);
+    var step = Math.max(50, Number(opts.yieldEvery) || 500);
+    for (var i = 0; i < total; i++) {
+      out[i] = expandRow(payload, payload.links[i], opts);
+      if (i > 0 && i % step === 0) {
+        if (typeof opts.onProgress === "function") {
+          try {
+            opts.onProgress(i / total);
+          } catch (_) {}
+        }
+        await yieldToMainThread();
+      }
+    }
+    if (typeof opts.onProgress === "function") {
+      try {
+        opts.onProgress(1);
+      } catch (_) {}
+    }
+    return out;
+  }
+
+  async function fetchJsonAsset(name, options) {
+    var opts = options || {};
+    var base = opts.baseUrl != null ? opts.baseUrl : listAssetBaseUrl();
+    var timeoutMs = opts.timeoutMs != null ? opts.timeoutMs : 20000;
+    var errors = [];
+    var candidates = listAssetUrlCandidates(name, base);
+    for (var i = 0; i < candidates.length; i++) {
+      var url = candidates[i];
+      try {
+        var res = await fetchWithTimeout(url, opts.fetchInit || {}, timeoutMs);
+        if (!res.ok) {
+          errors.push(url + " HTTP " + res.status);
+          continue;
+        }
+        return readJsonResponse(res);
+      } catch (err) {
+        errors.push(url + ": " + (err && err.message ? err.message : String(err)));
+      }
+    }
+    var detail = errors.length ? errors.join("; ") : "no URLs attempted";
+    throw new Error("Could not load " + name + " (" + detail + ")");
+  }
+
   function linkCount(normalized) {
     if (normalized.compact) return normalized.compact.links.length;
     return (normalized.links || []).length;
@@ -330,6 +393,8 @@
     normalizePayload: normalizePayload,
     resolveExpandedLinks: resolveExpandedLinks,
     expandAllLinks: expandAllLinks,
+    expandAllLinksAsync: expandAllLinksAsync,
+    fetchJsonAsset: fetchJsonAsset,
     linkCount: linkCount,
     isRelativeUrl: isRelativeUrl,
     directoryOfSrc: directoryOfSrc,

@@ -1513,6 +1513,65 @@
     });
   }
 
+  function loadExternalScript(src) {
+    return new Promise(function (resolve, reject) {
+      var s = document.createElement("script");
+      s.src = src;
+      s.onload = function () {
+        resolve();
+      };
+      s.onerror = function () {
+        reject(new Error("Could not load " + src));
+      };
+      document.head.appendChild(s);
+    });
+  }
+
+  var firebaseSdkPromise = null;
+  var FIREBASE_COMPAT_BASE = "https://www.gstatic.com/firebasejs/10.7.1/";
+
+  function ensureFirebaseSdk() {
+    if (typeof firebase !== "undefined") return Promise.resolve(true);
+    if (firebaseSdkPromise) return firebaseSdkPromise;
+    firebaseSdkPromise = ["firebase-app-compat.js", "firebase-auth-compat.js", "firebase-firestore-compat.js"]
+      .reduce(function (chain, file) {
+        return chain.then(function () {
+          return loadExternalScript(FIREBASE_COMPAT_BASE + file);
+        });
+      }, Promise.resolve())
+      .then(function () {
+        return typeof firebase !== "undefined";
+      })
+      .catch(function (err) {
+        console.warn("[stats] Firebase SDK did not load", err);
+        firebaseSdkPromise = null;
+        return false;
+      });
+    return firebaseSdkPromise;
+  }
+
+  function fetchDocsAsset(name) {
+    if (window.ProxyListData && typeof ProxyListData.fetchJsonAsset === "function") {
+      return ProxyListData.fetchJsonAsset(name, { fetchInit: { cache: "no-cache" }, timeoutMs: 20000 });
+    }
+    return fetch("../" + name, { cache: "no-cache" }).then(function (res) {
+      if (!res.ok) throw new Error(name + " HTTP " + res.status);
+      return res.json();
+    });
+  }
+
+  async function resolveExpandedLinksAsync(json, normalized) {
+    if (normalized && normalized.compact && typeof ProxyListData.expandAllLinksAsync === "function") {
+      return ProxyListData.expandAllLinksAsync({
+        format: 2,
+        providers: normalized.compact.providers,
+        contributors: normalized.compact.contributors,
+        links: normalized.compact.links,
+      });
+    }
+    return ProxyListData.resolveExpandedLinks(normalized && normalized.compact ? normalized : json);
+  }
+
   function initFirebase() {
     try {
       var cfg = window.__FIREBASE_CONFIG__;
@@ -1948,13 +2007,18 @@
     }
     showPanel(panelFromHash(), { skipHash: true });
 
+    if (typeof Chart === "undefined") {
+      setNotice("Chart.js did not load — graphs are unavailable in this browser or proxy.", "err");
+    }
+
     var data;
     try {
-      var json = await ProxyListData.fetchListPayload({ fetchInit: { cache: "no-cache" } });
+      var json = await ProxyListData.fetchListPayload({ fetchInit: { cache: "no-cache" }, timeoutMs: 20000 });
       var normalized = ProxyListData.normalizePayload(json);
+      var links = await resolveExpandedLinksAsync(json, normalized);
       data = {
         meta: normalized.meta || (json && json.meta) || {},
-        links: ProxyListData.resolveExpandedLinks(normalized.compact ? normalized : json),
+        links: links,
       };
     } catch (err) {
       setNotice((err && err.message) || "Failed to load list data.", "err");
@@ -1983,31 +2047,23 @@
     });
 
     try {
-      var contribRes = await fetch("../contributor_link_totals.json", { cache: "no-cache" });
-      if (contribRes.ok) {
-        renderContributors(await contribRes.json());
-      }
+      renderContributors(await fetchDocsAsset("contributor_link_totals.json"));
     } catch (_) {}
 
     try {
-      var filterRes = await fetch("../filter_stats.json", { cache: "no-cache" });
-      if (filterRes.ok) {
-        renderFilterStats(await filterRes.json());
-      } else {
-        setText("statFilters", "—");
-        setText("statFilterChecked", "—");
-        var filterBody = $("filterTableBody");
-        if (filterBody) {
-          filterBody.innerHTML =
-            '<tr><td class="muted" colspan="5">filter_stats.json missing. Run scripts/build_filter_stats.py.</td></tr>';
-        }
-      }
+      renderFilterStats(await fetchDocsAsset("filter_stats.json"));
     } catch (err) {
       console.warn("[stats] filter_stats load failed", err);
       setText("statFilters", "—");
       setText("statFilterChecked", "—");
+      var filterBody = $("filterTableBody");
+      if (filterBody) {
+        filterBody.innerHTML =
+          '<tr><td class="muted" colspan="5">filter_stats.json missing. Run scripts/build_filter_stats.py.</td></tr>';
+      }
     }
 
+    await ensureFirebaseSdk();
     state.db = initFirebase();
     var clicks = [];
     if (!state.db) {

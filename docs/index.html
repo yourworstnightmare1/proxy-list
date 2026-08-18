@@ -2087,6 +2087,10 @@
             <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="5" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="5" cy="18" r="1" fill="currentColor" stroke="none"/><path d="M9 6h11M11 12h9M8 18h12"/></svg>
             Unsorted links
           </a>
+          <button class="btn" id="popularLinksNavBtn" type="button" aria-pressed="false">
+            <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Popular links
+          </button>
           <button class="btn" id="selectFilterBtn" type="button">
             <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
             Select filter
@@ -2236,6 +2240,19 @@
         </p>
       </aside>
       <section class="important-notices" id="importantNotices" aria-label="Important notices" hidden></section>
+      <section class="popular-section" id="popularLinksSection" aria-labelledby="popularLinksHeading" hidden>
+        <h2 id="popularLinksHeading">Popular links</h2>
+        <p class="popular-note" id="popularLinksNote"></p>
+        <div class="table-chunk-wrap">
+          <div id="popularLinksEmptyState" class="empty-state empty-state--in-panel" role="status" hidden></div>
+          <div id="popularLinksTableMount">
+            <table aria-labelledby="popularLinksHeading">
+              <thead id="popularLinksThead"></thead>
+              <tbody id="popularLinksTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
       <section class="popular-section" id="mostOpenedSection" aria-labelledby="mostOpenedHeading" hidden>
         <h2 id="mostOpenedHeading">Most opened</h2>
         <div class="most-opened-controls">
@@ -2810,16 +2827,42 @@
     }
 
     function nodesFromSanitizedBodyHtml(raw) {
-      if (!raw || !window.DOMPurify) return [];
+      if (!raw) return [];
+      if (!window.DOMPurify) return nodesFromTrustedBodyHtml(raw);
       const clean = DOMPurify.sanitize(String(raw));
       if (!clean) return [];
       const doc = new DOMParser().parseFromString("<body>" + clean + "</body>", "text/html");
       return importSanitizedNodes(doc.body.childNodes);
     }
 
+    function nodesFromTrustedBodyHtml(raw) {
+      if (!raw) return [];
+      const doc = new DOMParser().parseFromString("<body>" + String(raw) + "</body>", "text/html");
+      return importSanitizedNodes(doc.body.childNodes);
+    }
+
+    function nodesFromTrustedTableSection(sectionTag, raw) {
+      const tag = String(sectionTag || "").toLowerCase();
+      if (!raw || (tag !== "thead" && tag !== "tbody")) return [];
+      const doc = new DOMParser().parseFromString(
+        "<table><" + tag + ">" + String(raw) + "</" + tag + "></table>",
+        "text/html"
+      );
+      const section = doc.querySelector(tag);
+      return section ? importSanitizedNodes(section.childNodes) : [];
+    }
+
+    function nodesFromTrustedSelectOptions(raw) {
+      if (!raw) return [];
+      const doc = new DOMParser().parseFromString("<select>" + String(raw) + "</select>", "text/html");
+      const select = doc.querySelector("select");
+      return select ? importSanitizedNodes(select.childNodes) : [];
+    }
+
     function nodesFromSanitizedTableSection(sectionTag, raw) {
       const tag = String(sectionTag || "").toLowerCase();
-      if (!raw || !window.DOMPurify || (tag !== "thead" && tag !== "tbody")) return [];
+      if (!raw || (tag !== "thead" && tag !== "tbody")) return [];
+      if (!window.DOMPurify) return nodesFromTrustedTableSection(tag, raw);
       const clean = DOMPurify.sanitize("<table><" + tag + ">" + String(raw) + "</" + tag + "></table>");
       if (!clean) return [];
       const doc = new DOMParser().parseFromString(clean, "text/html");
@@ -2828,7 +2871,8 @@
     }
 
     function nodesFromSanitizedSelectOptions(raw) {
-      if (!raw || !window.DOMPurify) return [];
+      if (!raw) return [];
+      if (!window.DOMPurify) return nodesFromTrustedSelectOptions(raw);
       // Orphan <option> nodes are dropped outside <select>, same class of issue as <tr>/<td>.
       const clean = DOMPurify.sanitize("<select>" + String(raw) + "</select>");
       if (!clean) return [];
@@ -2837,30 +2881,43 @@
       return select ? importSanitizedNodes(select.childNodes) : [];
     }
 
-    /** Assign HTML after sanitization so static analysis (e.g. CodeQL) sees a guarded DOM sink. */
+    function htmlNodesForElement(el, raw) {
+      const tag = el.tagName;
+      if (tag === "THEAD") {
+        return window.DOMPurify
+          ? nodesFromSanitizedTableSection("thead", raw)
+          : nodesFromTrustedTableSection("thead", raw);
+      }
+      if (tag === "TBODY") {
+        return window.DOMPurify
+          ? nodesFromSanitizedTableSection("tbody", raw)
+          : nodesFromTrustedTableSection("tbody", raw);
+      }
+      if (tag === "SELECT") {
+        return window.DOMPurify ? nodesFromSanitizedSelectOptions(raw) : nodesFromTrustedSelectOptions(raw);
+      }
+      return window.DOMPurify ? nodesFromSanitizedBodyHtml(raw) : nodesFromTrustedBodyHtml(raw);
+    }
+
+    /** Assign HTML after sanitization (or trusted DOMParser fallback when DOMPurify is unavailable). */
     function setHtml(el, html) {
       if (!el) return;
-      if (!window.DOMPurify) {
-        el.replaceChildren();
-        return;
-      }
       const raw = html == null ? "" : String(html);
-      const tag = el.tagName;
-      let nodes;
-      if (tag === "THEAD") nodes = nodesFromSanitizedTableSection("thead", raw);
-      else if (tag === "TBODY") nodes = nodesFromSanitizedTableSection("tbody", raw);
-      else if (tag === "SELECT") nodes = nodesFromSanitizedSelectOptions(raw);
-      else nodes = nodesFromSanitizedBodyHtml(raw);
+      const nodes = htmlNodesForElement(el, raw);
       el.replaceChildren(...nodes);
     }
 
     function insertAdjacentHtmlSafe(el, position, html) {
-      if (!el || !window.DOMPurify) return;
+      if (!el) return;
       const raw = html == null ? "" : String(html);
       const nodes =
         el.tagName === "TBODY" && position === "beforeend"
-          ? nodesFromSanitizedTableSection("tbody", raw)
-          : nodesFromSanitizedBodyHtml(raw);
+          ? window.DOMPurify
+            ? nodesFromSanitizedTableSection("tbody", raw)
+            : nodesFromTrustedTableSection("tbody", raw)
+          : window.DOMPurify
+            ? nodesFromSanitizedBodyHtml(raw)
+            : nodesFromTrustedBodyHtml(raw);
       if (!nodes.length) return;
       if (position === "beforeend") el.append(...nodes);
       else if (position === "afterbegin") el.prepend(...nodes);
@@ -2888,6 +2945,8 @@
     let linkLensFetchPromise = null;
     /** Filled on main data load so we can re-render after lazy linklens arrives. */
     let pageContext = null;
+    /** "full" (default table) or "popular" (curated hand-picked links). */
+    let listViewMode = "full";
 
     function syncOfflineExportGlobals() {
       try {
@@ -4353,7 +4412,76 @@
     }
 
     function shouldHideMostOpenedSection() {
-      return !!(viewingFolderId || savedLinksViewOnly);
+      return !!(viewingFolderId || savedLinksViewOnly || listViewMode === "popular");
+    }
+
+    function setListViewMode(mode) {
+      const next = mode === "popular" ? "popular" : "full";
+      if (listViewMode === next) {
+        applyListViewModeUi();
+        return;
+      }
+      listViewMode = next;
+      applyListViewModeUi();
+      if (listViewMode === "full" && pageContext) {
+        void render(pageContext.links, pageContext.meta, pageContext.link_check);
+      }
+    }
+
+    function applyListViewModeUi() {
+      const popular = listViewMode === "popular";
+      const sec = $("popularLinksSection");
+      const table = $("tableWrap");
+      const statsEl = $("stats");
+      const navBtn = $("popularLinksNavBtn");
+      if (sec) sec.hidden = !popular;
+      if (table) table.hidden = popular;
+      if (statsEl) statsEl.hidden = popular;
+      if (popular) hideMostOpenedSection();
+      if (navBtn) {
+        navBtn.classList.toggle("btn-primary", popular);
+        navBtn.setAttribute("aria-pressed", popular ? "true" : "false");
+      }
+      const backMain = $("sidebarBackToMainList");
+      if (backMain) {
+        const onPlainMainList = !viewingFolderId && !savedLinksViewOnly && !popular;
+        backMain.hidden = onPlainMainList;
+      }
+    }
+
+    function renderPopularLinksSection(meta) {
+      const sec = $("popularLinksSection");
+      const noteEl = $("popularLinksNote");
+      const thead = $("popularLinksThead");
+      const tbody = $("popularLinksTableBody");
+      const emptyEl = $("popularLinksEmptyState");
+      const mount = $("popularLinksTableMount");
+      if (!sec || !thead || !tbody) return;
+      const rows = Array.isArray(meta && meta.popular_links) ? meta.popular_links.filter((r) => r && r.link) : [];
+      const note = meta && meta.popular_note ? String(meta.popular_note).trim() : "";
+      if (noteEl) {
+        noteEl.textContent = note || "Hand-picked links that tend to work well — not ranked by site traffic.";
+        noteEl.hidden = false;
+      }
+      if (!rows.length) {
+        setHtml(thead, "");
+        setHtml(tbody, "");
+        if (emptyEl) {
+          setHtml(emptyEl, emptyStateNoResultsInnerHtml());
+          emptyEl.hidden = false;
+        }
+        if (mount) mount.hidden = true;
+        if (listViewMode === "popular") sec.hidden = false;
+        return;
+      }
+      if (emptyEl) {
+        emptyEl.hidden = true;
+        setHtml(emptyEl, "");
+      }
+      if (mount) mount.hidden = false;
+      setHtml(thead, linkTableTheadRowHtml());
+      setHtml(tbody, rows.map((r) => buildRowTrHtml(r)).join(""));
+      if (listViewMode === "popular") sec.hidden = false;
     }
 
     function hideMostOpenedSection() {
@@ -4432,7 +4560,7 @@
       }
       const backMain = $("sidebarBackToMainList");
       if (backMain) {
-        const onPlainMainList = !viewingFolderId && !savedLinksViewOnly;
+        const onPlainMainList = !viewingFolderId && !savedLinksViewOnly && listViewMode !== "popular";
         backMain.hidden = onPlainMainList;
       }
       renderFolderChromeIntoHost();
@@ -10599,6 +10727,36 @@
       };
     }
 
+    async function normalizePayloadAsync(json) {
+      if (window.ProxyListData && typeof window.ProxyListData.normalizePayload === "function") {
+        const normalized = window.ProxyListData.normalizePayload(json);
+        if (normalized.compact && typeof window.ProxyListData.expandAllLinksAsync === "function") {
+          const expanded = await window.ProxyListData.expandAllLinksAsync(
+            {
+              format: 2,
+              providers: normalized.compact.providers,
+              contributors: normalized.compact.contributors,
+              links: normalized.compact.links,
+            },
+            {
+              onProgress: function (ratio) {
+                const pct = 38 + Math.round(Math.max(0, Math.min(1, Number(ratio) || 0)) * 14);
+                reportContentLoadingProgress(pct, "Preparing list…");
+              },
+            }
+          );
+          return {
+            meta: normalized.meta,
+            link_check: normalized.link_check,
+            links: expanded,
+            failing_links: normalized.failing_links,
+          };
+        }
+        return normalizePayload(json);
+      }
+      return normalizePayload(json);
+    }
+
     let offlineExportScriptPromise = null;
     function ensureOfflineExportScript() {
       if (window.ProxyListOfflineExport) return Promise.resolve(window.ProxyListOfflineExport);
@@ -10615,6 +10773,7 @@
     }
 
     setContentLoading(true, { progress: 0, message: "Getting data..." });
+    applyImportantNotices({});
     bindClickLoadSlowPromptButtons();
     initSavedLinksView();
     initEmbedMode();
@@ -10662,8 +10821,11 @@
     ])
       .then(([, json, checkedDomainsText]) => {
         reportContentLoadingProgress(35, "Getting data...");
+        renderPopularLinksSection((json && json.meta) || {});
+        return normalizePayloadAsync(json).then((normalized) => {
         initFolderReportModal();
         reportContentLoadingProgress(55, "Preparing list…");
+        const { meta, link_check, links } = normalized;
         rebuildLinkLensIndexes();
         populateKnownFilters();
         updateSelectedFilterUI();
@@ -10674,7 +10836,6 @@
             .map((s) => s.trim().toLowerCase().replace(/^www\./, ""))
             .filter(Boolean)
         );
-        const { meta, link_check, links } = normalizePayload(json);
         pageContext = { links, meta, link_check };
         syncOfflineExportGlobals();
         currentListVersionStamp = versionStamp(meta) || "";
@@ -10685,6 +10846,8 @@
           failThreshold = meta.fail_threshold;
         }
         applyImportantNotices(meta);
+        renderPopularLinksSection(meta);
+        applyListViewModeUi();
         setFooter(meta);
         syncMostOpenedProviderOptions(links);
         const moSortSel = $("mostOpenedSortSelect");
@@ -11156,6 +11319,21 @@
             setSiteUpdateBannerVisible(false);
           });
         }
+        const popularLinksNavBtn = $("popularLinksNavBtn");
+        if (popularLinksNavBtn) {
+          popularLinksNavBtn.addEventListener("click", () => {
+            setListViewMode(listViewMode === "popular" ? "full" : "popular");
+          });
+        }
+        const sidebarBackToMainList = $("sidebarBackToMainList");
+        if (sidebarBackToMainList) {
+          sidebarBackToMainList.addEventListener("click", (ev) => {
+            if (listViewMode === "popular") {
+              ev.preventDefault();
+              setListViewMode("full");
+            }
+          });
+        }
         $("backToTopBtn").addEventListener("click", () => {
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
@@ -11177,6 +11355,7 @@
         return render(links, meta, link_check).then(() => {
           finishContentLoading();
           if ($("folderTrustedResults")) refreshFolderTrustedSearchUI(folderTrustedSearchLastQuery);
+        });
         });
       })
       .then((rendered) => {
