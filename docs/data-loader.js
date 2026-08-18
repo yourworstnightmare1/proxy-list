@@ -103,23 +103,133 @@
     return Array.isArray(json.links) ? json.links : [];
   }
 
+  function isRelativeUrl(s) {
+    if (!s) return false;
+    if (s.slice(0, 2) === "//") return false;
+    return !/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(s);
+  }
+
+  function directoryOfSrc(s) {
+    if (!s) return "";
+    var noHash = String(s).split("#")[0].split("?")[0];
+    var slash = noHash.lastIndexOf("/");
+    if (slash === -1) return "";
+    return noHash.slice(0, slash + 1);
+  }
+
+  function looksLikeDataLoaderSrc(s) {
+    return !!(s && String(s).indexOf("data-loader.js") !== -1);
+  }
+
+  /**
+   * Directory that contains data.json.
+   * Prefer a relative path from the script tag so school web proxies
+   * (Ultraviolet, Scramjet) can rewrite fetch() against the current page.
+   * Never use `new URL("/", baseURI)` — that strips subdirectory deploys
+   * and becomes the proxy origin under UV/Scramjet.
+   */
   function listAssetBaseUrl() {
     if (typeof document === "undefined") return "";
     var scripts = document.getElementsByTagName("script");
     for (var i = scripts.length - 1; i >= 0; i--) {
-      var src = scripts[i].getAttribute("src");
-      if (!src || src.indexOf("data-loader.js") === -1) continue;
+      var el = scripts[i];
+      var attr = "";
+      var prop = "";
       try {
-        return new URL("./", new URL(src, document.baseURI)).href;
-      } catch (_) {
-        break;
+        attr = el.getAttribute("src") || "";
+      } catch (_) {}
+      try {
+        prop = el.src || "";
+      } catch (_) {}
+      if (!looksLikeDataLoaderSrc(attr) && !looksLikeDataLoaderSrc(prop)) continue;
+      if (looksLikeDataLoaderSrc(attr) && isRelativeUrl(attr)) {
+        return directoryOfSrc(attr);
+      }
+      if (prop) {
+        try {
+          return new URL("./", prop).href;
+        } catch (_) {}
+      }
+      if (attr) {
+        try {
+          return new URL("./", new URL(attr, document.baseURI)).href;
+        } catch (_) {}
       }
     }
+    return "";
+  }
+
+  function addUniqueUrl(list, seen, url) {
+    if (!url || seen[url]) return;
+    seen[url] = 1;
+    list.push(url);
+  }
+
+  function resolveListAssetUrl(name, base) {
+    if (!name) return name;
+    var b = base == null ? "" : String(base);
+    if (!b) return name;
+    if (isRelativeUrl(b)) return b + name;
     try {
-      return new URL("/", document.baseURI).href;
+      return new URL(name, b).href;
     } catch (_) {
-      return "";
+      return name;
     }
+  }
+
+  /** Relative first (proxy-safe), then resolved script directory, then parent folder. */
+  function listAssetUrlCandidates(name, base) {
+    var out = [];
+    var seen = {};
+    var resolved = resolveListAssetUrl(name, base);
+    if (base && isRelativeUrl(base)) {
+      addUniqueUrl(out, seen, resolved);
+      return out;
+    }
+    addUniqueUrl(out, seen, name);
+    addUniqueUrl(out, seen, resolved);
+    addUniqueUrl(out, seen, "../" + name);
+    return out;
+  }
+
+  function fetchWithTimeout(url, init, timeoutMs) {
+    var ms = timeoutMs > 0 ? timeoutMs : 0;
+    if (!ms) return fetch(url, init || {});
+    var ctrl = typeof AbortController === "function" ? new AbortController() : null;
+    var fetchInit = init ? Object.assign({}, init) : {};
+    if (ctrl) {
+      if (fetchInit.signal) {
+        var outer = fetchInit.signal;
+        if (outer.aborted) ctrl.abort();
+        else {
+          outer.addEventListener("abort", function () {
+            try {
+              ctrl.abort();
+            } catch (_) {}
+          });
+        }
+      }
+      fetchInit.signal = ctrl.signal;
+    }
+    var timer;
+    var timedOut = new Promise(function (_, reject) {
+      timer = setTimeout(function () {
+        try {
+          if (ctrl) ctrl.abort();
+        } catch (_) {}
+        reject(new Error("timeout after " + ms + "ms"));
+      }, ms);
+    });
+    return Promise.race([fetch(url, fetchInit), timedOut]).then(
+      function (res) {
+        clearTimeout(timer);
+        return res;
+      },
+      function (err) {
+        clearTimeout(timer);
+        throw err;
+      }
+    );
   }
 
   function expandAllLinks(payload, options) {
@@ -167,37 +277,46 @@
 
   async function fetchListPayload(options) {
     var opts = options || {};
-    var base = opts.baseUrl || listAssetBaseUrl();
+    var base = opts.baseUrl != null ? opts.baseUrl : listAssetBaseUrl();
+    var timeoutMs = opts.timeoutMs != null ? opts.timeoutMs : 20000;
     // Prefer plain JSON for maximum host compatibility; gzip is an optional fast path.
-    var urls = opts.preferCompressed
+    var files = opts.preferCompressed
       ? ["data.json.gz", "data.json.br", "data.json"]
       : ["data.json", "data.json.gz", "data.json.br"];
     var errors = [];
-    for (var u = 0; u < urls.length; u++) {
-      var url = urls[u];
-      try {
-        var fetchUrl = base ? new URL(url, base).href : url;
-        var res = await fetch(fetchUrl, opts.fetchInit || {});
-        if (!res.ok) {
-          errors.push(url + " HTTP " + res.status);
-          continue;
-        }
-        if (url.endsWith(".gz") || url.endsWith(".br")) {
-          var buf = await res.arrayBuffer();
-          if (url.endsWith(".gz")) {
-            return await parseJsonBytes(buf);
+    for (var f = 0; f < files.length; f++) {
+      var file = files[f];
+      var candidates = listAssetUrlCandidates(file, base);
+      for (var c = 0; c < candidates.length; c++) {
+        var fetchUrl = candidates[c];
+        try {
+          if (typeof opts.onAttempt === "function") {
+            try {
+              opts.onAttempt(file, fetchUrl);
+            } catch (_) {}
           }
-          if (typeof DecompressionStream !== "function") {
-            errors.push(url + " (brotli unsupported)");
+          var res = await fetchWithTimeout(fetchUrl, opts.fetchInit || {}, timeoutMs);
+          if (!res.ok) {
+            errors.push(fetchUrl + " HTTP " + res.status);
             continue;
           }
-          var dsBr = new DecompressionStream("brotli");
-          var streamBr = new Response(new Blob([buf]).stream().pipeThrough(dsBr));
-          return readJsonResponse(streamBr);
+          if (file.endsWith(".gz") || file.endsWith(".br")) {
+            var buf = await res.arrayBuffer();
+            if (file.endsWith(".gz")) {
+              return await parseJsonBytes(buf);
+            }
+            if (typeof DecompressionStream !== "function") {
+              errors.push(fetchUrl + " (brotli unsupported)");
+              continue;
+            }
+            var dsBr = new DecompressionStream("brotli");
+            var streamBr = new Response(new Blob([buf]).stream().pipeThrough(dsBr));
+            return readJsonResponse(streamBr);
+          }
+          return readJsonResponse(res);
+        } catch (err) {
+          errors.push(fetchUrl + ": " + (err && err.message ? err.message : String(err)));
         }
-        return readJsonResponse(res);
-      } catch (err) {
-        errors.push(url + ": " + (err && err.message ? err.message : String(err)));
       }
     }
     var detail = errors.length ? errors.join("; ") : "no URLs attempted";
@@ -212,7 +331,11 @@
     resolveExpandedLinks: resolveExpandedLinks,
     expandAllLinks: expandAllLinks,
     linkCount: linkCount,
+    isRelativeUrl: isRelativeUrl,
+    directoryOfSrc: directoryOfSrc,
     listAssetBaseUrl: listAssetBaseUrl,
+    resolveListAssetUrl: resolveListAssetUrl,
+    listAssetUrlCandidates: listAssetUrlCandidates,
     fetchListPayload: fetchListPayload,
   };
 })(typeof window !== "undefined" ? window : globalThis);
