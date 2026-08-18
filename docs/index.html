@@ -1758,6 +1758,7 @@
       padding: 0.65rem 0.75rem;
       margin-bottom: 0.75rem;
     }
+    .important-notices .notice-alert-danger h2,
     .important-notices .notice-alert-danger h3 {
       color: #ff8a8a;
     }
@@ -10249,6 +10250,7 @@
     function importantNoticeAlertClass(title) {
       const t = String(title || "").trim();
       if (/link ratings back up/i.test(t)) return "notice-alert-info";
+      if (/scramjet|ultraviolet/i.test(t)) return "notice-alert-danger";
       return "";
     }
 
@@ -10467,10 +10469,15 @@
       openUpdateModal(meta, stored);
     }
 
+    const PROXY_ACCESS_NOTICE_MD =
+      "# Issues Visiting Site Through Scramjet/Ultraviolet\n\n" +
+      "I am aware that when you try to visit the site using the Scramjet and Ultraviolet proxies, the list fails to load with an error or hangs on the loading screen. I am currently working to fix these bugs, and Scramjet should be operational at the moment. I apologize for any inconvenience this may be causing. [Check GitHub PRs for info on updates being made to fix support](https://github.com/yourworstnightmare1/proxy-list/pull/)";
+
     function applyImportantNotices(meta) {
       const md = meta && meta.important_notices;
-      importantNoticesStaticHtml =
-        md && String(md).trim() ? renderMarkdownLiteNotices(String(md)) : "";
+      const metaHtml = md && String(md).trim() ? renderMarkdownLiteNotices(String(md)) : "";
+      const proxyHtml = renderMarkdownLiteNotices(PROXY_ACCESS_NOTICE_MD);
+      importantNoticesStaticHtml = proxyHtml + metaHtml;
       refreshImportantNoticesDom();
     }
 
