@@ -47,17 +47,13 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 7 |
+> | Games | N/A | N/A | 3 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://account.englishbridalcouture.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mail.adriapartners.net/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://slnt.newlifesanctuarychurch.com/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://slnt.frenchchurch.org/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learn.englishbridalcouture.com/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://selenite.share-with.eu | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://selenite-edu.share-with.eu | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌙 Velara
 > [!NOTE]
@@ -393,7 +389,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 31 |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 29 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -402,7 +398,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | - | - | - | - | - | - |
 | | https://places.vjason.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://ilovenirbytes.savequeechylake.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://learn.hr24.ro/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://area.forwardersoft.com/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://area.vm4construction.uk/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu.rawr.africa.com/ | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -430,7 +425,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://total.berugy.hu | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://spaces.berugy.hu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | http://canu.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://abc.priestella.xyz | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://deeper.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🪴 Fern
@@ -702,7 +696,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 70 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 67 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -759,10 +753,8 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://s3.amazonaws.com/lsrelay-a/index.html | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://lsrelay-a.s3.amazonaws.com/index.html | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://edu.italianish.beltfrog.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://tub.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://vlargestinks.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://edu.italianish.beltfrog.com/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://tasty.how-to-cook.airlinemeals.net/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://edu.quevo.com.br/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://getaway.champagnewishesandrvdreams.com/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -779,13 +771,12 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://we-all-love-samsomuch.firebaseapp.com/i-likedogs/index.html | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://we-all-love-samsomuch.web.app/i-likedogs/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://we-all-love-samsomuch.firebaseapp.com/i-likedogs/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://computers.priestella.xyz/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌕 Lunar
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 60 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 54 |
 
 > [!IMPORTANT]
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -805,7 +796,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://learning.notariamelipilla.cl | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://math.babypos.hk | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://lectures.vta-international.com | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://frogs.beltfrog.com | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://mathew.recreatinganew.com | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://ramzankhanyt.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://learning.academinctools.pw | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
@@ -835,11 +825,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://testingcf.jsdelivr.net/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.statically.io/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.esm/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://raw.esm/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.staticdelivr.com/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd-proxy.ygxz.in/gh/blockfreeubg/synapse-lite/260430.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -853,7 +839,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://testingcf.jsdelivr.net/gh/lucideproxy/svg@latest/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/lucideproxy/svg@latest/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/npm/@lucideproxy/svg@latest/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://comingtou.priestella.xyz | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cooking.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 👻 Ghost
@@ -1488,7 +1473,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 45 |
+> | Proxy/Games | Unknown | Scramjet | 44 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1509,7 +1494,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://durkio.maxmir-energy.ru/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://supereadertool.cyberninja.ie/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://readingwork.eclipsecastellon.net/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://beforewepickedupdurk.maxmir-energy.ru/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://pickupdurk.maxmir-energy.ru/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://choppa.berugy.hu | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://none.dikpalkc.com.np | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1569,7 +1553,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 139 |
+> | Proxy/Games | unknown | unknown | 137 |
 
 > [!IMPORTANT]
 > StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1594,7 +1578,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://class.bamastuff.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://vcsa.babypos.hk | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://vcsa-yt.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://studying.beltfrog.com/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://greater.cravat-club.com/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://cipher.renaca.com/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://great.renaca.com/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -1713,14 +1696,13 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://push.berugy.hu | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://beens.berugy.hu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://longtime.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://beststudy.priestella.xyz | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hubdepartment.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🍓 Strawberri
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | Unknown | Ultraviolet | 107 |
+> | Proxy | Unknown | Ultraviolet | 106 |
 > [!IMPORTANT]
 > if you were looking for ford links, ford no longer exists and all of its links are now strawberri links
 
@@ -1851,7 +1833,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 |  | https://ford.bumon.ar/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hillme.berugy.hu | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://him.berugy.hu | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://permit.priestella.xyz | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cooling.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧱 Noblocc
@@ -1885,13 +1866,12 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 45 |
+> | Proxy/Games | unknown | unknown | 43 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://music.prep.zap3.net/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://amane1210.malmo.cl/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://polariseradne.jumpingcrab.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://burger.lain.ch/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1934,7 +1914,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://matha.berugy.hu | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://last.berugy.hu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://deeply.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://astrology.priestella.xyz | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://coolme.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌘 Lunaar
@@ -2093,7 +2072,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 67 |
+> | Games | N/A | N/A | 66 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2148,7 +2127,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/stochastic-combinatorics-7358@main/doesn.svg | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/real-theorem-2414@main/doesn.svg | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bobbydongschreinerus8.weebly.com/my-work.html | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://seabeanixlmath.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/modular-primes-5536@main/doesn.svg | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/iterative-set-theory-8142@main/doesn.svg | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/symmetric-primes-3146@main/doesn.svg | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -2288,13 +2266,12 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | - | - | 15 |
+> | Games | - | - | 14 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | http://learning.music.teacher.technology.student.thegleasons.net | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://math.drama.engineering.lecture.reading.agreca.com.ar | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://history.drama.classroom.technology.science.doris-safety.com | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://math.computer.project.campus.writing.glenoriebakery.com.au | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://donuts.muffins.glenoriebakery.com.au | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://matthewtuah.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -2343,7 +2320,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | - | - | 884 |
+> | Games | - | - | 879 |
 
 > [!IMPORTANT]
 > if you are prompted to download an svg/html file, download it as it contains the website since this site mainly uses singlefile over individual domains for distribution
@@ -3224,11 +3201,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://storage.googleapis.com/mathlearning/ilovessp/fckyoukiz/duckmath_416 | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://assets.editor.p5js.org/6a5a227ea603889ed3109c62/8b2d6b59-5ce0-434f-86ac-e94066bc8d09.html | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.imageurlgenerator.com/uploads/6a845f23-4e91-427a-b918-ea4a92e62095.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://edu.ayresinn.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://edu.berugy.hu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://edu.kasihinfo.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://edu.localcito.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://edu.viatasks.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://history.stone95.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://calc.robertschulze.name/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://test.berugy.hu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -3280,7 +3252,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 16723 |
+> | Proxy/Games | unknown | unknown | 16722 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -20676,7 +20648,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://storage.googleapis.com/mathlearning/ilovessp/500klinks/arctic_199609 | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/mathlearning/ilovessp/500klinks/arctic_199621 | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/mathlearning/ilovessp/500klinks/arctic_199633 | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://science.dj8.org/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 📚 OnlyLessons
 > [!NOTE]
@@ -20699,12 +20670,10 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | unknown | Scramjet, Ultraviolet | 7 |
+> | Proxy | unknown | Scramjet, Ultraviolet | 5 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://cdn.jsdelivr.net/gh/mrdavidzs/svgfrosted@main/alphacore6840.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://fastly.jsdelivr.net/gh/mrdavidzs/svgfrosted@A4/surgeray2343.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://gcore.jsdelivr.net/gh/mrdavidsz/svgfrosted@main/deltarealm6357.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://gcore.jsdelivr.net/gh/mrdavidsz/svgfrosted@main/neonmesh6933.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://sites.google.com/view/frostedbrowserstatic/frosted | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -20715,11 +20684,10 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Ultraviolet | 2 |
+> | Proxy/Games | unknown | Ultraviolet | 1 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://salsa.bellydancenetwork.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://h.shuttlemath.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 
 # 👟 Nikehub
@@ -20810,7 +20778,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet, Ultraviolet | 53 |
+> | Proxy/Games | captcha | Scramjet, Ultraviolet | 50 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://tungtung.vcsa.alalalal.com | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -20863,9 +20831,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://vcsayt.krepche.com | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hungry.berugy.hu | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://itsme.berugy.hu | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://gameplay.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cardiac.priestella.xyz | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://candoudo.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌌 Secured V3
 > [!NOTE]
@@ -20915,10 +20880,9 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 12 |
+> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 11 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://yukios.edgeone.app | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://interesting-articles.pages.dev | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/reeyuki/YukiOsSingleHtml@main/yukios.svg | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/reeyuki/YukiOsSingleHtml@main/yukios.svg | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -20951,7 +20915,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8210 |
+> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8201 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | http://inasmuch.cryptparty.com/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -29054,7 +29018,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://storage.googleapis.com/mathlearning/ilovessp/500klinks/cherri_96074 | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/mathlearning/ilovessp/500klinks/cherri_96086 | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/mathlearning/ilovessp/500klinks/cherri_96098 | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://manget.priestella.xyz | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/mathlearning/links/svg-main_1/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/mathlearning/links/svg-main_2/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/mathlearning/links/svg-main_3/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -29155,15 +29118,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://storage.googleapis.com/mathlearning/links/svg-main_98/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/mathlearning/links/svg-main_99/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/mathlearning/links/svg-main_100/index.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://over.focusmarketing.us/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://over.itafricagroup.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://over.bryankrawetz.ca/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://over.chesan.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://over.corficap.net/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://over.ghallonline.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://over.veranda.co.id/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://anko.pdacorp.ru/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ank0.priestella.xyz/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gscsoccer.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gscsoccer.net/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gscsoccer.store/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -29293,7 +29248,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet, Ultraviolet | 23 |
+> | Proxy/Games | Unknown | Scramjet, Ultraviolet | 22 |
 > [!IMPORTANT]
 > proxies dont work
 
@@ -29319,7 +29274,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://originfastly.jsdelivr.net/gh/BestSpark687090/stupid_singlefile@main/post-wisp/singlefile/single.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/BestSpark687090/stupid_singlefile/main/post-wisp/singlefile/single.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/BestSpark687090/stupid_singlefile/main/post-wisp/singlefile/single.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.statically.io/gh/BestSpark687090/stupid_singlefile@main/post-wisp/singlefile/single.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/BestSpark687090/stupid_singlefile@main/post-wisp/singlefile/single.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/BestSpark687090/stupid_singlefile@main/post-wisp/singlefile/single.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
@@ -29464,9 +29418,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://cdn.jsdmirror.com/combine/gh/googleaccountuser/myfirstrepo/windows10background.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.onmicrosoft.cn/gh/UNBL0CKEDZ0NE/ubassets@latest/assets/index.svg | 8/3/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.onmicrosoft.cn/gh/UNBL0CKEDZ0NE/ubassets@main/assets/index.svg | 8/3/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://cdn.staticdelivr.com/gh/UNBL0CKEDZ0NE/ubassets/main/assets/index.svg | 8/3/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.onmicrosoft.cn/gh/UNBL0CKEDZ0NE/ubassets@master/assets/index.svg | 8/3/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://cdn.staticdelivr.com/gh/UNBL0CKEDZ0NE/ubassets/master/assets/index.svg | 8/3/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.onmicrosoft.cn/gh/UNBL0CKEDZ0NE/ubassets/assets/index.svg | 8/3/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.onmicrosoft.cn/combine/gh/UNBL0CKEDZ0NE/ubassets@latest/assets/index.svg | 8/3/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.onmicrosoft.cn/combine/gh/UNBL0CKEDZ0NE/ubassets@main/assets/index.svg | 8/3/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -29562,7 +29514,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Ultraviolet | 17 |
+> | Proxy/Games | Unknown | Ultraviolet | 15 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -29579,16 +29531,14 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://voyavcsa.localcito.com | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://schoolmath.berugy.hu | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hunter.berugy.hu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://quickthis.priestella.xyz | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://questionu.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://inthebest.priestella.xyz | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://canbe.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🐱 Cat Class
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 240 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 239 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -29860,7 +29810,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://edu.shared2.eu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu.shared-with.eu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu.shared-with.uk/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://edu.priestella.xyz/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://me.shared2.uk/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learning.keyword.asia/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -30136,7 +30085,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 7 |
+> | pending | pending | pending | 6 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -30147,7 +30096,6 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 | | https://no.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hu.berugy.hu | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cow.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://okc.priestella.xyz | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verymuch.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🖋️ Ink
