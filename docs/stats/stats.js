@@ -1556,7 +1556,7 @@
       if (res.ok) {
         var data = await res.json();
         if (data && data.ok && Array.isArray(data.links)) {
-          return data.links
+          var out = data.links
             .map(function (x) {
               return {
                 url: x && x.url != null ? String(x.url).trim() : "",
@@ -1567,6 +1567,10 @@
               return x.url && Number.isFinite(x.count) && x.count > 0;
             })
             .slice(0, cap);
+          // If the API endpoint can't access click/open data, it may return an
+          // empty list. When Firestore is available, fall back so the stats page
+          // can still display real opens.
+          if (out.length) return out;
         }
       }
     } catch (_) {}
