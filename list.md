@@ -16,6 +16,7 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 ## Important Notices
 
 ## Update Notice
+
 # Global Link Recheck
 I rechecked every domain existing on the site, so filter data should be accurate and up to date now.
 
@@ -62,7 +63,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 73 |
+> | Proxy/Games | captcha | Scramjet | 70 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -144,7 +145,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 119 |
+> | Games | N/A | N/A | 107 |
 
 > [!IMPORTANT]
 > if the link loads a page saying "user gn-math is blocked" or no games appear on screen, you are using an old version of gn-math that no longer works, please use another link. i also recommend reporting this on our GitHub issues page to prevent other users from running into this issue -> https://github.com/yourworstnightmare1/proxy-list/issues
@@ -275,7 +276,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Ultraviolet | 43 |
+> | Proxy/Games | captcha | Ultraviolet | 41 |
 
 > [!IMPORTANT]
 > on some networks, the proxy will load a white screen or an ultraviolet error page, if this happens try using another link as that is known to fix this issue
@@ -392,7 +393,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 32 |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 31 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -436,7 +437,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet, Ultraviolet | 69 |
+> | Proxy/Games | unknown | Scramjet, Ultraviolet | 40 |
 > [!IMPORTANT]
 > site has a bunch of ad popup windows, you can close these. it's recommended you use uBlock Origin to view this site without those popups
 
@@ -618,7 +619,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 7 |
+> | Proxy/Games | unknown | Scramjet | 6 |
 
 > [!IMPORTANT]
 > Boredom does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -650,7 +651,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 38 |
+> | Proxy/Games | unknown | unknown | 37 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -701,7 +702,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 71 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 70 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -1059,7 +1060,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 3 |
+> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 2 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -1071,7 +1072,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | N/A | N/A | 404 |
+> | Proxy/Games | N/A | N/A | 403 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1487,7 +1488,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 55 |
+> | Proxy/Games | Unknown | Scramjet | 45 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1719,7 +1720,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | Unknown | Ultraviolet | 127 |
+> | Proxy | Unknown | Ultraviolet | 107 |
 > [!IMPORTANT]
 > if you were looking for ford links, ford no longer exists and all of its links are now strawberri links
 
@@ -1857,7 +1858,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 7 |
+> | Proxy/Games | unknown | unknown | 5 |
 
 > [!IMPORTANT]
 > for some reason the developers put a 4 tab limit on free users (3 if you have adblock, 8+ if you pay). if you need multitasking use another proxy
@@ -1954,7 +1955,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 23 |
+> | Proxy/Games | captcha | Scramjet | 22 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2168,7 +2169,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 6 |
+> | Proxy/Games | captcha | Scramjet | 5 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3279,7 +3280,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 17393 |
+> | Proxy/Games | unknown | unknown | 16723 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -20725,7 +20726,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 34 |
+> | Proxy/Games | unknown | unknown | 2 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -20870,7 +20871,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 2 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 1 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -20914,7 +20915,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 13 |
+> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 12 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://yukios.edgeone.app | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -20935,7 +20936,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 4 |
+> | pending | pending | pending | 1 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -20950,7 +20951,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8213 |
+> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8210 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | http://inasmuch.cryptparty.com/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -29326,7 +29327,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | - | - | 224 |
+> | Games | - | - | 132 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -29587,7 +29588,7 @@ Fixed a bug where Nettle Web section would not show all links even with filter o
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 280 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 240 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
