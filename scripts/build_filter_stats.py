@@ -115,6 +115,28 @@ def empty_status_counts() -> dict[str, int]:
     return {k: 0 for k in STATUS_KEYS}
 
 
+def load_sorted_links(path: Path) -> list[dict]:
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(raw, dict):
+        return [row for row in raw if isinstance(row, dict)] if isinstance(raw, list) else []
+    links = raw.get("links")
+    if not isinstance(links, list):
+        return []
+    if raw.get("format") == 2 or (links and isinstance(links[0], list)):
+        providers = raw.get("providers") or []
+        out: list[dict] = []
+        for entry in links:
+            if not isinstance(entry, list) or len(entry) < 3:
+                continue
+            pi, _ci, link = entry[0], entry[1], entry[2]
+            provider = ""
+            if isinstance(pi, int) and 0 <= pi < len(providers):
+                provider = str((providers[pi] or {}).get("name") or "")
+            out.append({"link": str(link or ""), "provider": provider})
+        return out
+    return [row for row in links if isinstance(row, dict)]
+
+
 def aggregate(links: list[dict], linklens: dict) -> dict:
     domain_first = rebuild_domain_index(linklens)
     filters: dict[str, dict] = {}
@@ -246,8 +268,7 @@ def main() -> int:
         return 1
 
     print(f"Loading {args.data}…")
-    data = json.loads(args.data.read_text(encoding="utf-8"))
-    links = data.get("links") if isinstance(data.get("links"), list) else []
+    links = load_sorted_links(args.data)
     print(f"Loading {args.linklens}…")
     linklens = json.loads(args.linklens.read_text(encoding="utf-8"))
     if not isinstance(linklens, dict):

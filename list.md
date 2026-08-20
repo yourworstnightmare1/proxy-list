@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
-> v6.4 | Released: August 17, 2026
-> r269 | Last Updated: August 17, 2026
+> v6.5 | Released: August 20, 2026
+> r270 | Last Updated: August 20, 2026
 > Total onsite links: 29631 (29289 sorted + 342 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -16,23 +16,31 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 ## Important Notices
 
 ## Update Notice
-# Thousands of Links
-Over 25,000 links were added, making this the biggest link drop ever. Most of them are Cherri and Arctic mirrors, and should generally be unblocked by most filters.
+# Global Link Recheck
+I rechecked every domain existing on the site, so filter data should be accurate and up to date now.
+
+# Featured Section
+There is now a new featured section showing the top proxies that users love most. You can also view all of that proxy's links by clicking the "View all links" button.
+
+# Quick Search Palette
+The Quick Search Palette can be activated by pressing Ctrl+Y (Windows/ChromeOS/Linux) Cmd+Y (macOS) to quickly search for providers, URLs, contributors, and more on the list. This feature was inspired by Fern's Command Palette feature.
 
 # Optimizations
-To handle all of these links, optimizations have been made in order to keep performance reasonable while also hosting all of these links. Lower-end devices may experience problems as memory usage naturally will be higher now.
+I made even more optimizations to ensure that Firebase does not reach quota as fast, and I have fixed the bugs with link clicks not tracking, so community features should be fully working as of now.
 
-# Bugfixes
-- Fixed a bug where clicks were not tracked.
-- Fixed a bug where jsdelivr link clicks weren't tracked.
-- Removed unused Google AdSense embeds to improve performance.
-- Optimized the search bar, although I am aware there might be some issues with performance while using it due to the massive amount of links that are loaded that will be fixed at a later point.
-- Fixed a bug where ratings weren't tracked.
-- Fixed a bug where user statistics weren't tracked properly.
-- Fixed a bug where provider/domain statistics were broken or weren't tracked properly.
-- Fixed a bug where scrolling would show a white box at the bottom of the screen.
-- Fixed a bug where there was a slight delay between loads or the chunk wouldn't load at all.
-- Firebase bugfixes
+# Misc/Bugfixes
+Fixed a bug where storage.googleapis.com would report as blocked even though it is unblocked on the iboss filter. It is blocked in some conditions, so to ensure most accurate results it is listed as unblocked globally on all URLs with this domain as it starts out that way
+Fixed a bug where link clicks were untracked due to Firebase bugs
+Fixed a bug where searching something and clicking enter would autofill with a suggested result instead of searching what the user entered
+Fixed a bug where contributed links were not automatically added to the main list
+Fixed a bug where statistics would not load properly
+Fixed a bug where user statistics would be inaccurate because of user doubling
+Fixed a bug where users on Scramjet and Ultraviolet would not be able to load the list because of differences between raw network and proxy services, so I made some direct optimizations on a few test systems under these conditions to fix. You may still experience some issues while on proxies which are still being resolved
+Fixed a bug where users on Scramjet could not load most opened links sections
+Fixed a bug where all link clicks would show as 3 dots or as 0
+Click count reads are now cached via Cloudflare's cache API to reduce Firebase quota limitations
+Added attributions to the about page so you can see the backend and other software that makes the Proxy List possible, with licenses if applicable
+Fixed a bug where Nettle Web section would not show all links even with filter options disabled
 
 # 💜 Selenite
 > [!NOTE]
@@ -54,7 +62,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 70 |
+> | Proxy/Games | captcha | Scramjet | 73 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -136,7 +144,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 107 |
+> | Games | N/A | N/A | 119 |
 
 > [!IMPORTANT]
 > if the link loads a page saying "user gn-math is blocked" or no games appear on screen, you are using an old version of gn-math that no longer works, please use another link. i also recommend reporting this on our GitHub issues page to prevent other users from running into this issue -> https://github.com/yourworstnightmare1/proxy-list/issues
@@ -267,7 +275,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Ultraviolet | 41 |
+> | Proxy/Games | captcha | Ultraviolet | 43 |
 
 > [!IMPORTANT]
 > on some networks, the proxy will load a white screen or an ultraviolet error page, if this happens try using another link as that is known to fix this issue
@@ -384,7 +392,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 31 |
+> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 32 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -428,7 +436,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet, Ultraviolet | 40 |
+> | Proxy/Games | unknown | Scramjet, Ultraviolet | 69 |
 > [!IMPORTANT]
 > site has a bunch of ad popup windows, you can close these. it's recommended you use uBlock Origin to view this site without those popups
 
@@ -610,7 +618,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 6 |
+> | Proxy/Games | unknown | Scramjet | 7 |
 
 > [!IMPORTANT]
 > Boredom does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -642,7 +650,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 37 |
+> | Proxy/Games | unknown | unknown | 38 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -693,7 +701,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 70 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 71 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -1051,7 +1059,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 2 |
+> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 3 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -1063,7 +1071,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | N/A | N/A | 403 |
+> | Proxy/Games | N/A | N/A | 404 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1479,7 +1487,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 45 |
+> | Proxy/Games | Unknown | Scramjet | 55 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1711,7 +1719,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | Unknown | Ultraviolet | 107 |
+> | Proxy | Unknown | Ultraviolet | 127 |
 > [!IMPORTANT]
 > if you were looking for ford links, ford no longer exists and all of its links are now strawberri links
 
@@ -1849,7 +1857,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 5 |
+> | Proxy/Games | unknown | unknown | 7 |
 
 > [!IMPORTANT]
 > for some reason the developers put a 4 tab limit on free users (3 if you have adblock, 8+ if you pay). if you need multitasking use another proxy
@@ -1946,7 +1954,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 22 |
+> | Proxy/Games | captcha | Scramjet | 23 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2160,7 +2168,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 5 |
+> | Proxy/Games | captcha | Scramjet | 6 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3271,7 +3279,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 16723 |
+> | Proxy/Games | unknown | unknown | 17393 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -20717,7 +20725,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 2 |
+> | Proxy/Games | unknown | unknown | 34 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -20862,7 +20870,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 1 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 2 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -20906,7 +20914,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 12 |
+> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 13 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://yukios.edgeone.app | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -20927,19 +20935,22 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 1 |
+> | pending | pending | pending | 4 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://nike.global.ssl.fastly.net/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+|  | https://nettleweb.github.io/ | 8/20/2026 | N/A | N/A | [Vexo-Sirramenboi](https://github.com/Vexo-Sirramenboi)
+|  | https://whitespider-dev.github.io/ | 8/20/2026 | N/A | N/A | [Vexo-Sirramenboi](https://github.com/Vexo-Sirramenboi)
+|  | https://whspi.github.io/ | 8/20/2026 | N/A | N/A | [Vexo-Sirramenboi](https://github.com/Vexo-Sirramenboi)
 
 # 🌸 Cherri
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8210 |
+> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8213 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | http://inasmuch.cryptparty.com/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -29315,7 +29326,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | - | - | 132 |
+> | Games | - | - | 224 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -29576,7 +29587,7 @@ To handle all of these links, optimizations have been made in order to keep perf
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 240 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 280 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)

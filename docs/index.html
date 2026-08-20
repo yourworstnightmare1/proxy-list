@@ -37,6 +37,9 @@
   </script>
   <title>Proxy list</title>
   <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root,
     html[data-theme="dark"] {
@@ -99,6 +102,17 @@
       }
     }
     * { box-sizing: border-box; }
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
     body {
       margin: 0;
       font-family: var(--font);
@@ -852,10 +866,548 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+    .summary-backdrop.search-palette-backdrop {
+      z-index: 42;
+      background: rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(8px);
+    }
+    .search-palette {
+      width: min(640px, 100%);
+      border-radius: 14px;
+      border: 1px solid #2a2a2a;
+      background: #161616;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+      overflow: hidden;
+      color: #eee;
+    }
+    .search-palette-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.85rem 0.95rem;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    .search-palette-icon {
+      flex: 0 0 auto;
+      width: 18px;
+      height: 18px;
+      color: #9a9a9a;
+    }
+    .search-palette-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      border: 0;
+      background: transparent;
+      color: #f2f2f2;
+      font: inherit;
+      font-size: 0.98rem;
+      outline: none;
+    }
+    .search-palette-input::placeholder {
+      color: #7a7a7a;
+    }
+    .search-palette-kbd {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.18rem 0.45rem;
+      border-radius: 6px;
+      border: 1px solid #3a3a3a;
+      background: #222;
+      color: #bdbdbd;
+      font-size: 0.68rem;
+      font-weight: 650;
+      letter-spacing: 0.02em;
+    }
+    .search-palette-body {
+      max-height: min(22rem, 52vh);
+      overflow: auto;
+      padding: 0.45rem 0 0.35rem;
+    }
+    .search-palette-heading {
+      margin: 0.15rem 0.95rem 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #8a8a8a;
+    }
+    .search-palette-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .search-palette-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      width: 100%;
+      margin: 0;
+      padding: 0.58rem 0.95rem;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+    .search-palette-item:hover,
+    .search-palette-item.is-active {
+      background: #2a2a2a;
+    }
+    .search-palette-item-name {
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+    .search-palette-item-meta {
+      flex: 0 1 auto;
+      max-width: 42%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.75rem;
+      color: #8d8d8d;
+      text-align: right;
+    }
+    .search-palette-empty {
+      margin: 0.4rem 0.95rem 0.7rem;
+      color: #8a8a8a;
+      font-size: 0.84rem;
+    }
+    .search-palette-footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1rem;
+      padding: 0.55rem 0.95rem;
+      border-top: 1px solid #2a2a2a;
+      color: #8a8a8a;
+      font-size: 0.72rem;
+    }
+    .search-palette-footer kbd {
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.15rem;
+      padding: 0 0.32rem;
+      margin-right: 0.28rem;
+      border-radius: 4px;
+      border: 1px solid #3a3a3a;
+      background: #222;
+      font: inherit;
+      font-size: 0.68rem;
+    }
+    html[data-theme="light"] .search-palette {
+      background: #f4f4f4;
+      border-color: #d8d8d8;
+      color: #161616;
+    }
+    html[data-theme="light"] .search-palette-input-wrap,
+    html[data-theme="light"] .search-palette-footer {
+      border-color: #d8d8d8;
+    }
+    html[data-theme="light"] .search-palette-input {
+      color: #161616;
+    }
+    html[data-theme="light"] .search-palette-item:hover,
+    html[data-theme="light"] .search-palette-item.is-active {
+      background: #e6e6e6;
+    }
     .filter-reset {
       margin: 0.25rem 0 0;
     }
     .filter-reset .btn { width: 100%; }
+    .featured-proxies {
+      margin: 0 0 1.25rem;
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+    .featured-proxies-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin: 0 0 0.75rem;
+      padding: 0 0.1rem;
+    }
+    .featured-proxies h2 {
+      font-size: 1.55rem;
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      margin: 0;
+      line-height: 1.15;
+    }
+    .featured-proxies .featured-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.35;
+      text-align: right;
+      max-width: 28ch;
+    }
+    .featured-stage {
+      position: relative;
+      width: 100%;
+    }
+    .featured-slides {
+      position: relative;
+      width: 100%;
+      min-height: clamp(360px, 52vw, 520px);
+      border-radius: 22px;
+      overflow: hidden;
+      background: #0a0a0a;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+    }
+    .featured-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.55s ease, visibility 0.55s ease;
+      color: #fff;
+      isolation: isolate;
+    }
+    .featured-slide.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      z-index: 1;
+    }
+    .featured-slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: #0b0b0b;
+    }
+    .featured-slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.05) 0%,
+        rgba(0, 0, 0, 0.15) 38%,
+        rgba(0, 0, 0, 0.62) 68%,
+        rgba(0, 0, 0, 0.88) 100%
+      );
+      pointer-events: none;
+    }
+    .featured-slide-tag {
+      position: absolute;
+      top: 1.05rem;
+      left: 1.1rem;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.62rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.42);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .featured-slide-copy {
+      position: relative;
+      z-index: 2;
+      padding: 0 1.25rem 1rem;
+      max-width: min(34rem, 92%);
+    }
+    .featured-slide-eyebrow {
+      margin: 0 0 0.28rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.78);
+    }
+    .featured-slide-title {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.85rem, 4.2vw, 2.75rem);
+      line-height: 1.08;
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      color: #fff;
+      text-shadow: 0 2px 22px rgba(0, 0, 0, 0.45);
+    }
+    .featured-slide-msg {
+      margin: 0;
+      font-size: clamp(0.92rem, 1.6vw, 1.08rem);
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 38ch;
+    }
+    .featured-slide-bar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-height: 4.15rem;
+      padding: 0.7rem 1rem 0.7rem 1.1rem;
+      background: rgba(8, 12, 20, 0.42);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+    }
+    .featured-slide-icon {
+      flex: 0 0 auto;
+      width: 2.55rem;
+      height: 2.55rem;
+      border-radius: 0.7rem;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      line-height: 1;
+    }
+    .featured-slide-meta {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .featured-slide-meta-name {
+      margin: 0;
+      font-size: 0.92rem;
+      font-weight: 650;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .featured-slide-meta-sub {
+      margin: 0.1rem 0 0;
+      font-size: 0.74rem;
+      color: rgba(255, 255, 255, 0.72);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .featured-slide-btn {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2rem;
+      padding: 0.38rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: rgba(236, 236, 240, 0.95);
+      color: #111;
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.12s ease;
+    }
+    .featured-slide-btn:hover {
+      background: #fff;
+    }
+    .featured-slide-btn:active {
+      transform: scale(0.98);
+    }
+    .featured-slide-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .featured-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      margin-top: 0.75rem;
+    }
+    .featured-nav-btn {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font: inherit;
+      font-size: 1rem;
+      line-height: 1;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .featured-nav-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .featured-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .featured-dot {
+      width: 0.48rem;
+      height: 0.48rem;
+      border-radius: 999px;
+      border: none;
+      padding: 0;
+      background: color-mix(in srgb, var(--muted) 55%, transparent);
+      cursor: pointer;
+      transition: width 0.2s ease, background 0.2s ease;
+    }
+    .featured-dot.is-active {
+      width: 1.15rem;
+      background: var(--accent);
+    }
+    .featured-dot:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Fern */
+    .featured-slide--fern::before {
+      background:
+        radial-gradient(1.2px 1.2px at 12% 18%, rgba(255, 255, 255, 0.85) 50%, transparent 51%),
+        radial-gradient(1px 1px at 28% 42%, rgba(255, 255, 255, 0.55) 50%, transparent 51%),
+        radial-gradient(1.4px 1.4px at 48% 14%, rgba(255, 255, 255, 0.7) 50%, transparent 51%),
+        radial-gradient(1px 1px at 66% 36%, rgba(255, 255, 255, 0.45) 50%, transparent 51%),
+        radial-gradient(1.2px 1.2px at 82% 22%, rgba(255, 255, 255, 0.75) 50%, transparent 51%),
+        radial-gradient(1px 1px at 18% 68%, rgba(255, 255, 255, 0.4) 50%, transparent 51%),
+        radial-gradient(1.1px 1.1px at 74% 72%, rgba(255, 255, 255, 0.5) 50%, transparent 51%),
+        radial-gradient(1px 1px at 90% 58%, rgba(255, 255, 255, 0.35) 50%, transparent 51%),
+        #070707;
+    }
+    .featured-slide--fern .featured-constellation {
+      position: absolute;
+      inset: 8% 6% 28% 6%;
+      z-index: -1;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .featured-slide--fern .featured-slide-title {
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
+      font-size: clamp(3rem, 7vw, 4.4rem);
+      letter-spacing: 0.02em;
+    }
+
+    /* Frogie's Arcade */
+    .featured-slide--frogie::before {
+      background:
+        radial-gradient(1.6px 1.6px at 8% 14%, rgba(140, 255, 180, 0.9) 50%, transparent 51%),
+        radial-gradient(1.1px 1.1px at 16% 32%, rgba(120, 240, 160, 0.55) 50%, transparent 51%),
+        radial-gradient(2px 2px at 24% 18%, rgba(160, 255, 195, 0.75) 50%, transparent 51%),
+        radial-gradient(1.2px 1.2px at 33% 48%, rgba(110, 230, 150, 0.45) 50%, transparent 51%),
+        radial-gradient(1.8px 1.8px at 41% 12%, rgba(150, 255, 190, 0.85) 50%, transparent 51%),
+        radial-gradient(1px 1px at 49% 36%, rgba(100, 220, 140, 0.4) 50%, transparent 51%),
+        radial-gradient(2.2px 2.2px at 58% 22%, rgba(170, 255, 200, 0.7) 50%, transparent 51%),
+        radial-gradient(1.3px 1.3px at 67% 44%, rgba(120, 245, 165, 0.5) 50%, transparent 51%),
+        radial-gradient(1.5px 1.5px at 76% 16%, rgba(145, 255, 185, 0.8) 50%, transparent 51%),
+        radial-gradient(1px 1px at 84% 38%, rgba(100, 225, 145, 0.35) 50%, transparent 51%),
+        radial-gradient(1.9px 1.9px at 92% 26%, rgba(155, 255, 195, 0.65) 50%, transparent 51%),
+        radial-gradient(1.2px 1.2px at 12% 58%, rgba(125, 240, 170, 0.5) 50%, transparent 51%),
+        radial-gradient(2px 2px at 28% 72%, rgba(160, 255, 195, 0.55) 50%, transparent 51%),
+        radial-gradient(1.1px 1.1px at 45% 64%, rgba(110, 230, 155, 0.4) 50%, transparent 51%),
+        radial-gradient(1.7px 1.7px at 61% 78%, rgba(150, 255, 190, 0.6) 50%, transparent 51%),
+        radial-gradient(1.3px 1.3px at 78% 68%, rgba(120, 245, 165, 0.45) 50%, transparent 51%),
+        radial-gradient(2.1px 2.1px at 88% 82%, rgba(140, 255, 180, 0.5) 50%, transparent 51%),
+        radial-gradient(1px 1px at 5% 84%, rgba(100, 220, 140, 0.3) 50%, transparent 51%),
+        radial-gradient(1.4px 1.4px at 37% 88%, rgba(130, 250, 175, 0.45) 50%, transparent 51%),
+        radial-gradient(1.6px 1.6px at 70% 54%, rgba(145, 255, 185, 0.55) 50%, transparent 51%),
+        #050505;
+    }
+    .featured-slide--frogie .featured-slide-title {
+      font-family: "Quicksand", "Segoe UI", sans-serif;
+      font-weight: 700;
+      text-transform: lowercase;
+      letter-spacing: -0.01em;
+    }
+
+    /* Velara */
+    .featured-slide--velara::before {
+      background-color: #0d1117;
+      background-image:
+        repeating-linear-gradient(to right, rgba(56, 139, 253, 0.08) 0, rgba(56, 139, 253, 0.08) 1px, transparent 1px, transparent 48px),
+        repeating-linear-gradient(to bottom, rgba(56, 139, 253, 0.08) 0, rgba(56, 139, 253, 0.08) 1px, transparent 1px, transparent 48px),
+        repeating-linear-gradient(to right, rgba(56, 139, 253, 0.14) 0, rgba(56, 139, 253, 0.14) 1px, transparent 1px, transparent 192px),
+        repeating-linear-gradient(to bottom, rgba(56, 139, 253, 0.14) 0, rgba(56, 139, 253, 0.14) 1px, transparent 1px, transparent 192px);
+    }
+    .featured-slide--velara .featured-slide-msg {
+      color: #f0c75e;
+    }
+    .featured-slide--velara .featured-slide-bar {
+      background: rgba(13, 28, 58, 0.55);
+    }
+
+    /* Cherri */
+    .featured-slide--cherri::before {
+      background-color: #0a0a0a;
+      background-image:
+        radial-gradient(rgba(255, 140, 180, 0.28) 1.1px, transparent 1.2px),
+        radial-gradient(rgba(255, 100, 150, 0.14) 1px, transparent 1.1px);
+      background-size: 18px 18px, 36px 36px;
+      background-position: 0 0, 9px 9px;
+    }
+    .featured-slide--cherri .featured-slide-title {
+      text-shadow:
+        0 0 28px rgba(255, 70, 120, 0.85),
+        0 0 64px rgba(255, 40, 100, 0.55),
+        0 2px 12px rgba(0, 0, 0, 0.5);
+    }
+    .featured-slide--cherri .featured-slide-bar {
+      background: rgba(48, 10, 24, 0.5);
+    }
+
+    /* InvisiProxy */
+    .featured-slide--invisi::before {
+      background: #0b0d12;
+    }
+    .featured-slide--invisi .featured-wireframe {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.88;
+    }
+
+    /* Truffled */
+    .featured-slide--truffled::before {
+      background-color: #0c1214;
+      background-image:
+        linear-gradient(rgba(170, 190, 200, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(170, 190, 200, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    @media (max-width: 700px) {
+      .featured-proxies-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .featured-proxies .featured-note {
+        text-align: left;
+        max-width: none;
+      }
+      .featured-slides {
+        min-height: 340px;
+        border-radius: 16px;
+      }
+      .featured-slide-bar {
+        flex-wrap: wrap;
+      }
+    }
+
     .popular-section {
       margin-bottom: 1rem;
       padding: 0.85rem 1rem;
@@ -1657,6 +2209,61 @@
         max-width: min(18rem, calc(100vw - 8rem));
       }
     }
+    .quick-search-palette-hint {
+      position: fixed;
+      left: 50%;
+      bottom: 1rem;
+      transform: translateX(-50%);
+      z-index: 25;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin: 0;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(20, 20, 20, 0.92);
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.78rem;
+      line-height: 1.2;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      white-space: nowrap;
+      max-width: calc(100vw - 2rem);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .quick-search-palette-hint kbd {
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.15rem;
+      padding: 0 0.32rem;
+      margin-right: 0.1rem;
+      border-radius: 4px;
+      border: 1px solid #3a3a3a;
+      background: #222;
+      font: inherit;
+      font-size: 0.68rem;
+      color: var(--text);
+    }
+    html[data-theme="light"] .quick-search-palette-hint kbd {
+      border-color: #c8c8c8;
+      background: #ececec;
+    }
+    .quick-search-palette-hint:hover,
+    .quick-search-palette-hint:focus-visible {
+      color: var(--text);
+      border-color: var(--accent);
+      outline: none;
+    }
+    @media (max-width: 640px) {
+      .quick-search-palette-hint {
+        bottom: 0.75rem;
+        font-size: 0.74rem;
+        max-width: calc(100vw - 1.5rem);
+      }
+    }
     .removal-notice {
       border: 1px solid #5d3a3a;
       background: #2a1414;
@@ -2236,6 +2843,168 @@
         </p>
       </aside>
       <section class="important-notices" id="importantNotices" aria-label="Important notices" hidden></section>
+      <section class="featured-proxies embed-hide" id="featuredProxiesSection" aria-labelledby="featuredProxiesHeading">
+        <div class="featured-proxies-head">
+          <h2 id="featuredProxiesHeading">Featured</h2>
+        </div>
+        <div
+          class="featured-stage"
+          id="featuredStage"
+          aria-roledescription="carousel"
+          aria-label="Featured proxies"
+        >
+          <div class="featured-slides" id="featuredSlides">
+            <article class="featured-slide featured-slide--fern is-active" data-featured-index="0" aria-hidden="false">
+              <span class="featured-slide-tag">Featured</span>
+              <svg class="featured-constellation" viewBox="0 0 400 180" aria-hidden="true" focusable="false">
+                <g fill="none" stroke="rgba(220,240,255,0.35)" stroke-width="1">
+                  <path d="M40 40 L90 70 L130 35 L180 80 L230 45 L280 95 L330 50" />
+                  <path d="M70 120 L140 100 L200 140 L270 110 L340 130" />
+                </g>
+                <g fill="rgba(255,255,255,0.85)">
+                  <circle cx="40" cy="40" r="2.2" /><circle cx="90" cy="70" r="1.8" /><circle cx="130" cy="35" r="2" />
+                  <circle cx="180" cy="80" r="1.6" /><circle cx="230" cy="45" r="2.1" /><circle cx="280" cy="95" r="1.7" />
+                  <circle cx="330" cy="50" r="2" /><circle cx="70" cy="120" r="1.5" /><circle cx="140" cy="100" r="1.8" />
+                  <circle cx="200" cy="140" r="1.6" /><circle cx="270" cy="110" r="2" /><circle cx="340" cy="130" r="1.5" />
+                </g>
+              </svg>
+              <div class="featured-slide-copy">
+                <p class="featured-slide-eyebrow">Featured proxy</p>
+                <h3 class="featured-slide-title">fern</h3>
+                <p class="featured-slide-msg">The easiest way to get online without restrictions.</p>
+              </div>
+              <div class="featured-slide-bar">
+                <div class="featured-slide-icon" aria-hidden="true">🪴</div>
+                <div class="featured-slide-meta">
+                  <p class="featured-slide-meta-name">Fern</p>
+                  <p class="featured-slide-meta-sub">View all links from this provider</p>
+                </div>
+                <button type="button" class="featured-slide-btn" data-featured-provider="fern">View all links</button>
+              </div>
+            </article>
+
+            <article class="featured-slide featured-slide--velara" data-featured-index="1" aria-hidden="true">
+              <span class="featured-slide-tag">Featured</span>
+              <div class="featured-slide-copy">
+                <p class="featured-slide-eyebrow">Featured proxy</p>
+                <h3 class="featured-slide-title">Velara</h3>
+                <p class="featured-slide-msg">Sleek but powerful.</p>
+              </div>
+              <div class="featured-slide-bar">
+                <div class="featured-slide-icon" aria-hidden="true">🌙</div>
+                <div class="featured-slide-meta">
+                  <p class="featured-slide-meta-name">Velara</p>
+                  <p class="featured-slide-meta-sub">View all links from this provider</p>
+                </div>
+                <button type="button" class="featured-slide-btn" data-featured-provider="velara">View all links</button>
+              </div>
+            </article>
+
+            <article class="featured-slide featured-slide--frogie" data-featured-index="2" aria-hidden="true">
+              <span class="featured-slide-tag">Featured</span>
+              <div class="featured-slide-copy">
+                <p class="featured-slide-eyebrow">Featured proxy</p>
+                <h3 class="featured-slide-title">frogie's arcade</h3>
+                <p class="featured-slide-msg">The cutting edge of anonymous and unblocked browsing.</p>
+              </div>
+              <div class="featured-slide-bar">
+                <div class="featured-slide-icon" aria-hidden="true">🐸</div>
+                <div class="featured-slide-meta">
+                  <p class="featured-slide-meta-name">frogie's arcade</p>
+                  <p class="featured-slide-meta-sub">View all links from this provider</p>
+                </div>
+                <button type="button" class="featured-slide-btn" data-featured-provider="frogie's arcade">View all links</button>
+              </div>
+            </article>
+
+            <article class="featured-slide featured-slide--cherri" data-featured-index="3" aria-hidden="true">
+              <span class="featured-slide-tag">Featured</span>
+              <div class="featured-slide-copy">
+                <p class="featured-slide-eyebrow">Featured proxy</p>
+                <h3 class="featured-slide-title">Cherri</h3>
+                <p class="featured-slide-msg">Quality and quantity is a priority here.</p>
+              </div>
+              <div class="featured-slide-bar">
+                <div class="featured-slide-icon" aria-hidden="true">🌸</div>
+                <div class="featured-slide-meta">
+                  <p class="featured-slide-meta-name">Cherri</p>
+                  <p class="featured-slide-meta-sub">View all links from this provider</p>
+                </div>
+                <button type="button" class="featured-slide-btn" data-featured-provider="cherri">View all links</button>
+              </div>
+            </article>
+
+            <article class="featured-slide featured-slide--invisi" data-featured-index="4" aria-hidden="true">
+              <span class="featured-slide-tag">Featured</span>
+              <svg class="featured-wireframe" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                <g fill="none" stroke="rgba(210,220,235,0.28)" stroke-width="1.1">
+                  <path d="M70 90 L160 140 L250 70 L340 160 L430 95 L520 175 L610 80 L700 150 L790 100 L880 190 L970 120 L1060 170 L1140 90" />
+                  <path d="M40 250 L130 210 L220 280 L310 230 L400 300 L490 240 L580 310 L670 255 L760 320 L850 270 L940 330 L1030 280 L1130 340" />
+                  <path d="M90 420 L180 370 L270 450 L360 390 L450 470 L540 400 L630 480 L720 415 L810 490 L900 430 L990 500 L1080 440" />
+                  <path d="M160 140 L220 280 L270 450" />
+                  <path d="M340 160 L400 300 L450 470" />
+                  <path d="M520 175 L580 310 L630 480" />
+                  <path d="M700 150 L760 320 L810 490" />
+                  <path d="M880 190 L940 330 L990 500" />
+                  <path d="M250 70 L310 230 L360 390" />
+                  <path d="M610 80 L670 255 L720 415" />
+                  <path d="M970 120 L1030 280 L1080 440" />
+                </g>
+                <g fill="rgba(235,240,250,0.78)">
+                  <circle cx="70" cy="90" r="2.4" /><circle cx="160" cy="140" r="2" /><circle cx="250" cy="70" r="2.6" />
+                  <circle cx="340" cy="160" r="2.1" /><circle cx="430" cy="95" r="2.3" /><circle cx="520" cy="175" r="2" />
+                  <circle cx="610" cy="80" r="2.5" /><circle cx="700" cy="150" r="2.1" /><circle cx="790" cy="100" r="2.2" />
+                  <circle cx="880" cy="190" r="2" /><circle cx="970" cy="120" r="2.4" /><circle cx="1060" cy="170" r="2.1" />
+                  <circle cx="1140" cy="90" r="2.3" /><circle cx="40" cy="250" r="1.8" /><circle cx="130" cy="210" r="2" />
+                  <circle cx="220" cy="280" r="2.2" /><circle cx="310" cy="230" r="1.9" /><circle cx="400" cy="300" r="2.3" />
+                  <circle cx="490" cy="240" r="2" /><circle cx="580" cy="310" r="2.1" /><circle cx="670" cy="255" r="2" />
+                  <circle cx="760" cy="320" r="2.4" /><circle cx="850" cy="270" r="1.9" /><circle cx="940" cy="330" r="2.2" />
+                  <circle cx="1030" cy="280" r="2" /><circle cx="1130" cy="340" r="2.1" /><circle cx="90" cy="420" r="2" />
+                  <circle cx="180" cy="370" r="2.2" /><circle cx="270" cy="450" r="2.4" /><circle cx="360" cy="390" r="2" />
+                  <circle cx="450" cy="470" r="2.3" /><circle cx="540" cy="400" r="1.9" /><circle cx="630" cy="480" r="2.1" />
+                  <circle cx="720" cy="415" r="2" /><circle cx="810" cy="490" r="2.2" /><circle cx="900" cy="430" r="2" />
+                  <circle cx="990" cy="500" r="2.3" /><circle cx="1080" cy="440" r="2.1" />
+                </g>
+              </svg>
+              <div class="featured-slide-copy">
+                <p class="featured-slide-eyebrow">Featured proxy</p>
+                <h3 class="featured-slide-title">InvisiProxy</h3>
+                <p class="featured-slide-msg">The most private browsing you can get through your browser.</p>
+              </div>
+              <div class="featured-slide-bar">
+                <div class="featured-slide-icon" aria-hidden="true">👥</div>
+                <div class="featured-slide-meta">
+                  <p class="featured-slide-meta-name">InvisiProxy</p>
+                  <p class="featured-slide-meta-sub">View all links from this provider</p>
+                </div>
+                <button type="button" class="featured-slide-btn" data-featured-provider="invisiproxy">View all links</button>
+              </div>
+            </article>
+
+            <article class="featured-slide featured-slide--truffled" data-featured-index="5" aria-hidden="true">
+              <span class="featured-slide-tag">Featured</span>
+              <div class="featured-slide-copy">
+                <p class="featured-slide-eyebrow">Featured proxy</p>
+                <h3 class="featured-slide-title">Truffled</h3>
+                <p class="featured-slide-msg">Simple but efficient and fast for your browsing needs.</p>
+              </div>
+              <div class="featured-slide-bar">
+                <div class="featured-slide-icon" aria-hidden="true">🍄</div>
+                <div class="featured-slide-meta">
+                  <p class="featured-slide-meta-name">Truffled</p>
+                  <p class="featured-slide-meta-sub">View all links from this provider</p>
+                </div>
+                <button type="button" class="featured-slide-btn" data-featured-provider="truffled">View all links</button>
+              </div>
+            </article>
+          </div>
+          <div class="featured-controls">
+            <button type="button" class="featured-nav-btn" id="featuredPrevBtn" aria-label="Previous featured proxy">‹</button>
+            <div class="featured-dots" id="featuredDots" role="tablist" aria-label="Featured proxy slides"></div>
+            <button type="button" class="featured-nav-btn" id="featuredNextBtn" aria-label="Next featured proxy">›</button>
+          </div>
+        </div>
+      </section>
       <section class="popular-section" id="mostOpenedSection" aria-labelledby="mostOpenedHeading" hidden>
         <h2 id="mostOpenedHeading">Most opened</h2>
         <div class="most-opened-controls">
@@ -2300,6 +3069,38 @@
     </p>
     <p id="listVersionLine"></p>
   </footer>
+  <div class="summary-backdrop search-palette-backdrop" id="searchPaletteBackdrop" aria-hidden="true">
+    <section class="search-palette" role="dialog" aria-modal="true" aria-labelledby="searchPaletteTitle">
+      <h2 id="searchPaletteTitle" class="visually-hidden">Search</h2>
+      <div class="search-palette-input-wrap">
+        <svg class="search-palette-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M20 20l-3.5-3.5"></path>
+        </svg>
+        <input
+          class="search-palette-input"
+          id="searchPaletteInput"
+          type="search"
+          placeholder="Search providers, URLs, contributors…"
+          autocomplete="off"
+          spellcheck="false"
+          aria-autocomplete="list"
+          aria-controls="searchPaletteList"
+        />
+        <span class="search-palette-kbd" id="searchPaletteShortcutHint">Ctrl+Y</span>
+      </div>
+      <div class="search-palette-body">
+        <p class="search-palette-heading" id="searchPaletteHeading">Recent searches</p>
+        <p class="search-palette-empty" id="searchPaletteEmpty" hidden>No matching results.</p>
+        <ul class="search-palette-list" id="searchPaletteList" role="listbox"></ul>
+      </div>
+      <div class="search-palette-footer">
+        <span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+        <span><kbd>Enter</kbd> Select</span>
+        <span><kbd>Esc</kbd> Close</span>
+      </div>
+    </section>
+  </div>
   <div class="summary-backdrop" id="summaryBackdrop" aria-hidden="true">
     <section class="summary-modal" role="dialog" aria-modal="true" aria-labelledby="summaryTitle">
       <div class="summary-head">
@@ -2762,6 +3563,14 @@
       </div>
     </div>
   </div>
+  <button
+    class="quick-search-palette-hint embed-hide"
+    id="quickSearchPaletteHint"
+    type="button"
+    aria-label="Open quick search palette"
+  >
+    <kbd>Ctrl</kbd><kbd>Y</kbd> Quick Search Palette
+  </button>
   <div class="floating-corner-actions" aria-label="Page tools">
     <p id="activeUsersFooterLine" aria-live="polite" hidden></p>
     <button class="btn" id="backToTopBtn" type="button" aria-label="Back to top">Back to top</button>
@@ -4763,6 +5572,177 @@
       });
     }
 
+    function findProviderCheckboxValue(matchKey) {
+      const key = String(matchKey || "")
+        .toLowerCase()
+        .replace(/['’]/g, "")
+        .trim();
+      if (!key) return "";
+      const inputs = [...document.querySelectorAll("#providerTags input[type=checkbox]")];
+      let best = "";
+      let bestScore = -1;
+      for (const input of inputs) {
+        const raw = String(input.value || "");
+        const cleaned = stripEmojisFromText(raw)
+          .toLowerCase()
+          .replace(/['’]/g, "")
+          .trim();
+        if (!cleaned) continue;
+        let score = -1;
+        if (cleaned === key) score = 100;
+        else if (cleaned.includes(key)) score = 80 + Math.min(key.length, 19);
+        else if (key.includes(cleaned) && cleaned.length >= 4) score = 60;
+        if (score > bestScore) {
+          bestScore = score;
+          best = raw;
+        }
+      }
+      return bestScore >= 60 ? best : "";
+    }
+
+    function autofillFeaturedProvider(matchKey) {
+      const providerValue = findProviderCheckboxValue(matchKey);
+      if (!providerValue) {
+        showAppToast("That provider is not in the list yet.");
+        return false;
+      }
+      const searchText = providerSuggestLabel(providerValue) || stripEmojisFromText(providerValue) || String(matchKey || "");
+      setCheckboxGroup("providerTags", []);
+      setCheckboxGroup("categoryTags", []);
+      setCheckboxGroup("protocolTags", []);
+      setCheckboxGroup("capTags", []);
+      const q = $("q");
+      if (q) {
+        q.value = searchText;
+        rememberRecentSearch(searchText);
+        hideSearchSuggestions();
+        try {
+          q.focus();
+          q.select();
+        } catch (_) {}
+      }
+      if (pageContext) {
+        scheduleRenderFromPageContext();
+      }
+      scheduleUserProfileWrite();
+      const label = stripEmojisFromText(providerValue) || searchText;
+      showAppToast("Showing " + label + " links — clear search to see all");
+      const target = $("stats") || $("tableWrap");
+      if (target && typeof target.scrollIntoView === "function") {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return true;
+    }
+
+    function wireFeaturedProxyButtons() {
+      const root = $("featuredProxiesSection");
+      if (!root || root.dataset.wired === "1") return;
+      root.dataset.wired = "1";
+
+      const slides = [...root.querySelectorAll(".featured-slide")];
+      const dotsWrap = $("featuredDots");
+      const prevBtn = $("featuredPrevBtn");
+      const nextBtn = $("featuredNextBtn");
+      const stage = $("featuredStage");
+      let index = Math.max(
+        0,
+        slides.findIndex((slide) => slide.classList.contains("is-active"))
+      );
+      if (!slides.length) return;
+      if (index < 0) index = 0;
+
+      const FEATURED_ROTATE_MS = 8000;
+      let timer = null;
+      let paused = false;
+
+      function renderDots() {
+        if (!dotsWrap) return;
+        dotsWrap.replaceChildren();
+        slides.forEach((slide, i) => {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "featured-dot" + (i === index ? " is-active" : "");
+          dot.setAttribute("role", "tab");
+          dot.setAttribute("aria-label", "Show featured proxy " + (i + 1));
+          dot.setAttribute("aria-selected", i === index ? "true" : "false");
+          dot.addEventListener("click", () => goTo(i, true));
+          dotsWrap.appendChild(dot);
+        });
+      }
+
+      function goTo(nextIndex, userInitiated) {
+        if (!slides.length) return;
+        const total = slides.length;
+        index = ((nextIndex % total) + total) % total;
+        slides.forEach((slide, i) => {
+          const active = i === index;
+          slide.classList.toggle("is-active", active);
+          slide.setAttribute("aria-hidden", active ? "false" : "true");
+        });
+        renderDots();
+        if (userInitiated) restartTimer();
+      }
+
+      function next() {
+        goTo(index + 1, false);
+      }
+
+      function prev() {
+        goTo(index - 1, true);
+      }
+
+      function stopTimer() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      function startTimer() {
+        stopTimer();
+        if (paused || slides.length < 2) return;
+        if (document.documentElement.getAttribute("data-animations") === "disabled") return;
+        timer = setInterval(next, FEATURED_ROTATE_MS);
+      }
+
+      function restartTimer() {
+        stopTimer();
+        startTimer();
+      }
+
+      function setPaused(nextPaused) {
+        paused = !!nextPaused;
+        if (paused) stopTimer();
+        else startTimer();
+      }
+
+      root.addEventListener("click", (ev) => {
+        const btn = ev.target && ev.target.closest ? ev.target.closest("[data-featured-provider]") : null;
+        if (!btn || !root.contains(btn)) return;
+        autofillFeaturedProvider(btn.getAttribute("data-featured-provider") || "");
+      });
+
+      if (prevBtn) prevBtn.addEventListener("click", prev);
+      if (nextBtn) nextBtn.addEventListener("click", () => goTo(index + 1, true));
+
+      if (stage) {
+        stage.addEventListener("mouseenter", () => setPaused(true));
+        stage.addEventListener("mouseleave", () => setPaused(false));
+        stage.addEventListener("focusin", () => setPaused(true));
+        stage.addEventListener("focusout", (ev) => {
+          if (!stage.contains(ev.relatedTarget)) setPaused(false);
+        });
+      }
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stopTimer();
+        else if (!paused) startTimer();
+      });
+
+      goTo(index, false);
+      startTimer();
+    }
+
     function applyUserSettings(settings, options) {
       if (!settings || typeof settings !== "object") return;
       applyingUserSettings = true;
@@ -5538,7 +6518,7 @@
       if (!byNorm || typeof byNorm !== "object") return;
       for (const n of norms) {
         const c = Number(byNorm[n]);
-        if (!Number.isFinite(c) || c <= 0) continue;
+        if (!Number.isFinite(c) || c < 0) continue;
         const prev = clickCountCache.has(n) ? clickCountCache.get(n) : 0;
         clickCountCache.set(n, Math.max(Number(prev) || 0, c));
       }
@@ -5551,7 +6531,7 @@
       if (typeof o.savedAt === "number" && Date.now() - o.savedAt > LINK_AGG_DISK_CACHE_MAX_MS) return;
       for (const n of norms) {
         const c = Number(o.byNorm[n]);
-        if (!Number.isFinite(c) || c <= 0) continue;
+        if (!Number.isFinite(c) || c < 0) continue;
         const prev = clickCountCache.has(n) ? clickCountCache.get(n) : 0;
         clickCountCache.set(n, Math.max(Number(prev) || 0, c));
       }
@@ -5567,7 +6547,7 @@
             : {};
         for (const n of norms) {
           const c = clickCountCache.get(n);
-          if (!Number.isFinite(c) || c <= 0) continue;
+          if (!Number.isFinite(c) || c < 0) continue;
           byNorm[n] = Math.max(Number(byNorm[n]) || 0, c);
         }
         const payload = { stamp, savedAt: Date.now(), byNorm };
@@ -5731,22 +6711,7 @@
         scheduleFirebaseQuotaRecoveryCheck();
         return;
       }
-      if (!firebaseDb) {
-        // Keep the banner until Firestore is available to probe; do not clear blindly.
-        scheduleFirebaseQuotaRecoveryCheck();
-        return;
-      }
-      try {
-        await firebaseDb.collection("linkRatings").doc("__quota_probe__").get();
-        markFirestoreQuotaRecovered();
-      } catch (err) {
-        if (isFirestoreResourceExhausted(err)) {
-          tripFirestoreReadCooldown(2 * 60 * 1000);
-          return;
-        }
-        // Permission/not-found style errors mean the API accepted the request → quota OK.
-        markFirestoreQuotaRecovered();
-      }
+      markFirestoreQuotaRecovered();
     }
 
     function markFirestoreQuotaRecovered() {
@@ -5828,11 +6793,13 @@
 
       try {
         const normToHashList = new Map();
+        const modernHashes = [];
         const allHashSet = new Set();
         for (const n of rawNorms) {
           const variants = urlKeyVariants(n);
           const hashList = [];
-          for (const v of variants) {
+          for (let vi = 0; vi < variants.length; vi++) {
+            const v = variants[vi];
             let h = normToHashCache.get(v);
             if (!h) {
               h = await sha256Hex(v);
@@ -5841,6 +6808,7 @@
             }
             hashList.push(h);
             allHashSet.add(h);
+            if (vi === 0) modernHashes.push(h);
           }
           normToHashList.set(n, [...new Set(hashList)]);
         }
@@ -5858,15 +6826,40 @@
           return;
         }
 
-        const toFetchAgg = hashes.filter((h) => !linkRatingAggByHash.has(h));
+        const missingModern = [];
+        const toFetchAgg = [...new Set(modernHashes)].filter((h) => !linkRatingAggByHash.has(h));
         await parallelFirestoreDocGets("linkRatings", toFetchAgg, (h, snap) => {
           if (snap.exists) {
             const d = snap.data() || {};
             linkRatingAggByHash.set(h, { up: Number(d.up) || 0, down: Number(d.down) || 0 });
           } else {
             linkRatingAggByHash.set(h, { up: 0, down: 0 });
+            missingModern.push(h);
           }
         });
+
+        const legacyToFetch = [];
+        if (missingModern.length) {
+          const missingSet = new Set(missingModern);
+          for (const n of rawNorms) {
+            const list = normToHashList.get(n) || [];
+            const modern = list[0];
+            if (!modern || !missingSet.has(modern)) continue;
+            for (let i = 1; i < list.length; i++) {
+              if (!linkRatingAggByHash.has(list[i])) legacyToFetch.push(list[i]);
+            }
+          }
+        }
+        if (legacyToFetch.length) {
+          await parallelFirestoreDocGets("linkRatings", [...new Set(legacyToFetch)], (h, snap) => {
+            if (snap.exists) {
+              const d = snap.data() || {};
+              linkRatingAggByHash.set(h, { up: Number(d.up) || 0, down: Number(d.down) || 0 });
+            } else {
+              linkRatingAggByHash.set(h, { up: 0, down: 0 });
+            }
+          });
+        }
 
         // Copy legacy-hash aggregates onto the modern norm key when only the old doc exists.
         for (const n of rawNorms) {
@@ -5882,7 +6875,9 @@
         }
 
         const toFetchSave =
-          opts && opts.skipLinkSaveCounts ? [] : hashes.filter((h) => !linkSaveCountByHash.has(h));
+          opts && opts.skipLinkSaveCounts
+            ? []
+            : [...new Set(modernHashes)].filter((h) => !linkSaveCountByHash.has(h));
         await parallelFirestoreDocGets("linkSaveCounts", toFetchSave, (h, snap) => {
           if (snap.exists) {
             const d = snap.data() || {};
@@ -5893,8 +6888,8 @@
         });
 
         const user = firebase.auth().currentUser;
-        if (user && !user.isAnonymous && !isFirestoreReadCooled()) {
-          const toFetchSelf = hashes.filter((h) => !linkRatingSelfByHash.has(h));
+        if (user && !user.isAnonymous && !isFirestoreReadCooled() && opts && opts.prefetchSelfVotes) {
+          const toFetchSelf = [...new Set(modernHashes)].filter((h) => !linkRatingSelfByHash.has(h));
           await parallelFirestoreDocGets("linkRatingVotes", toFetchSelf.map((h) => user.uid + "_" + h), (docId, snap) => {
             const h = docId.slice(user.uid.length + 1);
             if (snap.exists) {
@@ -6629,11 +7624,17 @@
         if (onProgress) onProgress(0, 0);
         return map;
       }
+      mergeClickCountCache();
+      const uncached = norms.filter((n) => !clickCountCache.has(n));
+      if (!uncached.length) {
+        if (onProgress) onProgress(norms.length, norms.length);
+        return map;
+      }
 
       // Try Worker batch get first (same origin on Cloudflare).
       try {
         if (!stillGoing()) return map;
-        const displayUrls = norms.slice();
+        const displayUrls = uncached.slice();
         const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
         const abortTimer =
           controller && shouldContinue
@@ -6667,7 +7668,7 @@
           const data = await res.json();
           if (!stillGoing()) return map;
           if (data && data.ok && data.counts && typeof data.counts === "object") {
-            norms.forEach((n) => {
+            uncached.forEach((n) => {
               const workerKey = normalizeUrlKeyForClicks(n);
               let best = 0;
               for (const v of urlKeyVariants(n)) {
@@ -6688,7 +7689,7 @@
                 if (Number.isFinite(v)) best = v;
               }
               map.set(n, best);
-              if (best > 0) clickCountCache.set(n, best);
+              clickCountCache.set(n, best);
             });
             mergeClickCountCache();
             if (stamp) persistClickCountDiskCache(stamp, norms);
@@ -6702,50 +7703,12 @@
 
       if (!stillGoing()) return map;
 
-      if (firebaseDb) {
-        for (let i = 0; i < norms.length; i += 10) {
-          if (!stillGoing()) return map;
-          if (isFirestoreReadCooled()) {
-            norms.slice(i).forEach((n) => map.set(n, localClickGet(n)));
-            if (onProgress) onProgress(norms.length, norms.length);
-            break;
-          }
-          const chunk = norms.slice(i, i + 10);
-          try {
-            const countForNorm = async (n) => {
-              let best = 0;
-              for (const v of urlKeyVariants(n)) {
-                const id = await sha256Hex(v);
-                const snap = await firebaseDb.collection("link_clicks").doc(id).get();
-                if (!snap.exists) continue;
-                const data = snap.data();
-                const cnt = data && Number.isFinite(data.count) ? data.count : 0;
-                best = Math.max(best, cnt);
-              }
-              return best;
-            };
-            const counts = await Promise.all(chunk.map((n) => countForNorm(n)));
-            if (!stillGoing()) return map;
-            counts.forEach((cnt, idx) => {
-              map.set(chunk[idx], cnt);
-              if (cnt > 0) clickCountCache.set(chunk[idx], cnt);
-            });
-            if (firebaseQuotaExceededVisible) markFirestoreQuotaRecovered();
-          } catch (err) {
-            if (isFirestoreResourceExhausted(err)) tripFirestoreReadCooldown(3 * 60 * 1000);
-            chunk.forEach((n) => map.set(n, localClickGet(n)));
-          }
-          if (onProgress) onProgress(Math.min(i + chunk.length, norms.length), norms.length);
-        }
-        mergeClickCountCache();
-        if (stamp) persistClickCountDiskCache(stamp, norms);
-        return map;
-      }
-
-      norms.forEach((n) => map.set(n, localClickGet(n)));
-      if (onProgress) onProgress(norms.length, norms.length);
+      uncached.forEach((n) => {
+        if (!map.has(n)) map.set(n, localClickGet(n));
+      });
       mergeClickCountCache();
       if (stamp) persistClickCountDiskCache(stamp, norms);
+      if (onProgress) onProgress(norms.length, norms.length);
       return map;
     }
 
@@ -6776,7 +7739,9 @@
     }
 
     const TOP_OPENS_DISPLAY = 10;
-    const TOP_OPENS_FETCH_CAP = 80;
+    const TOP_OPENS_FETCH_CAP = 25;
+    const TOP_OPENS_CACHE_MS = 10 * 60 * 1000;
+    let topOpenedDocsCache = { at: 0, docs: null };
     const MO_SORT_STORAGE_KEY = "proxyList_mostOpenedSort_v1";
     const MO_SORT_OPENS = "opens";
     const MO_SORT_FILTER = "filter";
@@ -6834,34 +7799,97 @@
     function buildLinkNormIndex(rows) {
       const m = new Map();
       for (const r of rows || []) {
-        const k = normalizeUrlKeyForClicks(r.link);
-        if (k && !m.has(k)) m.set(k, r);
+        for (const k of urlKeyVariants(r.link)) {
+          if (k && !m.has(k)) m.set(k, r);
+        }
       }
       return m;
     }
 
+    /** Collapse split click docs (legacy vs modern URL hashes) into one row. */
+    function mergeMostOpenedCandidates(candidates) {
+      const byKey = new Map();
+      for (const c of candidates || []) {
+        const row = c && c.row;
+        const key = normalizeUrlKeyForClicks(row && row.link) || String((row && row.link) || "");
+        if (!key) continue;
+        const prev = byKey.get(key);
+        const count = Number(c.count) || 0;
+        if (!prev) {
+          byKey.set(key, { row, count });
+        } else {
+          prev.count += count;
+        }
+      }
+      return [...byKey.values()];
+    }
+
     async function fetchTopOpenedFromFirestore(limit) {
-      if (!firebaseDb) return [];
+      if (topOpenedDocsCache.docs && Date.now() - topOpenedDocsCache.at < TOP_OPENS_CACHE_MS) {
+        return topOpenedDocsCache.docs;
+      }
+      const cap = Math.max(1, Math.min(limit, 50));
       try {
-        const cap = Math.max(1, Math.min(limit, 100));
+        const res = await fetch(
+          typeof window.ProxyListPresence !== "undefined" && window.ProxyListPresence.apiUrl
+            ? window.ProxyListPresence.apiUrl("/api/top-opens")
+            : "./api/top-opens",
+          { mode: "cors" }
+        );
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.ok && Array.isArray(data.links) && data.links.length) {
+            const docs = data.links
+              .map((x) => ({
+                url: x && x.url != null ? String(x.url).trim() : "",
+                count: Number(x && x.count),
+              }))
+              .filter((x) => x.url && Number.isFinite(x.count) && x.count > 0)
+              .slice(0, cap);
+            if (docs.length) {
+              topOpenedDocsCache = { at: Date.now(), docs };
+              return docs;
+            }
+          }
+        }
+      } catch (_) {}
+      if (!firebaseDb || isFirestoreReadCooled()) return topOpenedDocsCache.docs || [];
+      try {
         const snap = await firebaseDb
           .collection("link_clicks")
           .orderBy("count", "desc")
           .limit(cap)
           .get();
-        return snap.docs.map((doc) => {
+        const docs = snap.docs.map((doc) => {
           const d = doc.data() || {};
           const url = d.url != null ? String(d.url).trim() : "";
           const count = Number(d.count);
           return { url, count: Number.isFinite(count) ? count : 0 };
         }).filter((x) => x.url && x.count > 0);
+        topOpenedDocsCache = { at: Date.now(), docs };
+        return docs;
       } catch (e) {
         console.warn(
           "Most opened: Firestore query failed (ensure rules allow read for authenticated users and index exists on link_clicks.count).",
           e
         );
-        return [];
+        return topOpenedDocsCache.docs || [];
       }
+    }
+
+    function popularLinksFallbackCandidates(links, byNorm) {
+      const meta = pageContext && pageContext.meta ? pageContext.meta : null;
+      const entries = meta && Array.isArray(meta.popular_links) ? meta.popular_links : [];
+      const out = [];
+      for (const row of entries) {
+        if (!row || !row.link) continue;
+        const key = normalizeUrlKeyForClicks(row.link);
+        const indexed = key ? byNorm.get(key) || byNorm.get(legacyNormalizeUrlKey(row.link)) : null;
+        const resolved = indexed || row;
+        const cached = key && clickCountCache.has(key) ? Number(clickCountCache.get(key)) || 0 : 0;
+        out.push({ row: resolved, count: cached });
+      }
+      return out;
     }
 
     async function renderMostOpenedForList(links) {
@@ -6885,10 +7913,6 @@
         setHtml(moEmpty, "");
       }
       if (moMount) moMount.hidden = false;
-      if (!firebaseDb) {
-        sec.hidden = true;
-        return;
-      }
       const mode =
         sortEl && sortEl.value && [MO_SORT_OPENS, MO_SORT_FILTER, MO_SORT_PROVIDER].includes(sortEl.value)
           ? sortEl.value
@@ -6906,13 +7930,15 @@
       const docs = await fetchTopOpenedFromFirestore(TOP_OPENS_FETCH_CAP);
       const candidates = [];
       for (const { url, count } of docs) {
-        const row = byNorm.get(normalizeUrlKeyForClicks(url));
+        const row =
+          byNorm.get(normalizeUrlKeyForClicks(url)) || byNorm.get(legacyNormalizeUrlKey(url));
         if (row) candidates.push({ row, count });
       }
+      const merged = mergeMostOpenedCandidates(candidates);
 
-      let pool = candidates;
+      let pool = merged;
       if (mode === MO_SORT_PROVIDER && providerFilter) {
-        pool = candidates.filter((c) => String(c.row.provider || "") === providerFilter);
+        pool = merged.filter((c) => String(c.row.provider || "") === providerFilter);
       }
 
       if (mode === MO_SORT_OPENS) {
@@ -6938,8 +7964,20 @@
       }
 
       const picked = pool.slice(0, TOP_OPENS_DISPLAY);
+      let usingPopularFallback = false;
 
       if (!picked.length) {
+        const fallback = popularLinksFallbackCandidates(links, byNorm);
+        if (fallback.length) {
+          usingPopularFallback = true;
+          pool = fallback;
+          pool.sort((a, b) => b.count - a.count);
+        }
+      }
+
+      const finalPicked = (picked.length ? picked : pool.slice(0, TOP_OPENS_DISPLAY));
+
+      if (!finalPicked.length) {
         if (mode === MO_SORT_PROVIDER && providerFilter) {
           sec.hidden = false;
           if (noteEl) {
@@ -6964,11 +8002,20 @@
         setHtml(tbody, "");
         return;
       }
+      const headingEl = $("mostOpenedHeading");
+      if (headingEl) {
+        headingEl.textContent = usingPopularFallback ? "Popular links" : "Most opened";
+      }
       sec.hidden = false;
       if (noteEl) {
         let note =
           "Only URLs that appear in the sorted list below are shown. Counts are link-summary opens from all visitors.";
-        if (mode === MO_SORT_OPENS) {
+        if (usingPopularFallback) {
+          note =
+            ((pageContext && pageContext.meta && pageContext.meta.popular_note) ||
+              "Hand-picked links that tend to work well.") +
+            " Open counts appear when available.";
+        } else if (mode === MO_SORT_OPENS) {
           note = "Ranked by opens (highest first). " + note;
         } else if (mode === MO_SORT_FILTER) {
           if (normalizeFilterKey(selectedGnMathFilter)) {
@@ -6996,9 +8043,11 @@
         noteEl.textContent = note;
         noteEl.hidden = false;
       }
-      await prefetchLinkRatingsForNorms(picked.map(({ row }) => normalizeUrlKeyForClicks(row && row.link)));
+      await prefetchLinkRatingsForNorms(
+        finalPicked.map(({ row }) => normalizeUrlKeyForClicks(row && row.link))
+      );
       setHtml(thead, linkTableTheadRowHtml());
-      setHtml(tbody, picked.map(({ row, count }) => buildRowTrHtml(row, count)).join(""));
+      setHtml(tbody, finalPicked.map(({ row, count }) => buildRowTrHtml(row, count)).join(""));
     }
 
     function uniq(arr) {
@@ -7188,13 +8237,13 @@
         return;
       }
       if (searchSuggestActive >= items.length) searchSuggestActive = items.length - 1;
-      if (searchSuggestActive < 0) searchSuggestActive = 0;
       setHtml(
         list,
         items
           .map((item, i) => {
             const kind =
               item.kind === "provider" ? "Provider" : item.kind === "contributor" ? "Contributor" : "URL";
+            const selected = searchSuggestActive >= 0 && i === searchSuggestActive;
             return (
               '<li role="presentation">' +
               '<button type="button" class="search-suggest-item" role="option" id="qSuggestOpt' +
@@ -7202,7 +8251,7 @@
               '" data-suggest-index="' +
               i +
               '" aria-selected="' +
-              (i === searchSuggestActive ? "true" : "false") +
+              (selected ? "true" : "false") +
               '">' +
               '<span class="search-suggest-kind">' +
               escapeHtml(kind) +
@@ -7217,13 +8266,18 @@
       );
       list.hidden = false;
       input.setAttribute("aria-expanded", "true");
-      input.setAttribute("aria-activedescendant", "qSuggestOpt" + searchSuggestActive);
+      if (searchSuggestActive >= 0) {
+        input.setAttribute("aria-activedescendant", "qSuggestOpt" + searchSuggestActive);
+      } else {
+        input.removeAttribute("aria-activedescendant");
+      }
     }
 
     function applySearchSuggestion(item) {
       const input = $("q");
       if (!input || !item) return;
       input.value = item.value;
+      rememberRecentSearch(item.value);
       hideSearchSuggestions();
       if (pageContext) {
         render(pageContext.links, pageContext.meta, pageContext.link_check);
@@ -7231,6 +8285,279 @@
       }
       input.focus();
     }
+
+    const LS_RECENT_SEARCHES_KEY = "proxyList_recent_searches_v1";
+    const RECENT_SEARCH_LIMIT = 8;
+    let searchPaletteItems = [];
+    let searchPaletteActive = -1;
+
+    function isMacLikeShortcutPlatform() {
+      const p = String(navigator.platform || "") + " " + String(navigator.userAgent || "");
+      return /Mac|iPhone|iPad|iPod/i.test(p);
+    }
+
+    function isMobileQuickSearchHint() {
+      try {
+        if (window.matchMedia("(max-width: 640px)").matches) return true;
+        // Phones/tablets in landscape often exceed 640px width but still have no keyboard shortcut.
+        if (
+          window.matchMedia("(pointer: coarse)").matches &&
+          window.matchMedia("(hover: none)").matches
+        ) {
+          return true;
+        }
+      } catch (_) {}
+      const ua = String(navigator.userAgent || "");
+      return /Android|iPhone|iPod|iPad|Mobile/i.test(ua);
+    }
+
+    function updateQuickSearchPaletteHint() {
+      const el = $("quickSearchPaletteHint");
+      if (!el) return;
+      if (isMobileQuickSearchHint()) {
+        el.textContent = "Tap for Quick Search Palette";
+        return;
+      }
+      el.innerHTML = isMacLikeShortcutPlatform()
+        ? "<kbd>Cmd</kbd><kbd>Y</kbd> Quick Search Palette"
+        : "<kbd>Ctrl</kbd><kbd>Y</kbd> Quick Search Palette";
+    }
+
+    function readRecentSearches() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(LS_RECENT_SEARCHES_KEY) || "[]");
+        if (!Array.isArray(raw)) return [];
+        return raw
+          .map((v) => String(v || "").trim())
+          .filter(Boolean)
+          .slice(0, RECENT_SEARCH_LIMIT);
+      } catch (_) {
+        return [];
+      }
+    }
+
+    function rememberRecentSearch(query) {
+      const q = String(query || "").trim();
+      if (!q) return;
+      const next = [q, ...readRecentSearches().filter((v) => v.toLowerCase() !== q.toLowerCase())].slice(
+        0,
+        RECENT_SEARCH_LIMIT
+      );
+      try {
+        localStorage.setItem(LS_RECENT_SEARCHES_KEY, JSON.stringify(next));
+      } catch (_) {}
+    }
+
+    function isSearchPaletteOpen() {
+      const bd = $("searchPaletteBackdrop");
+      return !!(bd && bd.classList.contains("open"));
+    }
+
+    function closeSearchPalette() {
+      const bd = $("searchPaletteBackdrop");
+      if (!bd) return;
+      bd.classList.remove("open");
+      bd.setAttribute("aria-hidden", "true");
+    }
+
+    function collectPaletteItems(query) {
+      const q = String(query || "").trim().toLowerCase();
+      const recents = readRecentSearches().map((value) => ({
+        kind: "recent",
+        value,
+        label: value,
+        meta: "Recent",
+      }));
+      if (!q) {
+        const providers = ((searchSuggestIndex && searchSuggestIndex.providers) || []).slice(0, 8).map((item) => ({
+          kind: "provider",
+          value: item.value,
+          label: item.label,
+          meta: "Provider",
+        }));
+        return recents.length ? recents : providers;
+      }
+      const fromRecent = recents.filter((item) => item.label.toLowerCase().includes(q));
+      const matches = collectSearchSuggestions(query).map((item) => ({
+        kind: item.kind,
+        value: item.value,
+        label: item.label,
+        meta:
+          item.kind === "provider" ? "Provider" : item.kind === "contributor" ? "Contributor" : item.value,
+      }));
+      const seen = new Set();
+      const out = [];
+      for (const item of fromRecent.concat(matches)) {
+        const key = item.kind + ":" + String(item.value).toLowerCase();
+        if (seen.has(key)) continue;
+        seen.add(key);
+        out.push(item);
+      }
+      return out.slice(0, 12);
+    }
+
+    function renderSearchPaletteList() {
+      const input = $("searchPaletteInput");
+      const list = $("searchPaletteList");
+      const heading = $("searchPaletteHeading");
+      const empty = $("searchPaletteEmpty");
+      if (!input || !list) return;
+      const query = String(input.value || "").trim();
+      searchPaletteItems = collectPaletteItems(query);
+      if (searchPaletteActive >= searchPaletteItems.length) searchPaletteActive = searchPaletteItems.length - 1;
+      if (heading) heading.textContent = query ? "Results" : readRecentSearches().length ? "Recent searches" : "Providers";
+      if (empty) empty.hidden = searchPaletteItems.length > 0;
+      list.innerHTML = searchPaletteItems
+        .map((item, i) => {
+          return (
+            '<li role="presentation">' +
+            '<button type="button" class="search-palette-item' +
+            (i === searchPaletteActive ? " is-active" : "") +
+            '" role="option" data-palette-index="' +
+            i +
+            '" aria-selected="' +
+            (i === searchPaletteActive ? "true" : "false") +
+            '">' +
+            '<span class="search-palette-item-name">' +
+            escapeHtml(item.label) +
+            "</span>" +
+            '<span class="search-palette-item-meta">' +
+            escapeHtml(item.meta || "") +
+            "</span>" +
+            "</button></li>"
+          );
+        })
+        .join("");
+    }
+
+    function applyPaletteQuery(query) {
+      const q = String(query || "").trim();
+      const input = $("q");
+      if (input) input.value = q;
+      if (q) rememberRecentSearch(q);
+      hideSearchSuggestions();
+      closeSearchPalette();
+      if (pageContext) {
+        scheduleRenderFromPageContext();
+        scheduleUserProfileWrite();
+      }
+      const target = $("stats") || $("tableWrap");
+      if (target && typeof target.scrollIntoView === "function") {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    function applyPaletteActiveOrQuery() {
+      const input = $("searchPaletteInput");
+      const typed = input ? String(input.value || "").trim() : "";
+      if (searchPaletteActive >= 0 && searchPaletteItems[searchPaletteActive]) {
+        applyPaletteQuery(searchPaletteItems[searchPaletteActive].value);
+        return;
+      }
+      applyPaletteQuery(typed);
+    }
+
+    function openSearchPalette() {
+      const bd = $("searchPaletteBackdrop");
+      const input = $("searchPaletteInput");
+      if (!bd || !input) return;
+      const sidebarQ = $("q");
+      input.value = sidebarQ ? String(sidebarQ.value || "") : "";
+      searchPaletteActive = -1;
+      renderSearchPaletteList();
+      bd.classList.add("open");
+      bd.setAttribute("aria-hidden", "false");
+      setTimeout(() => {
+        input.focus();
+        input.select();
+      }, 0);
+    }
+
+    function wireSearchPalette() {
+      const bd = $("searchPaletteBackdrop");
+      const input = $("searchPaletteInput");
+      const list = $("searchPaletteList");
+      const hint = $("searchPaletteShortcutHint");
+      const hintBtn = $("quickSearchPaletteHint");
+      if (!bd || !input || bd.dataset.wired === "1") return;
+      bd.dataset.wired = "1";
+      if (hint) hint.textContent = isMacLikeShortcutPlatform() ? "⌘Y" : "Ctrl+Y";
+      updateQuickSearchPaletteHint();
+      try {
+        ["(max-width: 640px)", "(pointer: coarse)", "(hover: none)"].forEach((query) => {
+          window.matchMedia(query).addEventListener("change", updateQuickSearchPaletteHint);
+        });
+        window.addEventListener("orientationchange", updateQuickSearchPaletteHint);
+      } catch (_) {}
+      if (hintBtn) {
+        hintBtn.addEventListener("click", () => {
+          if (isSearchPaletteOpen()) closeSearchPalette();
+          else openSearchPalette();
+        });
+      }
+
+      document.addEventListener(
+        "keydown",
+        (ev) => {
+          const key = String(ev.key || "").toLowerCase();
+          if ((ev.ctrlKey || ev.metaKey) && !ev.altKey && key === "y") {
+            ev.preventDefault();
+            if (isSearchPaletteOpen()) closeSearchPalette();
+            else openSearchPalette();
+            return;
+          }
+          if (!isSearchPaletteOpen()) return;
+          if (ev.key === "Escape") {
+            ev.preventDefault();
+            ev.stopPropagation();
+            closeSearchPalette();
+            return;
+          }
+          if (ev.target !== $("searchPaletteInput") && ev.target && ev.target.closest && ev.target.closest(".search-palette")) {
+            return;
+          }
+          if (ev.key === "ArrowDown") {
+            if (!searchPaletteItems.length) return;
+            ev.preventDefault();
+            if (searchPaletteActive < 0) searchPaletteActive = 0;
+            else searchPaletteActive = Math.min(searchPaletteItems.length - 1, searchPaletteActive + 1);
+            renderSearchPaletteList();
+            return;
+          }
+          if (ev.key === "ArrowUp") {
+            if (!searchPaletteItems.length) return;
+            ev.preventDefault();
+            if (searchPaletteActive < 0) searchPaletteActive = searchPaletteItems.length - 1;
+            else searchPaletteActive = Math.max(0, searchPaletteActive - 1);
+            renderSearchPaletteList();
+            return;
+          }
+          if (ev.key === "Enter") {
+            ev.preventDefault();
+            applyPaletteActiveOrQuery();
+          }
+        },
+        true
+      );
+
+      input.addEventListener("input", () => {
+        searchPaletteActive = -1;
+        renderSearchPaletteList();
+      });
+      list.addEventListener("mousedown", (ev) => {
+        const btn = ev.target && ev.target.closest ? ev.target.closest(".search-palette-item") : null;
+        if (!btn) return;
+        ev.preventDefault();
+        const idx = Number(btn.getAttribute("data-palette-index"));
+        searchPaletteActive = Number.isFinite(idx) ? idx : 0;
+        applyPaletteActiveOrQuery();
+      });
+      bd.addEventListener("click", (ev) => {
+        if (ev.target === bd) closeSearchPalette();
+      });
+    }
+
+    wireSearchPalette();
 
     function wireSearchAutocomplete(rows) {
       buildSearchSuggestIndex(rows);
@@ -7240,6 +8567,7 @@
       input.dataset.suggestWired = "1";
 
       input.addEventListener("input", () => {
+        searchSuggestActive = -1;
         renderSearchSuggestions(input.value);
       });
       input.addEventListener("keydown", (ev) => {
@@ -7250,8 +8578,8 @@
             if (!searchSuggestItems.length) return;
           }
           ev.preventDefault();
-          searchSuggestActive = Math.min(searchSuggestItems.length - 1, searchSuggestActive + 1);
           if (searchSuggestActive < 0) searchSuggestActive = 0;
+          else searchSuggestActive = Math.min(searchSuggestItems.length - 1, searchSuggestActive + 1);
           paintSearchSuggestActive();
           input.setAttribute("aria-activedescendant", "qSuggestOpt" + searchSuggestActive);
           return;
@@ -7259,7 +8587,8 @@
         if (ev.key === "ArrowUp") {
           if (!open) return;
           ev.preventDefault();
-          searchSuggestActive = Math.max(0, searchSuggestActive - 1);
+          if (searchSuggestActive < 0) searchSuggestActive = searchSuggestItems.length - 1;
+          else searchSuggestActive = Math.max(0, searchSuggestActive - 1);
           paintSearchSuggestActive();
           input.setAttribute("aria-activedescendant", "qSuggestOpt" + searchSuggestActive);
           return;
@@ -7271,12 +8600,25 @@
           }
           return;
         }
-        if ((ev.key === "Tab" || ev.key === "Enter") && open) {
-          const idx = searchSuggestActive >= 0 ? searchSuggestActive : 0;
-          const item = searchSuggestItems[idx];
+        if (ev.key === "Tab" && open && searchSuggestActive >= 0) {
+          const item = searchSuggestItems[searchSuggestActive];
           if (!item) return;
           ev.preventDefault();
           applySearchSuggestion(item);
+          return;
+        }
+        if (ev.key === "Enter") {
+          if (open && searchSuggestActive >= 0) {
+            const item = searchSuggestItems[searchSuggestActive];
+            if (item) {
+              ev.preventDefault();
+              applySearchSuggestion(item);
+              return;
+            }
+          }
+          hideSearchSuggestions();
+          const typed = String(input.value || "").trim();
+          if (typed) rememberRecentSearch(typed);
         }
       });
       input.addEventListener("blur", () => {
@@ -8490,13 +9832,30 @@
     }
 
     async function refreshClickCellsForSlice(rowsSlice, startIndex, options) {
-      if (!shouldLoadLinkClicks()) return;
       if (!rowsSlice || !rowsSlice.length) return;
       const tbody = $("linksTableBody");
       if (!tbody || !tbody.isConnected) return;
       const start = Number.isFinite(startIndex) ? Math.max(0, startIndex) : 0;
       const shouldContinue = options && typeof options.shouldContinue === "function" ? options.shouldContinue : null;
       const virtualSlice = !!(options && options.virtualSlice);
+      await prefetchLinkRatingsForNorms(
+        rowsSlice.map((r) => normalizeUrlKeyForClicks(r && r.link)),
+        { skipLinkSaveCounts: listSortMode !== LINK_SORT_SAVED_DESC }
+      );
+      if (shouldContinue && !shouldContinue()) return;
+      if (!tbody.isConnected) return;
+      const dataRows = virtualSlice
+        ? tbody.querySelectorAll("tr:not(.virtual-pad-top):not(.virtual-pad-bottom):not(.table-row-skeleton)")
+        : null;
+      const rowAt = (i) => (virtualSlice ? dataRows[i] : tbody.children[start + i]);
+      for (let i = 0; i < rowsSlice.length; i++) {
+        const tr = rowAt(i);
+        if (!tr || !tr.querySelector) continue;
+        const ratingTd = tr.querySelector("td.link-rating-cell");
+        const link = rowsSlice[i] && rowsSlice[i].link ? String(rowsSlice[i].link) : "";
+        if (ratingTd && link) setHtml(ratingTd, ratingCellInnerHtmlForLinkUrl(link));
+      }
+      if (!shouldLoadLinkClicks()) return;
       const targets = [];
       for (let i = 0; i < rowsSlice.length; i++) {
         let tr;
@@ -8856,9 +10215,7 @@
       if (linkSortNeedsFullFirestoreForLinks()) {
         reportContentLoadingProgress(22, "Loading link ratings…");
         // Cap bulk rating reads — fetching every row exhausts Spark quota and blocks likes.
-        const ratingPrefetchCap = isFirestoreReadCooled()
-          ? Math.min(getTableChunkSize(), filtered.length)
-          : Math.min(Math.max(getTableChunkSize() * 4, 200), filtered.length);
+        const ratingPrefetchCap = Math.min(24, getTableChunkSize(), filtered.length);
         await prefetchLinkRatingsForNorms(
           filtered.slice(0, ratingPrefetchCap).map((r) => normalizeUrlKeyForClicks(r && r.link)),
           {
@@ -8867,7 +10224,7 @@
         );
       } else {
         reportContentLoadingProgress(22, "Preparing list…");
-        const quickCount = Math.min(getTableChunkSize(), filtered.length);
+        const quickCount = Math.min(24, getTableChunkSize(), filtered.length);
         const quickNorms = filtered.slice(0, quickCount).map((r) => normalizeUrlKeyForClicks(r && r.link));
         await prefetchLinkRatingsForNorms(quickNorms, { skipLinkSaveCounts: true });
       }
@@ -10819,6 +12176,8 @@
           flashSummaryCopyButtonState(ok);
         });
         $("selectFilterBtn").addEventListener("click", () => void openFilterModal());
+        wireFeaturedProxyButtons();
+        wireSearchPalette();
         const randomLinkBtn = $("randomLinkBtn");
         if (randomLinkBtn) {
           randomLinkBtn.addEventListener("click", () => openRandomLinkModal());
