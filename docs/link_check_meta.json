@@ -1,14 +1,12 @@
 {
-  "checked_at": "2026-08-21T01:03:14Z",
-  "checked_at_display": "2026-08-21 01:03 UTC",
+  "checked_at": "2026-08-21T06:43:02Z",
+  "checked_at_display": "2026-08-21 06:43 UTC",
   "added_count": 0,
-  "removed_count": 5,
+  "removed_count": 3,
   "added_links": [],
   "removed_links": [
-    "https://neatgeo.babypos.hk",
-    "https://topgrammar.reformarchive.com",
-    "https://clearcoding.pollsvspoly.com",
-    "https://simplegrammar.asturkiters.es",
-    "https://aintveentry.medscience.cl"
+    "https://edu.agatab.com",
+    "https://edu3.agatab.com",
+    "https://edu4.agatab.com"
   ]
 }
