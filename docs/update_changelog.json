@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v6.6",
+      "revision": "r271",
+      "released": "August 20, 2026",
+      "update_notice": "# Find Games More Easily\nA new feature is currently in beta which allows you to search for games directly through the search on our site and then get links shown to you that have that game available, which has been done by obtaining game database APIs and adding them to the capabilities of links that have them, then having the site contact the API of the database to find that game."
+    },
+    {
       "version": "v6.5",
       "revision": "r270",
       "released": "August 20, 2026",

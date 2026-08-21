@@ -1522,6 +1522,25 @@
       font-variant-numeric: tabular-nums;
       flex-shrink: 0;
     }
+    .facet-tip {
+      position: fixed;
+      z-index: 80;
+      max-width: min(22rem, calc(100vw - 1.5rem));
+      padding: 0.55rem 0.7rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(18, 18, 18, 0.96);
+      color: var(--text);
+      font-size: 0.78rem;
+      line-height: 1.4;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+      pointer-events: none;
+    }
+    html[data-theme="light"] .facet-tip {
+      background: rgba(255, 255, 255, 0.98);
+      color: #161616;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+    }
     .match-mode {
       display: flex;
       gap: 0.75rem;
@@ -2775,7 +2794,7 @@
         <input
           type="search"
           id="q"
-          placeholder="URL, provider, contributor…"
+          placeholder="URL, provider, game, database…"
           autocomplete="off"
           spellcheck="false"
           role="combobox"
@@ -3081,7 +3100,7 @@
           class="search-palette-input"
           id="searchPaletteInput"
           type="search"
-          placeholder="Search providers, URLs, contributors…"
+          placeholder="Search providers, games, databases, URLs…"
           autocomplete="off"
           spellcheck="false"
           aria-autocomplete="list"
@@ -3575,6 +3594,7 @@
     <p id="activeUsersFooterLine" aria-live="polite" hidden></p>
     <button class="btn" id="backToTopBtn" type="button" aria-label="Back to top">Back to top</button>
   </div>
+  <div id="facetTip" class="facet-tip" role="tooltip" hidden></div>
   <div id="appToast" class="app-toast" role="status" aria-live="polite" hidden></div>
   <div id="siteToastStack" class="site-toast-stack" aria-live="polite"></div>
   <!-- Firebase SDKs are loaded lazily after the list boots. Parser-blocking gstatic
@@ -3584,6 +3604,7 @@
   <script src="firebase-config.local.js"></script>
   <script src="firebase-auth-ready.js"></script>
   <script src="data-loader.js"></script>
+  <script src="game-db-search.js"></script>
   <script>
     (function () {
       var debug = false;
@@ -8098,6 +8119,7 @@
     let searchSuggestItems = [];
     let searchSuggestActive = -1;
     let searchSuggestIndex = null;
+    let gdbSuggestRefreshToken = 0;
 
     function providerSuggestLabel(provider) {
       const s = String(provider || "");
@@ -8177,6 +8199,34 @@
       return 9;
     }
 
+    function collectGdbSuggestionItems(query, limit) {
+      const api = window.ProxyListGameDbSearch;
+      if (!api || typeof api.suggestFromCache !== "function") return [];
+      return api.suggestFromCache(query, { limit: limit != null ? limit : 6 });
+    }
+
+    function scheduleGdbSuggestionRefresh(query, source) {
+      const api = window.ProxyListGameDbSearch;
+      if (!api || typeof api.warmAll !== "function") return;
+      const q = String(query || "").trim();
+      if (!q) return;
+      const token = ++gdbSuggestRefreshToken;
+      void api.warmAll().then(() => {
+        if (token !== gdbSuggestRefreshToken) return;
+        if (source === "palette") {
+          if (!isSearchPaletteOpen()) return;
+          const input = $("searchPaletteInput");
+          if (!input || String(input.value || "").trim() !== q) return;
+          renderSearchPaletteList();
+          return;
+        }
+        const input = $("q");
+        if (!input || document.activeElement !== input) return;
+        if (String(input.value || "").trim() !== q) return;
+        renderSearchSuggestions(q);
+      });
+    }
+
     function collectSearchSuggestions(query) {
       const q = String(query || "").trim().toLowerCase();
       if (!q || q.length < 1 || !searchSuggestIndex) return [];
@@ -8196,6 +8246,10 @@
           const rank = rankSuggestMatch(item, q);
           if (rank < 9) scored.push({ item, rank, tie: 2 });
         }
+      }
+      for (const item of collectGdbSuggestionItems(query, 6)) {
+        const rank = item.kind === "gdb-database" ? 1 : item.score >= 80 ? 1 : 2;
+        scored.push({ item, rank, tie: item.kind === "gdb-database" ? 0.5 : 1.5 });
       }
       scored.sort((a, b) => a.rank - b.rank || a.tie - b.tie || a.item.label.localeCompare(b.item.label));
       return scored.slice(0, SEARCH_SUGGEST_LIMIT).map((x) => x.item);
@@ -8242,7 +8296,15 @@
         items
           .map((item, i) => {
             const kind =
-              item.kind === "provider" ? "Provider" : item.kind === "contributor" ? "Contributor" : "URL";
+              item.kind === "provider"
+                ? "Provider"
+                : item.kind === "contributor"
+                  ? "Contributor"
+                  : item.kind === "gdb-database"
+                    ? "Game DB"
+                    : item.kind === "gdb-game"
+                      ? "Game"
+                      : "URL";
             const selected = searchSuggestActive >= 0 && i === searchSuggestActive;
             return (
               '<li role="presentation">' +
@@ -8273,9 +8335,46 @@
       }
     }
 
+    function applyGameDbCapabilityFilters(tags) {
+      const wanted = new Set((tags || []).map((t) => String(t).toLowerCase()));
+      document.querySelectorAll("#capTags input[type=checkbox]").forEach((input) => {
+        input.checked = wanted.has(String(input.value || "").toLowerCase());
+      });
+      const anyCap = document.querySelector('input[name="capMode"][value="any"]');
+      if (anyCap) anyCap.checked = true;
+    }
+
+    function applyGdbSearchSuggestion(item) {
+      const tags = Array.isArray(item.tags) ? item.tags : item.tag ? [item.tag] : [];
+      if (!tags.length) return false;
+      const q = $("q");
+      if (q) q.value = "";
+      hideSearchSuggestions();
+      applyGameDbCapabilityFilters(tags);
+      if (pageContext) {
+        scheduleRenderFromPageContext();
+        scheduleUserProfileWrite();
+      }
+      const label =
+        item.kind === "gdb-game"
+          ? item.label + " (" + tags.length + " database" + (tags.length === 1 ? "" : "s") + ")"
+          : item.label;
+      showAppToast("Showing links with " + label);
+      const target = $("stats") || $("tableWrap");
+      if (target && typeof target.scrollIntoView === "function") {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return true;
+    }
+
     function applySearchSuggestion(item) {
+      if (!item) return;
+      if (item.kind === "gdb-database" || item.kind === "gdb-game") {
+        applyGdbSearchSuggestion(item);
+        return;
+      }
       const input = $("q");
-      if (!input || !item) return;
+      if (!input) return;
       input.value = item.value;
       rememberRecentSearch(item.value);
       hideSearchSuggestions();
@@ -8375,7 +8474,21 @@
           label: item.label,
           meta: "Provider",
         }));
-        return recents.length ? recents : providers;
+        const api = window.ProxyListGameDbSearch;
+        const gdbDbs =
+          api && typeof api.listCatalogs === "function"
+            ? api.listCatalogs().map((cat) => ({
+                kind: "gdb-database",
+                value: cat.tag,
+                label: cat.label,
+                meta: "Game DB",
+                tags: [cat.tag],
+                tag: cat.tag,
+              }))
+            : [];
+        // Empty query: show recents, else providers + known game databases.
+        if (recents.length) return recents;
+        return providers.concat(gdbDbs).slice(0, 12);
       }
       const fromRecent = recents.filter((item) => item.label.toLowerCase().includes(q));
       const matches = collectSearchSuggestions(query).map((item) => ({
@@ -8383,7 +8496,19 @@
         value: item.value,
         label: item.label,
         meta:
-          item.kind === "provider" ? "Provider" : item.kind === "contributor" ? "Contributor" : item.value,
+          item.kind === "provider"
+            ? "Provider"
+            : item.kind === "contributor"
+              ? "Contributor"
+              : item.kind === "gdb-database"
+                ? "Game DB"
+                : item.kind === "gdb-game"
+                  ? item.tags && item.tags.length > 1
+                    ? item.tags.length + " databases"
+                    : "Game"
+                  : item.value,
+        tags: item.tags,
+        tag: item.tag,
       }));
       const seen = new Set();
       const out = [];
@@ -8405,7 +8530,13 @@
       const query = String(input.value || "").trim();
       searchPaletteItems = collectPaletteItems(query);
       if (searchPaletteActive >= searchPaletteItems.length) searchPaletteActive = searchPaletteItems.length - 1;
-      if (heading) heading.textContent = query ? "Results" : readRecentSearches().length ? "Recent searches" : "Providers";
+      if (heading) {
+        heading.textContent = query
+          ? "Results"
+          : readRecentSearches().length
+            ? "Recent searches"
+            : "Providers & game databases";
+      }
       if (empty) empty.hidden = searchPaletteItems.length > 0;
       list.innerHTML = searchPaletteItems
         .map((item, i) => {
@@ -8451,7 +8582,14 @@
       const input = $("searchPaletteInput");
       const typed = input ? String(input.value || "").trim() : "";
       if (searchPaletteActive >= 0 && searchPaletteItems[searchPaletteActive]) {
-        applyPaletteQuery(searchPaletteItems[searchPaletteActive].value);
+        const item = searchPaletteItems[searchPaletteActive];
+        if (item.kind === "gdb-database" || item.kind === "gdb-game") {
+          closeSearchPalette();
+          applyGdbSearchSuggestion(item);
+          rememberRecentSearch(item.label);
+          return;
+        }
+        applyPaletteQuery(item.value);
         return;
       }
       applyPaletteQuery(typed);
@@ -8543,6 +8681,7 @@
       input.addEventListener("input", () => {
         searchPaletteActive = -1;
         renderSearchPaletteList();
+        scheduleGdbSuggestionRefresh(input.value, "palette");
       });
       list.addEventListener("mousedown", (ev) => {
         const btn = ev.target && ev.target.closest ? ev.target.closest(".search-palette-item") : null;
@@ -8558,6 +8697,7 @@
     }
 
     wireSearchPalette();
+    wireFacetHoverTips();
 
     function wireSearchAutocomplete(rows) {
       buildSearchSuggestIndex(rows);
@@ -8569,6 +8709,7 @@
       input.addEventListener("input", () => {
         searchSuggestActive = -1;
         renderSearchSuggestions(input.value);
+        scheduleGdbSuggestionRefresh(input.value, "sidebar");
       });
       input.addEventListener("keydown", (ev) => {
         const open = list && !list.hidden && searchSuggestItems.length > 0;
@@ -11838,9 +11979,138 @@
       refreshImportantNoticesDom();
     }
 
+    const FACET_HOVER_TIPS = {
+      bare: "A basic transport system that is used on most proxies.",
+      captcha: "This provider has support for reCAPTCHA on most sites.",
+      epoxy:
+        "epoxy is an encrypteed proxy for browser JavaScript, which makes requests that bypass CORS without compromising security, allowing sites to be able to run JavaScript code properly.",
+      libcurl: "There is no info on this item yet.",
+      reflux:
+        "Reflux is a plugin system for proxies which seems to enable additional features. It has only been found to be used on DayDream X links at the moment.",
+      tor:
+        "Tor is the most anonymous way to get on the web, which is made hard to track by design and allows access to the deep web/dark web. usually recommended you don't connect to this on some networks as ISPs will know if you connect to a Tor node without a VPN.",
+      "user-agent": "This site allows you to change your user agent, which is data that tells websites what device you're on.",
+      wisp:
+        "Wisp is designed to be a low-overhead, easy to implement protocol for proxying multiple TCP and UDP sockets over a single websocket connection.",
+      "gdb:chicken-kings-vault":
+        "Game database that uses HTML singlefiles to load games with thumbnail support.",
+      "gdb:elite-games":
+        "Another large game database that uses HTML singlefiles to load games, with basic descriptions and thumbnails.",
+      "gdb:gn-math":
+        "Highest-quality and most popular game database with hundreds of well known games and thumbnail and author info support.",
+      "gdb:luminsdk":
+        "Seems to be a clone or backup of gn-math's database as they both use the same domain.",
+      "gdb:noahs-tutoring": "No info on this database yet.",
+      "gdb:seraph": "Database with HTML singlefiles of games with thumbnail and genre info support.",
+      "gdb:ultimate-game-stash": "Database with hundreds of archived HTML singlefiles of games.",
+      "gdb:unblockedzone":
+        "Database exclusive to Unblockedzone links with many high-quality games. Many games seem to be ported from the gn-math database.",
+      "gdb:lucide":
+        "Lucide's built-in game catalog, shipped via lucideproxy/svg (GamesPage assets). Used by Lucide and Lunar links.",
+      "gdb:sdxp": "Rift vault pack (SDXP). No detailed info on this database yet.",
+      "gdb:duckmath": "Rift vault pack (DuckMath). No detailed info on this database yet.",
+      "gdb:ccported": "Rift vault pack (CCPorted). No detailed info on this database yet.",
+      "gdb:selenite": "Selenite's game catalog (also exposed as a Rift vault pack). No detailed info on this database yet.",
+      "gdb:radon": "Rift vault pack (Radon). No detailed info on this database yet.",
+      "gdb:fyinx": "Rift vault pack (Fyinx). No detailed info on this database yet.",
+      "gdb:truffled":
+        "Rift vault pack (Truffled). Truffled games use local wrapper HTML files on Rift.",
+      "gdb:totally-science": "Rift vault pack (Totally Science). No detailed info on this database yet.",
+      "gdb:petezah": "Rift vault pack (PeteZah Lite). No detailed info on this database yet.",
+      eclipse: "No info on this item yet.",
+      rammerhead:
+        "Well-known proxy technology that is only able to be used by select providers that has reCAPTCHA support. May require a paid tier for best experience.",
+      scramjet:
+        "The successor of Ultraviolet and a leading proxy technology currently under development, used by most of the world's unblocked games and proxy infastructure.",
+      ultraviolet:
+        "The original best proxy service that was used by most services before Scramjet's development started. Ultraviolet is unmaintained and no longer recieves updates, so it is recommended you still use Scramjet even in its experimental state unless a site you are accessing works better on Ultraviolet for whatever reason.",
+    };
+
+    function facetTipFor(tag) {
+      const key = String(tag || "").trim().toLowerCase();
+      return FACET_HOVER_TIPS[key] || "";
+    }
+
+    function hideFacetTip() {
+      const tip = $("facetTip");
+      if (!tip) return;
+      tip.hidden = true;
+      tip.textContent = "";
+    }
+
+    function positionFacetTip(anchor, tip) {
+      if (!anchor || !tip) return;
+      const rect = anchor.getBoundingClientRect();
+      const pad = 8;
+      tip.hidden = false;
+      const tipRect = tip.getBoundingClientRect();
+      let left = rect.left;
+      let top = rect.bottom + 6;
+      if (left + tipRect.width > window.innerWidth - pad) {
+        left = Math.max(pad, window.innerWidth - tipRect.width - pad);
+      }
+      if (top + tipRect.height > window.innerHeight - pad) {
+        top = Math.max(pad, rect.top - tipRect.height - 6);
+      }
+      tip.style.left = left + "px";
+      tip.style.top = top + "px";
+    }
+
+    function wireFacetHoverTips() {
+      if (document.documentElement.dataset.facetTipsWired === "1") return;
+      document.documentElement.dataset.facetTipsWired = "1";
+      let active = null;
+      document.addEventListener(
+        "mouseover",
+        (ev) => {
+          const el = ev.target && ev.target.closest ? ev.target.closest("[data-facet-tip]") : null;
+          if (!el) {
+            if (active) {
+              active = null;
+              hideFacetTip();
+            }
+            return;
+          }
+          const tip = $("facetTip");
+          const text = el.getAttribute("data-facet-tip") || "";
+          if (!tip || !text) return;
+          if (active === el) return;
+          active = el;
+          tip.textContent = text;
+          positionFacetTip(el, tip);
+        },
+        true
+      );
+      document.addEventListener(
+        "mouseout",
+        (ev) => {
+          const el = ev.target && ev.target.closest ? ev.target.closest("[data-facet-tip]") : null;
+          if (!el || el !== active) return;
+          const related = ev.relatedTarget;
+          if (related && el.contains(related)) return;
+          active = null;
+          hideFacetTip();
+        },
+        true
+      );
+      window.addEventListener("scroll", hideFacetTip, true);
+      window.addEventListener("resize", hideFacetTip);
+    }
+
     function formatTags(tags) {
       if (!tags || !tags.length) return '<span class="pill">—</span>';
-      return tags.map((t) => '<span class="pill">' + escapeHtml(t) + "</span>").join("");
+      return tags
+        .map((t) => {
+          const tip = facetTipFor(t);
+          return (
+            '<span class="pill"' +
+            (tip ? ' data-facet-tip="' + escapeAttr(tip) + '"' : "") +
+            ">" +
+            escapeHtml(t) +
+            "</span>"
+          );
+        })
+        .join("");
     }
 
     function countRowsWithProvider(rows, value) {
@@ -11880,9 +12150,14 @@
     function buildCheckboxGroup(containerId, values, rows, countForValue, meta, linkCheck) {
       const wrap = $(containerId);
       setHtml(wrap, "");
+      const useTips = containerId === "capTags" || containerId === "protocolTags";
       for (const v of values) {
         const lab = document.createElement("label");
         lab.className = "tag";
+        if (useTips) {
+          const tip = facetTipFor(v);
+          if (tip) lab.setAttribute("data-facet-tip", tip);
+        }
         const inp = document.createElement("input");
         inp.type = "checkbox";
         inp.value = v;
@@ -12113,6 +12388,9 @@
         }
 
         wireSearchAutocomplete(links);
+        if (window.ProxyListGameDbSearch && typeof window.ProxyListGameDbSearch.warmAll === "function") {
+          void window.ProxyListGameDbSearch.warmAll();
+        }
         $("q").addEventListener("input", () => {
           scheduleRender(links, meta, link_check, { debounceMs: 200 });
           scheduleUserProfileWrite();
@@ -12178,6 +12456,7 @@
         $("selectFilterBtn").addEventListener("click", () => void openFilterModal());
         wireFeaturedProxyButtons();
         wireSearchPalette();
+        wireFacetHoverTips();
         const randomLinkBtn = $("randomLinkBtn");
         if (randomLinkBtn) {
           randomLinkBtn.addEventListener("click", () => openRandomLinkModal());
