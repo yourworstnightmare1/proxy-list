@@ -1,5 +1,17 @@
 {
   "firestore": {
     "rules": "docs/firestore.rules"
+  },
+  "hosting": {
+    "public": "auth-bridge-host",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache" }
+        ]
+      }
+    ]
   }
 }

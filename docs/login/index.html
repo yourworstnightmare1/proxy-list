@@ -840,7 +840,8 @@
 
       const GITHUB_TOKEN_SESSION_KEY = "proxyList_github_access_token";
       const OAUTH_PENDING_KEY = "proxyList_oauth_pending";
-      const AUTH_BRIDGE_ORIGIN = "https://proxy-list.jasonthegamer48.workers.dev";
+      // Already authorized in Firebase with OAuth redirect URIs (auth-bridge-host via Hosting).
+      const AUTH_BRIDGE_ORIGIN = "https://proxy-list-c06ea.firebaseapp.com";
       const AUTH_BRIDGE_HASH_PREFIX = "plAuth=";
 
       function setOauthPending(on) {
@@ -858,10 +859,10 @@
         }
       }
 
-      function workerAuthBridgeOrigin() {
+      function authBridgeOrigin() {
         try {
-          if (typeof window.__PROXY_LIST_API_BASE__ === "string" && window.__PROXY_LIST_API_BASE__.trim()) {
-            return String(window.__PROXY_LIST_API_BASE__).trim().replace(/\/+$/, "");
+          if (typeof window.__PROXY_LIST_AUTH_BRIDGE__ === "string" && window.__PROXY_LIST_AUTH_BRIDGE__.trim()) {
+            return String(window.__PROXY_LIST_AUTH_BRIDGE__).trim().replace(/\/+$/, "");
           }
         } catch (_) {}
         return AUTH_BRIDGE_ORIGIN;
@@ -870,8 +871,8 @@
       function hostIsAuthBridgeHost() {
         try {
           const host = String(location.hostname || "").toLowerCase();
+          if (host.endsWith(".firebaseapp.com") || host.endsWith(".web.app")) return true;
           if (host.endsWith(".workers.dev")) return true;
-          // Local wrangler: only treat as bridge when an OAuth bridge round-trip is in progress.
           if (host === "localhost" || host === "127.0.0.1" || host === "[::1]") {
             const q = new URL(window.location.href).searchParams;
             return !!(q.get("pl_return") && q.get("pl_provider"));
@@ -882,7 +883,7 @@
         }
       }
 
-      /** Mobile Google + all GitHub on GitHub Pages need the Worker auth bridge (3P cookie fix). */
+      /** Mobile Google + all GitHub on GitHub Pages need the Firebase Hosting auth bridge. */
       function shouldUseAuthBridge(providerId) {
         if (hostIsAuthBridgeHost()) return false;
         try {
@@ -966,11 +967,11 @@
       }
 
       function startAuthBridge(providerId) {
-        const bridge = workerAuthBridgeOrigin();
+        const bridge = authBridgeOrigin();
         const returnUrl = window.location.href.split("#")[0];
         let target;
         try {
-          target = new URL("/login/", bridge);
+          target = new URL("/", bridge.endsWith("/") ? bridge : bridge + "/");
         } catch (_) {
           setStatus("Could not start mobile sign-in bridge.", "error");
           return;
@@ -980,6 +981,18 @@
         setOauthPending(true);
         setStatus("Redirecting to sign-in…", "");
         window.location.assign(target.toString());
+      }
+
+      function showAuthErrorFromQuery() {
+        try {
+          const u = new URL(window.location.href);
+          const err = u.searchParams.get("auth_error");
+          if (!err) return;
+          setOauthPending(false);
+          setStatus(err, "error");
+          u.searchParams.delete("auth_error");
+          history.replaceState(null, "", u.pathname + u.search + u.hash);
+        } catch (_) {}
       }
 
       function consumeBridgeCredential(auth, db) {
@@ -1202,13 +1215,37 @@
             return null;
           }
         })();
-        if (pending || bridgeReturn) {
+
+        // Old Worker bridge host is not a Firebase authorized domain — forward to Hosting.
+        try {
+          const host = String(location.hostname || "").toLowerCase();
+          if (host.endsWith(".workers.dev") && bridgeReturn && bridgeProvider) {
+            const target = new URL("/", AUTH_BRIDGE_ORIGIN);
+            target.searchParams.set("pl_return", bridgeReturn);
+            target.searchParams.set("pl_provider", bridgeProvider);
+            setStatus("Continuing sign-in…", "");
+            window.location.replace(target.toString());
+            return Promise.resolve(null);
+          }
+        } catch (_) {}
+
+        if (pending && !bridgeReturn) {
           setAuthBusy(true);
           setStatus("Finishing sign-in…", "");
+        } else if (bridgeReturn && bridgeProvider) {
+          setAuthBusy(true);
+          setStatus("Starting sign-in…", "");
         }
+
+        const redirectResult = Promise.race([
+          auth.getRedirectResult(),
+          new Promise((_, reject) =>
+            setTimeout(() => reject(Object.assign(new Error("Sign-in check timed out"), { code: "auth/timeout" })), 12000)
+          ),
+        ]);
+
         // getRedirectResult must run before setPersistence — persistence changes can drop it.
-        return auth
-          .getRedirectResult()
+        return redirectResult
           .then((result) => {
             if (result && result.user) {
               captureGithubOAuthToken(result);
@@ -1222,11 +1259,8 @@
                 returnFromAuthBridge(result, bridgeReturn);
                 return null;
               }
-              // Leave oauth-pending set when redirecting to the list so that page
-              // settles IndexedDB before creating a fresh anonymous session.
               return afterSignIn(auth, db, true);
             }
-            // Bridge host: OAuth not finished yet — start provider redirect.
             if (bridgeReturn && bridgeProvider && hostIsAuthBridgeHost()) {
               setOauthPending(true);
               let provider = null;
@@ -1238,12 +1272,12 @@
               }
               if (!provider) {
                 setStatus("Unknown sign-in provider.", "error");
+                setAuthBusy(false);
                 return null;
               }
               setStatus("Redirecting to sign-in…", "");
               return auth.signInWithRedirect(provider);
             }
-            // Some WebViews restore the provider session without a redirect payload.
             if (!pending) {
               setStatus("", "");
               return null;
@@ -1253,15 +1287,6 @@
             return ready.then(() => {
               const u = auth.currentUser;
               if (u && !u.isAnonymous) {
-                if (bridgeReturn && hostIsAuthBridgeHost()) {
-                  // No OAuth credential on the user object — cannot bridge; show error.
-                  setOauthPending(false);
-                  setStatus(
-                    "Sign-in could not be completed on this browser. Try email sign-in, or open the list on a computer.",
-                    "error"
-                  );
-                  return null;
-                }
                 return afterSignIn(auth, db, true);
               }
               setOauthPending(false);
@@ -1274,6 +1299,20 @@
           })
           .catch((err) => {
             const code = err && err.code ? String(err.code) : "";
+            if (bridgeReturn && (code === "auth/unauthorized-domain" || code === "auth/timeout")) {
+              setOauthPending(false);
+              try {
+                const target = new URL(bridgeReturn);
+                target.searchParams.set(
+                  "auth_error",
+                  code === "auth/unauthorized-domain"
+                    ? "Sign-in host is not allowed in Firebase. Use the proxy list Sign in page and try again."
+                    : "Sign-in timed out. Please try again."
+                );
+                window.location.replace(target.toString());
+                return null;
+              } catch (_) {}
+            }
             if (
               code === "auth/credential-already-in-use" ||
               code === "auth/email-already-in-use" ||
@@ -1354,6 +1393,7 @@
       const db = firebase.firestore();
 
       // Bridge credential / redirect result BEFORE setPersistence (persistence can drop it).
+      showAuthErrorFromQuery();
       void consumeBridgeCredential(auth, db)
         .then((bridged) => {
           if (bridged) return null;
