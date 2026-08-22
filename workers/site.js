@@ -9,8 +9,10 @@
  *   - Without Firebase secrets, increments an in-edge Cache counter (Cloudflare-only).
  *
  * POST /api/link-clicks/get  { "urls": ["https://..."] }
- *   - Returns { counts: { [normUrl]: number } } from Firestore (public read) when
- *     project id is set; otherwise from edge cache counters.
+ *   - Returns { counts: { [normUrl]: number } } from edge-cached Firestore reads.
+ *
+ * GET /api/top-opens
+ *   - Cached top link_clicks by count (5 min) for the Most opened section.
  *
  * POST /api/presence-ping  { sessionId, uid?, anonymous?, displayName? }
  *   - Rate limit: 90 pings / hour / IP
@@ -20,6 +22,10 @@
  *
  * GET  /api/presence-active
  *   - Returns { ok, active } for the live-session count (no Firebase required).
+ *
+ * /__/auth/* and /__/firebase/* → reverse-proxy to the Firebase Auth helper host
+ *   so signInWithRedirect works when authDomain is this Worker origin (avoids
+ *   third-party cookie blocking on GitHub Pages).
  */
 const RATE_LIMIT_MAX = 40;
 const RATE_LIMIT_WINDOW_SEC = 3600;
@@ -31,10 +37,18 @@ const MAX_URL_LEN = 2048;
 const MAX_SESSION_ID_LEN = 128;
 const MAX_UID_LEN = 128;
 const MAX_DISPLAY_NAME_LEN = 32;
+const FS_CLICK_CACHE_TTL_SEC = 600;
+const TOP_OPENS_CACHE_TTL_SEC = 300;
+const TOP_OPENS_LIMIT = 25;
+const FIREBASE_AUTH_HELPER_ORIGIN = "https://proxy-list-c06ea.firebaseapp.com";
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    if (url.pathname === "/__/auth" || url.pathname.startsWith("/__/auth/") || url.pathname.startsWith("/__/firebase/")) {
+      return proxyFirebaseAuthHelper(request, url);
+    }
 
     if (url.pathname === "/api/link-click" && request.method === "POST") {
       return handleRecordClick(request, env, ctx);
@@ -43,9 +57,15 @@ export default {
       return cors(new Response(null, { status: 204 }));
     }
     if (url.pathname === "/api/link-clicks/get" && request.method === "POST") {
-      return handleGetClicks(request, env);
+      return handleGetClicks(request, env, ctx);
     }
     if (url.pathname === "/api/link-clicks/get" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+    if (url.pathname === "/api/top-opens" && request.method === "GET") {
+      return handleTopOpens(request, env, ctx);
+    }
+    if (url.pathname === "/api/top-opens" && request.method === "OPTIONS") {
       return cors(new Response(null, { status: 204 }));
     }
     if (url.pathname === "/api/presence-ping" && request.method === "POST") {
@@ -75,6 +95,55 @@ function cors(res) {
   headers.set("Access-Control-Allow-Headers", "Content-Type");
   headers.set("Access-Control-Max-Age", "86400");
   return new Response(res.body, { status: res.status, headers });
+}
+
+/**
+ * Transparent reverse proxy for Firebase Auth redirect/popup helpers.
+ * Must not 302 to firebaseapp.com — the browser has to stay on this origin.
+ */
+async function proxyFirebaseAuthHelper(request, url) {
+  const target = new URL(url.pathname + url.search, FIREBASE_AUTH_HELPER_ORIGIN);
+  const headers = new Headers(request.headers);
+  headers.delete("host");
+  headers.set("Host", new URL(FIREBASE_AUTH_HELPER_ORIGIN).host);
+
+  const init = {
+    method: request.method,
+    headers,
+    redirect: "manual",
+  };
+  if (request.method !== "GET" && request.method !== "HEAD") {
+    init.body = request.body;
+    // Required when forwarding a ReadableStream body in the Workers runtime.
+    init.duplex = "half";
+  }
+
+  let upstream;
+  try {
+    upstream = await fetch(target.toString(), init);
+  } catch (err) {
+    return new Response("Auth helper proxy failed", { status: 502 });
+  }
+
+  const outHeaders = new Headers(upstream.headers);
+  // Keep Set-Cookie / body as-is so the helper session stays first-party on this host.
+  const location = outHeaders.get("Location");
+  if (location) {
+    try {
+      const locUrl = new URL(location, FIREBASE_AUTH_HELPER_ORIGIN);
+      if (locUrl.origin === new URL(FIREBASE_AUTH_HELPER_ORIGIN).origin) {
+        locUrl.protocol = url.protocol;
+        locUrl.host = url.host;
+        outHeaders.set("Location", locUrl.toString());
+      }
+    } catch (_) {}
+  }
+
+  return new Response(upstream.body, {
+    status: upstream.status,
+    statusText: upstream.statusText,
+    headers: outHeaders,
+  });
 }
 
 function json(data, status = 200) {
@@ -129,6 +198,27 @@ function clickUrlVariants(raw) {
 async function sha256Hex(text) {
   const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
   return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+function fsClickNormCacheRequest(normHash) {
+  return new Request(`https://fs-click-norm.proxy-list.internal/${normHash}`);
+}
+
+function cacheTextResponse(text, ttlSec) {
+  return new Response(String(text), {
+    headers: {
+      "Cache-Control": `public, max-age=${ttlSec}`,
+      "Content-Type": "text/plain",
+    },
+  });
+}
+
+async function cachePutClickNorm(norm, count, ctx) {
+  const cache = caches.default;
+  const hash = await sha256Hex(norm);
+  const put = cache.put(fsClickNormCacheRequest(hash), cacheTextResponse(Number(count) || 0, FS_CLICK_CACHE_TTL_SEC));
+  if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(put);
+  else await put;
 }
 
 async function rateLimitOk(ip, ctx, opts = {}) {
@@ -554,11 +644,24 @@ async function firestoreReadClickCount(env, docId, token) {
   return n != null ? Number(n) : null;
 }
 
-async function firestoreGetCounts(env, norms) {
+async function firestoreGetCounts(env, norms, ctx) {
   const project = env.FIREBASE_PROJECT_ID;
   const out = {};
   for (const norm of norms) out[norm] = 0;
   if (!project || !norms.length) return out;
+
+  const cache = caches.default;
+  const missing = [];
+  for (const norm of norms) {
+    const hash = await sha256Hex(norm);
+    const hit = await cache.match(fsClickNormCacheRequest(hash));
+    if (hit) {
+      out[norm] = Number(await hit.text()) || 0;
+    } else {
+      missing.push(norm);
+    }
+  }
+  if (!missing.length) return out;
 
   const useAdmin = hasFirebaseAdmin(env);
   let token = null;
@@ -570,16 +673,18 @@ async function firestoreGetCounts(env, norms) {
     }
   }
 
-  const normVariantIds = new Map();
-  const idToCount = new Map();
-  for (const norm of norms) {
-    const ids = [];
+  const allIds = [];
+  const idToNorm = new Map();
+  for (const norm of missing) {
     for (const variant of clickUrlVariants(norm)) {
-      ids.push(await sha256Hex(variant));
+      const id = await sha256Hex(variant);
+      if (!idToNorm.has(id)) {
+        idToNorm.set(id, norm);
+        allIds.push(id);
+      }
     }
-    normVariantIds.set(norm, [...new Set(ids)]);
   }
-  const allIds = [...new Set([].concat(...[...normVariantIds.values()]))];
+  const idToCount = new Map();
   const batchUrl = `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents:batchGet`;
 
   for (let i = 0; i < allIds.length; i += 100) {
@@ -611,14 +716,103 @@ async function firestoreGetCounts(env, norms) {
     }
   }
 
-  for (const norm of norms) {
+  for (const norm of missing) {
     let best = 0;
-    for (const id of normVariantIds.get(norm) || []) {
-      best = Math.max(best, idToCount.get(id) || 0);
+    for (const variant of clickUrlVariants(norm)) {
+      const id = await sha256Hex(variant);
+      if (idToCount.has(id)) best = Math.max(best, idToCount.get(id));
     }
     out[norm] = best;
+    await cachePutClickNorm(norm, best, ctx);
   }
   return out;
+}
+
+async function firestoreTopOpens(env, limit) {
+  const project = env.FIREBASE_PROJECT_ID;
+  if (!project || !hasFirebaseAdmin(env)) return [];
+  let token;
+  try {
+    token = await getGoogleAccessToken(env);
+  } catch (err) {
+    console.error("top_opens_token_failed", err);
+    return [];
+  }
+  const cap = Math.max(1, Math.min(limit, 50));
+
+  function parseDocFields(fields) {
+    if (!fields || typeof fields !== "object") return null;
+    const urlField = fields.url;
+    const countField = fields.count;
+    const urlVal = urlField && urlField.stringValue ? String(urlField.stringValue).trim() : "";
+    let countVal = 0;
+    if (countField) {
+      if (countField.integerValue != null) countVal = Number(countField.integerValue);
+      else if (countField.doubleValue != null) countVal = Number(countField.doubleValue);
+    }
+    if (!urlVal || !Number.isFinite(countVal) || countVal <= 0) return null;
+    return { url: urlVal, count: countVal };
+  }
+
+  try {
+    const listUrl =
+      `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents/link_clicks` +
+      `?pageSize=${cap}&orderBy=count%20desc`;
+    const listRes = await fetch(listUrl, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    if (listRes.ok) {
+      const body = await listRes.json();
+      const docs = Array.isArray(body.documents) ? body.documents : [];
+      const out = [];
+      for (const doc of docs) {
+        const row = parseDocFields(doc.fields);
+        if (row) out.push(row);
+      }
+      if (out.length) return out;
+    } else {
+      const t = await listRes.text().catch(() => "");
+      console.error("top_opens_list_failed", listRes.status, t.slice(0, 300));
+    }
+  } catch (err) {
+    console.error("top_opens_list_error", err);
+  }
+
+  try {
+    const queryUrl = `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents:runQuery`;
+    const res = await fetch(queryUrl, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        structuredQuery: {
+          from: [{ collectionId: "link_clicks" }],
+          orderBy: [{ field: { fieldPath: "count" }, direction: "DESCENDING" }],
+          limit: cap,
+        },
+      }),
+    });
+    if (!res.ok) {
+      const t = await res.text().catch(() => "");
+      console.error("top_opens_query_failed", res.status, t.slice(0, 300));
+      return [];
+    }
+    const rows = await res.json();
+    if (!Array.isArray(rows)) return [];
+    const out = [];
+    for (const row of rows) {
+      const doc = row && row.document;
+      if (!doc || !doc.fields) continue;
+      const parsed = parseDocFields(doc.fields);
+      if (parsed) out.push(parsed);
+    }
+    return out;
+  } catch (err) {
+    console.error("top_opens_query_error", err);
+    return [];
+  }
 }
 
 async function handleRecordClick(request, env, ctx) {
@@ -657,6 +851,7 @@ async function handleRecordClick(request, env, ctx) {
       }
       const edgeCount = await edgeIncrement(norm, ctx);
       if (count == null && edgeCount) count = edgeCount;
+      if (count != null) await cachePutClickNorm(norm, count, ctx);
       return json({
         ok: true,
         via: "firestore",
@@ -679,19 +874,19 @@ async function handleRecordClick(request, env, ctx) {
   }
 }
 
-async function handleGetClicks(request, env) {
+async function handleGetClicks(request, env, ctx) {
   let body;
   try {
     body = await request.json();
   } catch (_) {
     return json({ ok: false, error: "invalid_json" }, 400);
   }
-  const urls = Array.isArray(body && body.urls) ? body.urls.slice(0, 100) : [];
+  const urls = Array.isArray(body && body.urls) ? body.urls.slice(0, 80) : [];
   const norms = [...new Set(urls.map(normalizeUrl).filter((u) => u && u.length >= 10))];
   try {
     let counts;
     if (hasFirebaseAdmin(env) || env.FIREBASE_PROJECT_ID) {
-      counts = await firestoreGetCounts(env, norms);
+      counts = await firestoreGetCounts(env, norms, ctx);
     } else {
       counts = {};
     }
@@ -704,6 +899,43 @@ async function handleGetClicks(request, env) {
     return json({ ok: true, counts });
   } catch (err) {
     console.error("get_clicks_failed", err);
+    return json({ ok: false, error: "internal_error" }, 500);
+  }
+}
+
+async function handleTopOpens(request, env, ctx) {
+  const cache = caches.default;
+  const cacheKey = new Request("https://top-opens.proxy-list.internal/v1");
+  try {
+    const hit = await cache.match(cacheKey);
+    if (hit) {
+      return cors(
+        new Response(hit.body, {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "X-Cache": "HIT",
+          },
+        })
+      );
+    }
+  } catch (_) {}
+
+  try {
+    const links = await firestoreTopOpens(env, TOP_OPENS_LIMIT);
+    const payload = JSON.stringify({ ok: true, links });
+    const res = new Response(payload, {
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": `public, max-age=${TOP_OPENS_CACHE_TTL_SEC}`,
+      },
+    });
+    if (links.length > 0 && ctx && typeof ctx.waitUntil === "function") {
+      ctx.waitUntil(cache.put(cacheKey, res.clone()));
+    }
+    return cors(res);
+  } catch (err) {
+    console.error("top_opens_failed", err);
     return json({ ok: false, error: "internal_error" }, 500);
   }
 }

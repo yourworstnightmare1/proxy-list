@@ -2,6 +2,18 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v6.6",
+      "revision": "r271",
+      "released": "August 20, 2026",
+      "update_notice": "# Find Games More Easily\nA new feature is currently in beta which allows you to search for games directly through the search on our site and then get links shown to you that have that game available, which has been done by obtaining game database APIs and adding them to the capabilities of links that have them, then having the site contact the API of the database to find that game."
+    },
+    {
+      "version": "v6.5",
+      "revision": "r270",
+      "released": "August 20, 2026",
+      "update_notice": "# Global Link Recheck\nI rechecked every domain existing on the site, so filter data should be accurate and up to date now.\n\n# Featured Section\nThere is now a new featured section showing the top proxies that users love most. You can also view all of that proxy's links by clicking the \"View all links\" button.\n\n# Quick Search Palette\nThe Quick Search Palette can be activated by pressing Ctrl+Y (Windows/ChromeOS/Linux) Cmd+Y (macOS) to quickly search for providers, URLs, contributors, and more on the list. This feature was inspired by Fern's Command Palette feature.\n\n# Optimizations\nI made even more optimizations to ensure that Firebase does not reach quota as fast, and I have fixed the bugs with link clicks not tracking, so community features should be fully working as of now.\n\n# Misc/Bugfixes\nFixed a bug where storage.googleapis.com would report as blocked even though it is unblocked on the iboss filter. It is blocked in some conditions, so to ensure most accurate results it is listed as unblocked globally on all URLs with this domain as it starts out that way\nFixed a bug where link clicks were untracked due to Firebase bugs\nFixed a bug where searching something and clicking enter would autofill with a suggested result instead of searching what the user entered\nFixed a bug where contributed links were not automatically added to the main list\nFixed a bug where statistics would not load properly\nFixed a bug where user statistics would be inaccurate because of user doubling\nFixed a bug where users on Scramjet and Ultraviolet would not be able to load the list because of differences between raw network and proxy services, so I made some direct optimizations on a few test systems under these conditions to fix. You may still experience some issues while on proxies which are still being resolved\nFixed a bug where users on Scramjet could not load most opened links sections\nFixed a bug where all link clicks would show as 3 dots or as 0\nClick count reads are now cached via Cloudflare's cache API to reduce Firebase quota limitations\nAdded attributions to the about page so you can see the backend and other software that makes the Proxy List possible, with licenses if applicable\nFixed a bug where Nettle Web section would not show all links even with filter options disabled"
+    },
+    {
       "version": "v6.4",
       "revision": "r269",
       "released": "August 17, 2026",

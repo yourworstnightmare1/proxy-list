@@ -39,6 +39,14 @@
    Enable Authentication → Sign-in method → Anonymous, GitHub (OAuth app in Firebase Console),
    Google, and Email/Password.
 
+   Mobile / in-app browsers block third-party cookies, so signInWithRedirect cannot finish when
+   authDomain is *.firebaseapp.com while the site is on GitHub Pages. The login page bridges
+   Google (mobile) and GitHub (all GitHub Pages) through Firebase Hosting at
+   https://proxy-list-c06ea.firebaseapp.com/ (auth-bridge-host/, see firebase.json). That host
+   is already an authorized domain with OAuth redirect URIs. Deploy once after changes:
+     npx firebase deploy --only hosting
+   Optional override: window.__PROXY_LIST_AUTH_BRIDGE__ = "https://…";
+
    Active user count uses Realtime Database (not Firestore): each signed-in or anonymous
    auth uid writes presence/{uid} with uid + ts (one node per user — not push IDs, so
    in-site navigations do not stack duplicate sessions). Only sessions updated in the

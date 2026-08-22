@@ -19,7 +19,7 @@
     "#a78bfa",
   ];
   var DAILY_LOOKBACK_DAYS = 90;
-  var PRESENCE_DAILY_LOOKBACK = 366;
+  var PRESENCE_DAILY_LOOKBACK = 32;
   var PRESENCE_MONTHLY_LOOKBACK = 18;
 
   var charts = [];
@@ -1242,11 +1242,16 @@
   async function loadDailyClickDocs(db) {
     if (state.dailyCache) return state.dailyCache;
     var days = utcDayIds(DAILY_LOOKBACK_DAYS);
-    var snaps = await Promise.all(
-      days.map(function (day) {
-        return db.collection("click_daily").doc(day).get();
-      })
-    );
+    var snaps = [];
+    for (var i = 0; i < days.length; i += 8) {
+      var part = days.slice(i, i + 8);
+      var partSnaps = await Promise.all(
+        part.map(function (day) {
+          return db.collection("click_daily").doc(day).get();
+        })
+      );
+      snaps.push.apply(snaps, partSnaps);
+    }
     state.dailyCache = snaps.map(function (snap, i) {
       var counts = {};
       if (snap.exists) {
@@ -1259,21 +1264,17 @@
   }
 
   async function lifetimeOpensForHashes(db, hashes) {
-    if (!db || !hashes.length) return 0;
+    if (!hashes.length) return 0;
+    var hashSet = new Set(hashes);
+    var daily = await loadDailyClickDocs(db);
     var total = 0;
-    for (var i = 0; i < hashes.length; i += 40) {
-      var chunk = hashes.slice(i, i + 40);
-      var snaps = await Promise.all(
-        chunk.map(function (h) {
-          return db.collection("link_clicks").doc(h).get();
-        })
-      );
-      snaps.forEach(function (snap) {
-        if (!snap.exists) return;
-        var n = Number((snap.data() || {}).count);
+    daily.forEach(function (day) {
+      Object.keys(day.counts || {}).forEach(function (h) {
+        if (!hashSet.has(h)) return;
+        var n = Number(day.counts[h]);
         if (Number.isFinite(n)) total += n;
       });
-    }
+    });
     return total;
   }
 
@@ -1603,8 +1604,37 @@
   }
 
   async function fetchTopClicks(db, limit) {
+    var cap = Math.max(1, Math.min(limit || 25, 50));
+    try {
+      var res = await fetch(
+        typeof window.ProxyListPresence !== "undefined" && window.ProxyListPresence.apiUrl
+          ? window.ProxyListPresence.apiUrl("/api/top-opens")
+          : "../api/top-opens",
+        { mode: "cors" }
+      );
+      if (res.ok) {
+        var data = await res.json();
+        if (data && data.ok && Array.isArray(data.links)) {
+          var out = data.links
+            .map(function (x) {
+              return {
+                url: x && x.url != null ? String(x.url).trim() : "",
+                count: Number(x && x.count),
+              };
+            })
+            .filter(function (x) {
+              return x.url && Number.isFinite(x.count) && x.count > 0;
+            })
+            .slice(0, cap);
+          // If the API endpoint can't access click/open data, it may return an
+          // empty list. When Firestore is available, fall back so the stats page
+          // can still display real opens.
+          if (out.length) return out;
+        }
+      }
+    } catch (_) {}
     if (!db) return [];
-    var snap = await db.collection("link_clicks").orderBy("count", "desc").limit(limit).get();
+    var snap = await db.collection("link_clicks").orderBy("count", "desc").limit(cap).get();
     return snap.docs
       .map(function (doc) {
         var d = doc.data() || {};
@@ -1699,8 +1729,22 @@
       return { labels: labels, values: values, yLabel: "Unique visitors / hour" };
     }
 
-    var days =
-      span === "7d" ? 7 : span === "1m" ? 30 : span === "6m" ? 180 : 365;
+    if (span === "6m" || span === "1y") {
+      var months = state.presenceMonthly || [];
+      var monthCount = span === "6m" ? 6 : 12;
+      var monthSlice = months.slice(Math.max(0, months.length - monthCount));
+      return {
+        labels: monthSlice.map(function (m) {
+          return m.month;
+        }),
+        values: monthSlice.map(function (m) {
+          return m.uniqueVisitors;
+        }),
+        yLabel: "Unique visitors / month",
+      };
+    }
+
+    var days = span === "7d" ? 7 : 30;
     var slice = daily.slice(Math.max(0, daily.length - days));
     return {
       labels: slice.map(function (d) {
@@ -2079,7 +2123,7 @@
 
     try {
       await ensureAuth(state.db);
-      clicks = await fetchTopClicks(state.db, 100);
+      clicks = await fetchTopClicks(state.db, 25);
       var totalOpens = clicks.reduce(function (sum, r) {
         return sum + r.count;
       }, 0);
@@ -2093,8 +2137,6 @@
         setNotice("");
       }
       renderOpenCharts(clicks, state.urlToProvider);
-      // Warm daily cache in background for faster provider drill-down.
-      void loadDailyClickDocs(state.db).catch(function () {});
     } catch (err) {
       console.warn("[stats] link_clicks load failed", err);
       setText("statOpens", "—");

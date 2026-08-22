@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Proxy list sign-in</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0f1419;
+        --text: #e7ecf3;
+        --muted: #9aa8b8;
+        --err: #ff8e8e;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(1200px 600px at 50% -10%, #1b2735 0%, var(--bg) 55%);
+        color: var(--text);
+      }
+      main {
+        width: min(420px, 100%);
+        text-align: center;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 1.25rem;
+        font-weight: 650;
+      }
+      #status {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.45;
+        font-size: 0.95rem;
+      }
+      #status.is-error {
+        color: var(--err);
+      }
+      a {
+        color: #8ec7ff;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Proxy list</h1>
+      <p id="status">Starting sign-in…</p>
+    </main>
+
+    <!-- Public web config (same project as the GitHub Pages site). -->
+    <script src="https://yourworstnightmare1.github.io/proxy-list/firebase-config.example.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+    <script>
+      (function () {
+        var statusEl = document.getElementById("status");
+        function setStatus(msg, kind) {
+          statusEl.textContent = msg || "";
+          statusEl.className = kind === "error" ? "is-error" : "";
+        }
+
+        function bounce(returnUrl, errMsg) {
+          if (!returnUrl) {
+            setStatus(errMsg || "Sign-in failed.", "error");
+            return;
+          }
+          try {
+            var target = new URL(returnUrl);
+            if (errMsg) target.searchParams.set("auth_error", errMsg);
+            window.location.replace(target.toString());
+          } catch (_) {
+            setStatus(errMsg || "Sign-in failed.", "error");
+          }
+        }
+
+        function encodePayload(obj) {
+          return btoa(unescape(encodeURIComponent(JSON.stringify(obj))));
+        }
+
+        function returnWithCredential(result, returnUrl) {
+          var cred = result && result.credential;
+          if (!cred || !cred.providerId) {
+            bounce(returnUrl, "Sign-in did not finish. Please try again.");
+            return;
+          }
+          var payload = {
+            providerId: cred.providerId,
+            idToken: cred.idToken || null,
+            accessToken: cred.accessToken || null,
+          };
+          try {
+            var target = new URL(returnUrl);
+            var host = String(target.hostname || "").toLowerCase();
+            var ok =
+              host === "yourworstnightmare1.github.io" ||
+              host.endsWith(".github.io") ||
+              host === "localhost" ||
+              host === "127.0.0.1";
+            if (!ok) {
+              setStatus("Sign-in return URL was not allowed.", "error");
+              return;
+            }
+            target.searchParams.delete("auth_error");
+            target.hash = "plAuth=" + encodePayload(payload);
+            window.location.replace(target.toString());
+          } catch (_) {
+            bounce(returnUrl, "Sign-in did not finish. Please try again.");
+          }
+        }
+
+        function withTimeout(promise, ms, label) {
+          return Promise.race([
+            promise,
+            new Promise(function (_, reject) {
+              setTimeout(function () {
+                reject(new Error(label || "timed out"));
+              }, ms);
+            }),
+          ]);
+        }
+
+        var params = new URLSearchParams(window.location.search);
+        var returnUrl = params.get("pl_return");
+        var providerId = params.get("pl_provider");
+
+        if (!returnUrl || !providerId) {
+          setStatus(
+            "Open Sign in from the proxy list site on your phone, then choose Google or GitHub.",
+            "error"
+          );
+          return;
+        }
+
+        var cfg = window.__FIREBASE_CONFIG__;
+        if (!cfg || !cfg.apiKey) {
+          bounce(returnUrl, "Firebase is not configured.");
+          return;
+        }
+
+        // Stay on this firebaseapp.com / web.app host so auth storage is first-party.
+        var config = Object.assign({}, cfg, { authDomain: window.location.hostname });
+        if (!firebase.apps.length) firebase.initializeApp(config);
+        var auth = firebase.auth();
+
+        setStatus("Checking sign-in…");
+        withTimeout(auth.getRedirectResult(), 12000, "Sign-in check timed out")
+          .then(function (result) {
+            if (result && result.user && !result.user.isAnonymous) {
+              setStatus("Signed in. Returning…");
+              returnWithCredential(result, returnUrl);
+              return;
+            }
+
+            var provider = null;
+            if (providerId === "google.com") provider = new firebase.auth.GoogleAuthProvider();
+            if (providerId === "github.com") {
+              provider = new firebase.auth.GithubAuthProvider();
+              provider.addScope("read:user");
+              provider.addScope("notifications");
+            }
+            if (!provider) {
+              bounce(returnUrl, "Unknown sign-in provider.");
+              return;
+            }
+
+            setStatus("Redirecting to sign-in…");
+            return auth.signInWithRedirect(provider);
+          })
+          .catch(function (err) {
+            var code = err && err.code ? String(err.code) : "";
+            var msg = err && err.message ? String(err.message) : "Sign-in failed.";
+            if (code === "auth/unauthorized-domain") {
+              msg =
+                "This sign-in host is not allowed in Firebase yet. Add " +
+                window.location.hostname +
+                " under Authentication → Settings → Authorized domains.";
+            }
+            bounce(returnUrl, msg);
+          });
+      })();
+    </script>
+  </body>
+</html>
