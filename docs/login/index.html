@@ -840,6 +840,8 @@
 
       const GITHUB_TOKEN_SESSION_KEY = "proxyList_github_access_token";
       const OAUTH_PENDING_KEY = "proxyList_oauth_pending";
+      const AUTH_BRIDGE_ORIGIN = "https://proxy-list.jasonthegamer48.workers.dev";
+      const AUTH_BRIDGE_HASH_PREFIX = "plAuth=";
 
       function setOauthPending(on) {
         try {
@@ -854,6 +856,173 @@
         } catch (_) {
           return false;
         }
+      }
+
+      function workerAuthBridgeOrigin() {
+        try {
+          if (typeof window.__PROXY_LIST_API_BASE__ === "string" && window.__PROXY_LIST_API_BASE__.trim()) {
+            return String(window.__PROXY_LIST_API_BASE__).trim().replace(/\/+$/, "");
+          }
+        } catch (_) {}
+        return AUTH_BRIDGE_ORIGIN;
+      }
+
+      function hostIsAuthBridgeHost() {
+        try {
+          const host = String(location.hostname || "").toLowerCase();
+          if (host.endsWith(".workers.dev")) return true;
+          // Local wrangler: only treat as bridge when an OAuth bridge round-trip is in progress.
+          if (host === "localhost" || host === "127.0.0.1" || host === "[::1]") {
+            const q = new URL(window.location.href).searchParams;
+            return !!(q.get("pl_return") && q.get("pl_provider"));
+          }
+          return false;
+        } catch (_) {
+          return false;
+        }
+      }
+
+      /** Mobile Google + all GitHub on GitHub Pages need the Worker auth bridge (3P cookie fix). */
+      function shouldUseAuthBridge(providerId) {
+        if (hostIsAuthBridgeHost()) return false;
+        try {
+          const host = String(location.hostname || "").toLowerCase();
+          const onGh = host === "github.io" || host.endsWith(".github.io");
+          if (!onGh) return false;
+        } catch (_) {
+          return false;
+        }
+        if (providerId === "github.com") return true;
+        if (providerId === "google.com") return preferAuthRedirect();
+        return false;
+      }
+
+      function sameOriginAuthDomain() {
+        try {
+          if (!hostIsAuthBridgeHost()) return "";
+          return location.port ? location.hostname + ":" + location.port : location.hostname;
+        } catch (_) {
+          return "";
+        }
+      }
+
+      function encodeBridgePayload(obj) {
+        const json = JSON.stringify(obj);
+        return btoa(unescape(encodeURIComponent(json)));
+      }
+
+      function decodeBridgePayload(raw) {
+        const json = decodeURIComponent(escape(atob(String(raw || ""))));
+        return JSON.parse(json);
+      }
+
+      function providerCredentialFromBridge(payload) {
+        if (!payload || !payload.providerId) return null;
+        if (payload.providerId === "google.com") {
+          return firebase.auth.GoogleAuthProvider.credential(payload.idToken || null, payload.accessToken || null);
+        }
+        if (payload.providerId === "github.com") {
+          if (!payload.accessToken) return null;
+          return firebase.auth.GithubAuthProvider.credential(payload.accessToken);
+        }
+        return null;
+      }
+
+      function credentialPayloadFromResult(result) {
+        const cred = result && result.credential;
+        if (!cred || !cred.providerId) return null;
+        return {
+          providerId: cred.providerId,
+          idToken: cred.idToken || null,
+          accessToken: cred.accessToken || null,
+        };
+      }
+
+      function returnFromAuthBridge(result, returnUrl) {
+        const payload = credentialPayloadFromResult(result);
+        if (!payload || !returnUrl) {
+          setStatus("Sign-in did not finish. Please try again.", "error");
+          return;
+        }
+        let target;
+        try {
+          target = new URL(returnUrl);
+        } catch (_) {
+          setStatus("Sign-in did not finish. Please try again.", "error");
+          return;
+        }
+        // Only return to our own site origins.
+        const okHost =
+          target.hostname === "yourworstnightmare1.github.io" ||
+          target.hostname.endsWith(".github.io") ||
+          target.hostname === "localhost" ||
+          target.hostname === "127.0.0.1";
+        if (!okHost) {
+          setStatus("Sign-in return URL was not allowed.", "error");
+          return;
+        }
+        target.hash = AUTH_BRIDGE_HASH_PREFIX + encodeBridgePayload(payload);
+        window.location.replace(target.toString());
+      }
+
+      function startAuthBridge(providerId) {
+        const bridge = workerAuthBridgeOrigin();
+        const returnUrl = window.location.href.split("#")[0];
+        let target;
+        try {
+          target = new URL("/login/", bridge);
+        } catch (_) {
+          setStatus("Could not start mobile sign-in bridge.", "error");
+          return;
+        }
+        target.searchParams.set("pl_return", returnUrl);
+        target.searchParams.set("pl_provider", providerId);
+        setOauthPending(true);
+        setStatus("Redirecting to sign-in…", "");
+        window.location.assign(target.toString());
+      }
+
+      function consumeBridgeCredential(auth, db) {
+        const hash = String(window.location.hash || "").replace(/^#/, "");
+        if (!hash.startsWith(AUTH_BRIDGE_HASH_PREFIX)) return Promise.resolve(false);
+        const raw = hash.slice(AUTH_BRIDGE_HASH_PREFIX.length);
+        try {
+          history.replaceState(null, "", window.location.pathname + window.location.search);
+        } catch (_) {
+          try {
+            window.location.hash = "";
+          } catch (_) {}
+        }
+        let payload;
+        try {
+          payload = decodeBridgePayload(raw);
+        } catch (_) {
+          setOauthPending(false);
+          setStatus("Sign-in did not finish. Please try again.", "error");
+          return Promise.resolve(true);
+        }
+        const credential = providerCredentialFromBridge(payload);
+        if (!credential) {
+          setOauthPending(false);
+          setStatus("Sign-in did not finish. Please try again.", "error");
+          return Promise.resolve(true);
+        }
+        setAuthBusy(true);
+        setStatus("Finishing sign-in…", "");
+        return auth
+          .signInWithCredential(credential)
+          .then((result) => {
+            setOauthPending(false);
+            captureGithubOAuthToken(result);
+            return afterSignIn(auth, db, true).then(() => true);
+          })
+          .catch((err) => {
+            setOauthPending(false);
+            const info = authErrorMessage(err);
+            setStatus(info.message, info.kind);
+            return true;
+          })
+          .finally(() => setAuthBusy(false));
       }
 
       function captureGithubOAuthToken(result) {
@@ -935,6 +1104,14 @@
       }
 
       function signInWithRedirectProvider(auth, provider) {
+        const providerId =
+          (provider && provider.providerId) ||
+          (provider && provider.provider_id) ||
+          "";
+        if (shouldUseAuthBridge(providerId) && (providerId === "google.com" || providerId === "github.com")) {
+          startAuthBridge(providerId);
+          return Promise.resolve();
+        }
         setAuthBusy(true);
         setStatus("Redirecting to sign-in…", "");
         // linkWithRedirect after an anonymous session is unreliable on mobile Safari /
@@ -964,6 +1141,10 @@
       }
 
       function signInWithPopupProvider(auth, db, provider) {
+        const providerId = (provider && provider.providerId) || "";
+        if (shouldUseAuthBridge(providerId)) {
+          return signInWithRedirectProvider(auth, provider);
+        }
         if (preferAuthRedirect()) {
           return signInWithRedirectProvider(auth, provider);
         }
@@ -1007,10 +1188,25 @@
       function completeRedirectSignIn(auth, db) {
         if (!auth || typeof auth.getRedirectResult !== "function") return Promise.resolve(null);
         const pending = hasOauthPending();
-        if (pending) {
+        const bridgeReturn = (() => {
+          try {
+            return new URL(window.location.href).searchParams.get("pl_return");
+          } catch (_) {
+            return null;
+          }
+        })();
+        const bridgeProvider = (() => {
+          try {
+            return new URL(window.location.href).searchParams.get("pl_provider");
+          } catch (_) {
+            return null;
+          }
+        })();
+        if (pending || bridgeReturn) {
           setAuthBusy(true);
           setStatus("Finishing sign-in…", "");
         }
+        // getRedirectResult must run before setPersistence — persistence changes can drop it.
         return auth
           .getRedirectResult()
           .then((result) => {
@@ -1021,9 +1217,31 @@
                 setStatus("Sign-in did not finish. Please try again.", "error");
                 return null;
               }
+              if (bridgeReturn && hostIsAuthBridgeHost()) {
+                setOauthPending(false);
+                returnFromAuthBridge(result, bridgeReturn);
+                return null;
+              }
               // Leave oauth-pending set when redirecting to the list so that page
               // settles IndexedDB before creating a fresh anonymous session.
               return afterSignIn(auth, db, true);
+            }
+            // Bridge host: OAuth not finished yet — start provider redirect.
+            if (bridgeReturn && bridgeProvider && hostIsAuthBridgeHost()) {
+              setOauthPending(true);
+              let provider = null;
+              if (bridgeProvider === "google.com") provider = new firebase.auth.GoogleAuthProvider();
+              if (bridgeProvider === "github.com") {
+                provider = new firebase.auth.GithubAuthProvider();
+                provider.addScope("read:user");
+                provider.addScope("notifications");
+              }
+              if (!provider) {
+                setStatus("Unknown sign-in provider.", "error");
+                return null;
+              }
+              setStatus("Redirecting to sign-in…", "");
+              return auth.signInWithRedirect(provider);
             }
             // Some WebViews restore the provider session without a redirect payload.
             if (!pending) {
@@ -1035,10 +1253,22 @@
             return ready.then(() => {
               const u = auth.currentUser;
               if (u && !u.isAnonymous) {
+                if (bridgeReturn && hostIsAuthBridgeHost()) {
+                  // No OAuth credential on the user object — cannot bridge; show error.
+                  setOauthPending(false);
+                  setStatus(
+                    "Sign-in could not be completed on this browser. Try email sign-in, or open the list on a computer.",
+                    "error"
+                  );
+                  return null;
+                }
                 return afterSignIn(auth, db, true);
               }
               setOauthPending(false);
-              setStatus("Sign-in did not finish. Please try again.", "error");
+              setStatus(
+                "Sign-in could not be completed on this browser. Try email sign-in, or open the list on a computer.",
+                "error"
+              );
               return null;
             });
           })
@@ -1053,6 +1283,10 @@
               if (cred) {
                 return auth.signInWithCredential(cred).then((credResult) => {
                   captureGithubOAuthToken(credResult);
+                  if (bridgeReturn && hostIsAuthBridgeHost()) {
+                    returnFromAuthBridge(credResult, bridgeReturn);
+                    return null;
+                  }
                   return afterSignIn(auth, db, true);
                 });
               }
@@ -1103,34 +1337,45 @@
           .finally(() => setAuthBusy(false));
       }
 
-      const config = typeof window !== "undefined" && window.__FIREBASE_CONFIG__;
-      if (!config || !config.apiKey) {
+      const configRaw = typeof window !== "undefined" && window.__FIREBASE_CONFIG__;
+      if (!configRaw || !configRaw.apiKey) {
         setStatus("Firebase is not configured on this deployment. Check docs/firebase-config.example.js is deployed and includes an apiKey.", "error");
         setAuthBusy(true);
         return;
       }
 
+      // Same-origin authDomain when this page is on the Worker (auth helper is reverse-proxied).
+      const config = Object.assign({}, configRaw);
+      const bridgeDomain = sameOriginAuthDomain();
+      if (bridgeDomain) config.authDomain = bridgeDomain;
+
       if (!firebase.apps.length) firebase.initializeApp(config);
       const auth = firebase.auth();
       const db = firebase.firestore();
-      const authReady =
-        window.ProxyListAuth && typeof window.ProxyListAuth.prepare === "function"
-          ? window.ProxyListAuth.prepare(auth)
-          : Promise.resolve().then(() => {
-              try {
-                auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-              } catch (_) {}
-            });
 
-      authReady.finally(() => {
-        void completeRedirectSignIn(auth, db).finally(() => {
-          auth.onAuthStateChanged((user) => {
-            updatePanels(user);
-            if (isSignedInUser(user)) void afterSignIn(auth, db, false);
+      // Bridge credential / redirect result BEFORE setPersistence (persistence can drop it).
+      void consumeBridgeCredential(auth, db)
+        .then((bridged) => {
+          if (bridged) return null;
+          return completeRedirectSignIn(auth, db);
+        })
+        .finally(() => {
+          const authReady =
+            window.ProxyListAuth && typeof window.ProxyListAuth.prepare === "function"
+              ? window.ProxyListAuth.prepare(auth)
+              : Promise.resolve().then(() => {
+                  try {
+                    auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+                  } catch (_) {}
+                });
+          return authReady.finally(() => {
+            auth.onAuthStateChanged((user) => {
+              updatePanels(user);
+              if (isSignedInUser(user)) void afterSignIn(auth, db, false);
+            });
+            updatePanels(auth.currentUser);
           });
-          updatePanels(auth.currentUser);
         });
-      });
 
       githubSignInBtn.addEventListener("click", () => {
         const provider = new firebase.auth.GithubAuthProvider();
