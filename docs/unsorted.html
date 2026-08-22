@@ -238,11 +238,17 @@
 
     function setHtml(el, html) {
       if (!el) return;
+      const raw = html == null ? "" : String(html);
       if (!window.DOMPurify) {
-        el.replaceChildren();
+        try {
+          const doc = new DOMParser().parseFromString("<body>" + raw + "</body>", "text/html");
+          const nodes = Array.from(doc.body.childNodes).map((node) => document.importNode(node, true));
+          el.replaceChildren(...nodes);
+        } catch (_) {
+          el.replaceChildren();
+        }
         return;
       }
-      const raw = html == null ? "" : String(html);
       const clean = DOMPurify.sanitize(raw);
       if (!clean) {
         el.replaceChildren();

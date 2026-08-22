@@ -18,6 +18,10 @@
  *   - Rate limit: 90 pings / hour / IP
  *   - Writes presence_daily / presence_monthly aggregates + optional user totals
  *     for the Statistics → Users panel (unique visitors, hour buckets, top users).
+ *   - Tracks ~5-minute live sessions in the edge Cache and returns { active }.
+ *
+ * GET  /api/presence-active
+ *   - Returns { ok, active } for the live-session count (no Firebase required).
  *
  * /__/auth/* and /__/firebase/* → reverse-proxy to the Firebase Auth helper host
  *   so signInWithRedirect works when authDomain is this Worker origin (avoids
@@ -27,6 +31,8 @@ const RATE_LIMIT_MAX = 40;
 const RATE_LIMIT_WINDOW_SEC = 3600;
 const PRESENCE_RATE_LIMIT_MAX = 90;
 const PRESENCE_RATE_LIMIT_WINDOW_SEC = 3600;
+const PRESENCE_ACTIVE_STALE_MS = 5 * 60 * 1000;
+const PRESENCE_ACTIVE_CACHE_REQ = new Request("https://presence-active.proxy-list.internal/sessions");
 const MAX_URL_LEN = 2048;
 const MAX_SESSION_ID_LEN = 128;
 const MAX_UID_LEN = 128;
@@ -66,6 +72,12 @@ export default {
       return handlePresencePing(request, env, ctx);
     }
     if (url.pathname === "/api/presence-ping" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+    if (url.pathname === "/api/presence-active" && request.method === "GET") {
+      return handlePresenceActive();
+    }
+    if (url.pathname === "/api/presence-active" && request.method === "OPTIONS") {
       return cors(new Response(null, { status: 204 }));
     }
 
@@ -250,6 +262,47 @@ async function edgeFirstSeen(keyPath, maxAgeSec, ctx) {
   });
   ctx.waitUntil(cache.put(req, res.clone()));
   return true;
+}
+
+async function readActiveSessionMap() {
+  try {
+    const hit = await caches.default.match(PRESENCE_ACTIVE_CACHE_REQ);
+    if (!hit) return {};
+    const raw = await hit.json();
+    return raw && typeof raw === "object" && !Array.isArray(raw) ? raw : {};
+  } catch (_) {
+    return {};
+  }
+}
+
+function pruneActiveSessionMap(map, now) {
+  const out = {};
+  for (const [id, ts] of Object.entries(map || {})) {
+    const n = Number(ts);
+    if (!id || !Number.isFinite(n)) continue;
+    if (now - n <= PRESENCE_ACTIVE_STALE_MS) out[id] = n;
+  }
+  return out;
+}
+
+async function touchActiveSession(sessionId, ctx) {
+  const now = Date.now();
+  const map = pruneActiveSessionMap(await readActiveSessionMap(), now);
+  if (sessionId) map[sessionId] = now;
+  const count = Object.keys(map).length;
+  const res = new Response(JSON.stringify(map), {
+    headers: {
+      "Cache-Control": "public, max-age=600",
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  });
+  ctx.waitUntil(caches.default.put(PRESENCE_ACTIVE_CACHE_REQ, res.clone()));
+  return count;
+}
+
+async function handlePresenceActive() {
+  const map = pruneActiveSessionMap(await readActiveSessionMap(), Date.now());
+  return json({ ok: true, active: Object.keys(map).length });
 }
 
 function sanitizeDisplayName(raw) {
@@ -1060,6 +1113,8 @@ async function handlePresencePing(request, env, ctx) {
     return json({ ok: false, error: "invalid_session" }, 400);
   }
 
+  const active = await touchActiveSession(sessionId, ctx);
+
   const uid = String((body && body.uid) || "")
     .trim()
     .slice(0, MAX_UID_LEN)
@@ -1142,6 +1197,7 @@ async function handlePresencePing(request, env, ctx) {
       return json({
         ok: true,
         via: "firestore",
+        active,
         day,
         firstDay,
         firstHour,
@@ -1151,6 +1207,7 @@ async function handlePresencePing(request, env, ctx) {
     return json({
       ok: true,
       via: "edge",
+      active,
       day,
       firstDay,
       firstHour,

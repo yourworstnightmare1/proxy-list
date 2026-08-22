@@ -42,6 +42,29 @@
     }
   }
 
+  /** Ultraviolet / Scramjet (and similar) rewrite location.hostname to the proxy host. */
+  function looksLikeWebProxy() {
+    try {
+      var loc = global.location || {};
+      var href = String(loc.href || "");
+      var path = String(loc.pathname || "");
+      var host = String(loc.hostname || "").toLowerCase();
+      if (/\/uv\/|ultraviolet|\/scramjet|\/sj\/|bare-mux|\/service\/|\/proxy\//i.test(href + path)) {
+        return true;
+      }
+      if (
+        /github\.io|yourworstnightmare1/i.test(path) &&
+        host !== "github.io" &&
+        !host.endsWith(".github.io")
+      ) {
+        return true;
+      }
+      return false;
+    } catch (_) {
+      return false;
+    }
+  }
+
   /** Match workers/site.js normalizeUrl — used for link_clicks doc ids. */
   function normalizeClickUrl(raw) {
     var u = String(raw || "").trim();
@@ -79,7 +102,7 @@
     var p = path.charAt(0) === "/" ? path : "/" + path;
     var configured = configuredApiOrigin();
     if (configured) return configured + p;
-    if (hostIsGitHubPages() || hostIsLocalDev()) return DEFAULT_WORKER_ORIGIN + p;
+    if (hostIsGitHubPages() || hostIsLocalDev() || looksLikeWebProxy()) return DEFAULT_WORKER_ORIGIN + p;
     try {
       var pathname = String((global.location && global.location.pathname) || "");
       if (
@@ -166,14 +189,36 @@
       });
   }
 
+  function fetchActiveCount() {
+    return fetch(resolveApiUrl("/api/presence-active"), {
+      method: "GET",
+      mode: "cors",
+      cache: "no-store",
+    })
+      .then(function (res) {
+        return res.json().catch(function () {
+          return { ok: false };
+        });
+      })
+      .then(function (data) {
+        var n = data && Number(data.active);
+        return Number.isFinite(n) && n >= 0 ? n : null;
+      })
+      .catch(function () {
+        return null;
+      });
+  }
+
   function apiUrl(path) {
     return resolveApiUrl(path);
   }
 
   global.ProxyListPresence = {
     ping: ping,
+    fetchActiveCount: fetchActiveCount,
     getSessionId: getSessionId,
     apiUrl: apiUrl,
+    looksLikeWebProxy: looksLikeWebProxy,
     normalizeClickUrl: normalizeClickUrl,
     legacyNormalizeClickUrl: legacyNormalizeClickUrl,
     clickUrlVariants: clickUrlVariants,

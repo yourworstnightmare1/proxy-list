@@ -1465,7 +1465,9 @@
     .popular-section .table-chunk-wrap {
       margin: 0 -0.15rem;
     }
-    #mostOpenedSection:not([hidden]) + #stats {
+    #mostOpenedSection:not([hidden]) + #stats,
+    #popularLinksSection:not([hidden]) + #stats,
+    #popularLinksSection:not([hidden]) + #mostOpenedSection {
       margin-top: 1.25rem;
       padding-top: 1.15rem;
       border-top: 1px solid var(--border);
@@ -2713,6 +2715,10 @@
             <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="1" fill="currentColor" stroke="none"/><circle cx="5" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="5" cy="18" r="1" fill="currentColor" stroke="none"/><path d="M9 6h11M11 12h9M8 18h12"/></svg>
             Unsorted links
           </a>
+          <button class="btn" id="popularLinksNavBtn" type="button" aria-pressed="false">
+            <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Popular links
+          </button>
           <button class="btn" id="selectFilterBtn" type="button">
             <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
             Select filter
@@ -2862,7 +2868,7 @@
         </p>
       </aside>
       <section class="important-notices" id="importantNotices" aria-label="Important notices" hidden></section>
-      <section class="featured-proxies embed-hide" id="featuredProxiesSection" aria-labelledby="featuredProxiesHeading">
+<section class="featured-proxies embed-hide" id="featuredProxiesSection" aria-labelledby="featuredProxiesHeading">
         <div class="featured-proxies-head">
           <h2 id="featuredProxiesHeading">Featured</h2>
         </div>
@@ -2893,7 +2899,7 @@
                 <p class="featured-slide-msg">The easiest way to get online without restrictions.</p>
               </div>
               <div class="featured-slide-bar">
-                <div class="featured-slide-icon" aria-hidden="true">🪴</div>
+                <div class="featured-slide-icon" aria-hidden="true">≡ƒ¬┤</div>
                 <div class="featured-slide-meta">
                   <p class="featured-slide-meta-name">Fern</p>
                   <p class="featured-slide-meta-sub">View all links from this provider</p>
@@ -2910,7 +2916,7 @@
                 <p class="featured-slide-msg">Sleek but powerful.</p>
               </div>
               <div class="featured-slide-bar">
-                <div class="featured-slide-icon" aria-hidden="true">🌙</div>
+                <div class="featured-slide-icon" aria-hidden="true">≡ƒîÖ</div>
                 <div class="featured-slide-meta">
                   <p class="featured-slide-meta-name">Velara</p>
                   <p class="featured-slide-meta-sub">View all links from this provider</p>
@@ -2927,7 +2933,7 @@
                 <p class="featured-slide-msg">The cutting edge of anonymous and unblocked browsing.</p>
               </div>
               <div class="featured-slide-bar">
-                <div class="featured-slide-icon" aria-hidden="true">🐸</div>
+                <div class="featured-slide-icon" aria-hidden="true">≡ƒÉ╕</div>
                 <div class="featured-slide-meta">
                   <p class="featured-slide-meta-name">frogie's arcade</p>
                   <p class="featured-slide-meta-sub">View all links from this provider</p>
@@ -2944,7 +2950,7 @@
                 <p class="featured-slide-msg">Quality and quantity is a priority here.</p>
               </div>
               <div class="featured-slide-bar">
-                <div class="featured-slide-icon" aria-hidden="true">🌸</div>
+                <div class="featured-slide-icon" aria-hidden="true">≡ƒî╕</div>
                 <div class="featured-slide-meta">
                   <p class="featured-slide-meta-name">Cherri</p>
                   <p class="featured-slide-meta-sub">View all links from this provider</p>
@@ -2991,7 +2997,7 @@
                 <p class="featured-slide-msg">The most private browsing you can get through your browser.</p>
               </div>
               <div class="featured-slide-bar">
-                <div class="featured-slide-icon" aria-hidden="true">👥</div>
+                <div class="featured-slide-icon" aria-hidden="true">≡ƒæÑ</div>
                 <div class="featured-slide-meta">
                   <p class="featured-slide-meta-name">InvisiProxy</p>
                   <p class="featured-slide-meta-sub">View all links from this provider</p>
@@ -3008,7 +3014,7 @@
                 <p class="featured-slide-msg">Simple but efficient and fast for your browsing needs.</p>
               </div>
               <div class="featured-slide-bar">
-                <div class="featured-slide-icon" aria-hidden="true">🍄</div>
+                <div class="featured-slide-icon" aria-hidden="true">≡ƒìä</div>
                 <div class="featured-slide-meta">
                   <p class="featured-slide-meta-name">Truffled</p>
                   <p class="featured-slide-meta-sub">View all links from this provider</p>
@@ -3018,9 +3024,22 @@
             </article>
           </div>
           <div class="featured-controls">
-            <button type="button" class="featured-nav-btn" id="featuredPrevBtn" aria-label="Previous featured proxy">‹</button>
+            <button type="button" class="featured-nav-btn" id="featuredPrevBtn" aria-label="Previous featured proxy">ΓÇ╣</button>
             <div class="featured-dots" id="featuredDots" role="tablist" aria-label="Featured proxy slides"></div>
-            <button type="button" class="featured-nav-btn" id="featuredNextBtn" aria-label="Next featured proxy">›</button>
+            <button type="button" class="featured-nav-btn" id="featuredNextBtn" aria-label="Next featured proxy">ΓÇ║</button>
+          </div>
+        </div>
+      </section>
+      <section class="popular-section" id="popularLinksSection" aria-labelledby="popularLinksHeading" hidden>
+        <h2 id="popularLinksHeading">Popular links</h2>
+        <p class="popular-note" id="popularLinksNote"></p>
+        <div class="table-chunk-wrap">
+          <div id="popularLinksEmptyState" class="empty-state empty-state--in-panel" role="status" hidden></div>
+          <div id="popularLinksTableMount">
+            <table aria-labelledby="popularLinksHeading">
+              <thead id="popularLinksThead"></thead>
+              <tbody id="popularLinksTableBody"></tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -3640,16 +3659,42 @@
     }
 
     function nodesFromSanitizedBodyHtml(raw) {
-      if (!raw || !window.DOMPurify) return [];
+      if (!raw) return [];
+      if (!window.DOMPurify) return nodesFromTrustedBodyHtml(raw);
       const clean = DOMPurify.sanitize(String(raw));
       if (!clean) return [];
       const doc = new DOMParser().parseFromString("<body>" + clean + "</body>", "text/html");
       return importSanitizedNodes(doc.body.childNodes);
     }
 
+    function nodesFromTrustedBodyHtml(raw) {
+      if (!raw) return [];
+      const doc = new DOMParser().parseFromString("<body>" + String(raw) + "</body>", "text/html");
+      return importSanitizedNodes(doc.body.childNodes);
+    }
+
+    function nodesFromTrustedTableSection(sectionTag, raw) {
+      const tag = String(sectionTag || "").toLowerCase();
+      if (!raw || (tag !== "thead" && tag !== "tbody")) return [];
+      const doc = new DOMParser().parseFromString(
+        "<table><" + tag + ">" + String(raw) + "</" + tag + "></table>",
+        "text/html"
+      );
+      const section = doc.querySelector(tag);
+      return section ? importSanitizedNodes(section.childNodes) : [];
+    }
+
+    function nodesFromTrustedSelectOptions(raw) {
+      if (!raw) return [];
+      const doc = new DOMParser().parseFromString("<select>" + String(raw) + "</select>", "text/html");
+      const select = doc.querySelector("select");
+      return select ? importSanitizedNodes(select.childNodes) : [];
+    }
+
     function nodesFromSanitizedTableSection(sectionTag, raw) {
       const tag = String(sectionTag || "").toLowerCase();
-      if (!raw || !window.DOMPurify || (tag !== "thead" && tag !== "tbody")) return [];
+      if (!raw || (tag !== "thead" && tag !== "tbody")) return [];
+      if (!window.DOMPurify) return nodesFromTrustedTableSection(tag, raw);
       const clean = DOMPurify.sanitize("<table><" + tag + ">" + String(raw) + "</" + tag + "></table>");
       if (!clean) return [];
       const doc = new DOMParser().parseFromString(clean, "text/html");
@@ -3658,7 +3703,8 @@
     }
 
     function nodesFromSanitizedSelectOptions(raw) {
-      if (!raw || !window.DOMPurify) return [];
+      if (!raw) return [];
+      if (!window.DOMPurify) return nodesFromTrustedSelectOptions(raw);
       // Orphan <option> nodes are dropped outside <select>, same class of issue as <tr>/<td>.
       const clean = DOMPurify.sanitize("<select>" + String(raw) + "</select>");
       if (!clean) return [];
@@ -3667,30 +3713,43 @@
       return select ? importSanitizedNodes(select.childNodes) : [];
     }
 
-    /** Assign HTML after sanitization so static analysis (e.g. CodeQL) sees a guarded DOM sink. */
+    function htmlNodesForElement(el, raw) {
+      const tag = el.tagName;
+      if (tag === "THEAD") {
+        return window.DOMPurify
+          ? nodesFromSanitizedTableSection("thead", raw)
+          : nodesFromTrustedTableSection("thead", raw);
+      }
+      if (tag === "TBODY") {
+        return window.DOMPurify
+          ? nodesFromSanitizedTableSection("tbody", raw)
+          : nodesFromTrustedTableSection("tbody", raw);
+      }
+      if (tag === "SELECT") {
+        return window.DOMPurify ? nodesFromSanitizedSelectOptions(raw) : nodesFromTrustedSelectOptions(raw);
+      }
+      return window.DOMPurify ? nodesFromSanitizedBodyHtml(raw) : nodesFromTrustedBodyHtml(raw);
+    }
+
+    /** Assign HTML after sanitization (or trusted DOMParser fallback when DOMPurify is unavailable). */
     function setHtml(el, html) {
       if (!el) return;
-      if (!window.DOMPurify) {
-        el.replaceChildren();
-        return;
-      }
       const raw = html == null ? "" : String(html);
-      const tag = el.tagName;
-      let nodes;
-      if (tag === "THEAD") nodes = nodesFromSanitizedTableSection("thead", raw);
-      else if (tag === "TBODY") nodes = nodesFromSanitizedTableSection("tbody", raw);
-      else if (tag === "SELECT") nodes = nodesFromSanitizedSelectOptions(raw);
-      else nodes = nodesFromSanitizedBodyHtml(raw);
+      const nodes = htmlNodesForElement(el, raw);
       el.replaceChildren(...nodes);
     }
 
     function insertAdjacentHtmlSafe(el, position, html) {
-      if (!el || !window.DOMPurify) return;
+      if (!el) return;
       const raw = html == null ? "" : String(html);
       const nodes =
         el.tagName === "TBODY" && position === "beforeend"
-          ? nodesFromSanitizedTableSection("tbody", raw)
-          : nodesFromSanitizedBodyHtml(raw);
+          ? window.DOMPurify
+            ? nodesFromSanitizedTableSection("tbody", raw)
+            : nodesFromTrustedTableSection("tbody", raw)
+          : window.DOMPurify
+            ? nodesFromSanitizedBodyHtml(raw)
+            : nodesFromTrustedBodyHtml(raw);
       if (!nodes.length) return;
       if (position === "beforeend") el.append(...nodes);
       else if (position === "afterbegin") el.prepend(...nodes);
@@ -3718,6 +3777,8 @@
     let linkLensFetchPromise = null;
     /** Filled on main data load so we can re-render after lazy linklens arrives. */
     let pageContext = null;
+    /** "full" (default table) or "popular" (curated hand-picked links). */
+    let listViewMode = "full";
 
     function syncOfflineExportGlobals() {
       try {
@@ -3748,6 +3809,8 @@
     const PRESENCE_HEARTBEAT_MS = 60 * 1000;
     let firebasePresenceDb = null;
     let activeSessionsCount = null;
+    /** Live count from the Cloudflare Worker (works without Firebase / inside web proxies). */
+    let workerActiveSessionsCount = null;
     let presenceListenerAttached = false;
     let presenceSessionRef = null;
     let presenceHeartbeatTimer = null;
@@ -3917,14 +3980,15 @@
       );
     }
 
-    function loadExternalScript(src) {
-      return new Promise((resolve, reject) => {
+    function loadExternalScript(src, timeoutMs) {
+      const load = new Promise((resolve, reject) => {
         const s = document.createElement("script");
         s.src = src;
         s.onload = () => resolve();
         s.onerror = () => reject(new Error("Could not load " + src));
         document.head.appendChild(s);
       });
+      return promiseWithTimeout(load, timeoutMs != null ? timeoutMs : 8000, "Could not load " + src);
     }
 
     let firebaseSdkPromise = null;
@@ -5184,6 +5248,72 @@
 
     function shouldHideMostOpenedSection() {
       return !!(viewingFolderId || savedLinksViewOnly);
+    }
+
+    function shouldHidePopularLinksSection() {
+      return !!(viewingFolderId || savedLinksViewOnly);
+    }
+
+    function setListViewMode(mode) {
+      const next = mode === "popular" ? "popular" : "full";
+      listViewMode = next;
+      applyListViewModeUi();
+      if (next === "popular") {
+        const sec = $("popularLinksSection");
+        if (sec && !sec.hidden) {
+          try {
+            sec.scrollIntoView({ block: "start", behavior: "smooth" });
+          } catch (_) {
+            sec.scrollIntoView();
+          }
+        }
+      }
+    }
+
+    function applyListViewModeUi() {
+      const popular = listViewMode === "popular";
+      const navBtn = $("popularLinksNavBtn");
+      if (navBtn) {
+        navBtn.classList.toggle("btn-primary", popular);
+        navBtn.setAttribute("aria-pressed", popular ? "true" : "false");
+      }
+      const backMain = $("sidebarBackToMainList");
+      if (backMain) {
+        const onPlainMainList = !viewingFolderId && !savedLinksViewOnly;
+        backMain.hidden = onPlainMainList;
+      }
+    }
+
+    function renderPopularLinksSection(meta) {
+      const sec = $("popularLinksSection");
+      const noteEl = $("popularLinksNote");
+      const thead = $("popularLinksThead");
+      const tbody = $("popularLinksTableBody");
+      const emptyEl = $("popularLinksEmptyState");
+      const mount = $("popularLinksTableMount");
+      if (!sec || !thead || !tbody) return;
+      if (shouldHidePopularLinksSection()) {
+        sec.hidden = true;
+        return;
+      }
+      const rows = Array.isArray(meta && meta.popular_links) ? meta.popular_links.filter((r) => r && r.link) : [];
+      const note = meta && meta.popular_note ? String(meta.popular_note).trim() : "";
+      if (noteEl) {
+        noteEl.textContent = note || "Hand-picked links that tend to work well — not ranked by site traffic.";
+        noteEl.hidden = false;
+      }
+      if (!rows.length) {
+        sec.hidden = true;
+        return;
+      }
+      if (emptyEl) {
+        emptyEl.hidden = true;
+        setHtml(emptyEl, "");
+      }
+      if (mount) mount.hidden = false;
+      setHtml(thead, linkTableTheadRowHtml());
+      setHtml(tbody, rows.map((r) => buildRowTrHtml(r)).join(""));
+      sec.hidden = false;
     }
 
     function hideMostOpenedSection() {
@@ -7442,7 +7572,13 @@
     function updateActiveUsersDisplay() {
       const line = $("activeUsersFooterLine");
       if (!line) return;
-      if (!useFirebaseClicks || activeSessionsCount === null) {
+      const n =
+        Number.isFinite(activeSessionsCount) && activeSessionsCount > 0
+          ? activeSessionsCount
+          : Number.isFinite(workerActiveSessionsCount)
+            ? workerActiveSessionsCount
+            : null;
+      if (n == null) {
         line.hidden = true;
         line.textContent = "";
         return;
@@ -7451,7 +7587,7 @@
       setHtml(
         line,
         'Active Users: <span class="active-users-count">' +
-          escapeHtml(String(activeSessionsCount)) +
+          escapeHtml(String(n)) +
           "</span>"
       );
     }
@@ -7490,6 +7626,13 @@
         anonymous: anonymous,
         displayName: displayName,
         force: !!force,
+      }).then(function (data) {
+        if (!data || data.ok === false) return;
+        const n = Number(data.active);
+        if (Number.isFinite(n) && n >= 0) {
+          workerActiveSessionsCount = n;
+          updateActiveUsersDisplay();
+        }
       });
     }
 
@@ -7501,6 +7644,16 @@
       presenceWorkerPingTimer = setInterval(function () {
         presencePingToWorker(false);
       }, PRESENCE_HEARTBEAT_MS);
+      if (
+        typeof window.ProxyListPresence !== "undefined" &&
+        typeof window.ProxyListPresence.fetchActiveCount === "function"
+      ) {
+        void window.ProxyListPresence.fetchActiveCount().then(function (n) {
+          if (n == null) return;
+          workerActiveSessionsCount = n;
+          updateActiveUsersDisplay();
+        });
+      }
     }
 
     function presenceHeartbeat() {
@@ -12252,6 +12405,36 @@
       };
     }
 
+    async function normalizePayloadAsync(json) {
+      if (window.ProxyListData && typeof window.ProxyListData.normalizePayload === "function") {
+        const normalized = window.ProxyListData.normalizePayload(json);
+        if (normalized.compact && typeof window.ProxyListData.expandAllLinksAsync === "function") {
+          const expanded = await window.ProxyListData.expandAllLinksAsync(
+            {
+              format: 2,
+              providers: normalized.compact.providers,
+              contributors: normalized.compact.contributors,
+              links: normalized.compact.links,
+            },
+            {
+              onProgress: function (ratio) {
+                const pct = 38 + Math.round(Math.max(0, Math.min(1, Number(ratio) || 0)) * 14);
+                reportContentLoadingProgress(pct, "Preparing list…");
+              },
+            }
+          );
+          return {
+            meta: normalized.meta,
+            link_check: normalized.link_check,
+            links: expanded,
+            failing_links: normalized.failing_links,
+          };
+        }
+        return normalizePayload(json);
+      }
+      return normalizePayload(json);
+    }
+
     let offlineExportScriptPromise = null;
     function ensureOfflineExportScript() {
       if (window.ProxyListOfflineExport) return Promise.resolve(window.ProxyListOfflineExport);
@@ -12268,11 +12451,13 @@
     }
 
     setContentLoading(true, { progress: 0, message: "Getting data..." });
+    applyImportantNotices({});
     bindClickLoadSlowPromptButtons();
     initSavedLinksView();
     initEmbedMode();
     setupAccountUI();
     restoreFirebaseQuotaBannerFromSession();
+    startPresenceWorkerPings();
     if (isFileProtocol()) {
       setContentLoading(false);
       setHtml(
@@ -12315,8 +12500,11 @@
     ])
       .then(([, json, checkedDomainsText]) => {
         reportContentLoadingProgress(35, "Getting data...");
+        renderPopularLinksSection((json && json.meta) || {});
+        return normalizePayloadAsync(json).then((normalized) => {
         initFolderReportModal();
         reportContentLoadingProgress(55, "Preparing list…");
+        const { meta, link_check, links } = normalized;
         rebuildLinkLensIndexes();
         populateKnownFilters();
         updateSelectedFilterUI();
@@ -12327,7 +12515,6 @@
             .map((s) => s.trim().toLowerCase().replace(/^www\./, ""))
             .filter(Boolean)
         );
-        const { meta, link_check, links } = normalizePayload(json);
         pageContext = { links, meta, link_check };
         syncOfflineExportGlobals();
         currentListVersionStamp = versionStamp(meta) || "";
@@ -12338,6 +12525,8 @@
           failThreshold = meta.fail_threshold;
         }
         applyImportantNotices(meta);
+        renderPopularLinksSection(meta);
+        applyListViewModeUi();
         setFooter(meta);
         syncMostOpenedProviderOptions(links);
         const moSortSel = $("mostOpenedSortSelect");
@@ -12815,6 +13004,22 @@
             setSiteUpdateBannerVisible(false);
           });
         }
+        const popularLinksNavBtn = $("popularLinksNavBtn");
+        if (popularLinksNavBtn) {
+          popularLinksNavBtn.addEventListener("click", () => {
+            setListViewMode("popular");
+          });
+        }
+        const sidebarBackToMainList = $("sidebarBackToMainList");
+        if (sidebarBackToMainList) {
+          sidebarBackToMainList.addEventListener("click", (ev) => {
+            if (!viewingFolderId && !savedLinksViewOnly) {
+              ev.preventDefault();
+              setListViewMode("full");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          });
+        }
         $("backToTopBtn").addEventListener("click", () => {
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
@@ -12837,8 +13042,10 @@
           finishContentLoading();
           if ($("folderTrustedResults")) refreshFolderTrustedSearchUI(folderTrustedSearchLastQuery);
         });
+        });
       })
       .then((rendered) => {
+        startPresenceWorkerPings();
         void ensureFirebaseSdk()
           .then((ok) => (ok ? initClickTracking() : false))
           .catch((err) => {
