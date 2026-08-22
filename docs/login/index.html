@@ -754,23 +754,31 @@
 
       async function afterSignIn(auth, db, allowRedirect) {
         const user = auth.currentUser;
+        // Never treat anonymous (or missing) sessions as a completed provider sign-in.
+        // A previous bug redirected here anyway, which dumped users back on the list unsigned.
         if (!user || user.isAnonymous) {
+          setOauthPending(false);
           if (allowRedirect) {
-            setStatus("Signed in. Redirecting…", "ok");
-            redirectToList();
+            setStatus("Sign-in did not finish. Please try Google or GitHub again.", "error");
           }
           return;
         }
         try {
+          if (typeof auth.authStateReady === "function") {
+            await auth.authStateReady();
+          }
           const snap = await db.collection("users").doc(user.uid).get();
           const d = snap.exists ? snap.data() : {};
           if (d.siteUsername && String(d.siteUsername).trim()) {
             if (allowRedirect) {
               setStatus("Signed in. Redirecting…", "ok");
               redirectToList();
+            } else {
+              setOauthPending(false);
             }
             return;
           }
+          setOauthPending(false);
           setStatus("", "");
           showProfileSetupUI(auth, db, user);
         } catch (err) {
@@ -778,6 +786,8 @@
           if (allowRedirect) {
             setStatus("Signed in. Open Account to finish your profile if needed.", "ok");
             redirectToList();
+          } else {
+            setOauthPending(false);
           }
         }
       }
@@ -829,6 +839,22 @@
       }
 
       const GITHUB_TOKEN_SESSION_KEY = "proxyList_github_access_token";
+      const OAUTH_PENDING_KEY = "proxyList_oauth_pending";
+
+      function setOauthPending(on) {
+        try {
+          if (on) sessionStorage.setItem(OAUTH_PENDING_KEY, "1");
+          else sessionStorage.removeItem(OAUTH_PENDING_KEY);
+        } catch (_) {}
+      }
+
+      function hasOauthPending() {
+        try {
+          return sessionStorage.getItem(OAUTH_PENDING_KEY) === "1";
+        } catch (_) {
+          return false;
+        }
+      }
 
       function captureGithubOAuthToken(result) {
         if (!result || !result.credential) return;
@@ -911,14 +937,26 @@
       function signInWithRedirectProvider(auth, provider) {
         setAuthBusy(true);
         setStatus("Redirecting to sign-in…", "");
-        return ensureAnonymousSession(auth)
-          .then((user) => {
-            if (user && user.isAnonymous && typeof user.linkWithRedirect === "function") {
-              return user.linkWithRedirect(provider).catch(() => auth.signInWithRedirect(provider));
+        // linkWithRedirect after an anonymous session is unreliable on mobile Safari /
+        // in-app browsers: OAuth returns, but the linked account often never sticks.
+        // Sign out anonymous first, then use a clean signInWithRedirect.
+        const prepare =
+          window.ProxyListAuth && typeof window.ProxyListAuth.prepare === "function"
+            ? window.ProxyListAuth.prepare(auth)
+            : Promise.resolve().then(() => {
+                if (typeof auth.authStateReady === "function") return auth.authStateReady();
+              });
+        return prepare
+          .then(() => {
+            setOauthPending(true);
+            const user = auth.currentUser;
+            if (user && user.isAnonymous) {
+              return auth.signOut().then(() => auth.signInWithRedirect(provider));
             }
             return auth.signInWithRedirect(provider);
           })
           .catch((err) => {
+            setOauthPending(false);
             const info = authErrorMessage(err);
             setStatus(info.message, info.kind);
             setAuthBusy(false);
@@ -953,21 +991,73 @@
           .finally(() => setAuthBusy(false));
       }
 
+      function credentialFromAuthError(err) {
+        if (!err || !firebase.auth) return null;
+        try {
+          const g = firebase.auth.GoogleAuthProvider.credentialFromError(err);
+          if (g) return g;
+        } catch (_) {}
+        try {
+          const gh = firebase.auth.GithubAuthProvider.credentialFromError(err);
+          if (gh) return gh;
+        } catch (_) {}
+        return null;
+      }
+
       function completeRedirectSignIn(auth, db) {
         if (!auth || typeof auth.getRedirectResult !== "function") return Promise.resolve(null);
-        setAuthBusy(true);
-        setStatus("Finishing sign-in…", "");
+        const pending = hasOauthPending();
+        if (pending) {
+          setAuthBusy(true);
+          setStatus("Finishing sign-in…", "");
+        }
         return auth
           .getRedirectResult()
           .then((result) => {
-            if (!result || !result.user) {
+            if (result && result.user) {
+              captureGithubOAuthToken(result);
+              if (result.user.isAnonymous) {
+                setOauthPending(false);
+                setStatus("Sign-in did not finish. Please try again.", "error");
+                return null;
+              }
+              // Leave oauth-pending set when redirecting to the list so that page
+              // settles IndexedDB before creating a fresh anonymous session.
+              return afterSignIn(auth, db, true);
+            }
+            // Some WebViews restore the provider session without a redirect payload.
+            if (!pending) {
               setStatus("", "");
               return null;
             }
-            captureGithubOAuthToken(result);
-            return afterSignIn(auth, db, true);
+            const ready =
+              typeof auth.authStateReady === "function" ? auth.authStateReady() : Promise.resolve();
+            return ready.then(() => {
+              const u = auth.currentUser;
+              if (u && !u.isAnonymous) {
+                return afterSignIn(auth, db, true);
+              }
+              setOauthPending(false);
+              setStatus("Sign-in did not finish. Please try again.", "error");
+              return null;
+            });
           })
           .catch((err) => {
+            const code = err && err.code ? String(err.code) : "";
+            if (
+              code === "auth/credential-already-in-use" ||
+              code === "auth/email-already-in-use" ||
+              code === "auth/account-exists-with-different-credential"
+            ) {
+              const cred = credentialFromAuthError(err);
+              if (cred) {
+                return auth.signInWithCredential(cred).then((credResult) => {
+                  captureGithubOAuthToken(credResult);
+                  return afterSignIn(auth, db, true);
+                });
+              }
+            }
+            setOauthPending(false);
             const info = authErrorMessage(err);
             setStatus(info.message, info.kind);
           })
