@@ -7362,38 +7362,59 @@
               authStateReady = true;
               if (authStateReadyResolve) authStateReadyResolve();
             }
-            const user = auth.currentUser;
-            if (user) {
-              useFirebaseClicks = true;
-              startPresenceTracking();
-              startFolderAndMyFoldersListeners();
-              return true;
-            }
-            // Only create an anonymous session when nothing was restored.
-            return promiseWithTimeout(auth.signInAnonymously(), 8000, "Firebase anonymous sign-in timed out")
-              .then(() => {
+            let oauthPending = false;
+            try {
+              oauthPending = sessionStorage.getItem("proxyList_oauth_pending") === "1";
+            } catch (_) {}
+
+            // If login just finished a redirect OAuth round-trip, give IndexedDB a
+            // moment to restore the provider session before creating anonymous.
+            const settle =
+              oauthPending
+                ? new Promise((r) => setTimeout(r, 500)).then(() => {
+                    if (typeof auth.authStateReady === "function") return auth.authStateReady();
+                  })
+                : Promise.resolve();
+
+            return settle.then(() => {
+              if (oauthPending) {
+                try {
+                  sessionStorage.removeItem("proxyList_oauth_pending");
+                } catch (_) {}
+              }
+              const user = auth.currentUser;
+              if (user) {
                 useFirebaseClicks = true;
                 startPresenceTracking();
                 startFolderAndMyFoldersListeners();
                 return true;
-              })
-              .catch((err) => {
-                const msg = String(err?.message || err?.code || "");
-                const referrerBlocked = /referer|referrer/i.test(msg);
-                console.error(
-                  "[proxy-list] Firebase anonymous sign-in failed — click counts stay in this browser only." +
-                    (referrerBlocked
-                      ? " This error usually means the browser API key has HTTP referrer restrictions that exclude this page. Google Cloud Console → APIs & Services → Credentials → your key → Application restrictions → HTTP referrers — add e.g. http://localhost:8080/* and your hosted site (https://….github.io/*)."
-                      : " Firebase Console → Authentication → Sign-in method → enable Anonymous; Settings → Authorized domains must include this host."),
-                  err
-                );
-                useFirebaseClicks = false;
-                activeSessionsCount = null;
-                updateActiveUsersDisplay();
-                startPresenceWorkerPings();
-                startFolderAndMyFoldersListeners();
-                return false;
-              });
+              }
+              // Only create an anonymous session when nothing was restored.
+              return promiseWithTimeout(auth.signInAnonymously(), 8000, "Firebase anonymous sign-in timed out")
+                .then(() => {
+                  useFirebaseClicks = true;
+                  startPresenceTracking();
+                  startFolderAndMyFoldersListeners();
+                  return true;
+                })
+                .catch((err) => {
+                  const msg = String(err?.message || err?.code || "");
+                  const referrerBlocked = /referer|referrer/i.test(msg);
+                  console.error(
+                    "[proxy-list] Firebase anonymous sign-in failed — click counts stay in this browser only." +
+                      (referrerBlocked
+                        ? " This error usually means the browser API key has HTTP referrer restrictions that exclude this page. Google Cloud Console → APIs & Services → Credentials → your key → Application restrictions → HTTP referrers — add e.g. http://localhost:8080/* and your hosted site (https://….github.io/*)."
+                        : " Firebase Console → Authentication → Sign-in method → enable Anonymous; Settings → Authorized domains must include this host."),
+                    err
+                  );
+                  useFirebaseClicks = false;
+                  activeSessionsCount = null;
+                  updateActiveUsersDisplay();
+                  startPresenceWorkerPings();
+                  startFolderAndMyFoldersListeners();
+                  return false;
+                });
+            });
           })
           .catch((err) => {
             console.warn("[proxy-list] Firebase auth did not finish; continuing without it.", err);
