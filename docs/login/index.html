@@ -855,6 +855,12 @@
       function authErrorMessage(err) {
         const code = err && err.code ? String(err.code) : "";
         if (code === "auth/popup-closed-by-user") return { message: "Sign-in was cancelled.", kind: "" };
+        if (code === "auth/popup-blocked") {
+          return {
+            message: "Your browser blocked the sign-in window. Trying full-page sign-in instead…",
+            kind: "error",
+          };
+        }
         if (code === "auth/account-exists-with-different-credential") {
           return {
             message: "That account already exists with a different sign-in method. Try another option or sign out first.",
@@ -873,7 +879,56 @@
         return { message: err && err.message ? err.message : "Sign-in failed.", kind: "error" };
       }
 
+      /** Mobile Safari / in-app browsers commonly block OAuth popups. */
+      function preferAuthRedirect() {
+        try {
+          const ua = String(navigator.userAgent || "");
+          const iOS =
+            /iPhone|iPad|iPod/i.test(ua) ||
+            (navigator.platform === "MacIntel" && Number(navigator.maxTouchPoints || 0) > 1);
+          const android = /Android/i.test(ua);
+          const mobileUa = /Mobile|Android|iPhone|iPad|iPod/i.test(ua);
+          const coarse =
+            typeof window.matchMedia === "function" && window.matchMedia("(pointer: coarse)").matches;
+          const narrow = Math.min(window.innerWidth || 9999, (screen && screen.width) || 9999) <= 900;
+          return !!(iOS || android || mobileUa || (coarse && narrow));
+        } catch (_) {
+          return false;
+        }
+      }
+
+      function isPopupBlockedError(err) {
+        const code = err && err.code ? String(err.code) : "";
+        const msg = err && err.message ? String(err.message) : "";
+        if (code === "auth/popup-closed-by-user") return false;
+        return (
+          code === "auth/popup-blocked" ||
+          code === "auth/cancelled-popup-request" ||
+          /popup-blocked|Unable to establish a connection with the popup/i.test(msg)
+        );
+      }
+
+      function signInWithRedirectProvider(auth, provider) {
+        setAuthBusy(true);
+        setStatus("Redirecting to sign-in…", "");
+        return ensureAnonymousSession(auth)
+          .then((user) => {
+            if (user && user.isAnonymous && typeof user.linkWithRedirect === "function") {
+              return user.linkWithRedirect(provider).catch(() => auth.signInWithRedirect(provider));
+            }
+            return auth.signInWithRedirect(provider);
+          })
+          .catch((err) => {
+            const info = authErrorMessage(err);
+            setStatus(info.message, info.kind);
+            setAuthBusy(false);
+          });
+      }
+
       function signInWithPopupProvider(auth, db, provider) {
+        if (preferAuthRedirect()) {
+          return signInWithRedirectProvider(auth, provider);
+        }
         setAuthBusy(true);
         setStatus("Opening sign-in…", "");
         return ensureAnonymousSession(auth)
@@ -884,6 +939,31 @@
             return auth.signInWithPopup(provider);
           })
           .then((result) => {
+            captureGithubOAuthToken(result);
+            return afterSignIn(auth, db, true);
+          })
+          .catch((err) => {
+            if (isPopupBlockedError(err)) {
+              setStatus("Popup blocked — continuing with full-page sign-in…", "");
+              return signInWithRedirectProvider(auth, provider);
+            }
+            const info = authErrorMessage(err);
+            setStatus(info.message, info.kind);
+          })
+          .finally(() => setAuthBusy(false));
+      }
+
+      function completeRedirectSignIn(auth, db) {
+        if (!auth || typeof auth.getRedirectResult !== "function") return Promise.resolve(null);
+        setAuthBusy(true);
+        setStatus("Finishing sign-in…", "");
+        return auth
+          .getRedirectResult()
+          .then((result) => {
+            if (!result || !result.user) {
+              setStatus("", "");
+              return null;
+            }
             captureGithubOAuthToken(result);
             return afterSignIn(auth, db, true);
           })
@@ -953,11 +1033,13 @@
             });
 
       authReady.finally(() => {
-        auth.onAuthStateChanged((user) => {
-          updatePanels(user);
-          if (isSignedInUser(user)) void afterSignIn(auth, db, false);
+        void completeRedirectSignIn(auth, db).finally(() => {
+          auth.onAuthStateChanged((user) => {
+            updatePanels(user);
+            if (isSignedInUser(user)) void afterSignIn(auth, db, false);
+          });
+          updatePanels(auth.currentUser);
         });
-        updatePanels(auth.currentUser);
       });
 
       githubSignInBtn.addEventListener("click", () => {
