@@ -18,6 +18,10 @@
  *   - Rate limit: 90 pings / hour / IP
  *   - Writes presence_daily / presence_monthly aggregates + optional user totals
  *     for the Statistics → Users panel (unique visitors, hour buckets, top users).
+ *
+ * /__/auth/* and /__/firebase/* → reverse-proxy to the Firebase Auth helper host
+ *   so signInWithRedirect works when authDomain is this Worker origin (avoids
+ *   third-party cookie blocking on GitHub Pages).
  */
 const RATE_LIMIT_MAX = 40;
 const RATE_LIMIT_WINDOW_SEC = 3600;
@@ -30,10 +34,15 @@ const MAX_DISPLAY_NAME_LEN = 32;
 const FS_CLICK_CACHE_TTL_SEC = 600;
 const TOP_OPENS_CACHE_TTL_SEC = 300;
 const TOP_OPENS_LIMIT = 25;
+const FIREBASE_AUTH_HELPER_ORIGIN = "https://proxy-list-c06ea.firebaseapp.com";
 
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+
+    if (url.pathname === "/__/auth" || url.pathname.startsWith("/__/auth/") || url.pathname.startsWith("/__/firebase/")) {
+      return proxyFirebaseAuthHelper(request, url);
+    }
 
     if (url.pathname === "/api/link-click" && request.method === "POST") {
       return handleRecordClick(request, env, ctx);
@@ -74,6 +83,55 @@ function cors(res) {
   headers.set("Access-Control-Allow-Headers", "Content-Type");
   headers.set("Access-Control-Max-Age", "86400");
   return new Response(res.body, { status: res.status, headers });
+}
+
+/**
+ * Transparent reverse proxy for Firebase Auth redirect/popup helpers.
+ * Must not 302 to firebaseapp.com — the browser has to stay on this origin.
+ */
+async function proxyFirebaseAuthHelper(request, url) {
+  const target = new URL(url.pathname + url.search, FIREBASE_AUTH_HELPER_ORIGIN);
+  const headers = new Headers(request.headers);
+  headers.delete("host");
+  headers.set("Host", new URL(FIREBASE_AUTH_HELPER_ORIGIN).host);
+
+  const init = {
+    method: request.method,
+    headers,
+    redirect: "manual",
+  };
+  if (request.method !== "GET" && request.method !== "HEAD") {
+    init.body = request.body;
+    // Required when forwarding a ReadableStream body in the Workers runtime.
+    init.duplex = "half";
+  }
+
+  let upstream;
+  try {
+    upstream = await fetch(target.toString(), init);
+  } catch (err) {
+    return new Response("Auth helper proxy failed", { status: 502 });
+  }
+
+  const outHeaders = new Headers(upstream.headers);
+  // Keep Set-Cookie / body as-is so the helper session stays first-party on this host.
+  const location = outHeaders.get("Location");
+  if (location) {
+    try {
+      const locUrl = new URL(location, FIREBASE_AUTH_HELPER_ORIGIN);
+      if (locUrl.origin === new URL(FIREBASE_AUTH_HELPER_ORIGIN).origin) {
+        locUrl.protocol = url.protocol;
+        locUrl.host = url.host;
+        outHeaders.set("Location", locUrl.toString());
+      }
+    } catch (_) {}
+  }
+
+  return new Response(upstream.body, {
+    status: upstream.status,
+    statusText: upstream.statusText,
+    headers: outHeaders,
+  });
 }
 
 function json(data, status = 200) {

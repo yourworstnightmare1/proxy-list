@@ -39,6 +39,19 @@
    Enable Authentication → Sign-in method → Anonymous, GitHub (OAuth app in Firebase Console),
    Google, and Email/Password.
 
+   Mobile / in-app browsers block third-party cookies, so signInWithRedirect cannot finish when
+   authDomain is *.firebaseapp.com while the site is on GitHub Pages. The login page bridges
+   Google (mobile) and GitHub (all GitHub Pages) through the Worker origin, which reverse-proxies
+   /__/auth/* (see workers/site.js). After deploying the Worker, finish setup once:
+   1) Firebase Console → Authentication → Settings → Authorized domains → add
+      proxy-list.jasonthegamer48.workers.dev
+   2) Google Cloud Console → APIs & Services → Credentials → the OAuth 2.0 Web client →
+      Authorized redirect URIs → add
+      https://proxy-list.jasonthegamer48.workers.dev/__/auth/handler
+   3) GitHub OAuth App (Firebase GitHub provider) → Authorization callback URL → set to
+      https://proxy-list.jasonthegamer48.workers.dev/__/auth/handler
+      (GitHub allows one callback; GitHub sign-in on GitHub Pages then uses the Worker bridge.)
+
    Active user count uses Realtime Database (not Firestore): each signed-in or anonymous
    auth uid writes presence/{uid} with uid + ts (one node per user — not push IDs, so
    in-site navigations do not stack duplicate sessions). Only sessions updated in the
