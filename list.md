@@ -16,6 +16,7 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 ## Important Notices
 
 ## Update Notice
+
 # Game Database Browser
 You can now visually browse through game databases by going to the new game database browser, which can be accessed using the "Game browser" button in the sidebar. You will be able to see games across all or selected databases, search for games, view info and preview images for games (if applicable), and view all links that have your desired game. I hope that by creating this people will be able to get more use out of the list by being able to find what they specifically want to do on the site, and there will be more dedicated tags for specific site features coming later so you can have an easier time making choices on links and finding what you require based on your needs.
 
@@ -254,7 +255,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 43 |
+> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 41 |
 
 > [!IMPORTANT]
 > on some networks, the proxy will load a white screen or an ultraviolet error page, if this happens try using another link as that is known to fix this issue
@@ -371,7 +372,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 30 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 29 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -413,7 +414,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 69 |
+> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 40 |
 > [!IMPORTANT]
 > site has a bunch of ad popup windows, you can close these. it's recommended you use uBlock Origin to view this site without those popups
 
@@ -595,7 +596,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:boredom | Scramjet | 7 |
+> | Proxy/Games | GDB:boredom | Scramjet | 6 |
 
 > [!IMPORTANT]
 > Boredom does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -673,7 +674,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 68 |
+> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 62 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -924,7 +925,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:luminsdk | Scramjet | 81 |
+> | Proxy/Games | GDB:luminsdk | Scramjet | 78 |
 
 > [!IMPORTANT]
 > Imp Proxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -29498,7 +29499,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 239 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 238 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
