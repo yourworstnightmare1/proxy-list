@@ -22,7 +22,7 @@ You can now visually browse through game databases by going to the new game data
 # Steam API support
 In order to give some games additional info, the Steam Web API has been integrated to give many games things like detailed descriptions, better game covers, publisher/developer info, and game preview images. This only applies to games on Steam.
 
-## Game statistics
+# Game statistics
 Statistics have also been added to game databases with game amounts, latest games added, latest modifications made to the database source and games added/removed. As of right now many of these stats won't show any value as they were just implemented.
 
 # 💜 Selenite
