@@ -5243,25 +5243,6 @@
         backMain.hidden = onPlainMainList;
       }
     }
-      const rows = Array.isArray(meta && meta.popular_links) ? meta.popular_links.filter((r) => r && r.link) : [];
-      const note = meta && meta.popular_note ? String(meta.popular_note).trim() : "";
-      if (noteEl) {
-        noteEl.textContent = note || "Hand-picked links that tend to work well — not ranked by site traffic.";
-        noteEl.hidden = false;
-      }
-      if (!rows.length) {
-        sec.hidden = true;
-        return;
-      }
-      if (emptyEl) {
-        emptyEl.hidden = true;
-        setHtml(emptyEl, "");
-      }
-      if (mount) mount.hidden = false;
-      setHtml(thead, linkTableTheadRowHtml());
-      setHtml(tbody, rows.map((r) => buildRowTrHtml(r)).join(""));
-      sec.hidden = false;
-    }
 
     function hideMostOpenedSection() {
       const sec = $("mostOpenedSection");
