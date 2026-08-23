@@ -130,30 +130,24 @@
     return { item: best, score: bestScore };
   }
 
-  function decodeEntities(s) {
-    return String(s || "")
-      .replace(/&nbsp;/gi, " ")
-      .replace(/&amp;/gi, "&")
-      .replace(/&lt;/gi, "<")
-      .replace(/&gt;/gi, ">")
-      .replace(/&quot;/gi, '"')
-      .replace(/&#39;/gi, "'")
-      .replace(/&#(\d+);/g, function (_, n) {
-        return String.fromCharCode(Number(n));
-      });
-  }
-
+  /** Convert Steam HTML descriptions to plain text via DOMParser (avoids regex sanitization pitfalls). */
   function stripHtml(html) {
-    var text = String(html || "")
-      .replace(/\r/g, "")
-      .replace(/<\s*br\s*\/?\s*>/gi, "\n")
-      .replace(/<\s*\/\s*p\s*>/gi, "\n\n")
-      .replace(/<\s*p(\s[^>]*)?>/gi, "")
-      .replace(/<\s*li(\s[^>]*)?>/gi, "• ")
-      .replace(/<\s*\/\s*li\s*>/gi, "\n")
-      .replace(/<[^>]+>/g, "")
-      .replace(/\n{3,}/g, "\n\n");
-    return decodeEntities(text).replace(/[ \t]+\n/g, "\n").trim();
+    var raw = String(html || "").replace(/\r/g, "");
+    if (!raw) return "";
+    var doc = new DOMParser().parseFromString(raw, "text/html");
+    if (!doc || !doc.body) return raw.trim();
+    doc.querySelectorAll("br").forEach(function (el) {
+      el.replaceWith(doc.createTextNode("\n"));
+    });
+    doc.querySelectorAll("p, div, h1, h2, h3, h4, h5, h6").forEach(function (el) {
+      el.appendChild(doc.createTextNode("\n\n"));
+    });
+    doc.querySelectorAll("li").forEach(function (el) {
+      el.insertBefore(doc.createTextNode("• "), el.firstChild);
+      el.appendChild(doc.createTextNode("\n"));
+    });
+    var text = doc.body.textContent || "";
+    return text.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
   }
 
   function libraryCoverUrl(appId) {

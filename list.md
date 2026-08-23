@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
-> v7.0.1 | Released: August 23, 2026
-> r275 | Last Updated: August 23, 2026
+> v7.0.2 | Released: August 23, 2026
+> r276 | Last Updated: August 23, 2026
 > Total onsite links: 29566 (29224 sorted + 342 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -16,17 +16,9 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 ## Important Notices
 
 ## Update Notice
-# Approved links auto-publish
-Approved link submissions now sync into the list and the site automatically after approval, so paste-into-list.md is no longer required.
+# Fixed a bug where submissions weren't being added to the list
 
-# Game Database Browser
-You can now visually browse through game databases by going to the new game database browser, which can be accessed using the "Game browser" button in the sidebar. You will be able to see games across all or selected databases, search for games, view info and preview images for games (if applicable), and view all links that have your desired game. I hope that by creating this people will be able to get more use out of the list by being able to find what they specifically want to do on the site, and there will be more dedicated tags for specific site features coming later so you can have an easier time making choices on links and finding what you require based on your needs.
-
-# Steam API support
-In order to give some games additional info, the Steam Web API has been integrated to give many games things like detailed descriptions, better game covers, publisher/developer info, and game preview images. This only applies to games on Steam.
-
-# Game statistics
-Statistics have also been added to game databases with game amounts, latest games added, latest modifications made to the database source and games added/removed. As of right now many of these stats won't show any value as they were just implemented.
+# Security fixes
 
 # 💜 Selenite
 > [!NOTE]
