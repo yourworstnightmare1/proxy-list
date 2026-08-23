@@ -5,7 +5,8 @@
  *   - Rate limit: 40 clicks / hour / IP (Cache API)
  *   - Increments Firestore link_clicks/{sha256(normUrl)} via Admin REST when
  *     FIREBASE_PROJECT_ID + FIREBASE_CLIENT_EMAIL + FIREBASE_PRIVATE_KEY are set.
- *   - Also increments click_daily/{yyyy-mm-dd}.counts.{hash} for stats time-series.
+ *   - Also increments click_daily/{yyyy-mm-dd}.counts.{hash}, plus click_monthly/
+ *     click_yearly totals for long-term archives.
  *   - Without Firebase secrets, increments an in-edge Cache counter (Cloudflare-only).
  *
  * POST /api/link-clicks/get  { "urls": ["https://..."] }
@@ -23,6 +24,12 @@
  * GET  /api/presence-active
  *   - Returns { ok, active } for the live-session count (no Firebase required).
  *
+ * GET /api/steam/search?term=...
+ *   - Proxies store.steampowered.com/api/storesearch (CORS + edge cache).
+ *
+ * GET /api/steam/appdetails?appids=123
+ *   - Proxies store.steampowered.com/api/appdetails (CORS + edge cache).
+ *
  * /__/auth/* and /__/firebase/* → reverse-proxy to the Firebase Auth helper host
  *   so signInWithRedirect works when authDomain is this Worker origin (avoids
  *   third-party cookie blocking on GitHub Pages).
@@ -33,6 +40,12 @@ const PRESENCE_RATE_LIMIT_MAX = 90;
 const PRESENCE_RATE_LIMIT_WINDOW_SEC = 3600;
 const PRESENCE_ACTIVE_STALE_MS = 5 * 60 * 1000;
 const PRESENCE_ACTIVE_CACHE_REQ = new Request("https://presence-active.proxy-list.internal/sessions");
+const STEAM_RATE_LIMIT_MAX = 120;
+const STEAM_RATE_LIMIT_WINDOW_SEC = 3600;
+const STEAM_SEARCH_CACHE_TTL_SEC = 3600;
+const STEAM_DETAILS_CACHE_TTL_SEC = 86400;
+const STEAM_UA =
+  "Mozilla/5.0 (compatible; proxy-list-steam-proxy/1.0; +https://github.com/yourworstnightmare1/proxy-list)";
 const MAX_URL_LEN = 2048;
 const MAX_SESSION_ID_LEN = 128;
 const MAX_UID_LEN = 128;
@@ -78,6 +91,18 @@ export default {
       return handlePresenceActive();
     }
     if (url.pathname === "/api/presence-active" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+    if (url.pathname === "/api/steam/search" && request.method === "GET") {
+      return handleSteamSearch(request, env, ctx);
+    }
+    if (url.pathname === "/api/steam/search" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+    if (url.pathname === "/api/steam/appdetails" && request.method === "GET") {
+      return handleSteamAppDetails(request, env, ctx);
+    }
+    if (url.pathname === "/api/steam/appdetails" && request.method === "OPTIONS") {
       return cors(new Response(null, { status: 204 }));
     }
 
@@ -334,6 +359,11 @@ function secondsUntilNextUtcMonth(now = new Date()) {
   return Math.max(60, Math.ceil((next - now.getTime()) / 1000));
 }
 
+function secondsUntilNextUtcYear(now = new Date()) {
+  const next = Date.UTC(now.getUTCFullYear() + 1, 0, 1);
+  return Math.max(60, Math.ceil((next - now.getTime()) / 1000));
+}
+
 function hasFirebaseAdmin(env) {
   return !!(env.FIREBASE_PROJECT_ID && env.FIREBASE_CLIENT_EMAIL && env.FIREBASE_PRIVATE_KEY);
 }
@@ -534,9 +564,68 @@ function utcDateId(d = new Date()) {
   return d.toISOString().slice(0, 10);
 }
 
+function utcMonthId(d = new Date()) {
+  return d.toISOString().slice(0, 7);
+}
+
+function utcYearId(d = new Date()) {
+  return String(d.getUTCFullYear());
+}
+
+/**
+ * Increment a period archive doc's `total` (day→month→year rollups).
+ * Keeps historical aggregates even after UI lookbacks move on.
+ */
+async function firestoreIncrementPeriodTotal(env, token, project, collection, docId, idField, idValue) {
+  const docName = `projects/${project}/databases/(default)/documents/${collection}/${docId}`;
+  const commitUrl = `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents:commit`;
+  const transformWrite = {
+    transform: {
+      document: docName,
+      fieldTransforms: [
+        { fieldPath: "total", increment: { integerValue: "1" } },
+        { fieldPath: "updated", setToServerValue: "REQUEST_TIME" },
+      ],
+    },
+  };
+  const commitRes = await fetch(commitUrl, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ writes: [transformWrite] }),
+  });
+  if (commitRes.ok) return;
+
+  const createRes = await fetch(
+    `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents/${collection}?documentId=${encodeURIComponent(docId)}`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fields: {
+          [idField]: { stringValue: idValue },
+          total: { integerValue: "1" },
+          updated: { timestampValue: new Date().toISOString() },
+        },
+      }),
+    }
+  );
+  if (!createRes.ok) {
+    const t = await createRes.text().catch(() => "");
+    throw new Error(`${collection} archive create failed: ${createRes.status} ${t}`);
+  }
+}
+
 /** Lifetime totals stay on link_clicks; daily docs power provider time-series on /stats/. */
 async function firestoreIncrementDailyClick(env, token, project, docId, displayUrl) {
   const day = utcDateId();
+  const month = utcMonthId();
+  const year = utcYearId();
   const dailyName = `projects/${project}/databases/(default)/documents/click_daily/${day}`;
   const commitUrl = `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents:commit`;
   const countPath = firestoreMapFieldPath("counts", docId);
@@ -560,7 +649,17 @@ async function firestoreIncrementDailyClick(env, token, project, docId, displayU
     },
     body: JSON.stringify({ writes: [transformWrite] }),
   });
-  if (commitRes.ok) return;
+  if (commitRes.ok) {
+    await Promise.all([
+      firestoreIncrementPeriodTotal(env, token, project, "click_monthly", month, "month", month).catch((err) =>
+        console.error("click_monthly_failed", err)
+      ),
+      firestoreIncrementPeriodTotal(env, token, project, "click_yearly", year, "year", year).catch((err) =>
+        console.error("click_yearly_failed", err)
+      ),
+    ]);
+    return;
+  }
 
   const createRes = await fetch(
     `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents/click_daily?documentId=${encodeURIComponent(day)}`,
@@ -586,7 +685,17 @@ async function firestoreIncrementDailyClick(env, token, project, docId, displayU
       }),
     }
   );
-  if (createRes.ok) return;
+  if (createRes.ok) {
+    await Promise.all([
+      firestoreIncrementPeriodTotal(env, token, project, "click_monthly", month, "month", month).catch((err) =>
+        console.error("click_monthly_failed", err)
+      ),
+      firestoreIncrementPeriodTotal(env, token, project, "click_yearly", year, "year", year).catch((err) =>
+        console.error("click_yearly_failed", err)
+      ),
+    ]);
+    return;
+  }
 
   const retry = await fetch(commitUrl, {
     method: "POST",
@@ -600,6 +709,14 @@ async function firestoreIncrementDailyClick(env, token, project, docId, displayU
     const t = await retry.text();
     throw new Error(`daily click write failed: ${createRes.status}/${retry.status} ${t}`);
   }
+  await Promise.all([
+    firestoreIncrementPeriodTotal(env, token, project, "click_monthly", month, "month", month).catch((err) =>
+      console.error("click_monthly_failed", err)
+    ),
+    firestoreIncrementPeriodTotal(env, token, project, "click_yearly", year, "year", year).catch((err) =>
+      console.error("click_yearly_failed", err)
+    ),
+  ]);
 }
 
 async function edgeIncrement(norm, ctx) {
@@ -1058,6 +1175,30 @@ async function firestoreRecordPresence(env, opts) {
     monthlyCreate
   );
 
+  const year = day.slice(0, 4);
+  const yearlyTransforms = [
+    { fieldPath: "heartbeats", increment: { integerValue: "1" } },
+    { fieldPath: "updated", setToServerValue: "REQUEST_TIME" },
+  ];
+  if (opts.firstYear) {
+    yearlyTransforms.push({ fieldPath: "uniqueVisitors", increment: { integerValue: "1" } });
+  }
+  const yearlyCreate = {
+    year: { stringValue: year },
+    heartbeats: { integerValue: "1" },
+    uniqueVisitors: { integerValue: opts.firstYear ? "1" : "0" },
+    updated: { timestampValue: now.toISOString() },
+  };
+  await firestoreCommitOrCreate(
+    env,
+    token,
+    project,
+    "presence_yearly",
+    year,
+    yearlyTransforms,
+    yearlyCreate
+  );
+
   if (opts.uidHash && opts.label) {
     const userTransforms = [
       { fieldPath: "heartbeats", increment: { integerValue: "1" } },
@@ -1162,6 +1303,12 @@ async function handlePresencePing(request, env, ctx) {
     secondsUntilNextUtcMonth(now) + 86400,
     ctx
   );
+  const year = String(now.getUTCFullYear());
+  const firstYear = await edgeFirstSeen(
+    `year/${year}/${encodeURIComponent(visitorKey)}`,
+    secondsUntilNextUtcYear(now) + 86400,
+    ctx
+  );
 
   let uidHash = "";
   let firstSignedInDay = false;
@@ -1189,6 +1336,7 @@ async function handlePresencePing(request, env, ctx) {
         firstDay,
         firstHour,
         firstMonth,
+        firstYear,
         firstSignedInDay,
         firstUserDay,
         uidHash: uidHash || "",
@@ -1218,4 +1366,122 @@ async function handlePresencePing(request, env, ctx) {
     console.error("presence_ping_failed", err);
     return json({ ok: false, error: "internal_error" }, 500);
   }
+}
+
+async function steamRateLimit(request, ctx) {
+  const ip = clientIp(request);
+  return rateLimitOk(ip, ctx, {
+    max: STEAM_RATE_LIMIT_MAX,
+    windowSec: STEAM_RATE_LIMIT_WINDOW_SEC,
+    prefix: "steam",
+  });
+}
+
+async function cachedSteamJson(cacheKeyUrl, upstreamUrl, ttlSec, ctx) {
+  const cache = caches.default;
+  const cacheReq = new Request(cacheKeyUrl);
+  const hit = await cache.match(cacheReq);
+  if (hit) {
+    const cloned = new Response(hit.body, hit);
+    cloned.headers.set("X-Steam-Cache", "HIT");
+    return cors(cloned);
+  }
+
+  const upstream = await fetch(upstreamUrl, {
+    headers: {
+      Accept: "application/json",
+      "User-Agent": STEAM_UA,
+    },
+  });
+  const text = await upstream.text();
+  if (!upstream.ok) {
+    return json(
+      { ok: false, error: "steam_upstream", status: upstream.status },
+      upstream.status === 429 ? 429 : 502
+    );
+  }
+
+  let parsed;
+  try {
+    parsed = JSON.parse(text);
+  } catch (_) {
+    return json({ ok: false, error: "steam_bad_json" }, 502);
+  }
+
+  const body = JSON.stringify({ ok: true, data: parsed });
+  const res = new Response(body, {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": `public, max-age=${ttlSec}`,
+      "X-Steam-Cache": "MISS",
+    },
+  });
+  const toStore = res.clone();
+  ctx.waitUntil(cache.put(cacheReq, toStore));
+  return cors(res);
+}
+
+async function handleSteamSearch(request, env, ctx) {
+  const rate = await steamRateLimit(request, ctx);
+  if (!rate.ok) {
+    return json(
+      {
+        ok: false,
+        error: "rate_limited",
+        limit: rate.limit,
+        windowSec: STEAM_RATE_LIMIT_WINDOW_SEC,
+      },
+      429
+    );
+  }
+
+  const url = new URL(request.url);
+  const term = String(url.searchParams.get("term") || "")
+    .trim()
+    .slice(0, 80);
+  if (term.length < 2) {
+    return json({ ok: false, error: "invalid_term" }, 400);
+  }
+
+  const upstream =
+    "https://store.steampowered.com/api/storesearch/?" +
+    new URLSearchParams({ term, l: "english", cc: "US" }).toString();
+  const cacheKey =
+    "https://steam-proxy.proxy-list.internal/search/v1?" +
+    new URLSearchParams({ term: term.toLowerCase() }).toString();
+  return cachedSteamJson(cacheKey, upstream, STEAM_SEARCH_CACHE_TTL_SEC, ctx);
+}
+
+async function handleSteamAppDetails(request, env, ctx) {
+  const rate = await steamRateLimit(request, ctx);
+  if (!rate.ok) {
+    return json(
+      {
+        ok: false,
+        error: "rate_limited",
+        limit: rate.limit,
+        windowSec: STEAM_RATE_LIMIT_WINDOW_SEC,
+      },
+      429
+    );
+  }
+
+  const url = new URL(request.url);
+  const raw = String(url.searchParams.get("appids") || "").trim();
+  const appids = raw
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s) => /^\d{1,10}$/.test(s))
+    .slice(0, 1);
+  if (!appids.length) {
+    return json({ ok: false, error: "invalid_appids" }, 400);
+  }
+
+  const id = appids[0];
+  const upstream =
+    "https://store.steampowered.com/api/appdetails?" +
+    new URLSearchParams({ appids: id, l: "english" }).toString();
+  const cacheKey = `https://steam-proxy.proxy-list.internal/appdetails/v1/${id}`;
+  return cachedSteamJson(cacheKey, upstream, STEAM_DETAILS_CACHE_TTL_SEC, ctx);
 }

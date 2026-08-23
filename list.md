@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
-> v6.6 | Released: August 20, 2026
-> r273 | Last Updated: August 23, 2026
-> Total onsite links: 29631 (29289 sorted + 342 unsorted)\
+> v7.0 | Released: August 23, 2026
+> r274 | Last Updated: August 23, 2026
+> Total onsite links: 29560 (29218 sorted + 342 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -16,9 +16,14 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 ## Important Notices
 
 ## Update Notice
+# Game Database Browser
+You can now visually browse through game databases by going to the new game database browser, which can be accessed using the "Game browser" button in the sidebar. You will be able to see games across all or selected databases, search for games, view info and preview images for games (if applicable), and view all links that have your desired game. I hope that by creating this people will be able to get more use out of the list by being able to find what they specifically want to do on the site, and there will be more dedicated tags for specific site features coming later so you can have an easier time making choices on links and finding what you require based on your needs.
 
-# Find Games More Easily
-A new feature is currently in beta which allows you to search for games directly through the search on our site and then get links shown to you that have that game available, which has been done by obtaining game database APIs and adding them to the capabilities of links that have them, then having the site contact the API of the database to find that game.
+# Steam API support
+In order to give some games additional info, the Steam Web API has been integrated to give many games things like detailed descriptions, better game covers, publisher/developer info, and game preview images. This only applies to games on Steam.
+
+## Game statistics
+Statistics have also been added to game databases with game amounts, latest games added, latest modifications made to the database source and games added/removed. As of right now many of these stats won't show any value as they were just implemented.
 
 # 💜 Selenite
 > [!NOTE]
@@ -249,7 +254,7 @@ A new feature is currently in beta which allows you to search for games directly
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Ultraviolet | 41 |
+> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 43 |
 
 > [!IMPORTANT]
 > on some networks, the proxy will load a white screen or an ultraviolet error page, if this happens try using another link as that is known to fix this issue
@@ -366,7 +371,7 @@ A new feature is currently in beta which allows you to search for games directly
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp | Scramjet, Ultraviolet | 29 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 30 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -408,7 +413,7 @@ A new feature is currently in beta which allows you to search for games directly
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet, Ultraviolet | 40 |
+> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 69 |
 > [!IMPORTANT]
 > site has a bunch of ad popup windows, you can close these. it's recommended you use uBlock Origin to view this site without those popups
 
@@ -488,7 +493,7 @@ A new feature is currently in beta which allows you to search for games directly
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 90 |
+> | Proxy/Games | GDB:truffled | Scramjet | 90 |
 
 > [!IMPORTANT]
 > when visiting truffled on a google script (script.google.com) domain, the proxy likely won't work. most games are unaffected
@@ -590,7 +595,7 @@ A new feature is currently in beta which allows you to search for games directly
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 6 |
+> | Proxy/Games | GDB:boredom | Scramjet | 7 |
 
 > [!IMPORTANT]
 > Boredom does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -668,7 +673,7 @@ A new feature is currently in beta which allows you to search for games directly
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 62 |
+> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 68 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -843,7 +848,7 @@ A new feature is currently in beta which allows you to search for games directly
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 12 |
+> | Proxy/Games | GDB:petezah | Scramjet | 12 |
 
 > [!IMPORTANT]
 > PetZah does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -919,7 +924,7 @@ A new feature is currently in beta which allows you to search for games directly
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | Unknown | Scramjet | 78 |
+> | Proxy/Games | GDB:luminsdk | Scramjet | 81 |
 
 > [!IMPORTANT]
 > Imp Proxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1005,7 +1010,7 @@ A new feature is currently in beta which allows you to search for games directly
 | | https://qxkct.airlinemeals.net | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://ypqsc.airlinemeals.net | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# 🍫 Endis
+# 🍫 Practice
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
@@ -1829,7 +1834,7 @@ A new feature is currently in beta which allows you to search for games directly
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 43 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 43 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
@@ -29572,7 +29577,7 @@ A new feature is currently in beta which allows you to search for games directly
 | | https://matrix-integral40.fukushimastudy.org | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://music-lab67.task4z.dpdns.org | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quizizz-static.s3-accelerate.amazonaws.com/_media/catclass/3e1f3354-14d9-4430-8967-973189a10f73-v2 | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://quizizz-static.s3.amazonaws.com/_media/catclass/3e1f3354-14d9-4430-8967-973189a10f73-v2 | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+    | | https://quizizz-static.s3.amazonaws.com/_media/catclass/3e1f3354-14d9-4430-8967-973189a10f73-v2 | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quizizz.com/_media/catclass/3e1f3354-14d9-4430-8967-973189a10f73-v2 | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/task4z/classroom-15x/main/images/4031eaaa36/catclass-cloak/logo.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/task4z/classroom-15x/main/images/4031eaaa36/catclass-cloak/logo.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)

@@ -20,7 +20,10 @@
   ];
   var DAILY_LOOKBACK_DAYS = 90;
   var PRESENCE_DAILY_LOOKBACK = 32;
-  var PRESENCE_MONTHLY_LOOKBACK = 18;
+  var PRESENCE_MONTHLY_LOOKBACK = 36;
+  var CLICK_MONTHLY_LOOKBACK = 36;
+  var CLICK_YEARLY_LOOKBACK = 10;
+  var PRESENCE_YEARLY_LOOKBACK = 10;
 
   var charts = [];
   var detailCharts = [];
@@ -37,6 +40,9 @@
     dailyCache: null,
     presenceDaily: null,
     presenceMonthly: null,
+    presenceYearly: null,
+    clickMonthly: null,
+    clickYearly: null,
     usersSpan: "7d",
     panel: "providers",
   };
@@ -60,6 +66,11 @@
       title: "Users",
       sub:
         "Active visitors over time from presence heartbeats, busiest UTC hours, and monthly uniques.",
+    },
+    games: {
+      title: "Game databases",
+      sub:
+        "Live catalog sizes for each game database, plus snapshot history for games added or removed over time.",
     },
   };
 
@@ -514,6 +525,99 @@
     });
 
     return byProvider.size;
+  }
+
+  function renderOpenArchiveCharts() {
+    var monthly = state.clickMonthly || [];
+    var yearly = state.clickYearly || [];
+    makeChart($("opensMonthlyArchiveChart"), {
+      type: "bar",
+      data: {
+        labels: monthly.map(function (m) {
+          return m.month;
+        }),
+        datasets: [
+          {
+            label: "Opens",
+            data: monthly.map(function (m) {
+              return m.total;
+            }),
+            backgroundColor: CHART_COLORS[2],
+            borderWidth: 0,
+            borderRadius: 4,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          subtitle: monthly.some(function (m) {
+            return m.total > 0;
+          })
+            ? undefined
+            : emptySubtitle("Month archives start filling as opens are recorded."),
+        },
+        scales: {
+          x: { ticks: { maxRotation: 60, minRotation: 0, autoSkip: true, maxTicksLimit: 12 }, grid: { display: false } },
+          y: { beginAtZero: true, ticks: { precision: 0 }, grid: { color: "#2a2a2a" } },
+        },
+      },
+    });
+    makeChart($("opensYearlyArchiveChart"), {
+      type: "bar",
+      data: {
+        labels: yearly.map(function (y) {
+          return y.year;
+        }),
+        datasets: [
+          {
+            label: "Opens",
+            data: yearly.map(function (y) {
+              return y.total;
+            }),
+            backgroundColor: CHART_COLORS[3],
+            borderWidth: 0,
+            borderRadius: 4,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          subtitle: yearly.some(function (y) {
+            return y.total > 0;
+          })
+            ? undefined
+            : emptySubtitle("Year archives start filling as opens are recorded."),
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: { beginAtZero: true, ticks: { precision: 0 }, grid: { color: "#2a2a2a" } },
+        },
+      },
+    });
+  }
+
+  async function loadAndRenderOpenArchives(db) {
+    if (!db) {
+      state.clickMonthly = [];
+      state.clickYearly = [];
+      renderOpenArchiveCharts();
+      return;
+    }
+    try {
+      await Promise.all([loadClickMonthly(db), loadClickYearly(db)]);
+      renderOpenArchiveCharts();
+    } catch (err) {
+      console.warn("[stats] click archive load failed", err);
+      state.clickMonthly = state.clickMonthly || [];
+      state.clickYearly = state.clickYearly || [];
+      renderOpenArchiveCharts();
+    }
   }
 
   function renderOpenCharts(clickRows, urlToProvider) {
@@ -1657,6 +1761,64 @@
     return out;
   }
 
+  function utcYearIds(lookback) {
+    var out = [];
+    var y = new Date().getUTCFullYear();
+    for (var i = lookback - 1; i >= 0; i--) {
+      out.push(String(y - i));
+    }
+    return out;
+  }
+
+  async function loadClickMonthly(db) {
+    if (state.clickMonthly) return state.clickMonthly;
+    var months = utcMonthIds(CLICK_MONTHLY_LOOKBACK);
+    var snaps = await Promise.all(
+      months.map(function (month) {
+        return db.collection("click_monthly").doc(month).get();
+      })
+    );
+    state.clickMonthly = snaps.map(function (snap, i) {
+      var data = snap.exists ? snap.data() || {} : {};
+      return { month: months[i], total: Number(data.total) || 0 };
+    });
+    return state.clickMonthly;
+  }
+
+  async function loadClickYearly(db) {
+    if (state.clickYearly) return state.clickYearly;
+    var years = utcYearIds(CLICK_YEARLY_LOOKBACK);
+    var snaps = await Promise.all(
+      years.map(function (year) {
+        return db.collection("click_yearly").doc(year).get();
+      })
+    );
+    state.clickYearly = snaps.map(function (snap, i) {
+      var data = snap.exists ? snap.data() || {} : {};
+      return { year: years[i], total: Number(data.total) || 0 };
+    });
+    return state.clickYearly;
+  }
+
+  async function loadPresenceYearly(db) {
+    if (state.presenceYearly) return state.presenceYearly;
+    var years = utcYearIds(PRESENCE_YEARLY_LOOKBACK);
+    var snaps = await Promise.all(
+      years.map(function (year) {
+        return db.collection("presence_yearly").doc(year).get();
+      })
+    );
+    state.presenceYearly = snaps.map(function (snap, i) {
+      var data = snap.exists ? snap.data() || {} : {};
+      return {
+        year: years[i],
+        uniqueVisitors: Number(data.uniqueVisitors) || 0,
+        heartbeats: Number(data.heartbeats) || 0,
+      };
+    });
+    return state.presenceYearly;
+  }
+
   function emptySubtitle(text) {
     return {
       display: true,
@@ -1729,9 +1891,9 @@
       return { labels: labels, values: values, yLabel: "Unique visitors / hour" };
     }
 
-    if (span === "6m" || span === "1y") {
+    if (span === "6m" || span === "1y" || span === "3y") {
       var months = state.presenceMonthly || [];
-      var monthCount = span === "6m" ? 6 : 12;
+      var monthCount = span === "6m" ? 6 : span === "1y" ? 12 : 36;
       var monthSlice = months.slice(Math.max(0, months.length - monthCount));
       return {
         labels: monthSlice.map(function (m) {
@@ -1741,6 +1903,18 @@
           return m.uniqueVisitors;
         }),
         yLabel: "Unique visitors / month",
+      };
+    }
+    if (span === "5y") {
+      var years = state.presenceYearly || [];
+      return {
+        labels: years.map(function (y) {
+          return y.year;
+        }),
+        values: years.map(function (y) {
+          return y.uniqueVisitors;
+        }),
+        yLabel: "Unique visitors / year",
       };
     }
 
@@ -1964,7 +2138,7 @@
       return;
     }
     try {
-      await Promise.all([loadPresenceDaily(db), loadPresenceMonthly(db)]);
+      await Promise.all([loadPresenceDaily(db), loadPresenceMonthly(db), loadPresenceYearly(db)]);
       updateUsersKpis();
       renderUserStatsCharts();
     } catch (err) {
@@ -1984,6 +2158,7 @@
     if (raw === "filters" || raw === "filter" || raw === "filter-data") return "filters";
     if (raw === "contributions" || raw === "contribution" || raw === "contributors") return "contributions";
     if (raw === "users" || raw === "user" || raw === "activity") return "users";
+    if (raw === "games" || raw === "game" || raw === "gdb" || raw === "game-databases") return "games";
     if (raw === "providers" || raw === "domains" || raw === "providers-domains") return "providers";
     return "providers";
   }
@@ -2025,6 +2200,9 @@
       }
     }
     resizeVisibleCharts();
+    if (id === "games" && window.ProxyListGamesStats && typeof window.ProxyListGamesStats.ensureLoaded === "function") {
+      void window.ProxyListGamesStats.ensureLoaded();
+    }
   }
 
   function wireStatsNav() {
@@ -2117,6 +2295,7 @@
       );
       setText("statOpens", "—");
       renderOpenCharts([], state.urlToProvider);
+      void loadAndRenderOpenArchives(null);
       void loadAndRenderUserStats(null);
       return;
     }
@@ -2144,6 +2323,7 @@
       renderOpenCharts([], state.urlToProvider);
     }
 
+    void loadAndRenderOpenArchives(state.db);
     void loadAndRenderUserStats(state.db);
 
     // Keep User Statistics aggregates fresh while this page is open.

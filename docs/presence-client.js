@@ -112,7 +112,8 @@
         /\/about(\/|$)/i.test(pathname) ||
         /\/account(\/|$)/i.test(pathname) ||
         /\/login(\/|$)/i.test(pathname) ||
-        /\/admin(\/|$)/i.test(pathname)
+        /\/admin(\/|$)/i.test(pathname) ||
+        /\/games-browser(\/|$)/i.test(pathname)
       ) {
         return ".." + p;
       }

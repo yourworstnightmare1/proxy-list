@@ -226,6 +226,47 @@
     .notice.warn { border-color: #5a4a20; color: var(--warn); }
     .notice.err { border-color: #6b2d2d; color: var(--danger); }
     .notice[hidden] { display: none !important; }
+    .games-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      max-height: 22rem;
+      overflow: auto;
+    }
+    .games-list li {
+      padding: 0.4rem 0.15rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .games-list li:last-child { border-bottom: 0; }
+    .games-list .meta {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 0.1rem;
+    }
+    .games-mod-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.75rem;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .games-bar {
+      height: 0.55rem;
+      border-radius: 999px;
+      background: #222;
+      overflow: hidden;
+      min-width: 6rem;
+    }
+    .games-bar > span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #3a6ea5, var(--accent));
+      border-radius: 999px;
+    }
+    .ok { color: var(--ok); }
+    .danger { color: var(--danger); }
     a { color: var(--accent); }
     .provider-search-row {
       display: flex;
@@ -380,7 +421,7 @@
   <div class="layout">
     <aside class="stats-sidebar" aria-label="Statistics navigation">
       <p class="brand">Statistics</p>
-      <p class="brand-sub">Providers, domains, web filters, contributors, and users.</p>
+      <p class="brand-sub">Providers, domains, web filters, contributors, users, and game databases.</p>
       <nav class="sidebar-actions" aria-label="Statistics sections">
         <a class="btn" href="../">
           <img class="sidebar-btn-icon" src="./icon-back.png" width="18" height="18" alt="" aria-hidden="true" />
@@ -402,6 +443,10 @@
           <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           Users
         </button>
+        <button type="button" class="btn" data-stats-panel="games" id="navGames">
+          <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          Game databases
+        </button>
       </nav>
     </aside>
 
@@ -421,6 +466,7 @@
           <button type="button" class="btn" data-stats-panel="filters">Filters</button>
           <button type="button" class="btn" data-stats-panel="contributions">Contributions</button>
           <button type="button" class="btn" data-stats-panel="users">Users</button>
+          <button type="button" class="btn" data-stats-panel="games">Games</button>
         </nav>
 
         <div id="statusNotice" class="notice" hidden></div>
@@ -559,6 +605,26 @@
               <p class="hint">Open totals rolled up to providers for links in the top 100.</p>
               <div class="chart-wrap tall">
                 <canvas id="opensByProviderChart" aria-label="Opens by provider"></canvas>
+              </div>
+            </section>
+          </div>
+
+          <div class="charts-row">
+            <section class="card">
+              <h2>Opens by month (archive)</h2>
+              <p class="hint">
+                Site-wide open totals archived per UTC month so longer history is not lost when daily
+                lookbacks roll off.
+              </p>
+              <div class="chart-wrap tall">
+                <canvas id="opensMonthlyArchiveChart" aria-label="Opens by month archive"></canvas>
+              </div>
+            </section>
+            <section class="card">
+              <h2>Opens by year (archive)</h2>
+              <p class="hint">Site-wide open totals archived per UTC year.</p>
+              <div class="chart-wrap tall">
+                <canvas id="opensYearlyArchiveChart" aria-label="Opens by year archive"></canvas>
               </div>
             </section>
           </div>
@@ -780,6 +846,8 @@
               <button type="button" class="btn" data-users-span="1m">1m</button>
               <button type="button" class="btn" data-users-span="6m">6m</button>
               <button type="button" class="btn" data-users-span="1y">1y</button>
+              <button type="button" class="btn" data-users-span="3y">3y</button>
+              <button type="button" class="btn" data-users-span="5y">5y</button>
             </div>
             <div class="chart-wrap tall">
               <canvas id="usersActiveOverTimeChart" aria-label="Active users over time"></canvas>
@@ -807,11 +875,102 @@
             </div>
           </section>
         </div>
+
+        <div class="panel" id="panel-games" data-panel="games" hidden>
+          <div class="toolbar" style="margin-bottom:1rem">
+            <label class="muted" style="display:flex;flex-direction:column;gap:.3rem;font-size:.78rem;font-weight:600">
+              Database
+              <select id="gamesDbFilter" aria-label="Filter by game database" style="min-width:16rem;padding:.45rem .6rem;border-radius:6px;border:1px solid var(--border);background:#141414;color:var(--text);font:inherit;font-size:.88rem">
+                <option value="all">All databases</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="gamesBaselineNotice" class="notice warn" hidden></div>
+
+          <div class="stat-grid" aria-label="Game databases overview">
+            <div class="stat">
+              <div class="n" id="gamesStatCatalogs">—</div>
+              <div class="l">Databases</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="gamesStatEntries">—</div>
+              <div class="l">Total catalog entries (live)</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="gamesStatUnique">—</div>
+              <div class="l">Unique names (snapshot)</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="gamesStatSnapshot">—</div>
+              <div class="l">Latest snapshot</div>
+            </div>
+          </div>
+
+          <section class="card">
+            <h2>Games per database</h2>
+            <p class="hint">Live counts from each catalog API/JSON source. Snapshot count shown when available.</p>
+            <div style="overflow:auto">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Database</th>
+                    <th class="num">Live</th>
+                    <th class="num">Snapshot</th>
+                    <th>Share</th>
+                  </tr>
+                </thead>
+                <tbody id="gamesCountsBody">
+                  <tr><td colspan="4" class="muted">Loading catalogs…</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>Games added / removed over time</h2>
+            <p class="hint">Catalog size from UTC-day snapshots. Refresh with <code>scripts/build_gdb_stats.py</code>.</p>
+            <div class="chart-wrap tall" id="gamesHistoryWrap">
+              <canvas id="gamesHistoryChart" aria-label="Catalog size over time"></canvas>
+            </div>
+            <p id="gamesHistoryEmpty" class="muted" hidden>
+              Need at least two snapshots before a growth chart can be drawn. A baseline was recorded;
+              adds/removes appear after the next snapshot.
+            </p>
+          </section>
+
+          <section class="card">
+            <h2>Latest games found</h2>
+            <p class="hint" id="gamesLatestHint">Games newly present in the latest snapshot compared with the previous day.</p>
+            <ul class="games-list" id="gamesLatestList">
+              <li class="muted">No data yet.</li>
+            </ul>
+          </section>
+
+          <section class="card">
+            <h2>Latest database modifications</h2>
+            <p class="hint">Recent snapshot events for the selected scope (baseline or +added / −removed).</p>
+            <ul class="games-list" id="gamesModsList">
+              <li class="muted">No data yet.</li>
+            </ul>
+          </section>
+
+          <p class="hint" style="margin-top:.5rem">
+            The Proxy List does not host these games. Catalogs are read from each database’s API/JSON lists.
+            Some browser enrichment uses the
+            <a href="https://steamapi.xpaw.me/" target="_blank" rel="noopener noreferrer">Steam Web API</a>.
+          </p>
+        </div>
       </main>
     </div>
   </div>
 
   <script src="../vendor/chart.umd.min.js"></script>
+  <script src="../game-db-search.js"></script>
+  <script src="./games-stats.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
   <script src="../firebase-config.example.js"></script>
   <script src="../firebase-config.local.js"></script>
   <script src="../firebase-auth-ready.js"></script>

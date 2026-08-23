@@ -2039,12 +2039,19 @@
     }
     .summary-body {
       padding: 0.85rem 1rem 1rem;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
       flex: 1 1 auto;
       min-height: 0;
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
+    }
+    #updateNoticesBody {
+      min-height: 0;
+      flex: 1 1 auto;
     }
     .summary-footer {
       padding: 0.75rem 1rem;
@@ -2554,6 +2561,37 @@
     html[data-theme="light"] .settings-warn-option {
       color: #c2410c;
     }
+    .settings-gdb-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));
+      gap: 0.35rem 0.75rem;
+      margin-top: 0.55rem;
+      max-height: 14rem;
+      overflow: auto;
+      padding: 0.55rem 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+    }
+    .settings-gdb-list label.check {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.25;
+      cursor: pointer;
+    }
+    .settings-gdb-list label.check input {
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+    .settings-gdb-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.55rem;
+    }
     .app-toast {
       position: fixed;
       left: 50%;
@@ -2766,6 +2804,10 @@
           <a class="btn" href="./stats/">
             <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             Statistics
+          </a>
+          <a class="btn" href="./games-browser/">
+            <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h.01"/><path d="M12 8h.01"/><path d="M17 8h.01"/></svg>
+            Game browser
           </a>
           <a class="btn" href="./about/">
             <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
@@ -3254,6 +3296,20 @@
               <option value="show">Show (default)</option>
               <option value="hide">Hide</option>
             </select>
+          </div>
+        </div>
+        <div class="settings-section">
+          <h3>Game Databases</h3>
+          <div class="settings-field">
+            <span class="settings-label">Only Search Games Using Selected Databases</span>
+            <p class="settings-desc">
+              Limit searches for games to only selected game databases.
+            </p>
+            <div class="settings-gdb-list" id="settingsGdbList" role="group" aria-label="Game databases to search"></div>
+            <div class="settings-gdb-actions">
+              <button class="btn" id="settingsGdbSelectAllBtn" type="button">Select all</button>
+              <button class="btn" id="settingsGdbClearBtn" type="button">Clear</button>
+            </div>
           </div>
         </div>
         <div class="settings-section">
@@ -3823,6 +3879,8 @@
       renderLoadPerChunk: "medium",
       grabLinkClicksPerChunk: "per_chunk",
       saveSettingsLocally: false,
+      // null = all catalogs; otherwise only these gdb:* tags are searched/warmed.
+      gdbSearchSelectedTags: null,
     };
     let appSettings = Object.assign({}, APP_SETTINGS_DEFAULTS);
     let appToastTimer = null;
@@ -3871,6 +3929,14 @@
         out.grabLinkClicksPerChunk = clickMode;
       }
       if (typeof raw.saveSettingsLocally === "boolean") out.saveSettingsLocally = raw.saveSettingsLocally;
+      if (Array.isArray(raw.gdbSearchSelectedTags)) {
+        const tags = raw.gdbSearchSelectedTags
+          .map((t) => String(t || "").trim().toLowerCase())
+          .filter((t) => t.indexOf("gdb:") === 0);
+        out.gdbSearchSelectedTags = Array.from(new Set(tags));
+      } else if (raw.gdbSearchSelectedTags === null) {
+        out.gdbSearchSelectedTags = null;
+      }
       return out;
     }
 
@@ -4600,6 +4666,7 @@
       if (clickSel) clickSel.value = appSettings.grabLinkClicksPerChunk || "per_chunk";
       const saveSel = $("settingsSaveLocalSelect");
       if (saveSel) saveSel.value = appSettings.saveSettingsLocally ? "enabled" : "disabled";
+      syncGdbSettingsList();
       const chunkDesc = $("settingsChunkSizeDesc");
       if (chunkDesc) {
         chunkDesc.textContent =
@@ -4609,6 +4676,65 @@
       }
       markSettingsWarnOptions();
       syncFilterControlsToUi();
+    }
+
+    function listKnownGdbCatalogs() {
+      const api = window.ProxyListGameDbSearch;
+      if (!api || typeof api.listCatalogs !== "function") return [];
+      return api.listCatalogs().slice().sort((a, b) => String(a.label || "").localeCompare(String(b.label || "")));
+    }
+
+    /** null = search all catalogs; [] = none; otherwise only these gdb:* tags. */
+    function getSelectedGdbSearchTags() {
+      const selected = appSettings.gdbSearchSelectedTags;
+      if (selected === null || selected === undefined) return null;
+      if (!Array.isArray(selected)) return null;
+      if (!selected.length) return [];
+      const known = new Set(listKnownGdbCatalogs().map((c) => c.tag));
+      const filtered = selected.filter((t) => !known.size || known.has(t));
+      if (known.size && filtered.length >= known.size) return null;
+      return filtered;
+    }
+
+    function syncGdbSettingsList() {
+      const wrap = $("settingsGdbList");
+      if (!wrap) return;
+      const catalogs = listKnownGdbCatalogs();
+      const selected = appSettings.gdbSearchSelectedTags;
+      const allSelected = selected === null || selected === undefined;
+      const noneSelected = Array.isArray(selected) && selected.length === 0;
+      const selectedSet = !allSelected && !noneSelected ? new Set(selected) : null;
+      wrap.innerHTML = catalogs
+        .map((cat) => {
+          const checked = allSelected || (selectedSet && selectedSet.has(cat.tag));
+          return (
+            '<label class="check"><input type="checkbox" data-gdb-tag="' +
+            escapeAttr(cat.tag) +
+            '"' +
+            (checked ? " checked" : "") +
+            " />" +
+            escapeHtml(cat.label) +
+            "</label>"
+          );
+        })
+        .join("");
+      if (!catalogs.length) {
+        wrap.innerHTML = '<p class="settings-desc" style="margin:0;">No game databases available yet.</p>';
+      }
+    }
+
+    async function commitGdbSettingsFromUi() {
+      const wrap = $("settingsGdbList");
+      if (!wrap) return;
+      const catalogs = listKnownGdbCatalogs();
+      const checked = Array.from(wrap.querySelectorAll('input[type="checkbox"][data-gdb-tag]:checked')).map((inp) =>
+        String(inp.getAttribute("data-gdb-tag") || "").toLowerCase()
+      );
+      let next = null;
+      if (!checked.length) next = [];
+      else if (checked.length >= catalogs.length) next = null;
+      else next = checked;
+      await updateAppSetting({ gdbSearchSelectedTags: next });
     }
 
     function markSettingsWarnOptions() {
@@ -4648,6 +4774,7 @@
         await ensureLinkLensLoaded();
       } catch (_) {}
       syncFilterControlsToUi();
+      syncGdbSettingsList();
     }
 
     function closeSettingsModal() {
@@ -8304,7 +8431,11 @@
     function collectGdbSuggestionItems(query, limit) {
       const api = window.ProxyListGameDbSearch;
       if (!api || typeof api.suggestFromCache !== "function") return [];
-      return api.suggestFromCache(query, { limit: limit != null ? limit : 6 });
+      const tags = getSelectedGdbSearchTags();
+      return api.suggestFromCache(query, {
+        limit: limit != null ? limit : 6,
+        tags: tags === null ? undefined : tags,
+      });
     }
 
     function scheduleGdbSuggestionRefresh(query, source) {
@@ -8313,7 +8444,8 @@
       const q = String(query || "").trim();
       if (!q) return;
       const token = ++gdbSuggestRefreshToken;
-      void api.warmAll().then(() => {
+      const tags = getSelectedGdbSearchTags();
+      void api.warmAll(tags === null ? undefined : { tags: tags }).then(() => {
         if (token !== gdbSuggestRefreshToken) return;
         if (source === "palette") {
           if (!isSearchPaletteOpen()) return;
@@ -8577,16 +8709,21 @@
           meta: "Provider",
         }));
         const api = window.ProxyListGameDbSearch;
+        const selectedTags = getSelectedGdbSearchTags();
+        const selectedSet = selectedTags === null ? null : new Set(selectedTags);
         const gdbDbs =
           api && typeof api.listCatalogs === "function"
-            ? api.listCatalogs().map((cat) => ({
-                kind: "gdb-database",
-                value: cat.tag,
-                label: cat.label,
-                meta: "Game DB",
-                tags: [cat.tag],
-                tag: cat.tag,
-              }))
+            ? api
+                .listCatalogs()
+                .filter((cat) => selectedSet === null || selectedSet.has(cat.tag))
+                .map((cat) => ({
+                  kind: "gdb-database",
+                  value: cat.tag,
+                  label: cat.label,
+                  meta: "Game DB",
+                  tags: [cat.tag],
+                  tag: cat.tag,
+                }))
             : [];
         // Empty query: show recents, else providers + known game databases.
         if (recents.length) return recents;
@@ -12116,9 +12253,20 @@
       "gdb:radon": "Rift vault pack (Radon). No detailed info on this database yet.",
       "gdb:fyinx": "Rift vault pack (Fyinx). No detailed info on this database yet.",
       "gdb:truffled":
-        "Rift vault pack (Truffled). Truffled games use local wrapper HTML files on Rift.",
+        "Database made for and exclusively used by Truffled links.",
       "gdb:totally-science": "Rift vault pack (Totally Science). No detailed info on this database yet.",
-      "gdb:petezah": "Rift vault pack (PeteZah Lite). No detailed info on this database yet.",
+      "gdb:petezah":
+        "Database made for PetZah, with some games contributed from Selenite's database.",
+      "gdb:frogies-arcade":
+        "Database made for and used exclusively by frogie's arcade links.",
+      "gdb:space":
+        "Database made for and used exclusively by Space links.",
+      "gdb:boredom":
+        "Database made for and exclusively used by Boredom links.",
+      "gdb:dogeub":
+        "Database made for and exclusively used by dogeub links.",
+      "gdb:utopia":
+        "Database made for Utopia Education links with a few externally hosted games in the mix. External games loaded via Ultraviolet.",
       eclipse: "No info on this item yet.",
       rammerhead:
         "Well-known proxy technology that is only able to be used by select providers that has reCAPTCHA support. May require a paid tier for best experience.",
@@ -12525,7 +12673,10 @@
 
         wireSearchAutocomplete(links);
         if (window.ProxyListGameDbSearch && typeof window.ProxyListGameDbSearch.warmAll === "function") {
-          void window.ProxyListGameDbSearch.warmAll();
+        if (window.ProxyListGameDbSearch && typeof window.ProxyListGameDbSearch.warmAll === "function") {
+          const tags = getSelectedGdbSearchTags();
+          void window.ProxyListGameDbSearch.warmAll(tags === null ? undefined : { tags: tags });
+        }
         }
         $("q").addEventListener("input", () => {
           scheduleRender(links, meta, link_check, { debounceMs: 200 });
@@ -12802,6 +12953,26 @@
             void updateAppSetting({
               additionalNotesVisibility: settingsAdditionalNotesSelect.value === "hide" ? "hide" : "show",
             });
+          });
+        }
+        const settingsGdbList = $("settingsGdbList");
+        if (settingsGdbList) {
+          settingsGdbList.addEventListener("change", (ev) => {
+            const t = ev && ev.target;
+            if (!t || t.type !== "checkbox" || !t.getAttribute("data-gdb-tag")) return;
+            void commitGdbSettingsFromUi();
+          });
+        }
+        const settingsGdbSelectAllBtn = $("settingsGdbSelectAllBtn");
+        if (settingsGdbSelectAllBtn) {
+          settingsGdbSelectAllBtn.addEventListener("click", () => {
+            void updateAppSetting({ gdbSearchSelectedTags: null });
+          });
+        }
+        const settingsGdbClearBtn = $("settingsGdbClearBtn");
+        if (settingsGdbClearBtn) {
+          settingsGdbClearBtn.addEventListener("click", () => {
+            void updateAppSetting({ gdbSearchSelectedTags: [] });
           });
         }
         const settingsRenderEmojisSelect = $("settingsRenderEmojisSelect");

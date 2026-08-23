@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Game Database Browser | Proxy list</title>
+<link rel="icon" type="image/png" href="../favicon.png" />
+<script src="../game-db-search.js"></script>
+<script src="../presence-client.js"></script>
+<script src="../steam-enrich.js"></script>
+<style>
+:root {
+  --bg: #141414;
+  --surface: #1c1c1c;
+  --border: #333;
+  --text: #f2f2f2;
+  --muted: #9a9a9a;
+  --accent: #ff00dd;
+  --font: "Segoe UI", system-ui, sans-serif;
+  --slide: .48s cubic-bezier(.22, .61, .36, 1);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+header h1 { margin: 0 0 .25rem; font-size: 1.25rem; }
+header .sub { margin: 0; color: var(--muted); font-size: .88rem; max-width: 42rem; }
+.header-actions { display: flex; flex-wrap: wrap; gap: .45rem; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  padding: .45rem .75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #121212;
+  color: var(--text);
+  font: inherit;
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--accent); color: #fff; }
+.btn-primary { background: #2a1024; border-color: #5c2a52; }
+main {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 1.5rem;
+  min-height: 560px;
+}
+.page-foot {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1rem 2.5rem;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.5;
+}
+.page-foot p { margin: 0 0 .65rem; max-width: 46rem; }
+.page-foot a { color: var(--accent); }
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.dropdown { position: relative; width: min(22rem, 100%); }
+.dropdown-trigger { width: 100%; justify-content: space-between; }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + .35rem);
+  left: 0;
+  right: 0;
+  max-height: 18rem;
+  overflow: auto;
+  padding: .55rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #101010;
+  box-shadow: 0 12px 40px rgba(0,0,0,.45);
+}
+.dropdown.open .dropdown-menu { display: block; }
+.dropdown-menu .hint { margin: 0 0 .45rem; color: var(--muted); font-size: .75rem; }
+.gdb-option {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .35rem .3rem;
+  border-radius: 4px;
+  font-size: .88rem;
+  cursor: pointer;
+}
+.gdb-option:hover { background: #1a1a1a; }
+.gdb-option input { accent-color: var(--accent); }
+.dropdown-actions {
+  display: flex;
+  gap: .4rem;
+  margin-top: .45rem;
+  padding-top: .45rem;
+  border-top: 1px solid var(--border);
+}
+.search-field {
+  width: min(22rem, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+.search-field label { font-size: .78rem; color: var(--muted); }
+.search-field input {
+  width: 100%;
+  padding: .55rem .7rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: #101010;
+  color: var(--text);
+  font: inherit;
+}
+.status {
+  text-align: center;
+  color: var(--muted);
+  font-size: .88rem;
+  min-height: 1.25rem;
+  margin: .25rem 0 .75rem;
+}
+.carousel-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  min-height: 420px;
+  overflow: hidden;
+  padding: 36px 0;
+  margin: -12px 0;
+}
+.nav-arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 2px solid #ddd;
+  background: #111;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform .18s ease, border-color .18s ease;
+  z-index: 12;
+}
+.nav-arrow:hover { transform: scale(1.06); border-color: var(--accent); }
+.nav-arrow:active { transform: scale(.96); }
+.nav-arrow.light { background: #f3f3f3; color: #111; border-color: #111; }
+.carousel {
+  position: relative;
+  width: min(1100px, 100%);
+  height: 360px;
+  overflow: visible;
+  perspective: 1200px;
+}
+.case {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 240px;
+  margin: -120px 0 0 -100px;
+  transition: transform var(--slide), opacity var(--slide), filter var(--slide);
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+.case.no-anim { transition: none !important; }
+.case.pos-0 { transform: translateX(0) scale(1.12); z-index: 9; opacity: 1; filter: none; }
+.case.pos-1 { transform: translateX(230px) scale(.9); z-index: 8; opacity: .96; }
+.case.pos--1 { transform: translateX(-230px) scale(.9); z-index: 8; opacity: .96; }
+.case.pos-2 { transform: translateX(420px) scale(.78); z-index: 7; opacity: .78; filter: brightness(.78); }
+.case.pos--2 { transform: translateX(-420px) scale(.78); z-index: 7; opacity: .78; filter: brightness(.78); }
+.case.pos-3 { transform: translateX(590px) scale(.66); z-index: 6; opacity: .5; filter: brightness(.55); }
+.case.pos--3 { transform: translateX(-590px) scale(.66); z-index: 6; opacity: .5; filter: brightness(.55); }
+.case.pos-4 { transform: translateX(740px) scale(.56); z-index: 5; opacity: .28; filter: brightness(.38); }
+.case.pos--4 { transform: translateX(-740px) scale(.56); z-index: 5; opacity: .28; filter: brightness(.38); }
+.case.pos-5 { transform: translateX(860px) scale(.5); z-index: 1; opacity: 0; pointer-events: none; }
+.case.pos--5 { transform: translateX(-860px) scale(.5); z-index: 1; opacity: 0; pointer-events: none; }
+.case-ambient {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 160%;
+  height: 150%;
+  transform: translate(-50%, -50%) scale(.92);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 40% 35%, var(--glow-a, rgba(255,0,221,.55)) 0%, transparent 58%),
+    radial-gradient(circle at 70% 70%, var(--glow-b, rgba(99,102,241,.4)) 0%, transparent 62%);
+  filter: blur(24px) saturate(1.35);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.case.pos-0 .case-ambient {
+  opacity: .95;
+  transform: translate(-50%, -50%) scale(1);
+  animation: ambientPulse 3.6s ease-in-out infinite alternate;
+}
+.jewel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,.55);
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  transition: box-shadow .35s ease, border-color .35s ease;
+}
+.case.pos-0 .jewel {
+  border-color: rgba(255,255,255,.14);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.55),
+    0 0 0 1px rgba(255,255,255,.04),
+    0 0 42px color-mix(in srgb, var(--glow-a, #ff00dd) 42%, transparent);
+}
+.spine {
+  position: relative;
+  background: var(--case-accent, var(--accent));
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  padding: .35rem 0;
+  text-align: center;
+}
+.spine .bang {
+  position: absolute;
+  bottom: .35rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  writing-mode: horizontal-tb;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+.cover {
+  position: relative;
+  background:
+    linear-gradient(45deg, #333 25%, transparent 25%) -6px 0 / 12px 12px,
+    linear-gradient(-45deg, #333 25%, transparent 25%) -6px 0 / 12px 12px,
+    linear-gradient(45deg, transparent 75%, #333 75%) 0 0 / 12px 12px,
+    linear-gradient(-45deg, transparent 75%, #333 75%) 0 0 / 12px 12px,
+    #222;
+}
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #1a1a1a;
+}
+.cover .fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .75rem;
+  text-align: center;
+  color: #bbb;
+  font-size: .82rem;
+  font-weight: 600;
+}
+.meta { text-align: center; margin-top: .85rem; }
+.meta .game-name { margin: 0; font-size: 1.45rem; font-weight: 700; }
+.meta .publisher { margin: .2rem 0 0; font-size: 1rem; color: #ddd; }
+.meta .db-line { margin: .35rem 0 0; font-size: .92rem; color: var(--muted); }
+.meta .db-line strong { color: #fff; font-weight: 600; }
+.empty { text-align: center; color: var(--muted); padding: 3rem 1rem; }
+.stage {
+  position: relative;
+  min-height: 420px;
+}
+.browse-view[hidden], .detail-view[hidden] { display: none !important; }
+.browse-view {
+  transition: filter .45s ease, opacity .45s ease, transform .45s ease;
+}
+.browse-view.is-blurred {
+  filter: blur(12px) saturate(1.15) brightness(.72);
+  opacity: .55;
+  transform: scale(1.015);
+  pointer-events: none;
+  user-select: none;
+}
+.detail-view {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) 1fr;
+  grid-template-rows: minmax(0, 1fr);
+  gap: 1.25rem 1.5rem;
+  align-content: stretch;
+  align-items: stretch;
+  padding: .5rem .15rem 1rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.detail-view.reveal .detail-body {
+  animation: detailBodyIn .4s ease .08s both;
+}
+@keyframes detailBodyIn {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.detail-cover-wrap {
+  position: relative;
+  width: 100%;
+  max-height: 100%;
+  align-self: start;
+}
+.detail-ambient {
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: 140%;
+  height: 130%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 40% 35%, var(--glow-a, rgba(255,0,221,.55)) 0%, transparent 58%),
+    radial-gradient(circle at 70% 70%, var(--glow-b, rgba(99,102,241,.4)) 0%, transparent 62%);
+  filter: blur(28px) saturate(1.35);
+  opacity: .9;
+  animation: ambientPulse 3.6s ease-in-out infinite alternate;
+}
+@keyframes ambientPulse {
+  from { opacity: .72; transform: translate(-50%, -50%) scale(.96); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1.04); }
+}
+.detail-cover {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: min(52vh, 420px);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #222;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,255,255,.04),
+    0 0 48px color-mix(in srgb, var(--glow-a, #ff00dd) 35%, transparent);
+}
+.detail-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.detail-cover .fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  color: #bbb;
+  font-weight: 600;
+}
+.detail-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+.detail-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: .35rem;
+  scrollbar-gutter: stable;
+}
+.detail-body h2 { margin: 0 0 .55rem; font-size: 1.7rem; line-height: 1.2; }
+.detail-field { margin: 0 0 .85rem; }
+.detail-field .label {
+  display: block;
+  color: var(--muted);
+  font-size: .75rem;
+  margin-bottom: .2rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.detail-field .value {
+  margin: 0;
+  font-size: .98rem;
+  line-height: 1.45;
+  color: #e8e8e8;
+  white-space: pre-wrap;
+}
+.detail-field .value.muted { color: var(--muted); font-style: italic; }
+.detail-field--description.is-collapsed #detailDescription {
+  max-height: 8.5rem;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, #000 62%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent);
+}
+.desc-toggle {
+  margin-top: .45rem;
+  padding: .28rem .65rem;
+  font-size: .8rem;
+}
+.desc-toggle[hidden] { display: none !important; }
+.detail-previews {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: .45rem;
+  margin: 0;
+}
+.detail-previews:has(.value) {
+  display: block;
+}
+.detail-previews[hidden] { display: none !important; }
+.detail-previews .value {
+  margin: 0;
+  font-size: .98rem;
+  line-height: 1.45;
+}
+.detail-previews .value.muted { color: var(--muted); font-style: italic; }
+.detail-previews button.preview-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: #111;
+  cursor: pointer;
+  font: inherit;
+}
+.detail-previews button.preview-thumb:hover,
+.detail-previews button.preview-thumb:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+.detail-previews img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, .88);
+  backdrop-filter: blur(8px);
+  padding: .75rem;
+  box-sizing: border-box;
+}
+.lightbox[hidden] { display: none !important; }
+.lightbox-top {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: .5rem;
+}
+.lightbox-title {
+  margin: 0;
+  font-size: .95rem;
+  color: #ddd;
+  font-weight: 600;
+}
+.lightbox-close {
+  flex: 0 0 auto;
+}
+.lightbox-stage {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: .5rem;
+}
+.lightbox-nav {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.lightbox-nav:hover { border-color: var(--accent); }
+.lightbox-nav:disabled {
+  opacity: .35;
+  cursor: default;
+}
+.lightbox-frame {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .55);
+  background: #0a0a0a;
+}
+.lightbox-thumbs {
+  flex: 0 0 auto;
+  display: flex;
+  gap: .4rem;
+  overflow-x: auto;
+  padding: .65rem 0 .15rem;
+  margin-top: .35rem;
+  scrollbar-gutter: stable;
+}
+.lightbox-thumbs button {
+  flex: 0 0 auto;
+  width: 96px;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background: #111;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: .7;
+}
+.lightbox-thumbs button:hover { opacity: 1; }
+.lightbox-thumbs button.is-active {
+  border-color: var(--accent);
+  opacity: 1;
+}
+.lightbox-thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+.detail-steam-note {
+  margin: .35rem 0 0;
+  font-size: .75rem;
+  color: var(--muted);
+}
+.detail-actions {
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .65rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(to top, var(--bg) 70%, rgba(20, 20, 20, .85));
+}
+.fly-cover {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 22px 48px rgba(0,0,0,.55);
+  border: 1px solid #3a3a3a;
+  background: #222;
+  transform-origin: top left;
+  will-change: transform, width, height;
+  transition:
+    transform .55s cubic-bezier(.22,.61,.36,1),
+    width .55s cubic-bezier(.22,.61,.36,1),
+    height .55s cubic-bezier(.22,.61,.36,1),
+    border-radius .55s ease,
+    box-shadow .55s ease;
+}
+.fly-cover img,
+.fly-cover .fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.fly-cover .fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .75rem;
+  text-align: center;
+  color: #bbb;
+  font-weight: 600;
+  background: #222;
+}
+@media (max-width: 700px) {
+  .nav-arrow { display: none; }
+  .case { width: 160px; height: 200px; margin: -100px 0 0 -80px; }
+  .case.pos-1 { transform: translateX(145px) scale(.86); }
+  .case.pos--1 { transform: translateX(-145px) scale(.86); }
+  .case.pos-2 { transform: translateX(255px) scale(.72); }
+  .case.pos--2 { transform: translateX(-255px) scale(.72); }
+  .case.pos-3,
+  .case.pos--3,
+  .case.pos-4,
+  .case.pos--4,
+  .case.pos-5,
+  .case.pos--5 { opacity: 0; pointer-events: none; }
+  .detail-view {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-content: stretch;
+    overflow: hidden;
+  }
+  .detail-cover-wrap { max-width: 220px; margin: 0 auto; }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Game Database Browser</h1>
+      <p class="sub">Browse games from known game databases used by links in the proxy list. Covers and publishers load when the catalog provides them.</p>
+    </div>
+    <div class="header-actions">
+      <a class="btn" href="../">Back to list</a>
+      <a class="btn btn-primary" href="../stats/#games">Statistics</a>
+    </div>
+  </header>
+  <main>
+    <div class="toolbar">
+      <div class="dropdown" id="gdbDropdown">
+        <button type="button" class="btn dropdown-trigger" id="gdbDropdownBtn" aria-expanded="false" aria-controls="gdbDropdownMenu">
+          <span id="gdbDropdownLabel">Game Databases</span>
+          <span aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown-menu" id="gdbDropdownMenu" role="group" aria-label="Game databases">
+          <p class="hint">Only search games using selected databases</p>
+          <div id="gdbOptions"></div>
+          <div class="dropdown-actions">
+            <button type="button" class="btn" id="gdbSelectAll">Select all</button>
+            <button type="button" class="btn" id="gdbClear">Clear</button>
+          </div>
+        </div>
+      </div>
+      <div class="search-field">
+        <label for="gameQuery">Find a game</label>
+        <input id="gameQuery" type="search" placeholder="e.g. Slope, Retro Bowl…" autocomplete="off" />
+      </div>
+    </div>
+    <p class="status" id="statusLine">Loading catalogs…</p>
+
+    <div class="stage" id="stage">
+    <div class="browse-view" id="browseView">
+      <div class="carousel-wrap" id="carouselWrap" hidden>
+        <button type="button" class="nav-arrow light" id="prevBtn" aria-label="Previous game">‹</button>
+        <div class="carousel" id="carousel" aria-live="polite"></div>
+        <button type="button" class="nav-arrow" id="nextBtn" aria-label="Next game">›</button>
+      </div>
+      <div class="meta" id="metaPanel" hidden>
+        <p class="game-name" id="metaName">Game Name</p>
+        <p class="publisher" id="metaPublisher">Publisher</p>
+        <p class="db-line" id="metaDb">DB: <strong>—</strong></p>
+      </div>
+      <div class="empty" id="emptyState" hidden>No games found for the selected databases.</div>
+    </div>
+
+    <div class="detail-view" id="detailView" hidden>
+      <div class="detail-cover-wrap" id="detailCoverWrap">
+        <div class="detail-ambient" id="detailAmbient" aria-hidden="true"></div>
+        <div class="detail-cover" id="detailCover"></div>
+      </div>
+      <div class="detail-body">
+        <div class="detail-scroll">
+        <h2 id="detailName">Game</h2>
+        <div class="detail-field">
+          <span class="label">Developer</span>
+          <p class="value" id="detailDeveloper"></p>
+        </div>
+        <div class="detail-field">
+          <span class="label">Publisher</span>
+          <p class="value" id="detailPublisher"></p>
+        </div>
+        <div class="detail-field detail-field--description" id="detailDescriptionField">
+          <span class="label">Description</span>
+          <p class="value" id="detailDescription"></p>
+          <button type="button" class="btn desc-toggle" id="detailDescToggle" hidden>Show more</button>
+        </div>
+        <div class="detail-field" id="detailPreviewsField" hidden>
+          <span class="label">Previews</span>
+          <div class="detail-previews" id="detailPreviews"></div>
+          <p class="detail-steam-note" id="detailSteamNote" hidden></p>
+        </div>
+        <div class="detail-field">
+          <span class="label">Database</span>
+          <p class="value" id="detailDatabase"></p>
+        </div>
+        </div>
+        <div class="detail-actions">
+          <button type="button" class="btn" id="detailBackBtn">Back</button>
+          <a class="btn btn-primary" id="detailLinksBtn" href="../">Show all links with the game</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <footer class="page-foot">
+    <p>The Proxy List does not host any of these games on site. These games are shown by contacting the selected database's API/JSON lists with the games in them.</p>
+    <p>
+      Some game info and images provided by Steam via the Steam Web API.
+      <a href="https://steamapi.xpaw.me/" target="_blank" rel="noopener noreferrer">Click here to view documentation</a>.
+    </p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+    <div class="lightbox-top">
+      <p class="lightbox-title" id="lightboxTitle">Preview</p>
+      <button type="button" class="btn lightbox-close" id="lightboxClose">Close</button>
+    </div>
+    <div class="lightbox-stage">
+      <button type="button" class="lightbox-nav" id="lightboxPrev" aria-label="Previous preview">‹</button>
+      <div class="lightbox-frame">
+        <img id="lightboxImage" alt="" />
+      </div>
+      <button type="button" class="lightbox-nav" id="lightboxNext" aria-label="Next preview">›</button>
+    </div>
+    <div class="lightbox-thumbs" id="lightboxThumbs"></div>
+  </div>
+
+  <script>
+(function () {
+  "use strict";
+
+  var api = window.ProxyListGameDbSearch;
+  var steamApi = window.ProxyListSteamEnrich;
+  var games = [];
+  var index = 0;
+  var selectedTags = null;
+  var providerCounts = Object.create(null);
+  var queryTimer = null;
+  var animating = false;
+  var detailGame = null;
+  var detailEnrichToken = 0;
+  var lightboxPreviews = [];
+  var lightboxIndex = 0;
+  var SIDE = 4;
+  var SLIDE_MS = 480;
+  var NO_DATA = "No data for this item";
+
+  function $(id) { return document.getElementById(id); }
+
+  /** Side count that avoids wrapping the same game into multiple carousel slots. */
+  function carouselSide() {
+    if (!games.length) return 0;
+    return Math.min(SIDE, Math.max(0, Math.floor((games.length - 1) / 2)));
+  }
+
+  function escapeHtml(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function selectedTagList() {
+    if (selectedTags === null) {
+      return api.listCatalogs().map(function (c) { return c.tag; });
+    }
+    return selectedTags.slice();
+  }
+
+  function updateDropdownLabel() {
+    var all = api.listCatalogs().length;
+    var n = selectedTags === null ? all : selectedTags.length;
+    $("gdbDropdownLabel").textContent =
+      n <= 0 ? "No databases selected" :
+      n >= all ? "All game databases" :
+      n + " database" + (n === 1 ? "" : "s") + " selected";
+  }
+
+  function renderDropdownOptions() {
+    var catalogs = api.listCatalogs().slice().sort(function (a, b) {
+      return String(a.label).localeCompare(String(b.label));
+    });
+    $("gdbOptions").innerHTML = catalogs.map(function (cat) {
+      var checked = selectedTags === null || selectedTags.indexOf(cat.tag) !== -1;
+      var count = providerCounts[cat.tag] || 0;
+      return '<label class="gdb-option"><input type="checkbox" data-tag="' + escapeHtml(cat.tag) + '"' +
+        (checked ? " checked" : "") + " /><span>" + escapeHtml(cat.label) +
+        (count ? ' <span style="color:#888">(' + count + " providers)</span>" : "") +
+        "</span></label>";
+    }).join("");
+    updateDropdownLabel();
+  }
+
+  function commitDropdownFromUi() {
+    var boxes = Array.prototype.slice.call(
+      $("gdbOptions").querySelectorAll('input[type="checkbox"][data-tag]')
+    );
+    var checked = boxes.filter(function (b) { return b.checked; })
+      .map(function (b) { return b.getAttribute("data-tag"); });
+    var all = api.listCatalogs().length;
+    if (!checked.length) selectedTags = [];
+    else if (checked.length >= all) selectedTags = null;
+    else selectedTags = checked;
+    updateDropdownLabel();
+    void reloadGames();
+  }
+
+  function activeDb(game) {
+    if (!game || !game.databases || !game.databases.length) return null;
+    return game.databases.slice().sort(function (a, b) {
+      return (b.providerCount || 0) - (a.providerCount || 0);
+    })[0];
+  }
+
+  function formatDbLine(game) {
+    var dbs = (game && game.databases) || [];
+    if (!dbs.length) return "DB: —";
+    return dbs.map(function (d) {
+      var count = d.providerCount || 0;
+      return "DB: <strong>" + escapeHtml(d.label) + "</strong>" +
+        (count ? " (" + count + " provider" + (count === 1 ? "" : "s") + ")" : "");
+    }).join(" · ");
+  }
+
+  function formatDbPlain(game) {
+    var dbs = (game && game.databases) || [];
+    if (!dbs.length) return "—";
+    return dbs.map(function (d) {
+      var count = d.providerCount || 0;
+      return d.label + (count ? " (" + count + " provider" + (count === 1 ? "" : "s") + ")" : "");
+    }).join(" · ");
+  }
+
+  function coverHtml(game) {
+    if (game.thumbnail) {
+      return '<img alt="" loading="lazy" src="' + escapeHtml(game.thumbnail) + '" />';
+    }
+    return '<div class="fallback">' + escapeHtml(game.name) + "</div>";
+  }
+
+  function bindCoverFallback(root, game) {
+    var img = root.querySelector("img");
+    if (!img) return;
+    img.addEventListener("error", function onErr(ev) {
+      var node = ev.currentTarget;
+      node.removeEventListener("error", onErr);
+      var fallback = document.createElement("div");
+      fallback.className = "fallback";
+      fallback.textContent = game.name;
+      node.replaceWith(fallback);
+    });
+  }
+
+  function renderMeta() {
+    var game = games[index];
+    if (!game) return;
+    $("metaName").textContent = game.name || "Unknown game";
+    var developer = String(game.developer || "").trim();
+    var publisher = String(game.publisher || "").trim();
+    var credit = "";
+    if (developer && publisher && developer !== publisher) {
+      credit = developer + " · " + publisher;
+    } else {
+      credit = developer || publisher;
+    }
+    if (credit) {
+      $("metaPublisher").hidden = false;
+      $("metaPublisher").textContent = credit;
+    } else {
+      $("metaPublisher").hidden = true;
+    }
+    $("metaDb").innerHTML = formatDbLine(game);
+  }
+
+  function paintCase(el, gameIndex) {
+    var game = games[gameIndex];
+    var db = activeDb(game);
+    var accent = (db && db.accent) || (api.catalogAccent && api.catalogAccent(db && db.tag)) || "#ff00dd";
+    el.style.setProperty("--case-accent", accent);
+    el.dataset.index = String(gameIndex);
+    el.innerHTML =
+      '<div class="case-ambient" aria-hidden="true"></div>' +
+      '<div class="jewel"><div class="spine"><span class="bang">!</span>' +
+      escapeHtml((db && db.label) || "Database") +
+      '</div><div class="cover">' + coverHtml(game) + "</div></div>";
+    bindCoverFallback(el, game);
+    if (el.classList.contains("pos-0") || Number(el.dataset.slot) === 0) {
+      applyAmbientColors(game, el);
+    }
+  }
+
+  function refreshCenterAmbient() {
+    var center = $("carousel").querySelector(".case.pos-0");
+    if (!center) return;
+    var gi = Number(center.dataset.index);
+    if (!Number.isFinite(gi) || !games[gi]) return;
+    applyAmbientColors(games[gi], center);
+  }
+
+  function prefetchCenterSteam() {
+    if (!steamApi || typeof steamApi.enrichGame !== "function") return;
+    var game = games[index];
+    if (!game || game.steamEnrich === "done" || game.steamEnrich === "none") return;
+    var gi = index;
+    steamApi.enrichGame(game).then(function (enriched) {
+      if (gi !== index || $("detailView").hidden === false) return;
+      if (enriched.steamEnrich !== "done") return;
+      var center = $("carousel").querySelector(".case.pos-0");
+      if (center && Number(center.dataset.index) === gi) {
+        paintCase(center, gi);
+        applyAmbientColors(enriched, center);
+      }
+      renderMeta();
+    });
+  }
+
+  function rebuildCarousel() {
+    var carousel = $("carousel");
+    carousel.innerHTML = "";
+    if (!games.length) {
+      $("carouselWrap").hidden = true;
+      $("metaPanel").hidden = true;
+      $("emptyState").hidden = false;
+      return;
+    }
+    $("emptyState").hidden = true;
+    $("carouselWrap").hidden = false;
+    $("metaPanel").hidden = false;
+    var side = carouselSide();
+    for (var offset = -side; offset <= side; offset++) {
+      var gi = (index + offset + games.length * 50) % games.length;
+      var el = document.createElement("article");
+      el.className = "case pos-" + offset;
+      el.dataset.slot = String(offset);
+      el.addEventListener("click", onCaseClick);
+      paintCase(el, gi);
+      carousel.appendChild(el);
+    }
+    renderMeta();
+    prefetchCenterSteam();
+  }
+
+  // After a slide, remap existing cases to canonical slots without reloading cover images.
+  function settleCarousel() {
+    var carousel = $("carousel");
+    if (!games.length) {
+      rebuildCarousel();
+      return;
+    }
+    var side = carouselSide();
+    var needed = Object.create(null);
+    var o;
+    for (o = -side; o <= side; o++) {
+      needed[(index + o + games.length * 50) % games.length] = o;
+    }
+    var cases = Array.prototype.slice.call(carousel.querySelectorAll(".case"));
+    cases.forEach(function (el) {
+      var gi = Number(el.dataset.index);
+      if (!Number.isFinite(gi) || needed[gi] == null) {
+        el.remove();
+        return;
+      }
+      var slot = needed[gi];
+      el.style.opacity = "";
+      el.dataset.slot = String(slot);
+      el.className = "case no-anim pos-" + slot;
+      delete needed[gi];
+    });
+    Object.keys(needed).forEach(function (key) {
+      var gi = Number(key);
+      var slot = needed[gi];
+      var el = document.createElement("article");
+      el.className = "case no-anim pos-" + slot;
+      el.dataset.slot = String(slot);
+      el.addEventListener("click", onCaseClick);
+      paintCase(el, gi);
+      carousel.appendChild(el);
+    });
+    void carousel.offsetWidth;
+    Array.prototype.forEach.call(carousel.querySelectorAll(".case"), function (el) {
+      el.classList.remove("no-anim");
+    });
+    refreshCenterAmbient();
+    renderMeta();
+    prefetchCenterSteam();
+  }
+
+  function syncCarousel(options) {
+    var opts = options || {};
+    var animate = !!opts.animate;
+    var delta = opts.delta || 0;
+    var carousel = $("carousel");
+
+    if (!games.length) {
+      rebuildCarousel();
+      animating = false;
+      return;
+    }
+
+    if (!animate || !delta) {
+      rebuildCarousel();
+      return;
+    }
+
+    var side = carouselSide();
+    // Single-cover results have nothing to slide; keep a clean rebuild.
+    if (side < 1) {
+      rebuildCarousel();
+      animating = false;
+      return;
+    }
+
+    $("emptyState").hidden = true;
+    $("carouselWrap").hidden = false;
+    $("metaPanel").hidden = false;
+
+    var cases = Array.prototype.slice.call(carousel.querySelectorAll(".case"));
+    cases.forEach(function (el) {
+      var slot = Number(el.dataset.slot);
+      var nextSlot = slot - delta;
+      el.dataset.slot = String(nextSlot);
+      el.className = "case pos-" + nextSlot;
+    });
+
+    var enterOffset = delta > 0 ? side : -side;
+    var spawnSlot = enterOffset + (delta > 0 ? 1 : -1);
+    var enterIndex = (index + enterOffset + games.length * 50) % games.length;
+    var incoming = document.createElement("article");
+    incoming.className = "case no-anim pos-" + spawnSlot;
+    incoming.dataset.slot = String(spawnSlot);
+    incoming.addEventListener("click", onCaseClick);
+    paintCase(incoming, enterIndex);
+    carousel.appendChild(incoming);
+    void incoming.offsetWidth;
+    incoming.classList.remove("no-anim");
+    incoming.dataset.slot = String(enterOffset);
+    incoming.className = "case pos-" + enterOffset;
+
+    refreshCenterAmbient();
+    renderMeta();
+
+    window.setTimeout(function () {
+      settleCarousel();
+      animating = false;
+    }, SLIDE_MS);
+  }
+
+  function onCaseClick(ev) {
+    var el = ev.currentTarget;
+    var next = Number(el.dataset.index);
+    if (!Number.isFinite(next)) return;
+    if (next === index) {
+      openDetail(games[index], el);
+      return;
+    }
+    moveTo(next);
+  }
+
+  function moveBy(delta) {
+    if (!games.length || animating || !delta) return;
+    moveTo((index + delta + games.length) % games.length);
+  }
+
+  function moveTo(next) {
+    if (!games.length || animating) return;
+    next = ((next % games.length) + games.length) % games.length;
+    if (next === index) {
+      syncCarousel({ animate: false });
+      return;
+    }
+    var delta = next - index;
+    if (Math.abs(delta) > games.length / 2) {
+      delta = delta > 0 ? delta - games.length : delta + games.length;
+    }
+    if (Math.abs(delta) !== 1) {
+      delta = delta > 0 ? 1 : -1;
+      next = (index + delta + games.length) % games.length;
+    }
+    animating = true;
+    index = next;
+    syncCarousel({ animate: true, delta: delta });
+  }
+
+  function setCreditField(el, value) {
+    var text = String(value || "").trim();
+    el.textContent = text || NO_DATA;
+    el.className = "value" + (text ? "" : " muted");
+  }
+
+  function fillDetailCredits(game) {
+    setCreditField($("detailDeveloper"), game && game.developer);
+    setCreditField($("detailPublisher"), game && game.publisher);
+  }
+
+  function setDetailDescription(game) {
+    var desc = String((game && game.description) || "").trim();
+    var descEl = $("detailDescription");
+    var field = $("detailDescriptionField");
+    var toggle = $("detailDescToggle");
+    descEl.textContent = desc || NO_DATA;
+    descEl.className = "value" + (desc ? "" : " muted");
+    field.classList.remove("is-collapsed", "is-expanded");
+    toggle.hidden = true;
+    toggle.textContent = "Show more";
+    if (!desc) return;
+    // Measure after layout; collapse only when text would dominate the panel.
+    window.requestAnimationFrame(function () {
+      if (detailGame !== game) return;
+      var tooLong = descEl.scrollHeight > 150;
+      if (!tooLong) return;
+      field.classList.add("is-collapsed");
+      toggle.hidden = false;
+      toggle.textContent = "Show more";
+    });
+  }
+
+  function fillDetail(game) {
+    $("detailName").textContent = game.name || "Unknown game";
+    fillDetailCredits(game);
+    setDetailDescription(game);
+    $("detailDatabase").textContent = formatDbPlain(game);
+    $("detailCover").innerHTML = coverHtml(game);
+    bindCoverFallback($("detailCover"), game);
+    $("detailLinksBtn").href = "../?q=" + encodeURIComponent(game.name || "");
+    renderPreviews(game);
+    applyAmbientColors(game, $("detailCoverWrap"));
+  }
+
+  function renderPreviews(game) {
+    var field = $("detailPreviewsField");
+    var grid = $("detailPreviews");
+    var note = $("detailSteamNote");
+    if (!game) {
+      field.hidden = true;
+      grid.innerHTML = "";
+      note.hidden = true;
+      note.textContent = "";
+      return;
+    }
+    var previews = game.previews || [];
+    var name = String(game.name || "this game").trim() || "this game";
+    field.hidden = false;
+    if (!previews.length) {
+      grid.innerHTML =
+        '<p class="value muted" id="detailPreviewsEmpty">No preview images available for ' +
+        escapeHtml(name) +
+        "</p>";
+    } else {
+      grid.innerHTML = previews
+        .map(function (p, i) {
+          var thumb = escapeHtml(p.thumb || p.full || "");
+          return (
+            '<button type="button" class="preview-thumb" data-preview-index="' +
+            i +
+            '" aria-label="Open preview ' +
+            (i + 1) +
+            " of " +
+            previews.length +
+            '">' +
+            '<img alt="" loading="lazy" src="' +
+            thumb +
+            '" />' +
+            "</button>"
+          );
+        })
+        .join("");
+    }
+    if (game.steamAppId) {
+      note.hidden = false;
+      note.textContent =
+        "Steam match: " +
+        (game.steamName || game.name) +
+        " (app " +
+        game.steamAppId +
+        ")";
+    } else {
+      note.hidden = true;
+      note.textContent = "";
+    }
+  }
+
+  function isLightboxOpen() {
+    return !$("lightbox").hidden;
+  }
+
+  function closeLightbox() {
+    $("lightbox").hidden = true;
+    lightboxPreviews = [];
+    lightboxIndex = 0;
+    $("lightboxImage").removeAttribute("src");
+    $("lightboxThumbs").innerHTML = "";
+  }
+
+  function showLightboxImage() {
+    if (!lightboxPreviews.length) return;
+    var item = lightboxPreviews[lightboxIndex];
+    var src = (item && (item.full || item.thumb)) || "";
+    $("lightboxImage").src = src;
+    $("lightboxTitle").textContent =
+      "Preview " + (lightboxIndex + 1) + " of " + lightboxPreviews.length;
+    $("lightboxPrev").disabled = lightboxPreviews.length < 2;
+    $("lightboxNext").disabled = lightboxPreviews.length < 2;
+    Array.prototype.forEach.call($("lightboxThumbs").children, function (btn, i) {
+      btn.classList.toggle("is-active", i === lightboxIndex);
+    });
+    var active = $("lightboxThumbs").querySelector(".is-active");
+    if (active && typeof active.scrollIntoView === "function") {
+      active.scrollIntoView({ inline: "nearest", block: "nearest", behavior: "smooth" });
+    }
+  }
+
+  function openLightbox(previews, startIndex) {
+    lightboxPreviews = (previews || []).filter(function (p) {
+      return p && (p.full || p.thumb);
+    });
+    if (!lightboxPreviews.length) return;
+    lightboxIndex = ((startIndex % lightboxPreviews.length) + lightboxPreviews.length) % lightboxPreviews.length;
+    $("lightboxThumbs").innerHTML = lightboxPreviews
+      .map(function (p, i) {
+        var thumb = escapeHtml(p.thumb || p.full || "");
+        return (
+          '<button type="button" data-lightbox-index="' +
+          i +
+          '" aria-label="Preview ' +
+          (i + 1) +
+          '">' +
+          '<img alt="" loading="lazy" src="' +
+          thumb +
+          '" />' +
+          "</button>"
+        );
+      })
+      .join("");
+    $("lightbox").hidden = false;
+    showLightboxImage();
+  }
+
+  function stepLightbox(delta) {
+    if (!lightboxPreviews.length) return;
+    lightboxIndex = (lightboxIndex + delta + lightboxPreviews.length) % lightboxPreviews.length;
+    showLightboxImage();
+  }
+
+  function maybeEnrichSteam(game, opts) {
+    opts = opts || {};
+    if (!steamApi || typeof steamApi.enrichGame !== "function" || !game) {
+      return Promise.resolve(game);
+    }
+    var token = ++detailEnrichToken;
+    return steamApi.enrichGame(game).then(function (enriched) {
+      if (opts.forDetail) {
+        if (token !== detailEnrichToken || detailGame !== game) return enriched;
+        // Refresh text + previews; only swap cover if enrichment improved the thumb
+        // after the fly animation finished (avoid fighting the open transition).
+        setDetailDescription(enriched);
+        fillDetailCredits(enriched);
+        renderPreviews(enriched);
+        if (enriched.steamEnrich === "done" && enriched.thumbnail && !animating) {
+          $("detailCover").innerHTML = coverHtml(enriched);
+          bindCoverFallback($("detailCover"), enriched);
+          applyAmbientColors(enriched, $("detailCoverWrap"));
+        }
+        // Keep carousel cover in sync for when user goes back.
+        syncCarousel({ animate: false });
+      }
+      return enriched;
+    });
+  }
+
+  function hexToRgba(hex, alpha) {
+    var h = String(hex || "").replace("#", "").trim();
+    if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+    if (h.length !== 6) return "rgba(255,0,221," + alpha + ")";
+    var n = parseInt(h, 16);
+    if (!Number.isFinite(n)) return "rgba(255,0,221," + alpha + ")";
+    var r = (n >> 16) & 255;
+    var g = (n >> 8) & 255;
+    var b = n & 255;
+    return "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
+  }
+
+  function setAmbient(target, a, b) {
+    if (!target) return;
+    target.style.setProperty("--glow-a", a);
+    target.style.setProperty("--glow-b", b);
+  }
+
+  function applyAmbientColors(game, target) {
+    target = target || $("detailCoverWrap");
+    if (!target || !game) return;
+    var db = activeDb(game);
+    var accent = (db && db.accent) || (api.catalogAccent && api.catalogAccent(db && db.tag)) || "#ff00dd";
+    setAmbient(target, hexToRgba(accent, 0.55), hexToRgba(accent, 0.28));
+
+    var url = game.thumbnail;
+    if (!url) return;
+    var token = String(game.name || "") + "|" + url;
+    target.dataset.ambientToken = token;
+    var img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = function () {
+      if (target.dataset.ambientToken !== token) return;
+      try {
+        var canvas = document.createElement("canvas");
+        var size = 24;
+        canvas.width = size;
+        canvas.height = size;
+        var ctx = canvas.getContext("2d", { willReadFrequently: true });
+        if (!ctx) return;
+        ctx.drawImage(img, 0, 0, size, size);
+        var data = ctx.getImageData(0, 0, size, size).data;
+        var buckets = Object.create(null);
+        var i;
+        for (i = 0; i < data.length; i += 4) {
+          var r = data[i];
+          var g = data[i + 1];
+          var b = data[i + 2];
+          var a = data[i + 3];
+          if (a < 200) continue;
+          var max = Math.max(r, g, b);
+          var min = Math.min(r, g, b);
+          if (max < 28) continue;
+          if (min > 230) continue;
+          if (max - min < 18 && max > 180) continue;
+          var key =
+            (Math.round(r / 24) << 16) |
+            (Math.round(g / 24) << 8) |
+            Math.round(b / 24);
+          if (!buckets[key]) buckets[key] = { r: 0, g: 0, b: 0, n: 0, sat: 0 };
+          buckets[key].r += r;
+          buckets[key].g += g;
+          buckets[key].b += b;
+          buckets[key].n += 1;
+          buckets[key].sat += max - min;
+        }
+        var ranked = Object.keys(buckets)
+          .map(function (k) { return buckets[k]; })
+          .sort(function (x, y) {
+            return (y.sat / y.n) * y.n - (x.sat / x.n) * x.n;
+          });
+        if (!ranked.length) return;
+        var c1 = ranked[0];
+        var c2 = ranked[1] || ranked[0];
+        var aR = Math.round(c1.r / c1.n);
+        var aG = Math.round(c1.g / c1.n);
+        var aB = Math.round(c1.b / c1.n);
+        var bR = Math.round(c2.r / c2.n);
+        var bG = Math.round(c2.g / c2.n);
+        var bB = Math.round(c2.b / c2.n);
+        setAmbient(
+          target,
+          "rgba(" + aR + "," + aG + "," + aB + ",0.62)",
+          "rgba(" + bR + "," + bG + "," + bB + ",0.4)"
+        );
+      } catch (_) {}
+    };
+    img.onerror = function () {};
+    img.src = url;
+  }
+
+  function showBrowse() {
+    closeLightbox();
+    detailGame = null;
+    detailEnrichToken += 1;
+    $("detailView").hidden = true;
+    $("detailView").classList.remove("reveal");
+    $("browseView").hidden = false;
+    $("browseView").classList.remove("is-blurred", "dimming");
+    renderPreviews(null);
+  }
+
+  function openDetail(game, sourceEl) {
+    if (!game || animating) return;
+    detailGame = game;
+
+    // Fill text fields first; cover handoff happens from the live clone below.
+    $("detailName").textContent = game.name || "Unknown game";
+    fillDetailCredits(game);
+    setDetailDescription(game);
+    $("detailDatabase").textContent = formatDbPlain(game);
+    $("detailLinksBtn").href = "../?q=" + encodeURIComponent(game.name || "");
+    renderPreviews(game);
+    applyAmbientColors(game, $("detailCoverWrap"));
+    maybeEnrichSteam(game, { forDetail: true });
+
+    var coverEl = sourceEl
+      ? sourceEl.querySelector(".cover") || sourceEl
+      : $("carousel").querySelector(".case.pos-0 .cover");
+
+    $("browseView").hidden = false;
+    $("browseView").classList.add("is-blurred");
+    $("detailView").hidden = false;
+    $("detailView").classList.remove("reveal");
+    $("detailCover").style.visibility = "hidden";
+    $("detailCover").innerHTML = "";
+
+    if (!coverEl) {
+      $("detailCover").innerHTML = coverHtml(game);
+      bindCoverFallback($("detailCover"), game);
+      $("detailCover").style.visibility = "";
+      $("detailView").classList.add("reveal");
+      return;
+    }
+
+    animating = true;
+    var from = coverEl.getBoundingClientRect();
+    // Measure destination with a hidden clone so aspect-ratio/layout match the final cover.
+    var measureClone = coverEl.cloneNode(true);
+    measureClone.style.width = "100%";
+    measureClone.style.height = "100%";
+    $("detailCover").appendChild(measureClone);
+    void $("detailView").offsetWidth;
+    var to = $("detailCover").getBoundingClientRect();
+    $("detailCover").innerHTML = "";
+
+    if (!to.width || !to.height || to.top > window.innerHeight - 40) {
+      $("detailCover").innerHTML = coverHtml(game);
+      bindCoverFallback($("detailCover"), game);
+      $("detailCover").style.visibility = "";
+      $("detailView").classList.add("reveal");
+      animating = false;
+      return;
+    }
+
+    var sourceCase = (sourceEl && sourceEl.classList && sourceEl.classList.contains("case"))
+      ? sourceEl
+      : coverEl.closest(".case");
+
+    // Clone the already-decoded cover so the fly layer never flashes empty.
+    var fly = document.createElement("div");
+    fly.className = "fly-cover";
+    var cloned = coverEl.cloneNode(true);
+    cloned.style.width = "100%";
+    cloned.style.height = "100%";
+    fly.appendChild(cloned);
+    fly.style.left = "0px";
+    fly.style.top = "0px";
+    fly.style.width = from.width + "px";
+    fly.style.height = from.height + "px";
+    fly.style.transition = "none";
+    fly.style.transform = "translate(" + from.left + "px," + from.top + "px)";
+    document.body.appendChild(fly);
+    if (sourceCase) sourceCase.style.opacity = "0";
+    void fly.offsetWidth;
+    fly.style.transition = "";
+    fly.style.width = to.width + "px";
+    fly.style.height = to.height + "px";
+    fly.style.transform = "translate(" + to.left + "px," + to.top + "px)";
+    fly.style.borderRadius = "4px";
+
+    window.setTimeout(function () {
+      // Atomic handoff: move the flown nodes into the detail slot, then drop the flyer.
+      var detailCover = $("detailCover");
+      detailCover.innerHTML = "";
+      while (fly.firstChild) detailCover.appendChild(fly.firstChild);
+      detailCover.style.visibility = "";
+      fly.remove();
+      if (sourceCase) sourceCase.style.opacity = "";
+      $("detailView").classList.add("reveal");
+      animating = false;
+      if (detailGame === game && game.steamEnrich === "done" && game.thumbnail) {
+        $("detailCover").innerHTML = coverHtml(game);
+        bindCoverFallback($("detailCover"), game);
+        applyAmbientColors(game, $("detailCoverWrap"));
+        renderPreviews(game);
+      }
+    }, 560);
+  }
+
+  async function reloadGames() {
+    showBrowse();
+    var tags = selectedTagList();
+    if (!tags.length) {
+      $("statusLine").textContent = "No databases selected.";
+      games = [];
+      index = 0;
+      syncCarousel({ animate: false });
+      return;
+    }
+    $("statusLine").textContent =
+      "Loading games from " + tags.length + " database" + (tags.length === 1 ? "" : "s") + "…";
+    try {
+      var q = String($("gameQuery").value || "").trim();
+      games = await api.browseGames({
+        tags: tags,
+        query: q,
+        providerCounts: providerCounts,
+        limit: q ? 160 : 100,
+      });
+      index = 0;
+      $("statusLine").textContent =
+        games.length + " game" + (games.length === 1 ? "" : "s") +
+        (q ? ' matching "' + q + '"' : " loaded") + ".";
+      syncCarousel({ animate: false });
+    } catch (err) {
+      $("statusLine").textContent =
+        "Failed to load games: " + (err && err.message ? err.message : String(err));
+      games = [];
+      syncCarousel({ animate: false });
+    }
+  }
+
+  async function loadProviderCounts() {
+    try {
+      var payload = await fetch("../data.json", { credentials: "omit" }).then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      });
+      (payload.providers || []).forEach(function (p) {
+        (p.capability_tags || []).forEach(function (t) {
+          var key = String(t || "").toLowerCase();
+          if (key.indexOf("gdb:") !== 0) return;
+          providerCounts[key] = (providerCounts[key] || 0) + 1;
+        });
+      });
+    } catch (_) {}
+  }
+
+  function wire() {
+    var dropdown = $("gdbDropdown");
+    $("gdbDropdownBtn").addEventListener("click", function () {
+      var open = dropdown.classList.toggle("open");
+      this.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    document.addEventListener("click", function (ev) {
+      if (!dropdown.contains(ev.target)) {
+        dropdown.classList.remove("open");
+        $("gdbDropdownBtn").setAttribute("aria-expanded", "false");
+      }
+    });
+    $("gdbOptions").addEventListener("change", commitDropdownFromUi);
+    $("gdbSelectAll").addEventListener("click", function () {
+      selectedTags = null;
+      renderDropdownOptions();
+      void reloadGames();
+    });
+    $("gdbClear").addEventListener("click", function () {
+      selectedTags = [];
+      renderDropdownOptions();
+      void reloadGames();
+    });
+    $("prevBtn").addEventListener("click", function () { moveBy(-1); });
+    $("nextBtn").addEventListener("click", function () { moveBy(1); });
+    $("detailBackBtn").addEventListener("click", showBrowse);
+    $("detailDescToggle").addEventListener("click", function () {
+      var field = $("detailDescriptionField");
+      var toggle = $("detailDescToggle");
+      if (field.classList.contains("is-collapsed")) {
+        field.classList.remove("is-collapsed");
+        field.classList.add("is-expanded");
+        toggle.textContent = "Show less";
+      } else {
+        field.classList.add("is-collapsed");
+        field.classList.remove("is-expanded");
+        toggle.textContent = "Show more";
+      }
+    });
+    $("detailPreviews").addEventListener("click", function (ev) {
+      var btn = ev.target.closest("button.preview-thumb");
+      if (!btn || !$("detailPreviews").contains(btn)) return;
+      var start = Number(btn.getAttribute("data-preview-index"));
+      var list = (detailGame && detailGame.previews) || [];
+      openLightbox(list, Number.isFinite(start) ? start : 0);
+    });
+    $("lightboxClose").addEventListener("click", closeLightbox);
+    $("lightboxPrev").addEventListener("click", function () { stepLightbox(-1); });
+    $("lightboxNext").addEventListener("click", function () { stepLightbox(1); });
+    $("lightboxThumbs").addEventListener("click", function (ev) {
+      var btn = ev.target.closest("button[data-lightbox-index]");
+      if (!btn || !$("lightboxThumbs").contains(btn)) return;
+      var i = Number(btn.getAttribute("data-lightbox-index"));
+      if (!Number.isFinite(i)) return;
+      lightboxIndex = i;
+      showLightboxImage();
+    });
+    $("lightbox").addEventListener("click", function (ev) {
+      if (ev.target === $("lightbox")) closeLightbox();
+    });
+    $("gameQuery").addEventListener("input", function () {
+      clearTimeout(queryTimer);
+      queryTimer = setTimeout(function () { void reloadGames(); }, 220);
+    });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.target && (ev.target.tagName === "INPUT" || ev.target.tagName === "TEXTAREA")) return;
+      if (isLightboxOpen()) {
+        if (ev.key === "Escape") {
+          ev.preventDefault();
+          closeLightbox();
+          return;
+        }
+        if (ev.key === "ArrowLeft") {
+          ev.preventDefault();
+          stepLightbox(-1);
+          return;
+        }
+        if (ev.key === "ArrowRight") {
+          ev.preventDefault();
+          stepLightbox(1);
+          return;
+        }
+        return;
+      }
+      if (!$("detailView").hidden) {
+        if (ev.key === "Escape") showBrowse();
+        return;
+      }
+      if (ev.key === "ArrowLeft") moveBy(-1);
+      if (ev.key === "ArrowRight") moveBy(1);
+      if (ev.key === "Enter" && games[index]) openDetail(games[index]);
+    });
+  }
+
+  async function init() {
+    if (!api || typeof api.browseGames !== "function") {
+      $("statusLine").textContent = "Game database search module is unavailable.";
+      return;
+    }
+    wire();
+    await loadProviderCounts();
+    renderDropdownOptions();
+    await reloadGames();
+  }
+
+  void init();
+})();
+  </script>
+</body>
+</html>

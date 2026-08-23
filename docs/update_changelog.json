@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.0",
+      "revision": "r274",
+      "released": "August 23, 2026",
+      "update_notice": "# Game Database Browser\nYou can now visually browse through game databases by going to the new game database browser, which can be accessed using the \"Game browser\" button in the sidebar. You will be able to see games across all or selected databases, search for games, view info and preview images for games (if applicable), and view all links that have your desired game. I hope that by creating this people will be able to get more use out of the list by being able to find what they specifically want to do on the site, and there will be more dedicated tags for specific site features coming later so you can have an easier time making choices on links and finding what you require based on your needs.\n\n# Steam API support\nIn order to give some games additional info, the Steam Web API has been integrated to give many games things like detailed descriptions, better game covers, publisher/developer info, and game preview images. This only applies to games on Steam."
+    },
+    {
       "version": "v6.6",
       "revision": "r271",
       "released": "August 20, 2026",

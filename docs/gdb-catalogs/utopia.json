@@ -1,0 +1,827 @@
+[
+  {
+    "name": "2048"
+  },
+  {
+    "name": "A Dark Room"
+  },
+  {
+    "name": "ASCII Space"
+  },
+  {
+    "name": "Asteroids"
+  },
+  {
+    "name": "Astray"
+  },
+  {
+    "name": "Backcountry"
+  },
+  {
+    "name": "Black Hole Square"
+  },
+  {
+    "name": "Bounce Back"
+  },
+  {
+    "name": "Breaklock"
+  },
+  {
+    "name": "Breakout"
+  },
+  {
+    "name": "Captain Callisto"
+  },
+  {
+    "name": "Chess"
+  },
+  {
+    "name": "Chroma Incident"
+  },
+  {
+    "name": "Chrome Dino"
+  },
+  {
+    "name": "Connect 3"
+  },
+  {
+    "name": "Cookie Clicker"
+  },
+  {
+    "name": "Drift Hunters"
+  },
+  {
+    "name": "Edge not Found"
+  },
+  {
+    "name": "Evil Glitch"
+  },
+  {
+    "name": "Factory Balls Forever"
+  },
+  {
+    "name": "Flappy Bird"
+  },
+  {
+    "name": "Five Nights at Freddy's (FNAF)"
+  },
+  {
+    "name": "Five Nights at Freddy's 2 (FNAF 2)"
+  },
+  {
+    "name": "Five Nights at Freddy's 3 (FNAF 3)"
+  },
+  {
+    "name": "Five Nights at Freddy's 4 (FNAF 4)"
+  },
+  {
+    "name": "FNAF: Sister Location (FNAF SL)"
+  },
+  {
+    "name": "Geometry Dash"
+  },
+  {
+    "name": "Hextris"
+  },
+  {
+    "name": "Konnekt"
+  },
+  {
+    "name": "Minecraft Clone"
+  },
+  {
+    "name": "Ninja vs Evilcorp"
+  },
+  {
+    "name": "Packabunchas"
+  },
+  {
+    "name": "Pac-Man"
+  },
+  {
+    "name": "Particle Clicker"
+  },
+  {
+    "name": "Push Back"
+  },
+  {
+    "name": "Q1k3"
+  },
+  {
+    "name": "Racer"
+  },
+  {
+    "name": "Radius Raid"
+  },
+  {
+    "name": "Retro Bowl"
+  },
+  {
+    "name": "Retro Bowl (FIXED)"
+  },
+  {
+    "name": "Retrohaunt"
+  },
+  {
+    "name": "Road Blocks"
+  },
+  {
+    "name": "Run 3"
+  },
+  {
+    "name": "Shuttledeck"
+  },
+  {
+    "name": "Sleeping Beauty"
+  },
+  {
+    "name": "Slope"
+  },
+  {
+    "name": "Snake"
+  },
+  {
+    "name": "Space Company"
+  },
+  {
+    "name": "Space Garden"
+  },
+  {
+    "name": "Space Huggers"
+  },
+  {
+    "name": "Temple Run 2"
+  },
+  {
+    "name": "Tetris"
+  },
+  {
+    "name": "The Maze of Space Goblins"
+  },
+  {
+    "name": "Towermaster"
+  },
+  {
+    "name": "Trimps"
+  },
+  {
+    "name": "Underrun"
+  },
+  {
+    "name": "Vex 3"
+  },
+  {
+    "name": "Vex 4"
+  },
+  {
+    "name": "Vex 5"
+  },
+  {
+    "name": "xx142-b2.exe"
+  },
+  {
+    "name": "Gameboy Advance"
+  },
+  {
+    "name": "Genesis / Master System"
+  },
+  {
+    "name": "Nintendo 64"
+  },
+  {
+    "name": "NES"
+  },
+  {
+    "name": "Super Nintendo"
+  },
+  {
+    "name": "Upload SWF"
+  },
+  {
+    "name": "1on1soccer"
+  },
+  {
+    "name": "3dtanks"
+  },
+  {
+    "name": "Abobosbigadventure"
+  },
+  {
+    "name": "Achievementunlocked"
+  },
+  {
+    "name": "Achievementunlocked2"
+  },
+  {
+    "name": "Achievementunlocked3"
+  },
+  {
+    "name": "Actionturnip"
+  },
+  {
+    "name": "Adaran"
+  },
+  {
+    "name": "Adrenaline"
+  },
+  {
+    "name": "Americanracing1"
+  },
+  {
+    "name": "Americanracing2"
+  },
+  {
+    "name": "Arkandianrevenant"
+  },
+  {
+    "name": "Armyofages"
+  },
+  {
+    "name": "Awesomecars"
+  },
+  {
+    "name": "Awesomeplanes"
+  },
+  {
+    "name": "Battlepanic"
+  },
+  {
+    "name": "Bloonsplayerpack2"
+  },
+  {
+    "name": "Bloonsplayerpack3"
+  },
+  {
+    "name": "Bloonsplayerpack4"
+  },
+  {
+    "name": "Bloonsplayerpack5"
+  },
+  {
+    "name": "Bloonstd1"
+  },
+  {
+    "name": "Bloonstd3"
+  },
+  {
+    "name": "Bloonstd4"
+  },
+  {
+    "name": "Bloonstd5"
+  },
+  {
+    "name": "Bobtherobber"
+  },
+  {
+    "name": "Boombot2"
+  },
+  {
+    "name": "Boxhead2play"
+  },
+  {
+    "name": "Bubbletanks2"
+  },
+  {
+    "name": "Bulletbill"
+  },
+  {
+    "name": "Bullettimefighting"
+  },
+  {
+    "name": "Burritobison"
+  },
+  {
+    "name": "Burritobisonrevenge"
+  },
+  {
+    "name": "Cactusmccoy"
+  },
+  {
+    "name": "Cactusmccoy2"
+  },
+  {
+    "name": "Cannonbasketball2"
+  },
+  {
+    "name": "Cargobridge"
+  },
+  {
+    "name": "Causality"
+  },
+  {
+    "name": "Chibiknight"
+  },
+  {
+    "name": "Clickerheroes"
+  },
+  {
+    "name": "Computerbashing"
+  },
+  {
+    "name": "Crushthecastle"
+  },
+  {
+    "name": "Crushthecastle2"
+  },
+  {
+    "name": "Cubefield"
+  },
+  {
+    "name": "Cyclomaniacs2"
+  },
+  {
+    "name": "Diggy"
+  },
+  {
+    "name": "Donkeykong"
+  },
+  {
+    "name": "Dontshootthepuppy"
+  },
+  {
+    "name": "Doodledefender"
+  },
+  {
+    "name": "Doom"
+  },
+  {
+    "name": "Dragracing"
+  },
+  {
+    "name": "Ducklife"
+  },
+  {
+    "name": "Ducklife2"
+  },
+  {
+    "name": "Ducklife3"
+  },
+  {
+    "name": "Ducklife4"
+  },
+  {
+    "name": "Earntodie"
+  },
+  {
+    "name": "Earntodie2"
+  },
+  {
+    "name": "Earntodiesuperwheel"
+  },
+  {
+    "name": "Electricman2"
+  },
+  {
+    "name": "Elephantquest"
+  },
+  {
+    "name": "Epicbattlefantasy3"
+  },
+  {
+    "name": "Epiccomboredux"
+  },
+  {
+    "name": "Exitpath"
+  },
+  {
+    "name": "Factoryballs"
+  },
+  {
+    "name": "Factoryballs2"
+  },
+  {
+    "name": "Factoryballs3"
+  },
+  {
+    "name": "Factoryballs4"
+  },
+  {
+    "name": "Fancypantsadventure"
+  },
+  {
+    "name": "Fancypantsadventure2"
+  },
+  {
+    "name": "Fancypantsadventure3"
+  },
+  {
+    "name": "Flashflightsimulator"
+  },
+  {
+    "name": "Flight"
+  },
+  {
+    "name": "Fracuum"
+  },
+  {
+    "name": "Freerider2"
+  },
+  {
+    "name": "Getontop"
+  },
+  {
+    "name": "Giveuprobot"
+  },
+  {
+    "name": "Giveuprobot2"
+  },
+  {
+    "name": "Hanger"
+  },
+  {
+    "name": "Hanger2"
+  },
+  {
+    "name": "Happywheels"
+  },
+  {
+    "name": "Hobo"
+  },
+  {
+    "name": "Hobo2"
+  },
+  {
+    "name": "Hobo3"
+  },
+  {
+    "name": "Hobo4"
+  },
+  {
+    "name": "Hobo5"
+  },
+  {
+    "name": "Hobo6"
+  },
+  {
+    "name": "Hobo7"
+  },
+  {
+    "name": "Houseofwolves"
+  },
+  {
+    "name": "Interactivebuddy"
+  },
+  {
+    "name": "Jacksmith"
+  },
+  {
+    "name": "Jellytruck"
+  },
+  {
+    "name": "Johnnyupgrade"
+  },
+  {
+    "name": "Jumpix2"
+  },
+  {
+    "name": "Knightmaretower"
+  },
+  {
+    "name": "Learn2fly"
+  },
+  {
+    "name": "Learn2fly2"
+  },
+  {
+    "name": "Learn2fly3"
+  },
+  {
+    "name": "Magnetface"
+  },
+  {
+    "name": "Mariocombat"
+  },
+  {
+    "name": "Marioracingtournament"
+  },
+  {
+    "name": "Meatboy"
+  },
+  {
+    "name": "Megamanprojectx"
+  },
+  {
+    "name": "Metroidelements"
+  },
+  {
+    "name": "Mineblocks"
+  },
+  {
+    "name": "Minesweeper"
+  },
+  {
+    "name": "Mirrorsedge"
+  },
+  {
+    "name": "Moneymovers"
+  },
+  {
+    "name": "Moneymovers3"
+  },
+  {
+    "name": "Motherload"
+  },
+  {
+    "name": "Motox3m"
+  },
+  {
+    "name": "Multitask"
+  },
+  {
+    "name": "Mutilateadoll2"
+  },
+  {
+    "name": "Myangel"
+  },
+  {
+    "name": "Nanotube"
+  },
+  {
+    "name": "Newgroundsrumble"
+  },
+  {
+    "name": "Ngame"
+  },
+  {
+    "name": "Nitromemustdie"
+  },
+  {
+    "name": "Nucleus"
+  },
+  {
+    "name": "Nv2"
+  },
+  {
+    "name": "Nyancatlostinspace"
+  },
+  {
+    "name": "Offroaders"
+  },
+  {
+    "name": "Onemanarmy2"
+  },
+  {
+    "name": "Outofthisworld"
+  },
+  {
+    "name": "Pacman"
+  },
+  {
+    "name": "Pandemic"
+  },
+  {
+    "name": "Pandemic2"
+  },
+  {
+    "name": "Papalouie"
+  },
+  {
+    "name": "Papalouie2"
+  },
+  {
+    "name": "Papalouie3"
+  },
+  {
+    "name": "Picosschool"
+  },
+  {
+    "name": "Picosschool2"
+  },
+  {
+    "name": "Pirates"
+  },
+  {
+    "name": "Polarjump"
+  },
+  {
+    "name": "Portal"
+  },
+  {
+    "name": "Portal2d"
+  },
+  {
+    "name": "Quadrobarreldefence"
+  },
+  {
+    "name": "Qubeythecube"
+  },
+  {
+    "name": "Qwop"
+  },
+  {
+    "name": "Raftwars"
+  },
+  {
+    "name": "Raftwars2"
+  },
+  {
+    "name": "Raze"
+  },
+  {
+    "name": "Redball"
+  },
+  {
+    "name": "Redball2"
+  },
+  {
+    "name": "Redball4"
+  },
+  {
+    "name": "Redball4v2"
+  },
+  {
+    "name": "Redball4v3"
+  },
+  {
+    "name": "Redshift"
+  },
+  {
+    "name": "Revenant2"
+  },
+  {
+    "name": "Riddleschool1"
+  },
+  {
+    "name": "Riddleschool2"
+  },
+  {
+    "name": "Riddleschool3"
+  },
+  {
+    "name": "Riddleschool4"
+  },
+  {
+    "name": "Riddleschool5"
+  },
+  {
+    "name": "Riddletransfer"
+  },
+  {
+    "name": "Riddletransfer2"
+  },
+  {
+    "name": "Run2"
+  },
+  {
+    "name": "Run3"
+  },
+  {
+    "name": "Saszombieassault3"
+  },
+  {
+    "name": "Sentryknight"
+  },
+  {
+    "name": "Shoppingcarthero3"
+  },
+  {
+    "name": "Siftheads"
+  },
+  {
+    "name": "Siftheads2"
+  },
+  {
+    "name": "Siftheads3"
+  },
+  {
+    "name": "Siftheads4"
+  },
+  {
+    "name": "Siftheads5"
+  },
+  {
+    "name": "Sniperassassin4"
+  },
+  {
+    "name": "Sportsheadsfootball"
+  },
+  {
+    "name": "Sportsheadsracing"
+  },
+  {
+    "name": "Sportsheadstennis"
+  },
+  {
+    "name": "Stickrpg"
+  },
+  {
+    "name": "Stickrun2"
+  },
+  {
+    "name": "Stickwar"
+  },
+  {
+    "name": "Strikeforceheroes2"
+  },
+  {
+    "name": "Strikeforcekittylaststand"
+  },
+  {
+    "name": "Sugarsugar"
+  },
+  {
+    "name": "Sugarsugar2"
+  },
+  {
+    "name": "Sugarsugar3"
+  },
+  {
+    "name": "Superd"
+  },
+  {
+    "name": "Superfighters"
+  },
+  {
+    "name": "Supermario63"
+  },
+  {
+    "name": "Supermarioflash"
+  },
+  {
+    "name": "Supermarioflash2"
+  },
+  {
+    "name": "Supersmashflash"
+  },
+  {
+    "name": "Swordsandsandals2"
+  },
+  {
+    "name": "Tacticalassassin"
+  },
+  {
+    "name": "Tanks"
+  },
+  {
+    "name": "Tanktrouble"
+  },
+  {
+    "name": "Thebindingofisaac"
+  },
+  {
+    "name": "Thegame"
+  },
+  {
+    "name": "Theimpossiblequiz"
+  },
+  {
+    "name": "Theimpossiblequiz2"
+  },
+  {
+    "name": "Theworldshardestgame2"
+  },
+  {
+    "name": "Thingthingarena"
+  },
+  {
+    "name": "Thisistheonlylevel"
+  },
+  {
+    "name": "Tosstheturtle"
+  },
+  {
+    "name": "Truckloader4"
+  },
+  {
+    "name": "Ultimateflashsonic"
+  },
+  {
+    "name": "Ultimatetactics"
+  },
+  {
+    "name": "Unrealflash"
+  },
+  {
+    "name": "Vex"
+  },
+  {
+    "name": "Vex2"
+  },
+  {
+    "name": "Vex3"
+  },
+  {
+    "name": "Warfare1917"
+  },
+  {
+    "name": "Warfare1944"
+  },
+  {
+    "name": "Warp"
+  },
+  {
+    "name": "Xenos"
+  },
+  {
+    "name": "Xtremecliffdiving"
+  },
+  {
+    "name": "Yearofthesnake"
+  },
+  {
+    "name": "Yuriusshouseofspooks"
+  },
+  {
+    "name": "Zombiealienparasites"
+  }
+]

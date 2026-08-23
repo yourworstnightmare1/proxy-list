@@ -6,12 +6,12 @@
 (function (global) {
   "use strict";
 
-  var DEFAULT_CDN = "https://quantil.jsdelivr.net";
+  var DEFAULT_CDN = "https://cdn.jsdelivr.net";
   var CDN_FALLBACKS = [
-    "https://quantil.jsdelivr.net",
     "https://cdn.jsdelivr.net",
     "https://fastly.jsdelivr.net",
     "https://gcore.jsdelivr.net",
+    "https://quantil.jsdelivr.net",
   ];
 
   /** @type {Record<string, {tag:string,label:string,aliases:string[],loader:Function}>} */
@@ -68,7 +68,8 @@
       tag: "gdb:lucide",
       label: "Lucide",
       aliases: ["lucide", "lucideproxy", "gdb:lucide"],
-      loader: loadLucide,
+      // Lucide's Games page is a Lumin SD client — same zones catalog as gn-math/lumin.
+      loader: loadZonesCatalog,
     },
     "gdb:sdxp": {
       tag: "gdb:sdxp",
@@ -80,31 +81,31 @@
       tag: "gdb:duckmath",
       label: "DuckMath",
       aliases: ["duckmath", "duck math", "gdb:duckmath"],
-      loader: loadEmptyCatalog,
+      loader: loadDuckmath,
     },
     "gdb:ccported": {
       tag: "gdb:ccported",
       label: "CCPorted",
       aliases: ["ccported", "cc ported", "gdb:ccported"],
-      loader: loadEmptyCatalog,
+      loader: loadCcported,
     },
     "gdb:selenite": {
       tag: "gdb:selenite",
       label: "Selenite",
       aliases: ["selenite", "gdb:selenite"],
-      loader: loadEmptyCatalog,
+      loader: loadSelenite,
     },
     "gdb:radon": {
       tag: "gdb:radon",
       label: "Radon",
       aliases: ["radon", "gdb:radon"],
-      loader: loadEmptyCatalog,
+      loader: loadRadon,
     },
     "gdb:fyinx": {
       tag: "gdb:fyinx",
       label: "Fyinx",
       aliases: ["fyinx", "gdb:fyinx"],
-      loader: loadEmptyCatalog,
+      loader: loadFyinx,
     },
     "gdb:truffled": {
       tag: "gdb:truffled",
@@ -120,14 +121,101 @@
     },
     "gdb:petezah": {
       tag: "gdb:petezah",
-      label: "PeteZah Lite",
-      aliases: ["petezah", "petezah lite", "pete zah", "gdb:petezah"],
+      label: "PeteZah",
+      aliases: ["petezah", "petzah", "petezah lite", "pete zah", "gdb:petezah", "gdb:petzah"],
+      loader: loadPetezah,
+    },
+    "gdb:frogies-arcade": {
+      tag: "gdb:frogies-arcade",
+      label: "frogie's arcade",
+      aliases: ["frogie", "frogies", "frogie's arcade", "frogies arcade", "gdb:frogies-arcade"],
+      // Public repos are proxy shells only — no shippable game-name catalog yet.
       loader: loadEmptyCatalog,
+    },
+    "gdb:space": {
+      tag: "gdb:space",
+      label: "Space",
+      aliases: ["space", "gdb:space"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:boredom": {
+      tag: "gdb:boredom",
+      label: "Boredom",
+      aliases: ["boredom", "gdb:boredom"],
+      loader: loadBoredom,
+    },
+    "gdb:dogeub": {
+      tag: "gdb:dogeub",
+      label: "dogeub",
+      aliases: ["dogeub", "doge", "gdb:dogeub"],
+      loader: loadDogeub,
+    },
+    "gdb:utopia": {
+      tag: "gdb:utopia",
+      label: "Utopia Education",
+      aliases: ["utopia", "utopia education", "gdb:utopia"],
+      loader: loadUtopia,
     },
   };
 
+  var SCRIPT_DIR = (function () {
+    try {
+      var scripts = document.getElementsByTagName("script");
+      for (var i = scripts.length - 1; i >= 0; i--) {
+        var src = scripts[i].src || "";
+        if (/game-db-search\.js(\?|$)/i.test(src)) {
+          return src.replace(/[^/]+$/, "");
+        }
+      }
+    } catch (_) {}
+    return "";
+  })();
+
   var cache = Object.create(null);
+  var entryCache = Object.create(null);
   var cachePromises = Object.create(null);
+
+  // jsDelivr returns 403 for gn-math/*; freebuisness mirrors the same zones/covers/html.
+  var GN_MATH_COVER_BASE = "https://cdn.jsdelivr.net/gh/freebuisness/covers@main";
+  var GN_MATH_HTML_BASE = "https://cdn.jsdelivr.net/gh/freebuisness/html@main";
+  var GN_MATH_ZONES_PATHS = [
+    "/gh/freebuisness/assets@main/zones.json",
+    "/gh/freebuisness/assets/zones.json",
+  ];
+  var GN_MATH_ZONES_RAW =
+    "https://raw.githubusercontent.com/gn-math/assets/main/zones.json";
+  var ELITE_ASSET_BASE = "https://cdn.jsdelivr.net/gh/1234chromebook1234-creator/ww@main/";
+  var CKV_ASSET_BASE = "https://cdn.jsdelivr.net/gh/carbonicality/ChickenKingsVault@main/";
+  var PETEZAH_BASE = "https://cdn.jsdelivr.net/gh/PeteZah-Games/PeteZahGames@main/public";
+  var CCPORTED_BASE = "https://cdn.jsdelivr.net/gh/ccported/games@main";
+  var SERAPH_IMG_BASE = "https://cdn.jsdelivr.net/gh/a456pur/seraph@main/games/";
+
+  /** Accent colors for provider spine / bounding box (Figma browser). */
+  var CATALOG_ACCENTS = {
+    "gdb:unblockedzone": "#22d3ee",
+    "gdb:gn-math": "#ff00dd",
+    "gdb:luminsdk": "#c084fc",
+    "gdb:noahs-tutoring": "#4ade80",
+    "gdb:elite-games": "#f59e0b",
+    "gdb:ultimate-game-stash": "#fb7185",
+    "gdb:seraph": "#38bdf8",
+    "gdb:chicken-kings-vault": "#f97316",
+    "gdb:lucide": "#a3e635",
+    "gdb:sdxp": "#94a3b8",
+    "gdb:duckmath": "#60a5fa",
+    "gdb:ccported": "#e879f9",
+    "gdb:selenite": "#2dd4bf",
+    "gdb:radon": "#f472b6",
+    "gdb:fyinx": "#818cf8",
+    "gdb:truffled": "#d6a56a",
+    "gdb:totally-science": "#34d399",
+    "gdb:petezah": "#fbbf24",
+    "gdb:frogies-arcade": "#86efac",
+    "gdb:space": "#7dd3fc",
+    "gdb:boredom": "#c4b5fd",
+    "gdb:dogeub": "#fde047",
+    "gdb:utopia": "#f0abfc",
+  };
 
   function normalizeQuery(q) {
     return String(q || "")
@@ -153,6 +241,64 @@
       out.push(n);
     });
     return out;
+  }
+
+  function resolveAssetUrl(url, base) {
+    var u = String(url || "").trim();
+    if (!u) return "";
+    u = u
+      .replace(/\{COVER_URL\}/g, GN_MATH_COVER_BASE)
+      .replace(/\{HTML_URL\}/g, GN_MATH_HTML_BASE);
+    if (/^https?:\/\//i.test(u) || u.indexOf("//") === 0) return u;
+    if (!base) return u;
+    return String(base).replace(/\/?$/, "/") + u.replace(/^\//, "");
+  }
+
+  /**
+   * Normalize loader output into rich entries.
+   * @returns {{name:string,publisher:string,thumbnail:string}[]}
+   */
+  function normalizeEntries(list) {
+    var seen = Object.create(null);
+    var out = [];
+    (list || []).forEach(function (item) {
+      var name = "";
+      var publisher = "";
+      var description = "";
+      var thumbnail = "";
+      if (typeof item === "string") {
+        name = gameName(item);
+      } else if (item && typeof item === "object") {
+        name = gameName(item.name || item.title || item.label);
+        publisher = String(item.publisher || item.author || item.developer || "").trim();
+        description = String(item.description || item.desc || item.text || item.blurb || "").trim();
+        thumbnail = String(
+          item.thumbnail || item.cover || item.img || item.image || item.imageUrl || item.icon || ""
+        ).trim();
+      }
+      if (!name) return;
+      var key = name.toLowerCase();
+      if (seen[key]) {
+        if (!seen[key].publisher && publisher) seen[key].publisher = publisher;
+        if (!seen[key].description && description) seen[key].description = description;
+        if (!seen[key].thumbnail && thumbnail) seen[key].thumbnail = thumbnail;
+        return;
+      }
+      var entry = {
+        name: name,
+        publisher: publisher,
+        description: description,
+        thumbnail: thumbnail,
+      };
+      seen[key] = entry;
+      out.push(entry);
+    });
+    return out;
+  }
+
+  function catalogAccent(tag) {
+    var key = String(tag || "").toLowerCase();
+    return CATALOG_ACCENTS[key] || "#ff00dd";
   }
 
   function cdnBase() {
@@ -212,15 +358,41 @@
   }
 
   async function loadZonesCatalog() {
-    var data = await fetchViaCdns("/gh/freebuisness/assets@main/zones.json");
+    var paths = [
+      "/gh/freebuisness/assets@main/zones.json",
+      "/gh/freebuisness/assets/zones.json",
+    ];
+    var data = null;
+    var errors = [];
+    for (var i = 0; i < paths.length; i++) {
+      try {
+        data = await fetchViaCdns(paths[i]);
+        break;
+      } catch (err) {
+        errors.push(String(err && err.message ? err.message : err));
+      }
+    }
+    if (!data) {
+      try {
+        data = await fetchJson("https://raw.githubusercontent.com/gn-math/assets/main/zones.json");
+      } catch (err) {
+        errors.push(String(err && err.message ? err.message : err));
+        throw new Error(errors.join("; ") || "zones.json fetch failed");
+      }
+    }
     if (!Array.isArray(data)) return [];
-    return uniqueNames(
+    return normalizeEntries(
       data
         .filter(function (g) {
           return g && g.id !== -1 && g.name && !String(g.name).startsWith("[!]");
         })
         .map(function (g) {
-          return g.name;
+          return {
+            name: g.name,
+            publisher: g.author || "",
+            description: g.description || "",
+            thumbnail: resolveAssetUrl(g.cover || "", null),
+          };
         })
     );
   }
@@ -248,9 +420,14 @@
   async function loadElite() {
     var d = await fetchViaCdns("/gh/1234chromebook1234-creator/ww@main/games.json");
     if (!Array.isArray(d)) return [];
-    return uniqueNames(
+    return normalizeEntries(
       d.map(function (g) {
-        return g.title || g.name;
+        return {
+          name: g.title || g.name,
+          publisher: g.author || g.developer || "",
+          description: g.description || "",
+          thumbnail: resolveAssetUrl(g.image || g.img || g.cover || "", ELITE_ASSET_BASE),
+        };
       })
     );
   }
@@ -258,9 +435,13 @@
   async function loadSeraph() {
     var d = await fetchViaCdns("/gh/DominumNetwork/dominum@main/src/assets/libraries/seraph/games.json");
     if (!Array.isArray(d)) return [];
-    return uniqueNames(
+    return normalizeEntries(
       d.map(function (g) {
-        return g.name || g.title;
+        return {
+          name: g.name || g.title,
+          publisher: g.author || g.genre || "",
+          thumbnail: resolveAssetUrl(g.img || g.image || g.cover || "", null),
+        };
       })
     );
   }
@@ -268,9 +449,15 @@
   async function loadCkv() {
     var d = await fetchViaCdns("/gh/carbonicality/ChickenKingsVault@main/games.json");
     if (!Array.isArray(d)) return [];
-    return uniqueNames(
+    var base = "https://cdn.jsdelivr.net/gh/carbonicality/ChickenKingsVault@main/images/";
+    return normalizeEntries(
       d.map(function (g) {
-        return g.name || g.title;
+        return {
+          name: g.name || g.title,
+          publisher: g.author || "",
+          description: g.description || "",
+          thumbnail: resolveAssetUrl(g.img || g.image || g.cover || "", base),
+        };
       })
     );
   }
@@ -293,18 +480,23 @@
   }
 
   async function loadUnblockedzone() {
-    // UBZ embeds its catalog in the launcher HTML; scrape normalizeGame({name:"..."}) entries.
     var text = await fetchTextViaCdns("/gh/s0n-1m-cr1n3/sc13nc3@latest/assets/index.html");
-    var names = [];
-    var re = /normalizeGame\(\{\s*name\s*:\s*["']([^"']+)["']/g;
+    var entries = [];
+    var re =
+      /normalizeGame\(\{\s*name\s*:\s*["']([^"']+)["']\s*,\s*img\s*:\s*["']([^"']+)["']/g;
     var m;
-    while ((m = re.exec(text))) names.push(m[1]);
-    if (!names.length) {
-      // Fallback: openGame('Name', ...)
-      re = /openGame\(\s*['"]([^'"]+)['"]/g;
-      while ((m = re.exec(text))) names.push(m[1]);
+    while ((m = re.exec(text))) {
+      entries.push({ name: m[1], thumbnail: m[2] });
     }
-    return uniqueNames(names);
+    if (!entries.length) {
+      re = /normalizeGame\(\{\s*name\s*:\s*["']([^"']+)["']/g;
+      while ((m = re.exec(text))) entries.push({ name: m[1] });
+    }
+    if (!entries.length) {
+      re = /openGame\(\s*['"]([^'"]+)['"]/g;
+      while ((m = re.exec(text))) entries.push({ name: m[1] });
+    }
+    return normalizeEntries(entries);
   }
 
   async function loadLucide() {
@@ -326,6 +518,208 @@
     return uniqueNames(names);
   }
 
+  
+  async function loadPetezah() {
+    var d = await fetchJson(
+      "https://cdn.jsdelivr.net/gh/PeteZah-Games/PeteZahGames@main/public/storage/data/collection.json"
+    );
+    var games = d && Array.isArray(d.games) ? d.games : [];
+    var base = "https://cdn.jsdelivr.net/gh/PeteZah-Games/PeteZahGames@main/public";
+    return normalizeEntries(
+      games
+        .filter(function (g) {
+          return g && g.label && !/request games/i.test(g.label);
+        })
+        .map(function (g) {
+          return {
+            name: g.label,
+            publisher: "",
+            description: "",
+            thumbnail: resolveAssetUrl(g.imageUrl || g.image || "", base),
+          };
+        })
+    );
+  }
+
+  async function loadCcported() {
+    var tree = await fetchJson(
+      "https://api.github.com/repos/ccported/games/git/trees/main?recursive=1"
+    );
+    var paths = (tree && tree.tree ? tree.tree : [])
+      .map(function (n) {
+        return n && n.path;
+      })
+      .filter(function (p) {
+        return p && /\/ccported_game_data\.json$/i.test(p);
+      });
+    if (!paths.length) return [];
+    var base = "https://cdn.jsdelivr.net/gh/ccported/games@main";
+    var entries = [];
+    var batchSize = 24;
+    for (var i = 0; i < paths.length; i += batchSize) {
+      var batch = paths.slice(i, i + batchSize);
+      var parts = await Promise.all(
+        batch.map(function (path) {
+          return fetchJson(base + "/" + path)
+            .then(function (meta) {
+              if (!meta || !meta.name) return null;
+              var folder = path.replace(/\/ccported_game_data\.json$/i, "");
+              var thumb = "";
+              if (meta.thumb_path) {
+                thumb =
+                  base + "/" + folder + "/" + String(meta.thumb_path).replace(/^\//, "");
+              }
+              return {
+                name: meta.name,
+                publisher: "",
+                description: meta.description || "",
+                thumbnail: thumb,
+              };
+            })
+            .catch(function () {
+              return null;
+            });
+        })
+      );
+      parts.forEach(function (p) {
+        if (p) entries.push(p);
+      });
+    }
+    return normalizeEntries(entries);
+  }
+
+  async function loadBoredom() {
+    var repos = [
+      "JavierAndPJCreations/BoredomGames",
+      "ZShark2166/Boredom-Arcade-Deployable",
+    ];
+    var names = [];
+    var seen = Object.create(null);
+    for (var r = 0; r < repos.length; r++) {
+      try {
+        var tree = await fetchJson(
+          "https://api.github.com/repos/" + repos[r] + "/git/trees/main?recursive=1"
+        );
+        (tree && tree.tree ? tree.tree : []).forEach(function (node) {
+          if (!node || node.type !== "tree") return;
+          var path = String(node.path || "");
+          var m =
+            path.match(/(?:^|\/)(?:BoredomGames\/Main\/Games|games|Games)\/([^/]+)$/) ||
+            path.match(/^([^/]+)$/);
+          if (!m) return;
+          if (!/(Games|games)\//.test(path) && path.indexOf("/") !== -1) return;
+          if (!/(Games|games)\//.test(path)) return;
+          var name = m[1].trim();
+          if (!name || seen[name.toLowerCase()]) return;
+          seen[name.toLowerCase()] = true;
+          names.push(name);
+        });
+        if (names.length) break;
+      } catch (_) {}
+    }
+    return uniqueNames(names);
+  }
+
+  async function loadSelenite() {
+    var rows = await fetchViaCdns("/gh/selenite-cc/selenite-old@main/games.json");
+    if (!Array.isArray(rows)) return [];
+    var base = "https://cdn.jsdelivr.net/gh/selenite-cc/selenite-old@main/";
+    return normalizeEntries(
+      rows.map(function (g) {
+        var dir = String((g && g.directory) || "").replace(/^\/+|\/+$/g, "");
+        var image = String((g && (g.image || g.cover)) || "cover.svg").replace(/^\//, "");
+        return {
+          name: g && (g.name || g.title),
+          publisher: "",
+          description: "",
+          thumbnail: dir ? base + dir + "/" + image : "",
+        };
+      })
+    );
+  }
+
+  async function loadRadon() {
+    var rows = await fetchViaCdns("/gh/Radon-Games/Radon-Games@main/public/games.json");
+    if (!Array.isArray(rows)) return [];
+    return normalizeEntries(
+      rows.map(function (g) {
+        return {
+          name: g && (g.title || g.name),
+          publisher: (g && (g.author || g.developer)) || "",
+          description: (g && g.description) || "",
+          thumbnail: "",
+        };
+      })
+    );
+  }
+
+  async function loadFyinx() {
+    var tree = await fetchJson("https://api.github.com/repos/aukak/fyinx/git/trees/main?recursive=1");
+    var names = [];
+    (tree && tree.tree ? tree.tree : []).forEach(function (node) {
+      if (!node || node.type !== "blob") return;
+      var path = String(node.path || "");
+      var m = path.match(/^g\/([^/]+)\.html$/i);
+      if (!m) return;
+      var slug = m[1].replace(/[-_]+/g, " ").trim();
+      if (!slug) return;
+      names.push(
+        slug.replace(/\b[a-z]/g, function (ch) {
+          return ch.toUpperCase();
+        })
+      );
+    });
+    return uniqueNames(names);
+  }
+
+  async function loadDuckmath() {
+    var rows = await fetchJson(
+      "https://raw.githubusercontent.com/Neruvy/duckmath/main/backup_classes.json"
+    );
+    if (!Array.isArray(rows)) return [];
+    return normalizeEntries(
+      rows.map(function (g) {
+        return {
+          name: g && (g.title || g.name),
+          publisher: "",
+          description: String((g && (g.desc || g.description)) || "")
+            .replace(/^#+\s*/gm, "")
+            .replace(/\r/g, "")
+            .trim(),
+          thumbnail: (g && (g.icon || g.image || g.thumbnail)) || "",
+        };
+      })
+    );
+  }
+
+  async function fetchLocalCatalog(fileName) {
+    var paths = [];
+    if (SCRIPT_DIR) paths.push(SCRIPT_DIR + "gdb-catalogs/" + fileName);
+    paths.push("./gdb-catalogs/" + fileName);
+    paths.push("../gdb-catalogs/" + fileName);
+    var errors = [];
+    for (var i = 0; i < paths.length; i++) {
+      try {
+        return await fetchJson(paths[i]);
+      } catch (err) {
+        errors.push(String(err && err.message ? err.message : err));
+      }
+    }
+    throw new Error(errors.join("; ") || "Local catalog fetch failed");
+  }
+
+  async function loadDogeub() {
+    var rows = await fetchLocalCatalog("dogeub.json");
+    if (!Array.isArray(rows)) return [];
+    return normalizeEntries(rows);
+  }
+
+  async function loadUtopia() {
+    var rows = await fetchLocalCatalog("utopia.json");
+    if (!Array.isArray(rows)) return [];
+    return normalizeEntries(rows);
+  }
+
   async function loadEmptyCatalog() {
     // Pack is filterable by alias; remote game-name catalogs are not wired yet.
     return [];
@@ -341,26 +735,116 @@
     });
   }
 
-  async function ensureCatalogGames(tag) {
+  async function ensureCatalogEntries(tag) {
     var key = String(tag || "").toLowerCase();
     var cat = CATALOGS[key];
     if (!cat) return [];
-    if (cache[key]) return cache[key];
-    if (cachePromises[key]) return cachePromises[key];
+    if (entryCache[key]) return entryCache[key];
+    if (cachePromises[key]) {
+      await cachePromises[key];
+      return entryCache[key] || [];
+    }
     cachePromises[key] = Promise.resolve()
       .then(function () {
         return cat.loader();
       })
       .then(function (games) {
-        cache[key] = uniqueNames(games || []);
+        var entries = normalizeEntries(games || []);
+        entryCache[key] = entries;
+        cache[key] = entries.map(function (e) {
+          return e.name;
+        });
         delete cachePromises[key];
-        return cache[key];
+        return entries;
       })
       .catch(function (err) {
         delete cachePromises[key];
         throw err;
       });
     return cachePromises[key];
+  }
+
+  async function ensureCatalogGames(tag) {
+    var entries = await ensureCatalogEntries(tag);
+    return entries.map(function (e) {
+      return e.name;
+    });
+  }
+
+  function cachedEntries(tag) {
+    var key = String(tag || "").toLowerCase();
+    return entryCache[key] || null;
+  }
+
+  /**
+   * Browse games across catalogs with publisher/thumbnail metadata.
+   * @param {{tags?:string[],query?:string,providerCounts?:Record<string,number>,limit?:number}} options
+   */
+  async function browseGames(options) {
+    var opts = options || {};
+    var onlyTags = Array.isArray(opts.tags)
+      ? opts.tags.map(function (t) {
+          return String(t).toLowerCase();
+        })
+      : null;
+    var q = normalizeQuery(opts.query || "");
+    var providerCounts = opts.providerCounts || {};
+    var limit = opts.limit != null ? opts.limit : 250;
+    var catalogs = listCatalogs().filter(function (c) {
+      return !onlyTags || onlyTags.indexOf(c.tag) !== -1;
+    });
+
+    await Promise.all(
+      catalogs.map(function (cat) {
+        return ensureCatalogEntries(cat.tag).catch(function () {
+          return [];
+        });
+      })
+    );
+
+    var map = Object.create(null);
+    catalogs.forEach(function (cat) {
+      var entries = entryCache[cat.tag] || [];
+      entries.forEach(function (entry) {
+        if (q && scoreGameMatch(entry.name, q) < 0) return;
+        var key = entry.name.toLowerCase();
+        if (!map[key]) {
+          map[key] = {
+            name: entry.name,
+            publisher: entry.publisher || "",
+            description: entry.description || "",
+            thumbnail: entry.thumbnail || "",
+            databases: [],
+          };
+        } else {
+          if (!map[key].publisher && entry.publisher) map[key].publisher = entry.publisher;
+          if (!map[key].description && entry.description) map[key].description = entry.description;
+          if (!map[key].thumbnail && entry.thumbnail) map[key].thumbnail = entry.thumbnail;
+        }
+        var already = map[key].databases.some(function (d) {
+          return d.tag === cat.tag;
+        });
+        if (!already) {
+          map[key].databases.push({
+            tag: cat.tag,
+            label: cat.label,
+            accent: catalogAccent(cat.tag),
+            providerCount: Number(providerCounts[cat.tag]) || 0,
+          });
+        }
+      });
+    });
+
+    var out = Object.keys(map)
+      .map(function (k) {
+        return map[k];
+      })
+      .sort(function (a, b) {
+        var scoreDiff = (q ? scoreGameMatch(b.name, q) - scoreGameMatch(a.name, q) : 0);
+        if (scoreDiff) return scoreDiff;
+        return a.name.localeCompare(b.name);
+      });
+    return out.slice(0, limit);
   }
 
   function scoreGameMatch(name, q) {
@@ -387,10 +871,19 @@
     return cache[key] || null;
   }
 
-  function warmAll() {
+  function warmAll(options) {
+    var opts = options || {};
+    var onlyTags = Array.isArray(opts.tags)
+      ? opts.tags.map(function (t) {
+          return String(t).toLowerCase();
+        })
+      : null;
+    var catalogs = listCatalogs().filter(function (c) {
+      return !onlyTags || onlyTags.indexOf(c.tag) !== -1;
+    });
     return Promise.allSettled(
-      listCatalogs().map(function (cat) {
-        return ensureCatalogGames(cat.tag);
+      catalogs.map(function (cat) {
+        return ensureCatalogEntries(cat.tag);
       })
     );
   }
@@ -403,12 +896,18 @@
     var opts = options || {};
     var q = normalizeQuery(query);
     var limit = opts.limit != null ? opts.limit : 8;
+    var onlyTags = Array.isArray(opts.tags)
+      ? opts.tags.map(function (t) {
+          return String(t).toLowerCase();
+        })
+      : null;
     if (!q) return [];
 
     var dbHits = [];
     var gameMap = Object.create(null);
 
     listCatalogs().forEach(function (cat) {
+      if (onlyTags && onlyTags.indexOf(cat.tag) === -1) return;
       if (catalogMatchesDatabaseQuery(cat, q)) {
         dbHits.push({
           kind: "gdb-database",
@@ -533,7 +1032,11 @@
     listCatalogs: listCatalogs,
     getCatalog: getCatalog,
     ensureCatalogGames: ensureCatalogGames,
+    ensureCatalogEntries: ensureCatalogEntries,
     cachedGames: cachedGames,
+    cachedEntries: cachedEntries,
+    catalogAccent: catalogAccent,
+    browseGames: browseGames,
     warmAll: warmAll,
     suggestFromCache: suggestFromCache,
     search: search,

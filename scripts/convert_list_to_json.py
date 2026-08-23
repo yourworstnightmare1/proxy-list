@@ -23,8 +23,10 @@ UNSORTED_INPUT = ROOT / "unsorted.md"
 UNSORTED_OUTPUT = ROOT / "docs" / "unsorted.json"
 SUBMISSION_URL_KEYS = ROOT / "docs" / "submission_url_keys.json"
 UPDATE_CHANGELOG = ROOT / "docs" / "update_changelog.json"
+ARCHIVED_PROVIDERS = ROOT / "docs" / "archived_providers.json"
 
 LINK_CHECK_FAIL_THRESHOLD = 3
+HIDDEN_SECTION_MARKER = "<!-- proxy-list:hidden -->"
 
 # Credited contributor for entries in unsorted.md until they are merged into list.md rows.
 UNSORTED_CONTRIBUTOR = "yourworstnightmare1"
@@ -479,6 +481,136 @@ def parse_list_md(text: str) -> list[dict]:
     return rows
 
 
+def parse_archived_providers(text: str) -> list[dict]:
+    """Provider sections marked hidden (usually 0 links) — metadata kept for revival."""
+    out: list[dict] = []
+    current_provider: str | None = None
+    section_category = ""
+    section_capabilities = ""
+    section_protocols = ""
+    section_additional_notes = ""
+    section_hidden = False
+    section_link_count = 0
+    in_note_header = False
+    in_important = False
+    important_lines: list[str] = []
+
+    def flush_important() -> None:
+        nonlocal section_additional_notes, in_important, important_lines
+        note = "\n".join(important_lines).strip()
+        if note and "has not been categorized" not in note.casefold():
+            section_additional_notes = note
+        important_lines = []
+        in_important = False
+
+    def flush_section() -> None:
+        nonlocal current_provider, section_hidden, section_link_count
+        if current_provider and section_hidden:
+            out.append(
+                {
+                    "name": current_provider,
+                    "category": section_category,
+                    "capabilities": section_capabilities,
+                    "capability_tags": split_list_field(section_capabilities),
+                    "protocols": section_protocols,
+                    "protocol_tags": split_list_field(section_protocols),
+                    "additional_notes": section_additional_notes,
+                    "link_count": section_link_count,
+                    "hidden": True,
+                }
+            )
+        current_provider = None
+        section_hidden = False
+        section_link_count = 0
+
+    for raw in text.splitlines():
+        line = raw.rstrip("\n")
+        if line.strip() == HIDDEN_SECTION_MARKER:
+            section_hidden = True
+            continue
+
+        if re.match(r"^#\s+[^#]", line) and not line.startswith("##"):
+            if in_important:
+                flush_important()
+            flush_section()
+            title = re.sub(r"^#\s+", "", line).strip()
+            if title.casefold() == "proxy list".casefold():
+                current_provider = None
+            else:
+                current_provider = title
+            section_category = ""
+            section_capabilities = ""
+            section_protocols = ""
+            section_additional_notes = ""
+            section_hidden = False
+            section_link_count = 0
+            in_note_header = False
+            in_important = False
+            important_lines = []
+            continue
+
+        if not current_provider:
+            continue
+
+        inner = strip_blockquote_prefix(line)
+        inner_s = inner.strip()
+
+        if re.match(r"^\[!(IMPORTANT|WARNING|NOTE|TIP|CAUTION)\]\s*$", inner_s, re.I):
+            kind = re.match(r"^\[!(\w+)\]", inner_s, re.I)
+            if kind and kind.group(1).upper() == "NOTE":
+                if in_important:
+                    flush_important()
+                continue
+            if in_important:
+                flush_important()
+            in_important = True
+            important_lines = []
+            continue
+
+        if in_important:
+            if not line.strip() or (line.strip().startswith("|") and not line.strip().startswith(">")):
+                flush_important()
+            elif inner_s.startswith("| Category |"):
+                flush_important()
+            elif line.startswith(">") or line.startswith("> "):
+                if inner_s and not inner_s.startswith("[!"):
+                    important_lines.append(inner_s)
+                continue
+            else:
+                flush_important()
+
+        if inner_s.startswith("| Category | Capabilities |"):
+            in_note_header = True
+            continue
+        if in_note_header and re.match(r"^\s*\|?\s*-\s*\|", inner):
+            continue
+        if in_note_header and inner_s.startswith("|"):
+            cells = split_pipe_row(line)
+            if len(cells) >= 4 and cells[0] not in {"Category", "-"}:
+                section_category = cells[0]
+                section_capabilities = cells[1]
+                section_protocols = cells[2]
+            in_note_header = False
+            continue
+
+        if not line.strip().startswith("|") or line.strip().startswith(">|"):
+            continue
+        cells = split_pipe_row(line)
+        if len(cells) < 6:
+            continue
+        if cells[0] == "Locked" and cells[1] == "Link":
+            continue
+        if cells[0] == "-" and cells[1] == "-":
+            continue
+        if cells[1].startswith(("http://", "https://")):
+            section_link_count += 1
+
+    if in_important:
+        flush_important()
+    flush_section()
+    return out
+
+
 def contributor_counts_from_rows(rows: list[dict]) -> dict[str, dict]:
     """Per normalized contributor: live row count and first seen profile URL."""
     out: dict[str, dict] = {}
@@ -626,6 +758,7 @@ def build_compact_payload(payload: dict) -> dict:
         "link_check": payload.get("link_check") or {},
         "failing_links": payload.get("failing_links") or {},
         "providers": providers_list,
+        "archived_providers": payload.get("archived_providers") or [],
         "contributors": contributors_list,
         "links": compact_links,
     }
@@ -640,7 +773,13 @@ def write_list_data(path: Path, gz_path: Path, payload: dict) -> tuple[int, int]
     return len(body), gz_path.stat().st_size
 
 
-def write_submission_url_keys(path: Path, links: list[dict], unsorted_links: list[dict], meta: dict) -> None:
+def write_submission_url_keys(
+    path: Path,
+    links: list[dict],
+    unsorted_links: list[dict],
+    meta: dict,
+    archived_providers: list[dict] | None = None,
+) -> None:
     """Compact index for on-site submission duplicate checks (full URL keys, not domains)."""
     keys: set[str] = set()
     providers: set[str] = set()
@@ -651,13 +790,17 @@ def write_submission_url_keys(path: Path, links: list[dict], unsorted_links: lis
         provider = (row.get("provider") or "").strip()
         if provider:
             providers.add(provider)
+    for ap in archived_providers or []:
+        name = (ap.get("name") or "").strip()
+        if name:
+            providers.add(name)
     body = {
         "version": meta.get("version", ""),
         "revision": meta.get("revision", ""),
         "keys": sorted(keys),
         "providers": sorted(providers, key=str.casefold),
         "blocked_domain_patterns": ["b-cdn.net"],
-        "_note": "Generated by convert_list_to_json.py. Keys are full normalized URLs (subdomain + path), not registrable domains.",
+        "_note": "Generated by convert_list_to_json.py. Keys are full normalized URLs (subdomain + path), not registrable domains. providers includes archived (hidden empty) sections.",
     }
     path.write_text(json.dumps(body, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
@@ -673,6 +816,19 @@ def main() -> int:
     changelog_entries = sync_update_changelog(load_update_changelog(), meta, update_notice)
     write_update_changelog(changelog_entries)
     links = parse_list_md(raw)
+    archived_providers = parse_archived_providers(raw)
+    ARCHIVED_PROVIDERS.write_text(
+        json.dumps(
+            {
+                "providers": archived_providers,
+                "_note": "Empty provider sections kept in list.md with <!-- proxy-list:hidden --> so metadata survives until links return. Not shown on the main list.",
+            },
+            indent=2,
+            ensure_ascii=False,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     sorted_keys = {_normalize_url_key(row.get("link", "")) for row in links if row.get("link")}
     unsorted_links = parse_unsorted_links(sorted_keys)
     live_by_contributor = contributor_counts_from_rows(links + unsorted_links)
@@ -694,16 +850,18 @@ def main() -> int:
         "link_check": load_link_check_meta(),
         "failing_links": load_failing_links(),
         "links": links,
+        "archived_providers": archived_providers,
     }
     compact = build_compact_payload(payload)
     raw_bytes, gz_bytes = write_list_data(OUTPUT, OUTPUT_GZ, compact)
     UNSORTED_OUTPUT.write_text(json.dumps({"links": unsorted_links}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     all_keys_rows = links + unsorted_links
-    write_submission_url_keys(SUBMISSION_URL_KEYS, links, unsorted_links, meta)
+    write_submission_url_keys(SUBMISSION_URL_KEYS, links, unsorted_links, meta, archived_providers)
     print(
         f"Wrote {len(links)} sorted links to {OUTPUT} ({raw_bytes / 1048576:.2f} MB, "
         f"gz {gz_bytes / 1048576:.2f} MB), {len(unsorted_links)} unsorted links to {UNSORTED_OUTPUT}, "
         f"{len(merged_totals)} contributor totals to {CONTRIBUTOR_TOTALS}, "
+        f"{len(archived_providers)} archived providers to {ARCHIVED_PROVIDERS}, "
         f"{len({submission_url_key(r.get('link', '')) for r in all_keys_rows if r.get('link')})} submission URL keys to {SUBMISSION_URL_KEYS} "
         f"({meta.get('version', '')}{meta.get('revision', '')})"
     )

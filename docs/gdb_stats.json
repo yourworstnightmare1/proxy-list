@@ -1,0 +1,201 @@
+{
+  "generated_at": "2026-08-23T21:29:38Z",
+  "snapshot_date": "2026-08-23",
+  "catalog_count": 23,
+  "total_entries": 30193,
+  "unique_games": 25857,
+  "catalogs": [
+    {
+      "tag": "gdb:unblockedzone",
+      "label": "Unblockedzone",
+      "count": 166,
+      "empty": false
+    },
+    {
+      "tag": "gdb:gn-math",
+      "label": "gn-math",
+      "count": 815,
+      "empty": false
+    },
+    {
+      "tag": "gdb:luminsdk",
+      "label": "Lumin SDK",
+      "count": 815,
+      "empty": false
+    },
+    {
+      "tag": "gdb:noahs-tutoring",
+      "label": "Noah's Tutoring",
+      "count": 406,
+      "empty": false
+    },
+    {
+      "tag": "gdb:elite-games",
+      "label": "Elite Games",
+      "count": 325,
+      "empty": false
+    },
+    {
+      "tag": "gdb:ultimate-game-stash",
+      "label": "Ultimate Game Stash",
+      "count": 2446,
+      "empty": false
+    },
+    {
+      "tag": "gdb:seraph",
+      "label": "Seraph",
+      "count": 500,
+      "empty": false
+    },
+    {
+      "tag": "gdb:chicken-kings-vault",
+      "label": "Chicken King's Vault",
+      "count": 821,
+      "empty": false
+    },
+    {
+      "tag": "gdb:lucide",
+      "label": "Lucide",
+      "count": 815,
+      "empty": false
+    },
+    {
+      "tag": "gdb:sdxp",
+      "label": "SDXP",
+      "count": 0,
+      "empty": true
+    },
+    {
+      "tag": "gdb:duckmath",
+      "label": "DuckMath",
+      "count": 250,
+      "empty": false
+    },
+    {
+      "tag": "gdb:ccported",
+      "label": "CCPorted",
+      "count": 22,
+      "empty": false
+    },
+    {
+      "tag": "gdb:selenite",
+      "label": "Selenite",
+      "count": 266,
+      "empty": false
+    },
+    {
+      "tag": "gdb:radon",
+      "label": "Radon",
+      "count": 302,
+      "empty": false
+    },
+    {
+      "tag": "gdb:fyinx",
+      "label": "Fyinx",
+      "count": 98,
+      "empty": false
+    },
+    {
+      "tag": "gdb:truffled",
+      "label": "Truffled",
+      "count": 0,
+      "empty": true
+    },
+    {
+      "tag": "gdb:totally-science",
+      "label": "Totally Science",
+      "count": 0,
+      "empty": true
+    },
+    {
+      "tag": "gdb:petezah",
+      "label": "PeteZah",
+      "count": 1121,
+      "empty": false
+    },
+    {
+      "tag": "gdb:frogies-arcade",
+      "label": "frogie's arcade",
+      "count": 0,
+      "empty": true
+    },
+    {
+      "tag": "gdb:space",
+      "label": "Space",
+      "count": 0,
+      "empty": true
+    },
+    {
+      "tag": "gdb:boredom",
+      "label": "Boredom",
+      "count": 11,
+      "empty": false
+    },
+    {
+      "tag": "gdb:dogeub",
+      "label": "dogeub",
+      "count": 20739,
+      "empty": false
+    },
+    {
+      "tag": "gdb:utopia",
+      "label": "Utopia Education",
+      "count": 275,
+      "empty": false
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-08-23",
+      "counts": {
+        "gdb:unblockedzone": 166,
+        "gdb:gn-math": 815,
+        "gdb:luminsdk": 815,
+        "gdb:noahs-tutoring": 406,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 815,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 250,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:fyinx": 98,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275
+      },
+      "total_entries": 30193,
+      "unique_games": 25857
+    }
+  ],
+  "latest_changes": {
+    "date": "2026-08-23",
+    "is_baseline": true,
+    "by_catalog": {},
+    "all": {
+      "added": [],
+      "removed": [],
+      "added_count": 0,
+      "removed_count": 0
+    }
+  },
+  "modifications": [
+    {
+      "date": "2026-08-23",
+      "kind": "baseline",
+      "catalogs_touched": [],
+      "added": 0,
+      "removed": 0,
+      "by_catalog": []
+    }
+  ],
+  "_note": "Built by scripts/build_gdb_stats.py. Live UI may also refresh counts via game-db-search.js."
+}
