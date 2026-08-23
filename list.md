@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v6.6 | Released: August 20, 2026
-> r272 | Last Updated: August 23, 2026
+> r273 | Last Updated: August 23, 2026
 > Total onsite links: 29631 (29289 sorted + 342 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -2262,12 +2262,11 @@ A new feature is currently in beta which allows you to search for games directly
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 2 |
+> | Games | N/A | N/A | 1 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://trim.barberduck.ro/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://trimmer.barberduck.ro/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧑‍🧒‍🧒 Soul
 > [!NOTE]
