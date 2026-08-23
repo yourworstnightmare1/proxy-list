@@ -218,23 +218,55 @@
     } catch (_) {}
   }
 
-  async function updateSubmission(docId, status, reviewNote) {
+  async function updateSubmission(docId, status, reviewNote, extra) {
     var subSnap = await db.collection("linkSubmissions").doc(docId).get();
     var sub = subSnap.data() || {};
-    await db.collection("linkSubmissions").doc(docId).update({
+    var payload = {
       status: status,
       reviewNote: reviewNote || "",
       reviewedBy: currentUser.uid,
       updated: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    };
+    if (extra && typeof extra === "object") {
+      Object.keys(extra).forEach(function (k) {
+        payload[k] = extra[k];
+      });
+    }
+    await db.collection("linkSubmissions").doc(docId).update(payload);
     if (status !== "pending") await clearPendingSubmissionKey(sub);
   }
 
+  async function requestPublishSync() {
+    try {
+      var base =
+        (window.__PROXY_LIST_API_BASE__ || "https://proxy-list.jasonthegamer48.workers.dev").replace(
+          /\/$/,
+          ""
+        );
+      var token = currentUser && (await currentUser.getIdToken());
+      if (!token) return;
+      await fetch(base + "/api/submissions/sync", {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + token,
+          "Content-Type": "application/json",
+        },
+        body: "{}",
+      });
+    } catch (_) {
+      /* optional kick; scheduled sync still picks approvals up */
+    }
+  }
+
   async function onApprove(docId, sub) {
-    await updateSubmission(docId, "approved", "");
+    await updateSubmission(docId, "approved", "", {
+      publishedToList: false,
+      publishQueued: true,
+    });
     var row = SU.formatListMdRow(sub.url, contributorMd(sub));
     if (copyBox) copyBox.value = row;
     if (copySection) copySection.hidden = false;
+    await requestPublishSync();
     await notifyUser(sub.submitterUid, {
       kind: "links_approved",
       count: 1,

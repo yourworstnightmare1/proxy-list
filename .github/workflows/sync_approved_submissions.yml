@@ -1,0 +1,61 @@
+name: Sync approved submissions
+
+# Pull approved Firestore link submissions into list.md and refresh site data.
+# Requires repo secret FIREBASE_SERVICE_ACCOUNT (full service-account JSON).
+# Optional: Worker POST /api/submissions/sync with GITHUB_PUBLISH_TOKEN dispatches this workflow.
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install crypto helper
+        run: pip install cryptography
+
+      - name: Sync approved submissions
+        id: sync
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -z "$FIREBASE_SERVICE_ACCOUNT" ]; then
+            echo "FIREBASE_SERVICE_ACCOUNT secret not set; skipping sync."
+            echo "skipped=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python scripts/sync_approved_submissions.py --mark-published
+          echo "skipped=false" >> "$GITHUB_OUTPUT"
+
+      - name: Commit & push
+        if: steps.sync.outputs.skipped != 'true'
+        run: |
+          git config user.name "auto-link-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add list.md docs/data.json docs/data.json.gz docs/unsorted.json docs/contributor_link_totals.json docs/submission_url_keys.json docs/update_changelog.json docs/archived_providers.json || true
+          if git diff --cached --quiet; then
+            echo "No list changes to commit"
+            exit 0
+          fi
+          git commit -m "Auto-publish approved link submissions"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); rebasing…"
+            git pull --rebase --autostash origin main
+            sleep $((attempt * 2))
+          done
+          exit 1

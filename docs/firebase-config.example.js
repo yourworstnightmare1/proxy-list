@@ -25,6 +25,12 @@
    presence-client.js and click APIs fall back to that origin automatically on *.github.io.
    Override with: window.__PROXY_LIST_API_BASE__ = "https://proxy-list.jasonthegamer48.workers.dev";
 
+   Approved link auto-publish (optional):
+   - Add GitHub Actions secret FIREBASE_SERVICE_ACCOUNT (service account JSON) so
+     .github/workflows/sync_approved_submissions.yml can write approved links into list.md.
+   - Optional Worker secrets for instant kick on Approve:
+     GITHUB_PUBLISH_TOKEN (workflow dispatch), SUBMISSION_ADMIN_UIDS, GITHUB_REPO.
+
    On-site link submissions (docs/contribute/, docs/admin/submissions.html):
    - Deploy docs/firestore.rules (includes linkSubmissions, pendingSubmissionKeys,
      contributorBans, contributorStats, and siteFeedback with strict client counter rules).

@@ -105,6 +105,12 @@ export default {
     if (url.pathname === "/api/steam/appdetails" && request.method === "OPTIONS") {
       return cors(new Response(null, { status: 204 }));
     }
+    if (url.pathname === "/api/submissions/sync" && request.method === "POST") {
+      return handleSubmissionsSync(request, env);
+    }
+    if (url.pathname === "/api/submissions/sync" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
 
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
@@ -1484,4 +1490,75 @@ async function handleSteamAppDetails(request, env, ctx) {
     new URLSearchParams({ appids: id, l: "english" }).toString();
   const cacheKey = `https://steam-proxy.proxy-list.internal/appdetails/v1/${id}`;
   return cachedSteamJson(cacheKey, upstream, STEAM_DETAILS_CACHE_TTL_SEC, ctx);
+}
+
+/**
+ * Kick GitHub Actions to pull approved Firestore submissions into list.md.
+ * Requires env.GITHUB_PUBLISH_TOKEN (repo scope: actions:write) and optional
+ * env.GITHUB_REPO (default yourworstnightmare1/proxy-list).
+ * Caller must send Authorization: Bearer <Firebase ID token> for an admin UID.
+ */
+async function handleSubmissionsSync(request, env) {
+  const auth = String(request.headers.get("Authorization") || "");
+  const m = /^Bearer\s+(.+)$/i.exec(auth);
+  if (!m) return json({ ok: false, error: "missing_token" }, 401);
+
+  let uid = "";
+  try {
+    const tip = await fetch(
+      "https://oauth2.googleapis.com/tokeninfo?id_token=" + encodeURIComponent(m[1].trim())
+    );
+    if (!tip.ok) return json({ ok: false, error: "invalid_token" }, 401);
+    const info = await tip.json();
+    uid = String(info.user_id || info.sub || "");
+    const aud = String(info.aud || "");
+    const expectedAud = String(env.FIREBASE_PROJECT_ID || "").trim();
+    if (expectedAud && aud && aud !== expectedAud) {
+      return json({ ok: false, error: "wrong_audience" }, 401);
+    }
+  } catch (err) {
+    console.error("submissions_sync_token", err);
+    return json({ ok: false, error: "token_check_failed" }, 401);
+  }
+
+  const adminCsv = String(env.SUBMISSION_ADMIN_UIDS || "").trim();
+  const admins = adminCsv
+    ? adminCsv.split(/[,\s]+/).map((s) => s.trim()).filter(Boolean)
+    : ["OiMY32eTKcSnEX73W6oBUKgT6pG3"];
+  if (!uid || !admins.includes(uid)) {
+    return json({ ok: false, error: "forbidden" }, 403);
+  }
+
+  const ghToken = String(env.GITHUB_PUBLISH_TOKEN || "").trim();
+  if (!ghToken) {
+    return json({
+      ok: true,
+      queued: false,
+      warning: "GITHUB_PUBLISH_TOKEN not set; scheduled sync will publish approvals.",
+    });
+  }
+
+  const repo = String(env.GITHUB_REPO || "yourworstnightmare1/proxy-list").trim();
+  const workflow = String(env.GITHUB_SYNC_WORKFLOW || "sync_approved_submissions.yml").trim();
+  const ref = String(env.GITHUB_SYNC_REF || "main").trim();
+  const res = await fetch(
+    `https://api.github.com/repos/${repo}/actions/workflows/${workflow}/dispatches`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${ghToken}`,
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "Content-Type": "application/json",
+        "User-Agent": "proxy-list-worker",
+      },
+      body: JSON.stringify({ ref }),
+    }
+  );
+  if (!res.ok && res.status !== 204) {
+    const text = await res.text();
+    console.error("github_dispatch_failed", res.status, text);
+    return json({ ok: false, error: "github_dispatch_failed", status: res.status }, 502);
+  }
+  return json({ ok: true, queued: true });
 }

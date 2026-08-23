@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
-> v7.0 | Released: August 23, 2026
-> r274 | Last Updated: August 23, 2026
-> Total onsite links: 29560 (29218 sorted + 342 unsorted)\
+> v7.0.1 | Released: August 23, 2026
+> r275 | Last Updated: August 23, 2026
+> Total onsite links: 29566 (29224 sorted + 342 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -16,6 +16,8 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 ## Important Notices
 
 ## Update Notice
+# Approved links auto-publish
+Approved link submissions now sync into the list and the site automatically after approval, so paste-into-list.md is no longer required.
 
 # Game Database Browser
 You can now visually browse through game databases by going to the new game database browser, which can be accessed using the "Game browser" button in the sidebar. You will be able to see games across all or selected databases, search for games, view info and preview images for games (if applicable), and view all links that have your desired game. I hope that by creating this people will be able to get more use out of the list by being able to find what they specifically want to do on the site, and there will be more dedicated tags for specific site features coming later so you can have an easier time making choices on links and finding what you require based on your needs.
@@ -42,7 +44,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 70 |
+> | Proxy/Games | captcha | Scramjet | 73 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -124,7 +126,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math | N/A | 107 |
+> | Games | GDB:gn-math | N/A | 119 |
 
 > [!IMPORTANT]
 > if the link loads a page saying "user gn-math is blocked" or no games appear on screen, you are using an old version of gn-math that no longer works, please use another link. i also recommend reporting this on our GitHub issues page to prevent other users from running into this issue -> https://github.com/yourworstnightmare1/proxy-list/issues
@@ -255,7 +257,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 41 |
+> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 43 |
 
 > [!IMPORTANT]
 > on some networks, the proxy will load a white screen or an ultraviolet error page, if this happens try using another link as that is known to fix this issue
@@ -372,7 +374,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 29 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 30 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -414,7 +416,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 40 |
+> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 69 |
 > [!IMPORTANT]
 > site has a bunch of ad popup windows, you can close these. it's recommended you use uBlock Origin to view this site without those popups
 
@@ -596,7 +598,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:boredom | Scramjet | 6 |
+> | Proxy/Games | GDB:boredom | Scramjet | 7 |
 
 > [!IMPORTANT]
 > Boredom does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -628,7 +630,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 32 |
+> | Proxy/Games | unknown | unknown | 33 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -674,7 +676,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 62 |
+> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 63 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -1015,7 +1017,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 2 |
+> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 3 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -1027,7 +1029,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | N/A | N/A | 403 |
+> | Proxy/Games | N/A | N/A | 404 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -1443,7 +1445,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math | Scramjet | 43 |
+> | Proxy/Games | GDB:gn-math | Scramjet | 53 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1671,7 +1673,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | Unknown | Ultraviolet | 106 |
+> | Proxy | Unknown | Ultraviolet | 126 |
 > [!IMPORTANT]
 > if you were looking for ford links, ford no longer exists and all of its links are now strawberri links
 
@@ -1808,7 +1810,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 5 |
+> | Proxy/Games | unknown | unknown | 7 |
 
 > [!IMPORTANT]
 > for some reason the developers put a 4 tab limit on free users (3 if you have adblock, 8+ if you pay). if you need multitasking use another proxy
@@ -1903,7 +1905,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:lucide | Scramjet | 22 |
+> | Proxy/Games | captcha, GDB:lucide | Scramjet | 23 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2116,7 +2118,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 5 |
+> | Proxy/Games | captcha | Scramjet | 6 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3220,7 +3222,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 16715 |
+> | Proxy/Games | unknown | unknown | 17385 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -20655,7 +20657,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 2 |
+> | Proxy/Games | unknown | unknown | 34 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -20797,7 +20799,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 1 |
+> | Proxy/Games | wisp | Scramjet, Ultraviolet | 2 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -20841,7 +20843,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 11 |
+> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 12 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://interesting-articles.pages.dev | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -20861,7 +20863,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 1 |
+> | pending | pending | pending | 4 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -20876,7 +20878,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8201 |
+> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8204 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | http://inasmuch.cryptparty.com/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -29242,7 +29244,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | - | 132 |
+> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | - | 222 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -29499,7 +29501,7 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 238 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 279 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -29880,25 +29882,31 @@ Statistics have also been added to game databases with game amounts, latest game
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 1 |
+> | Games | N/A | N/A | 5 |
 > [!IMPORTANT]
 > This section has not been fully categorized or checked for protocol(s) and capabilities. Submitter note: mainly games.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://pgis3.vercel.app | 8/9/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
+|  | https://homework555.netlify.app/ | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
+|  | https://math.bumon.ar | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
+|  | https://math.port0.org/ | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
+|  | https://test-v3.appwrite.network/ | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 
 # 🪨 Zinc
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | N/A | N/A | 1 |
+> | Proxy/Games | N/A | N/A | 3 |
 > [!IMPORTANT]
 > This section has not been fully categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://zinc-browser.vercel.app/ | 8/9/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
+|  | https://zinc.math.bumon.ar/ | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
+|  | https://zinc-proxy.vercel.app/ | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 
 # 🌫️ Mist
 > [!NOTE]
