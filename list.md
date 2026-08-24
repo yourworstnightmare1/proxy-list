@@ -29883,7 +29883,6 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 | | https://pgis3.vercel.app | 8/9/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 |  | https://homework555.netlify.app/ | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 |  | https://math.bumon.ar | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
-|  | https://math.port0.org/ | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 |  | https://test-v3.appwrite.network/ | 8/20/2026 | N/A | N/A | [0800](https://github.com/0800WebDev)
 
 # 🪨 Zinc
