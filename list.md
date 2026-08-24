@@ -16,6 +16,7 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 ## Important Notices
 
 ## Update Notice
+
 # Fixed a bug that caused games not to be searched properly
 
 # Optimized the search bar
