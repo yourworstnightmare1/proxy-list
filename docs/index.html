@@ -2371,25 +2371,50 @@
     .important-notices a {
       word-break: break-all;
     }
-    .important-notices .notice-alert-info {
-      border: 1px solid #2d6aa8;
-      background: #1f1f1f;
+    .important-notices .notice-alert-info,
+    .important-notices .notice-alert-success,
+    .important-notices .notice-alert-warning,
+    .important-notices .notice-alert-danger {
       border-radius: 6px;
       padding: 0.65rem 0.75rem;
       margin-bottom: 0.75rem;
     }
+    .important-notices .notice-alert-info {
+      border: 1px solid #2d6aa8;
+      background: #152033;
+    }
+    .important-notices .notice-alert-info h2,
     .important-notices .notice-alert-info h3 {
       color: #8ec8ff;
     }
     .important-notices .notice-alert-info p {
       color: #d8eaff;
     }
+    .important-notices .notice-alert-success {
+      border: 1px solid #2d8a4e;
+      background: #132418;
+    }
+    .important-notices .notice-alert-success h2,
+    .important-notices .notice-alert-success h3 {
+      color: #8effb0;
+    }
+    .important-notices .notice-alert-success p {
+      color: #d8ffe8;
+    }
+    .important-notices .notice-alert-warning {
+      border: 1px solid #a88a2d;
+      background: #2a2415;
+    }
+    .important-notices .notice-alert-warning h2,
+    .important-notices .notice-alert-warning h3 {
+      color: #ffe08a;
+    }
+    .important-notices .notice-alert-warning p {
+      color: #fff2d2;
+    }
     .important-notices .notice-alert-danger {
       border: 1px solid #a83d3d;
       background: #2a1515;
-      border-radius: 6px;
-      padding: 0.65rem 0.75rem;
-      margin-bottom: 0.75rem;
     }
     .important-notices .notice-alert-danger h2,
     .important-notices .notice-alert-danger h3 {
@@ -12061,8 +12086,11 @@
 
     function importantNoticeAlertClass(title) {
       const t = String(title || "").trim();
+      if (/proxy connections fully operational/i.test(t)) return "notice-alert-success";
+      if (/canary branch coming soon/i.test(t)) return "notice-alert-info";
+      if (/try out the game browser/i.test(t)) return "notice-alert-info";
+      if (/recent submissions not appearing/i.test(t)) return "notice-alert-warning";
       if (/link ratings back up/i.test(t)) return "notice-alert-info";
-      if (/scramjet|ultraviolet/i.test(t)) return "notice-alert-danger";
       return "";
     }
 
@@ -12281,15 +12309,9 @@
       openUpdateModal(meta, stored);
     }
 
-    const PROXY_ACCESS_NOTICE_MD =
-      "# Issues Visiting Site Through Scramjet/Ultraviolet\n\n" +
-      "I am aware that when you try to visit the site using the Scramjet and Ultraviolet proxies, the list fails to load with an error or hangs on the loading screen. I am currently working to fix these bugs, and Scramjet should be operational at the moment. I apologize for any inconvenience this may be causing. [Check GitHub PRs for info on updates being made to fix support](https://github.com/yourworstnightmare1/proxy-list/pull/)";
-
     function applyImportantNotices(meta) {
       const md = meta && meta.important_notices;
-      const metaHtml = md && String(md).trim() ? renderMarkdownLiteNotices(String(md)) : "";
-      const proxyHtml = renderMarkdownLiteNotices(PROXY_ACCESS_NOTICE_MD);
-      importantNoticesStaticHtml = proxyHtml + metaHtml;
+      importantNoticesStaticHtml = md && String(md).trim() ? renderMarkdownLiteNotices(String(md)) : "";
       refreshImportantNoticesDom();
     }
 

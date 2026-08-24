@@ -15,6 +15,18 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 
 ## Important Notices
 
+### Proxy Connections Fully Operational
+The bugs and errors caused by connecting from the Scramjet and Ultraviolet proxies should now be fixed. Happy searching!
+
+### Canary Branch Coming Soon
+Want to try out upcoming features before they’re fully released? The Proxy List canary branch is coming soon, with its own dedicated URL where you can try out beta features before they’re fully released to the public!
+
+### Try Out the Game Browser
+Looking for a specific game but don’t want to try every provider’s links to find it? Use the Database Game Browser in the sidebar (or below this message if you’re on mobile) and search for your favorite games, and the list will give you info on the game and give you links known to have that game!
+
+### Recent Submissions Not Appearing
+I am aware of a bug where recent submissions do not appear after making a submission; this is being fixed and should be pushed by the end of today.
+
 ## Update Notice
 
 # Fixed a bug that caused games not to be searched properly
