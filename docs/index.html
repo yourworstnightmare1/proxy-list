@@ -8601,6 +8601,60 @@
       return true;
     }
 
+    function bestGdbSearchMatchForQuery(query, minGameScore) {
+      const api = window.ProxyListGameDbSearch;
+      if (!api || typeof api.suggestFromCache !== "function") return null;
+      const q = String(query || "").trim();
+      if (!q) return null;
+      const minScore = minGameScore != null ? minGameScore : 80;
+      const tags = getSelectedGdbSearchTags();
+      const items = api.suggestFromCache(q, {
+        limit: 12,
+        tags: tags === null ? undefined : tags,
+      });
+      if (!items.length) return null;
+      const normQ = typeof api.normalizeQuery === "function" ? api.normalizeQuery(q) : q.toLowerCase();
+      let bestGame = null;
+      for (const item of items) {
+        if (item.kind !== "gdb-game" || !Array.isArray(item.tags) || !item.tags.length) continue;
+        const score = item.score != null ? item.score : 0;
+        const normLabel =
+          typeof api.normalizeQuery === "function"
+            ? api.normalizeQuery(item.label)
+            : String(item.label).toLowerCase();
+        if (normLabel === normQ || score >= minScore) {
+          if (!bestGame || score > (bestGame.score || 0)) bestGame = item;
+        }
+      }
+      if (bestGame) return bestGame;
+      for (const item of items) {
+        if (item.kind === "gdb-database" && Array.isArray(item.tags) && item.tags.length) return item;
+      }
+      return null;
+    }
+
+    async function tryApplyGameSearchFromQuery(query, options) {
+      const opts = options || {};
+      const q = String(query || "").trim();
+      if (!q) return false;
+      const api = window.ProxyListGameDbSearch;
+      if (!api) return false;
+      const minScore = opts.fromUrl ? 50 : 80;
+
+      let match = bestGdbSearchMatchForQuery(q, minScore);
+      if (!match || !(match.tags && match.tags.length)) {
+        if (typeof api.warmAll === "function") {
+          const tags = getSelectedGdbSearchTags();
+          await api.warmAll(tags === null ? undefined : { tags: tags });
+        }
+        match = bestGdbSearchMatchForQuery(q, minScore);
+      }
+      if (match && match.tags && match.tags.length) {
+        return applyGdbSearchSuggestion(match);
+      }
+      return false;
+    }
+
     function applySearchSuggestion(item) {
       if (!item) return;
       if (item.kind === "gdb-database" || item.kind === "gdb-game") {
@@ -8831,7 +8885,19 @@
         applyPaletteQuery(item.value);
         return;
       }
-      applyPaletteQuery(typed);
+      void (async () => {
+        if (!typed) {
+          applyPaletteQuery("");
+          return;
+        }
+        const applied = await tryApplyGameSearchFromQuery(typed);
+        if (applied) {
+          rememberRecentSearch(typed);
+          closeSearchPalette();
+          return;
+        }
+        applyPaletteQuery(typed);
+      })();
     }
 
     function openSearchPalette() {
@@ -8996,9 +9062,18 @@
               return;
             }
           }
+          ev.preventDefault();
           hideSearchSuggestions();
           const typed = String(input.value || "").trim();
-          if (typed) rememberRecentSearch(typed);
+          if (!typed) return;
+          void (async () => {
+            const applied = await tryApplyGameSearchFromQuery(typed);
+            rememberRecentSearch(typed);
+            if (!applied && pageContext) {
+              scheduleRenderFromPageContext();
+              scheduleUserProfileWrite();
+            }
+          })();
         }
       });
       input.addEventListener("blur", () => {
@@ -12673,20 +12748,19 @@
 
         wireSearchAutocomplete(links);
         if (window.ProxyListGameDbSearch && typeof window.ProxyListGameDbSearch.warmAll === "function") {
-        if (window.ProxyListGameDbSearch && typeof window.ProxyListGameDbSearch.warmAll === "function") {
           const tags = getSelectedGdbSearchTags();
           void window.ProxyListGameDbSearch.warmAll(tags === null ? undefined : { tags: tags });
-        }
         }
         $("q").addEventListener("input", () => {
           scheduleRender(links, meta, link_check, { debounceMs: 200 });
           scheduleUserProfileWrite();
         });
+        let initialSearchQuery = null;
         try {
           const u = new URL(window.location.href);
-          const qp = u.searchParams.get("q");
+          initialSearchQuery = u.searchParams.get("q");
           const qIn = $("q");
-          if (qIn && qp != null) qIn.value = qp;
+          if (qIn && initialSearchQuery != null) qIn.value = initialSearchQuery;
         } catch (_) {}
         $("resetFiltersBtn").addEventListener("click", resetAllFilters);
         document.querySelectorAll('input[name="capMode"]').forEach((el) => {
@@ -13129,7 +13203,23 @@
           }
         });
 
-        return render(links, meta, link_check).then(() => {
+        async function runInitialRender() {
+          const qFromUrl =
+            initialSearchQuery != null ? String(initialSearchQuery).trim() : "";
+          if (qFromUrl) {
+            const applied = await tryApplyGameSearchFromQuery(qFromUrl, { fromUrl: true });
+            if (applied) {
+              try {
+                const u = new URL(window.location.href);
+                u.searchParams.delete("q");
+                history.replaceState({}, "", u.pathname + u.search + u.hash);
+              } catch (_) {}
+            }
+          }
+          return render(links, meta, link_check);
+        }
+
+        return runInitialRender().then(() => {
           finishContentLoading();
           if ($("folderTrustedResults")) refreshFolderTrustedSearchUI(folderTrustedSearchLastQuery);
         });
