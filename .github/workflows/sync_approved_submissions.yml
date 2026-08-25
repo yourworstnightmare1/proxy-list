@@ -50,12 +50,46 @@ jobs:
             exit 0
           fi
           git commit -m "Auto-publish approved link submissions"
+
+          resolve_rebase_conflicts() {
+            local conflicts
+            conflicts="$(git diff --name-only --diff-filter=U || true)"
+            if [ -z "$conflicts" ]; then
+              return 1
+            fi
+            echo "Resolving rebase conflicts by regenerating export files…"
+            while IFS= read -r f; do
+              [ -z "$f" ] && continue
+              case "$f" in
+                docs/data.json|docs/data.json.gz|docs/unsorted.json|docs/contributor_link_totals.json|docs/submission_url_keys.json|docs/update_changelog.json|docs/archived_providers.json|docs/filter_stats.json)
+                  # Prefer upstream during rebase, then regenerate from list.md.
+                  git checkout --ours -- "$f" 2>/dev/null || true
+                  git add -- "$f"
+                  ;;
+                list.md)
+                  # Keep our publish commit's list changes when possible.
+                  git checkout --theirs -- "$f" 2>/dev/null || true
+                  git add -- "$f"
+                  ;;
+                *)
+                  git checkout --theirs -- "$f" 2>/dev/null || git checkout --ours -- "$f" 2>/dev/null || true
+                  git add -- "$f"
+                  ;;
+              esac
+            done <<< "$conflicts"
+            python scripts/convert_list_to_json.py
+            git add list.md docs/data.json docs/data.json.gz docs/unsorted.json docs/contributor_link_totals.json docs/submission_url_keys.json docs/update_changelog.json docs/archived_providers.json || true
+            GIT_EDITOR=true git rebase --continue
+          }
+
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               exit 0
             fi
             echo "Push rejected (attempt ${attempt}); rebasing…"
-            git pull --rebase --autostash origin main
+            if ! git pull --rebase --autostash origin main; then
+              resolve_rebase_conflicts || exit 1
+            fi
             sleep $((attempt * 2))
           done
           exit 1

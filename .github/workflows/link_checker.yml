@@ -146,7 +146,7 @@ jobs:
           git config --global user.name "auto-link-bot"
           git config --global user.email "bot@users.noreply.github.com"
 
-          git add *.md docs/data.json docs/unsorted.json docs/contributor_link_totals.json docs/filter_stats.json docs/link_check_meta.json docs/link_check_snapshot.json link_status.json
+          git add *.md docs/data.json docs/data.json.gz docs/unsorted.json docs/contributor_link_totals.json docs/filter_stats.json docs/link_check_meta.json docs/link_check_snapshot.json link_status.json docs/submission_url_keys.json docs/archived_providers.json || true
 
           if ! git diff --cached --quiet; then
             if [ "${{ steps.commitinfo.outputs.release_published }}" = "true" ]; then
@@ -154,13 +154,49 @@ jobs:
             else
               git commit -m "Silent maintenance | link check (purged ${{ steps.commitinfo.outputs.removed }} dead links, link count: ${{ steps.commitinfo.outputs.total }})"
             fi
+
+            resolve_rebase_conflicts() {
+              local conflicts
+              conflicts="$(git diff --name-only --diff-filter=U || true)"
+              if [ -z "$conflicts" ]; then
+                return 1
+              fi
+              echo "Resolving rebase conflicts by regenerating export files…"
+              while IFS= read -r f; do
+                [ -z "$f" ] && continue
+                case "$f" in
+                  docs/filter_stats.json|docs/data.json|docs/data.json.gz|docs/unsorted.json|docs/contributor_link_totals.json|docs/link_check_meta.json|docs/link_check_snapshot.json|link_status.json|docs/submission_url_keys.json|docs/archived_providers.json)
+                    # During rebase, --ours is upstream (origin/main).
+                    git checkout --ours -- "$f" 2>/dev/null || true
+                    git add -- "$f"
+                    ;;
+                  list.md|unsorted.md|unsorted_raw.txt)
+                    # Keep this run's link-check edits.
+                    git checkout --theirs -- "$f" 2>/dev/null || true
+                    git add -- "$f"
+                    ;;
+                  *)
+                    git checkout --theirs -- "$f" 2>/dev/null || git checkout --ours -- "$f" 2>/dev/null || true
+                    git add -- "$f"
+                    ;;
+                esac
+              done <<< "$conflicts"
+              python scripts/update_link_check_meta.py || true
+              python scripts/convert_list_to_json.py
+              python scripts/build_filter_stats.py
+              git add *.md docs/data.json docs/data.json.gz docs/unsorted.json docs/contributor_link_totals.json docs/filter_stats.json docs/link_check_meta.json docs/link_check_snapshot.json link_status.json docs/submission_url_keys.json docs/archived_providers.json || true
+              GIT_EDITOR=true git rebase --continue
+            }
+
             # Concurrent main pushes (export / manual commits) often race this step.
             for attempt in 1 2 3 4 5; do
               if git push origin HEAD:main; then
                 exit 0
               fi
               echo "Push rejected (attempt ${attempt}); rebasing onto origin/main…"
-              git pull --rebase --autostash origin main
+              if ! git pull --rebase --autostash origin main; then
+                resolve_rebase_conflicts || exit 1
+              fi
               sleep $((attempt * 2))
             done
             echo "Failed to push after retries"

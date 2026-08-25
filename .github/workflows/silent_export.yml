@@ -34,15 +34,36 @@ jobs:
         run: |
           git config --global user.name "auto-link-bot"
           git config --global user.email "bot@users.noreply.github.com"
-          git add docs/data.json docs/contributor_link_totals.json docs/filter_stats.json
+          git add docs/data.json docs/data.json.gz docs/contributor_link_totals.json docs/filter_stats.json docs/submission_url_keys.json docs/archived_providers.json || true
           if ! git diff --cached --quiet; then
             git commit -m "Silent maintenance | refresh exported web data"
+
+            resolve_rebase_conflicts() {
+              local conflicts
+              conflicts="$(git diff --name-only --diff-filter=U || true)"
+              if [ -z "$conflicts" ]; then
+                return 1
+              fi
+              echo "Resolving rebase conflicts by regenerating export files…"
+              while IFS= read -r f; do
+                [ -z "$f" ] && continue
+                git checkout --ours -- "$f" 2>/dev/null || true
+                git add -- "$f"
+              done <<< "$conflicts"
+              python scripts/convert_list_to_json.py
+              python scripts/build_filter_stats.py
+              git add docs/data.json docs/data.json.gz docs/contributor_link_totals.json docs/filter_stats.json docs/submission_url_keys.json docs/archived_providers.json || true
+              GIT_EDITOR=true git rebase --continue
+            }
+
             for attempt in 1 2 3 4 5; do
               if git push origin HEAD:main; then
                 exit 0
               fi
               echo "Push rejected (attempt ${attempt}); rebasing onto origin/main…"
-              git pull --rebase --autostash origin main
+              if ! git pull --rebase --autostash origin main; then
+                resolve_rebase_conflicts || exit 1
+              fi
               sleep $((attempt * 2))
             done
             echo "Failed to push after retries"
