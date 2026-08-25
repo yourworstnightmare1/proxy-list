@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-25T12:41:57Z",
-  "sorted_links": 29195,
-  "links_with_filter_data": 28956,
-  "links_without_filter_data": 239,
+  "generated_at": "2026-08-25T18:36:27Z",
+  "sorted_links": 29191,
+  "links_with_filter_data": 28955,
+  "links_without_filter_data": 236,
   "filter_count": 19,
   "filters": [
     {
@@ -17,145 +17,145 @@
       "name": "Qustodio",
       "key": "qustodio",
       "blocked": 25980,
-      "unblocked": 2976,
+      "unblocked": 2975,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     },
     {
       "name": "iBoss",
       "key": "iboss",
       "blocked": 1697,
-      "unblocked": 27259,
+      "unblocked": 27258,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     },
     {
       "name": "Senso Cloud",
       "key": "sensocloud",
       "blocked": 1514,
-      "unblocked": 27438,
+      "unblocked": 27437,
       "warning": 0,
-      "total": 28952
+      "total": 28951
     },
     {
       "name": "Securly",
       "key": "securly",
-      "blocked": 1489,
+      "blocked": 1488,
       "unblocked": 27467,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     },
     {
       "name": "GoGuardian",
       "key": "goguardian",
-      "blocked": 1454,
+      "blocked": 1453,
       "unblocked": 27502,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     },
     {
       "name": "Sophos",
       "key": "sophos",
-      "blocked": 1425,
+      "blocked": 1424,
       "unblocked": 27531,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     },
     {
       "name": "Lightspeed",
       "key": "lightspeed",
-      "blocked": 1257,
+      "blocked": 1256,
       "unblocked": 27699,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     },
     {
       "name": "ContentKeeper",
       "key": "contentkeeper",
-      "blocked": 1161,
+      "blocked": 1160,
       "unblocked": 27793,
       "warning": 0,
-      "total": 28954
+      "total": 28953
     },
     {
       "name": "Linewize",
       "key": "linewize",
-      "blocked": 834,
+      "blocked": 833,
       "unblocked": 28122,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     },
     {
       "name": "Palo Alto",
       "key": "paloalto",
-      "blocked": 623,
+      "blocked": 622,
       "unblocked": 28333,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     },
     {
       "name": "LanSchool",
       "key": "lanschool",
-      "blocked": 619,
+      "blocked": 618,
       "unblocked": 26972,
       "warning": 0,
-      "total": 27591
+      "total": 27590
     },
     {
       "name": "FortiGuard",
       "key": "fortiguard",
       "blocked": 537,
-      "unblocked": 28419,
+      "unblocked": 28418,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     },
     {
       "name": "Blocksi Web",
       "key": "blocksiweb",
       "blocked": 513,
-      "unblocked": 28443,
+      "unblocked": 28442,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     },
     {
       "name": "Cisco Umbrella",
       "key": "ciscoumbrella",
       "blocked": 466,
-      "unblocked": 27657,
+      "unblocked": 27656,
       "warning": 0,
-      "total": 28123
+      "total": 28122
     },
     {
       "name": "Barracuda",
       "key": "barracuda",
       "blocked": 461,
-      "unblocked": 28330,
+      "unblocked": 28329,
       "warning": 0,
-      "total": 28791
+      "total": 28790
     },
     {
       "name": "Blocksi AI",
       "key": "blocksiai",
       "blocked": 291,
-      "unblocked": 28664,
+      "unblocked": 28663,
       "warning": 0,
-      "total": 28955
+      "total": 28954
     },
     {
       "name": "Deledao",
       "key": "deledao",
       "blocked": 213,
-      "unblocked": 28741,
+      "unblocked": 28740,
       "warning": 0,
-      "total": 28954
+      "total": 28953
     },
     {
       "name": "DNSFilter",
       "key": "dnsfilter",
       "blocked": 204,
-      "unblocked": 28752,
+      "unblocked": 28751,
       "warning": 0,
-      "total": 28956
+      "total": 28955
     }
   ],
   "block_reasons": [
@@ -205,11 +205,11 @@
     },
     {
       "reason": "Uncategorized",
-      "count": 1661,
+      "count": 1660,
       "by_filter": [
         {
           "name": "GoGuardian",
-          "count": 799
+          "count": 798
         },
         {
           "name": "Senso Cloud",
@@ -231,11 +231,11 @@
     },
     {
       "reason": "Anonymous proxies",
-      "count": 1287,
+      "count": 1286,
       "by_filter": [
         {
           "name": "Securly",
-          "count": 1287
+          "count": 1286
         }
       ]
     },
@@ -285,21 +285,21 @@
     },
     {
       "reason": "blocklist.proxies",
-      "count": 768,
+      "count": 767,
       "by_filter": [
         {
           "name": "Linewize",
-          "count": 768
+          "count": 767
         }
       ]
     },
     {
       "reason": "Security - Domain Sharing",
-      "count": 708,
+      "count": 707,
       "by_filter": [
         {
           "name": "Lightspeed",
-          "count": 708
+          "count": 707
         }
       ]
     },
@@ -315,11 +315,11 @@
     },
     {
       "reason": "Web Proxy",
-      "count": 482,
+      "count": 481,
       "by_filter": [
         {
           "name": "LanSchool",
-          "count": 482
+          "count": 481
         }
       ]
     },
@@ -409,11 +409,11 @@
     },
     {
       "reason": "Proxy-Avoidance-and-Anonymizers",
-      "count": 293,
+      "count": 292,
       "by_filter": [
         {
           "name": "Palo Alto",
-          "count": 293
+          "count": 292
         }
       ]
     },
@@ -750,22 +750,22 @@
       ]
     },
     {
-      "reason": "Dynamic DNS (Global)",
-      "count": 54,
-      "by_filter": [
-        {
-          "name": "ContentKeeper",
-          "count": 54
-        }
-      ]
-    },
-    {
       "reason": "Server Hosting",
       "count": 54,
       "by_filter": [
         {
           "name": "Senso Cloud",
           "count": 54
+        }
+      ]
+    },
+    {
+      "reason": "Dynamic DNS (Global)",
+      "count": 53,
+      "by_filter": [
+        {
+          "name": "ContentKeeper",
+          "count": 53
         }
       ]
     },
@@ -781,11 +781,11 @@
     },
     {
       "reason": "PARKED_DOMAINS",
-      "count": 50,
+      "count": 49,
       "by_filter": [
         {
           "name": "Sophos",
-          "count": 50
+          "count": 49
         }
       ]
     },
