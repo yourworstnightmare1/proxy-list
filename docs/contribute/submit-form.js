@@ -643,15 +643,27 @@
   }
 
   function setHistoryHtml(el, html) {
-    if (!el || !window.DOMPurify) return;
-    var clean = DOMPurify.sanitize(String(html || ""));
-    if (!clean) {
-      el.replaceChildren();
-      return;
+    if (!el) return;
+    var raw = String(html || "");
+    // Sanitize inside a real <table> — bare <tr>/<td> fragments are stripped by DOMPurify.
+    var toParse = raw;
+    if (window.DOMPurify) {
+      var wrapped = DOMPurify.sanitize("<table><tbody>" + raw + "</tbody></table>");
+      if (!wrapped) {
+        el.replaceChildren();
+        return;
+      }
+      toParse = wrapped;
+    } else {
+      toParse = "<table><tbody>" + raw + "</tbody></table>";
     }
-    var doc = new DOMParser().parseFromString("<table><tbody>" + clean + "</tbody></table>", "text/html");
+    var doc = new DOMParser().parseFromString(toParse, "text/html");
     var section = doc.querySelector("tbody");
-    var nodes = section ? Array.from(section.childNodes).map(function (n) { return document.importNode(n, true); }) : [];
+    var nodes = section
+      ? Array.from(section.childNodes).map(function (n) {
+          return document.importNode(n, true);
+        })
+      : [];
     el.replaceChildren.apply(el, nodes);
   }
 
@@ -661,17 +673,18 @@
       var snap = await firebaseDb
         .collection("linkSubmissions")
         .where("submitterUid", "==", uid)
-        .limit(20)
+        .limit(40)
         .get();
       var rows = [];
       snap.forEach(function (doc) {
-        rows.push(doc.data());
+        rows.push(Object.assign({ id: doc.id }, doc.data()));
       });
       rows.sort(function (a, b) {
         var am = a.created && a.created.toMillis ? a.created.toMillis() : 0;
         var bm = b.created && b.created.toMillis ? b.created.toMillis() : 0;
         return bm - am;
       });
+      rows = rows.slice(0, 20);
       if (!rows.length) {
         historyWrap.hidden = true;
         return;
@@ -693,7 +706,8 @@
           })
           .join("")
       );
-    } catch (_) {
+    } catch (err) {
+      console.warn("[proxy-list] could not load recent submissions", err);
       historyWrap.hidden = true;
     }
   }

@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.0.4",
+      "revision": "r278",
+      "released": "August 25, 2026",
+      "update_notice": "# Fixed bug causing recent submissions to not appear"
+    },
+    {
       "version": "v7.0.3",
       "revision": "r277",
       "released": "August 23, 2026",

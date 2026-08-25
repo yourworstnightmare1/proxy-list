@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
-> v7.0.3 | Released: August 23, 2026
-> r277 | Last Updated: August 23, 2026
+> v7.0.4 | Released: August 25, 2026
+> r278 | Last Updated: August 25, 2026
 > Total onsite links: 29565 (29223 sorted + 342 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -24,14 +24,9 @@ Want to try out upcoming features before they’re fully released? The Proxy Lis
 ### Try Out the Game Browser
 Looking for a specific game but don’t want to try every provider’s links to find it? Use the Database Game Browser in the sidebar (or below this message if you’re on mobile) and search for your favorite games, and the list will give you info on the game and give you links known to have that game!
 
-### Recent Submissions Not Appearing
-I am aware of a bug where recent submissions do not appear after making a submission; this is being fixed and should be pushed by the end of today.
-
 ## Update Notice
 
-# Fixed a bug that caused games not to be searched properly
-
-# Optimized the search bar
+# Fixed bug causing recent submissions to not appear
 
 # 💜 Selenite
 > [!NOTE]

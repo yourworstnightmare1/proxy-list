@@ -82,13 +82,23 @@
 
   function setTbodyHtml(el, html) {
     if (!el) return;
-    var doc = new DOMParser().parseFromString(
-      "<table><tbody>" + String(html || "") + "</tbody></table>",
-      "text/html"
-    );
-    var nodes = Array.from(doc.querySelector("tbody").childNodes).map(function (n) {
-      return document.importNode(n, true);
-    });
+    var raw = String(html || "");
+    var toParse = "<table><tbody>" + raw + "</tbody></table>";
+    if (window.DOMPurify) {
+      var wrapped = DOMPurify.sanitize(toParse);
+      if (!wrapped) {
+        el.replaceChildren();
+        return;
+      }
+      toParse = wrapped;
+    }
+    var doc = new DOMParser().parseFromString(toParse, "text/html");
+    var tbody = doc.querySelector("tbody");
+    var nodes = tbody
+      ? Array.from(tbody.childNodes).map(function (n) {
+          return document.importNode(n, true);
+        })
+      : [];
     el.replaceChildren.apply(el, nodes);
   }
 
