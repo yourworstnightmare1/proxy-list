@@ -379,7 +379,7 @@ I am aware of a bug where recent submissions do not appear after making a submis
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 29 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 28 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -401,7 +401,6 @@ I am aware of a bug where recent submissions do not appear after making a submis
 | | https://15.204.247.166.my.local-ip.sh | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://15.204.247.166.xip.lhjmmc.cn/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://grandemass-yt.kellerzahnarzt.ch/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://mission.gap-peace.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://extralearning.pirazymatma.pl/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://extralearning.porcile.cl/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sp2.simplysweetcakesoc.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
