@@ -25,6 +25,7 @@ import re
 import subprocess
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -100,6 +101,59 @@ def rsa_sign_pkcs1_sha256(pem: str, message: bytes) -> bytes:
                 pass
 
 
+def urlopen_with_retries(
+    req: urllib.request.Request,
+    *,
+    timeout: float = 60,
+    attempts: int = 6,
+    label: str = "request",
+) -> bytes:
+    """GET/POST with backoff for transient Firestore/Google API errors (429/5xx)."""
+    last_err: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as err:
+            last_err = err
+            body = ""
+            try:
+                body = err.read().decode("utf-8", errors="replace")[:400]
+            except Exception:
+                pass
+            retryable = err.code in (408, 429, 500, 502, 503, 504)
+            if not retryable or attempt >= attempts:
+                detail = f" ({body})" if body else ""
+                raise urllib.error.HTTPError(
+                    err.url, err.code, f"{err.reason}{detail}", err.hdrs, err.fp
+                ) from err
+            # Honor Retry-After when present; otherwise exponential backoff.
+            wait = 2 ** attempt
+            try:
+                ra = err.headers.get("Retry-After") if err.headers else None
+                if ra is not None:
+                    wait = max(wait, int(float(ra)))
+            except (TypeError, ValueError):
+                pass
+            print(
+                f"{label}: HTTP {err.code}, retry {attempt}/{attempts} in {wait}s…",
+                file=sys.stderr,
+            )
+            time.sleep(wait)
+        except (TimeoutError, urllib.error.URLError) as err:
+            last_err = err
+            if attempt >= attempts:
+                raise
+            wait = 2 ** attempt
+            print(
+                f"{label}: {err}, retry {attempt}/{attempts} in {wait}s…",
+                file=sys.stderr,
+            )
+            time.sleep(wait)
+    assert last_err is not None
+    raise last_err
+
+
 def google_access_token(sa: dict[str, str]) -> str:
     now = int(time.time())
     header = b64url(json.dumps({"alg": "RS256", "typ": "JWT"}, separators=(",", ":")))
@@ -131,8 +185,7 @@ def google_access_token(sa: dict[str, str]) -> str:
         headers={"Content-Type": "application/x-www-form-urlencoded"},
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        payload = json.loads(resp.read().decode("utf-8"))
+    payload = json.loads(urlopen_with_retries(req, timeout=60, label="oauth-token").decode("utf-8"))
     token = payload.get("access_token")
     if not token:
         raise RuntimeError(f"token response missing access_token: {payload}")
@@ -194,8 +247,8 @@ def firestore_run_query(sa: dict[str, str], status: str = "approved") -> list[di
         },
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=120) as resp:
-        rows = json.loads(resp.read().decode("utf-8"))
+    raw = urlopen_with_retries(req, timeout=120, label="firestore-runQuery")
+    rows = json.loads(raw.decode("utf-8"))
     out: list[dict[str, Any]] = []
     for row in rows:
         doc = row.get("document")
@@ -229,8 +282,7 @@ def firestore_patch_published(sa: dict[str, str], doc_id: str) -> None:
         },
         method="PATCH",
     )
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        resp.read()
+    urlopen_with_retries(req, timeout=60, label=f"firestore-patch:{doc_id}")
 
 
 def load_json_submissions(path: Path) -> list[dict[str, Any]]:
