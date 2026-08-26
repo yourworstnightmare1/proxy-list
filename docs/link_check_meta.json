@@ -1,27 +1,8 @@
 {
-  "checked_at": "2026-08-26T06:45:35Z",
-  "checked_at_display": "2026-08-26 06:45 UTC",
+  "checked_at": "2026-08-26T12:45:31Z",
+  "checked_at_display": "2026-08-26 12:45 UTC",
   "added_count": 0,
-  "removed_count": 18,
+  "removed_count": 0,
   "added_links": [],
-  "removed_links": [
-    "https://edu.50friends.com.mx",
-    "https://wildcard.cmstarhely.hu",
-    "https://nav.chisto-pozhit.ru",
-    "https://app.383.li",
-    "https://node.383.li",
-    "https://discover.383.li",
-    "https://return.383.li",
-    "https://def.383.li",
-    "https://h1.383.li",
-    "https://h2.383.li",
-    "https://h3.383.li",
-    "https://h4.383.li",
-    "https://h5.383.li",
-    "https://function.ng1.uk",
-    "https://render.ng1.uk",
-    "https://const.ng1.uk",
-    "https://let.ng1.uk",
-    "https://try.ng1.uk"
-  ]
+  "removed_links": []
 }
