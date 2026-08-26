@@ -1,8 +1,18 @@
 {
-  "checked_at": "2026-08-26T12:45:31Z",
-  "checked_at_display": "2026-08-26 12:45 UTC",
+  "checked_at": "2026-08-26T19:47:10Z",
+  "checked_at_display": "2026-08-26 19:47 UTC",
   "added_count": 0,
-  "removed_count": 0,
+  "removed_count": 9,
   "added_links": [],
-  "removed_links": []
+  "removed_links": [
+    "https://sunny-day.global.ssl.fastly.net",
+    "https://focus-and-learn.2gfkitchen.com",
+    "https://study-smart-daily.bigheadpromo.com",
+    "https://revise-and-succeed.sage.li",
+    "https://learn-practice-grow.shirokuriwaki.com",
+    "https://plan-study-repeat.solarorbit.net",
+    "https://education.math.wikidelia.net",
+    "https://martnullscapeacademy.lisd.net.galaxysoft.ro",
+    "https://anko.pdacorp.ru"
+  ]
 }
