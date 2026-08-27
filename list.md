@@ -2246,16 +2246,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | - | - | - | - | - | - |
 | | https://noterplusfire02.web.app/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# 😼 Marz
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Games | N/A | N/A | 1 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://trim.barberduck.ro/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 # 🧑‍🧒‍🧒 Soul
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
