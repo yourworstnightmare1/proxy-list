@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-23T21:29:38Z",
-  "snapshot_date": "2026-08-23",
+  "generated_at": "2026-08-29T18:55:47Z",
+  "snapshot_date": "2026-08-29",
   "catalog_count": 22,
-  "total_entries": 30095,
-  "unique_games": 25857,
+  "total_entries": 30137,
+  "unique_games": 25794,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -14,13 +14,13 @@
     {
       "tag": "gdb:gn-math",
       "label": "gn-math",
-      "count": 815,
+      "count": 829,
       "empty": false
     },
     {
       "tag": "gdb:luminsdk",
       "label": "Lumin SDK",
-      "count": 815,
+      "count": 829,
       "empty": false
     },
     {
@@ -56,7 +56,7 @@
     {
       "tag": "gdb:lucide",
       "label": "Lucide",
-      "count": 815,
+      "count": 829,
       "empty": false
     },
     {
@@ -166,21 +166,538 @@
         "gdb:utopia": 275
       },
       "total_entries": 30095,
-      "unique_games": 25857
+      "unique_games": 25786
+    },
+    {
+      "date": "2026-08-29",
+      "counts": {
+        "gdb:unblockedzone": 166,
+        "gdb:gn-math": 829,
+        "gdb:luminsdk": 829,
+        "gdb:noahs-tutoring": 406,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 829,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 250,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275
+      },
+      "total_entries": 30137,
+      "unique_games": 25794
     }
   ],
   "latest_changes": {
-    "date": "2026-08-23",
-    "is_baseline": true,
-    "by_catalog": {},
+    "date": "2026-08-29",
+    "is_baseline": false,
+    "by_catalog": {
+      "gdb:unblockedzone": {
+        "label": "Unblockedzone",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:gn-math": {
+        "label": "gn-math",
+        "added": [
+          "60 Seconds! Reatomized",
+          "Azahar (Emulator)",
+          "ClusterTruck",
+          "Endacopia",
+          "Grand Theft Auto 3",
+          "Inscryption",
+          "JoJo's Bizarre Adventure: Heritage for the Future",
+          "Lobotomy Corporation",
+          "One Shot: World Machine edition",
+          "PEAK",
+          "PikuNiku",
+          "Ravenfield",
+          "SCP: Containment Breach",
+          "Trombone Champion"
+        ],
+        "removed": [],
+        "added_count": 14,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:luminsdk": {
+        "label": "Lumin SDK",
+        "added": [
+          "60 Seconds! Reatomized",
+          "Azahar (Emulator)",
+          "ClusterTruck",
+          "Endacopia",
+          "Grand Theft Auto 3",
+          "Inscryption",
+          "JoJo's Bizarre Adventure: Heritage for the Future",
+          "Lobotomy Corporation",
+          "One Shot: World Machine edition",
+          "PEAK",
+          "PikuNiku",
+          "Ravenfield",
+          "SCP: Containment Breach",
+          "Trombone Champion"
+        ],
+        "removed": [],
+        "added_count": 14,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:noahs-tutoring": {
+        "label": "Noah's Tutoring",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:elite-games": {
+        "label": "Elite Games",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:ultimate-game-stash": {
+        "label": "Ultimate Game Stash",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:seraph": {
+        "label": "Seraph",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:chicken-kings-vault": {
+        "label": "Chicken King's Vault",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:lucide": {
+        "label": "Lucide",
+        "added": [
+          "60 Seconds! Reatomized",
+          "Azahar (Emulator)",
+          "ClusterTruck",
+          "Endacopia",
+          "Grand Theft Auto 3",
+          "Inscryption",
+          "JoJo's Bizarre Adventure: Heritage for the Future",
+          "Lobotomy Corporation",
+          "One Shot: World Machine edition",
+          "PEAK",
+          "PikuNiku",
+          "Ravenfield",
+          "SCP: Containment Breach",
+          "Trombone Champion"
+        ],
+        "removed": [],
+        "added_count": 14,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:sdxp": {
+        "label": "SDXP",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:duckmath": {
+        "label": "DuckMath",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:ccported": {
+        "label": "CCPorted",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:selenite": {
+        "label": "Selenite",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:radon": {
+        "label": "Radon",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:truffled": {
+        "label": "Truffled",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:totally-science": {
+        "label": "Totally Science",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:petezah": {
+        "label": "PeteZah",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:frogies-arcade": {
+        "label": "frogie's arcade",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:space": {
+        "label": "Space",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:boredom": {
+        "label": "Boredom",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:dogeub": {
+        "label": "dogeub",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:utopia": {
+        "label": "Utopia Education",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      }
+    },
     "all": {
-      "added": [],
+      "added": [
+        {
+          "name": "60 Seconds! Reatomized",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "60 Seconds! Reatomized",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "60 Seconds! Reatomized",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Azahar (Emulator)",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Azahar (Emulator)",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Azahar (Emulator)",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "ClusterTruck",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "ClusterTruck",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "ClusterTruck",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Endacopia",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Endacopia",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Endacopia",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Grand Theft Auto 3",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Grand Theft Auto 3",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Grand Theft Auto 3",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Inscryption",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Inscryption",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Inscryption",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "JoJo's Bizarre Adventure: Heritage for the Future",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "JoJo's Bizarre Adventure: Heritage for the Future",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "JoJo's Bizarre Adventure: Heritage for the Future",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Lobotomy Corporation",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Lobotomy Corporation",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Lobotomy Corporation",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "One Shot: World Machine edition",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "One Shot: World Machine edition",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "One Shot: World Machine edition",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "PEAK",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "PEAK",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "PEAK",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "PikuNiku",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "PikuNiku",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "PikuNiku",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Ravenfield",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Ravenfield",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Ravenfield",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "SCP: Containment Breach",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "SCP: Containment Breach",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "SCP: Containment Breach",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Trombone Champion",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Trombone Champion",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Trombone Champion",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        }
+      ],
       "removed": [],
-      "added_count": 0,
-      "removed_count": 0
+      "added_count": 42,
+      "removed_count": 0,
+      "added_truncated": 0,
+      "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-08-29",
+      "kind": "diff",
+      "catalogs_touched": [
+        "gdb:gn-math",
+        "gdb:lucide",
+        "gdb:luminsdk"
+      ],
+      "added": 42,
+      "removed": 0,
+      "by_catalog": [
+        {
+          "tag": "gdb:gn-math",
+          "label": "gn-math",
+          "added": 14,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:lucide",
+          "label": "Lucide",
+          "added": 14,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK",
+          "added": 14,
+          "removed": 0
+        }
+      ]
+    },
     {
       "date": "2026-08-23",
       "kind": "baseline",
