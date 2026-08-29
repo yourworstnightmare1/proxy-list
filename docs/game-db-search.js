@@ -101,12 +101,6 @@
       aliases: ["radon", "gdb:radon"],
       loader: loadRadon,
     },
-    "gdb:fyinx": {
-      tag: "gdb:fyinx",
-      label: "Fyinx",
-      aliases: ["fyinx", "gdb:fyinx"],
-      loader: loadFyinx,
-    },
     "gdb:truffled": {
       tag: "gdb:truffled",
       label: "Truffled",
@@ -206,7 +200,6 @@
     "gdb:ccported": "#e879f9",
     "gdb:selenite": "#2dd4bf",
     "gdb:radon": "#f472b6",
-    "gdb:fyinx": "#818cf8",
     "gdb:truffled": "#d6a56a",
     "gdb:totally-science": "#34d399",
     "gdb:petezah": "#fbbf24",
@@ -651,25 +644,6 @@
         };
       })
     );
-  }
-
-  async function loadFyinx() {
-    var tree = await fetchJson("https://api.github.com/repos/aukak/fyinx/git/trees/main?recursive=1");
-    var names = [];
-    (tree && tree.tree ? tree.tree : []).forEach(function (node) {
-      if (!node || node.type !== "blob") return;
-      var path = String(node.path || "");
-      var m = path.match(/^g\/([^/]+)\.html$/i);
-      if (!m) return;
-      var slug = m[1].replace(/[-_]+/g, " ").trim();
-      if (!slug) return;
-      names.push(
-        slug.replace(/\b[a-z]/g, function (ch) {
-          return ch.toUpperCase();
-        })
-      );
-    });
-    return uniqueNames(names);
   }
 
   async function loadDuckmath() {

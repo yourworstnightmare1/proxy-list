@@ -49,7 +49,6 @@ CATALOG_META: list[tuple[str, str]] = [
     ("gdb:ccported", "CCPorted"),
     ("gdb:selenite", "Selenite"),
     ("gdb:radon", "Radon"),
-    ("gdb:fyinx", "Fyinx"),
     ("gdb:truffled", "Truffled"),
     ("gdb:totally-science", "Totally Science"),
     ("gdb:petezah", "PeteZah"),
@@ -336,24 +335,6 @@ def load_radon() -> list[str]:
     return names_from_rows(rows if isinstance(rows, list) else [], "title", "name")
 
 
-def load_fyinx() -> list[str]:
-    try:
-        tree = http_json("https://api.github.com/repos/aukak/fyinx/git/trees/main?recursive=1")
-    except Exception:
-        return []
-    names = []
-    for node in (tree.get("tree") if isinstance(tree, dict) else []) or []:
-        if not isinstance(node, dict) or node.get("type") != "blob":
-            continue
-        m = re.match(r"^g/([^/]+)\.html$", str(node.get("path") or ""), re.I)
-        if not m:
-            continue
-        slug = re.sub(r"[-_]+", " ", m.group(1)).strip()
-        if slug:
-            names.append(slug.title())
-    return unique_names(names)
-
-
 def load_duckmath() -> list[str]:
     rows = http_json("https://raw.githubusercontent.com/Neruvy/duckmath/main/backup_classes.json")
     return names_from_rows(rows if isinstance(rows, list) else [], "title", "name")
@@ -382,7 +363,6 @@ LOADERS = {
     "gdb:ccported": load_ccported,
     "gdb:selenite": load_selenite,
     "gdb:radon": load_radon,
-    "gdb:fyinx": load_fyinx,
     "gdb:truffled": load_empty,
     "gdb:totally-science": load_empty,
     "gdb:petezah": load_petezah,

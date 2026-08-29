@@ -345,3 +345,6 @@ Move links from here into `list.md` once sorted.
 - https://homeworkhelp.cc
 - https://info.videnom.com
 - https://sciencenews.cc
+- https://www.khanacademy.org/computer-programming/all-about-polar-bears/6164033108819968
+- https://www.khanacademy.org/computer-programming/all-about-polar-bears/4716787037224960
+- https://www.khanacademy.org/computer-programming/all-about-polar-bears/4781473103462400

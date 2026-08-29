@@ -15,22 +15,60 @@
   </script>
   <script>
     (function () {
+      function parseClientPlatform(ua) {
+        ua = String(ua || (typeof navigator !== "undefined" ? navigator.userAgent : "") || "");
+        var android = ua.match(/\bAndroid[ \/](\d+(?:\.\d+)*)/i);
+        if (!android && /\bAndroid\b/i.test(ua)) android = ["Android", ""];
+        if (android) {
+          return { os: "android", version: android[1] || "", isMobile: true };
+        }
+        var iosToken = /\b(?:iPhone|iPad|iPod)\b/i.test(ua);
+        // iPadOS 13+ can report as Macintosh with touch.
+        var ipadOsDesktopUa =
+          /\bMacintosh\b/i.test(ua) &&
+          typeof navigator !== "undefined" &&
+          Number(navigator.maxTouchPoints || 0) > 1;
+        if (iosToken || ipadOsDesktopUa) {
+          var ios = ua.match(/\bOS (\d+)[_.](\d+)(?:[_.](\d+))?/i);
+          var ver = "";
+          if (ios) {
+            ver = ios[1] + "." + ios[2] + (ios[3] ? "." + ios[3] : "");
+          }
+          return { os: "ios", version: ver, isMobile: true };
+        }
+        return { os: "desktop", version: "", isMobile: false };
+      }
+      window.__proxyListParseClientPlatform = parseClientPlatform;
       try {
         var raw = localStorage.getItem("proxyList_app_settings_v1");
         var s = raw ? JSON.parse(raw) : null;
         var theme = s && s.theme ? String(s.theme) : "dark";
         document.documentElement.setAttribute("data-theme", theme);
-        var device = s && s.deviceSizing ? String(s.deviceSizing) : "auto";
-        if (device === "desktop" || device === "mobile" || device === "auto") {
-          document.documentElement.setAttribute("data-device", device);
+        var devicePref = s && s.deviceSizing ? String(s.deviceSizing) : "auto";
+        var platform = parseClientPlatform();
+        var device =
+          devicePref === "desktop" || devicePref === "mobile"
+            ? devicePref
+            : platform.isMobile
+              ? "mobile"
+              : "desktop";
+        document.documentElement.setAttribute("data-device", device);
+        document.documentElement.setAttribute("data-os", platform.os);
+        if (platform.version) {
+          document.documentElement.setAttribute("data-os-version", platform.version);
         } else {
-          document.documentElement.setAttribute("data-device", "auto");
+          document.documentElement.removeAttribute("data-os-version");
         }
         var anim = s && s.animations === false ? "disabled" : "enabled";
         document.documentElement.setAttribute("data-animations", anim);
       } catch (_) {
         document.documentElement.setAttribute("data-theme", "dark");
-        document.documentElement.setAttribute("data-device", "auto");
+        var fallback = parseClientPlatform();
+        document.documentElement.setAttribute("data-device", fallback.isMobile ? "mobile" : "desktop");
+        document.documentElement.setAttribute("data-os", fallback.os);
+        if (fallback.version) {
+          document.documentElement.setAttribute("data-os-version", fallback.version);
+        }
         document.documentElement.setAttribute("data-animations", "enabled");
       }
     })();
@@ -787,9 +825,8 @@
       overflow: auto;
       height: auto;
     }
-    html[data-device="desktop"] body.orientation-locked > :not(.orientation-warning) {
-      display: revert !important;
-    }
+    /* Do not force display on children here — `display: revert` collapses the
+       grid/flex layout. Content is only hidden for mobile+portrait below. */
     html[data-animations="disabled"] *,
     html[data-animations="disabled"] *::before,
     html[data-animations="disabled"] *::after {
@@ -910,14 +947,32 @@
       flex: 0 0 auto;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       padding: 0.18rem 0.45rem;
       border-radius: 6px;
       border: 1px solid #3a3a3a;
       background: #222;
       color: #bdbdbd;
+      font: inherit;
       font-size: 0.68rem;
       font-weight: 650;
       letter-spacing: 0.02em;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .search-palette-kbd:hover,
+    .search-palette-kbd:focus-visible {
+      border-color: #555;
+      color: #fff;
+      outline: none;
+    }
+    .search-palette-kbd.is-close {
+      min-width: 1.85rem;
+      min-height: 1.85rem;
+      padding: 0;
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0;
     }
     .search-palette-body {
       max-height: min(22rem, 52vh);
@@ -1095,10 +1150,10 @@
       z-index: -1;
       background: linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.05) 0%,
-        rgba(0, 0, 0, 0.15) 38%,
-        rgba(0, 0, 0, 0.62) 68%,
-        rgba(0, 0, 0, 0.88) 100%
+        rgba(0, 0, 0, 0.12) 0%,
+        rgba(0, 0, 0, 0.2) 32%,
+        rgba(0, 0, 0, 0.72) 68%,
+        rgba(0, 0, 0, 0.92) 100%
       );
       pointer-events: none;
     }
@@ -1273,25 +1328,23 @@
       outline-offset: 2px;
     }
 
-    /* Fern */
+    /* Featured slide screenshot backgrounds */
+    .featured-slide--fern::before,
+    .featured-slide--frogie::before,
+    .featured-slide--velara::before,
+    .featured-slide--cherri::before,
+    .featured-slide--invisi::before,
+    .featured-slide--truffled::before {
+      background-color: #0a0a0a;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
     .featured-slide--fern::before {
-      background:
-        radial-gradient(1.2px 1.2px at 12% 18%, rgba(255, 255, 255, 0.85) 50%, transparent 51%),
-        radial-gradient(1px 1px at 28% 42%, rgba(255, 255, 255, 0.55) 50%, transparent 51%),
-        radial-gradient(1.4px 1.4px at 48% 14%, rgba(255, 255, 255, 0.7) 50%, transparent 51%),
-        radial-gradient(1px 1px at 66% 36%, rgba(255, 255, 255, 0.45) 50%, transparent 51%),
-        radial-gradient(1.2px 1.2px at 82% 22%, rgba(255, 255, 255, 0.75) 50%, transparent 51%),
-        radial-gradient(1px 1px at 18% 68%, rgba(255, 255, 255, 0.4) 50%, transparent 51%),
-        radial-gradient(1.1px 1.1px at 74% 72%, rgba(255, 255, 255, 0.5) 50%, transparent 51%),
-        radial-gradient(1px 1px at 90% 58%, rgba(255, 255, 255, 0.35) 50%, transparent 51%),
-        #070707;
+      background-image: url("./featured/fern.png");
     }
     .featured-slide--fern .featured-constellation {
-      position: absolute;
-      inset: 8% 6% 28% 6%;
-      z-index: -1;
-      opacity: 0.55;
-      pointer-events: none;
+      display: none;
     }
     .featured-slide--fern .featured-slide-title {
       font-family: "Great Vibes", cursive;
@@ -1300,30 +1353,8 @@
       letter-spacing: 0.02em;
     }
 
-    /* Frogie's Arcade */
     .featured-slide--frogie::before {
-      background:
-        radial-gradient(1.6px 1.6px at 8% 14%, rgba(140, 255, 180, 0.9) 50%, transparent 51%),
-        radial-gradient(1.1px 1.1px at 16% 32%, rgba(120, 240, 160, 0.55) 50%, transparent 51%),
-        radial-gradient(2px 2px at 24% 18%, rgba(160, 255, 195, 0.75) 50%, transparent 51%),
-        radial-gradient(1.2px 1.2px at 33% 48%, rgba(110, 230, 150, 0.45) 50%, transparent 51%),
-        radial-gradient(1.8px 1.8px at 41% 12%, rgba(150, 255, 190, 0.85) 50%, transparent 51%),
-        radial-gradient(1px 1px at 49% 36%, rgba(100, 220, 140, 0.4) 50%, transparent 51%),
-        radial-gradient(2.2px 2.2px at 58% 22%, rgba(170, 255, 200, 0.7) 50%, transparent 51%),
-        radial-gradient(1.3px 1.3px at 67% 44%, rgba(120, 245, 165, 0.5) 50%, transparent 51%),
-        radial-gradient(1.5px 1.5px at 76% 16%, rgba(145, 255, 185, 0.8) 50%, transparent 51%),
-        radial-gradient(1px 1px at 84% 38%, rgba(100, 225, 145, 0.35) 50%, transparent 51%),
-        radial-gradient(1.9px 1.9px at 92% 26%, rgba(155, 255, 195, 0.65) 50%, transparent 51%),
-        radial-gradient(1.2px 1.2px at 12% 58%, rgba(125, 240, 170, 0.5) 50%, transparent 51%),
-        radial-gradient(2px 2px at 28% 72%, rgba(160, 255, 195, 0.55) 50%, transparent 51%),
-        radial-gradient(1.1px 1.1px at 45% 64%, rgba(110, 230, 155, 0.4) 50%, transparent 51%),
-        radial-gradient(1.7px 1.7px at 61% 78%, rgba(150, 255, 190, 0.6) 50%, transparent 51%),
-        radial-gradient(1.3px 1.3px at 78% 68%, rgba(120, 245, 165, 0.45) 50%, transparent 51%),
-        radial-gradient(2.1px 2.1px at 88% 82%, rgba(140, 255, 180, 0.5) 50%, transparent 51%),
-        radial-gradient(1px 1px at 5% 84%, rgba(100, 220, 140, 0.3) 50%, transparent 51%),
-        radial-gradient(1.4px 1.4px at 37% 88%, rgba(130, 250, 175, 0.45) 50%, transparent 51%),
-        radial-gradient(1.6px 1.6px at 70% 54%, rgba(145, 255, 185, 0.55) 50%, transparent 51%),
-        #050505;
+      background-image: url("./featured/frogie.png");
     }
     .featured-slide--frogie .featured-slide-title {
       font-family: "Quicksand", "Segoe UI", sans-serif;
@@ -1332,14 +1363,8 @@
       letter-spacing: -0.01em;
     }
 
-    /* Velara */
     .featured-slide--velara::before {
-      background-color: #0d1117;
-      background-image:
-        repeating-linear-gradient(to right, rgba(56, 139, 253, 0.08) 0, rgba(56, 139, 253, 0.08) 1px, transparent 1px, transparent 48px),
-        repeating-linear-gradient(to bottom, rgba(56, 139, 253, 0.08) 0, rgba(56, 139, 253, 0.08) 1px, transparent 1px, transparent 48px),
-        repeating-linear-gradient(to right, rgba(56, 139, 253, 0.14) 0, rgba(56, 139, 253, 0.14) 1px, transparent 1px, transparent 192px),
-        repeating-linear-gradient(to bottom, rgba(56, 139, 253, 0.14) 0, rgba(56, 139, 253, 0.14) 1px, transparent 1px, transparent 192px);
+      background-image: url("./featured/velara.png");
     }
     .featured-slide--velara .featured-slide-msg {
       color: #f0c75e;
@@ -1348,14 +1373,8 @@
       background: rgba(13, 28, 58, 0.55);
     }
 
-    /* Cherri */
     .featured-slide--cherri::before {
-      background-color: #0a0a0a;
-      background-image:
-        radial-gradient(rgba(255, 140, 180, 0.28) 1.1px, transparent 1.2px),
-        radial-gradient(rgba(255, 100, 150, 0.14) 1px, transparent 1.1px);
-      background-size: 18px 18px, 36px 36px;
-      background-position: 0 0, 9px 9px;
+      background-image: url("./featured/cherri.png");
     }
     .featured-slide--cherri .featured-slide-title {
       text-shadow:
@@ -1367,27 +1386,15 @@
       background: rgba(48, 10, 24, 0.5);
     }
 
-    /* InvisiProxy */
     .featured-slide--invisi::before {
-      background: #0b0d12;
+      background-image: url("./featured/invisiproxy.png");
     }
     .featured-slide--invisi .featured-wireframe {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      opacity: 0.88;
+      display: none;
     }
 
-    /* Truffled */
     .featured-slide--truffled::before {
-      background-color: #0c1214;
-      background-image:
-        linear-gradient(rgba(170, 190, 200, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(170, 190, 200, 0.08) 1px, transparent 1px);
-      background-size: 28px 28px;
+      background-image: url("./featured/truffled.png");
     }
 
     @media (max-width: 700px) {
@@ -2687,13 +2694,13 @@
       max-width: 28ch;
       line-height: 1.5;
     }
-    @media (max-width: 768px) and (orientation: portrait) {
-      .orientation-warning { display: flex; }
-      body.orientation-locked {
+    @media (orientation: portrait) {
+      html[data-device="mobile"] .orientation-warning { display: flex; }
+      html[data-device="mobile"] body.orientation-locked {
         overflow: hidden;
         height: 100vh;
       }
-      body.orientation-locked > :not(.orientation-warning) {
+      html[data-device="mobile"] body.orientation-locked > :not(.orientation-warning) {
         display: none !important;
       }
     }
@@ -2713,6 +2720,15 @@
   </style>
 </head>
 <body class="orientation-locked">
+  <script>
+    (function () {
+      try {
+        if (document.documentElement.getAttribute("data-device") !== "mobile") {
+          document.body.classList.remove("orientation-locked");
+        }
+      } catch (_) {}
+    })();
+  </script>
   <div id="siteUpdateBanner" class="site-update-banner" role="region" aria-label="Site update available" hidden>
     <div class="site-update-banner-inner">
       <span class="site-update-banner-text" id="siteUpdateBannerText"
@@ -2942,18 +2958,6 @@
           <div class="featured-slides" id="featuredSlides">
             <article class="featured-slide featured-slide--fern is-active" data-featured-index="0" aria-hidden="false">
               <span class="featured-slide-tag">Featured</span>
-              <svg class="featured-constellation" viewBox="0 0 400 180" aria-hidden="true" focusable="false">
-                <g fill="none" stroke="rgba(220,240,255,0.35)" stroke-width="1">
-                  <path d="M40 40 L90 70 L130 35 L180 80 L230 45 L280 95 L330 50" />
-                  <path d="M70 120 L140 100 L200 140 L270 110 L340 130" />
-                </g>
-                <g fill="rgba(255,255,255,0.85)">
-                  <circle cx="40" cy="40" r="2.2" /><circle cx="90" cy="70" r="1.8" /><circle cx="130" cy="35" r="2" />
-                  <circle cx="180" cy="80" r="1.6" /><circle cx="230" cy="45" r="2.1" /><circle cx="280" cy="95" r="1.7" />
-                  <circle cx="330" cy="50" r="2" /><circle cx="70" cy="120" r="1.5" /><circle cx="140" cy="100" r="1.8" />
-                  <circle cx="200" cy="140" r="1.6" /><circle cx="270" cy="110" r="2" /><circle cx="340" cy="130" r="1.5" />
-                </g>
-              </svg>
               <div class="featured-slide-copy">
                 <p class="featured-slide-eyebrow">Featured proxy</p>
                 <h3 class="featured-slide-title">fern</h3>
@@ -3022,36 +3026,6 @@
 
             <article class="featured-slide featured-slide--invisi" data-featured-index="4" aria-hidden="true">
               <span class="featured-slide-tag">Featured</span>
-              <svg class="featured-wireframe" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-                <g fill="none" stroke="rgba(210,220,235,0.28)" stroke-width="1.1">
-                  <path d="M70 90 L160 140 L250 70 L340 160 L430 95 L520 175 L610 80 L700 150 L790 100 L880 190 L970 120 L1060 170 L1140 90" />
-                  <path d="M40 250 L130 210 L220 280 L310 230 L400 300 L490 240 L580 310 L670 255 L760 320 L850 270 L940 330 L1030 280 L1130 340" />
-                  <path d="M90 420 L180 370 L270 450 L360 390 L450 470 L540 400 L630 480 L720 415 L810 490 L900 430 L990 500 L1080 440" />
-                  <path d="M160 140 L220 280 L270 450" />
-                  <path d="M340 160 L400 300 L450 470" />
-                  <path d="M520 175 L580 310 L630 480" />
-                  <path d="M700 150 L760 320 L810 490" />
-                  <path d="M880 190 L940 330 L990 500" />
-                  <path d="M250 70 L310 230 L360 390" />
-                  <path d="M610 80 L670 255 L720 415" />
-                  <path d="M970 120 L1030 280 L1080 440" />
-                </g>
-                <g fill="rgba(235,240,250,0.78)">
-                  <circle cx="70" cy="90" r="2.4" /><circle cx="160" cy="140" r="2" /><circle cx="250" cy="70" r="2.6" />
-                  <circle cx="340" cy="160" r="2.1" /><circle cx="430" cy="95" r="2.3" /><circle cx="520" cy="175" r="2" />
-                  <circle cx="610" cy="80" r="2.5" /><circle cx="700" cy="150" r="2.1" /><circle cx="790" cy="100" r="2.2" />
-                  <circle cx="880" cy="190" r="2" /><circle cx="970" cy="120" r="2.4" /><circle cx="1060" cy="170" r="2.1" />
-                  <circle cx="1140" cy="90" r="2.3" /><circle cx="40" cy="250" r="1.8" /><circle cx="130" cy="210" r="2" />
-                  <circle cx="220" cy="280" r="2.2" /><circle cx="310" cy="230" r="1.9" /><circle cx="400" cy="300" r="2.3" />
-                  <circle cx="490" cy="240" r="2" /><circle cx="580" cy="310" r="2.1" /><circle cx="670" cy="255" r="2" />
-                  <circle cx="760" cy="320" r="2.4" /><circle cx="850" cy="270" r="1.9" /><circle cx="940" cy="330" r="2.2" />
-                  <circle cx="1030" cy="280" r="2" /><circle cx="1130" cy="340" r="2.1" /><circle cx="90" cy="420" r="2" />
-                  <circle cx="180" cy="370" r="2.2" /><circle cx="270" cy="450" r="2.4" /><circle cx="360" cy="390" r="2" />
-                  <circle cx="450" cy="470" r="2.3" /><circle cx="540" cy="400" r="1.9" /><circle cx="630" cy="480" r="2.1" />
-                  <circle cx="720" cy="415" r="2" /><circle cx="810" cy="490" r="2.2" /><circle cx="900" cy="430" r="2" />
-                  <circle cx="990" cy="500" r="2.3" /><circle cx="1080" cy="440" r="2.1" />
-                </g>
-              </svg>
               <div class="featured-slide-copy">
                 <p class="featured-slide-eyebrow">Featured proxy</p>
                 <h3 class="featured-slide-title">InvisiProxy</h3>
@@ -3173,7 +3147,7 @@
           aria-autocomplete="list"
           aria-controls="searchPaletteList"
         />
-        <span class="search-palette-kbd" id="searchPaletteShortcutHint">Ctrl+Y</span>
+        <button type="button" class="search-palette-kbd" id="searchPaletteShortcutHint" aria-label="Close search">Ctrl+Y</button>
       </div>
       <div class="search-palette-body">
         <p class="search-palette-heading" id="searchPaletteHeading">Recent searches</p>
@@ -3275,12 +3249,12 @@
           <div class="settings-field">
             <label for="settingsDeviceSizingSelect">Device Sizing</label>
             <p class="settings-desc">
-              Change how the site is laid out by telling the site what device type you are using. If you are a
-              developer, it is recommended you use the device emulator or device toolbar in your browser&apos;s
-              devtools.
+              Change how the site is laid out by telling the site what device type you are using. Auto-detect
+              uses your browser user agent (Android / iOS). If you are a developer, it is recommended you use
+              the device emulator or device toolbar in your browser&apos;s devtools (so the user agent changes).
             </p>
             <select id="settingsDeviceSizingSelect" aria-label="Device sizing">
-              <option value="auto">Auto-detect (default)</option>
+              <option value="auto">Auto-detect from user agent (default)</option>
               <option value="desktop">Desktop</option>
               <option value="mobile">Mobile</option>
             </select>
@@ -3536,6 +3510,21 @@
       <div class="summary-footer">
         <a class="btn" href="./login/" id="signInRequiredLoginBtn">Sign in</a>
         <button class="btn btn-primary" id="signInRequiredDismissBtn" type="button">OK</button>
+      </div>
+    </section>
+  </div>
+  <div class="summary-backdrop" id="mobileAutoResizeBackdrop" aria-hidden="true">
+    <section class="summary-modal" role="dialog" aria-modal="true" aria-labelledby="mobileAutoResizeTitle" style="width:min(420px,100%)">
+      <div class="summary-head">
+        <h2 class="summary-title" id="mobileAutoResizeTitle">Automatically resized to mobile view</h2>
+      </div>
+      <div class="summary-body">
+        <p class="summary-muted">
+          We&apos;ve enabled the mobile version of the site as we detected you&apos;re on a mobile device. You can change this at any time by going to Settings &gt; Device Sizing &gt; Desktop.
+        </p>
+      </div>
+      <div class="summary-footer">
+        <button class="btn btn-primary" id="mobileAutoResizeOkBtn" type="button">OK</button>
       </div>
     </section>
   </div>
@@ -3887,6 +3876,7 @@
     const GITHUB_NOTIFICATIONS_SEEN_KEY = "proxyList_github_notifications_seen_v1";
 
     const LS_APP_SETTINGS_KEY = "proxyList_app_settings_v1";
+    const LS_MOBILE_AUTO_RESIZE_NOTICE_KEY = "proxyList_mobile_auto_resize_notice_v1";
     const IDB_APP_SETTINGS_DB = "proxyListSettings";
     const IDB_APP_SETTINGS_STORE = "appSettings";
     const TABLE_CHUNK_DEFAULT = 80;
@@ -4004,10 +3994,98 @@
       document.documentElement.setAttribute("data-theme", t);
     }
 
+    function parseClientPlatform(ua) {
+      if (typeof window.__proxyListParseClientPlatform === "function") {
+        return window.__proxyListParseClientPlatform(ua);
+      }
+      const raw = String(ua != null ? ua : navigator.userAgent || "");
+      const android = raw.match(/\bAndroid[ \/](\d+(?:\.\d+)*)/i);
+      if (android || /\bAndroid\b/i.test(raw)) {
+        return { os: "android", version: android ? android[1] : "", isMobile: true };
+      }
+      const iosToken = /\b(?:iPhone|iPad|iPod)\b/i.test(raw);
+      const ipadOsDesktopUa =
+        /\bMacintosh\b/i.test(raw) && Number(navigator.maxTouchPoints || 0) > 1;
+      if (iosToken || ipadOsDesktopUa) {
+        const ios = raw.match(/\bOS (\d+)[_.](\d+)(?:[_.](\d+))?/i);
+        const version = ios
+          ? ios[1] + "." + ios[2] + (ios[3] ? "." + ios[3] : "")
+          : "";
+        return { os: "ios", version: version, isMobile: true };
+      }
+      return { os: "desktop", version: "", isMobile: false };
+    }
+
+    function resolveDeviceSizing(devicePref) {
+      const pref = devicePref || appSettings.deviceSizing || "auto";
+      if (pref === "desktop" || pref === "mobile") return pref;
+      return parseClientPlatform().isMobile ? "mobile" : "desktop";
+    }
+
     function applyDeviceSizingSetting(device) {
-      const d = device || appSettings.deviceSizing || "auto";
-      const next = d === "desktop" || d === "mobile" ? d : "auto";
+      const platform = parseClientPlatform();
+      const next = resolveDeviceSizing(device);
       document.documentElement.setAttribute("data-device", next);
+      document.documentElement.setAttribute("data-os", platform.os);
+      if (platform.version) {
+        document.documentElement.setAttribute("data-os-version", platform.version);
+      } else {
+        document.documentElement.removeAttribute("data-os-version");
+      }
+      if (document.body) {
+        if (next === "mobile") document.body.classList.add("orientation-locked");
+        else document.body.classList.remove("orientation-locked");
+      }
+    }
+
+    function hasDismissedMobileAutoResizeNotice() {
+      try {
+        return localStorage.getItem(LS_MOBILE_AUTO_RESIZE_NOTICE_KEY) === "1";
+      } catch (_) {
+        return false;
+      }
+    }
+
+    function dismissMobileAutoResizeNotice() {
+      try {
+        localStorage.setItem(LS_MOBILE_AUTO_RESIZE_NOTICE_KEY, "1");
+      } catch (_) {}
+      closeMobileAutoResizeNotice();
+    }
+
+    function isMobileAutoResizeNoticeOpen() {
+      const bd = $("mobileAutoResizeBackdrop");
+      return !!(bd && bd.classList.contains("open"));
+    }
+
+    function openMobileAutoResizeNotice() {
+      const bd = $("mobileAutoResizeBackdrop");
+      if (!bd) return;
+      bd.classList.add("open");
+      bd.setAttribute("aria-hidden", "false");
+      const ok = $("mobileAutoResizeOkBtn");
+      if (ok && typeof ok.focus === "function") {
+        setTimeout(() => ok.focus(), 0);
+      }
+    }
+
+    function closeMobileAutoResizeNotice() {
+      const bd = $("mobileAutoResizeBackdrop");
+      if (!bd) return;
+      bd.classList.remove("open");
+      bd.setAttribute("aria-hidden", "true");
+    }
+
+    function maybeShowMobileAutoResizeNotice() {
+      if (typeof isEmbedMode === "function" && isEmbedMode()) return;
+      if (hasDismissedMobileAutoResizeNotice()) return;
+      if ((appSettings.deviceSizing || "auto") !== "auto") return;
+      if (!parseClientPlatform().isMobile) return;
+      if (resolveDeviceSizing() !== "mobile") return;
+      const updateBd = $("updateBackdrop");
+      if (updateBd && updateBd.classList.contains("open")) return;
+      if (isMobileAutoResizeNoticeOpen()) return;
+      openMobileAutoResizeNotice();
     }
 
     function applyAnimationsSetting(enabled) {
@@ -6260,30 +6338,52 @@
       }
       const token = getGithubAccessToken();
       if (!token) {
+        githubRepoStarred = false;
+        updateAccountUI();
+        return;
+      }
+      const ghHeaders = {
+        Authorization: "Bearer " + token,
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+      };
+      let authFailed = false;
+      try {
+        const starRes = await fetch(
+          "https://api.github.com/user/starred/" + GITHUB_REPO_OWNER + "/" + GITHUB_REPO_NAME,
+          { headers: ghHeaders }
+        );
+        if (starRes.status === 401) {
+          authFailed = true;
+          githubRepoStarred = false;
+        } else {
+          githubRepoStarred = starRes.status === 204;
+        }
+      } catch (_) {
+        githubRepoStarred = false;
+      }
+      if (authFailed) {
+        clearGithubAccessToken();
+        if (githubNotificationsPollTimer) {
+          clearInterval(githubNotificationsPollTimer);
+          githubNotificationsPollTimer = null;
+        }
         updateAccountUI();
         return;
       }
       try {
-        const starRes = await fetch(
-          "https://api.github.com/user/starred/" + GITHUB_REPO_OWNER + "/" + GITHUB_REPO_NAME,
-          {
-            headers: {
-              Authorization: "Bearer " + token,
-              Accept: "application/vnd.github+json",
-            },
-          }
-        );
-        githubRepoStarred = starRes.status === 204;
-      } catch (_) {
-        githubRepoStarred = false;
-      }
-      try {
         const notifRes = await fetch("https://api.github.com/notifications?participating=true", {
-          headers: {
-            Authorization: "Bearer " + token,
-            Accept: "application/vnd.github+json",
-          },
+          headers: ghHeaders,
         });
+        if (notifRes.status === 401) {
+          clearGithubAccessToken();
+          if (githubNotificationsPollTimer) {
+            clearInterval(githubNotificationsPollTimer);
+            githubNotificationsPollTimer = null;
+          }
+          updateAccountUI();
+          return;
+        }
         if (notifRes.ok) {
           const notifications = await notifRes.json();
           const seen = readGithubNotificationsSeen();
@@ -6315,6 +6415,10 @@
           }
           writeGithubNotificationsSeen(seen);
           renderGithubNotifications(fresh);
+        } else if (notifRes.status === 403) {
+          console.warn(
+            "[proxy-list] GitHub notifications forbidden — re-sign in with GitHub to grant the notifications scope."
+          );
         }
       } catch (err) {
         console.warn("[proxy-list] GitHub notifications unavailable", err);
@@ -8704,23 +8808,14 @@
     let searchPaletteActive = -1;
 
     function isMacLikeShortcutPlatform() {
+      const platform = parseClientPlatform();
+      if (platform.os === "ios") return true;
       const p = String(navigator.platform || "") + " " + String(navigator.userAgent || "");
-      return /Mac|iPhone|iPad|iPod/i.test(p);
+      return /Mac/i.test(p) && platform.os !== "android";
     }
 
     function isMobileQuickSearchHint() {
-      try {
-        if (window.matchMedia("(max-width: 640px)").matches) return true;
-        // Phones/tablets in landscape often exceed 640px width but still have no keyboard shortcut.
-        if (
-          window.matchMedia("(pointer: coarse)").matches &&
-          window.matchMedia("(hover: none)").matches
-        ) {
-          return true;
-        }
-      } catch (_) {}
-      const ua = String(navigator.userAgent || "");
-      return /Android|iPhone|iPod|iPad|Mobile/i.test(ua);
+      return parseClientPlatform().isMobile;
     }
 
     function updateQuickSearchPaletteHint() {
@@ -8733,6 +8828,22 @@
       el.innerHTML = isMacLikeShortcutPlatform()
         ? "<kbd>Cmd</kbd><kbd>Y</kbd> Quick Search Palette"
         : "<kbd>Ctrl</kbd><kbd>Y</kbd> Quick Search Palette";
+    }
+
+    function updateSearchPaletteCloseHint() {
+      const hint = $("searchPaletteShortcutHint");
+      if (!hint) return;
+      if (isMobileQuickSearchHint()) {
+        hint.textContent = "×";
+        hint.classList.add("is-close");
+        hint.setAttribute("aria-label", "Close search");
+        hint.setAttribute("title", "Close");
+        return;
+      }
+      hint.textContent = isMacLikeShortcutPlatform() ? "⌘Y" : "Ctrl+Y";
+      hint.classList.remove("is-close");
+      hint.setAttribute("aria-label", "Close search");
+      hint.setAttribute("title", isMacLikeShortcutPlatform() ? "⌘Y" : "Ctrl+Y");
     }
 
     function readRecentSearches() {
@@ -8949,14 +9060,14 @@
       const hintBtn = $("quickSearchPaletteHint");
       if (!bd || !input || bd.dataset.wired === "1") return;
       bd.dataset.wired = "1";
-      if (hint) hint.textContent = isMacLikeShortcutPlatform() ? "⌘Y" : "Ctrl+Y";
+      updateSearchPaletteCloseHint();
       updateQuickSearchPaletteHint();
-      try {
-        ["(max-width: 640px)", "(pointer: coarse)", "(hover: none)"].forEach((query) => {
-          window.matchMedia(query).addEventListener("change", updateQuickSearchPaletteHint);
+      if (hint) {
+        hint.addEventListener("click", (ev) => {
+          ev.preventDefault();
+          closeSearchPalette();
         });
-        window.addEventListener("orientationchange", updateQuickSearchPaletteHint);
-      } catch (_) {}
+      }
       if (hintBtn) {
         hintBtn.addEventListener("click", () => {
           if (isSearchPaletteOpen()) closeSearchPalette();
@@ -12086,11 +12197,22 @@
 
     function importantNoticeAlertClass(title) {
       const t = String(title || "").trim();
+      if (/fyinx unavailable for legal reasons/i.test(t)) return "notice-alert-danger";
       if (/proxy connections fully operational/i.test(t)) return "notice-alert-success";
       if (/canary branch coming soon/i.test(t)) return "notice-alert-info";
       if (/try out the game browser/i.test(t)) return "notice-alert-info";
       if (/link ratings back up/i.test(t)) return "notice-alert-info";
       return "";
+    }
+
+    function renderUpdateNoticeMarkdown(noticesText) {
+      const text = String(noticesText || "").replace(/\r\n/g, "\n").trim();
+      if (!text) return "";
+      // list.md update notices often use "# item" for readability; render as body text, not headings.
+      const normalized = text.replace(/^#\s+/gm, "- ");
+      const chunks = [];
+      renderNoticeSectionBody(chunks, normalized);
+      return chunks.join("");
     }
 
     function renderMarkdownLiteNotices(noticesText) {
@@ -12275,7 +12397,7 @@
         setHtml(
           bodyEl,
           md && String(md).trim()
-            ? renderMarkdownLiteNotices(String(md))
+            ? renderUpdateNoticeMarkdown(String(md))
             : '<p class="summary-muted">No update notice is available for this version.</p>'
         );
       }
@@ -12291,6 +12413,7 @@
       $("updateBackdrop").classList.remove("open");
       $("updateBackdrop").setAttribute("aria-hidden", "true");
       setSiteUpdateBannerVisible(false);
+      maybeShowMobileAutoResizeNotice();
     }
 
     function maybeShowUpdateModal(meta) {
@@ -12347,7 +12470,6 @@
       "gdb:ccported": "Rift vault pack (CCPorted). No detailed info on this database yet.",
       "gdb:selenite": "Selenite's game catalog (also exposed as a Rift vault pack). No detailed info on this database yet.",
       "gdb:radon": "Rift vault pack (Radon). No detailed info on this database yet.",
-      "gdb:fyinx": "Rift vault pack (Fyinx). No detailed info on this database yet.",
       "gdb:truffled":
         "Database made for and exclusively used by Truffled links.",
       "gdb:totally-science": "Rift vault pack (Totally Science). No detailed info on this database yet.",
@@ -13158,6 +13280,16 @@
         $("updateBackdrop").addEventListener("click", (ev) => {
           if (ev.target === $("updateBackdrop")) closeUpdateModal(meta);
         });
+        const mobileAutoResizeOkBtn = $("mobileAutoResizeOkBtn");
+        if (mobileAutoResizeOkBtn) {
+          mobileAutoResizeOkBtn.addEventListener("click", () => dismissMobileAutoResizeNotice());
+        }
+        const mobileAutoResizeBackdrop = $("mobileAutoResizeBackdrop");
+        if (mobileAutoResizeBackdrop) {
+          mobileAutoResizeBackdrop.addEventListener("click", (ev) => {
+            if (ev.target === mobileAutoResizeBackdrop) dismissMobileAutoResizeNotice();
+          });
+        }
         const jsDelivrBd = $("jsDelivrBackdrop");
         if (jsDelivrBd) {
           jsDelivrBd.addEventListener("click", (ev) => {
@@ -13216,6 +13348,10 @@
               closeJsDelivrPicker();
               return;
             }
+            if (isMobileAutoResizeNoticeOpen()) {
+              dismissMobileAutoResizeNotice();
+              return;
+            }
             closeSummary();
             closeFilterModal();
             closeSettingsModal();
@@ -13243,6 +13379,7 @@
         return runInitialRender().then(() => {
           finishContentLoading();
           if ($("folderTrustedResults")) refreshFolderTrustedSearchUI(folderTrustedSearchLastQuery);
+          maybeShowMobileAutoResizeNotice();
         });
         });
       })

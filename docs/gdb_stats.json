@@ -1,8 +1,8 @@
 {
   "generated_at": "2026-08-23T21:29:38Z",
   "snapshot_date": "2026-08-23",
-  "catalog_count": 23,
-  "total_entries": 30193,
+  "catalog_count": 22,
+  "total_entries": 30095,
   "unique_games": 25857,
   "catalogs": [
     {
@@ -90,12 +90,6 @@
       "empty": false
     },
     {
-      "tag": "gdb:fyinx",
-      "label": "Fyinx",
-      "count": 98,
-      "empty": false
-    },
-    {
       "tag": "gdb:truffled",
       "label": "Truffled",
       "count": 0,
@@ -162,7 +156,6 @@
         "gdb:ccported": 22,
         "gdb:selenite": 266,
         "gdb:radon": 302,
-        "gdb:fyinx": 98,
         "gdb:truffled": 0,
         "gdb:totally-science": 0,
         "gdb:petezah": 1121,
@@ -172,7 +165,7 @@
         "gdb:dogeub": 20739,
         "gdb:utopia": 275
       },
-      "total_entries": 30193,
+      "total_entries": 30095,
       "unique_games": 25857
     }
   ],

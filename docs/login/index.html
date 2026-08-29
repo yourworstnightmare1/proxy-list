@@ -953,11 +953,15 @@
           return;
         }
         // Only return to our own site origins.
+        const host = String(target.hostname || "").toLowerCase();
         const okHost =
-          target.hostname === "yourworstnightmare1.github.io" ||
-          target.hostname.endsWith(".github.io") ||
-          target.hostname === "localhost" ||
-          target.hostname === "127.0.0.1";
+          host === "yourworstnightmare1.github.io" ||
+          host.endsWith(".github.io") ||
+          host === "localhost" ||
+          host === "127.0.0.1" ||
+          host.endsWith(".workers.dev") ||
+          host.endsWith(".web.app") ||
+          host.endsWith(".firebaseapp.com");
         if (!okHost) {
           setStatus("Sign-in return URL was not allowed.", "error");
           return;
@@ -1022,11 +1026,19 @@
         }
         setAuthBusy(true);
         setStatus("Finishing sign-in…", "");
+        if (payload.providerId === "github.com" && payload.accessToken) {
+          captureGithubOAuthToken(null, payload.accessToken);
+        }
         return auth
           .signInWithCredential(credential)
           .then((result) => {
             setOauthPending(false);
-            captureGithubOAuthToken(result);
+            // Prefer any token Firebase echoes; otherwise keep the bridge token already stored.
+            if (payload.providerId === "github.com") {
+              captureGithubOAuthToken(result, payload.accessToken);
+            } else {
+              captureGithubOAuthToken(result);
+            }
             return afterSignIn(auth, db, true).then(() => true);
           })
           .catch((err) => {
@@ -1038,17 +1050,24 @@
           .finally(() => setAuthBusy(false));
       }
 
-      function captureGithubOAuthToken(result) {
-        if (!result || !result.credential) return;
-        const cred = result.credential;
-        if (cred.providerId === "github.com" && cred.accessToken) {
-          try {
-            localStorage.setItem(GITHUB_TOKEN_SESSION_KEY, cred.accessToken);
-          } catch (_) {}
-          try {
-            sessionStorage.setItem(GITHUB_TOKEN_SESSION_KEY, cred.accessToken);
-          } catch (_) {}
+      function captureGithubOAuthToken(result, explicitToken) {
+        const cred = result && result.credential;
+        let token = explicitToken ? String(explicitToken) : "";
+        if (!token && cred && cred.providerId === "github.com" && cred.accessToken) {
+          token = String(cred.accessToken);
         }
+        if (!token) {
+          // Avoid leaving a stale token after a GitHub sign-in that did not yield a new one.
+          if (cred && cred.providerId === "github.com") clearGithubAccessToken();
+          return false;
+        }
+        try {
+          localStorage.setItem(GITHUB_TOKEN_SESSION_KEY, token);
+        } catch (_) {}
+        try {
+          sessionStorage.setItem(GITHUB_TOKEN_SESSION_KEY, token);
+        } catch (_) {}
+        return true;
       }
 
       function clearGithubAccessToken() {
