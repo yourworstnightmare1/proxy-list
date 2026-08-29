@@ -72,7 +72,7 @@ CC BY 4.0 covers the list data and datasets derived from it, including `list.md`
 CAPTCHA is tested using the official [Google ReCAPTCHA demo](https://www.google.com/recaptcha/api2/demo)
 
 # When is the list updated?
-**Automation (silent maintenance)**: The list is automatically checked every six hours. Each run re-checks HTTP for links in `list.md` and updates per-URL failure counts in `link_status.json`. Link filter metadata (`docs/link_check_meta.json`) and exported JSON are refreshed on every run. These updates do **not** bump revision or `Last Updated` in `list.md`, so users are not prompted to refresh unless you publish a release.
+**Automation (silent maintenance)**: The list is automatically checked every six hours. Each run re-checks HTTP for links in `list.md` and updates per-URL failure counts in `link_status.json`. Link filter metadata (`docs/link_check_meta.json`), exported JSON, and a UTC-day game-database snapshot (`docs/gdb_stats.json` + `docs/stats/archive/gdb_catalogs/`) are refreshed on every run. These updates do **not** bump revision or `Last Updated` in `list.md`, so users are not prompted to refresh unless you publish a release.
 
 **Sunday releases (user-facing)**: Revision (`r###`) and `Last Updated` in `list.md` only bump when the link checker runs on **Sunday** (or when you manually run the workflow with **Bump revision and Last Updated** checked). That is when users see the “new site update” banner. For a full weekly release, also bump the **version** (`vX.Y`) and write `## Update Notice` in `list.md` on Sunday, then run `python scripts/convert_list_to_json.py`.
 

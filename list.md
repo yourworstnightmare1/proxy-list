@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
-> v7.1 | Released: August 29, 2026
-> r279 | Last Updated: August 29, 2026
-> Total onsite links: 49145 (48800 sorted + 345 unsorted)\
+> v7.1.1 | Released: August 29, 2026
+> r280 | Last Updated: August 29, 2026
+> Total onsite links: 48714 (48369 sorted + 345 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -23,14 +23,7 @@ Looking for a specific game but don’t want to try every provider’s links to 
 
 ## Update Notice
 
-- Mobile detection is now done by user agent instead of screen size to fix a bug where resizing a window to a resolution that is very small would make the site think you're on a phone
-- Fixed a bug where the button to exit the Quick Search Palette would show the keybind even though it is not possible to do that on mobile, it now shows an X icon
-- Fixed a bug causing GitHub notifications to not work properly, it is recommended you sign out then sign back in to view your notifications properly
-- Fixed bugs causing Firebase to return HTML error 429 because too many requests were occurring
-- Removed Fyinx from game database for legal reasons (returned HTML error 451 on API contact, view more on this error [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/451)), we apologize for any inconvience this may cause. This is out of our control.
-- Added 19,000+ links (no filter data at the time of writing this yet)
-- 20 new pending sections
-- 3 unsorted links added
+Added game database snapshots to the link check run so that they are captured automatically
 
 # 💜 Selenite
 > [!NOTE]

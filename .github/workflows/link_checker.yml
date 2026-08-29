@@ -21,6 +21,7 @@ on:
       - "scripts/update_unsorted_from_raw.py"
       - "scripts/release_schedule.py"
       - "scripts/build_filter_stats.py"
+      - "scripts/build_gdb_stats.py"
 
 permissions:
   contents: write
@@ -67,10 +68,13 @@ jobs:
           python scripts/update_unsorted_from_raw.py
 
       - name: Export web data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scripts/update_link_check_meta.py
           python scripts/convert_list_to_json.py
           python scripts/build_filter_stats.py
+          python scripts/build_gdb_stats.py
 
       - name: Debug commit_info
         run: |
@@ -142,11 +146,13 @@ jobs:
           PY
 
       - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "auto-link-bot"
           git config --global user.email "bot@users.noreply.github.com"
 
-          git add *.md docs/data.json docs/data.json.gz docs/unsorted.json docs/contributor_link_totals.json docs/filter_stats.json docs/link_check_meta.json docs/link_check_snapshot.json link_status.json docs/submission_url_keys.json docs/archived_providers.json || true
+          git add *.md docs/data.json docs/data.json.gz docs/unsorted.json docs/contributor_link_totals.json docs/filter_stats.json docs/link_check_meta.json docs/link_check_snapshot.json link_status.json docs/submission_url_keys.json docs/archived_providers.json docs/gdb_stats.json docs/stats/archive/gdb_catalogs || true
 
           if ! git diff --cached --quiet; then
             if [ "${{ steps.commitinfo.outputs.release_published }}" = "true" ]; then
@@ -165,7 +171,7 @@ jobs:
               while IFS= read -r f; do
                 [ -z "$f" ] && continue
                 case "$f" in
-                  docs/filter_stats.json|docs/data.json|docs/data.json.gz|docs/unsorted.json|docs/contributor_link_totals.json|docs/link_check_meta.json|docs/link_check_snapshot.json|link_status.json|docs/submission_url_keys.json|docs/archived_providers.json)
+                  docs/filter_stats.json|docs/data.json|docs/data.json.gz|docs/unsorted.json|docs/contributor_link_totals.json|docs/link_check_meta.json|docs/link_check_snapshot.json|link_status.json|docs/submission_url_keys.json|docs/archived_providers.json|docs/gdb_stats.json|docs/stats/archive/gdb_catalogs/*)
                     # During rebase, --ours is upstream (origin/main).
                     git checkout --ours -- "$f" 2>/dev/null || true
                     git add -- "$f"
@@ -184,7 +190,8 @@ jobs:
               python scripts/update_link_check_meta.py || true
               python scripts/convert_list_to_json.py
               python scripts/build_filter_stats.py
-              git add *.md docs/data.json docs/data.json.gz docs/unsorted.json docs/contributor_link_totals.json docs/filter_stats.json docs/link_check_meta.json docs/link_check_snapshot.json link_status.json docs/submission_url_keys.json docs/archived_providers.json || true
+              GITHUB_TOKEN="${GITHUB_TOKEN:-}" python scripts/build_gdb_stats.py || true
+              git add *.md docs/data.json docs/data.json.gz docs/unsorted.json docs/contributor_link_totals.json docs/filter_stats.json docs/link_check_meta.json docs/link_check_snapshot.json link_status.json docs/submission_url_keys.json docs/archived_providers.json docs/gdb_stats.json docs/stats/archive/gdb_catalogs || true
               GIT_EDITOR=true git rebase --continue
             }
 

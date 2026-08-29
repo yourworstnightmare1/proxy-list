@@ -28,6 +28,9 @@ WATCH_PATH_PREFIXES = (
     "scripts/convert_list_to_json.py",
     "scripts/update_link_check_meta.py",
     "scripts/update_unsorted_from_raw.py",
+    "scripts/build_filter_stats.py",
+    "scripts/build_gdb_stats.py",
+    "scripts/release_schedule.py",
 )
 
 _run_lock = threading.Lock()

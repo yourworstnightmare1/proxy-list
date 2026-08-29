@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import urllib.error
@@ -68,8 +69,16 @@ EMPTY_TAGS = {
 }
 
 
+def _request_headers() -> dict[str, str]:
+    headers = {"User-Agent": UA, "Accept": "*/*"}
+    token = (os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or "").strip()
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    return headers
+
+
 def http_get(url: str, timeout: float = 45.0) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
+    req = urllib.request.Request(url, headers=_request_headers())
     with urllib.request.urlopen(req, timeout=timeout) as res:
         return res.read()
 

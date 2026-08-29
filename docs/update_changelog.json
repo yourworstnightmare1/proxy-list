@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.1.1",
+      "revision": "r280",
+      "released": "August 29, 2026",
+      "update_notice": "Added game database snapshots to the link check run so that they are captured automatically"
+    },
+    {
       "version": "v7.1",
       "revision": "r279",
       "released": "August 29, 2026",

@@ -26,6 +26,8 @@ GIT_ADD_PATHS = [
     "docs/link_check_meta.json",
     "docs/link_check_snapshot.json",
     "link_status.json",
+    "docs/gdb_stats.json",
+    "docs/stats/archive/gdb_catalogs",
 ]
 
 GIT_USER_NAME = "auto-link-bot"
@@ -114,6 +116,7 @@ def run_pipeline(
     _run([py, "scripts/update_link_check_meta.py"], cwd=repo_root)
     _run([py, "scripts/convert_list_to_json.py"], cwd=repo_root)
     _run([py, "scripts/build_filter_stats.py"], cwd=repo_root)
+    _run([py, "scripts/build_gdb_stats.py"], cwd=repo_root, check=False)
 
     info = read_commit_info(repo_root)
     committed = False
