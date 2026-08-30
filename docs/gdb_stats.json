@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-30T03:15:41Z",
+  "generated_at": "2026-08-30T11:18:53Z",
   "snapshot_date": "2026-08-30",
   "catalog_count": 22,
-  "total_entries": 30137,
+  "total_entries": 30140,
   "unique_games": 25794,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
       "label": "Unblockedzone",
-      "count": 166,
+      "count": 169,
       "empty": false
     },
     {
@@ -200,7 +200,7 @@
     {
       "date": "2026-08-30",
       "counts": {
-        "gdb:unblockedzone": 166,
+        "gdb:unblockedzone": 169,
         "gdb:gn-math": 829,
         "gdb:luminsdk": 829,
         "gdb:noahs-tutoring": 406,
@@ -223,7 +223,7 @@
         "gdb:dogeub": 20739,
         "gdb:utopia": 275
       },
-      "total_entries": 30137,
+      "total_entries": 30140,
       "unique_games": 25794
     }
   ],
@@ -233,10 +233,19 @@
     "by_catalog": {
       "gdb:unblockedzone": {
         "label": "Unblockedzone",
-        "added": [],
-        "removed": [],
-        "added_count": 0,
-        "removed_count": 0,
+        "added": [
+          "Cookie Clicker",
+          "Crossy Road",
+          "GDWEB+ (Stable)",
+          "Oneshot",
+          "Web Dashers (Updated)"
+        ],
+        "removed": [
+          "GDWEB+ (Broken Version)",
+          "GDWEB+ (Updated!)"
+        ],
+        "added_count": 5,
+        "removed_count": 2,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -431,10 +440,47 @@
       }
     },
     "all": {
-      "added": [],
-      "removed": [],
-      "added_count": 0,
-      "removed_count": 0,
+      "added": [
+        {
+          "name": "Cookie Clicker",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "Crossy Road",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "GDWEB+ (Stable)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "Oneshot",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "Web Dashers (Updated)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        }
+      ],
+      "removed": [
+        {
+          "name": "GDWEB+ (Broken Version)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "GDWEB+ (Updated!)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        }
+      ],
+      "added_count": 5,
+      "removed_count": 2,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -443,10 +489,19 @@
     {
       "date": "2026-08-30",
       "kind": "diff",
-      "catalogs_touched": [],
-      "added": 0,
-      "removed": 0,
-      "by_catalog": []
+      "catalogs_touched": [
+        "gdb:unblockedzone"
+      ],
+      "added": 5,
+      "removed": 2,
+      "by_catalog": [
+        {
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone",
+          "added": 5,
+          "removed": 2
+        }
+      ]
     },
     {
       "date": "2026-08-29",
