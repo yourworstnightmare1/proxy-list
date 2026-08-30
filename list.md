@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v7.1.1 | Released: August 29, 2026
-> r281 | Last Updated: August 30, 2026
+> r282 | Last Updated: August 30, 2026
 > Total onsite links: 48714 (48369 sorted + 345 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -46236,7 +46236,7 @@ Added game database snapshots to the link check run so that they are captured au
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 842 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 841 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47032,7 +47032,6 @@ Added game database snapshots to the link check run so that they are captured au
 | | https://cell-lab98.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://chem-byte31.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://class-power85.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://claw-formula38.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://course-quiz99.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://data-lit52.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://debate-mass42.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
