@@ -36,6 +36,13 @@ STATUS_MAP = {"✅": "unblocked", "❌": "blocked", "⚠️": "warning", "⚠": 
 LINE_RE = re.compile(r"^\s*(?:[^\w\s]+)?\s*(.+?)(?:\s*\((.*?)\))?\s*([✅❌⚠️⚠])\s*$")
 # gn-math often ends lines with Discord custom emoji, e.g. <:blocked:1234567890>
 DISCORD_VERDICT_TAIL = re.compile(r"<a?:([A-Za-z0-9_]+):(\d+)>\s*$")
+# e.g. **StudentKeeper** ⏱️ Timed out  /  **Foo** Warning
+TIMED_OUT_LINE_RE = re.compile(
+    r"^\s*(?:\*\*)?(?:[^\w\s]+\s*)?([^*()\n]+?)(?:\*\*)?(?:\s*\((.*?)\))?\s*"
+    r"(?:⏱️\s*)?(?:timed\s*out|timeout|warning)\s*$",
+    re.IGNORECASE,
+)
+IBOSS_PROVIDER_RE = re.compile(r"^\s*iboss\s*$", re.IGNORECASE)
 
 
 def now_iso() -> str:
@@ -213,10 +220,14 @@ def parse_provider_lines(text: str) -> tuple[list[dict[str, str]], dict[str, int
         line = raw_line.strip()
         if not line:
             continue
-        m = LINE_RE.match(line)
+        # Normalize emoji+VS16 warning glyph so LINE_RE can match a single char.
+        line_norm = line.replace("⚠️", "⚠")
+        m = LINE_RE.match(line_norm)
         if m:
             name, category, icon = m.groups()
             status = STATUS_MAP.get(icon, "warning")
+            if icon == "⚠":
+                icon = "⚠️"
             summary[status] += 1
             providers.append(
                 {
@@ -239,6 +250,53 @@ def parse_provider_lines(text: str) -> tuple[list[dict[str, str]], dict[str, int
                     "icon": icon_repr,
                 }
             )
+            continue
+        to = TIMED_OUT_LINE_RE.match(line)
+        if to:
+            name = clean_field(to.group(1))
+            category = clean_field(to.group(2) or "Unknown")
+            summary["warning"] += 1
+            providers.append(
+                {
+                    "provider": name,
+                    "category": category,
+                    "status": "warning",
+                    "icon": "⚠️",
+                }
+            )
+    return providers, summary
+
+
+def apply_words_md_overrides(domain: str, providers: list[dict[str, str]]) -> list[dict[str, str]]:
+    """Apply .WORDS.md filter corrections after Discord ingest."""
+    host = normalize_domain_text(domain or "")
+    # Exact domain only: storage.googleapis.com + iBoss blocked → unblocked.
+    if host != "storage.googleapis.com":
+        return providers
+    out: list[dict[str, str]] = []
+    for row in providers:
+        item = dict(row)
+        if IBOSS_PROVIDER_RE.match(str(item.get("provider") or "")) and item.get("status") == "blocked":
+            item["status"] = "unblocked"
+            item["icon"] = "✅"
+            item["_override"] = "words.md:iboss-storage-googleapis-unblocked"
+        out.append(item)
+    return out
+
+
+def rebuild_summary(providers: list[dict[str, str]]) -> dict[str, int]:
+    summary = {"blocked": 0, "unblocked": 0, "warning": 0}
+    for row in providers:
+        status = str(row.get("status") or "warning")
+        if status not in summary:
+            status = "warning"
+        summary[status] += 1
+    return summary
+
+
+def finalize_providers(domain: str, providers: list[dict[str, str]]) -> tuple[list[dict[str, str]], dict[str, int]]:
+    providers = apply_words_md_overrides(domain, providers)
+    summary = rebuild_summary(providers)
     return providers, summary
 
 
@@ -356,26 +414,33 @@ class CollectorClient(discord.Client):
             if not urls and not domains:
                 continue
             matched += 1
-            record = {
-                "checked_at": checked_at,
-                "status": "ok",
-                "source_message_id": str(msg.id),
-                "source_author_id": str(msg.author.id),
-                "source_author": str(msg.author),
-                "providers": providers,
-                "summary": {**summary, "total": total},
-                "raw_excerpt": text[:5000],
-            }
+            targets: list[tuple[str, str]] = []
             for url in urls:
-                self.output[url] = {"url": url, "domain": safe_domain(url), **record}
-                self.updated += 1
-                d = safe_domain(url)
-                if d:
-                    new_domains.append(d)
+                targets.append((url, safe_domain(url)))
             for domain in domains:
-                self.output["domain:" + domain] = {"url": "", "domain": domain, **record}
+                targets.append(("domain:" + domain, domain))
+            for key, domain in targets:
+                providers_final, summary_final = finalize_providers(domain, providers)
+                total_final = (
+                    summary_final["blocked"] + summary_final["unblocked"] + summary_final["warning"]
+                )
+                record = {
+                    "checked_at": checked_at,
+                    "status": "ok",
+                    "source_message_id": str(msg.id),
+                    "source_author_id": str(msg.author.id),
+                    "source_author": str(msg.author),
+                    "providers": providers_final,
+                    "summary": {**summary_final, "total": total_final},
+                    "raw_excerpt": text[:5000],
+                }
+                if key.startswith("domain:"):
+                    self.output[key] = {"url": "", "domain": domain, **record}
+                else:
+                    self.output[key] = {"url": key, "domain": domain, **record}
                 self.updated += 1
-                new_domains.append(domain)
+                if domain:
+                    new_domains.append(domain)
         write_output(OUTPUT_JSON, self.output)
         added = append_checked_domains(new_domains)
         print(
@@ -482,6 +547,7 @@ class CollectorClient(discord.Client):
 
             text = extract_message_text(reply)
             providers, summary = parse_provider_lines(text)
+            providers, summary = finalize_providers(domain, providers)
             total = summary["blocked"] + summary["unblocked"] + summary["warning"]
             status = "ok" if total else "parsed_empty"
             self.output[link] = {
@@ -679,31 +745,37 @@ def run_history_ingest_rest(cfg: Config, output: dict[str, Any]) -> None:
             continue
         urls = sorted(set(re.findall(r"https?://[^\s|)]+", text)))
         domains = extract_domains_from_text(text)
-        total = summary["blocked"] + summary["unblocked"] + summary["warning"]
         if not urls and not domains:
             continue
         matched += 1
         checked_at = snowflake_to_iso_utc(str(msg.get("id", "0")))
-        record = {
-            "checked_at": checked_at,
-            "status": "ok",
-            "source_message_id": str(msg.get("id", "")),
-            "source_author_id": str(author.get("id", "")),
-            "source_author": str(author.get("username", ""))[:120],
-            "providers": providers,
-            "summary": {**summary, "total": total},
-            "raw_excerpt": text[:5000],
-        }
+        targets: list[tuple[str, str]] = []
         for url in urls:
-            output[url] = {"url": url, "domain": safe_domain(url), **record}
-            updated += 1
-            d = safe_domain(url)
-            if d:
-                new_domains.append(d)
+            targets.append((url, safe_domain(url)))
         for domain in domains:
-            output["domain:" + domain] = {"url": "", "domain": domain, **record}
+            targets.append(("domain:" + domain, domain))
+        for key, domain in targets:
+            providers_final, summary_final = finalize_providers(domain, providers)
+            total_final = (
+                summary_final["blocked"] + summary_final["unblocked"] + summary_final["warning"]
+            )
+            record = {
+                "checked_at": checked_at,
+                "status": "ok",
+                "source_message_id": str(msg.get("id", "")),
+                "source_author_id": str(author.get("id", "")),
+                "source_author": str(author.get("username", ""))[:120],
+                "providers": providers_final,
+                "summary": {**summary_final, "total": total_final},
+                "raw_excerpt": text[:5000],
+            }
+            if key.startswith("domain:"):
+                output[key] = {"url": "", "domain": domain, **record}
+            else:
+                output[key] = {"url": key, "domain": domain, **record}
             updated += 1
-            new_domains.append(domain)
+            if domain:
+                new_domains.append(domain)
     write_output(OUTPUT_JSON, output)
     added = append_checked_domains(new_domains)
     print(
@@ -713,15 +785,11 @@ def run_history_ingest_rest(cfg: Config, output: dict[str, Any]) -> None:
 
 
 def apply_dot_token_env() -> None:
-    """Fill DISCORD_BOT_TOKEN / DISCORD_CHANNEL_ID from .token if env vars are empty.
+    """Load Discord collector settings from .token into os.environ when unset.
 
     Supports simple KEY=value lines (optional double/single quotes), # comments,
     and blank lines — same layout as a minimal dotenv file.
     """
-    have_tok = bool((os.getenv("DISCORD_BOT_TOKEN") or "").strip())
-    have_ch = bool((os.getenv("DISCORD_CHANNEL_ID") or "").strip())
-    if have_tok and have_ch:
-        return
     if not TOKEN_FILE.is_file():
         return
     parsed: dict[str, str] = {}
@@ -738,10 +806,11 @@ def apply_dot_token_env() -> None:
             parsed[key] = val
     except OSError:
         return
-    if not have_tok and parsed.get("DISCORD_BOT_TOKEN", "").strip():
-        os.environ["DISCORD_BOT_TOKEN"] = parsed["DISCORD_BOT_TOKEN"].strip()
-    if not have_ch and parsed.get("DISCORD_CHANNEL_ID", "").strip():
-        os.environ["DISCORD_CHANNEL_ID"] = parsed["DISCORD_CHANNEL_ID"].strip()
+    for key, val in parsed.items():
+        if not val.strip():
+            continue
+        if not (os.getenv(key) or "").strip():
+            os.environ[key] = val.strip()
 
 
 def parse_args() -> argparse.Namespace:
