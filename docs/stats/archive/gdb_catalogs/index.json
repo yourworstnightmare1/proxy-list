@@ -1,9 +1,10 @@
 {
-  "updated_at": "2026-08-29T20:31:22Z",
-  "latest_day": "2026-08-29",
+  "updated_at": "2026-08-30T03:15:41Z",
+  "latest_day": "2026-08-30",
   "days": [
     "2026-08-23",
-    "2026-08-29"
+    "2026-08-29",
+    "2026-08-30"
   ],
   "_note": "UTC-day snapshots of game database name lists for docs/stats/games/."
 }
