@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-30T16:04:13Z",
-  "snapshot_date": "2026-08-30",
+  "generated_at": "2026-08-31T03:13:57Z",
+  "snapshot_date": "2026-08-31",
   "catalog_count": 22,
   "total_entries": 30140,
   "unique_games": 25794,
@@ -225,27 +225,47 @@
       },
       "total_entries": 30140,
       "unique_games": 25794
+    },
+    {
+      "date": "2026-08-31",
+      "counts": {
+        "gdb:unblockedzone": 169,
+        "gdb:gn-math": 829,
+        "gdb:luminsdk": 829,
+        "gdb:noahs-tutoring": 406,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 829,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 250,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275
+      },
+      "total_entries": 30140,
+      "unique_games": 25794
     }
   ],
   "latest_changes": {
-    "date": "2026-08-30",
+    "date": "2026-08-31",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
         "label": "Unblockedzone",
-        "added": [
-          "Cookie Clicker",
-          "Crossy Road",
-          "GDWEB+ (Stable)",
-          "Oneshot",
-          "Web Dashers (Updated)"
-        ],
-        "removed": [
-          "GDWEB+ (Broken Version)",
-          "GDWEB+ (Updated!)"
-        ],
-        "added_count": 5,
-        "removed_count": 2,
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -440,52 +460,23 @@
       }
     },
     "all": {
-      "added": [
-        {
-          "name": "Cookie Clicker",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "Crossy Road",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "GDWEB+ (Stable)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "Oneshot",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "Web Dashers (Updated)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        }
-      ],
-      "removed": [
-        {
-          "name": "GDWEB+ (Broken Version)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "GDWEB+ (Updated!)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        }
-      ],
-      "added_count": 5,
-      "removed_count": 2,
+      "added": [],
+      "removed": [],
+      "added_count": 0,
+      "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-08-31",
+      "kind": "diff",
+      "catalogs_touched": [],
+      "added": 0,
+      "removed": 0,
+      "by_catalog": []
+    },
     {
       "date": "2026-08-30",
       "kind": "diff",
