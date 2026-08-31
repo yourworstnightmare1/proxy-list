@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-08-31T12:40:11Z",
+  "generated_at": "2026-08-31T22:30:47Z",
   "snapshot_date": "2026-08-31",
   "catalog_count": 22,
-  "total_entries": 30140,
-  "unique_games": 25794,
+  "total_entries": 30160,
+  "unique_games": 25814,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
       "label": "Unblockedzone",
-      "count": 169,
+      "count": 189,
       "empty": false
     },
     {
@@ -229,7 +229,7 @@
     {
       "date": "2026-08-31",
       "counts": {
-        "gdb:unblockedzone": 169,
+        "gdb:unblockedzone": 189,
         "gdb:gn-math": 829,
         "gdb:luminsdk": 829,
         "gdb:noahs-tutoring": 406,
@@ -252,8 +252,8 @@
         "gdb:dogeub": 20739,
         "gdb:utopia": 275
       },
-      "total_entries": 30140,
-      "unique_games": 25794
+      "total_entries": 30160,
+      "unique_games": 25814
     }
   ],
   "latest_changes": {
@@ -262,9 +262,30 @@
     "by_catalog": {
       "gdb:unblockedzone": {
         "label": "Unblockedzone",
-        "added": [],
+        "added": [
+          "CCM Client 1.5.2",
+          "CoderCraft Client 1.5.2",
+          "EaglerCraft 0.3.0 (WASM)",
+          "EaglerCraft 1.12 (WASM)",
+          "EaglerCraft 1.25 (JS)",
+          "EaglerCraft 1.8.8 (JS)",
+          "EaglerCraft 1.8.8 (WASM)",
+          "EaglerCraft Alpha 1.2.6",
+          "EaglerCraft Beta 1.3_01 (JS)",
+          "EaglerCraft Beta 1.7.3 (JS)",
+          "Fuchsiax Client 1.5.2",
+          "Fuchsiax x Ghost Client 1.5.2",
+          "N0VA Client 1.5.2",
+          "Nebula Client 1.5.2",
+          "NIT Client 1.5.2",
+          "Odd Future Client 1.5.2",
+          "Pi Client 1.8.8",
+          "PreCCM Client 1.5.2",
+          "Shadow Client 1.8.8",
+          "UwU Client 1.8.8"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 20,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -460,9 +481,110 @@
       }
     },
     "all": {
-      "added": [],
+      "added": [
+        {
+          "name": "CCM Client 1.5.2",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "CoderCraft Client 1.5.2",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "EaglerCraft 0.3.0 (WASM)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "EaglerCraft 1.12 (WASM)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "EaglerCraft 1.25 (JS)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "EaglerCraft 1.8.8 (JS)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "EaglerCraft 1.8.8 (WASM)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "EaglerCraft Alpha 1.2.6",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "EaglerCraft Beta 1.3_01 (JS)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "EaglerCraft Beta 1.7.3 (JS)",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "Fuchsiax Client 1.5.2",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "Fuchsiax x Ghost Client 1.5.2",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "N0VA Client 1.5.2",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "Nebula Client 1.5.2",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "NIT Client 1.5.2",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "Odd Future Client 1.5.2",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "Pi Client 1.8.8",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "PreCCM Client 1.5.2",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "Shadow Client 1.8.8",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "UwU Client 1.8.8",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        }
+      ],
       "removed": [],
-      "added_count": 0,
+      "added_count": 20,
       "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
@@ -472,10 +594,19 @@
     {
       "date": "2026-08-31",
       "kind": "diff",
-      "catalogs_touched": [],
-      "added": 0,
+      "catalogs_touched": [
+        "gdb:unblockedzone"
+      ],
+      "added": 20,
       "removed": 0,
-      "by_catalog": []
+      "by_catalog": [
+        {
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone",
+          "added": 20,
+          "removed": 0
+        }
+      ]
     },
     {
       "date": "2026-08-30",
