@@ -535,7 +535,7 @@ Added game database snapshots to the link check run so that they are captured au
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:truffled | Scramjet | 89 |
+> | Proxy/Games | GDB:truffled | Scramjet | 85 |
 
 > [!IMPORTANT]
 > when visiting truffled on a google script (script.google.com) domain, the proxy likely won't work. most games are unaffected
@@ -627,10 +627,6 @@ Added game database snapshots to the link check run so that they are captured au
 | | https://bias.itlogistics.com.ar/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bids.topmoto.pl/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://berg.ptgrowthasia.com/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://snoopy.shared2.eu | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://snoopy.pagostepeapulco.gob.mx/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://snoopy.hemma.org/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://snoopy.patelmortgage.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🥱 Boredom
 > [!NOTE]
