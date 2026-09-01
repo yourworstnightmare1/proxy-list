@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-08-31T22:30:47Z",
-  "snapshot_date": "2026-08-31",
+  "generated_at": "2026-09-01T03:20:18Z",
+  "snapshot_date": "2026-09-01",
   "catalog_count": 22,
-  "total_entries": 30160,
-  "unique_games": 25814,
+  "total_entries": 30172,
+  "unique_games": 25818,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -14,13 +14,13 @@
     {
       "tag": "gdb:gn-math",
       "label": "gn-math",
-      "count": 829,
+      "count": 833,
       "empty": false
     },
     {
       "tag": "gdb:luminsdk",
       "label": "Lumin SDK",
-      "count": 829,
+      "count": 833,
       "empty": false
     },
     {
@@ -56,7 +56,7 @@
     {
       "tag": "gdb:lucide",
       "label": "Lucide",
-      "count": 829,
+      "count": 833,
       "empty": false
     },
     {
@@ -254,56 +254,74 @@
       },
       "total_entries": 30160,
       "unique_games": 25814
+    },
+    {
+      "date": "2026-09-01",
+      "counts": {
+        "gdb:unblockedzone": 189,
+        "gdb:gn-math": 833,
+        "gdb:luminsdk": 833,
+        "gdb:noahs-tutoring": 406,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 833,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 250,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275
+      },
+      "total_entries": 30172,
+      "unique_games": 25818
     }
   ],
   "latest_changes": {
-    "date": "2026-08-31",
+    "date": "2026-09-01",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
         "label": "Unblockedzone",
-        "added": [
-          "CCM Client 1.5.2",
-          "CoderCraft Client 1.5.2",
-          "EaglerCraft 0.3.0 (WASM)",
-          "EaglerCraft 1.12 (WASM)",
-          "EaglerCraft 1.25 (JS)",
-          "EaglerCraft 1.8.8 (JS)",
-          "EaglerCraft 1.8.8 (WASM)",
-          "EaglerCraft Alpha 1.2.6",
-          "EaglerCraft Beta 1.3_01 (JS)",
-          "EaglerCraft Beta 1.7.3 (JS)",
-          "Fuchsiax Client 1.5.2",
-          "Fuchsiax x Ghost Client 1.5.2",
-          "N0VA Client 1.5.2",
-          "Nebula Client 1.5.2",
-          "NIT Client 1.5.2",
-          "Odd Future Client 1.5.2",
-          "Pi Client 1.8.8",
-          "PreCCM Client 1.5.2",
-          "Shadow Client 1.8.8",
-          "UwU Client 1.8.8"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 20,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
       "gdb:gn-math": {
         "label": "gn-math",
-        "added": [],
+        "added": [
+          "Friday Night Funkin': VS. Henry Stickmin V4",
+          "Friday Night Funkin': VS. Mario Ultra Rebooted",
+          "Friday Night Funkin': VS. Seek's Cool Deltarune",
+          "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 4,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
       "gdb:luminsdk": {
         "label": "Lumin SDK",
-        "added": [],
+        "added": [
+          "Friday Night Funkin': VS. Henry Stickmin V4",
+          "Friday Night Funkin': VS. Mario Ultra Rebooted",
+          "Friday Night Funkin': VS. Seek's Cool Deltarune",
+          "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 4,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -355,9 +373,14 @@
       },
       "gdb:lucide": {
         "label": "Lucide",
-        "added": [],
+        "added": [
+          "Friday Night Funkin': VS. Henry Stickmin V4",
+          "Friday Night Funkin': VS. Mario Ultra Rebooted",
+          "Friday Night Funkin': VS. Seek's Cool Deltarune",
+          "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 4,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -483,114 +506,105 @@
     "all": {
       "added": [
         {
-          "name": "CCM Client 1.5.2",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Henry Stickmin V4",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
         },
         {
-          "name": "CoderCraft Client 1.5.2",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Henry Stickmin V4",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
         },
         {
-          "name": "EaglerCraft 0.3.0 (WASM)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Henry Stickmin V4",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
         },
         {
-          "name": "EaglerCraft 1.12 (WASM)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Mario Ultra Rebooted",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
         },
         {
-          "name": "EaglerCraft 1.25 (JS)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Mario Ultra Rebooted",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
         },
         {
-          "name": "EaglerCraft 1.8.8 (JS)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Mario Ultra Rebooted",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
         },
         {
-          "name": "EaglerCraft 1.8.8 (WASM)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Seek's Cool Deltarune",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
         },
         {
-          "name": "EaglerCraft Alpha 1.2.6",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Seek's Cool Deltarune",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
         },
         {
-          "name": "EaglerCraft Beta 1.3_01 (JS)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Seek's Cool Deltarune",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
         },
         {
-          "name": "EaglerCraft Beta 1.7.3 (JS)",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
         },
         {
-          "name": "Fuchsiax Client 1.5.2",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
         },
         {
-          "name": "Fuchsiax x Ghost Client 1.5.2",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "N0VA Client 1.5.2",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "Nebula Client 1.5.2",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "NIT Client 1.5.2",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "Odd Future Client 1.5.2",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "Pi Client 1.8.8",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "PreCCM Client 1.5.2",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "Shadow Client 1.8.8",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
-        },
-        {
-          "name": "UwU Client 1.8.8",
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone"
+          "name": "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
         }
       ],
       "removed": [],
-      "added_count": 20,
+      "added_count": 12,
       "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-09-01",
+      "kind": "diff",
+      "catalogs_touched": [
+        "gdb:gn-math",
+        "gdb:lucide",
+        "gdb:luminsdk"
+      ],
+      "added": 12,
+      "removed": 0,
+      "by_catalog": [
+        {
+          "tag": "gdb:gn-math",
+          "label": "gn-math",
+          "added": 4,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:lucide",
+          "label": "Lucide",
+          "added": 4,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK",
+          "added": 4,
+          "removed": 0
+        }
+      ]
+    },
     {
       "date": "2026-08-31",
       "kind": "diff",
