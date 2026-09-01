@@ -37387,7 +37387,7 @@ Added game database snapshots to the link check run so that they are captured au
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8256 |
+> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8255 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | http://inasmuch.cryptparty.com/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -45636,7 +45636,6 @@ Added game database snapshots to the link check run so that they are captured au
 | | http://learning.programming.student.library.lecture.gula.com.ar | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | http://library.student.seminar.algebra.history.oranjelaan.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | http://calculus.homework.writing.lecture.classroom.oranjelaan.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcf.jsdelivr.net/gh/qwertyuiop-qwertyuiop-qwertyuiop/svg1@main/index.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/accountname291203/svgg@main/index.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/accountname291203/svgg@main/index.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/accountname291203/svgg@main/index.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
