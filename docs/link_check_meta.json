@@ -1,10 +1,14 @@
 {
-  "checked_at": "2026-09-01T20:39:10Z",
-  "checked_at_display": "2026-09-01 20:39 UTC",
+  "checked_at": "2026-09-02T02:40:06Z",
+  "checked_at_display": "2026-09-02 02:40 UTC",
   "added_count": 0,
-  "removed_count": 1,
+  "removed_count": 5,
   "added_links": [],
   "removed_links": [
-    "https://testingcf.jsdelivr.net/gh/qwertyuiop-qwertyuiop-qwertyuiop/svg1@main/index.svg"
+    "https://theory.grade.bamastuff.com",
+    "https://grid.skills.geckobungalow.com",
+    "https://grade.recap.europeserv.org",
+    "https://know.tech.europeserv.org",
+    "https://clever.data.airlinemeals.net"
   ]
 }

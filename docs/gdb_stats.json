@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-01T20:39:35Z",
-  "snapshot_date": "2026-09-01",
+  "generated_at": "2026-09-02T02:40:30Z",
+  "snapshot_date": "2026-09-02",
   "catalog_count": 22,
   "total_entries": 30172,
   "unique_games": 25818,
@@ -283,10 +283,39 @@
       },
       "total_entries": 30172,
       "unique_games": 25818
+    },
+    {
+      "date": "2026-09-02",
+      "counts": {
+        "gdb:unblockedzone": 189,
+        "gdb:gn-math": 833,
+        "gdb:luminsdk": 833,
+        "gdb:noahs-tutoring": 406,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 833,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 250,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275
+      },
+      "total_entries": 30172,
+      "unique_games": 25818
     }
   ],
   "latest_changes": {
-    "date": "2026-09-01",
+    "date": "2026-09-02",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
@@ -300,28 +329,18 @@
       },
       "gdb:gn-math": {
         "label": "gn-math",
-        "added": [
-          "Friday Night Funkin': VS. Henry Stickmin V4",
-          "Friday Night Funkin': VS. Mario Ultra Rebooted",
-          "Friday Night Funkin': VS. Seek's Cool Deltarune",
-          "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 4,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
       "gdb:luminsdk": {
         "label": "Lumin SDK",
-        "added": [
-          "Friday Night Funkin': VS. Henry Stickmin V4",
-          "Friday Night Funkin': VS. Mario Ultra Rebooted",
-          "Friday Night Funkin': VS. Seek's Cool Deltarune",
-          "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 4,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -373,14 +392,9 @@
       },
       "gdb:lucide": {
         "label": "Lucide",
-        "added": [
-          "Friday Night Funkin': VS. Henry Stickmin V4",
-          "Friday Night Funkin': VS. Mario Ultra Rebooted",
-          "Friday Night Funkin': VS. Seek's Cool Deltarune",
-          "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 4,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -504,76 +518,23 @@
       }
     },
     "all": {
-      "added": [
-        {
-          "name": "Friday Night Funkin': VS. Henry Stickmin V4",
-          "tag": "gdb:gn-math",
-          "label": "gn-math"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Henry Stickmin V4",
-          "tag": "gdb:luminsdk",
-          "label": "Lumin SDK"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Henry Stickmin V4",
-          "tag": "gdb:lucide",
-          "label": "Lucide"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Mario Ultra Rebooted",
-          "tag": "gdb:gn-math",
-          "label": "gn-math"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Mario Ultra Rebooted",
-          "tag": "gdb:luminsdk",
-          "label": "Lumin SDK"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Mario Ultra Rebooted",
-          "tag": "gdb:lucide",
-          "label": "Lucide"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Seek's Cool Deltarune",
-          "tag": "gdb:gn-math",
-          "label": "gn-math"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Seek's Cool Deltarune",
-          "tag": "gdb:luminsdk",
-          "label": "Lumin SDK"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Seek's Cool Deltarune",
-          "tag": "gdb:lucide",
-          "label": "Lucide"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX",
-          "tag": "gdb:gn-math",
-          "label": "gn-math"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX",
-          "tag": "gdb:luminsdk",
-          "label": "Lumin SDK"
-        },
-        {
-          "name": "Friday Night Funkin': VS. Super Mario Bros. Funk Mix DX",
-          "tag": "gdb:lucide",
-          "label": "Lucide"
-        }
-      ],
+      "added": [],
       "removed": [],
-      "added_count": 12,
+      "added_count": 0,
       "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-09-02",
+      "kind": "diff",
+      "catalogs_touched": [],
+      "added": 0,
+      "removed": 0,
+      "by_catalog": []
+    },
     {
       "date": "2026-09-01",
       "kind": "diff",
