@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-09-02T10:39:36Z",
+  "generated_at": "2026-09-02T16:05:23Z",
   "snapshot_date": "2026-09-02",
   "catalog_count": 22,
-  "total_entries": 30172,
-  "unique_games": 25818,
+  "total_entries": 30169,
+  "unique_games": 25816,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
       "label": "Unblockedzone",
-      "count": 189,
+      "count": 188,
       "empty": false
     },
     {
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 22,
+      "count": 20,
       "empty": false
     },
     {
@@ -287,7 +287,7 @@
     {
       "date": "2026-09-02",
       "counts": {
-        "gdb:unblockedzone": 189,
+        "gdb:unblockedzone": 188,
         "gdb:gn-math": 833,
         "gdb:luminsdk": 833,
         "gdb:noahs-tutoring": 406,
@@ -298,7 +298,7 @@
         "gdb:lucide": 833,
         "gdb:sdxp": 0,
         "gdb:duckmath": 250,
-        "gdb:ccported": 22,
+        "gdb:ccported": 20,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -310,8 +310,8 @@
         "gdb:dogeub": 20739,
         "gdb:utopia": 275
       },
-      "total_entries": 30172,
-      "unique_games": 25818
+      "total_entries": 30169,
+      "unique_games": 25816
     }
   ],
   "latest_changes": {
@@ -321,9 +321,11 @@
       "gdb:unblockedzone": {
         "label": "Unblockedzone",
         "added": [],
-        "removed": [],
+        "removed": [
+          "Eaglercraft 1.12"
+        ],
         "added_count": 0,
-        "removed_count": 0,
+        "removed_count": 1,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -420,9 +422,12 @@
       "gdb:ccported": {
         "label": "CCPorted",
         "added": [],
-        "removed": [],
+        "removed": [
+          "Ovo Modded",
+          "Solitaire"
+        ],
         "added_count": 0,
-        "removed_count": 0,
+        "removed_count": 2,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -519,9 +524,25 @@
     },
     "all": {
       "added": [],
-      "removed": [],
+      "removed": [
+        {
+          "name": "Eaglercraft 1.12",
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone"
+        },
+        {
+          "name": "Ovo Modded",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Solitaire",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        }
+      ],
       "added_count": 0,
-      "removed_count": 0,
+      "removed_count": 3,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -530,10 +551,26 @@
     {
       "date": "2026-09-02",
       "kind": "diff",
-      "catalogs_touched": [],
+      "catalogs_touched": [
+        "gdb:ccported",
+        "gdb:unblockedzone"
+      ],
       "added": 0,
-      "removed": 0,
-      "by_catalog": []
+      "removed": 3,
+      "by_catalog": [
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 0,
+          "removed": 2
+        },
+        {
+          "tag": "gdb:unblockedzone",
+          "label": "Unblockedzone",
+          "added": 0,
+          "removed": 1
+        }
+      ]
     },
     {
       "date": "2026-09-01",
