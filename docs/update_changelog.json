@@ -3,8 +3,8 @@
   "entries": [
     {
       "version": "v7.1.1",
-      "revision": "r280",
-      "released": "August 29, 2026",
+      "revision": "r282",
+      "released": "August 30, 2026",
       "update_notice": "Added game database snapshots to the link check run so that they are captured automatically"
     },
     {
