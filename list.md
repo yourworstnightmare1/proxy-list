@@ -725,7 +725,7 @@ Looking for a specific game but don’t want to try every provider’s links to 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 32 |
+> | Proxy/Games | unknown | unknown | 29 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -751,8 +751,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | | https://clevercoding.recreatinganew.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://sharpgeo.airlinemeals.net/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://rapidgrammar.airlinemeals.net/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://primegrammar.airlinemeals.net/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://primegrammar.airlinemeals.net | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://rapidgrammar.airlinemeals.net | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://sharpgeo.airlinemeals.net | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
@@ -762,7 +760,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | | https://smartpoems.pollsvspoly.com/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://guidedenglish.bakeryos.net/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://shadow.isreallycool.lol | 7/10/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://clearfacts.vidanimal.ar/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://simplescience.loveyourselfbeauty.au/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://curiousscience.garoli.com.mx/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://curiousphysics.paken.net/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -37374,17 +37371,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | | https://s3.us-east-1.amazonaws.com/ttbest/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.dualstack.us-east-1.amazonaws.com/ttbest/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# 🌌 Secured V3
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet | 1 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://madebyplyrnationforsk.hjshop.net/ | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://sites.google.com/view/oldsecuredweb | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 # 📄 Dll
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -46567,7 +46553,7 @@ Looking for a specific game but don’t want to try every provider’s links to 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 837 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 836 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47405,7 +47391,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | | https://music-hiss10.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://notes-stem60.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://orbit-modulo85.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://orbit-paper36.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://phd-limit76.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://physics-review54.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://physics-vector97.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
