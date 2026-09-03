@@ -512,6 +512,18 @@
     );
   }
 
+  function capChangeRows(rows, limit) {
+    var list = rows || [];
+    var max = limit || 250;
+    if (list.length <= max) return list;
+    return list.slice(0, max).concat([
+      {
+        name: "…and " + (list.length - max).toLocaleString() + " more",
+        providers: [],
+      },
+    ]);
+  }
+
   function showGdbDiffModal(payload) {
     var backdrop = $("gdbDiffBackdrop");
     var title = $("gdbDiffTitle");
@@ -524,22 +536,26 @@
         "Database modifications" + (payload.date ? " — " + payload.date : "");
     }
     if (hint) {
-      hint.textContent = payload.previousDate
-        ? "Compared with " + payload.previousDate + "."
-        : payload.fallback
-          ? "Snapshot files were not available; showing the recorded summary."
-          : "Changes for this snapshot.";
+      hint.textContent = payload.loading
+        ? "Loading snapshot diff…"
+        : payload.previousDate
+          ? "Compared with " + payload.previousDate + "."
+          : payload.fallback
+            ? "Snapshot files were not available; showing the recorded summary."
+            : "Changes for this snapshot.";
     }
     changes.innerHTML =
-      renderGroupedChangeList("Games added", payload.added, "No games were added.") +
-      renderGroupedChangeList("Games removed", payload.removed, "No games were removed.");
+      renderGroupedChangeList("Games added", capChangeRows(payload.added), "No games were added.") +
+      renderGroupedChangeList("Games removed", capChangeRows(payload.removed), "No games were removed.");
     if (json) {
       var view = {
         date: payload.date || "",
         previous_date: payload.previousDate || "",
-        added: payload.added,
-        removed: payload.removed,
+        added: capChangeRows(payload.added, 400),
+        removed: capChangeRows(payload.removed, 400),
         catalogs: payload.catalogs || [],
+        added_count: (payload.added || []).length,
+        removed_count: (payload.removed || []).length,
       };
       json.textContent = JSON.stringify(view, null, 2);
     }
@@ -551,58 +567,82 @@
   function openModificationViewer(date) {
     if (!date) return;
     var scopeTag = selectedTag;
-    archiveIndexPromise().then(function (index) {
-      var prevDate = previousArchiveDay(date, index);
-      return Promise.all([fetchDaySnapshot(prevDate), fetchDaySnapshot(date)]).then(function (pair) {
-        var prev = pair[0];
-        var curr = pair[1];
-        if (curr && prev) {
-          var diff = diffDaySnapshots(prev, curr, scopeTag);
+    showGdbDiffModal({
+      date: date,
+      previousDate: "",
+      added: [],
+      removed: [],
+      catalogs: [],
+      loading: true,
+    });
+    var hint = $("gdbDiffHint");
+    if (hint) hint.textContent = "Loading snapshot diff…";
+    archiveIndexPromise()
+      .then(function (index) {
+        var prevDate = previousArchiveDay(date, index);
+        return Promise.all([fetchDaySnapshot(prevDate), fetchDaySnapshot(date)]).then(function (pair) {
+          var prev = pair[0];
+          var curr = pair[1];
+          if (curr && prev) {
+            var diff = diffDaySnapshots(prev, curr, scopeTag);
+            showGdbDiffModal({
+              date: date,
+              previousDate: prevDate,
+              added: diff.added,
+              removed: diff.removed,
+              catalogs: diff.catalogs,
+            });
+            return;
+          }
+          var mods = (snap && snap.modifications) || [];
+          var mod = mods.find(function (m) {
+            return m.date === date;
+          });
+          var added = [];
+          var removed = [];
+          var catalogs = (mod && mod.by_catalog) || [];
+          if (scopeTag !== "all") {
+            catalogs = catalogs.filter(function (c) {
+              return c.tag === scopeTag;
+            });
+          }
+          catalogs.forEach(function (c) {
+            if (c.added) {
+              added.push({
+                name: "+" + fmt(c.added) + " games",
+                providers: [c.label || c.tag],
+              });
+            }
+            if (c.removed) {
+              removed.push({
+                name: "−" + fmt(c.removed) + " games",
+                providers: [c.label || c.tag],
+              });
+            }
+          });
           showGdbDiffModal({
             date: date,
             previousDate: prevDate,
-            added: diff.added,
-            removed: diff.removed,
-            catalogs: diff.catalogs,
+            added: added,
+            removed: removed,
+            catalogs: catalogs,
+            fallback: true,
           });
-          return;
-        }
-        var mods = (snap && snap.modifications) || [];
-        var mod = mods.find(function (m) {
-          return m.date === date;
         });
-        var added = [];
-        var removed = [];
-        var catalogs = (mod && mod.by_catalog) || [];
-        if (scopeTag !== "all") {
-          catalogs = catalogs.filter(function (c) {
-            return c.tag === scopeTag;
-          });
-        }
-        catalogs.forEach(function (c) {
-          if (c.added) {
-            added.push({
-              name: "+" + fmt(c.added) + " games",
-              providers: [c.label || c.tag],
-            });
-          }
-          if (c.removed) {
-            removed.push({
-              name: "−" + fmt(c.removed) + " games",
-              providers: [c.label || c.tag],
-            });
-          }
-        });
+      })
+      .catch(function (err) {
+        console.warn("[games-stats] modification viewer failed", err);
         showGdbDiffModal({
           date: date,
-          previousDate: prevDate,
-          added: added,
-          removed: removed,
-          catalogs: catalogs,
+          previousDate: "",
+          added: [],
+          removed: [],
+          catalogs: [],
           fallback: true,
         });
+        var hintEl = $("gdbDiffHint");
+        if (hintEl) hintEl.textContent = "Could not load snapshot files for this day.";
       });
-    });
   }
 
   function renderModifications() {
@@ -743,12 +783,16 @@
     var list = $("gamesModsList");
     if (list && list.dataset.wired !== "1") {
       list.dataset.wired = "1";
-      list.addEventListener("click", function (ev) {
-        var item = ev.target && ev.target.closest ? ev.target.closest(".games-mod-item") : null;
-        if (!item || !list.contains(item)) return;
-        var date = item.getAttribute("data-mod-date") || "";
-        if (date) openModificationViewer(date);
-      });
+      list.addEventListener(
+        "click",
+        function (ev) {
+          var item = ev.target && ev.target.closest ? ev.target.closest(".games-mod-item") : null;
+          if (!item || !list.contains(item)) return;
+          var date = item.getAttribute("data-mod-date") || "";
+          if (date) openModificationViewer(date);
+        },
+        true
+      );
       list.addEventListener("keydown", function (ev) {
         if (ev.key !== "Enter" && ev.key !== " ") return;
         var item = ev.target && ev.target.closest ? ev.target.closest(".games-mod-item") : null;

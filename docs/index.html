@@ -794,6 +794,14 @@
       display: flex;
       flex-direction: column;
     }
+    html.sidebar-collapsed .sidebar-column {
+      min-width: max-content;
+      overflow: visible;
+    }
+    html.sidebar-collapsed .layout,
+    html.sidebar-collapsed[data-device="desktop"] .layout {
+      grid-template-columns: max-content 1fr;
+    }
     .sidebar-toggle-btn {
       display: inline-flex;
       align-items: center;
@@ -801,6 +809,8 @@
       margin: 0.75rem 1.25rem 0;
       width: calc(100% - 2.5rem);
       justify-content: flex-start;
+      position: relative;
+      z-index: 6;
     }
     .sidebar-toggle-icon {
       display: inline-block;
@@ -810,10 +820,6 @@
       border-bottom: 2px solid currentColor;
       background: linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat;
       flex-shrink: 0;
-    }
-    html.sidebar-collapsed .layout,
-    html.sidebar-collapsed[data-device="desktop"] .layout {
-      grid-template-columns: auto 1fr;
     }
     html.sidebar-collapsed .sidebar-column aside {
       display: none;
