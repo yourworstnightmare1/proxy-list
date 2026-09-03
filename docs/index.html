@@ -13093,13 +13093,15 @@
 
     function syncSidebarToggleLabel() {
       const btn = $("sidebarToggleBtn");
-      const label = $("sidebarToggleLabel");
+      const label = (btn && btn.querySelector("#sidebarToggleLabel")) || $("sidebarToggleLabel");
       const collapsed = document.documentElement.classList.contains("sidebar-collapsed");
+      const text = collapsed ? "Show" : "Hide";
       if (btn) {
         btn.setAttribute("aria-expanded", collapsed ? "false" : "true");
         btn.setAttribute("aria-label", collapsed ? "Show sidebar" : "Hide sidebar");
+        btn.dataset.sidebarState = collapsed ? "hidden" : "visible";
       }
-      if (label) label.textContent = collapsed ? "Show" : "Hide";
+      if (label) label.textContent = text;
     }
 
     function wireSidebarToggle() {
