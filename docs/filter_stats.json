@@ -1,197 +1,197 @@
 {
-  "generated_at": "2026-09-03T02:47:09Z",
-  "sorted_links": 47088,
-  "links_with_filter_data": 47075,
-  "links_without_filter_data": 13,
+  "generated_at": "2026-09-03T05:41:43Z",
+  "sorted_links": 47712,
+  "links_with_filter_data": 47585,
+  "links_without_filter_data": 127,
   "filter_count": 21,
   "filters": [
     {
       "name": "AristotleK12",
       "key": "aristotlek12",
-      "blocked": 44539,
-      "unblocked": 2536,
+      "blocked": 44828,
+      "unblocked": 2757,
       "warning": 0,
-      "total": 47075
+      "total": 47585
     },
     {
       "name": "Qustodio",
       "key": "qustodio",
-      "blocked": 42710,
-      "unblocked": 4365,
+      "blocked": 42721,
+      "unblocked": 4864,
       "warning": 0,
-      "total": 47075
-    },
-    {
-      "name": "Securly",
-      "key": "securly",
-      "blocked": 2187,
-      "unblocked": 44888,
-      "warning": 0,
-      "total": 47075
-    },
-    {
-      "name": "GoGuardian",
-      "key": "goguardian",
-      "blocked": 2168,
-      "unblocked": 44907,
-      "warning": 0,
-      "total": 47075
+      "total": 47585
     },
     {
       "name": "iBoss",
       "key": "iboss",
-      "blocked": 2146,
-      "unblocked": 44929,
+      "blocked": 2438,
+      "unblocked": 45147,
       "warning": 0,
-      "total": 47075
+      "total": 47585
+    },
+    {
+      "name": "Securly",
+      "key": "securly",
+      "blocked": 2435,
+      "unblocked": 45150,
+      "warning": 0,
+      "total": 47585
+    },
+    {
+      "name": "GoGuardian",
+      "key": "goguardian",
+      "blocked": 2431,
+      "unblocked": 45154,
+      "warning": 0,
+      "total": 47585
     },
     {
       "name": "Lightspeed",
       "key": "lightspeed",
-      "blocked": 1788,
-      "unblocked": 45287,
+      "blocked": 1798,
+      "unblocked": 45787,
       "warning": 0,
-      "total": 47075
+      "total": 47585
     },
     {
       "name": "Senso Cloud",
       "key": "sensocloud",
-      "blocked": 1665,
-      "unblocked": 45401,
+      "blocked": 1675,
+      "unblocked": 45901,
       "warning": 0,
-      "total": 47066
+      "total": 47576
     },
     {
       "name": "Sophos",
       "key": "sophos",
-      "blocked": 1660,
-      "unblocked": 45415,
+      "blocked": 1673,
+      "unblocked": 45912,
       "warning": 0,
-      "total": 47075
+      "total": 47585
     },
     {
       "name": "ContentKeeper",
       "key": "contentkeeper",
-      "blocked": 1522,
-      "unblocked": 45553,
+      "blocked": 1642,
+      "unblocked": 45943,
       "warning": 0,
-      "total": 47075
+      "total": 47585
     },
     {
       "name": "Linewize",
       "key": "linewize",
-      "blocked": 1418,
-      "unblocked": 45657,
+      "blocked": 1586,
+      "unblocked": 45999,
       "warning": 0,
-      "total": 47075
+      "total": 47585
     },
     {
       "name": "Blocksi Web",
       "key": "blocksiweb",
-      "blocked": 927,
-      "unblocked": 46148,
+      "blocked": 947,
+      "unblocked": 46638,
       "warning": 0,
-      "total": 47075
+      "total": 47585
     },
     {
       "name": "Cisco Umbrella",
       "key": "ciscoumbrella",
-      "blocked": 859,
-      "unblocked": 46215,
+      "blocked": 873,
+      "unblocked": 46711,
       "warning": 0,
-      "total": 47074
+      "total": 47584
     },
     {
       "name": "LanSchool",
       "key": "lanschool",
       "blocked": 851,
-      "unblocked": 46169,
+      "unblocked": 46679,
       "warning": 0,
-      "total": 47020
+      "total": 47530
     },
     {
       "name": "Palo Alto",
       "key": "paloalto",
-      "blocked": 791,
-      "unblocked": 46284,
+      "blocked": 793,
+      "unblocked": 46792,
       "warning": 0,
-      "total": 47075
+      "total": 47585
     },
     {
       "name": "FortiGuard",
       "key": "fortiguard",
-      "blocked": 752,
-      "unblocked": 46323,
+      "blocked": 754,
+      "unblocked": 46831,
       "warning": 0,
-      "total": 47075
+      "total": 47585
     },
     {
       "name": "Barracuda",
       "key": "barracuda",
-      "blocked": 632,
-      "unblocked": 46441,
+      "blocked": 640,
+      "unblocked": 46943,
       "warning": 2,
-      "total": 47075
+      "total": 47585
+    },
+    {
+      "name": "Deledao",
+      "key": "deledao",
+      "blocked": 426,
+      "unblocked": 47153,
+      "warning": 0,
+      "total": 47579
     },
     {
       "name": "Blocksi AI",
       "key": "blocksiai",
       "blocked": 354,
-      "unblocked": 46721,
+      "unblocked": 47231,
       "warning": 0,
-      "total": 47075
-    },
-    {
-      "name": "Deledao",
-      "key": "deledao",
-      "blocked": 319,
-      "unblocked": 46752,
-      "warning": 0,
-      "total": 47071
+      "total": 47585
     },
     {
       "name": "DNSFilter",
       "key": "dnsfilter",
-      "blocked": 295,
-      "unblocked": 46779,
+      "blocked": 297,
+      "unblocked": 47287,
       "warning": 0,
-      "total": 47074
+      "total": 47584
     },
     {
       "name": "StudentKeeper",
       "key": "studentkeeper",
       "blocked": 0,
       "unblocked": 63,
-      "warning": 45721,
-      "total": 45784
+      "warning": 46208,
+      "total": 46271
     },
     {
       "name": "ZScaler",
       "key": "zscaler",
       "blocked": 0,
       "unblocked": 0,
-      "warning": 1271,
-      "total": 1271
+      "warning": 1294,
+      "total": 1294
     }
   ],
   "block_reasons": [
     {
       "reason": "! Blocked",
-      "count": 42844,
+      "count": 42972,
       "by_filter": [
         {
           "name": "AristotleK12",
-          "count": 42844
+          "count": 42972
         }
       ]
     },
     {
       "reason": "Entertainment",
-      "count": 42662,
+      "count": 42673,
       "by_filter": [
         {
           "name": "Qustodio",
-          "count": 42633
+          "count": 42644
         },
         {
           "name": "FortiGuard",
@@ -221,15 +221,15 @@
     },
     {
       "reason": "Uncategorized",
-      "count": 2169,
+      "count": 2310,
       "by_filter": [
         {
           "name": "GoGuardian",
-          "count": 1122
+          "count": 1149
         },
         {
           "name": "Senso Cloud",
-          "count": 710
+          "count": 717
         },
         {
           "name": "Barracuda",
@@ -237,7 +237,7 @@
         },
         {
           "name": "Deledao",
-          "count": 59
+          "count": 166
         },
         {
           "name": "Qustodio",
@@ -247,41 +247,41 @@
     },
     {
       "reason": "Anonymous proxies",
-      "count": 1901,
+      "count": 2147,
       "by_filter": [
         {
           "name": "Securly",
-          "count": 1901
-        }
-      ]
-    },
-    {
-      "reason": "blocklist.proxies",
-      "count": 1265,
-      "by_filter": [
-        {
-          "name": "Linewize",
-          "count": 1265
+          "count": 2147
         }
       ]
     },
     {
       "reason": "Technology",
-      "count": 1186,
+      "count": 1450,
       "by_filter": [
         {
           "name": "iBoss",
-          "count": 1186
+          "count": 1450
+        }
+      ]
+    },
+    {
+      "reason": "blocklist.proxies",
+      "count": 1432,
+      "by_filter": [
+        {
+          "name": "Linewize",
+          "count": 1432
         }
       ]
     },
     {
       "reason": "Proxy",
-      "count": 1178,
+      "count": 1214,
       "by_filter": [
         {
           "name": "AristotleK12",
-          "count": 911
+          "count": 947
         },
         {
           "name": "GoGuardian",
@@ -291,31 +291,31 @@
     },
     {
       "reason": "Proxies:Filtering-Bypass (Global)",
-      "count": 942,
+      "count": 945,
       "by_filter": [
         {
           "name": "ContentKeeper",
-          "count": 942
-        }
-      ]
-    },
-    {
-      "reason": "REFERENCE",
-      "count": 898,
-      "by_filter": [
-        {
-          "name": "Sophos",
-          "count": 898
+          "count": 945
         }
       ]
     },
     {
       "reason": "Security - Domain Sharing",
-      "count": 897,
+      "count": 900,
       "by_filter": [
         {
           "name": "Lightspeed",
-          "count": 897
+          "count": 900
+        }
+      ]
+    },
+    {
+      "reason": "REFERENCE",
+      "count": 899,
+      "by_filter": [
+        {
+          "name": "Sophos",
+          "count": 899
         }
       ]
     },
@@ -326,6 +326,16 @@
         {
           "name": "Senso Cloud",
           "count": 811
+        }
+      ]
+    },
+    {
+      "reason": "Non-Managed (Global)",
+      "count": 530,
+      "by_filter": [
+        {
+          "name": "ContentKeeper",
+          "count": 530
         }
       ]
     },
@@ -341,7 +351,7 @@
     },
     {
       "reason": "Games",
-      "count": 475,
+      "count": 480,
       "by_filter": [
         {
           "name": "Securly",
@@ -357,7 +367,7 @@
         },
         {
           "name": "Lightspeed",
-          "count": 57
+          "count": 62
         },
         {
           "name": "Cisco Umbrella",
@@ -415,41 +425,41 @@
     },
     {
       "reason": "Not rated",
-      "count": 423,
+      "count": 437,
       "by_filter": [
         {
           "name": "Cisco Umbrella",
-          "count": 423
+          "count": 437
         }
       ]
     },
     {
       "reason": "UNCATEGORIZED",
-      "count": 415,
+      "count": 423,
       "by_filter": [
         {
           "name": "Sophos",
-          "count": 415
-        }
-      ]
-    },
-    {
-      "reason": "Non-Managed (Global)",
-      "count": 413,
-      "by_filter": [
-        {
-          "name": "ContentKeeper",
-          "count": 413
+          "count": 423
         }
       ]
     },
     {
       "reason": "Unethical: Proxy Avoidance",
-      "count": 361,
+      "count": 379,
       "by_filter": [
         {
           "name": "Blocksi Web",
-          "count": 361
+          "count": 379
+        }
+      ]
+    },
+    {
+      "reason": "business",
+      "count": 347,
+      "by_filter": [
+        {
+          "name": "Barracuda",
+          "count": 347
         }
       ]
     },
@@ -464,26 +474,40 @@
       ]
     },
     {
-      "reason": "business",
-      "count": 339,
+      "reason": "Online Games",
+      "count": 340,
       "by_filter": [
         {
-          "name": "Barracuda",
-          "count": 339
+          "name": "GoGuardian",
+          "count": 314
+        },
+        {
+          "name": "Senso Cloud",
+          "count": 26
+        }
+      ]
+    },
+    {
+      "reason": "sh",
+      "count": 340,
+      "by_filter": [
+        {
+          "name": "AristotleK12",
+          "count": 340
         }
       ]
     },
     {
       "reason": "Phishing",
-      "count": 323,
+      "count": 327,
       "by_filter": [
         {
           "name": "FortiGuard",
-          "count": 239
+          "count": 241
         },
         {
           "name": "iBoss",
-          "count": 50
+          "count": 52
         },
         {
           "name": "Palo Alto",
@@ -504,6 +528,16 @@
       ]
     },
     {
+      "reason": "Online Games, General Games Websites",
+      "count": 301,
+      "by_filter": [
+        {
+          "name": "GoGuardian",
+          "count": 301
+        }
+      ]
+    },
+    {
       "reason": "Proxy-Avoidance-and-Anonymizers",
       "count": 295,
       "by_filter": [
@@ -514,46 +548,22 @@
       ]
     },
     {
-      "reason": "Online Games",
-      "count": 233,
-      "by_filter": [
-        {
-          "name": "GoGuardian",
-          "count": 207
-        },
-        {
-          "name": "Senso Cloud",
-          "count": 26
-        }
-      ]
-    },
-    {
       "reason": "Security Risk: Phishing",
-      "count": 226,
+      "count": 228,
       "by_filter": [
         {
           "name": "Blocksi Web",
-          "count": 226
-        }
-      ]
-    },
-    {
-      "reason": "sh",
-      "count": 222,
-      "by_filter": [
-        {
-          "name": "AristotleK12",
-          "count": 222
+          "count": 228
         }
       ]
     },
     {
       "reason": "Malware",
-      "count": 202,
+      "count": 204,
       "by_filter": [
         {
           "name": "Palo Alto",
-          "count": 178
+          "count": 180
         },
         {
           "name": "iBoss",
@@ -570,22 +580,12 @@
       ]
     },
     {
-      "reason": "Online Games, General Games Websites",
-      "count": 190,
-      "by_filter": [
-        {
-          "name": "GoGuardian",
-          "count": 190
-        }
-      ]
-    },
-    {
       "reason": "General Games Websites, Online Games",
-      "count": 170,
+      "count": 188,
       "by_filter": [
         {
           "name": "GoGuardian",
-          "count": 170
+          "count": 188
         }
       ]
     },
@@ -687,7 +687,7 @@
     },
     {
       "reason": "Shopping",
-      "count": 111,
+      "count": 113,
       "by_filter": [
         {
           "name": "Palo Alto",
@@ -699,7 +699,7 @@
         },
         {
           "name": "iBoss",
-          "count": 24
+          "count": 26
         },
         {
           "name": "Deledao",
@@ -750,6 +750,16 @@
       ]
     },
     {
+      "reason": "PHISHING_AND_FRAUD",
+      "count": 89,
+      "by_filter": [
+        {
+          "name": "Sophos",
+          "count": 89
+        }
+      ]
+    },
+    {
       "reason": "Meaningless Content",
       "count": 88,
       "by_filter": [
@@ -760,16 +770,6 @@
         {
           "name": "FortiGuard",
           "count": 14
-        }
-      ]
-    },
-    {
-      "reason": "PHISHING_AND_FRAUD",
-      "count": 87,
-      "by_filter": [
-        {
-          "name": "Sophos",
-          "count": 87
         }
       ]
     },
@@ -795,11 +795,11 @@
     },
     {
       "reason": "videogames",
-      "count": 73,
+      "count": 74,
       "by_filter": [
         {
           "name": "Linewize",
-          "count": 73
+          "count": 74
         }
       ]
     },
@@ -858,6 +858,16 @@
       ]
     },
     {
+      "reason": "Website is part of All Student Block blocklist.",
+      "count": 60,
+      "by_filter": [
+        {
+          "name": "iBoss",
+          "count": 60
+        }
+      ]
+    },
+    {
       "reason": "Security Risk: Dynamic DNS",
       "count": 59,
       "by_filter": [
@@ -879,11 +889,21 @@
     },
     {
       "reason": "Forums - Personals",
-      "count": 52,
+      "count": 54,
       "by_filter": [
         {
           "name": "Lightspeed",
-          "count": 52
+          "count": 54
+        }
+      ]
+    },
+    {
+      "reason": "cn",
+      "count": 53,
+      "by_filter": [
+        {
+          "name": "AristotleK12",
+          "count": 53
         }
       ]
     },
@@ -898,22 +918,22 @@
       ]
     },
     {
-      "reason": "cn",
-      "count": 51,
-      "by_filter": [
-        {
-          "name": "AristotleK12",
-          "count": 51
-        }
-      ]
-    },
-    {
       "reason": "Malicious (Global)",
       "count": 51,
       "by_filter": [
         {
           "name": "ContentKeeper",
           "count": 51
+        }
+      ]
+    },
+    {
+      "reason": "io",
+      "count": 48,
+      "by_filter": [
+        {
+          "name": "AristotleK12",
+          "count": 48
         }
       ]
     },
@@ -928,16 +948,6 @@
         {
           "name": "AristotleK12",
           "count": 3
-        }
-      ]
-    },
-    {
-      "reason": "io",
-      "count": 43,
-      "by_filter": [
-        {
-          "name": "AristotleK12",
-          "count": 43
         }
       ]
     },
@@ -968,7 +978,7 @@
       ]
     },
     {
-      "reason": "Website is part of All Student Block blocklist.",
+      "reason": "Search Engine",
       "count": 42,
       "by_filter": [
         {
@@ -994,16 +1004,6 @@
         {
           "name": "AristotleK12",
           "count": 39
-        }
-      ]
-    },
-    {
-      "reason": "Search Engine",
-      "count": 38,
-      "by_filter": [
-        {
-          "name": "iBoss",
-          "count": 38
         }
       ]
     },
@@ -1720,6 +1720,16 @@
       ]
     },
     {
+      "reason": "Online Games, Developer Tools",
+      "count": 7,
+      "by_filter": [
+        {
+          "name": "Senso Cloud",
+          "count": 7
+        }
+      ]
+    },
+    {
       "reason": "uk",
       "count": 7,
       "by_filter": [
@@ -2192,16 +2202,6 @@
       ]
     },
     {
-      "reason": "Online Games, Developer Tools",
-      "count": 4,
-      "by_filter": [
-        {
-          "name": "Senso Cloud",
-          "count": 4
-        }
-      ]
-    },
-    {
       "reason": "Other adult content, Anonymous proxies",
       "count": 4,
       "by_filter": [
@@ -2217,6 +2217,16 @@
       "by_filter": [
         {
           "name": "Cisco Umbrella",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "reason": "PERSONAL_NETWORK_STORAGE",
+      "count": 4,
+      "by_filter": [
+        {
+          "name": "Sophos",
           "count": 4
         }
       ]
@@ -2412,11 +2422,31 @@
       ]
     },
     {
+      "reason": "File Sharing",
+      "count": 3,
+      "by_filter": [
+        {
+          "name": "iBoss",
+          "count": 3
+        }
+      ]
+    },
+    {
       "reason": "Filter Avoidance, Personal VPN, Infrastructure and Content Delivery Networks",
       "count": 3,
       "by_filter": [
         {
           "name": "Cisco Umbrella",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "reason": "General",
+      "count": 3,
+      "by_filter": [
+        {
+          "name": "Securly",
           "count": 3
         }
       ]
@@ -2463,6 +2493,16 @@
     },
     {
       "reason": "Malicious Domain Protection",
+      "count": 3,
+      "by_filter": [
+        {
+          "name": "DNSFilter",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "reason": "Media Sharing",
       "count": 3,
       "by_filter": [
         {
@@ -3197,16 +3237,6 @@
       "by_filter": [
         {
           "name": "Blocksi Web",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "reason": "PERSONAL_NETWORK_STORAGE",
-      "count": 2,
-      "by_filter": [
-        {
-          "name": "Sophos",
           "count": 2
         }
       ]
@@ -4072,16 +4102,6 @@
       ]
     },
     {
-      "reason": "File Sharing",
-      "count": 1,
-      "by_filter": [
-        {
-          "name": "iBoss",
-          "count": 1
-        }
-      ]
-    },
-    {
       "reason": "Filter Avoidance, Business and Industry",
       "count": 1,
       "by_filter": [
@@ -4157,16 +4177,6 @@
       "by_filter": [
         {
           "name": "DNSFilter",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "reason": "General",
-      "count": 1,
-      "by_filter": [
-        {
-          "name": "Securly",
           "count": 1
         }
       ]
@@ -4337,16 +4347,6 @@
       "by_filter": [
         {
           "name": "Lightspeed",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "reason": "Media Sharing",
-      "count": 1,
-      "by_filter": [
-        {
-          "name": "DNSFilter",
           "count": 1
         }
       ]
@@ -5165,10 +5165,10 @@
   "blocked_domains": [
     {
       "domain": "storage.googleapis.com",
-      "links": 42441,
-      "blocked": 84882,
-      "unblocked": 721497,
-      "warning": 42441,
+      "links": 42444,
+      "blocked": 84888,
+      "unblocked": 721548,
+      "warning": 42444,
       "filters_blocking": 2,
       "blocking_filters": [
         "AristotleK12",
@@ -5188,22 +5188,79 @@
       ]
     },
     {
+      "domain": "gcore.jsdelivr.net",
+      "links": 195,
+      "blocked": 780,
+      "unblocked": 2925,
+      "warning": 195,
+      "filters_blocking": 4,
+      "blocking_filters": [
+        "AristotleK12",
+        "GoGuardian",
+        "Linewize",
+        "Securly"
+      ]
+    },
+    {
       "domain": "cdn.jsdelivr.net",
-      "links": 662,
-      "blocked": 662,
-      "unblocked": 11916,
-      "warning": 662,
+      "links": 690,
+      "blocked": 690,
+      "unblocked": 12420,
+      "warning": 690,
       "filters_blocking": 1,
       "blocking_filters": [
         "iBoss"
       ]
     },
     {
+      "domain": "cdn.staticdelivr.com",
+      "links": 150,
+      "blocked": 600,
+      "unblocked": 2250,
+      "warning": 150,
+      "filters_blocking": 4,
+      "blocking_filters": [
+        "ContentKeeper",
+        "Deledao",
+        "Securly",
+        "iBoss"
+      ]
+    },
+    {
+      "domain": "fastly.jsdelivr.net",
+      "links": 96,
+      "blocked": 576,
+      "unblocked": 1248,
+      "warning": 96,
+      "filters_blocking": 6,
+      "blocking_filters": [
+        "AristotleK12",
+        "Blocksi Web",
+        "Cisco Umbrella",
+        "GoGuardian",
+        "Linewize",
+        "Securly"
+      ]
+    },
+    {
+      "domain": "esm.sh",
+      "links": 191,
+      "blocked": 573,
+      "unblocked": 3056,
+      "warning": 191,
+      "filters_blocking": 3,
+      "blocking_filters": [
+        "AristotleK12",
+        "GoGuardian",
+        "iBoss"
+      ]
+    },
+    {
       "domain": "raw.esm.sh",
-      "links": 76,
-      "blocked": 532,
-      "unblocked": 912,
-      "warning": 76,
+      "links": 79,
+      "blocked": 553,
+      "unblocked": 948,
+      "warning": 79,
       "filters_blocking": 7,
       "blocking_filters": [
         "AristotleK12",
@@ -5216,27 +5273,11 @@
       ]
     },
     {
-      "domain": "fastly.jsdelivr.net",
-      "links": 87,
-      "blocked": 522,
-      "unblocked": 1131,
-      "warning": 87,
-      "filters_blocking": 6,
-      "blocking_filters": [
-        "AristotleK12",
-        "Blocksi Web",
-        "Cisco Umbrella",
-        "GoGuardian",
-        "Linewize",
-        "Securly"
-      ]
-    },
-    {
       "domain": "jsd.onmicrosoft.cn",
-      "links": 49,
-      "blocked": 441,
-      "unblocked": 490,
-      "warning": 49,
+      "links": 51,
+      "blocked": 459,
+      "unblocked": 510,
+      "warning": 51,
       "filters_blocking": 9,
       "blocking_filters": [
         "AristotleK12",
@@ -5252,28 +5293,14 @@
     },
     {
       "domain": "testingcf.jsdelivr.net",
-      "links": 82,
-      "blocked": 410,
-      "unblocked": 1148,
-      "warning": 82,
+      "links": 91,
+      "blocked": 455,
+      "unblocked": 1274,
+      "warning": 91,
       "filters_blocking": 5,
       "blocking_filters": [
         "AristotleK12",
         "Blocksi Web",
-        "GoGuardian",
-        "Linewize",
-        "Securly"
-      ]
-    },
-    {
-      "domain": "gcore.jsdelivr.net",
-      "links": 86,
-      "blocked": 344,
-      "unblocked": 1290,
-      "warning": 86,
-      "filters_blocking": 4,
-      "blocking_filters": [
-        "AristotleK12",
         "GoGuardian",
         "Linewize",
         "Securly"
@@ -5295,6 +5322,21 @@
         "Linewize",
         "Securly",
         "iBoss"
+      ]
+    },
+    {
+      "domain": "cdn.jsdmirror.com",
+      "links": 55,
+      "blocked": 275,
+      "unblocked": 770,
+      "warning": 55,
+      "filters_blocking": 5,
+      "blocking_filters": [
+        "Barracuda",
+        "ContentKeeper",
+        "GoGuardian",
+        "Qustodio",
+        "Sophos"
       ]
     },
     {
@@ -5330,19 +5372,6 @@
       ]
     },
     {
-      "domain": "esm.sh",
-      "links": 87,
-      "blocked": 261,
-      "unblocked": 1392,
-      "warning": 87,
-      "filters_blocking": 3,
-      "blocking_filters": [
-        "AristotleK12",
-        "GoGuardian",
-        "iBoss"
-      ]
-    },
-    {
       "domain": "jsd-proxy.ygxz.in",
       "links": 34,
       "blocked": 238,
@@ -5360,26 +5389,11 @@
       ]
     },
     {
-      "domain": "cdn.jsdmirror.com",
+      "domain": "cdn.statically.io",
       "links": 47,
       "blocked": 235,
       "unblocked": 658,
       "warning": 47,
-      "filters_blocking": 5,
-      "blocking_filters": [
-        "Barracuda",
-        "ContentKeeper",
-        "GoGuardian",
-        "Qustodio",
-        "Sophos"
-      ]
-    },
-    {
-      "domain": "cdn.statically.io",
-      "links": 42,
-      "blocked": 210,
-      "unblocked": 588,
-      "warning": 42,
       "filters_blocking": 5,
       "blocking_filters": [
         "AristotleK12",
@@ -5390,25 +5404,11 @@
       ]
     },
     {
-      "domain": "cdn.staticdelivr.com",
-      "links": 43,
-      "blocked": 172,
-      "unblocked": 645,
-      "warning": 43,
-      "filters_blocking": 4,
-      "blocking_filters": [
-        "ContentKeeper",
-        "Deledao",
-        "Securly",
-        "iBoss"
-      ]
-    },
-    {
       "domain": "cdn.esm.sh",
-      "links": 56,
-      "blocked": 168,
-      "unblocked": 896,
-      "warning": 56,
+      "links": 67,
+      "blocked": 201,
+      "unblocked": 1072,
+      "warning": 67,
       "filters_blocking": 3,
       "blocking_filters": [
         "AristotleK12",
@@ -5418,10 +5418,10 @@
     },
     {
       "domain": "originfastly.jsdelivr.net",
-      "links": 51,
-      "blocked": 153,
-      "unblocked": 816,
-      "warning": 51,
+      "links": 60,
+      "blocked": 180,
+      "unblocked": 960,
+      "warning": 60,
       "filters_blocking": 3,
       "blocking_filters": [
         "AristotleK12",
@@ -5431,15 +5431,27 @@
     },
     {
       "domain": "script.google.com",
-      "links": 37,
-      "blocked": 148,
-      "unblocked": 555,
-      "warning": 37,
+      "links": 41,
+      "blocked": 164,
+      "unblocked": 615,
+      "warning": 41,
       "filters_blocking": 4,
       "blocking_filters": [
         "AristotleK12",
         "Cisco Umbrella",
         "Senso Cloud",
+        "iBoss"
+      ]
+    },
+    {
+      "domain": "unpkg.com",
+      "links": 34,
+      "blocked": 68,
+      "unblocked": 578,
+      "warning": 34,
+      "filters_blocking": 2,
+      "blocking_filters": [
+        "AristotleK12",
         "iBoss"
       ]
     },
@@ -5481,14 +5493,29 @@
       ]
     },
     {
-      "domain": "unpkg.com",
-      "links": 16,
-      "blocked": 32,
-      "unblocked": 272,
-      "warning": 16,
-      "filters_blocking": 2,
+      "domain": "s3.dualstack.us-east-1.amazonaws.com",
+      "links": 31,
+      "blocked": 31,
+      "unblocked": 558,
+      "warning": 31,
+      "filters_blocking": 1,
+      "blocking_filters": [
+        "Linewize"
+      ]
+    },
+    {
+      "domain": "assets.editor.p5js.org",
+      "links": 5,
+      "blocked": 30,
+      "unblocked": 65,
+      "warning": 5,
+      "filters_blocking": 6,
       "blocking_filters": [
         "AristotleK12",
+        "Cisco Umbrella",
+        "Linewize",
+        "Senso Cloud",
+        "Sophos",
         "iBoss"
       ]
     },
@@ -5531,22 +5558,6 @@
         "Lightspeed",
         "Linewize",
         "Securly",
-        "iBoss"
-      ]
-    },
-    {
-      "domain": "assets.editor.p5js.org",
-      "links": 4,
-      "blocked": 24,
-      "unblocked": 52,
-      "warning": 4,
-      "filters_blocking": 6,
-      "blocking_filters": [
-        "AristotleK12",
-        "Cisco Umbrella",
-        "Linewize",
-        "Senso Cloud",
-        "Sophos",
         "iBoss"
       ]
     },
@@ -7330,31 +7341,6 @@
         "Palo Alto",
         "Securly",
         "iBoss"
-      ]
-    },
-    {
-      "domain": "tetosarcade.win",
-      "links": 1,
-      "blocked": 15,
-      "unblocked": 4,
-      "warning": 1,
-      "filters_blocking": 15,
-      "blocking_filters": [
-        "AristotleK12",
-        "Barracuda",
-        "Blocksi Web",
-        "Cisco Umbrella",
-        "ContentKeeper",
-        "FortiGuard",
-        "GoGuardian",
-        "LanSchool",
-        "Lightspeed",
-        "Linewize",
-        "Palo Alto",
-        "Qustodio",
-        "Securly",
-        "Senso Cloud",
-        "Sophos"
       ]
     }
   ]
