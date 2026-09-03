@@ -6,7 +6,9 @@ name: Sync approved submissions
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    # Daily: Spark/free Firestore quotas trip hard with frequent polls
+    # alongside Worker click/presence traffic (HTTP 429 RESOURCE_EXHAUSTED).
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:

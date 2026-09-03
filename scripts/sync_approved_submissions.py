@@ -218,6 +218,10 @@ def firestore_doc_to_submission(doc: dict[str, Any]) -> dict[str, Any]:
     return data
 
 
+class FirestoreQuotaExceeded(RuntimeError):
+    """Spark/free-tier or billing quota exhausted (HTTP 429 RESOURCE_EXHAUSTED)."""
+
+
 def firestore_run_query(sa: dict[str, str], status: str = "approved") -> list[dict[str, Any]]:
     project = sa["project_id"]
     token = google_access_token(sa)
@@ -247,7 +251,18 @@ def firestore_run_query(sa: dict[str, str], status: str = "approved") -> list[di
         },
         method="POST",
     )
-    raw = urlopen_with_retries(req, timeout=120, label="firestore-runQuery")
+    try:
+        # Fewer retries on 429: free-tier quota rarely recovers within ~1 minute.
+        raw = urlopen_with_retries(
+            req, timeout=120, attempts=3, label="firestore-runQuery"
+        )
+    except urllib.error.HTTPError as err:
+        body = str(err.reason) if err.reason else ""
+        if err.code == 429 or "RESOURCE_EXHAUSTED" in body or "Quota exceeded" in body:
+            raise FirestoreQuotaExceeded(
+                f"Firestore quota exceeded (HTTP {err.code}): {body}"
+            ) from err
+        raise
     rows = json.loads(raw.decode("utf-8"))
     out: list[dict[str, Any]] = []
     for row in rows:
@@ -456,7 +471,17 @@ def main() -> int:
         subs = load_json_submissions(args.json)
     elif sa:
         print("Fetching approved submissions from Firestore…")
-        subs = firestore_run_query(sa, "approved")
+        try:
+            subs = firestore_run_query(sa, "approved")
+        except FirestoreQuotaExceeded as exc:
+            # Scheduled sync should not fail the Actions run when Spark quota is exhausted.
+            print(f"skipping sync: {exc}", file=sys.stderr)
+            print(
+                "hint: enable Blaze billing and/or run less often "
+                "(workflow cron was hitting free-tier read limits).",
+                file=sys.stderr,
+            )
+            return 0
     else:
         print(
             "No --json and no Firebase credentials "

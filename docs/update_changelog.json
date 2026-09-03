@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.1.2",
+      "revision": "r283",
+      "released": "September 3, 2026",
+      "update_notice": "- Redesigned sync submissions action to avoid Firebase quota exhaustion\n- Readded 2 contributed links back to the list that were removed because of a false positive from the link check action\n- Added 600+ links (no filter data yet)"
+    },
+    {
       "version": "v7.1.1",
       "revision": "r282",
       "released": "August 30, 2026",
