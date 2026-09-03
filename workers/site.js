@@ -52,7 +52,7 @@ const MAX_UID_LEN = 128;
 const MAX_DISPLAY_NAME_LEN = 32;
 const FS_CLICK_CACHE_TTL_SEC = 600;
 const TOP_OPENS_CACHE_TTL_SEC = 300;
-const TOP_OPENS_LIMIT = 25;
+const TOP_OPENS_LIMIT = 80;
 const FIREBASE_AUTH_HELPER_ORIGIN = "https://proxy-list-c06ea.firebaseapp.com";
 
 export default {
@@ -861,7 +861,7 @@ async function firestoreTopOpens(env, limit) {
     console.error("top_opens_token_failed", err);
     return [];
   }
-  const cap = Math.max(1, Math.min(limit, 50));
+  const cap = Math.max(1, Math.min(limit, 100));
 
   function parseDocFields(fields) {
     if (!fields || typeof fields !== "object") return null;
@@ -1028,7 +1028,7 @@ async function handleGetClicks(request, env, ctx) {
 
 async function handleTopOpens(request, env, ctx) {
   const cache = caches.default;
-  const cacheKey = new Request("https://top-opens.proxy-list.internal/v1");
+  const cacheKey = new Request("https://top-opens.proxy-list.internal/v2");
   try {
     const hit = await cache.match(cacheKey);
     if (hit) {

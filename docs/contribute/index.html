@@ -349,7 +349,6 @@
     <div class="actions">
       <a class="btn btn-primary" href="https://github.com/yourworstnightmare1/proxy-list/fork" rel="noopener noreferrer" target="_blank">Fork on GitHub</a>
       <a class="btn" href="https://github.com/yourworstnightmare1/proxy-list/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank">Full CONTRIBUTING.md</a>
-      <a class="btn" href="https://forms.gle/SMx9EUkBeiFuLwBa8" rel="noopener noreferrer" target="_blank">Submit via Google Form</a>
       <a class="btn" href="../admin/submissions.html" id="adminLinksBtn" hidden style="display:none">Review link submissions</a>
       <a class="btn" href="../admin/feedback.html" id="adminFeedbackBtn" hidden style="display:none">Review feedback</a>
     </div>
@@ -663,10 +662,15 @@
           .map((r) => {
             const label = escapeHtml(r.name);
             const youMark = contributorMatchesViewer(r) ? ' <span class="contributor-you">YOU</span>' : "";
+            const listHref = escapeAttr(mainListSearchHrefForContributor(r.name));
             const nameCell = r.href
               ? '<a href="' + escapeAttr(r.href) + '" rel="noopener noreferrer" target="_blank">' + label + "</a>" + youMark
-              : label + youMark;
-            const listHref = escapeAttr(mainListSearchHrefForContributor(r.name));
+              : '<a href="' +
+                listHref +
+                '" title="Show this contributor&#39;s links on the main list">' +
+                label +
+                "</a>" +
+                youMark;
             const countCell =
               '<a class="count-link" href="' +
               listHref +

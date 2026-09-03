@@ -552,7 +552,7 @@
     } catch (err) {
       showStatus(
         (err && err.message) ||
-          "Could not verify your account (Firestore may need updated rules). Try again or use the Google Form.",
+          "Could not verify your account (Firestore may need updated rules). Try again or use the on-site form after signing in.",
         "err"
       );
       return;
@@ -826,7 +826,7 @@
       if (signInPrompt) {
         signInPrompt.hidden = false;
         signInPrompt.innerHTML =
-          'Firebase is not configured for submissions on this host. Use <a href="https://forms.gle/SMx9EUkBeiFuLwBa8" rel="noopener noreferrer" target="_blank">Google Form</a> or GitHub instead.';
+          'Firebase is not configured for submissions on this host. Sign in on a supported host or use GitHub instead.';
       }
       return;
     }

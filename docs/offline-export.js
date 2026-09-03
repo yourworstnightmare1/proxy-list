@@ -175,19 +175,104 @@
     });
   }
 
-  function triggerDownload(blob, filename) {
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(function () {
+  function looksLikeWebProxy() {
+    try {
+      if (global.ProxyListPresence && typeof global.ProxyListPresence.looksLikeWebProxy === "function") {
+        return !!global.ProxyListPresence.looksLikeWebProxy();
+      }
+    } catch (_) {}
+    try {
+      var href = String((global.location && global.location.href) || "");
+      var path = String((global.location && global.location.pathname) || "");
+      return /\/uv\/|ultraviolet|\/scramjet|\/sj\/|bare-mux|\/service\/|\/proxy\//i.test(href + path);
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function blobToDataUrl(blob) {
+    return new Promise(function (resolve, reject) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        resolve(reader.result);
+      };
+      reader.onerror = function () {
+        reject(reader.error || new Error("Could not read file"));
+      };
+      reader.readAsDataURL(blob);
+    });
+  }
+
+  async function triggerDownload(blob, filename) {
+    if (global.showSaveFilePicker) {
       try {
-        URL.revokeObjectURL(url);
-      } catch (_) {}
-    }, 2500);
+        var handle = await global.showSaveFilePicker({
+          suggestedName: filename,
+          types: [{ description: "Offline copy", accept: { "application/octet-stream": [".html", ".md", ".txt"] } }],
+        });
+        var writable = await handle.createWritable();
+        await writable.write(blob);
+        await writable.close();
+        return;
+      } catch (err) {
+        if (err && err.name === "AbortError") return;
+      }
+    }
+
+    var url = "";
+    try {
+      url = URL.createObjectURL(blob);
+    } catch (_) {}
+    var a = document.createElement("a");
+    a.download = filename;
+    a.rel = "noopener";
+    a.style.display = "none";
+    if (url) a.href = url;
+    document.body.appendChild(a);
+    try {
+      a.click();
+    } catch (_) {}
+    a.remove();
+
+    var proxy = looksLikeWebProxy();
+    if (proxy || !url) {
+      var opened = false;
+      if (url) {
+        try {
+          opened = !!global.open(url, "_blank", "noopener");
+        } catch (_) {}
+      }
+      if (!opened && blob.size < 8 * 1048576) {
+        try {
+          var dataUrl = await blobToDataUrl(blob);
+          var win = global.open(dataUrl, "_blank", "noopener");
+          opened = !!win;
+          if (!opened) {
+            var a2 = document.createElement("a");
+            a2.href = dataUrl;
+            a2.download = filename;
+            a2.rel = "noopener";
+            document.body.appendChild(a2);
+            a2.click();
+            a2.remove();
+          }
+        } catch (_) {}
+      }
+      if (proxy) {
+        setProgress(
+          "If the file did not save, allow pop-ups or use Copy to clipboard. Web proxies (Ultraviolet / Scramjet) often block normal downloads.",
+          100
+        );
+      }
+    }
+
+    if (url) {
+      setTimeout(function () {
+        try {
+          URL.revokeObjectURL(url);
+        } catch (_) {}
+      }, 8000);
+    }
   }
 
   function formatBytesLabel(size) {
@@ -495,7 +580,7 @@
       } else {
         throw new Error("Unknown export kind: " + kind);
       }
-      triggerDownload(blob, name);
+      await triggerDownload(blob, name);
       setProgress("Done. Saved " + name + " (~" + formatBytesLabel(blob.size) + ").", 100);
     } catch (err) {
       if (err && err.name === "AbortError") {

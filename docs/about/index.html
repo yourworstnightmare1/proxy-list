@@ -192,6 +192,14 @@
           <td id="aboutRevision">—</td>
         </tr>
         <tr>
+          <th scope="row">Current commit</th>
+          <td id="aboutCurrentCommit">—</td>
+        </tr>
+        <tr>
+          <th scope="row">Latest commit</th>
+          <td id="aboutLatestCommit">—</td>
+        </tr>
+        <tr>
           <th scope="row">Last updated</th>
           <td id="aboutLastUpdated">—</td>
         </tr>
@@ -292,6 +300,72 @@
         return String(Math.max(0, Math.floor(n)));
       }
 
+      function setHtml(id, html) {
+        var el = document.getElementById(id);
+        if (el) el.innerHTML = html;
+      }
+
+      function shortSha(sha) {
+        return String(sha || "").replace(/[^a-fA-F0-9]/g, "").slice(0, 7);
+      }
+
+      function commitCellHtml(sha, extra) {
+        var s = String(sha || "").trim();
+        if (!s) return "—";
+        var short = shortSha(s) || s.slice(0, 7);
+        var href = "https://github.com/yourworstnightmare1/proxy-list/commit/" + encodeURIComponent(s);
+        return (
+          '<a href="' +
+          href +
+          '" target="_blank" rel="noopener noreferrer"><code>' +
+          short +
+          "</code></a>" +
+          (extra ? ' <span class="muted">' + extra + "</span>" : "")
+        );
+      }
+
+      function fetchGithubJson(url) {
+        return fetch(url, { headers: { Accept: "application/vnd.github+json" } }).then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.json();
+        });
+      }
+
+      function loadCommitInfo() {
+        var latestUrl = "https://api.github.com/repos/yourworstnightmare1/proxy-list/commits/main";
+        var currentPages = "https://api.github.com/repos/yourworstnightmare1/proxy-list/pages/builds/latest";
+        var currentDocs = "https://api.github.com/repos/yourworstnightmare1/proxy-list/commits?path=docs&per_page=1";
+        Promise.all([
+          fetchGithubJson(latestUrl).catch(function () {
+            return null;
+          }),
+          fetchGithubJson(currentPages).catch(function () {
+            return null;
+          }),
+          fetchGithubJson(currentDocs).catch(function () {
+            return null;
+          }),
+        ]).then(function (pair) {
+          var latest = pair[0];
+          var pages = pair[1];
+          var docs = pair[2];
+          var latestSha = latest && (latest.sha || (latest.commit && latest.sha));
+          if (latestSha) setHtml("aboutLatestCommit", commitCellHtml(latestSha, "main"));
+          var currentSha = "";
+          if (pages && pages.commit) {
+            currentSha = typeof pages.commit === "string" ? pages.commit : pages.commit.oid || pages.commit.sha || "";
+          }
+          if (!currentSha && Array.isArray(docs) && docs[0] && docs[0].sha) currentSha = docs[0].sha;
+          if (!currentSha && latestSha) currentSha = latestSha;
+          setHtml(
+            "aboutCurrentCommit",
+            currentSha
+              ? commitCellHtml(currentSha, pages && pages.commit ? "deployed" : "site files")
+              : "—"
+          );
+        });
+      }
+
       ProxyListData.fetchListPayload()
         .then(function (json) {
           var meta = (json && json.meta) || {};
@@ -312,6 +386,7 @@
           setText("aboutUnsortedCount", formatCount(unsorted));
           setText("faqSortedCount", formatCount(sorted));
           setText("faqUnsortedCount", formatCount(unsorted));
+          loadCommitInfo();
         })
         .catch(function () {
           setText("aboutVersion", "—");
@@ -321,6 +396,7 @@
           setText("aboutUnsortedCount", "—");
           setText("faqSortedCount", "—");
           setText("faqUnsortedCount", "—");
+          loadCommitInfo();
         });
     })();
   </script>
