@@ -6,6 +6,15 @@
     <script src="../debug-overlays.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Statistics | Proxy list</title>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("proxyList_sidebar_collapsed_v1") === "1") {
+          document.documentElement.classList.add("sidebar-collapsed");
+        }
+      } catch (_) {}
+    })();
+  </script>
   <link rel="icon" type="image/png" href="../favicon.png" />
   <style>
     :root {
@@ -175,8 +184,50 @@
       max-width: 100%;
       height: 280px;
     }
+    .chart-wrap-zoomable {
+      height: auto;
+    }
+    .chart-wrap-zoomable canvas {
+      display: block;
+      width: 100% !important;
+      height: 280px !important;
+    }
+    .chart-wrap.tall.chart-wrap-zoomable canvas {
+      height: 340px !important;
+    }
+    .chart-wrap.filter-tall.chart-wrap-zoomable canvas {
+      height: min(720px, 85vh) !important;
+    }
+    .chart-zoom-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: center;
+      margin: 0 0 0.45rem;
+    }
+    .chart-zoom-tools .btn {
+      padding: 0.2rem 0.55rem;
+      font-size: 0.78rem;
+      min-width: 1.8rem;
+    }
+    .chart-zoom-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-right: 0.15rem;
+    }
+    .chart-zoom-hint {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-left: 0.25rem;
+    }
     .chart-wrap.tall { height: 340px; }
     .chart-wrap.filter-tall { height: min(720px, 85vh); }
+    .chart-wrap.chart-wrap-zoomable,
+    .chart-wrap.tall.chart-wrap-zoomable,
+    .chart-wrap.filter-tall.chart-wrap-zoomable {
+      height: auto;
+    }
     .chart-wrap.donut {
       max-width: 22rem;
       height: 260px;
@@ -245,7 +296,96 @@
       font-size: 0.78rem;
       margin-top: 0.1rem;
     }
-    .games-mod-row {
+    .games-mod-item {
+      cursor: pointer;
+    }
+    .games-mod-item:hover {
+      background: #1e1e1e;
+    }
+    .games-mod-item:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .gdb-diff-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.65);
+    }
+    .gdb-diff-backdrop.open { display: flex; }
+    .gdb-diff-modal {
+      width: min(52rem, 100%);
+      max-height: calc(100vh - 2rem);
+      overflow: auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem 1.1rem;
+    }
+    .gdb-diff-modal h2 { margin: 0 0 0.25rem; font-size: 1.1rem; }
+    .gdb-diff-modal h3 { margin: 0.85rem 0 0.35rem; font-size: 0.95rem; }
+    .gdb-diff-tabs {
+      display: flex;
+      gap: 0.4rem;
+      margin: 0.65rem 0 0.75rem;
+    }
+    .gdb-diff-tabs .btn.is-active {
+      border-color: #2d5588;
+      color: #9fd4ff;
+      background: #222222;
+    }
+    .gdb-diff-json {
+      margin: 0;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #141414;
+      color: var(--text);
+      font-size: 0.78rem;
+      overflow: auto;
+      max-height: min(28rem, 60vh);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .gdb-diff-list { max-height: min(18rem, 40vh); }
+    .gdb-diff-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.45rem;
+      margin-top: 0.85rem;
+    }
+    .sidebar-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 0 0.35rem 0.75rem;
+      width: calc(100% - 0.7rem);
+    }
+    .sidebar-toggle-icon {
+      display: inline-block;
+      width: 1.05rem;
+      height: 0.85rem;
+      border-top: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      background: linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat;
+    }
+    html.sidebar-collapsed .stats-sidebar .brand,
+    html.sidebar-collapsed .stats-sidebar .brand-sub,
+    html.sidebar-collapsed .stats-sidebar .sidebar-actions {
+      display: none;
+    }
+    html.sidebar-collapsed .stats-sidebar {
+      width: auto;
+      padding: 0.75rem 0.55rem;
+    }
+    html.sidebar-collapsed .sidebar-toggle-btn {
+      width: auto;
+      margin: 0;
+    }
       display: flex;
       flex-wrap: wrap;
       gap: 0.35rem 0.75rem;
@@ -420,9 +560,13 @@
 <body>
   <div class="layout">
     <aside class="stats-sidebar" aria-label="Statistics navigation">
+      <button type="button" class="btn sidebar-toggle-btn" id="sidebarToggleBtn" aria-controls="statsSidebarNav" aria-expanded="true">
+        <span class="sidebar-toggle-icon" aria-hidden="true"></span>
+        <span id="sidebarToggleLabel">Hide</span>
+      </button>
       <p class="brand">Statistics</p>
       <p class="brand-sub">Providers, domains, web filters, contributors, users, and game databases.</p>
-      <nav class="sidebar-actions" aria-label="Statistics sections">
+      <nav class="sidebar-actions" id="statsSidebarNav" aria-label="Statistics sections">
         <a class="btn" href="../">
           <img class="sidebar-btn-icon" src="./icon-back.png" width="18" height="18" alt="" aria-hidden="true" />
           Back to Proxy List
@@ -949,7 +1093,7 @@
 
           <section class="card">
             <h2>Latest database modifications</h2>
-            <p class="hint">Recent snapshot events for the selected scope (baseline or +added / −removed).</p>
+            <p class="hint">Recent snapshot events for the selected scope (baseline or +added / −removed). Click a day to inspect the JSON diff and the games that were added or removed.</p>
             <ul class="games-list" id="gamesModsList">
               <li class="muted">No data yet.</li>
             </ul>
@@ -963,6 +1107,23 @@
         </div>
       </main>
     </div>
+  </div>
+
+  <div class="gdb-diff-backdrop" id="gdbDiffBackdrop" aria-hidden="true">
+    <section class="gdb-diff-modal" role="dialog" aria-modal="true" aria-labelledby="gdbDiffTitle">
+      <h2 id="gdbDiffTitle">Database modifications</h2>
+      <p class="hint" id="gdbDiffHint">Games added or removed between catalog snapshots.</p>
+      <div class="gdb-diff-tabs">
+        <button type="button" class="btn is-active" id="gdbDiffTabChanges">Changes</button>
+        <button type="button" class="btn" id="gdbDiffTabJson">JSON</button>
+      </div>
+      <div id="gdbDiffChanges"></div>
+      <pre class="gdb-diff-json" id="gdbDiffJson" hidden></pre>
+      <div class="gdb-diff-actions">
+        <button type="button" class="btn" id="gdbDiffCloseBtn">Close</button>
+        <button type="button" class="btn btn-primary" id="gdbDiffDismissBtn">Done</button>
+      </div>
+    </section>
   </div>
 
   <script src="../vendor/chart.umd.min.js"></script>

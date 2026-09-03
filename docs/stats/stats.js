@@ -147,6 +147,20 @@
     Chart.defaults.color = "#9a9a9a";
     Chart.defaults.borderColor = "#2e2e2e";
     Chart.defaults.font.family = '"Segoe UI", system-ui, sans-serif';
+    // Hover the line/series, not only the exact point hit-target.
+    Chart.defaults.interaction = {
+      mode: "nearest",
+      intersect: false,
+      axis: "xy",
+    };
+    Chart.defaults.hover = {
+      mode: "nearest",
+      intersect: false,
+    };
+    Chart.defaults.plugins.tooltip = Chart.defaults.plugins.tooltip || {};
+    Chart.defaults.plugins.tooltip.enabled = true;
+    Chart.defaults.plugins.tooltip.intersect = false;
+    Chart.defaults.plugins.tooltip.mode = "nearest";
     // Fill/extend along the value axis instead of scaling bars/arcs up from nothing.
     Chart.defaults.animation = {
       duration: 850,
@@ -159,6 +173,255 @@
         properties: ["x", "y", "base", "circumference", "startAngle", "endAngle", "innerRadius", "outerRadius"],
       },
     };
+  }
+
+  /** Tiny positive shares used to render as 0.0%; show a floor instead. */
+  function formatSharePct(count, total) {
+    var n = Number(count);
+    var t = Number(total);
+    if (!Number.isFinite(n) || !Number.isFinite(t) || t <= 0 || n <= 0) return "0.0%";
+    var pct = (n / t) * 100;
+    if (pct > 0 && pct < 0.1) return ">0.1%";
+    return pct.toFixed(1) + "%";
+  }
+
+  function applyLinePointHighlights(config) {
+    var datasets = config && config.data && config.data.datasets;
+    if (!Array.isArray(datasets)) return;
+    datasets.forEach(function (ds) {
+      if (!ds || typeof ds !== "object") return;
+      var radius = Number(ds.pointRadius);
+      if (!Number.isFinite(radius) || radius < 3) ds.pointRadius = 3;
+      ds.pointHoverRadius = Math.max(Number(ds.pointHoverRadius) || 0, 6);
+      ds.pointHitRadius = Math.max(Number(ds.pointHitRadius) || 0, 16);
+      ds.pointBackgroundColor = "#6cb3ff";
+      ds.pointBorderColor = "#6cb3ff";
+      ds.pointBorderWidth = ds.pointBorderWidth == null ? 2 : ds.pointBorderWidth;
+      ds.pointHoverBackgroundColor = "#9fd4ff";
+      ds.pointHoverBorderColor = "#6cb3ff";
+    });
+  }
+
+  function applyLineHoverOptions(options) {
+    options.interaction = Object.assign(
+      { mode: "nearest", intersect: false, axis: "xy" },
+      options.interaction || {}
+    );
+    options.hover = Object.assign({ mode: "nearest", intersect: false }, options.hover || {});
+    options.plugins = options.plugins || {};
+    options.plugins.tooltip = Object.assign(
+      { enabled: true, intersect: false, mode: "nearest" },
+      options.plugins.tooltip || {}
+    );
+  }
+
+  function categoryAxisId(chart) {
+    return chart.options && chart.options.indexAxis === "y" ? "y" : "x";
+  }
+
+  function labelCount(chart) {
+    var labels = chart.data && chart.data.labels;
+    return Array.isArray(labels) ? labels.length : 0;
+  }
+
+  function currentCategoryWindow(chart) {
+    var n = labelCount(chart);
+    var axisId = categoryAxisId(chart);
+    var scale = chart.scales && chart.scales[axisId];
+    var min = scale && scale.options && scale.options.min;
+    var max = scale && scale.options && scale.options.max;
+    var start = Number.isFinite(Number(min)) ? Math.max(0, Math.floor(Number(min))) : 0;
+    var end = Number.isFinite(Number(max)) ? Math.min(n - 1, Math.ceil(Number(max))) : n - 1;
+    if (end < start) end = start;
+    return { start: start, end: end, n: n, axisId: axisId };
+  }
+
+  function setCategoryWindow(chart, start, end) {
+    var n = labelCount(chart);
+    if (n <= 0) return;
+    var axisId = categoryAxisId(chart);
+    chart.options.scales = chart.options.scales || {};
+    chart.options.scales[axisId] = chart.options.scales[axisId] || {};
+    var lo = Math.max(0, Math.min(n - 1, Math.floor(start)));
+    var hi = Math.max(lo, Math.min(n - 1, Math.ceil(end)));
+    if (lo <= 0 && hi >= n - 1) {
+      delete chart.options.scales[axisId].min;
+      delete chart.options.scales[axisId].max;
+    } else {
+      chart.options.scales[axisId].min = lo;
+      chart.options.scales[axisId].max = hi;
+    }
+    chart.update("none");
+    syncChartZoomToolbar(chart);
+  }
+
+  function resetBarZoom(chart) {
+    setCategoryWindow(chart, 0, labelCount(chart) - 1);
+  }
+
+  function zoomBarWindow(chart, factor, anchorRatio) {
+    var win = currentCategoryWindow(chart);
+    if (win.n <= 1) return;
+    var span = Math.max(1, win.end - win.start + 1);
+    var nextSpan = Math.max(3, Math.min(win.n, Math.round(span * factor)));
+    if (nextSpan === span && factor >= 1) {
+      resetBarZoom(chart);
+      return;
+    }
+    var ratio = Number.isFinite(anchorRatio) ? Math.max(0, Math.min(1, anchorRatio)) : 0.5;
+    var center = win.start + span * ratio;
+    var start = Math.round(center - nextSpan * ratio);
+    var end = start + nextSpan - 1;
+    if (start < 0) {
+      end -= start;
+      start = 0;
+    }
+    if (end > win.n - 1) {
+      start -= end - (win.n - 1);
+      end = win.n - 1;
+    }
+    start = Math.max(0, start);
+    setCategoryWindow(chart, start, end);
+  }
+
+  function panBarWindow(chart, delta) {
+    var win = currentCategoryWindow(chart);
+    if (win.n <= 1) return;
+    var span = win.end - win.start;
+    var start = win.start + delta;
+    var end = start + span;
+    if (start < 0) {
+      start = 0;
+      end = span;
+    }
+    if (end > win.n - 1) {
+      end = win.n - 1;
+      start = Math.max(0, end - span);
+    }
+    setCategoryWindow(chart, start, end);
+  }
+
+  function syncChartZoomToolbar(chart) {
+    var tools = chart && chart.$zoomTools;
+    if (!tools) return;
+    var win = currentCategoryWindow(chart);
+    var zoomed = win.start > 0 || win.end < win.n - 1;
+    tools.classList.toggle("is-zoomed", zoomed);
+    var resetBtn = tools.querySelector("[data-chart-zoom='reset']");
+    if (resetBtn) resetBtn.disabled = !zoomed;
+  }
+
+  function ensureChartZoomToolbar(chart) {
+    var canvas = chart.canvas;
+    var wrap = canvas && canvas.parentElement;
+    if (!wrap) return null;
+    wrap.classList.add("chart-wrap-zoomable");
+    wrap.$barZoomChart = chart;
+    var tools = wrap.querySelector(".chart-zoom-tools");
+    if (!tools) {
+      tools = document.createElement("div");
+      tools.className = "chart-zoom-tools";
+      tools.innerHTML =
+        '<span class="chart-zoom-label">Zoom</span>' +
+        '<button type="button" class="btn" data-chart-zoom="in" title="Zoom in">+</button>' +
+        '<button type="button" class="btn" data-chart-zoom="out" title="Zoom out">−</button>' +
+        '<button type="button" class="btn" data-chart-zoom="reset" title="Reset zoom">Reset</button>' +
+        '<span class="chart-zoom-hint">Scroll or drag to pan</span>';
+      wrap.insertBefore(tools, wrap.firstChild);
+    }
+    chart.$zoomTools = tools;
+    if (tools.dataset.wired === "1") {
+      syncChartZoomToolbar(chart);
+      return tools;
+    }
+    tools.dataset.wired = "1";
+    tools.addEventListener("click", function (ev) {
+      var live = wrap.$barZoomChart;
+      if (!live) return;
+      var btn = ev.target && ev.target.closest ? ev.target.closest("[data-chart-zoom]") : null;
+      if (!btn || !tools.contains(btn)) return;
+      var action = btn.getAttribute("data-chart-zoom");
+      if (action === "in") zoomBarWindow(live, 0.6, 0.5);
+      else if (action === "out") zoomBarWindow(live, 1.6, 0.5);
+      else if (action === "reset") resetBarZoom(live);
+    });
+    syncChartZoomToolbar(chart);
+    return tools;
+  }
+
+  function attachBarChartZoom(chart) {
+    if (!chart || chart.config.type !== "bar") return;
+    if (labelCount(chart) < 4) return;
+    var canvas = chart.canvas;
+    var wrap = canvas && canvas.parentElement;
+    if (!canvas || !wrap) return;
+    wrap.$barZoomChart = chart;
+    ensureChartZoomToolbar(chart);
+    if (wrap.dataset.barZoomWired === "1") return;
+    wrap.dataset.barZoomWired = "1";
+    var dragging = false;
+    var lastY = 0;
+    var lastX = 0;
+
+    function liveChart() {
+      return wrap.$barZoomChart;
+    }
+
+    canvas.addEventListener(
+      "wheel",
+      function (ev) {
+        var live = liveChart();
+        if (!live) return;
+        ev.preventDefault();
+        var rect = canvas.getBoundingClientRect();
+        var axisId = categoryAxisId(live);
+        var along =
+          axisId === "y"
+            ? (ev.clientY - rect.top) / Math.max(1, rect.height)
+            : (ev.clientX - rect.left) / Math.max(1, rect.width);
+        if (ev.shiftKey || Math.abs(ev.deltaX) > Math.abs(ev.deltaY)) {
+          var panPx = axisId === "y" ? ev.deltaY || ev.deltaX : ev.deltaX || ev.deltaY;
+          panBarWindow(live, panPx > 0 ? 1 : -1);
+          return;
+        }
+        zoomBarWindow(live, ev.deltaY > 0 ? 1.25 : 0.8, along);
+      },
+      { passive: false }
+    );
+
+    canvas.addEventListener("pointerdown", function (ev) {
+      if (ev.button != null && ev.button !== 0) return;
+      dragging = true;
+      lastX = ev.clientX;
+      lastY = ev.clientY;
+      try {
+        canvas.setPointerCapture(ev.pointerId);
+      } catch (_) {}
+    });
+    canvas.addEventListener("pointerup", function () {
+      dragging = false;
+    });
+    canvas.addEventListener("pointercancel", function () {
+      dragging = false;
+    });
+    canvas.addEventListener("pointermove", function (ev) {
+      var live = liveChart();
+      if (!dragging || !live) return;
+      var axisId = categoryAxisId(live);
+      var delta = axisId === "y" ? ev.clientY - lastY : ev.clientX - lastX;
+      lastX = ev.clientX;
+      lastY = ev.clientY;
+      var rect = canvas.getBoundingClientRect();
+      var size = axisId === "y" ? rect.height : rect.width;
+      var win = currentCategoryWindow(live);
+      var span = Math.max(1, win.end - win.start + 1);
+      var step = Math.round((delta / Math.max(1, size)) * span);
+      if (step) panBarWindow(live, step);
+    });
+    canvas.addEventListener("dblclick", function () {
+      var live = liveChart();
+      if (live) resetBarZoom(live);
+    });
   }
 
   /** Bar charts: grow from the baseline along the value axis only (no pop/scale-in). */
@@ -285,9 +548,12 @@
       );
     } else if (type === "line") {
       config.options.animations = Object.assign({}, lineFillAnimations(), config.options.animations || {});
+      applyLinePointHighlights(config);
+      applyLineHoverOptions(config.options);
     }
 
     var chart = new Chart(canvas, config);
+    if (type === "bar") attachBarChartZoom(chart);
     (bucket || charts).push(chart);
     return chart;
   }
@@ -985,7 +1251,7 @@
     body.innerHTML = ranked
       .slice(0, 50)
       .map(function (r, i) {
-        var share = ((r.count / totalLinks) * 100).toFixed(1) + "%";
+        var share = formatSharePct(r.count, totalLinks);
         return (
           '<tr><td class="num">' +
           (i + 1) +
@@ -2205,6 +2471,30 @@
     }
   }
 
+  function wireSidebarToggle() {
+    var btn = $("sidebarToggleBtn");
+    var label = $("sidebarToggleLabel");
+    if (!btn) return;
+    function sync() {
+      var collapsed = document.documentElement.classList.contains("sidebar-collapsed");
+      btn.setAttribute("aria-expanded", collapsed ? "false" : "true");
+      if (label) label.textContent = collapsed ? "Show" : "Hide";
+      btn.setAttribute("aria-label", collapsed ? "Show sidebar" : "Hide sidebar");
+    }
+    sync();
+    if (btn.dataset.wired === "1") return;
+    btn.dataset.wired = "1";
+    btn.addEventListener("click", function () {
+      var next = !document.documentElement.classList.contains("sidebar-collapsed");
+      document.documentElement.classList.toggle("sidebar-collapsed", next);
+      try {
+        localStorage.setItem("proxyList_sidebar_collapsed_v1", next ? "1" : "0");
+      } catch (_) {}
+      sync();
+      resizeVisibleCharts();
+    });
+  }
+
   function wireStatsNav() {
     document.querySelectorAll("[data-stats-panel]").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -2222,6 +2512,7 @@
     destroyChartList(detailCharts);
     wireProviderUi();
     wireStatsNav();
+    wireSidebarToggle();
     if (!window.location.hash) {
       try {
         history.replaceState(null, "", "#providers");

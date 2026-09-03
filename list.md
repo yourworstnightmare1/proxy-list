@@ -15,6 +15,9 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 
 ## Important Notices
 
+### Google Forms Deprecated
+Google Forms is now deprecated and can no longer be used to submit links or report bugs in favor of our multi-use, more refined, and easier to use on-site submission form framework. [Contribute to the list here](./contribute/)
+
 ### Fyinx Unavailable for Legal Reasons
 The Fyinx game database has been removed from the list and statistics page as the database is no longer available due to a DMCA (error 451). We apologize for any inconvience this will cause. If your main game site used Fyinx for its games, it won't load them anymore.
 

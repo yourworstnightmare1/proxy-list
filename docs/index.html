@@ -61,6 +61,11 @@
         }
         var anim = s && s.animations === false ? "disabled" : "enabled";
         document.documentElement.setAttribute("data-animations", anim);
+        try {
+          if (localStorage.getItem("proxyList_sidebar_collapsed_v1") === "1") {
+            document.documentElement.classList.add("sidebar-collapsed");
+          }
+        } catch (_) {}
       } catch (_) {
         document.documentElement.setAttribute("data-theme", "dark");
         var fallback = parseClientPlatform();
@@ -784,6 +789,58 @@
     html[data-device="desktop"] .layout {
       grid-template-columns: minmax(260px, 300px) 1fr;
     }
+    .sidebar-column {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin: 0.75rem 1.25rem 0;
+      width: calc(100% - 2.5rem);
+      justify-content: flex-start;
+    }
+    .sidebar-toggle-icon {
+      display: inline-block;
+      width: 1.05rem;
+      height: 0.85rem;
+      border-top: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      background: linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat;
+      flex-shrink: 0;
+    }
+    html.sidebar-collapsed .layout,
+    html.sidebar-collapsed[data-device="desktop"] .layout {
+      grid-template-columns: auto 1fr;
+    }
+    html.sidebar-collapsed .sidebar-column aside {
+      display: none;
+    }
+    html.sidebar-collapsed .sidebar-toggle-btn {
+      width: auto;
+      margin: 0.75rem 0.65rem 0.75rem 0.75rem;
+    }
+    html.sidebar-collapsed[data-device="mobile"] .layout {
+      grid-template-columns: 1fr;
+    }
+    @media (max-width: 840px) {
+      html.sidebar-collapsed .layout { grid-template-columns: 1fr; }
+    }
+    button.contributor-search-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--accent);
+      cursor: pointer;
+      font: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    button.contributor-search-btn:hover {
+      color: #9fd4ff;
+    }
     aside {
       border-right: 1px solid var(--border);
       padding: 1rem 1.25rem;
@@ -791,12 +848,17 @@
       align-self: start;
     }
     @media (min-width: 841px) {
-      aside {
+      .sidebar-column {
         position: sticky;
         top: 0;
         max-height: 100vh;
         overflow-y: auto;
         overscroll-behavior: contain;
+      }
+      aside {
+        position: static;
+        max-height: none;
+        overflow: visible;
       }
     }
     @media (max-width: 840px) {
@@ -809,7 +871,7 @@
       border-right: none;
       border-bottom: 1px solid var(--border);
     }
-    html[data-device="desktop"] aside {
+    html[data-device="desktop"] .sidebar-column {
       position: sticky;
       top: 0;
       max-height: 100vh;
@@ -817,6 +879,12 @@
       overscroll-behavior: contain;
       border-right: 1px solid var(--border);
       border-bottom: none;
+    }
+    html[data-device="desktop"] aside {
+      position: static;
+      max-height: none;
+      overflow: visible;
+      border-right: none;
     }
     html[data-device="desktop"] .orientation-warning {
       display: none !important;
@@ -2419,6 +2487,10 @@
     .important-notices .notice-alert-warning p {
       color: #fff2d2;
     }
+    .important-notices .notice-alert-warning a {
+      color: #ffe08a;
+      font-weight: 600;
+    }
     .important-notices .notice-alert-danger {
       border: 1px solid #a83d3d;
       background: #2a1515;
@@ -2780,7 +2852,12 @@
     </div>
   </header>
   <div class="layout">
-    <aside aria-label="Filters and site menu">
+    <div class="sidebar-column" id="sidebarColumn">
+    <button type="button" class="btn sidebar-toggle-btn" id="sidebarToggleBtn" aria-controls="siteSidebar" aria-expanded="true">
+      <span class="sidebar-toggle-icon" aria-hidden="true"></span>
+      <span id="sidebarToggleLabel">Hide</span>
+    </button>
+    <aside id="siteSidebar" aria-label="Filters and site menu">
       <fieldset class="sidebar-menu-fieldset">
         <legend>Site</legend>
         <nav class="sidebar-actions" aria-label="Site links and tools">
@@ -2932,6 +3009,7 @@
         <button class="btn" id="resetFiltersBtn" type="button">Reset filters</button>
       </p>
     </aside>
+    </div>
     <main id="mainContent">
       <aside id="firebaseQuotaBanner" role="alert" aria-live="assertive" hidden>
         <h3>Firebase quota exceeded</h3>
@@ -3333,6 +3411,7 @@
             <label for="settingsChunkSizeSelect">Render Load Per Chunk</label>
             <p class="settings-desc" id="settingsChunkSizeDesc">Amount of links loaded each time you scroll the list. Lowering this can significantly improve performance and increase system memory available.</p>
             <select id="settingsChunkSizeSelect" aria-label="Render load per chunk">
+              <option value="auto">Auto</option>
               <option value="very_low">Very Low (10 links)</option>
               <option value="low">Low (20 links)</option>
               <option value="medium">Medium (80 links)</option>
@@ -3876,6 +3955,8 @@
     const GITHUB_NOTIFICATIONS_SEEN_KEY = "proxyList_github_notifications_seen_v1";
 
     const LS_APP_SETTINGS_KEY = "proxyList_app_settings_v1";
+    const LS_LIST_FILTERS_KEY = "proxyList_list_filters_v1";
+    const LS_SIDEBAR_COLLAPSED_KEY = "proxyList_sidebar_collapsed_v1";
     const LS_MOBILE_AUTO_RESIZE_NOTICE_KEY = "proxyList_mobile_auto_resize_notice_v1";
     const IDB_APP_SETTINGS_DB = "proxyListSettings";
     const IDB_APP_SETTINGS_STORE = "appSettings";
@@ -3891,7 +3972,7 @@
       linkSelectionAction: "summary",
       additionalNotesVisibility: "show",
       renderEmojis: true,
-      renderLoadPerChunk: "medium",
+      renderLoadPerChunk: "auto",
       grabLinkClicksPerChunk: "per_chunk",
       saveSettingsLocally: false,
       // null = all catalogs; otherwise only these gdb:* tags are searched/warmed.
@@ -3930,6 +4011,7 @@
       if (typeof raw.renderEmojis === "boolean") out.renderEmojis = raw.renderEmojis;
       const chunk = String(raw.renderLoadPerChunk || "");
       if (
+        chunk === "auto" ||
         chunk === "very_low" ||
         chunk === "low" ||
         chunk === "medium" ||
@@ -3955,8 +4037,29 @@
       return out;
     }
 
+    function estimatedDeviceMemoryGb() {
+      try {
+        const n = Number(navigator.deviceMemory);
+        if (Number.isFinite(n) && n > 0) return n;
+      } catch (_) {}
+      return null;
+    }
+
+    function chunkPresetFromRam(gb) {
+      if (gb == null) return "medium";
+      if (gb <= 2) return "low";
+      if (gb >= 16) return "high";
+      return "medium";
+    }
+
+    function resolvedRenderLoadPerChunk() {
+      const v = appSettings.renderLoadPerChunk || "auto";
+      if (v === "auto") return chunkPresetFromRam(estimatedDeviceMemoryGb());
+      return v;
+    }
+
     function getTableChunkSize() {
-      switch (appSettings.renderLoadPerChunk) {
+      switch (resolvedRenderLoadPerChunk()) {
         case "very_low":
           return 10;
         case "low":
@@ -3974,7 +4077,7 @@
     }
 
     function isUnoptimizedTableRender() {
-      return appSettings.renderLoadPerChunk === "unoptimized";
+      return resolvedRenderLoadPerChunk() === "unoptimized";
     }
 
     function effectiveClickLoadMode() {
@@ -4764,7 +4867,7 @@
       const emojiSel = $("settingsRenderEmojisSelect");
       if (emojiSel) emojiSel.value = appSettings.renderEmojis === false ? "disabled" : "enabled";
       const chunkSel = $("settingsChunkSizeSelect");
-      if (chunkSel) chunkSel.value = appSettings.renderLoadPerChunk || "medium";
+      if (chunkSel) chunkSel.value = appSettings.renderLoadPerChunk || "auto";
       const clickSel = $("settingsClickLoadSelect");
       if (clickSel) clickSel.value = appSettings.grabLinkClicksPerChunk || "per_chunk";
       const saveSel = $("settingsSaveLocalSelect");
@@ -4772,10 +4875,15 @@
       syncGdbSettingsList();
       const chunkDesc = $("settingsChunkSizeDesc");
       if (chunkDesc) {
+        const ram = estimatedDeviceMemoryGb();
+        const resolved = resolvedRenderLoadPerChunk();
+        const autoNote =
+          " Auto picks Low at 2 GB or less, Medium at 4–8 GB, High at 16 GB or more, and Medium if RAM cannot be read" +
+          (ram != null ? " (this device reports ~" + ram + " GB → " + resolved.replace("_", " ") + ")" : " (RAM unknown → medium)") +
+          ".";
         chunkDesc.textContent =
-          "Amount of links loaded each time you scroll the list. The default number is " +
-          TABLE_CHUNK_DEFAULT +
-          ". Lowering this can significantly improve performance and increase system memory available.";
+          "Amount of links loaded each time you scroll the list. Lowering this can significantly improve performance and increase system memory available." +
+          autoNote;
       }
       markSettingsWarnOptions();
       syncFilterControlsToUi();
@@ -5874,6 +5982,107 @@
       };
     }
 
+    function collectListFiltersSnapshot() {
+      return {
+        webFilter: selectedGnMathFilter || "",
+        hideBlocked: !!hideBlockedBySelectedFilter,
+        hideUnchecked: !!hideLinksWithoutLensCheck,
+        search: $("q") ? String($("q").value || "") : "",
+        providers: selectedIn("providerTags"),
+        categories: selectedIn("categoryTags"),
+        protocols: selectedIn("protocolTags"),
+        capabilities: selectedCaps(),
+        capMode: capMode(),
+        mostOpenedSort: getMostOpenedSortMode(),
+        mostOpenedProvider: getMostOpenedProviderChoice(),
+        linkListSort: listSortMode,
+      };
+    }
+
+    function persistListFiltersLocally() {
+      if (applyingUserSettings) return;
+      try {
+        localStorage.setItem(LS_LIST_FILTERS_KEY, JSON.stringify(collectListFiltersSnapshot()));
+      } catch (_) {}
+    }
+
+    function readListFiltersLocally() {
+      try {
+        const raw = localStorage.getItem(LS_LIST_FILTERS_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        return parsed && typeof parsed === "object" ? parsed : null;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function shouldSkipListFilterRestore() {
+      try {
+        const u = new URL(window.location.href);
+        if (u.searchParams.has("folder") || u.searchParams.get("saved") === "1") return true;
+      } catch (_) {}
+      return false;
+    }
+
+    function restoreListFiltersLocally(options) {
+      if (shouldSkipListFilterRestore()) return false;
+      const settings = readListFiltersLocally();
+      if (!settings) return false;
+      const keepUrlSearch = !options || options.keepUrlSearch !== false;
+      applyingUserSettings = true;
+      try {
+        selectedGnMathFilter = settings.webFilter ? String(settings.webFilter) : "";
+        hideBlockedBySelectedFilter = !!settings.hideBlocked;
+        hideLinksWithoutLensCheck = !!settings.hideUnchecked;
+        const filterSel = $("filterSelect");
+        if (filterSel) filterSel.value = selectedGnMathFilter;
+        updateSelectedFilterUI();
+        const q = $("q");
+        if (q && settings.search != null) {
+          let hasUrlQ = false;
+          try {
+            hasUrlQ = keepUrlSearch && new URL(window.location.href).searchParams.has("q");
+          } catch (_) {}
+          if (!hasUrlQ) q.value = String(settings.search);
+        }
+        setCheckboxGroup("providerTags", settings.providers);
+        setCheckboxGroup("categoryTags", settings.categories);
+        setCheckboxGroup("protocolTags", settings.protocols);
+        setCheckboxGroup("capTags", settings.capabilities);
+        const capRadio = document.querySelector(
+          'input[name="capMode"][value="' + (settings.capMode === "all" ? "all" : "any") + '"]'
+        );
+        if (capRadio) capRadio.checked = true;
+        const moSortSel = $("mostOpenedSortSelect");
+        if (moSortSel && settings.mostOpenedSort) {
+          moSortSel.value = settings.mostOpenedSort;
+          persistMostOpenedSortMode(settings.mostOpenedSort);
+        }
+        const moProvSel = $("mostOpenedProviderSelect");
+        if (moProvSel && settings.mostOpenedProvider != null) {
+          moProvSel.value = settings.mostOpenedProvider || "";
+          persistMostOpenedProviderChoice(settings.mostOpenedProvider || "");
+        }
+        const linkSortSel = $("linkListSortSelect");
+        if (
+          settings.linkListSort === LINK_SORT_RATING_DESC ||
+          settings.linkListSort === LINK_SORT_RATING_ASC ||
+          settings.linkListSort === LINK_SORT_DEFAULT ||
+          settings.linkListSort === LINK_SORT_SAVED_DESC
+        ) {
+          listSortMode = settings.linkListSort;
+          try {
+            localStorage.setItem(LS_LINK_LIST_SORT_KEY, listSortMode);
+          } catch (_) {}
+          if (linkSortSel) linkSortSel.value = listSortMode;
+        }
+      } finally {
+        applyingUserSettings = false;
+      }
+      return true;
+    }
+
     function setCheckboxGroup(containerId, values) {
       const wanted = new Set((values || []).map((v) => String(v)));
       document.querySelectorAll("#" + containerId + " input[type=checkbox]").forEach((input) => {
@@ -6116,6 +6325,7 @@
                 });
           applyAppSettings(app, { skipUi: true });
         }
+        restoreListFiltersLocally({ keepUrlSearch: true });
       } finally {
         applyingUserSettings = false;
       }
@@ -6173,6 +6383,7 @@
     }
 
     function scheduleUserProfileWrite() {
+      persistListFiltersLocally();
       if (!isSignedInUser() || !firebaseDb || applyingUserSettings) return;
       if (userProfileWriteTimer) clearTimeout(userProfileWriteTimer);
       userProfileWriteTimer = setTimeout(() => {
@@ -8118,7 +8329,7 @@
     }
 
     const TOP_OPENS_DISPLAY = 10;
-    const TOP_OPENS_FETCH_CAP = 25;
+    const TOP_OPENS_FETCH_CAP = 80;
     const TOP_OPENS_CACHE_MS = 10 * 60 * 1000;
     let topOpenedDocsCache = { at: 0, docs: null };
     const MO_SORT_STORAGE_KEY = "proxyList_mostOpenedSort_v1";
@@ -8308,16 +8519,77 @@
       const byNorm = buildLinkNormIndex(links);
       const docs = await fetchTopOpenedFromFirestore(TOP_OPENS_FETCH_CAP);
       const candidates = [];
+      const seenKeys = new Set();
       for (const { url, count } of docs) {
         const row =
           byNorm.get(normalizeUrlKeyForClicks(url)) || byNorm.get(legacyNormalizeUrlKey(url));
-        if (row) candidates.push({ row, count });
+        if (!row) continue;
+        const key = normalizeUrlKeyForClicks(row.link) || String(row.link || "");
+        if (!key || seenKeys.has(key)) continue;
+        seenKeys.add(key);
+        candidates.push({ row, count });
       }
       const merged = mergeMostOpenedCandidates(candidates);
 
-      let pool = merged;
+      function fillMostOpenedPool(base) {
+        const out = base.slice();
+        const have = new Set(
+          out.map((c) => normalizeUrlKeyForClicks(c.row && c.row.link) || String((c.row && c.row.link) || ""))
+        );
+        function pushRow(row, count) {
+          const key = normalizeUrlKeyForClicks(row && row.link) || String((row && row.link) || "");
+          if (!key || have.has(key)) return;
+          have.add(key);
+          out.push({ row, count: Number(count) || 0 });
+        }
+        if (out.length < TOP_OPENS_DISPLAY) {
+          const ranked = (links || [])
+            .map((row) => {
+              const key = normalizeUrlKeyForClicks(row.link);
+              const cached = key && clickCountCache.has(key) ? Number(clickCountCache.get(key)) || 0 : 0;
+              const local = key ? Number(localClickGet(key)) || 0 : 0;
+              return { row, count: Math.max(cached, local) };
+            })
+            .filter((c) => c.count > 0)
+            .sort((a, b) => b.count - a.count);
+          for (const c of ranked) {
+            if (out.length >= TOP_OPENS_DISPLAY) break;
+            pushRow(c.row, c.count);
+          }
+        }
+        if (out.length < TOP_OPENS_DISPLAY) {
+          const fallback = popularLinksFallbackCandidates(links, byNorm);
+          for (const c of fallback) {
+            if (out.length >= TOP_OPENS_DISPLAY) break;
+            pushRow(c.row, c.count);
+          }
+        }
+        return out;
+      }
+
+      let pool = fillMostOpenedPool(merged);
       if (mode === MO_SORT_PROVIDER && providerFilter) {
-        pool = merged.filter((c) => String(c.row.provider || "") === providerFilter);
+        pool = pool.filter((c) => String(c.row.provider || "") === providerFilter);
+        if (pool.length < TOP_OPENS_DISPLAY) {
+          const extra = (links || []).filter((row) => String(row.provider || "") === providerFilter);
+          const have = new Set(
+            pool.map((c) => normalizeUrlKeyForClicks(c.row && c.row.link) || String((c.row && c.row.link) || ""))
+          );
+          extra
+            .map((row) => {
+              const key = normalizeUrlKeyForClicks(row.link);
+              const cached = key && clickCountCache.has(key) ? Number(clickCountCache.get(key)) || 0 : 0;
+              return { row, count: cached };
+            })
+            .sort((a, b) => b.count - a.count)
+            .forEach((c) => {
+              if (pool.length >= TOP_OPENS_DISPLAY) return;
+              const key = normalizeUrlKeyForClicks(c.row.link) || String(c.row.link || "");
+              if (!key || have.has(key)) return;
+              have.add(key);
+              pool.push(c);
+            });
+        }
       }
 
       if (mode === MO_SORT_OPENS) {
@@ -8344,17 +8616,20 @@
 
       const picked = pool.slice(0, TOP_OPENS_DISPLAY);
       let usingPopularFallback = false;
-
-      if (!picked.length) {
-        const fallback = popularLinksFallbackCandidates(links, byNorm);
-        if (fallback.length) {
-          usingPopularFallback = true;
-          pool = fallback;
-          pool.sort((a, b) => b.count - a.count);
-        }
+      if (!merged.length && picked.length) {
+        const fallbackUrls = new Set(
+          (pageContext && pageContext.meta && Array.isArray(pageContext.meta.popular_links)
+            ? pageContext.meta.popular_links
+            : []
+          ).map((row) => normalizeUrlKeyForClicks(row && row.link))
+        );
+        usingPopularFallback = picked.every((c) => {
+          const key = normalizeUrlKeyForClicks(c.row && c.row.link);
+          return key && fallbackUrls.has(key);
+        });
       }
 
-      const finalPicked = (picked.length ? picked : pool.slice(0, TOP_OPENS_DISPLAY));
+      const finalPicked = picked;
 
       if (!finalPicked.length) {
         if (mode === MO_SORT_PROVIDER && providerFilter) {
@@ -9261,6 +9536,27 @@
       void renderAfterHeavyFilter(pageContext.links, pageContext.meta, pageContext.link_check);
     }
 
+    function applyContributorSearch(name) {
+      const query = String(name || "").trim();
+      const q = $("q");
+      if (q) {
+        q.value = query;
+        if (query) rememberRecentSearch(query);
+        hideSearchSuggestions();
+        try {
+          q.focus();
+        } catch (_) {}
+      }
+      if (pageContext) {
+        scheduleRenderFromPageContext();
+        scheduleUserProfileWrite();
+      }
+      const target = $("stats") || $("tableWrap");
+      if (target && typeof target.scrollIntoView === "function") {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
     function formatContributorCell(r) {
       const label = r.contributor != null ? String(r.contributor) : "";
       const href = r.contributor_url && String(r.contributor_url).trim();
@@ -9275,7 +9571,17 @@
           youMark
         );
       }
-      return escapeHtml(label) + youMark;
+      if (!label || label.toLowerCase() === "n/a") return escapeHtml(label) + youMark;
+      return (
+        '<button type="button" class="contributor-search-btn" data-contributor-query="' +
+        escapeAttr(label) +
+        '" title="Show links contributed by ' +
+        escapeAttr(label) +
+        '">' +
+        escapeHtml(label) +
+        "</button>" +
+        youMark
+      );
     }
 
     function selectedCaps() {
@@ -12122,11 +12428,15 @@
         const lm = slice.match(/^\[([^\]]*)\]\(([^)]+)\)/);
         if (lm) {
           const href = lm[2].trim();
-          if (/^https?:\/\//i.test(href)) {
+          const abs = /^https?:\/\//i.test(href);
+          const local = !abs && href.indexOf(":") === -1 && (/^[./]/.test(href) || href.charAt(0) === "/");
+          if (abs || local) {
             out +=
               '<a href="' +
               escapeAttr(href) +
-              '" rel="noopener noreferrer" target="_blank">' +
+              '"' +
+              (abs ? ' rel="noopener noreferrer" target="_blank"' : "") +
+              ">" +
               escapeHtml(lm[1]) +
               "</a>";
             i += lm[0].length;
@@ -12198,6 +12508,7 @@
     function importantNoticeAlertClass(title) {
       const t = String(title || "").trim();
       if (/fyinx unavailable for legal reasons/i.test(t)) return "notice-alert-danger";
+      if (/google forms deprecated/i.test(t)) return "notice-alert-warning";
       if (/proxy connections fully operational/i.test(t)) return "notice-alert-success";
       if (/canary branch coming soon/i.test(t)) return "notice-alert-info";
       if (/try out the game browser/i.test(t)) return "notice-alert-info";
@@ -12730,12 +13041,25 @@
     }
 
     let offlineExportScriptPromise = null;
+    function resolveDocsAssetUrl(name) {
+      try {
+        if (window.ProxyListData && typeof window.ProxyListData.listAssetUrlCandidates === "function") {
+          const base =
+            typeof window.ProxyListData.listAssetBaseUrl === "function"
+              ? window.ProxyListData.listAssetBaseUrl()
+              : "";
+          const candidates = window.ProxyListData.listAssetUrlCandidates(name, base);
+          if (candidates && candidates.length) return candidates[0];
+        }
+      } catch (_) {}
+      return name;
+    }
     function ensureOfflineExportScript() {
       if (window.ProxyListOfflineExport) return Promise.resolve(window.ProxyListOfflineExport);
       if (!offlineExportScriptPromise) {
         offlineExportScriptPromise = new Promise((resolve, reject) => {
           const s = document.createElement("script");
-          s.src = "offline-export.js";
+          s.src = resolveDocsAssetUrl("offline-export.js");
           s.onload = () => resolve(window.ProxyListOfflineExport);
           s.onerror = () => reject(new Error("Could not load offline-export.js"));
           document.head.appendChild(s);
@@ -12743,6 +13067,52 @@
       }
       return offlineExportScriptPromise;
     }
+
+    function wireOfflineExportOpen() {
+      const btn = $("offlineExportOpenBtn");
+      if (!btn || btn.dataset.wired === "1") return;
+      btn.dataset.wired = "1";
+      btn.addEventListener("click", () => {
+        void ensureOfflineExportScript()
+          .then((api) => {
+            if (api && typeof api.open === "function") api.open();
+            else showAppToast("Offline download is unavailable in this browser.");
+          })
+          .catch((err) => {
+            console.warn("[proxy-list] Offline export failed to load", err);
+            showAppToast("Could not open offline download on this host. Try Copy to clipboard after a refresh, or open the site outside a web proxy.");
+          });
+      });
+    }
+
+    function syncSidebarToggleLabel() {
+      const btn = $("sidebarToggleBtn");
+      const label = $("sidebarToggleLabel");
+      const collapsed = document.documentElement.classList.contains("sidebar-collapsed");
+      if (btn) {
+        btn.setAttribute("aria-expanded", collapsed ? "false" : "true");
+        btn.setAttribute("aria-label", collapsed ? "Show sidebar" : "Hide sidebar");
+      }
+      if (label) label.textContent = collapsed ? "Show" : "Hide";
+    }
+
+    function wireSidebarToggle() {
+      const btn = $("sidebarToggleBtn");
+      if (!btn || btn.dataset.wired === "1") return;
+      btn.dataset.wired = "1";
+      syncSidebarToggleLabel();
+      btn.addEventListener("click", () => {
+        const next = !document.documentElement.classList.contains("sidebar-collapsed");
+        document.documentElement.classList.toggle("sidebar-collapsed", next);
+        try {
+          localStorage.setItem(LS_SIDEBAR_COLLAPSED_KEY, next ? "1" : "0");
+        } catch (_) {}
+        syncSidebarToggleLabel();
+      });
+    }
+
+    wireSidebarToggle();
+    wireOfflineExportOpen();
 
     setContentLoading(true, { progress: 0, message: "Getting data..." });
     applyImportantNotices({});
@@ -12859,6 +13229,8 @@
           link_check
         );
         buildCapCheckboxes(links, meta, link_check);
+        restoreListFiltersLocally({ keepUrlSearch: true });
+        persistListFiltersLocally();
         reportContentLoadingProgress(82, "Rendering links…");
 
         function resetAllFilters() {
@@ -12886,6 +13258,7 @@
           }
           render(links, meta, link_check);
           void renderMostOpenedForList(links);
+          persistListFiltersLocally();
           scheduleUserProfileWrite();
         }
 
@@ -12920,6 +13293,12 @@
           if (target.closest(".empty-state-reset-btn")) {
             ev.preventDefault();
             resetAllFilters();
+            return;
+          }
+          const contribBtn = target.closest(".contributor-search-btn");
+          if (contribBtn) {
+            ev.preventDefault();
+            applyContributorSearch(contribBtn.getAttribute("data-contributor-query") || "");
             return;
           }
           const linkEl = target.closest("a.js-link-summary");
@@ -13201,7 +13580,7 @@
         const settingsChunkSizeSelect = $("settingsChunkSizeSelect");
         if (settingsChunkSizeSelect) {
           settingsChunkSizeSelect.addEventListener("change", () => {
-            void updateAppSetting({ renderLoadPerChunk: settingsChunkSizeSelect.value || "medium" });
+            void updateAppSetting({ renderLoadPerChunk: settingsChunkSizeSelect.value || "auto" });
           });
         }
         const settingsClickLoadSelect = $("settingsClickLoadSelect");
