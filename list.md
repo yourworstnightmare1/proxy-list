@@ -335,7 +335,7 @@ Looking for a specific game but don’t want to try every provider’s links to 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 72 |
+> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 71 |
 
 > [!IMPORTANT]
 > this proxy seems to be very slow on some links. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -357,7 +357,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | | https://cdn.jsdelivr.net/gh/TwiLabs/history/dist/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://cdn.jsdelivr.net/gh/TwiLabs/daydreaming/dist/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://cdn.jsdelivr.net/gh/TwiLabs/art/dist/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://ss.maxmir-energy.ru | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://science.haasencloud.de | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://raw.esm.sh/gh/NightProxy/DD-Static/dist/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://raw.esm.sh/gh/TwiLabs/math/dist/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
@@ -440,7 +439,7 @@ Looking for a specific game but don’t want to try every provider’s links to 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 28 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 27 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -467,7 +466,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | | https://eyes.lervs.ro | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://school.gressvikbmx.no | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://math.soyescalahumana.cl | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://english.neeb.wtf | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://spacing.bull.srivaishnavam.org.au | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 |  | https://math-lessons-space-17244170.codehs.me/index.html | 7/10/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://science.cthulhu.li | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -46436,7 +46434,7 @@ Looking for a specific game but don’t want to try every provider’s links to 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 836 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 834 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47230,7 +47228,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | | https://catty-prose92.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cell-dean29.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cell-lab98.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://chem-byte31.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://course-quiz99.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://data-lit52.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://debate-mass42.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47305,7 +47302,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | | https://undergrad-lab68.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://uni-academy79.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vector-paw80.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://vocab-journal59.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vocab-power31.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vocab-prime56.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://volt-grammar66.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
