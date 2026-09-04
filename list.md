@@ -37375,7 +37375,7 @@ Looking for a specific game but don’t want to try every provider’s links to 
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 11 |
+> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 10 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://interesting-articles.pages.dev | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -37389,7 +37389,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | | https://quizizz.com/_media/yukiwebos/5ca19e9d-a871-4439-a893-eddda170d684-v2 | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quizizz-static.s3.amazonaws.com/_media/yukiwebos/5ca19e9d-a871-4439-a893-eddda170d684-v2 | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quizizz-static.s3-accelerate.amazonaws.com/_media/yukiwebos/5ca19e9d-a871-4439-a893-eddda170d684-v2 | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://media.blooket.com/raw/upload/vo4ovjvc1qq2mq3dsw4f.html | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🕸️ Nettle Web
 > [!NOTE]
@@ -48589,18 +48588,6 @@ Looking for a specific game but don’t want to try every provider’s links to 
 | | https://esm.sh/gh/Mtreasur0133-bit/autorepo1@c595d652781ed7a94b6d09db82bbfc00e63a7382/NeoOS97.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/Mtreasur0133-bit/autorepo1@c595d652781ed7a94b6d09db82bbfc00e63a7382/NeoOS98.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/Mtreasur0133-bit/autorepo1@c595d652781ed7a94b6d09db82bbfc00e63a7382/NeoOS99.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# ✍️ Sumi
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | - | - | 1 |
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://do.seanbrogan.xyz/ | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🍈 Melon Soda
 > [!NOTE]
