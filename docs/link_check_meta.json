@@ -1,8 +1,14 @@
 {
-  "checked_at": "2026-09-03T20:39:10Z",
-  "checked_at_display": "2026-09-03 20:39 UTC",
+  "checked_at": "2026-09-04T02:41:56Z",
+  "checked_at_display": "2026-09-04 02:41 UTC",
   "added_count": 0,
-  "removed_count": 0,
+  "removed_count": 5,
   "added_links": [],
-  "removed_links": []
+  "removed_links": [
+    "https://mathematics.calculus.reformarchive.com",
+    "https://english.seminar.lervs.ro",
+    "https://math.science.lervs.ro",
+    "https://rhodium.thenme.net",
+    "https://edu.paschools.cfd"
+  ]
 }
