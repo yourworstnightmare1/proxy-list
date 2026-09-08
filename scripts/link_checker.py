@@ -17,6 +17,13 @@ STATUS_FILE = "link_status.json"
 CHANGELOG_FILE = "CHANGELOG.md"
 
 FAIL_THRESHOLD = 3
+# If this share of unique URLs fails in a single run, treat it as checker/network
+# outage: do not increment failure counts and do not purge anything.
+MASS_FAIL_RATIO = float(os.environ.get("LINK_CHECK_MASS_FAIL_RATIO", "0.25"))
+# Hard caps so a false-positive streak cannot wipe most of the list in one commit.
+MAX_PURGE_RATIO = float(os.environ.get("LINK_CHECK_MAX_PURGE_RATIO", "0.02"))
+MAX_PURGE_ABS = int(os.environ.get("LINK_CHECK_MAX_PURGE_ABS", "250"))
+ABORT_FILE = "link_check_abort.json"
 
 NOTE_CATEGORY_LINE = "> | Category | Capabilities | Protocol(s) | Links |"
 NOTE_SEP_LINE_RE = re.compile(r"^> \| - \|")
@@ -57,11 +64,22 @@ def load_status():
     except OSError:
         return {}
     # Merge legacy keys (pre-normalization) into normalized keys.
+    # Values may be bare ints or {"count": N, ...} objects from older exports.
     out: dict[str, int] = {}
     for k, v in raw.items():
+        if isinstance(v, bool):
+            continue
         if isinstance(v, int):
-            nk = normalize_url(str(k))
-            out[nk] = max(out.get(nk, 0), v)
+            count = v
+        elif isinstance(v, dict):
+            try:
+                count = int(v.get("count") or 0)
+            except (TypeError, ValueError):
+                continue
+        else:
+            continue
+        nk = normalize_url(str(k))
+        out[nk] = max(out.get(nk, 0), count)
     return out
 
 
@@ -111,6 +129,33 @@ def test_links(links):
 # -----------------------
 # Process markdown (purge dead links)
 # -----------------------
+def _env_flag(name: str) -> bool:
+    return os.environ.get(name, "").strip().lower() in ("1", "true", "yes", "on")
+
+
+def max_purge_allowed(total_rows: int) -> int:
+    """Largest number of table rows a single run may remove."""
+    if total_rows <= 0:
+        return 0
+    # int() truncates; keep at least 1 so tiny lists can still drop a single dead row.
+    by_ratio = max(1, int(total_rows * MAX_PURGE_RATIO))
+    return min(MAX_PURGE_ABS, by_ratio)
+
+
+def count_unique_failures(table_norms: list[str], results: dict) -> tuple[int, int]:
+    unique = list(dict.fromkeys(table_norms))
+    failed = sum(1 for n in unique if not results.get(n, False))
+    return len(unique), failed
+
+
+def write_abort_report(payload: dict) -> None:
+    try:
+        with open(ABORT_FILE, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2)
+    except OSError:
+        pass
+
+
 def process(content, results, status):
     """Update failure counts; optionally drop rows that hit FAIL_THRESHOLD.
 
@@ -120,12 +165,64 @@ def process(content, results, status):
     Failure counts in link_status.json advance each run. When purging is enabled
     (default in CI unless LINK_CHECK_NO_PURGE=true), rows at or above
     FAIL_THRESHOLD consecutive failures are removed from list.md.
+
+    Safety rails (both skip status updates and purges for the run):
+    - MASS_FAIL_RATIO: too many unique URLs failed this run (likely runner outage).
+    - MAX_PURGE_ABS / MAX_PURGE_RATIO: would remove too many rows in one pass.
     """
-    no_purge = os.environ.get("LINK_CHECK_NO_PURGE", "").lower() in (
-        "1",
-        "true",
-        "yes",
-    )
+    no_purge = _env_flag("LINK_CHECK_NO_PURGE")
+
+    lines = content.splitlines()
+    table_norms: list[str] = []
+    for line in lines:
+        match = _TABLE_LINK_ROW.search(line)
+        if match:
+            table_norms.append(normalize_url(match.group(1)))
+
+    unique_n, failed_n = count_unique_failures(table_norms, results)
+    fail_ratio = (failed_n / unique_n) if unique_n else 0.0
+    mass_fail = unique_n >= 50 and fail_ratio >= MASS_FAIL_RATIO
+
+    # Preview how many rows would be purged if we applied normal rules.
+    would_purge_norms: set[str] = set()
+    if not no_purge and not mass_fail:
+        for norm in dict.fromkeys(table_norms):
+            if results.get(norm, False):
+                continue
+            prev = int(status.get(norm, 0) or 0)
+            if prev + 1 >= FAIL_THRESHOLD:
+                would_purge_norms.add(norm)
+    would_purge_rows = sum(1 for n in table_norms if n in would_purge_norms)
+    purge_cap = max_purge_allowed(len(table_norms))
+    purge_capped = (not no_purge) and (not mass_fail) and would_purge_rows > purge_cap
+
+    if mass_fail or purge_capped:
+        reason = "mass_fail" if mass_fail else "purge_cap"
+        write_abort_report(
+            {
+                "aborted": True,
+                "reason": reason,
+                "unique_urls": unique_n,
+                "failed_urls": failed_n,
+                "fail_ratio": round(fail_ratio, 4),
+                "mass_fail_ratio": MASS_FAIL_RATIO,
+                "would_purge_rows": would_purge_rows,
+                "purge_cap": purge_cap,
+                "max_purge_abs": MAX_PURGE_ABS,
+                "max_purge_ratio": MAX_PURGE_RATIO,
+                "message": (
+                    "Skipping failure-count updates and purges for this run to protect the list."
+                ),
+            }
+        )
+        print(
+            f"[link_checker] ABORT ({reason}): failed {failed_n}/{unique_n} "
+            f"({fail_ratio:.1%}); would purge {would_purge_rows} rows "
+            f"(cap {purge_cap}). Leaving list.md and link_status.json unchanged.",
+            flush=True,
+        )
+        # Keep every table row; do not mutate status.
+        return content, len(table_norms), 0, {"aborted": True, "reason": reason}
 
     new_lines: list[str] = []
     # First row for this URL in this run decides keep/remove; duplicate rows match it.
@@ -134,7 +231,7 @@ def process(content, results, status):
     kept = 0
     removed = 0
 
-    for line in content.splitlines():
+    for line in lines:
         match = _TABLE_LINK_ROW.search(line)
 
         if match:
@@ -174,7 +271,13 @@ def process(content, results, status):
         else:
             new_lines.append(line)
 
-    return "\n".join(new_lines), kept, removed
+    if os.path.isfile(ABORT_FILE):
+        try:
+            os.remove(ABORT_FILE)
+        except OSError:
+            pass
+
+    return "\n".join(new_lines), kept, removed, {"aborted": False, "reason": ""}
 
 
 # -----------------------
@@ -372,7 +475,32 @@ def main():
 
     results = test_links(links)
 
-    content, kept, removed = process(raw, results, status)
+    content, kept, removed, guard = process(raw, results, status)
+
+    if guard.get("aborted"):
+        # Leave list.md and status file untouched; still emit commit_info so CI
+        # can see removed=0 / current totals without rewriting the list.
+        total = len(re.findall(r"^\|\s*\|\s*https?://", raw, re.MULTILINE))
+        final_version, final_rev, _ = parse_list_version_revision(raw)
+        commit_meta = {
+            "version": final_version,
+            "revision": final_rev,
+            "removed": 0,
+            "total": total,
+            "links_changed": False,
+            "release_published": False,
+            "aborted": True,
+            "abort_reason": guard.get("reason") or "",
+        }
+        with open("commit_info.json", "w", encoding="utf-8") as f:
+            json.dump(commit_meta, f, indent=2)
+        with open("commit_info.txt", "w", encoding="utf-8") as f:
+            f.write(f"{final_version}|{final_rev}|0|{total}")
+        print(
+            "[link_checker] Exiting with code 2 (purge aborted; no list changes written).",
+            flush=True,
+        )
+        return 2
 
     content = remove_empty_provider_sections(content)
     content = sync_all_section_counts(content)
@@ -409,12 +537,15 @@ def main():
         "total": total,
         "links_changed": links_changed,
         "release_published": release_published,
+        "aborted": False,
+        "abort_reason": "",
     }
     with open("commit_info.json", "w", encoding="utf-8") as f:
         json.dump(commit_meta, f, indent=2)
     with open("commit_info.txt", "w", encoding="utf-8") as f:
         f.write(f"{final_version}|{final_rev}|{removed}|{total}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

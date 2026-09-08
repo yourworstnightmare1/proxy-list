@@ -52,6 +52,7 @@ jobs:
           pip install requests
 
       - name: Run link checker
+        id: linkcheck
         env:
           LINK_CHECK_NO_PURGE: ${{ vars.LINK_CHECK_NO_PURGE || 'false' }}
           LINK_CHECK_PUBLISH_RELEASE: ${{ github.event_name == 'workflow_dispatch' && inputs.publish_release && 'true' || '' }}
@@ -62,12 +63,25 @@ jobs:
           EXIT_CODE=$?
           echo "Script exit code: $EXIT_CODE"
           set -e
+          echo "exit_code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
+          if [ "$EXIT_CODE" = "2" ]; then
+            echo "::error::Link checker aborted (mass failure or purge cap). list.md was left unchanged to prevent wiping the list."
+            if test -f link_check_abort.json; then
+              echo "Abort report:"; cat link_check_abort.json
+            fi
+            exit 1
+          fi
+          if [ "$EXIT_CODE" != "0" ]; then
+            echo "::warning::Link checker exited with $EXIT_CODE; continuing to export current list state."
+          fi
 
       - name: Rebuild unsorted list
+        if: steps.linkcheck.outputs.exit_code != '2'
         run: |
           python scripts/update_unsorted_from_raw.py
 
       - name: Export web data
+        if: steps.linkcheck.outputs.exit_code != '2'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -77,6 +91,7 @@ jobs:
           python scripts/build_gdb_stats.py
 
       - name: Debug commit_info
+        if: steps.linkcheck.outputs.exit_code != '2'
         run: |
           if test -f commit_info.json; then
             echo "commit_info.json:"; cat commit_info.json
@@ -88,6 +103,7 @@ jobs:
       # Prefer JSON from link_checker (no pipe/awk ambiguity). Fallback to legacy .txt
       - name: Read commit info
         id: commitinfo
+        if: steps.linkcheck.outputs.exit_code != '2'
         shell: bash
         run: |
           python3 << 'PY'
@@ -146,6 +162,7 @@ jobs:
           PY
 
       - name: Commit changes
+        if: steps.linkcheck.outputs.exit_code != '2'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

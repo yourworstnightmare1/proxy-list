@@ -112,6 +112,20 @@ def run_pipeline(
         git_pull(repo_root)
 
     link_checker = _run([py, "scripts/link_checker.py"], cwd=repo_root, check=False)
+    if link_checker.returncode == 2:
+        info = read_commit_info(repo_root)
+        print(
+            "[pipeline] Link checker aborted purge (exit 2); skipping export/commit.",
+            flush=True,
+        )
+        return {
+            "ok": False,
+            "aborted": True,
+            "link_checker_exit": 2,
+            "committed": False,
+            **info,
+        }
+
     _run([py, "scripts/update_unsorted_from_raw.py"], cwd=repo_root)
     _run([py, "scripts/update_link_check_meta.py"], cwd=repo_root)
     _run([py, "scripts/convert_list_to_json.py"], cwd=repo_root)
