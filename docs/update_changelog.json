@@ -3,6 +3,12 @@
   "entries": [
     {
       "version": "v7.1.2",
+      "revision": "r285",
+      "released": "September 8, 2026",
+      "update_notice": "- Restored ~41,700 sorted links that a false-positive link-check run purged on September 8, 2026 (list, sections, and filter coverage returned to the pre-purge snapshot)\n- Redesigned sync submissions action to avoid Firebase quota exhaustion\n- Readded 2 contributed links back to the list that were removed because of a false positive from the link check action\n- Added 600+ links (no filter data yet)"
+    },
+    {
+      "version": "v7.1.2",
       "revision": "r283",
       "released": "September 3, 2026",
       "update_notice": "- Redesigned sync submissions action to avoid Firebase quota exhaustion\n- Readded 2 contributed links back to the list that were removed because of a false positive from the link check action\n- Added 600+ links (no filter data yet)"
