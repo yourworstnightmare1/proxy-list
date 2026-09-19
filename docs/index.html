@@ -1895,6 +1895,180 @@
     .summary-backdrop.random-link-backdrop {
       z-index: 37;
     }
+    .summary-backdrop.welcome-tour-backdrop {
+      z-index: 40;
+    }
+    .summary-modal.welcome-tour-modal {
+      width: min(720px, 100%);
+      max-height: 92vh;
+    }
+    .welcome-tour-body {
+      gap: 0.85rem;
+      padding: 1rem 1.1rem 1.15rem;
+    }
+    .welcome-tour-intro p,
+    .welcome-tour-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .welcome-tour-intro p {
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .welcome-tour-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.35rem;
+    }
+    .welcome-tour-step-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .welcome-tour-video-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #0a0a0a;
+    }
+    .welcome-tour-video-wrap video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #0a0a0a;
+    }
+    .welcome-tour-kbd {
+      display: inline-block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85em;
+      padding: 0.05em 0.4em;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+    }
+    html[data-theme="light"] .welcome-tour-kbd {
+      background: rgba(0, 0, 0, 0.05);
+    }
+    .summary-backdrop.welcome-tour-backdrop.welcome-tour-backdrop--step {
+      align-items: flex-end;
+      justify-content: flex-end;
+      /* Dimming comes from the highlight ring shadow so targets stay fully bright. */
+      background: transparent;
+      pointer-events: none;
+    }
+    .summary-backdrop.welcome-tour-backdrop.welcome-tour-backdrop--step .welcome-tour-modal {
+      pointer-events: auto;
+    }
+    .summary-modal.welcome-tour-modal.welcome-tour-modal--step {
+      width: min(520px, 100%);
+      max-height: min(78vh, 640px);
+      box-shadow:
+        0 16px 36px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+    html.welcome-tour-spotlighting .sidebar-column {
+      position: relative;
+      z-index: 45;
+    }
+    html.welcome-tour-spotlighting #quickSearchPaletteHint {
+      position: relative;
+      z-index: 46;
+    }
+    .welcome-tour-highlight {
+      position: relative !important;
+      z-index: 45 !important;
+      outline: 2px solid #9fd0ff !important;
+      outline-offset: 4px;
+      background: #1c2430 !important;
+      color: #f5f8fc !important;
+      border-color: #9fd0ff !important;
+      filter: none !important;
+      opacity: 1 !important;
+      box-shadow:
+        0 0 0 4px rgba(159, 208, 255, 0.55),
+        0 0 28px 4px rgba(108, 179, 255, 0.55),
+        0 0 0 9999px rgba(4, 8, 14, 0.72) !important;
+      border-radius: 8px;
+      animation: welcome-tour-pulse 1.6s ease-in-out infinite;
+    }
+    .welcome-tour-highlight.welcome-tour-highlight--secondary {
+      box-shadow:
+        0 0 0 4px rgba(159, 208, 255, 0.55),
+        0 0 22px 2px rgba(108, 179, 255, 0.45) !important;
+      z-index: 46 !important;
+      animation: welcome-tour-pulse-ring 1.6s ease-in-out infinite;
+    }
+    .welcome-tour-highlight .sidebar-btn-icon {
+      color: #f5f8fc !important;
+      opacity: 1 !important;
+    }
+    html[data-theme="light"] .welcome-tour-highlight {
+      outline-color: #2563eb !important;
+      background: #ffffff !important;
+      color: #0f172a !important;
+      border-color: #2563eb !important;
+      box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.35),
+        0 0 24px 4px rgba(37, 99, 235, 0.35),
+        0 0 0 9999px rgba(15, 23, 42, 0.55) !important;
+      animation-name: welcome-tour-pulse-light;
+    }
+    html[data-theme="light"] .welcome-tour-highlight.welcome-tour-highlight--secondary {
+      box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.35),
+        0 0 18px 2px rgba(37, 99, 235, 0.3) !important;
+      animation-name: welcome-tour-pulse-ring-light;
+    }
+    @keyframes welcome-tour-pulse {
+      0%, 100% {
+        outline-color: #9fd0ff;
+        box-shadow:
+          0 0 0 4px rgba(159, 208, 255, 0.55),
+          0 0 28px 4px rgba(108, 179, 255, 0.55),
+          0 0 0 9999px rgba(4, 8, 14, 0.72);
+      }
+      50% {
+        outline-color: #d7ecff;
+        box-shadow:
+          0 0 0 5px rgba(215, 236, 255, 0.75),
+          0 0 40px 10px rgba(159, 208, 255, 0.75),
+          0 0 0 9999px rgba(4, 8, 14, 0.72);
+      }
+    }
+    @keyframes welcome-tour-pulse-light {
+      0%, 100% {
+        outline-color: #2563eb;
+        box-shadow:
+          0 0 0 4px rgba(37, 99, 235, 0.35),
+          0 0 24px 4px rgba(37, 99, 235, 0.35),
+          0 0 0 9999px rgba(15, 23, 42, 0.55);
+      }
+      50% {
+        outline-color: #3b82f6;
+        box-shadow:
+          0 0 0 5px rgba(59, 130, 246, 0.55),
+          0 0 36px 8px rgba(59, 130, 246, 0.5),
+          0 0 0 9999px rgba(15, 23, 42, 0.55);
+      }
+    }
+    @keyframes welcome-tour-pulse-ring {
+      0%, 100% { outline-color: #9fd0ff; }
+      50% { outline-color: #d7ecff; }
+    }
+    @keyframes welcome-tour-pulse-ring-light {
+      0%, 100% { outline-color: #2563eb; }
+      50% { outline-color: #3b82f6; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .welcome-tour-highlight { animation: none; }
+    }
     .summary-modal.random-link-modal {
       width: min(420px, 100%);
       overflow: hidden;
@@ -2820,7 +2994,8 @@
     }
     html.embed-mode #siteUpdateBanner,
     html.embed-mode .account-corner,
-    html.embed-mode .embed-hide { display: none !important; }
+    html.embed-mode .embed-hide,
+    html.embed-mode #welcomeTourBackdrop { display: none !important; }
     html.embed-mode header { padding: 0.65rem 1rem; }
     html.embed-mode #headerSub { display: none; }
     html.embed-mode .site-footer { padding: 0.65rem 1rem; font-size: 0.88rem; }
@@ -2956,7 +3131,7 @@
             <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a1 1 0 0 1-.85-.47l-.9-1.34A1 1 0 0 0 9.5 3.5H4a2 2 0 0 0-2 2v12.5A2 2 0 0 0 4 20z"/></svg>
             Community folders
           </a>
-          <a class="btn" href="./stats/">
+          <a class="btn" href="./stats/" id="sidebarStatsLink">
             <svg class="sidebar-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             Statistics
           </a>
@@ -3374,6 +3549,11 @@
               <option value="mobile">Mobile</option>
             </select>
           </div>
+          <div class="settings-field">
+            <span class="settings-label">Welcome Tour</span>
+            <p class="settings-desc">View the first-visit walkthrough again (filters, search, updates, statistics, and settings).</p>
+            <button class="btn" id="settingsReplayWelcomeTourBtn" type="button">View welcome tour</button>
+          </div>
         </div>
         <div class="settings-section">
           <h3>Filters &amp; Links</h3>
@@ -3620,6 +3800,34 @@
             <span class="settings-label">Reset Settings to Default</span>
             <p class="settings-desc">Resets all your settings.</p>
             <button class="btn" id="settingsResetBtn" type="button">Reset settings</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="summary-backdrop welcome-tour-backdrop" id="welcomeTourBackdrop" aria-hidden="true">
+    <section class="summary-modal welcome-tour-modal" role="dialog" aria-modal="true" aria-labelledby="welcomeTourTitle">
+      <div class="summary-head">
+        <h2 class="summary-title" id="welcomeTourTitle">Welcome to the Proxy List</h2>
+        <span class="welcome-tour-step-label" id="welcomeTourStepLabel" hidden></span>
+      </div>
+      <div class="summary-body welcome-tour-body">
+        <div id="welcomeTourIntro">
+          <p>Want to view the welcome tour?</p>
+          <div class="welcome-tour-actions">
+            <button class="btn btn-active" id="welcomeTourContinueBtn" type="button">Continue</button>
+            <button class="btn" id="welcomeTourSkipBtn" type="button">Skip Tutorial</button>
+          </div>
+        </div>
+        <div id="welcomeTourStep" hidden>
+          <div class="welcome-tour-video-wrap">
+            <video id="welcomeTourVideo" playsinline controls muted loop preload="metadata"></video>
+          </div>
+          <p class="welcome-tour-desc" id="welcomeTourDesc"></p>
+          <div class="welcome-tour-actions">
+            <button class="btn" id="welcomeTourBackBtn" type="button">Back</button>
+            <button class="btn btn-active" id="welcomeTourNextBtn" type="button">Next</button>
+            <button class="btn" id="welcomeTourSkipInStepBtn" type="button">Skip Tutorial</button>
           </div>
         </div>
       </div>
@@ -4253,8 +4461,373 @@
       if (resolveDeviceSizing() !== "mobile") return;
       const updateBd = $("updateBackdrop");
       if (updateBd && updateBd.classList.contains("open")) return;
+      if (isWelcomeTourOpen()) return;
       if (isMobileAutoResizeNoticeOpen()) return;
       openMobileAutoResizeNotice();
+    }
+
+    const LS_WELCOME_TOUR_KEY = "proxyList_welcomeTour_v1";
+    const WELCOME_TOUR_VIDEO_BASE = "./welcome-demo/";
+    let welcomeTourStepIndex = -1;
+    let welcomeTourVideoCandidates = [];
+    let welcomeTourVideoCandidateIdx = 0;
+    let welcomeTourWired = false;
+
+    function welcomeTourSearchShortcutPhrase() {
+      if (isMobileQuickSearchHint()) {
+        return "tap the Quick Search Palette control";
+      }
+      if (isMacLikeShortcutPlatform()) {
+        return '<kbd class="welcome-tour-kbd">Cmd</kbd>+<kbd class="welcome-tour-kbd">Y</kbd>';
+      }
+      return '<kbd class="welcome-tour-kbd">Ctrl</kbd>+<kbd class="welcome-tour-kbd">Y</kbd>';
+    }
+
+    function welcomeTourSteps() {
+      return [
+        {
+          id: "filter_select_demo",
+          title: "Filters &amp; sorting",
+          description:
+            "Sort blocked from unblocked by choosing your web filter and other options to improve how the list sorts links.",
+          highlight: ["#selectFilterBtn"],
+        },
+        {
+          id: "normal_search_and_palette",
+          title: "Search",
+          descriptionHtml:
+            "Want to search for links? Use the search bar next to the sorting filters or " +
+            welcomeTourSearchShortcutPhrase() +
+            " to open the Quick Search Palette at any time.",
+          highlight: [".search-wrap", "#quickSearchPaletteHint"],
+        },
+        {
+          id: "changelog_demo",
+          title: "Update Notice",
+          description:
+            "Missed an update or didn't catch what was new? The Update Notice button will show the most recent update changelog, along with an archived list of all other changes since the site's creation.",
+          highlight: ["#updateNoticeBtn"],
+        },
+        {
+          id: "statistics_navigation_demo",
+          title: "Statistics",
+          description:
+            "Want to get stats on providers or filters or databases? Visit statistics and get detailed info.",
+          highlight: ["#sidebarStatsLink"],
+        },
+        {
+          id: "settings_demo",
+          title: "Settings",
+          description:
+            "Want to customize the list to your liking or get better performance on your device? Visit Settings and change them at any time.",
+          highlight: ["#openSettingsBtn"],
+        },
+      ];
+    }
+
+    function welcomeTourOsSlug() {
+      const ua = String(navigator.userAgent || "");
+      const platform = String(navigator.platform || "");
+      const hay = ua + " " + platform;
+      if (/Mac|Macintosh/i.test(hay) && !/iPhone|iPad|iPod/i.test(hay)) {
+        // iPadOS desktop UA looks like Mac; treat touch Macs as unknown → Windows videos.
+        if (Number(navigator.maxTouchPoints || 0) > 1 && /\bMacintosh\b/i.test(ua)) {
+          return "windows11";
+        }
+        return "macos26";
+      }
+      if (/Win/i.test(hay)) return "windows11";
+      return "windows11";
+    }
+
+    function welcomeTourThemeSlug() {
+      const t = (appSettings && appSettings.theme) || "dark";
+      if (t === "light") return "light";
+      if (t === "auto") {
+        try {
+          if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+            return "light";
+          }
+        } catch (_) {}
+        return "dark";
+      }
+      return "dark";
+    }
+
+    function welcomeTourVideoFileCandidates(stepId) {
+      const os = welcomeTourOsSlug();
+      const theme = welcomeTourThemeSlug();
+      const otherTheme = theme === "light" ? "dark" : "light";
+      const otherOs = os === "macos26" ? "windows11" : "macos26";
+      const names = [
+        stepId + "_" + os + "_" + theme + "_16x9.mp4",
+        stepId + "_" + os + "_" + otherTheme + "_16x9.mp4",
+        stepId + "_windows11_" + theme + "_16x9.mp4",
+        stepId + "_windows11_" + otherTheme + "_16x9.mp4",
+        stepId + "_" + otherOs + "_" + theme + "_16x9.mp4",
+        stepId + "_" + otherOs + "_" + otherTheme + "_16x9.mp4",
+      ];
+      const seen = new Set();
+      const out = [];
+      for (const n of names) {
+        if (seen.has(n)) continue;
+        seen.add(n);
+        out.push(WELCOME_TOUR_VIDEO_BASE + n);
+      }
+      return out;
+    }
+
+    function ensureWelcomeTourSidebarVisible() {
+      if (!document.documentElement.classList.contains("sidebar-collapsed")) return;
+      document.documentElement.classList.remove("sidebar-collapsed");
+      try {
+        localStorage.setItem(LS_SIDEBAR_COLLAPSED_KEY, "0");
+      } catch (_) {}
+      if (typeof syncSidebarToggleLabel === "function") syncSidebarToggleLabel();
+    }
+
+    function clearWelcomeTourHighlights() {
+      document.documentElement.classList.remove("welcome-tour-spotlighting");
+      document.querySelectorAll(".welcome-tour-highlight").forEach((el) => {
+        el.classList.remove("welcome-tour-highlight", "welcome-tour-highlight--secondary");
+      });
+      const bd = $("welcomeTourBackdrop");
+      const modal = bd && bd.querySelector(".welcome-tour-modal");
+      if (bd) bd.classList.remove("welcome-tour-backdrop--step");
+      if (modal) modal.classList.remove("welcome-tour-modal--step");
+    }
+
+    function applyWelcomeTourHighlights(selectors) {
+      clearWelcomeTourHighlights();
+      const list = Array.isArray(selectors) ? selectors : [];
+      if (!list.length) return;
+      ensureWelcomeTourSidebarVisible();
+      document.documentElement.classList.add("welcome-tour-spotlighting");
+      const bd = $("welcomeTourBackdrop");
+      const modal = bd && bd.querySelector(".welcome-tour-modal");
+      if (bd) bd.classList.add("welcome-tour-backdrop--step");
+      if (modal) modal.classList.add("welcome-tour-modal--step");
+      let first = null;
+      let applied = 0;
+      for (const sel of list) {
+        if (!sel) continue;
+        let el = null;
+        try {
+          el = document.querySelector(sel);
+        } catch (_) {
+          el = null;
+        }
+        if (!el) continue;
+        el.classList.add("welcome-tour-highlight");
+        if (applied > 0) el.classList.add("welcome-tour-highlight--secondary");
+        if (!first) first = el;
+        applied += 1;
+      }
+      if (first && typeof first.scrollIntoView === "function") {
+        try {
+          first.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+        } catch (_) {
+          try {
+            first.scrollIntoView(true);
+          } catch (__) {}
+        }
+      }
+    }
+
+    function hasCompletedWelcomeTour() {
+      try {
+        const v = localStorage.getItem(LS_WELCOME_TOUR_KEY);
+        return v === "done" || v === "skipped";
+      } catch (_) {
+        return false;
+      }
+    }
+
+    function markWelcomeTourComplete(status) {
+      try {
+        localStorage.setItem(LS_WELCOME_TOUR_KEY, status === "skipped" ? "skipped" : "done");
+      } catch (_) {}
+    }
+
+    function isWelcomeTourOpen() {
+      const bd = $("welcomeTourBackdrop");
+      return !!(bd && bd.classList.contains("open"));
+    }
+
+    function stopWelcomeTourVideo() {
+      const video = $("welcomeTourVideo");
+      if (!video) return;
+      try {
+        video.pause();
+        video.removeAttribute("src");
+        video.load();
+      } catch (_) {}
+    }
+
+    function loadWelcomeTourVideo(candidates) {
+      const video = $("welcomeTourVideo");
+      if (!video) return;
+      welcomeTourVideoCandidates = candidates || [];
+      welcomeTourVideoCandidateIdx = 0;
+      const tryNext = () => {
+        if (welcomeTourVideoCandidateIdx >= welcomeTourVideoCandidates.length) {
+          video.removeAttribute("src");
+          return;
+        }
+        const src = welcomeTourVideoCandidates[welcomeTourVideoCandidateIdx++];
+        video.onerror = () => tryNext();
+        video.onloadeddata = () => {
+          video.onerror = null;
+          const playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === "function") {
+            playPromise.catch(() => {});
+          }
+        };
+        video.src = src;
+        video.load();
+      };
+      tryNext();
+    }
+
+    function showWelcomeTourIntro() {
+      welcomeTourStepIndex = -1;
+      const intro = $("welcomeTourIntro");
+      const step = $("welcomeTourStep");
+      const title = $("welcomeTourTitle");
+      const label = $("welcomeTourStepLabel");
+      if (intro) intro.hidden = false;
+      if (step) step.hidden = true;
+      if (title) title.textContent = "Welcome to the Proxy List";
+      if (label) {
+        label.hidden = true;
+        label.textContent = "";
+      }
+      stopWelcomeTourVideo();
+      clearWelcomeTourHighlights();
+    }
+
+    function renderWelcomeTourStep(index) {
+      const steps = welcomeTourSteps();
+      if (index < 0 || index >= steps.length) return;
+      welcomeTourStepIndex = index;
+      const item = steps[index];
+      const intro = $("welcomeTourIntro");
+      const stepEl = $("welcomeTourStep");
+      const title = $("welcomeTourTitle");
+      const label = $("welcomeTourStepLabel");
+      const desc = $("welcomeTourDesc");
+      const nextBtn = $("welcomeTourNextBtn");
+      const backBtn = $("welcomeTourBackBtn");
+      if (intro) intro.hidden = true;
+      if (stepEl) stepEl.hidden = false;
+      if (title) setHtml(title, item.title || "Welcome to the Proxy List");
+      if (label) {
+        label.hidden = false;
+        label.textContent = "Step " + (index + 1) + " of " + steps.length;
+      }
+      if (desc) {
+        if (item.descriptionHtml) setHtml(desc, item.descriptionHtml);
+        else desc.textContent = item.description || "";
+      }
+      if (nextBtn) nextBtn.textContent = index >= steps.length - 1 ? "Finish" : "Next";
+      if (backBtn) backBtn.disabled = false;
+      loadWelcomeTourVideo(welcomeTourVideoFileCandidates(item.id));
+      applyWelcomeTourHighlights(item.highlight);
+    }
+
+    function openWelcomeTour(opts) {
+      const force = !!(opts && opts.force);
+      const bd = $("welcomeTourBackdrop");
+      if (!bd) return;
+      wireWelcomeTourOnce();
+      ensureWelcomeTourSidebarVisible();
+      showWelcomeTourIntro();
+      bd.classList.add("open");
+      bd.setAttribute("aria-hidden", "false");
+      const continueBtn = $("welcomeTourContinueBtn");
+      if (continueBtn && typeof continueBtn.focus === "function") {
+        setTimeout(() => continueBtn.focus(), 0);
+      }
+      if (force) {
+        /* replay from settings — do not require first-visit */
+      }
+    }
+
+    function closeWelcomeTour(status) {
+      const bd = $("welcomeTourBackdrop");
+      stopWelcomeTourVideo();
+      clearWelcomeTourHighlights();
+      if (bd) {
+        bd.classList.remove("open");
+        bd.setAttribute("aria-hidden", "true");
+      }
+      welcomeTourStepIndex = -1;
+      if (status) markWelcomeTourComplete(status);
+      maybeShowMobileAutoResizeNotice();
+    }
+
+    function wireWelcomeTourOnce() {
+      if (welcomeTourWired) return;
+      welcomeTourWired = true;
+      const continueBtn = $("welcomeTourContinueBtn");
+      const skipBtn = $("welcomeTourSkipBtn");
+      const skipInStep = $("welcomeTourSkipInStepBtn");
+      const nextBtn = $("welcomeTourNextBtn");
+      const backBtn = $("welcomeTourBackBtn");
+      if (continueBtn) {
+        continueBtn.addEventListener("click", () => renderWelcomeTourStep(0));
+      }
+      if (skipBtn) {
+        skipBtn.addEventListener("click", () => closeWelcomeTour("skipped"));
+      }
+      if (skipInStep) {
+        skipInStep.addEventListener("click", () => closeWelcomeTour("skipped"));
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+          const steps = welcomeTourSteps();
+          if (welcomeTourStepIndex >= steps.length - 1) {
+            closeWelcomeTour("done");
+            return;
+          }
+          renderWelcomeTourStep(welcomeTourStepIndex + 1);
+        });
+      }
+      if (backBtn) {
+        backBtn.addEventListener("click", () => {
+          if (welcomeTourStepIndex <= 0) {
+            showWelcomeTourIntro();
+            return;
+          }
+          renderWelcomeTourStep(welcomeTourStepIndex - 1);
+        });
+      }
+    }
+
+    function wireWelcomeTourReplayButton() {
+      const replayBtn = $("settingsReplayWelcomeTourBtn");
+      if (!replayBtn || replayBtn.dataset.wired === "1") return;
+      replayBtn.dataset.wired = "1";
+      replayBtn.addEventListener("click", () => {
+        closeSettingsModal();
+        openWelcomeTour({ force: true });
+      });
+    }
+
+    function maybeStartWelcomeTour() {
+      if (typeof isEmbedMode === "function" && isEmbedMode()) return;
+      try {
+        const params = new URLSearchParams(window.location.search || "");
+        if (params.get("welcomeTour") === "1" || params.get("welcomeTour") === "true") {
+          openWelcomeTour({ force: true });
+          return;
+        }
+      } catch (_) {}
+      if (hasCompletedWelcomeTour()) return;
+      if (isWelcomeTourOpen()) return;
+      const updateBd = $("updateBackdrop");
+      if (updateBd && updateBd.classList.contains("open")) return;
+      openWelcomeTour();
     }
 
     function applyAnimationsSetting(enabled) {
@@ -7141,7 +7714,8 @@
       );
     }
 
-    const LS_LINK_RATING_AGG_DISK = "proxyList_linkRatingAggDisk_v1";
+    // v2: do not hydrate 0/0 from disk (v1 poisoned maps after Worker failures and skipped Firestore).
+    const LS_LINK_RATING_AGG_DISK = "proxyList_linkRatingAggDisk_v2";
     const LS_LINK_SAVE_COUNT_DISK = "proxyList_linkSaveCountDisk_v1";
     /** Reuse aggregates across reloads until the list version changes or this TTL passes (saves Spark read quota). */
     const LINK_AGG_DISK_CACHE_MAX_MS = 48 * 60 * 60 * 1000;
@@ -7170,6 +7744,8 @@
         const up = Number(row.u);
         const down = Number(row.d);
         if (!Number.isFinite(up) || !Number.isFinite(down)) continue;
+        // Never hydrate pure 0/0 — Worker/failed fetches used to stamp zeros and block live reads.
+        if (up === 0 && down === 0) continue;
         linkRatingAggByHash.set(h, { up, down });
       }
     }
@@ -7472,7 +8048,8 @@
         typeof window.ProxyListPresence !== "undefined" &&
         typeof window.ProxyListPresence.apiUrl === "function";
       if (!sharedApiAvailable || !rawNorms.length) return false;
-      const WORKER_RATING_BATCH = 80;
+      // Keep batches small: Worker Cache API + Firestore batchGet hit subrequest limits around ~50.
+      const WORKER_RATING_BATCH = 25;
       let fetchedAny = false;
       for (let offset = 0; offset < rawNorms.length; offset += WORKER_RATING_BATCH) {
         const batch = rawNorms.slice(offset, offset + WORKER_RATING_BATCH);
@@ -7486,6 +8063,9 @@
           if (!res.ok) continue;
           const data = await res.json();
           if (!(data && data.ok && data.ratings && typeof data.ratings === "object")) continue;
+          const ratingKeys = Object.keys(data.ratings);
+          // Empty object usually means Worker Firebase read failed (quota/token) — don't treat as success.
+          if (!ratingKeys.length) continue;
           fetchedAny = true;
           for (const n of batch) {
             const workerKey = normalizeUrlKeyForClicks(n);
@@ -7582,7 +8162,12 @@
 
         // Fetch ALL variant hashes (modern + legacy). Do not stamp modern misses as
         // 0/0 before legacy reads — ratings often live only on the legacy hash doc.
-        const toFetchAgg = hashes.filter((h) => !linkRatingAggByHash.has(h));
+        // Revalidate 0/0 entries too (disk/Worker may have poisoned them).
+        const toFetchAgg = hashes.filter((h) => {
+          const ag = linkRatingAggByHash.get(h);
+          if (!ag) return true;
+          return (Number(ag.up) || 0) === 0 && (Number(ag.down) || 0) === 0;
+        });
         await parallelFirestoreDocGets("linkRatings", toFetchAgg, (h, snap) => {
           if (snap.exists) {
             const d = snap.data() || {};
@@ -8353,7 +8938,14 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ url: norm }),
           mode: "cors",
-          keepalive: true,
+          // keepalive POSTs often fail under Scramjet/Ultraviolet service workers.
+          keepalive: !(
+            window.ProxyListPresence && typeof window.ProxyListPresence.looksLikeWebProxy === "function"
+              ? window.ProxyListPresence.looksLikeWebProxy()
+              : /\/uv\/|ultraviolet|\/scramjet|\/sj\/|bare-mux|\/service\/|\/proxy\//i.test(
+                  String(location.href || "") + String(location.pathname || "")
+                )
+          ),
           }
         );
         if (res.status === 429) {
@@ -8426,7 +9018,7 @@
 
       // Try Worker batch get first (same origin on Cloudflare / workers.dev on local+Pages).
       // Worker accepts at most 80 URLs per request — batch so "load all" still refreshes.
-      const WORKER_CLICK_BATCH = 80;
+      const WORKER_CLICK_BATCH = 25;
       try {
         if (!stillGoing()) return map;
         let fetchedAny = false;
@@ -12998,6 +13590,7 @@
       $("updateBackdrop").classList.remove("open");
       $("updateBackdrop").setAttribute("aria-hidden", "true");
       setSiteUpdateBannerVisible(false);
+      maybeStartWelcomeTour();
       maybeShowMobileAutoResizeNotice();
     }
 
@@ -13390,6 +13983,7 @@
 
     wireSidebarToggle();
     wireOfflineExportOpen();
+    wireWelcomeTourReplayButton();
 
     setContentLoading(true, { progress: 0, message: "Getting data..." });
     applyImportantNotices({});
@@ -14061,6 +14655,7 @@
         return runInitialRender().then(() => {
           finishContentLoading();
           if ($("folderTrustedResults")) refreshFolderTrustedSearchUI(folderTrustedSearchLastQuery);
+          maybeStartWelcomeTour();
           maybeShowMobileAutoResizeNotice();
         });
         });

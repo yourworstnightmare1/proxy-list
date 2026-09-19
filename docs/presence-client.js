@@ -170,11 +170,13 @@
       displayName: opts.displayName ? String(opts.displayName).slice(0, 32) : "",
     };
 
+    // keepalive POSTs often 404/fail under Scramjet/Ultraviolet; skip when proxied.
+    var useKeepalive = !looksLikeWebProxy();
     return fetch(resolveApiUrl("/api/presence-ping"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
-      keepalive: true,
+      keepalive: useKeepalive,
       mode: "cors",
     })
       .then(function (res) {

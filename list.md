@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
-> v7.2 | Released: September 14, 2026
-> r287 | Last Updated: September 14, 2026
+> v7.3 | Released: September 19, 2026
+> r288 | Last Updated: September 19, 2026
 > Total onsite links: 49976 (49633 sorted + 343 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -20,23 +20,13 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 
 ## Update Notice
 
-### New
-- Added a button that allows hiding/showing the sidebar
-- Made filters persist in browser local storage so that you don't have to reapply them each time you go to another page on the site
-- Added 4.9k+ links (no filter data yet)
-- Added debug menu with quick options to some debug settings which can be activated with the backtick key (`) (requires debug mode to be enabled)
-- Made performance menu draggable
-- Made user agent bar minimizable
-- Added list culling preview, which allows you to view how the list is culling/load data in the site
-- Optimized mobile UI
-- Optimized list culling to save performance
-- Added zooming on graphs
-- Improved graph readability
-
 ### Fixed
-- Fixed hitboxes on graph items
-- Security fixes
-- Fixed a bug that caused database changes to not be tracked
+- Fixed rating caching causing ratings to show 0/0
+- Optimized how ratings and clicks are saved through Cloudflare Workers to prevent hitting API limits
+- Fixed a bug occurring when accessing the site on Scramjet and Ultraviolet that caused 404 errors on Firebase/Workers
+
+### New
+- Added a welcome tutorial
 
 # 💜 Selenite
 > [!NOTE]

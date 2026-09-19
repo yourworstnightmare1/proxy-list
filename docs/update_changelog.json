@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.3",
+      "revision": "r288",
+      "released": "September 19, 2026",
+      "update_notice": "### Fixed\n- Fixed rating caching causing ratings to show 0/0\n- Optimized how ratings and clicks are saved through Cloudflare Workers to prevent hitting API limits\n- Fixed a bug occurring when accessing the site on Scramjet and Ultraviolet that caused 404 errors on Firebase/Workers\n\n### New\n- Added a welcome tutorial"
+    },
+    {
       "version": "v7.2",
       "revision": "r287",
       "released": "September 14, 2026",

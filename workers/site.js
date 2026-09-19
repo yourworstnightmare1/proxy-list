@@ -785,16 +785,22 @@ async function firestoreGetCounts(env, norms, ctx) {
   const out = {};
   if (!project || !norms.length) return out;
 
+  // Per-URL Cache API match/put burns subrequests (~2N). Skip cache for larger batches.
+  const useCache = norms.length <= 20;
   const cache = caches.default;
   const missing = [];
-  for (const norm of norms) {
-    const hash = await sha256Hex(norm);
-    const hit = await cache.match(fsClickNormCacheRequest(hash));
-    if (hit) {
-      out[norm] = Number(await hit.text()) || 0;
-    } else {
-      missing.push(norm);
+  if (useCache) {
+    for (const norm of norms) {
+      const hash = await sha256Hex(norm);
+      const hit = await cache.match(fsClickNormCacheRequest(hash));
+      if (hit) {
+        out[norm] = Number(await hit.text()) || 0;
+      } else {
+        missing.push(norm);
+      }
     }
+  } else {
+    missing.push(...norms);
   }
   if (!missing.length) return out;
 
@@ -845,8 +851,8 @@ async function firestoreGetCounts(env, norms, ctx) {
         const found = row && row.found;
         if (!found || !found.name) continue;
         const id = found.name.split("/").pop();
-        const n = found.fields && found.fields.count && found.fields.count.integerValue;
-        idToCount.set(id, n != null ? Number(n) : 0);
+        const n = fsNumberField(found.fields && found.fields.count);
+        idToCount.set(id, n);
       }
     } catch (err) {
       console.error("get_clicks_batch_failed", err);
@@ -873,11 +879,11 @@ async function firestoreGetCounts(env, norms, ctx) {
     // clients keep disk cache instead of treating missing as 0.
     if (sawAny) {
       out[norm] = total;
-      await cachePutClickNorm(norm, total, ctx);
+      if (useCache) await cachePutClickNorm(norm, total, ctx);
     } else if (batchOk) {
       // Confirmed empty (batch succeeded, no docs) — safe to report 0.
       out[norm] = 0;
-      await cachePutClickNorm(norm, 0, ctx);
+      if (useCache) await cachePutClickNorm(norm, 0, ctx);
     }
   }
   return out;
@@ -1087,6 +1093,13 @@ async function handleGetClicks(request, env, ctx) {
   }
 }
 
+function fsNumberField(field) {
+  if (!field || typeof field !== "object") return 0;
+  if (field.integerValue != null) return Number(field.integerValue) || 0;
+  if (field.doubleValue != null) return Math.trunc(Number(field.doubleValue)) || 0;
+  return 0;
+}
+
 async function firestoreGetRatings(env, norms, ctx) {
   const project = env.FIREBASE_PROJECT_ID;
   const out = {};
@@ -1100,29 +1113,17 @@ async function firestoreGetRatings(env, norms, ctx) {
     return out;
   }
 
-  const cache = caches.default;
-  const missing = [];
-  for (const norm of norms) {
-    const hash = await sha256Hex(norm);
-    const cacheReq = new Request(`https://fs-rating-norm.proxy-list.internal/v1/${hash}`);
-    const hit = await cache.match(cacheReq);
-    if (hit) {
-      try {
-        const parsed = JSON.parse(await hit.text());
-        if (parsed && typeof parsed === "object") {
-          out[norm] = { up: Number(parsed.up) || 0, down: Number(parsed.down) || 0 };
-          continue;
-        }
-      } catch (_) {}
-    }
-    missing.push(norm);
-  }
-  if (!missing.length) return out;
+  // Cap batch size: avoid per-URL Cache API (each match/put counts as a subrequest).
+  // Free Workers allow ~50 subrequests; token + a few batchGets must stay under that.
+  const capped = norms.slice(0, 40);
 
   const allIds = [];
   const seenId = new Set();
-  for (const norm of missing) {
-    for (const variant of clickUrlVariants(norm)) {
+  const normVariants = new Map();
+  for (const norm of capped) {
+    const variants = clickUrlVariants(norm);
+    normVariants.set(norm, variants);
+    for (const variant of variants) {
       const id = await sha256Hex(variant);
       if (seenId.has(id)) continue;
       seenId.add(id);
@@ -1149,7 +1150,11 @@ async function firestoreGetRatings(env, norms, ctx) {
           ),
         }),
       });
-      if (!res.ok) continue;
+      if (!res.ok) {
+        const errText = await res.text().catch(() => "");
+        console.error("get_ratings_batch_http", res.status, String(errText).slice(0, 300));
+        continue;
+      }
       batchOk = true;
       const rows = await res.json();
       if (!Array.isArray(rows)) continue;
@@ -1158,10 +1163,10 @@ async function firestoreGetRatings(env, norms, ctx) {
         if (!found || !found.name) continue;
         const id = found.name.split("/").pop();
         const fields = found.fields || {};
-        const up = fields.up && fields.up.integerValue != null ? Number(fields.up.integerValue) : 0;
-        const down =
-          fields.down && fields.down.integerValue != null ? Number(fields.down.integerValue) : 0;
-        idToRating.set(id, { up, down });
+        idToRating.set(id, {
+          up: fsNumberField(fields.up),
+          down: fsNumberField(fields.down),
+        });
       }
     } catch (err) {
       console.error("get_ratings_batch_failed", err);
@@ -1170,11 +1175,11 @@ async function firestoreGetRatings(env, norms, ctx) {
 
   if (!batchOk) return out;
 
-  for (const norm of missing) {
+  for (const norm of capped) {
     let best = { up: 0, down: 0 };
     let sawAny = false;
     const used = new Set();
-    for (const variant of clickUrlVariants(norm)) {
+    for (const variant of normVariants.get(norm) || []) {
       const id = await sha256Hex(variant);
       if (used.has(id)) continue;
       used.add(id);
@@ -1185,20 +1190,8 @@ async function firestoreGetRatings(env, norms, ctx) {
         sawAny = true;
       }
     }
+    // Always include keys so clients can tell "fetched" from "request failed".
     out[norm] = best;
-    const hash = await sha256Hex(norm);
-    const cacheReq = new Request(`https://fs-rating-norm.proxy-list.internal/v1/${hash}`);
-    const put = cache.put(
-      cacheReq,
-      new Response(JSON.stringify(best), {
-        headers: {
-          "Cache-Control": `public, max-age=${FS_CLICK_CACHE_TTL_SEC}`,
-          "Content-Type": "application/json",
-        },
-      })
-    );
-    if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(put);
-    else await put;
   }
   return out;
 }
@@ -1210,7 +1203,7 @@ async function handleGetRatings(request, env, ctx) {
   } catch (_) {
     return json({ ok: false, error: "invalid_json" }, 400);
   }
-  const urls = Array.isArray(body && body.urls) ? body.urls.slice(0, 80) : [];
+  const urls = Array.isArray(body && body.urls) ? body.urls.slice(0, 40) : [];
   const norms = [...new Set(urls.map(normalizeUrl).filter((u) => u && u.length >= 10))];
   try {
     if (!hasFirebaseAdmin(env)) {

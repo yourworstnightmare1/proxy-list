@@ -19,3 +19,4 @@ commit_info.txt
 .env.local
 streamdeck.ps1
 _tmp
+docs/welcome-demo/*.mp4
