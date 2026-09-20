@@ -75,6 +75,15 @@ jobs:
             echo "::warning::Link checker exited with $EXIT_CODE; continuing to export current list state."
           fi
 
+      - name: Upload abort report
+        if: failure() && steps.linkcheck.outputs.exit_code == '2'
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-abort
+          path: link_check_abort.json
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: Rebuild unsorted list
         if: steps.linkcheck.outputs.exit_code != '2'
         run: |

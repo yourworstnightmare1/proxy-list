@@ -119,10 +119,57 @@ def test_small_purge_still_works() -> None:
     expect("https://example.com/dead" not in out, "dead link should be purged")
 
 
+def test_classify_status_soft_ok() -> None:
+    expect(lc.classify_status(200) == "ok", "200")
+    expect(lc.classify_status(301) == "ok", "301")
+    expect(lc.classify_status(403) == "soft_ok", "403 should be reachable")
+    expect(lc.classify_status(401) == "soft_ok", "401")
+    expect(lc.classify_status(429) == "soft_ok", "429")
+    expect(lc.classify_status(503) == "retry", "503")
+    expect(lc.classify_status(404) == "fail", "404")
+    expect(lc.classify_status(410) == "fail", "410")
+
+
+def test_is_working_treats_soft_statuses_as_alive() -> None:
+    class FakeResp:
+        def __init__(self, code: int):
+            self.status_code = code
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+    class FakeSession:
+        def __init__(self, code: int):
+            self.code = code
+            self.headers = {}
+
+        def get(self, *args, **kwargs):
+            return FakeResp(self.code)
+
+        def headers(self):
+            return {}
+
+    # Patch thread-local session factory via module helper.
+    original = lc._session
+    try:
+        for code in (403, 401, 429, 451):
+            lc._session = lambda c=code: FakeSession(c)  # type: ignore[misc,assignment]
+            expect(lc.is_working("https://example.com/blocked", attempts=1) is True, f"code {code}")
+        lc._session = lambda: FakeSession(404)  # type: ignore[misc,assignment]
+        expect(lc.is_working("https://example.com/missing", attempts=1) is False, "404")
+    finally:
+        lc._session = original
+
+
 def main() -> int:
     test_purge_cap_aborts_without_mutating_status()
     test_mass_fail_aborts()
     test_small_purge_still_works()
+    test_classify_status_soft_ok()
+    test_is_working_treats_soft_statuses_as_alive()
     print("ok")
     return 0
 

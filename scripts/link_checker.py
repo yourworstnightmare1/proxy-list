@@ -2,8 +2,10 @@ import os
 import re
 import json
 import sys
+import time
+import threading
 import requests
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 
@@ -25,11 +27,54 @@ MAX_PURGE_RATIO = float(os.environ.get("LINK_CHECK_MAX_PURGE_RATIO", "0.02"))
 MAX_PURGE_ABS = int(os.environ.get("LINK_CHECK_MAX_PURGE_ABS", "250"))
 ABORT_FILE = "link_check_abort.json"
 
+# Probe tuning (GitHub Actions datacenter IPs get blocked by many school proxies).
+CHECK_WORKERS = max(1, int(os.environ.get("LINK_CHECK_WORKERS", "16")))
+CHECK_RETRY_WORKERS = max(1, int(os.environ.get("LINK_CHECK_RETRY_WORKERS", "6")))
+CHECK_ATTEMPTS = max(1, int(os.environ.get("LINK_CHECK_ATTEMPTS", "3")))
+CHECK_CONNECT_TIMEOUT = float(os.environ.get("LINK_CHECK_CONNECT_TIMEOUT", "6"))
+CHECK_READ_TIMEOUT = float(os.environ.get("LINK_CHECK_READ_TIMEOUT", "12"))
+# Host answered but denied this client — still counts as "alive" for purge purposes.
+REACHABLE_SOFT_STATUSES = frozenset({401, 402, 403, 405, 406, 407, 408, 429, 451})
+RETRYABLE_STATUSES = frozenset({408, 425, 429, 500, 502, 503, 504})
+
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
+}
+
 NOTE_CATEGORY_LINE = "> | Category | Capabilities | Protocol(s) | Links |"
 NOTE_SEP_LINE_RE = re.compile(r"^> \| - \|")
 
 # Only proxy table rows should be purged by link failure — not blockquotes or prose with URLs.
 _TABLE_LINK_ROW = re.compile(r"^\|\s*\|\s*(https?://[^\s|]+)", re.IGNORECASE)
+
+_thread_local = threading.local()
+
+
+def _session() -> requests.Session:
+    sess = getattr(_thread_local, "session", None)
+    if sess is None:
+        sess = requests.Session()
+        sess.headers.update(BROWSER_HEADERS)
+        _thread_local.session = sess
+    return sess
+
+
+def classify_status(code: int) -> str:
+    """Return 'ok', 'soft_ok', 'retry', or 'fail' for an HTTP status code."""
+    if code < 400:
+        return "ok"
+    if code in REACHABLE_SOFT_STATUSES:
+        return "soft_ok"
+    if code in RETRYABLE_STATUSES:
+        return "retry"
+    return "fail"
 
 
 # -----------------------
@@ -91,16 +136,58 @@ def save_status(status):
 # -----------------------
 # Test link
 # -----------------------
-def is_working(url):
-    try:
-        r = requests.get(
-            url,
-            timeout=10,
-            headers={"User-Agent": "proxy-list-link-checker/1.0"},
-        )
-        return r.status_code < 400
-    except Exception:
-        return False
+def is_working(url: str, attempts: int | None = None) -> bool:
+    """Return True when the host looks alive enough that we should not purge it.
+
+    GitHub Actions IPs are often blocked (403/401/429) by school filters and CDNs.
+    Those responses still prove the origin is up. Transient timeouts / 5xx are retried.
+    TLS errors after a handshake also count as reachable.
+    """
+    tries = CHECK_ATTEMPTS if attempts is None else max(1, int(attempts))
+    timeout = (CHECK_CONNECT_TIMEOUT, CHECK_READ_TIMEOUT)
+    sess = _session()
+    last_exc: Exception | None = None
+
+    for attempt in range(tries):
+        try:
+            # stream=True: only need status/headers; close immediately to save bandwidth.
+            with sess.get(
+                url,
+                timeout=timeout,
+                allow_redirects=True,
+                stream=True,
+                verify=True,
+            ) as resp:
+                kind = classify_status(int(resp.status_code))
+                if kind in ("ok", "soft_ok"):
+                    return True
+                if kind == "retry" and attempt + 1 < tries:
+                    time.sleep(0.4 * (attempt + 1))
+                    continue
+                # Final non-OK after retries (e.g. persistent 404/410).
+                if kind == "retry":
+                    # Exhausted retries on 5xx/429 — treat as soft-alive if we got any HTTP answer.
+                    return True
+                return False
+        except requests.exceptions.SSLError:
+            # Certificate problems still mean something answered on that host.
+            return True
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as exc:
+            last_exc = exc
+            if attempt + 1 < tries:
+                time.sleep(0.5 * (attempt + 1))
+                continue
+        except requests.exceptions.RequestException as exc:
+            last_exc = exc
+            if attempt + 1 < tries:
+                time.sleep(0.4 * (attempt + 1))
+                continue
+        except Exception as exc:  # noqa: BLE001 — probe must never raise into the pool
+            last_exc = exc
+            break
+
+    _ = last_exc
+    return False
 
 
 def test_links(links):
@@ -113,16 +200,63 @@ def test_links(links):
         if n not in seen_norm:
             seen_norm.add(n)
             unique.append(url)
-    with ThreadPoolExecutor(max_workers=25) as executor:
+
+    total = len(unique)
+    print(f"[link_checker] Probing {total} unique URLs (workers={CHECK_WORKERS})…", flush=True)
+
+    done = 0
+    with ThreadPoolExecutor(max_workers=CHECK_WORKERS) as executor:
         futures = {executor.submit(is_working, url): url for url in unique}
-        for future in futures:
+        for future in as_completed(futures):
             url = futures[future]
             try:
-                ok = future.result()
+                ok = bool(future.result())
             except Exception:
                 ok = False
             n = normalize_url(url)
             results[n] = results.get(n, False) or ok
+            done += 1
+            if done % 2500 == 0 or done == total:
+                ok_n = sum(1 for v in results.values() if v)
+                print(
+                    f"[link_checker] progress {done}/{total} "
+                    f"(ok so far {ok_n}, fail {done - ok_n})",
+                    flush=True,
+                )
+
+    # Second pass: re-check failures more gently (fewer workers, extra attempt).
+    failed = [u for u in unique if not results.get(normalize_url(u), False)]
+    if failed:
+        print(
+            f"[link_checker] Rechecking {len(failed)} failures "
+            f"(workers={CHECK_RETRY_WORKERS})…",
+            flush=True,
+        )
+        recovered = 0
+        with ThreadPoolExecutor(max_workers=CHECK_RETRY_WORKERS) as executor:
+            futures = {
+                executor.submit(is_working, url, CHECK_ATTEMPTS + 1): url for url in failed
+            }
+            for future in as_completed(futures):
+                url = futures[future]
+                try:
+                    ok = bool(future.result())
+                except Exception:
+                    ok = False
+                if ok:
+                    results[normalize_url(url)] = True
+                    recovered += 1
+        print(f"[link_checker] Recheck recovered {recovered}/{len(failed)}", flush=True)
+
+    ok_n = sum(1 for v in results.values() if v)
+    if total:
+        print(
+            f"[link_checker] Probe done: {ok_n} ok / {total - ok_n} fail "
+            f"({(total - ok_n) / total:.1%} fail)",
+            flush=True,
+        )
+    else:
+        print("[link_checker] Probe done: empty", flush=True)
     return results
 
 
@@ -167,7 +301,7 @@ def process(content, results, status):
     FAIL_THRESHOLD consecutive failures are removed from list.md.
 
     Safety rails (both skip status updates and purges for the run):
-    - MASS_FAIL_RATIO: too many unique URLs failed this run (likely runner outage).
+    - MASS_FAIL_RATIO: too many unique URLs fail in one run (likely runner outage).
     - MAX_PURGE_ABS / MAX_PURGE_RATIO: would remove too many rows in one pass.
     """
     no_purge = _env_flag("LINK_CHECK_NO_PURGE")
