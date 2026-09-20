@@ -48,7 +48,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 73 |
+> | Proxy/Games | captcha | Scramjet | 70 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -130,7 +130,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math | N/A | 153 |
+> | Games | GDB:gn-math | N/A | 141 |
 
 > [!IMPORTANT]
 > if the link loads a page saying "user gn-math is blocked" or no games appear on screen, you are using an old version of gn-math that no longer works, please use another link. i also recommend reporting this on our GitHub issues page to prevent other users from running into this issue -> https://github.com/yourworstnightmare1/proxy-list/issues
@@ -295,7 +295,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 40 |
+> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 38 |
 
 > [!IMPORTANT]
 > on some networks, the proxy will load a white screen or an ultraviolet error page, if this happens try using another link as that is known to fix this issue
@@ -552,7 +552,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 29 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 28 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -593,7 +593,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 444 |
+> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 415 |
 > [!IMPORTANT]
 > site has a bunch of ad popup windows, you can close these. it's recommended you use uBlock Origin to view this site without those popups
 
@@ -1247,7 +1247,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:boredom | Scramjet | 7 |
+> | Proxy/Games | GDB:boredom | Scramjet | 6 |
 
 > [!IMPORTANT]
 > Boredom does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1279,7 +1279,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 26 |
+> | Proxy/Games | unknown | unknown | 25 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1318,7 +1318,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 163 |
+> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 160 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -1740,7 +1740,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:gn-math | Scramjet | 369 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:gn-math | Scramjet | 365 |
 
 > [!IMPORTANT]
 > some of these links load a black screen
@@ -2196,7 +2196,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 3 |
+> | Proxy/Games | epoxy, libcurl, captcha, wisp | Scramjet, Ultraviolet, Rammerhead | 2 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2208,7 +2208,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | N/A | N/A | 3 |
+> | Proxy/Games | N/A | N/A | 2 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
@@ -2223,7 +2223,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math | Scramjet | 90 |
+> | Proxy/Games | GDB:gn-math | Scramjet | 80 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2462,7 +2462,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | Unknown | Ultraviolet | 74 |
+> | Proxy | Unknown | Ultraviolet | 54 |
 > [!IMPORTANT]
 > if you were looking for ford links, ford no longer exists and all of its links are now strawberri links
 
@@ -2547,7 +2547,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 7 |
+> | Proxy/Games | unknown | unknown | 5 |
 
 > [!IMPORTANT]
 > for some reason the developers put a 4 tab limit on free users (3 if you have adblock, 8+ if you pay). if you need multitasking use another proxy
@@ -2574,7 +2574,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:utopia | Ultraviolet | 39 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 38 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
@@ -2638,7 +2638,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:lucide | Scramjet | 138 |
+> | Proxy/Games | captcha, GDB:lucide | Scramjet | 137 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -2871,7 +2871,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math | N/A | 267 |
+> | Games | GDB:gn-math | N/A | 66 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -3147,7 +3147,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 6 |
+> | Proxy/Games | captcha | Scramjet | 5 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -21001,7 +21001,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 17386 |
+> | Proxy/Games | unknown | unknown | 16716 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -38420,7 +38420,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 35 |
+> | Proxy/Games | unknown | unknown | 3 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -38505,7 +38505,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet, Ultraviolet | 69 |
+> | Proxy/Games | captcha | Scramjet, Ultraviolet | 67 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://tungtung.vcsa.alalalal.com | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -38615,7 +38615,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 212 |
+> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 211 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://interesting-articles.pages.dev | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -38835,7 +38835,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | pending | pending | 4 |
+> | pending | pending | pending | 1 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -38850,7 +38850,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8358 |
+> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8355 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | http://inasmuch.cryptparty.com/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47442,7 +47442,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | - | 550 |
+> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | - | 469 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -48027,7 +48027,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1408 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1256 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49591,7 +49591,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | N/A | N/A | 3 |
+> | Games | N/A | N/A | 1 |
 > [!IMPORTANT]
 > This section has not been fully categorized or checked for protocol(s) and capabilities. Submitter note: mainly games.
 
@@ -49605,7 +49605,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | N/A | N/A | 3 |
+> | Proxy/Games | N/A | N/A | 1 |
 > [!IMPORTANT]
 > This section has not been fully categorized or checked for protocol(s) and capabilities.
 
@@ -49941,7 +49941,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | tab-cloak | - | 56 |
+> | Games | tab-cloak | - | 54 |
 > [!IMPORTANT]
 > if you closed the initial tab cloak message, you can always enable tab cloak again by clicking the text under the "open games" button on the homepage
 >
@@ -50163,7 +50163,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 459 |
+> | pending | - | - | 413 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
