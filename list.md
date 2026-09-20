@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
-> v7.3.2 | Released: September 19, 2026
-> r290 | Last Updated: September 19, 2026
+> v7.3.3 | Released: September 20, 2026
+> r291 | Last Updated: September 20, 2026
 > Total onsite links: 52468 (52125 sorted + 343 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -15,13 +15,16 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 
 ## Important Notices
 
+### Develop For Proxies With Ease
+Try out my newest project, the [Proxy Development Toolkit](https://github.com/yourworstnightmare1/proxy-development-toolkit)! Easily design and test your websites around proxy functionality, with support for Scramjet and Ultraviolet, 5 different transport methods, and more, supercharged with MCP support for your favorite AI coding agents such as Cursor, Claude, Codex, and more.
+
 ### Google Forms Deprecated
 Google Forms is now deprecated and can no longer be used to submit links or report bugs in favor of our multi-use, more refined, and easier to use on-site submission form framework. [Contribute to the list here](./contribute/)
 
 ## Update Notice
 
 ### New
-- Added 2900+ links with filter data currently being processed
+- Updated filter data for recently added links
 
 
 # 💜 Selenite
