@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.3.2",
+      "revision": "r290",
+      "released": "September 19, 2026",
+      "update_notice": "### New\n- Added 2900+ links with filter data currently being processed"
+    },
+    {
       "version": "v7.3.1",
       "revision": "r289",
       "released": "September 19, 2026",
