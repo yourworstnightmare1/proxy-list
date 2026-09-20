@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.3.1",
+      "revision": "r289",
+      "released": "September 19, 2026",
+      "update_notice": "### Fixed\n- Fixed bug where link checks weren't succeeding\n- Removed 101 broken gn-math links"
+    },
+    {
       "version": "v7.3",
       "revision": "r288",
       "released": "September 19, 2026",
