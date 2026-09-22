@@ -491,7 +491,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 427 |
+> | Proxy/Games | GDB:luminsdk | Scramjet, Ultraviolet | 417 |
 > [!IMPORTANT]
 > site has a bunch of ad popup windows, you can close these. it's recommended you use uBlock Origin to view this site without those popups
 
@@ -580,16 +580,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://s3.amazonaws.com/ernew/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/erubg/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/fernvcsa/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://dcfvgbhjkh.unionvillelacrosse.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://fernunion12o3.unionvillelacrosse.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://fernunionana.unionvillelacrosse.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://localriverviewchurch.unionvillelacrosse.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://dihpopsickleishard.unionvillelacrosse.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | http://cbhbhdchb.unionvillelacrosse.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | http://diufiuvdubid.unionvillelacrosse.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://gnigfinsiu.unionvillelacrosse.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ubwbiucbiua.unionvillelacrosse.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://wegibusiu.unionvillelacrosse.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/writevc/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bullbestyoutuber.s3.us-east-1.amazonaws.com/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/onelastlink/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1260,7 +1250,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 38 |
+> | Proxy/Games | unknown | unknown | 36 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1269,8 +1259,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | - | - | - | - | - | - |
 | | https://alphageo.eclipsecastellon.net/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://chillmath.adcsurkhet.org.np/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://novacs.letiatours.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://virtualgeo.letiatours.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://neatreading.babypos.hk | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://justin.jia.xingtong.tysm.japan.is | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://keenphysics.recreatinganew.com | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -1292,7 +1280,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://brightlogic.bakeryos.net/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://smartpoems.pollsvspoly.com/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://guidedenglish.bakeryos.net/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://shadow.isreallycool.lol | 7/10/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://simplescience.loveyourselfbeauty.au/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://alpha-play40.smartz.wiki | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://lucky-path84.smartz.wiki | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -2183,7 +2170,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | - | - | - | - | - | - |
 | | https://sites.google.com/view/endisendis | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://classroom.reformdecor.org/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
-|  | https://endis.it.com | 7/10/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🏛️ Dominum
 > [!NOTE]
@@ -3341,14 +3327,13 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | - | - | 17632 |
+> | Games | - | - | 17631 |
 
 > [!IMPORTANT]
 > if you are prompted to download an svg/html file, download it as it contains the website since this site mainly uses singlefile over individual domains for distribution
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://vfbiewaenxc.erbilek.com.tr/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | https://duck.classroom-community.com/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | https://duck.classroomgeometry.com/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | https://duck.freezenova.chat/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
@@ -47883,7 +47868,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1155 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1124 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48207,9 +48192,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/images/6854208a1b/catclass-singlefile/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/task4z/catclass-singlefile@cc2ca63/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://arts-bio66.mathmatics.ccwu.cc | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bravedesk9753.ilovestealingfromworkanddoingdrugs.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bravetutor5596.daya.tw/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://calmlearn3983.autoluc.cl/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://catnip-meow29.bridgeportmath.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@main/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@main/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48219,18 +48201,14 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://esm.sh/gh/task4z/classroom-15x@main/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@main/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://feline-geo27.fukushimastudy.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://freshpath4894.ferienwohnung-basel.ch/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@main/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://geometry-modulo91.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd-proxy.ygxz.in/gh/task4z/classroom-15x/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/task4z/classroom-15x/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://quicklesson5253.gloart.hr/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@main/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/task4z/classroom-15x/main/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/task4z/classroom-15x/main/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/images/9b9192ee6a/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://vector-fluff51.task4z.dpdns.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://wisepath1001.embeddedonline.org/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://campus-scholar10.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@main/images/c12bcc8b9b/catclass-cloak/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@main/images/c12bcc8b9b/catclass-cloak/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48278,7 +48256,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@main/images/62ef1648c0/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd-proxy.ygxz.in/gh/task4z/classroom-15x/images/62ef1648c0/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/task4z/classroom-15x/images/62ef1648c0/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://learn-campus23.task4z.dpdns.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://lit-honors26.mathmatics.ccwu.cc | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@main/images/62ef1648c0/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/task4z/classroom-15x/main/images/62ef1648c0/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48323,14 +48300,12 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://speech-scruff89.bridgeportmath.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/images/fd31dc16c7/catclass-singlefile/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bio-civics68.mathmatics.ccwu.cc | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://brightlab7103.awesine.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cattitude-lit62.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/task4z/classroom-15x/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://civics-scratch35.task4z.dpdns.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/task4z/classroom-15x@main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48338,13 +48313,9 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://jsd.onmicrosoft.cn/gh/task4z/classroom-15x/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://math-atom11.fukushimastudy.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://prep-algo81.bridgeportmath.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://primezone7848.hodlpartners.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://quickprep4832.socialnomad.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/task4z/classroom-15x/main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/task4z/classroom-15x/main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://smartclass9284.dynamosolutions.com.ar/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://swiftdesk2788.bostanbul.com.tr/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/images/8597a12c57/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cat-formula88.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@main/images/43c7ccb8b9/catclass-cloak/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48388,7 +48359,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cdn.jsdmirror.com/gh/task4z/classroom-15x/images/e10e0d4a7e/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@main/images/e10e0d4a7e/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/main/images/e10e0d4a7e/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://degree-force52.task4z.dpdns.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/task4z/classroom-15x@main/images/e10e0d4a7e/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@main/images/e10e0d4a7e/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@main/images/e10e0d4a7e/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48448,7 +48418,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://jsd-proxy.ygxz.in/gh/task4z/classroom-15x/images/6083e58d4b/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/task4z/classroom-15x/images/6083e58d4b/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://lecture-cell10.fukushimastudy.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://modulo-model34.task4z.dpdns.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@main/images/6083e58d4b/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://purrfect-institute10.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@main/images/6083e58d4b/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48478,13 +48447,11 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://rawcdn.githack.com/task4z/classroom-15x/main/images/2b5a0815e4/catclass-cloak/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://syntax-reading94.bridgeportmath.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/images/2b5a0815e4/catclass-cloak/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://calmpage170.chaudharysk.com.np/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/task4z/classroom-15x/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/task4z/classroom-15x@main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://deeptutor9349.alsarica.cl/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://degree-project45.bridgeportmath.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/task4z/classroom-15x@main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://exam-cat42.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48496,13 +48463,9 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://mass-research72.mathmatics.ccwu.cc | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://quickmind5418.mji.ro/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://quickzone2423.atf.com.np/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://quietcourse8527.informaticavenado.com.ar/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/task4z/classroom-15x/main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/task4z/classroom-15x/main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-series70.task4z.dpdns.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/images/0ae6dc6ce8/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@main/images/dba8596b9b/catclass-cloak/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@main/images/dba8596b9b/catclass-cloak/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48636,7 +48599,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@main/images/85878c7b60/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd-proxy.ygxz.in/gh/task4z/classroom-15x/images/85878c7b60/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/task4z/classroom-15x/images/85878c7b60/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://kitty-force64.task4z.dpdns.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://model-stats88.fukushimastudy.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@main/images/85878c7b60/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@main/images/85878c7b60/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48939,14 +48901,8 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@1d7880bef05e7dec09b681e8324c482f56799049/files/catclass/logo.svg?id=98&key=98 | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@1d7880bef05e7dec09b681e8324c482f56799049/files/catclass/logo.svg?id=99&key=99 | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@1d7880bef05e7dec09b681e8324c482f56799049/files/catclass/logo.svg?id=100&key=100 | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bolddesk9426.apocalypto.org.uk/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://brightbeam5125.mesca.ro/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://digit-sum10.task4z.dpdns.org | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://keencourse9787.cefsk.ca/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@main/files/99a4cb1b8e/catclass/embed-cdn-jsdelivr.html | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://primeprep1447.baikabibai.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@main/files/99a4cb1b8e/catclass/embed-cdn-jsdelivr.html | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://solidclass4851.bine.me/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://stem-leap41.mathmatics.ccwu.cc | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/files/99a4cb1b8e/catclass/embed-cdn-jsdelivr.html | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://undergrad-history75.becasuniversitarias.org | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48966,7 +48922,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://formula-prime69.mathmatics.ccwu.cc | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@467278a03c33ceb24326546178051de22a1e6847/files/catclass/logo.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://integral-homework99.bridgeportmath.org | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://journal-dean12.task4z.dpdns.org | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd-proxy.ygxz.in/gh/task4z/classroom-15x/files/catclass/logo.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/task4z/classroom-15x/files/catclass/logo.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mewl-science23.fukushimastudy.org | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49007,7 +48962,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@264e5ceb1446175afde54f017eb4826bb40b4eac/files/catclass/logo.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@cec6926f981a763f99321c809822c6dce40397a9/files/catclass/logo.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@f921b7a7e70666d745db50edd124331ccfa299fa/files/catclass/logo.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://leap-den72.task4z.dpdns.org | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@264e5ceb1446175afde54f017eb4826bb40b4eac/files/catclass/logo.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@cec6926f981a763f99321c809822c6dce40397a9/files/catclass/logo.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@f921b7a7e70666d745db50edd124331ccfa299fa/files/catclass/logo.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49547,7 +49501,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | - | - | 68 |
+> | Proxy/Games | - | - | 66 |
 > [!IMPORTANT]
 > proxy is slow + links suck and are blocked instantly
 
@@ -49558,8 +49512,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://admin.mobiolink.comksdf.bg.geek.nz | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://y5k.info | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://101.com.np | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://89e6a7a6-e287-4435-857f-bf47e2b244ca.voidtickets.xyz | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://auihdui27187.voidtickets.xyz | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bdangozm.bg.geek.nz | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://autu.bg.geek.nz | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://krsulin.ru | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51190,7 +51142,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 48 |
+> | pending | - | - | 45 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -51228,7 +51180,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-qocu4i@main/mizu-4-u5jc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-qocu4i@main/mizu-4-u5jc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-qocu4i@main/mizu-4-u5jc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-qocu4i@main/mizu-4-u5jc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-qocu4i/main/mizu-4-u5jc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-qocu4i/main/mizu-4-u5jc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-qocu4i/main/mizu-4-u5jc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51238,8 +51189,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-qocu4i@main/mizu-5-dpdb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-qocu4i@main/mizu-5-dpdb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-qocu4i@main/mizu-5-dpdb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-qocu4i@main/mizu-5-dpdb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-qocu4i@main/mizu-5-dpdb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-qocu4i/main/mizu-5-dpdb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-qocu4i/main/mizu-5-dpdb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-qocu4i/main/mizu-5-dpdb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51272,7 +51221,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 79 |
+> | pending | - | - | 60 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -51284,79 +51233,60 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://quantil.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?1 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?1 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?1 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?1 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/whosrogo/GalaxyV7-Static/app.svg?1 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?2 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?2 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?2 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?2 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?2 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?2 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?2 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/whosrogo/GalaxyV7-Static/app.svg?2 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/whosrogo/GalaxyV7-Static/app.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?4 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?4 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?4 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?4 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?4 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?4 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?4 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/whosrogo/GalaxyV7-Static/app.svg?4 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?5 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?5 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?5 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?5 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?5 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?5 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?5 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/whosrogo/GalaxyV7-Static/app.svg?5 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?6 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?6 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?6 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?6 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?6 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?6 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?6 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/whosrogo/GalaxyV7-Static/app.svg?6 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?7 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?7 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?7 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?7 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?7 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?7 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?7 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/whosrogo/GalaxyV7-Static/app.svg?7 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?8 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?8 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?8 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?8 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?8 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?8 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?8 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/whosrogo/GalaxyV7-Static/app.svg?8 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?9 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?9 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?9 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?9 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?9 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?9 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?9 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/whosrogo/GalaxyV7-Static/app.svg?9 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?10 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?10 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?10 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?10 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?10 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?10 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/whosrogo/GalaxyV7-Static@main/app.svg?10 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # Σ Sigma Games
 > [!NOTE]
@@ -51485,7 +51415,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 192 |
+> | pending | - | - | 176 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -51496,8 +51426,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-1-18bv.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-1-18bv.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-1-18bv.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-1-18bv.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-1-18bv.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-1-18bv.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-1-18bv.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-1-18bv.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51507,8 +51435,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-2-bwu7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-2-bwu7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-2-bwu7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-2-bwu7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-2-bwu7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-2-bwu7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-2-bwu7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-2-bwu7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51518,8 +51444,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-3-m3rg.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-3-m3rg.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-3-m3rg.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-3-m3rg.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-3-m3rg.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-3-m3rg.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-3-m3rg.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-3-m3rg.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51529,8 +51453,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-4-ef1f.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-4-ef1f.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-4-ef1f.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-4-ef1f.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-4-ef1f.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-4-ef1f.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-4-ef1f.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-4-ef1f.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51540,8 +51462,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-5-pwo7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-5-pwo7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-5-pwo7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-5-pwo7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-5-pwo7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-5-pwo7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-5-pwo7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-5-pwo7.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51551,8 +51471,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-6-n137.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-6-n137.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-6-n137.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-6-n137.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-6-n137.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-6-n137.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-6-n137.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-6-n137.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51562,8 +51480,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-7-tpe3.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-7-tpe3.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-7-tpe3.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-7-tpe3.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-7-tpe3.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-7-tpe3.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-7-tpe3.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-7-tpe3.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51573,8 +51489,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-8-xmxp.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-8-xmxp.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-8-xmxp.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-8-xmxp.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-5ujh91@main/aeos-v4-8-xmxp.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-8-xmxp.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-8-xmxp.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/svgbulk-5ujh91/main/aeos-v4-8-xmxp.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51688,7 +51602,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 92 |
+> | pending | - | - | 76 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -51699,8 +51613,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-1-qnmc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-1-qnmc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-1-qnmc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-1-qnmc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-1-qnmc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-1-qnmc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-1-qnmc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-1-qnmc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51710,8 +51622,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-2-e6xf.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-2-e6xf.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-2-e6xf.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-2-e6xf.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-2-e6xf.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-2-e6xf.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-2-e6xf.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-2-e6xf.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51721,8 +51631,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-3-zdvb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-3-zdvb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-3-zdvb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-3-zdvb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-3-zdvb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-3-zdvb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-3-zdvb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-3-zdvb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51732,8 +51640,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-4-zgr9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-4-zgr9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-4-zgr9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-4-zgr9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-4-zgr9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-4-zgr9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-4-zgr9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-4-zgr9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51743,8 +51649,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-5-csy9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-5-csy9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-5-csy9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-5-csy9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-5-csy9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-5-csy9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-5-csy9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-5-csy9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51754,8 +51658,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-6-hvgs.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-6-hvgs.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-6-hvgs.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-6-hvgs.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-6-hvgs.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-6-hvgs.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-6-hvgs.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-6-hvgs.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51765,8 +51667,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-7-s9z9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-7-s9z9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-7-s9z9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-7-s9z9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-7-s9z9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-7-s9z9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-7-s9z9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-7-s9z9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51776,8 +51676,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-8-ngof.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-8-ngof.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-8-ngof.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-8-ngof.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-8-ngof.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-8-ngof.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-8-ngof.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/megadrop-wdasdu/main/1-learning-005847b5039fb2c8f4515165e0d79a17-8-ngof.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51931,7 +51829,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 92 |
+> | pending | - | - | 76 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -51942,8 +51840,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-1-j78t.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-1-j78t.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-1-j78t.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-1-j78t.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-1-j78t.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-1-j78t.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-1-j78t.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-1-j78t.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51953,8 +51849,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-2-j6k5.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-2-j6k5.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-2-j6k5.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-2-j6k5.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-2-j6k5.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-2-j6k5.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-2-j6k5.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-2-j6k5.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51964,8 +51858,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-3-8zbi.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-3-8zbi.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-3-8zbi.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-3-8zbi.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-3-8zbi.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-3-8zbi.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-3-8zbi.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-3-8zbi.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51975,8 +51867,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-4-v9kb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-4-v9kb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-4-v9kb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-4-v9kb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-4-v9kb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-4-v9kb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-4-v9kb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-4-v9kb.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51986,8 +51876,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-5-vhnc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-5-vhnc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-5-vhnc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-5-vhnc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-5-vhnc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-5-vhnc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-5-vhnc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-5-vhnc.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51997,8 +51885,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-6-rew6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-6-rew6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-6-rew6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-6-rew6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-6-rew6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-6-rew6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-6-rew6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-6-rew6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52008,8 +51894,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-7-6fpe.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-7-6fpe.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-7-6fpe.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-7-6fpe.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-7-6fpe.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-7-6fpe.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-7-6fpe.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-7-6fpe.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52019,8 +51903,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-8-xlxn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-8-xlxn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-8-xlxn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-8-xlxn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-8-xlxn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-8-xlxn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-8-xlxn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/idk-1tlupq/main/DarkNUX-8-xlxn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52034,7 +51916,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 92 |
+> | pending | - | - | 76 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -52045,8 +51927,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-1-8n9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-1-8n9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-1-8n9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-1-8n9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-1-8n9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-1-8n9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-1-8n9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-1-8n9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52056,8 +51936,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-2-tc45.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-2-tc45.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-2-tc45.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-2-tc45.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-2-tc45.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-2-tc45.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-2-tc45.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-2-tc45.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52067,8 +51945,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-3-dwe9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-3-dwe9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-3-dwe9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-3-dwe9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-3-dwe9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-3-dwe9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-3-dwe9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-3-dwe9.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52078,8 +51954,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-4-q9mn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-4-q9mn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-4-q9mn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-4-q9mn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-4-q9mn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-4-q9mn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-4-q9mn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-4-q9mn.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52089,8 +51963,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-5-jc6e.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-5-jc6e.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-5-jc6e.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-5-jc6e.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-5-jc6e.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-5-jc6e.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-5-jc6e.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-5-jc6e.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52100,8 +51972,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-6-8hrl.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-6-8hrl.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-6-8hrl.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-6-8hrl.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-6-8hrl.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-6-8hrl.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-6-8hrl.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-6-8hrl.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52111,8 +51981,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-7-pw2z.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-7-pw2z.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-7-pw2z.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-7-pw2z.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-7-pw2z.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-7-pw2z.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-7-pw2z.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-7-pw2z.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52122,8 +51990,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-8-ach8.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-8-ach8.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-8-ach8.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-8-ach8.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/dorianhagar506-coder/timmymathworkdrop-0141we@main/TimmyMathWork-1-8-ach8.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-8-ach8.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-8-ach8.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/dorianhagar506-coder/timmymathworkdrop-0141we/main/TimmyMathWork-1-8-ach8.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52175,7 +52041,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 92 |
+> | pending | - | - | 76 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -52186,8 +52052,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-1-idi6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-1-idi6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-1-idi6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-1-idi6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-1-idi6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/melonsoda-hzg7ge/main/ixl-1-idi6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-1-idi6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-1-idi6.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52197,8 +52061,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-2-gvcu.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-2-gvcu.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-2-gvcu.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-2-gvcu.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-2-gvcu.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/melonsoda-hzg7ge/main/ixl-2-gvcu.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-2-gvcu.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-2-gvcu.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52208,8 +52070,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-3-ce36.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-3-ce36.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-3-ce36.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-3-ce36.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-3-ce36.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/melonsoda-hzg7ge/main/ixl-3-ce36.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-3-ce36.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-3-ce36.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52219,8 +52079,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-4-yg76.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-4-yg76.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-4-yg76.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-4-yg76.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-4-yg76.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/melonsoda-hzg7ge/main/ixl-4-yg76.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-4-yg76.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-4-yg76.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52230,8 +52088,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-5-ci7o.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-5-ci7o.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-5-ci7o.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-5-ci7o.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-5-ci7o.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/melonsoda-hzg7ge/main/ixl-5-ci7o.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-5-ci7o.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-5-ci7o.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52241,8 +52097,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-6-8nfj.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-6-8nfj.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-6-8nfj.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-6-8nfj.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-6-8nfj.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/melonsoda-hzg7ge/main/ixl-6-8nfj.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-6-8nfj.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-6-8nfj.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52252,8 +52106,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-7-ydbq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-7-ydbq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-7-ydbq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-7-ydbq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-7-ydbq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/melonsoda-hzg7ge/main/ixl-7-ydbq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-7-ydbq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-7-ydbq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52263,8 +52115,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-8-2f7u.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-8-2f7u.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-8-2f7u.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-8-2f7u.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-8-2f7u.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/melonsoda-hzg7ge/main/ixl-8-2f7u.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-8-2f7u.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/melonsoda-hzg7ge/main/ixl-8-2f7u.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52278,7 +52128,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 33 |
+> | pending | - | - | 30 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -52302,11 +52152,9 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://jsd.onmicrosoft.cn/gh/seattleschools/media/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.onmicrosoft.cn/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.nmmsl.top/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsd.duolaa.top/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.bili33.top/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsdelivr.qaq.qa/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsdelivr.aby.pub/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.topthink.com/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.yizex.cn/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://code.webcache.cn/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52315,14 +52163,13 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cdn.statically.io/gh/seattleschools/media/main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.staticdelivr.com/gh/seattleschools/media/main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net.cn/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jsdelivr.cdn.net/gh/seattleschools/media@main/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd-proxy.ygxz.in/gh/seattleschools/media/batch/originallyut/20260916205141/eeaa45a6d847abfe.html | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🕹️ Zane's Arcade
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 92 |
+> | pending | - | - | 76 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -52333,8 +52180,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-1-nsib.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-1-nsib.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-1-nsib.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-1-nsib.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-1-nsib.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/niche-ldrgay/main/tuff-1-nsib.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/niche-ldrgay/main/tuff-1-nsib.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/niche-ldrgay/main/tuff-1-nsib.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52344,8 +52189,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-2-hmsq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-2-hmsq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-2-hmsq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-2-hmsq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-2-hmsq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/niche-ldrgay/main/tuff-2-hmsq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/niche-ldrgay/main/tuff-2-hmsq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/niche-ldrgay/main/tuff-2-hmsq.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52355,8 +52198,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-3-ltze.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-3-ltze.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-3-ltze.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-3-ltze.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-3-ltze.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/niche-ldrgay/main/tuff-3-ltze.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/niche-ldrgay/main/tuff-3-ltze.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/niche-ldrgay/main/tuff-3-ltze.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52366,8 +52207,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-4-5vy2.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-4-5vy2.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-4-5vy2.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-4-5vy2.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-4-5vy2.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/niche-ldrgay/main/tuff-4-5vy2.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/niche-ldrgay/main/tuff-4-5vy2.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/niche-ldrgay/main/tuff-4-5vy2.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52377,8 +52216,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-5-qd9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-5-qd9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-5-qd9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-5-qd9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-5-qd9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/niche-ldrgay/main/tuff-5-qd9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/niche-ldrgay/main/tuff-5-qd9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/niche-ldrgay/main/tuff-5-qd9v.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52388,8 +52225,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-6-2c7j.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-6-2c7j.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-6-2c7j.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-6-2c7j.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-6-2c7j.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/niche-ldrgay/main/tuff-6-2c7j.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/niche-ldrgay/main/tuff-6-2c7j.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/niche-ldrgay/main/tuff-6-2c7j.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52399,8 +52234,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-7-uk2k.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-7-uk2k.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-7-uk2k.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-7-uk2k.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-7-uk2k.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/niche-ldrgay/main/tuff-7-uk2k.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/niche-ldrgay/main/tuff-7-uk2k.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/niche-ldrgay/main/tuff-7-uk2k.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52410,8 +52243,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-8-gmx1.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-8-gmx1.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-8-gmx1.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-8-gmx1.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rawcdn.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-8-gmx1.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.statically.io/gh/Aglet-0/niche-ldrgay/main/tuff-8-gmx1.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/Aglet-0/niche-ldrgay/main/tuff-8-gmx1.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/Aglet-0/niche-ldrgay/main/tuff-8-gmx1.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
