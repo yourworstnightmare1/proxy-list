@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.3.4",
+      "revision": "r292",
+      "released": "September 22, 2026",
+      "update_notice": "### Fixed\n- Fixed bug with automatic dead link checker not running because the total number of queued links exceeded the maximum allowed to be deleted due to a hardcoded safeguard to prevent mass deletion, this is fixed and next link checks should succeed"
+    },
+    {
       "version": "v7.3.3",
       "revision": "r291",
       "released": "September 20, 2026",

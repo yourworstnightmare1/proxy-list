@@ -300,9 +300,12 @@ def process(content, results, status):
     (default in CI unless LINK_CHECK_NO_PURGE=true), rows at or above
     FAIL_THRESHOLD consecutive failures are removed from list.md.
 
-    Safety rails (both skip status updates and purges for the run):
+    Safety rails:
     - MASS_FAIL_RATIO: too many unique URLs fail in one run (likely runner outage).
-    - MAX_PURGE_ABS / MAX_PURGE_RATIO: would remove too many rows in one pass.
+      Skip status updates and purges entirely (hard abort).
+    - MAX_PURGE_ABS / MAX_PURGE_RATIO: cap how many rows a healthy run may remove.
+      Eligible dead links beyond the cap stay (counts still advance) so backlog
+      drains across runs instead of aborting forever.
     """
     no_purge = _env_flag("LINK_CHECK_NO_PURGE")
 
@@ -317,25 +320,23 @@ def process(content, results, status):
     fail_ratio = (failed_n / unique_n) if unique_n else 0.0
     mass_fail = unique_n >= 50 and fail_ratio >= MASS_FAIL_RATIO
 
-    # Preview how many rows would be purged if we applied normal rules.
-    would_purge_norms: set[str] = set()
+    # Preview purge candidates (stable first-seen URL order).
+    would_purge_norms: list[str] = []
     if not no_purge and not mass_fail:
         for norm in dict.fromkeys(table_norms):
             if results.get(norm, False):
                 continue
             prev = int(status.get(norm, 0) or 0)
             if prev + 1 >= FAIL_THRESHOLD:
-                would_purge_norms.add(norm)
-    would_purge_rows = sum(1 for n in table_norms if n in would_purge_norms)
+                would_purge_norms.append(norm)
+    would_purge_rows = sum(1 for n in table_norms if n in set(would_purge_norms))
     purge_cap = max_purge_allowed(len(table_norms))
-    purge_capped = (not no_purge) and (not mass_fail) and would_purge_rows > purge_cap
 
-    if mass_fail or purge_capped:
-        reason = "mass_fail" if mass_fail else "purge_cap"
+    if mass_fail:
         write_abort_report(
             {
                 "aborted": True,
-                "reason": reason,
+                "reason": "mass_fail",
                 "unique_urls": unique_n,
                 "failed_urls": failed_n,
                 "fail_ratio": round(fail_ratio, 4),
@@ -350,13 +351,28 @@ def process(content, results, status):
             }
         )
         print(
-            f"[link_checker] ABORT ({reason}): failed {failed_n}/{unique_n} "
+            f"[link_checker] ABORT (mass_fail): failed {failed_n}/{unique_n} "
             f"({fail_ratio:.1%}); would purge {would_purge_rows} rows "
             f"(cap {purge_cap}). Leaving list.md and link_status.json unchanged.",
             flush=True,
         )
         # Keep every table row; do not mutate status.
-        return content, len(table_norms), 0, {"aborted": True, "reason": reason}
+        return content, len(table_norms), 0, {"aborted": True, "reason": "mass_fail"}
+
+    # Healthy fail rate: purge up to the cap; leave the rest for later runs.
+    if not no_purge and len(would_purge_norms) > purge_cap:
+        purge_allow = set(would_purge_norms[:purge_cap])
+        print(
+            f"[link_checker] Purge capped: {len(would_purge_norms)} URLs eligible, "
+            f"removing {purge_cap} this run "
+            f"({would_purge_rows} rows eligible; fail {failed_n}/{unique_n} "
+            f"{fail_ratio:.1%}).",
+            flush=True,
+        )
+    elif not no_purge:
+        purge_allow = set(would_purge_norms)
+    else:
+        purge_allow = set()
 
     new_lines: list[str] = []
     # First row for this URL in this run decides keep/remove; duplicate rows match it.
@@ -390,10 +406,13 @@ def process(content, results, status):
             else:
                 prev = int(status.get(norm, 0) or 0)
                 status[norm] = prev + 1
-                # Purge once consecutive failures reach the threshold. Counts persist
-                # across earlier no-purge CI runs, so already-dead links drop on the
-                # next failing check after purging is re-enabled.
-                purge = (not no_purge) and status[norm] >= FAIL_THRESHOLD
+                # Purge once consecutive failures reach the threshold, subject to
+                # the per-run cap. Counts still advance for deferred URLs.
+                purge = (
+                    (not no_purge)
+                    and status[norm] >= FAIL_THRESHOLD
+                    and norm in purge_allow
+                )
 
                 if purge:
                     removed += 1

@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
-> v7.3.3 | Released: September 20, 2026
-> r291 | Last Updated: September 20, 2026
-> Total onsite links: 52468 (52125 sorted + 343 unsorted)\
+> v7.3.4 | Released: September 22, 2026
+> r292 | Last Updated: September 22, 2026
+> Total onsite links: 52218 (51875 sorted + 343 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -23,15 +23,14 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 
 ## Update Notice
 
-### New
-- Updated filter data for recently added links
-
+### Fixed
+- Fixed bug with automatic dead link checker not running because the total number of queued links exceeded the maximum allowed to be deleted due to a hardcoded safeguard to prevent mass deletion, this is fixed and next link checks should succeed
 
 # 💜 Selenite
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:selenite | N/A | 7 |
+> | Games | GDB:selenite | N/A | 5 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
@@ -40,8 +39,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://learn.englishbridalcouture.com/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://selenite.share-with.eu | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://selenite-edu.share-with.eu | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bulls.nirbika.com.np/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | http://bull.nirbika.com.np/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌙 Velara
 > [!NOTE]
@@ -129,7 +126,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math | N/A | 62 |
+> | Games | GDB:gn-math | N/A | 52 |
 
 > [!IMPORTANT]
 > if the link loads a page saying "user gn-math is blocked" or no games appear on screen, you are using an old version of gn-math that no longer works, please use another link. i also recommend reporting this on our GitHub issues page to prevent other users from running into this issue -> https://github.com/yourworstnightmare1/proxy-list/issues
@@ -203,7 +200,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 38 |
+> | Proxy/Games | captcha, GDB:frogies-arcade | Ultraviolet | 37 |
 
 > [!IMPORTANT]
 > on some networks, the proxy will load a white screen or an ultraviolet error page, if this happens try using another link as that is known to fix this issue
@@ -226,7 +223,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://gloverschool.org/ | 4/26/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hcstemm.org/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://canvas.instructure.page.gd/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://volcanicfrog2.srivaishnavam.org.au | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://ixl-education.frogiearcade.academinctools.pw | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://finnishomo.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://schoologywork.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -255,7 +251,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 172 |
+> | Proxy/Games | epoxy, libcurl, wisp, captcha, reflux | Scramjet, Ultraviolet | 171 |
 
 > [!IMPORTANT]
 > this proxy seems to be very slow on some links. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -277,7 +273,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cdn.jsdelivr.net/gh/TwiLabs/history/dist/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://cdn.jsdelivr.net/gh/TwiLabs/daydreaming/dist/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://cdn.jsdelivr.net/gh/TwiLabs/art/dist/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://ss.maxmir-energy.ru | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://science.haasencloud.de | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://raw.esm.sh/gh/NightProxy/DD-Static/dist/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://raw.esm.sh/gh/TwiLabs/math/dist/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
@@ -439,7 +434,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, GDB:gn-math | Scramjet, Ultraviolet, Eclipse | 9 |
+> | Proxy/Games | epoxy, libcurl, GDB:gn-math | Scramjet, Ultraviolet, Eclipse | 8 |
 
 > [!IMPORTANT]
 > Nebulo does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -447,7 +442,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://intelleducation.netlify.app/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://petezahaltsource.firebaseapp.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://4e5uwe.mimo.run/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://literacyadventures.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://third-army.surge.sh/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -460,7 +454,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 28 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 25 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -469,8 +463,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | - | - | - | - | - | - |
 | | https://places.vjason.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://ilovenirbytes.savequeechylake.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://area.forwardersoft.com/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://area.vm4construction.uk/ | 3/28/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu.rawr.africa.com/ | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://15-204-247-166.anyip.dev/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://15-204-247-166.z.buglloc.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -487,7 +479,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://eyes.lervs.ro | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://school.gressvikbmx.no | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://math.soyescalahumana.cl | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://english.neeb.wtf | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://spacing.bull.srivaishnavam.org.au | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 |  | https://math-lessons-space-17244170.codehs.me/index.html | 7/10/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://science.cthulhu.li | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -968,7 +959,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:truffled | Scramjet | 287 |
+> | Proxy/Games | GDB:truffled | Scramjet | 258 |
 
 > [!IMPORTANT]
 > when visiting truffled on a google script (script.google.com) domain, the proxy likely won't work. most games are unaffected
@@ -1017,7 +1008,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://buds.rudolphhuizinga.com/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://buff.loscantarostemuco.cl/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bulb.soportemdq.com.ar/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bull.bujanoci.net/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bump.cristiangallo.com.ar/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://aver.pixelfucker.org/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://avid.soportemdq.com.ar/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1055,7 +1045,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://bees.jaytex.org/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bell.espinosa.cl/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://beni.loscantarostemuco.cl/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bene.contactme.cl/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bent.borkar.in/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bias.itlogistics.com.ar/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bids.topmoto.pl/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1079,23 +1068,12 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://camping.podcast.dj8.org/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://recipe.daily.glamourfreaks.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://reading747.flyredwing.ru/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://geography.draft.mrvillain.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://english.project.guide.robertschulze.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://news749.dj8.org/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://us933ti8.cthulhu.li/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://drama.viapointpos.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://coding.draft.review.garoli.com.mx/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://biology-report.confiarriendo.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://homework-blog.robertschulze.name/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://spanish160.robertschulze.org/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://project.portfolio.paken.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ems9mo.it123.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://coding26.agrointegral.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://podcast.guide.report.glamourfreaks.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://study.library.podcast.flyredwing.ru/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://review.mrvillain.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://kitchen-summary.gcpservicios.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://nlmin.dj8.org/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://daily-notes.robertschulze.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://resume.cthulhu.li/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://blog.resume.viapointpos.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1106,11 +1084,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://daily565.paken.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://study.garden.it123.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://chemistry.agrointegral.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://class.running.glamourfreaks.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://research.flyredwing.ru/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://resume.garden.coding.mrvillain.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://safety.essay.robdon.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://camping-homework.gcpservicios.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://science517.dj8.org/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://yoga-homework.robertschulze.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://u887zx.cthulhu.li/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1124,8 +1097,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://library.coding.agrointegral.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://video-garden.glamourfreaks.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://recipe.flyredwing.ru/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://writing.podcast.mrvillain.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://fitness.research.robdon.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://notes.glamourfreaks.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://daily826.gcpservicios.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://reading.art.history.dj8.org/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1133,13 +1104,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://journal.travel.confiarriendo.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fitness.paken.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://resume-safety.flyredwing.ru/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://nwrjho.mrvillain.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://yoga-english.robdon.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://report.study.viapointpos.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://english.robertschulze.name/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://daily.essay.it123.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://journal.fitness.gcpservicios.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://camping.notes.robdon.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://notes-review.viapointpos.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://library.robertschulze.name/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://video.robertschulze.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1151,12 +1115,10 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://camping.research.confiarriendo.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://homework.art.agrointegral.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://history-study.gcpservicios.cl/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://running.travel.art.robdon.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://report.paken.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://research.drama.weekly.viapointpos.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://chemistry.glamourfreaks.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://chemistry.news.flyredwing.ru/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://running.mrvillain.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://class.technology.robertschulze.name/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://science151.robertschulze.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://research165.cthulhu.li/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1351,7 +1313,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 160 |
+> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 157 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -1379,10 +1341,8 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://math13.lervs.ro/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://powerschool.lervs.ro/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/canvas-lms/index.html#/search | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://access.studyhub.cam/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://calculator.rdt2.co/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/dogeub/-/index.svg | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://math.studyhub.cam/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mathtools.rdt2.co/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/educationate/index.html#/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://tickets.blackbearshow.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1398,7 +1358,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://learning-games-that-are-fun.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://nsodbxnwos.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://youshoulddefgivemesomemoney.lervs.ro | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://jeans.are-trash.tomashirsch.cl | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://s3.amazonaws.com/lsrelay-a/index.html | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://lsrelay-a.s3.amazonaws.com/index.html | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
@@ -1526,7 +1485,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:lucide | Scramjet, Ultraviolet | 51 |
+> | Proxy/Games | wisp, GDB:lucide | Scramjet, Ultraviolet | 49 |
 
 > [!IMPORTANT]
 > Lunar does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1559,10 +1518,8 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://greater.triatlonpacense.es | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://lectures.vta-international.com/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | https://smartbio.2660010.com/ | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://dear.d3.ro/ | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://growth.hjshop.net/ | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://learning.hkieca.com/ | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://studying.nigelupchurch.com/ | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://deend.gcpservicios.cl | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hill.berugy.hu | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://goods.berugy.hu/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -1775,7 +1732,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:gn-math | Scramjet | 365 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:gn-math | Scramjet | 360 |
 
 > [!IMPORTANT]
 > some of these links load a black screen
@@ -2144,15 +2101,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://s3.amazonaws.com/elliotslinks-tnjavxyp/grade77430/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/elliotslinks-tnjavxyp/quiz32494/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/elliotslinks-tnjavxyp/lecture40551/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://6767676.breadtime.com.my/ | 9/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://store.fiwers.cl/ | 9/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://music.nirbika.com.np/ | 9/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://university.noordware.com/ | 9/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ov.brucehickey.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ov.componentsearch.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ov.jz-katagis.eu/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ov.nhhc.com.au/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ov.poolstrade.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 😈 Imp Proxy
 > [!NOTE]
@@ -2350,7 +2298,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math | Scramjet | 80 |
+> | Proxy/Games | GDB:gn-math | Scramjet | 78 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2445,8 +2393,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://rats.lice.dynet.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://nyaaa.cat.nya.pub/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mile.run.spacetechnology.net/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://fishing.out.with-the.boys.fumeaux.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://fishy.bussimess.fumeaux.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ♈ Zodiac
 > [!NOTE]
@@ -2701,7 +2647,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:utopia | Ultraviolet | 38 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 36 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
@@ -2726,7 +2672,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://my.great.great.grandfather.watches.jojobizzareadventure.minecraftnoob.com | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://noahsproxy.smelly.cc | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://tatata12345678910e2.chickenkiller.com | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://proxyyourmom.jumpingcrab.com | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://qowerschool.com/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | https://4l3x19the562oh.twilightparadox.com | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mhi.imaginelearningmath.com | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -2737,7 +2682,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://trade.my.job.skebob.rdt2.co | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://shida.bonk.phonk.grouper.cl | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://training-for-history.dalicias.cl | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://xnukex.mooo.com | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://approving.at.certified.cl/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://self.gcpservicios.cl | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mood.cthulhu.li | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -2998,20 +2942,10 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math | N/A | 66 |
+> | Games | GDB:gn-math | N/A | 56 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://cdn.jsdelivr.net/gh/carls-math-class/160164-computerscience@main/doesn.svg | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/carls-math-class/168736-science@main/doesn.svg | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/carls-math-class/339768-philosophy@main/doesn.svg | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/carls-math-class/564952-music@main/doesn.svg | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/carls-math-class/491171-physics@main/doesn.svg | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/carls-math-class/126849-science@main/doesn.svg | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/carls-math-class/669778-philosophy@main/doesn.svg | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/carls-math-class/475315-chemistry@main/doesn.svg | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/carls-math-class/319316-biology@main/doesn.svg | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdelivr.net/gh/carls-math-class/481867-chemistry@main/doesn.svg | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/recursive-analysis-3399@main/INVADDEX.SVG | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/imaginary-topology-5524@main/INVADDEX.SVG | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/Mr-Calvin-Math-Class/logarithmic-limits-4596@main/INVADDEX.SVG | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -3283,7 +3217,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://dylanwantspay.cfd/ | 6/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://omniman.cfd/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://donut.muffin.glenoriebakery.com.au/ | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://luminal.lol | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ❤️ BloxCraft Games
 > [!NOTE]
@@ -3364,20 +3297,10 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 19 |
+> | Proxy/Games | unknown | unknown | 9 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://bed.ero.is/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://classroom.tozsugianto.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://college.rkimport.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://college.vaultnoir.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://edu.rkimport.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://edu.tvjumbleanswers.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://edu.vaultnoir.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://house-hunters.epusara.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://osap.g-osap.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://safety.tvjumbleanswers.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://exam-prepwork.garethmusic.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://practice-routine.isfacat.net | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://knowledge-flow.maverickden.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
@@ -3392,16 +3315,13 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:noahs-tutoring | - | 20 |
+> | Games | GDB:noahs-tutoring | - | 17 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | http://learning.music.teacher.technology.student.thegleasons.net | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://math.drama.engineering.lecture.reading.agreca.com.ar | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://math.computer.project.campus.writing.glenoriebakery.com.au | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://donuts.muffins.glenoriebakery.com.au | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://matthewtuah.wikidelia.net | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://geography.science.studying.campus.chemistry.coosemansla.com | 5/6/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://assets.editor.p5js.org/69f62565e047d647146aca73/52736a96-8273-4625-ae9a-1d27321076a4.svg | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://script.google.com/macros/s/AKfycbz_3CKzRKXyisc_WYcOIG6adYY2QUTS13-jO0XA70aPzmiNz23XNHGaU9LYBgRs8iZq/exec?url=https://originfastly.jsdelivr.net/gh/NoahsAmazingTutoringHelp/reimagined-octo-winner@main/blahblahblah.html | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://ixllearning-bengali89.web.app | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -3441,16 +3361,14 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | - | - | 17634 |
+> | Games | - | - | 17632 |
 
 > [!IMPORTANT]
 > if you are prompted to download an svg/html file, download it as it contains the website since this site mainly uses singlefile over individual domains for distribution
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://weqweqw.meshtastic.hu | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://vfbiewaenxc.erbilek.com.tr/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
-| | https://periodic-table.techmax.hk/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | https://duck.classroom-community.com/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | https://duck.classroomgeometry.com/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | https://duck.freezenova.chat/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
@@ -38689,16 +38607,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | - | - | - | - | - | - |
 | | https://business-worldwide-solutions.notariamelipilla.cl | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# 💫 Orbit
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 1 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://poki-boyy.firebaseapp.com/browser.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 # 🔥 Flamed Lite
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -38840,7 +38748,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 211 |
+> | Proxy/Games | wisp, epoxy, libcurl | Scramjet, Tor | 43 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://interesting-articles.pages.dev | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -38854,184 +38762,16 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://quizizz.com/_media/yukiwebos/5ca19e9d-a871-4439-a893-eddda170d684-v2 | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quizizz-static.s3.amazonaws.com/_media/yukiwebos/5ca19e9d-a871-4439-a893-eddda170d684-v2 | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quizizz-static.s3-accelerate.amazonaws.com/_media/yukiwebos/5ca19e9d-a871-4439-a893-eddda170d684-v2 | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://media.blooket.com/raw/upload/vo4ovjvc1qq2mq3dsw4f.html | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-79@60b629887888310d54786dcca965d46080aa1788/yoursitename-view-78246.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-15@4b7d64ef7cae0e9fad0f1d30361fb1a1ffed0aae/sitename-code-14051.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-5@cb7fc60a0896f9460fb020d933f3817e4950aba1/sitename-code-4789.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-71@c3651a0f77a0584cf820601ce900fb5e8d8a9ee2/yoursite-play-70511.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-41@07e7a4d70ed08e9f3083fb886c47eea6b43d72f0/yoursitename-play-40207.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-67@c88496c4398cb4980d7142b1feb478dfa3cbf0f6/yoursitename-hub-66536.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-58@main/sitename-play-57648.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-25@349a830db6372bdbf7f8b0cc49a3d6743cbba3ba/sitename-code-24937.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-20@e6a029526472133b0445f461f992f40c43773492/sitename-game-19576.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-78@5cc5b8de464539dd5c734f051bfd678a04beb5f3/yoursite-run-77939.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-46@2f4a4fc4236c8a705660d47ecbbcbed3c679476a/yoursite-view-45429.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-87@b79a9236ddbc17ab70cdad7a50ea42b4323f744d/sitename-view-86606.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-77@47bf013df320a74bd86a5cee07d9ba94c2bd8b9c/yoursitename-play-76357.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-58@main/yoursitename-load-57110.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-19@d1fe9f7e7626b075f268b35d33409184773c67ba/sitename-pixel-18404.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-56@e2aa4fdb996431185075a1a90d8ac25c9431a341/sitename-code-55936.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-94@2cbb72d55f5792c325266b8d4d84050d82675ac8/yoursitename-play-93684.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-30@9212ca5abaacdf7564dc30f91eb134db986dae0b/sitename-code-29470.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-46@2f4a4fc4236c8a705660d47ecbbcbed3c679476a/yoursitename-fetch-45936.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-38@71be19a7f92b762d6aae9989576eecdf69cbb56b/yoursitename-view-37413.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-14@8cb04b3124f4430ae3e2b6d8c140eeb1a58f8dd7/yoursitename-fetch-13006.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-17@066326011ee1e35ab4de0546a25c3c7fba6f9cac/sitename-cloud-16788.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-75@a159729c1386aaa6d932c12b16f8c71f54c4c2aa/yoursitename-code-74761.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-89@f3d26d85737610a2eac7d3225c04f222ece1457f/sitename-hub-88821.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-97@main/sitename-play-96118.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-59@a98efe9a334f5b0740a5538e9ffe940f5df806c1/yoursitename-cloud-58822.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-90@422f83d6ab98d988acadaa3c497b061f8a5b0ad9/yoursite-fetch-89519.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-51@a167172c5bdab80b650f13c08ce8070e846ff1bb/yoursite-load-50552.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-33@63636a8e26b9f37d1234988c3c0f6df146ab13f5/sitename-run-32678.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-7@9e10beb6489842ac939e619d85a4281d46e4e38f/sitename-load-6121.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-52@f5bc201daa7ea86d128440a51f43467bf2cba383/yoursitename-play-51141.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-88@e2dd645622be5d379b6315b62e7fa7af45dda6ac/sitename-hub-87938.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-5@cb7fc60a0896f9460fb020d933f3817e4950aba1/yoursitename-cloud-4180.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-65@64e0be7542636341b53c16f3f4af2a8ba4c8615d/sitename-load-64818.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-14@8cb04b3124f4430ae3e2b6d8c140eeb1a58f8dd7/sitename-run-13830.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-23@7e77c55e1a756f881388359ecb8c17509b0b6824/sitename-pixel-22242.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-32@ba52ad4f02e94fef4a7b0fada322836748b3832e/yoursite-play-31326.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-65@64e0be7542636341b53c16f3f4af2a8ba4c8615d/yoursite-cloud-64174.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-41@07e7a4d70ed08e9f3083fb886c47eea6b43d72f0/yoursitename-game-40497.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-91@0f8747ea6826a5139e335b991033283b8cff1da6/yoursite-run-90045.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-87@b79a9236ddbc17ab70cdad7a50ea42b4323f744d/yoursite-play-86333.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-78@5cc5b8de464539dd5c734f051bfd678a04beb5f3/yoursite-run-77146.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-94@2cbb72d55f5792c325266b8d4d84050d82675ac8/yoursitename-pixel-93707.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-47@5a3cd478fc267a6ea95c5ea70d8a06b16267b2a5/yoursitename-view-46465.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-80@d3f9f6bccd9b1a945e6392ceea7e6dca3e7e0ce1/yoursite-play-79320.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-26@35a7436c7bbaeff80f8f53a9ce02f21468b30606/yoursite-code-25825.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-48@50a9d19062823e0f8c5cd2e01cfa78ee76a707c9/yoursitename-hub-47065.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-22@0374861a0104ba8fa6d301cdcbfa90e3ef1210ba/sitename-fetch-21723.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-36@f3a4dbfea3b12ea8e30b44404b6451e426c53cc6/sitename-load-35868.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-89@f3d26d85737610a2eac7d3225c04f222ece1457f/yoursitename-hub-88334.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-11@f87aabc377537af68d15d0153251f2f8c9285cb3/yoursite-cloud-10080.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-59@a98efe9a334f5b0740a5538e9ffe940f5df806c1/yoursitename-load-58085.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-21@c962e62df6a0d9393072fb2b7da187ad4e4ce811/yoursitename-run-20482.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-12@8234d2a388c29d6e8b5baaacbaf5e05fca06ad86/yoursite-fetch-11867.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-60@9a6868ced9dc2f5aa592fc3ebf7638d9144d476a/yoursitename-play-59979.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-73@27046f15137c678a9636423d16997de325c422ad/sitename-game-72539.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-64@1df427b32aa17b7dfab402abf7eb115b359fec7a/yoursitename-hub-63907.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-30@9212ca5abaacdf7564dc30f91eb134db986dae0b/yoursite-view-29860.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-37@503950c5c18d523544eb6f45e1091497118c1ca5/sitename-run-36314.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-37@503950c5c18d523544eb6f45e1091497118c1ca5/yoursite-view-36297.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-41@07e7a4d70ed08e9f3083fb886c47eea6b43d72f0/yoursite-hub-40038.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-61@87f5752e36e1fe7f11fcc671715dd319b408546c/yoursite-load-60823.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-60@9a6868ced9dc2f5aa592fc3ebf7638d9144d476a/yoursitename-hub-59582.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-99@main/yoursite-view-98414.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-37@503950c5c18d523544eb6f45e1091497118c1ca5/yoursitename-play-36342.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-40@ab865d4621a3dfd30015670ff43367b3a3ed2204/yoursite-load-39302.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-22@0374861a0104ba8fa6d301cdcbfa90e3ef1210ba/sitename-fetch-21716.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-28@c80d9cee88eca5270eb9303a7abbb8c4be84316b/yoursite-view-27485.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-30@9212ca5abaacdf7564dc30f91eb134db986dae0b/yoursitename-game-29711.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-82@9941d502cf898096f19f4afa6f5356eaf6d6737b/sitename-pixel-81207.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-3@01122d6fa116c94c3bba76ddd835f2abf2ba24ef/yoursite-play-2939.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-68@f184ae3e2f7b7a6ff087c08289ef45193fbac664/yoursitename-view-67296.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-40@ab865d4621a3dfd30015670ff43367b3a3ed2204/yoursitename-pixel-39309.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-19@d1fe9f7e7626b075f268b35d33409184773c67ba/sitename-run-18042.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-97@main/yoursite-fetch-96636.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-8@f49ec77dc1acc903f715cc0d75be770836b732fe/sitename-pixel-7634.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-69@badd4c0760ca598b714e1ba3ee850a5636a7cbae/yoursitename-pixel-68345.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-86@83e99e6ee92dda017ca46e64874cfbde3bf95fc6/yoursitename-pixel-85674.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-81@16197f01430100643bc0a186425d08349ed8c058/sitename-view-80644.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-50@51714fb7631fdf2be26b122d3ad8b9150f736cf0/sitename-run-49543.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-68@f184ae3e2f7b7a6ff087c08289ef45193fbac664/sitename-fetch-68000.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-32@ba52ad4f02e94fef4a7b0fada322836748b3832e/yoursitename-cloud-31939.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-15@4b7d64ef7cae0e9fad0f1d30361fb1a1ffed0aae/sitename-cloud-14347.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-20@e6a029526472133b0445f461f992f40c43773492/yoursite-play-19608.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-83@b6183d5dd86a00f6976b67a0060cbedd0b2590f1/yoursite-cloud-82800.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-4@9d27cff4f272809dcd3f243a2562ad03bd8a84ea/yoursite-cloud-3858.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-68@f184ae3e2f7b7a6ff087c08289ef45193fbac664/sitename-pixel-67393.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-57@main/yoursite-play-56142.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-19@d1fe9f7e7626b075f268b35d33409184773c67ba/sitename-load-18682.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-53@74658a4c69212e92fd2286fa37965b1548791f7c/yoursite-pixel-52955.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-66@f6d0b77905f523dc978429225a83681174973451/yoursite-pixel-65454.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-13@c510cb86b20683bbf7440b17724a05bbf736f92a/yoursitename-run-12278.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-38@71be19a7f92b762d6aae9989576eecdf69cbb56b/yoursite-pixel-37965.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-19@d1fe9f7e7626b075f268b35d33409184773c67ba/yoursite-run-18694.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-31@f997b133845a37fa1b34c015e3e1a1bc9fe6b841/yoursite-game-30627.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-1@da3f8044337b51afd3d6555d115fabe74a7bc8f3/yoursitename-load-528.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-20@e6a029526472133b0445f461f992f40c43773492/yoursite-hub-19157.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-42@eb1b0cef13638ddad5a0677bc848e2ad0775b732/sitename-hub-41586.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-37@503950c5c18d523544eb6f45e1091497118c1ca5/sitename-load-36546.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/christofer5671/p2p-svg-32@ba52ad4f02e94fef4a7b0fada322836748b3832e/sitename-cloud-31339.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-79@60b629887888310d54786dcca965d46080aa1788/yoursitename-view-78246.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-15@4b7d64ef7cae0e9fad0f1d30361fb1a1ffed0aae/sitename-code-14051.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-5@cb7fc60a0896f9460fb020d933f3817e4950aba1/sitename-code-4789.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-71@c3651a0f77a0584cf820601ce900fb5e8d8a9ee2/yoursite-play-70511.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-41@07e7a4d70ed08e9f3083fb886c47eea6b43d72f0/yoursitename-play-40207.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-67@c88496c4398cb4980d7142b1feb478dfa3cbf0f6/yoursitename-hub-66536.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-58@main/sitename-play-57648.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-25@349a830db6372bdbf7f8b0cc49a3d6743cbba3ba/sitename-code-24937.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-20@e6a029526472133b0445f461f992f40c43773492/sitename-game-19576.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-78@5cc5b8de464539dd5c734f051bfd678a04beb5f3/yoursite-run-77939.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-46@2f4a4fc4236c8a705660d47ecbbcbed3c679476a/yoursite-view-45429.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-87@b79a9236ddbc17ab70cdad7a50ea42b4323f744d/sitename-view-86606.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-77@47bf013df320a74bd86a5cee07d9ba94c2bd8b9c/yoursitename-play-76357.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-58@main/yoursitename-load-57110.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-19@d1fe9f7e7626b075f268b35d33409184773c67ba/sitename-pixel-18404.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-56@e2aa4fdb996431185075a1a90d8ac25c9431a341/sitename-code-55936.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-94@2cbb72d55f5792c325266b8d4d84050d82675ac8/yoursitename-play-93684.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-30@9212ca5abaacdf7564dc30f91eb134db986dae0b/sitename-code-29470.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-46@2f4a4fc4236c8a705660d47ecbbcbed3c679476a/yoursitename-fetch-45936.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-38@71be19a7f92b762d6aae9989576eecdf69cbb56b/yoursitename-view-37413.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-14@8cb04b3124f4430ae3e2b6d8c140eeb1a58f8dd7/yoursitename-fetch-13006.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-17@066326011ee1e35ab4de0546a25c3c7fba6f9cac/sitename-cloud-16788.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-75@a159729c1386aaa6d932c12b16f8c71f54c4c2aa/yoursitename-code-74761.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-89@f3d26d85737610a2eac7d3225c04f222ece1457f/sitename-hub-88821.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-97@main/sitename-play-96118.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-59@a98efe9a334f5b0740a5538e9ffe940f5df806c1/yoursitename-cloud-58822.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-90@422f83d6ab98d988acadaa3c497b061f8a5b0ad9/yoursite-fetch-89519.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-51@a167172c5bdab80b650f13c08ce8070e846ff1bb/yoursite-load-50552.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-33@63636a8e26b9f37d1234988c3c0f6df146ab13f5/sitename-run-32678.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-7@9e10beb6489842ac939e619d85a4281d46e4e38f/sitename-load-6121.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-52@f5bc201daa7ea86d128440a51f43467bf2cba383/yoursitename-play-51141.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-88@e2dd645622be5d379b6315b62e7fa7af45dda6ac/sitename-hub-87938.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-5@cb7fc60a0896f9460fb020d933f3817e4950aba1/yoursitename-cloud-4180.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-65@64e0be7542636341b53c16f3f4af2a8ba4c8615d/sitename-load-64818.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-14@8cb04b3124f4430ae3e2b6d8c140eeb1a58f8dd7/sitename-run-13830.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-23@7e77c55e1a756f881388359ecb8c17509b0b6824/sitename-pixel-22242.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-32@ba52ad4f02e94fef4a7b0fada322836748b3832e/yoursite-play-31326.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-65@64e0be7542636341b53c16f3f4af2a8ba4c8615d/yoursite-cloud-64174.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-41@07e7a4d70ed08e9f3083fb886c47eea6b43d72f0/yoursitename-game-40497.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-91@0f8747ea6826a5139e335b991033283b8cff1da6/yoursite-run-90045.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-87@b79a9236ddbc17ab70cdad7a50ea42b4323f744d/yoursite-play-86333.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-78@5cc5b8de464539dd5c734f051bfd678a04beb5f3/yoursite-run-77146.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-94@2cbb72d55f5792c325266b8d4d84050d82675ac8/yoursitename-pixel-93707.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-47@5a3cd478fc267a6ea95c5ea70d8a06b16267b2a5/yoursitename-view-46465.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-80@d3f9f6bccd9b1a945e6392ceea7e6dca3e7e0ce1/yoursite-play-79320.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-26@35a7436c7bbaeff80f8f53a9ce02f21468b30606/yoursite-code-25825.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-48@50a9d19062823e0f8c5cd2e01cfa78ee76a707c9/yoursitename-hub-47065.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-22@0374861a0104ba8fa6d301cdcbfa90e3ef1210ba/sitename-fetch-21723.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-36@f3a4dbfea3b12ea8e30b44404b6451e426c53cc6/sitename-load-35868.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-89@f3d26d85737610a2eac7d3225c04f222ece1457f/yoursitename-hub-88334.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-11@f87aabc377537af68d15d0153251f2f8c9285cb3/yoursite-cloud-10080.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-59@a98efe9a334f5b0740a5538e9ffe940f5df806c1/yoursitename-load-58085.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-21@c962e62df6a0d9393072fb2b7da187ad4e4ce811/yoursitename-run-20482.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-12@8234d2a388c29d6e8b5baaacbaf5e05fca06ad86/yoursite-fetch-11867.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-60@9a6868ced9dc2f5aa592fc3ebf7638d9144d476a/yoursitename-play-59979.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-73@27046f15137c678a9636423d16997de325c422ad/sitename-game-72539.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-64@1df427b32aa17b7dfab402abf7eb115b359fec7a/yoursitename-hub-63907.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-30@9212ca5abaacdf7564dc30f91eb134db986dae0b/yoursite-view-29860.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-37@503950c5c18d523544eb6f45e1091497118c1ca5/sitename-run-36314.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-37@503950c5c18d523544eb6f45e1091497118c1ca5/yoursite-view-36297.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-41@07e7a4d70ed08e9f3083fb886c47eea6b43d72f0/yoursite-hub-40038.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-61@87f5752e36e1fe7f11fcc671715dd319b408546c/yoursite-load-60823.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-60@9a6868ced9dc2f5aa592fc3ebf7638d9144d476a/yoursitename-hub-59582.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-99@main/yoursite-view-98414.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-37@503950c5c18d523544eb6f45e1091497118c1ca5/yoursitename-play-36342.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-40@ab865d4621a3dfd30015670ff43367b3a3ed2204/yoursite-load-39302.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-22@0374861a0104ba8fa6d301cdcbfa90e3ef1210ba/sitename-fetch-21716.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-28@c80d9cee88eca5270eb9303a7abbb8c4be84316b/yoursite-view-27485.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-30@9212ca5abaacdf7564dc30f91eb134db986dae0b/yoursitename-game-29711.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-82@9941d502cf898096f19f4afa6f5356eaf6d6737b/sitename-pixel-81207.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-3@01122d6fa116c94c3bba76ddd835f2abf2ba24ef/yoursite-play-2939.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-68@f184ae3e2f7b7a6ff087c08289ef45193fbac664/yoursitename-view-67296.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-40@ab865d4621a3dfd30015670ff43367b3a3ed2204/yoursitename-pixel-39309.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-19@d1fe9f7e7626b075f268b35d33409184773c67ba/sitename-run-18042.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-97@main/yoursite-fetch-96636.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-8@f49ec77dc1acc903f715cc0d75be770836b732fe/sitename-pixel-7634.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-69@badd4c0760ca598b714e1ba3ee850a5636a7cbae/yoursitename-pixel-68345.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-86@83e99e6ee92dda017ca46e64874cfbde3bf95fc6/yoursitename-pixel-85674.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-81@16197f01430100643bc0a186425d08349ed8c058/sitename-view-80644.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/christofer5671/p2p-svg-50@51714fb7631fdf2be26b122d3ad8b9150f736cf0/sitename-run-49543.svg | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50548,7 +50288,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 811 |
+> | pending | - | - | 291 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 

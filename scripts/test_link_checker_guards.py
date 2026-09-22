@@ -37,17 +37,16 @@ def expect(cond: bool, msg: str) -> None:
         raise AssertionError(msg)
 
 
-def test_purge_cap_aborts_without_mutating_status() -> None:
+def test_purge_cap_partial_purge_drains_backlog() -> None:
+    """Over-cap healthy runs purge up to the cap instead of aborting forever."""
     urls = [f"https://example.com/u{i}" for i in range(100)]
     content = _table(urls)
     status = {lc.normalize_url(u): 2 for u in urls}
     results = {lc.normalize_url(u): False for u in urls}
-    status_before = dict(status)
 
     os.environ["LINK_CHECK_MAX_PURGE_ABS"] = "10"
     os.environ["LINK_CHECK_MAX_PURGE_RATIO"] = "1"
     os.environ["LINK_CHECK_MASS_FAIL_RATIO"] = "1.1"  # disable mass-fail for this case
-    # reload module constants that read env at import — patch directly
     lc.MAX_PURGE_ABS = 10
     lc.MAX_PURGE_RATIO = 1.0
     lc.MASS_FAIL_RATIO = 1.1
@@ -60,12 +59,14 @@ def test_purge_cap_aborts_without_mutating_status() -> None:
         finally:
             os.chdir(old)
 
-    expect(guard.get("aborted") is True, "expected purge_cap abort")
-    expect(guard.get("reason") == "purge_cap", f"unexpected reason {guard}")
-    expect(removed == 0, "abort must not remove rows")
-    expect(kept == 100, f"kept={kept}")
-    expect(status == status_before, "status must be unchanged on abort")
-    expect("| | https://example.com/u0 |" in out, "list content must remain")
+    expect(guard.get("aborted") is False, f"expected no abort, got {guard}")
+    expect(removed == 10, f"removed={removed}")
+    expect(kept == 90, f"kept={kept}")
+    # First 10 URLs purged; remainder kept with advanced failure counts.
+    expect("| | https://example.com/u0 |" not in out, "first eligible URL should purge")
+    expect("| | https://example.com/u10 |" in out, "over-cap URL should remain")
+    expect(status[lc.normalize_url("https://example.com/u10")] == 3, "deferred count advances")
+    expect(status[lc.normalize_url("https://example.com/u0")] == 3, "purged URL count still advanced")
 
 
 def test_mass_fail_aborts() -> None:
@@ -165,7 +166,7 @@ def test_is_working_treats_soft_statuses_as_alive() -> None:
 
 
 def main() -> int:
-    test_purge_cap_aborts_without_mutating_status()
+    test_purge_cap_partial_purge_drains_backlog()
     test_mass_fail_aborts()
     test_small_purge_still_works()
     test_classify_status_soft_ok()

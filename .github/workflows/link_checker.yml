@@ -65,7 +65,7 @@ jobs:
           set -e
           echo "exit_code=$EXIT_CODE" >> "$GITHUB_OUTPUT"
           if [ "$EXIT_CODE" = "2" ]; then
-            echo "::error::Link checker aborted (mass failure or purge cap). list.md was left unchanged to prevent wiping the list."
+            echo "::error::Link checker aborted (mass failure). list.md was left unchanged to prevent wiping the list."
             if test -f link_check_abort.json; then
               echo "Abort report:"; cat link_check_abort.json
             fi
