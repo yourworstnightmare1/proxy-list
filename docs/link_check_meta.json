@@ -1,13 +1,10 @@
 {
-  "checked_at": "2026-09-23T03:06:36Z",
-  "checked_at_display": "2026-09-23 03:06 UTC",
+  "checked_at": "2026-09-23T10:49:42Z",
+  "checked_at_display": "2026-09-23 10:49 UTC",
   "added_count": 0,
-  "removed_count": 4,
+  "removed_count": 1,
   "added_links": [],
   "removed_links": [
-    "https://chillmath.adcsurkhet.org.np",
-    "https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@main/files/99a4cb1b8e/catclass/embed-cdn-jsdelivr.html",
-    "https://quantil.jsdelivr.net/gh/task4z/classroom-15x@main/files/99a4cb1b8e/catclass/embed-cdn-jsdelivr.html",
-    "https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/files/99a4cb1b8e/catclass/embed-cdn-jsdelivr.html"
+    "https://unpkg.com/classroomhomework@1.0.0/index.html"
   ]
 }

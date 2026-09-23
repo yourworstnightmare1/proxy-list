@@ -47314,7 +47314,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | - | 437 |
+> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | - | 436 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -47731,7 +47731,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cdn.esm.sh/gh/Mtreasur0133-bit/autorepo1@af1095b/UBZone1.svg | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/Mtreasur0133-bit/autorepo1@af1095b/UBZone99.svg | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://drive.google.com/file/d/1fdD7a_7wwESYYv3GYZ6MQ5WjwCpWgSGC | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://unpkg.com/classroomhomework@1.0.0/index.html | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/doyourwork@1.0.0/index.html | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/doyourwork@1.0.0/index.html | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/doyourwork@1.0.0/index.html | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
