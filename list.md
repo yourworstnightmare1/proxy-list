@@ -1250,7 +1250,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 36 |
+> | Proxy/Games | unknown | unknown | 35 |
 
 > [!IMPORTANT]
 > Shadow does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -1258,7 +1258,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://alphageo.eclipsecastellon.net/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://chillmath.adcsurkhet.org.np/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://neatreading.babypos.hk | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://justin.jia.xingtong.tysm.japan.is | 5/4/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://keenphysics.recreatinganew.com | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -47868,7 +47867,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1124 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1121 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48901,10 +48900,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@1d7880bef05e7dec09b681e8324c482f56799049/files/catclass/logo.svg?id=98&key=98 | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@1d7880bef05e7dec09b681e8324c482f56799049/files/catclass/logo.svg?id=99&key=99 | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@1d7880bef05e7dec09b681e8324c482f56799049/files/catclass/logo.svg?id=100&key=100 | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@main/files/99a4cb1b8e/catclass/embed-cdn-jsdelivr.html | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@main/files/99a4cb1b8e/catclass/embed-cdn-jsdelivr.html | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://stem-leap41.mathmatics.ccwu.cc | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/files/99a4cb1b8e/catclass/embed-cdn-jsdelivr.html | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://undergrad-history75.becasuniversitarias.org | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vocab-data29.fukushimastudy.org | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vocab-undergrad34.bridgeportmath.org | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
