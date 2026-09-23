@@ -2174,14 +2174,13 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | N/A | N/A | 78 |
+> | Proxy/Games | N/A | N/A | 77 |
 
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://unpkg.com/bluebook-testing@3.1.3/index.html | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://sites.google.com/view/dominumnetworkv2 | 7/10/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://dominus-22e58.kxcdn.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/dorianhagar506-coder/svgbulk-ok2xmw@main/games-2-1-un89.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -2614,7 +2613,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:utopia | Ultraviolet | 36 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 35 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
@@ -2635,7 +2634,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://educationlessons.crabdance.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://trade.my.biblosconsulting.ru/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://totallynotsuspicious.at.all.biblosconsulting.ru/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://manhattan.mathematical.scientific.foundation.university.biblosconsulting.ru/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://my.great.great.grandfather.watches.jojobizzareadventure.minecraftnoob.com | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://noahsproxy.smelly.cc | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://tatata12345678910e2.chickenkiller.com | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -47314,7 +47312,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | - | 436 |
+> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | - | 428 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -47537,7 +47535,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://raw.esm.sh/tungtungisgoated@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/pleasedoyourhomework@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/pleasedoyourhomework@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://esm.sh/iwantaburger@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/iwantaburger@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/iamhungryrn@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/iamhungryrn@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47551,17 +47548,13 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cdn.esm.sh/schoolwork@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/classroomwork@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/classroomwork@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.esm.sh/classroomwork@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://esm.sh/schoollesson@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/schoollesson@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/schoollesson@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/classlesson@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/classlesson@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/classlesson@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/classroomlesson@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://raw.esm.sh/classroomlesson@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/classroomlesson@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://esm.sh/schoolhomework@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/schoolhomework@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/schoolhomework@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/classhomework@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47573,7 +47566,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://script.google.com/a/macros/monroelocalschools.com/s/AKfycbxyCFf4q9Ge5NmmK49zvE-fKkmFtaDmim_BbUNpbvaqzCTzrsMd8nOWRHuQ1wf0kPqr5A/exec | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://script.google.com/a/macros/monroelocalschools.com/s/AKfycbxHygQbluHEIyUBS1AIXjOeuZfmO67hcyAjbWZAVpaAD22N9iJJMn4GKo7WGLf5iw266w/exec | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://script.google.com/a/macros/monroelocalschools.com/s/AKfycby12YpiG1ICo0pr9jGQfA9_V3QVGhWd_4sIjMBYW3Ve_Gw8xGxHCFkH31l3G4bSt4AbEg/exec | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://esm.sh/desmoswork@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/desmoswork@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/desmoswork@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/desmosclasswork@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47582,7 +47574,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://esm.sh/desmoshomework@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/desmoshomework@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/desmoshomework@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://esm.sh/desmosschoolwork@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/desmosschoolwork@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/desmosisfire@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/desmosisfire@1.0.0/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47699,7 +47690,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cdn.esm.sh/burgerland@1.0.0/assets/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/burgerland@1.0.0/assets/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://unpkg.com/burgerland@1.0.0/assets/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://esm.sh/superdupertest111@1.0.0/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/whatsgoodlookingbabycreed@1.0.0/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/whatsgoodlookingbabycreed@1.0.0/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/tungtungisgoated@1.0.0/index.html | 9/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47866,7 +47856,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1121 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1103 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48052,23 +48042,17 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/main/images/0cf82c3f96/catclass/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/task4z/classroom-15x@main/images/0cf82c3f96/catclass/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@main/images/0cf82c3f96/catclass/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://freshcourse4360.rustyfoundation.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://function-cattitude78.mathmatics.ccwu.cc | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@main/images/0cf82c3f96/catclass/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd-proxy.ygxz.in/gh/task4z/classroom-15x/images/0cf82c3f96/catclass/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/task4z/classroom-15x/images/0cf82c3f96/catclass/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://notes-force37.fukushimastudy.org | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://pureroom2547.daya.tw/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://quickbook7201.mesca.ro/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://quickstudy4847.ktf.li/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@main/images/0cf82c3f96/catclass/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.githack.com/task4z/classroom-15x/main/images/0cf82c3f96/catclass/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://rawcdn.githack.com/task4z/classroom-15x/main/images/0cf82c3f96/catclass/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://review-math18.task4z.dpdns.org | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-kit41.bridgeportmath.org | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://syntax-scholar40.becasuniversitarias.org | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/images/0cf82c3f96/catclass/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://wiselesson5593.cognus.cl/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@main/images/d79a615798/catclass-cloak/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@main/images/d79a615798/catclass-cloak/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/task4z/classroom-15x/images/d79a615798/catclass-cloak/logo.svg | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48123,9 +48107,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://student-meow45.bridgeportmath.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://tutor-prose65.fukushimastudy.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://wave-honors21.mathmatics.ccwu.cc | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://boldnote9833.kariboumedia.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bravecourse3230.leitud.ee/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://brighthub7882.mills-family.us/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@main/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/task4z/classroom-15x@main/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdmirror.com/gh/task4z/classroom-15x/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48133,14 +48114,9 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/main/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/task4z/classroom-15x@main/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@main/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://freshclass8779.staglin.hr/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://freshlearn6828.thealsups.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://freshlearn9120.daya.tw/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@main/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd-proxy.ygxz.in/gh/task4z/classroom-15x/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/task4z/classroom-15x/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://primemind1594.tribeoftwo.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://primesite5859.fericean.ro/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://purr-meow90.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quiz-notes33.mathmatics.ccwu.cc | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/task4z/classroom-15x@main/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48148,9 +48124,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://rawcdn.githack.com/task4z/classroom-15x/main/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://research-catnip20.fukushimastudy.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://research-test82.bridgeportmath.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://sharpgrid7848.fernandacarrasco.cl/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://simplepath9505.cryodome.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://syntax-scratch40.task4z.dpdns.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@main/images/2e82e4acbc/catclass/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://algo-project80.bridgeportmath.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@main/images/972c31f220/catclass-cloak/logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48654,7 +48627,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://notes-stem60.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://physics-review54.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://physics-vector97.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://pounce-undergrad77.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://power-fluff85.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://prep-scruff98.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://prime-test43.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
