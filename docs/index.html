@@ -1649,7 +1649,13 @@
       margin-bottom: 0.75rem;
     }
     .match-mode label { text-transform: none; font-size: 0.85rem; color: var(--text); margin: 0; display: flex; align-items: center; gap: 0.35rem; }
-    main { padding: 1rem 1.25rem 2rem; overflow-x: auto; }
+    main {
+      padding: 1rem 1.25rem 2rem;
+      /* Same overflow-x/visible coercion as .table-chunk-wrap — keep vertical
+         scrolling on the viewport, not an inner main scrollport. */
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
     .stats { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
     .stats strong { color: var(--ok); }
     .stats strong.removed { color: #ff7a7a; }
@@ -1821,7 +1827,11 @@
     }
     .table-chunk-wrap {
       position: relative;
+      /* overflow-x alone coerces overflow-y to auto (CSS overflow), which can
+         trap wheel/touch over the table. Explicit non-visible Y keeps horizontal
+         scroll without a vertical scrollport fighting window scrolling. */
       overflow-x: auto;
+      overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
     }
     .table-chunk-wrap > table {
@@ -11385,7 +11395,15 @@
     }
 
     function getTableChunkWrapTop() {
-      const wrap = document.querySelector(".table-chunk-wrap");
+      // Prefer the main list wrap tied to the virtual tbody. Never use a bare
+      // `.table-chunk-wrap` query — "Most opened" renders another one first
+      // (even while hidden), which pins the virtual window to the top and
+      // makes scrolling through the list look broken.
+      const st = tableVirtualState;
+      const wrap =
+        (st && st.tbody && st.tbody.closest && st.tbody.closest(".table-chunk-wrap")) ||
+        document.querySelector("#tableWrap .table-chunk-wrap") ||
+        document.querySelector("#mainLinksTableWrap");
       if (!wrap) return 0;
       // Under culling zoom, body is CSS-transformed — client rects are scaled but
       // scrollY is not. Use layout offsets so the virtual window stays aligned.
@@ -12111,7 +12129,7 @@
       if (useVirtual) {
         setHtml(
           $("tableWrap"),
-          '<div class="table-chunk-wrap"><table><thead>' +
+          '<div class="table-chunk-wrap" id="mainLinksTableWrap"><table><thead>' +
             theadRow +
             '</thead><tbody id="linksTableBody"></tbody></table></div>'
         );
@@ -12145,7 +12163,7 @@
 
       setHtml(
         $("tableWrap"),
-        '<div class="table-chunk-wrap"><table><thead>' +
+        '<div class="table-chunk-wrap" id="mainLinksTableWrap"><table><thead>' +
           theadRow +
           '</thead><tbody id="linksTableBody">' +
           firstHtml +
