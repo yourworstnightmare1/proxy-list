@@ -2660,13 +2660,11 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet | 4 |
+> | Proxy/Games | libcurl, epoxy, bare, captcha | Ultraviolet, Scramjet | 2 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://learn.savequeechylake.org/ | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://potato.cafelafete.cl/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://src.sixorizon.com/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://viper.thevideobay.org/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🤍 Lucide
