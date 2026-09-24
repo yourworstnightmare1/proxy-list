@@ -453,7 +453,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 25 |
+> | Proxy/Games | epoxy, libcurl, wisp, GDB:space | Scramjet, Ultraviolet | 24 |
 
 > [!IMPORTANT]
 > some space links have a similar problem like daydream where it will be very slow for some reason. if you are on a link and nothing loads or loads very slowly, try another link and make sure that if it is a jsdelivr domain, you choose the fastest option based on your location.
@@ -464,7 +464,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://ilovenirbytes.savequeechylake.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu.rawr.africa.com/ | 4/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://15-204-247-166.anyip.dev/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://15-204-247-166.z.buglloc.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://blog.free-dyndns.org/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://15-204-247-166.cprapid.com/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://15-204-247-166.plesk.page/ | 4/18/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47310,7 +47309,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | - | 428 |
+> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | - | 426 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -47813,8 +47812,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648639609-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648648550-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648649924-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648659854-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648668504-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/UBZone.svg?1 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/UBZone.svg?2 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/UBZone.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49161,7 +49158,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | - | - | 28 |
+> | Games | - | - | 27 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://cdn.imageurlgenerator.com/uploads/ca803644-49df-4030-81fc-6fe1748033c6.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49171,7 +49168,6 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 | | https://quantil.jsdelivr.net/gh/lolration/svg/index.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/lolration/svg@94b28c7/index.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/lolration/svg/index.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://153.76.4.9.a-i.sh/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://elahomework.s3.us-east-2.amazonaws.com/index.html | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.us-east-2.amazonaws.com/elahomework/index.html | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | http://f.dbihm.com/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
