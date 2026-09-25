@@ -11308,8 +11308,6 @@
     const TABLE_VIRTUAL_THRESHOLD = 200;
     const TABLE_ROW_HEIGHT = 50;
     const TABLE_VIRTUAL_BUFFER = 30;
-    /** Max table rows shown while a search query is active. */
-    const SEARCH_RENDER_LIMIT = 20;
     let tableInfiniteObserver = null;
     let tableInfiniteState = null;
     let tableInfiniteScrollFallback = null;
@@ -11345,21 +11343,9 @@
       return !!(q && String(q.value || "").trim());
     }
 
-    /** Cap visible rows during search; returns { rows, totalMatches, limited }. */
-    function applySearchRenderLimit(filtered) {
-      const totalMatches = filtered.length;
-      if (!isSearchQueryActive() || totalMatches <= SEARCH_RENDER_LIMIT) {
-        return { rows: filtered, totalMatches, limited: false };
-      }
-      return {
-        rows: filtered.slice(0, SEARCH_RENDER_LIMIT),
-        totalMatches,
-        limited: true,
-      };
-    }
-
     function shouldUseVirtualTable(filteredLen) {
-      if (isSearchQueryActive()) return false;
+      // Search used to hard-cap at 20 rows and disable virtualization; keep
+      // windowed rendering for large match sets so every hit stays reachable.
       return !isUnoptimizedTableRender() && filteredLen > TABLE_VIRTUAL_THRESHOLD;
     }
 
@@ -12012,9 +11998,6 @@
         await prefetchLinkRatingsForNorms(quickNorms, { skipLinkSaveCounts: true });
       }
       filtered = sortFilteredRowsByListSort(filtered);
-      const searchLimit = applySearchRenderLimit(filtered);
-      const totalSearchMatches = searchLimit.totalMatches;
-      filtered = searchLimit.rows;
       scheduleUpdateFilterCounts(rows);
 
       const checkedAt = linkCheck && linkCheck.checked_at_display ? linkCheck.checked_at_display : "—";
@@ -12056,24 +12039,12 @@
           (isSignedInUser() ? "" : " — sign in to load your saved links.") +
           ".</p>";
       } else {
-        let statsLine =
+        statsPrimary =
           '<p class="stat-line">Showing <strong>' +
           filtered.length +
           "</strong> of <strong>" +
           rows.length +
           "</strong> sorted links.";
-        if (searchLimit.limited) {
-          statsLine =
-            '<p class="stat-line">Showing <strong>' +
-            filtered.length +
-            "</strong> of <strong>" +
-            totalSearchMatches +
-            '</strong> search matches <span class="muted">(refine your search to narrow results)</span>.</p>' +
-            '<p class="stat-line">Sorted list total: <strong>' +
-            rows.length +
-            "</strong> links.</p>";
-        }
-        statsPrimary = statsLine;
       }
 
       const statsCombined =
