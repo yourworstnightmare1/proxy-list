@@ -1,8 +1,8 @@
 # Proxy List
 > [!NOTE]
-> v7.3.4 | Released: September 22, 2026
-> r292 | Last Updated: September 22, 2026
-> Total onsite links: 52218 (51875 sorted + 343 unsorted)\
+> v7.3.5 | Released: September 25, 2026
+> r293 | Last Updated: September 25, 2026
+> Total onsite links: 51518 (51175 sorted + 343 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
 Welcome to the official Proxy List! This has a running list of hundreds of unblocked websites and games that anyone is free to use. We have the most popular and reliable sites here, so you'll never run out!
@@ -24,7 +24,7 @@ Google Forms is now deprecated and can no longer be used to submit links or repo
 ## Update Notice
 
 ### Fixed
-- Fixed bug with automatic dead link checker not running because the total number of queued links exceeded the maximum allowed to be deleted due to a hardcoded safeguard to prevent mass deletion, this is fixed and next link checks should succeed
+- Fixed bug causing user to be unable to scroll list on searches due to a 20 row cap
 
 # 💜 Selenite
 > [!NOTE]
