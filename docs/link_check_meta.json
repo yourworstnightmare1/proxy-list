@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-09-26T10:50:39Z",
-  "checked_at_display": "2026-09-26 10:50 UTC",
+  "checked_at": "2026-09-26T15:45:50Z",
+  "checked_at_display": "2026-09-26 15:45 UTC",
   "added_count": 0,
-  "removed_count": 0,
+  "removed_count": 1,
   "added_links": [],
-  "removed_links": []
+  "removed_links": [
+    "https://music-feline90.becasuniversitarias.org"
+  ]
 }
