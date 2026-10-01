@@ -13861,10 +13861,26 @@
     function renderUpdateNoticeMarkdown(noticesText) {
       const text = String(noticesText || "").replace(/\r\n/g, "\n").trim();
       if (!text) return "";
-      // list.md update notices often use "# item" for readability; render as body text, not headings.
-      const normalized = text.replace(/^#\s+/gm, "- ");
+      // Match changelog.html: treat # / ## / ### as real headings so "### Fixed"
+      // does not show the markdown hashes as literal text in the Update Notice modal.
+      const sections = text.split(/(?=^#{1,3} )/m);
       const chunks = [];
-      renderNoticeSectionBody(chunks, normalized);
+      for (const sec of sections) {
+        const s = sec.trim();
+        if (!s) continue;
+        const hm = s.match(/^(#{1,3})\s+(.+?)(?:\n|$)([\s\S]*)$/);
+        if (hm) {
+          const level = hm[1].length;
+          const title = hm[2].trim();
+          const body = (hm[3] || "").trim();
+          // Prefer h3 in the modal (same as changelog) so section labels stay compact.
+          const tag = level >= 3 ? "h3" : "h2";
+          chunks.push("<" + tag + ">" + renderMarkdownInline(title) + "</" + tag + ">");
+          if (body) renderNoticeSectionBody(chunks, body);
+        } else {
+          renderNoticeSectionBody(chunks, s);
+        }
+      }
       return chunks.join("");
     }
 
