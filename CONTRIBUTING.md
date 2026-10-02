@@ -96,6 +96,21 @@ You can also [click here](https://yourworstnightmare1.github.io/proxy-list/contr
 ## Pull Request Edits
 I may edit the pull request if there is a mistake or small error, then push those edits to main. You will still be fully credited for contributing to the list.
 
+# Maintainer helpers
+
+### GitHub sources for providers (#52)
+If a proxy publishes open-source / self-hostable code, add it to `docs/provider_github_sources.json` under `sources` (key = provider title without leading emoji). Run `python3 scripts/convert_list_to_json.py` afterward. The site shows a **GitHub** link next to that provider in the list and link summary.
+
+### Discovering new hosts from ThreatFeed (#47)
+[1NobleCyber/ThreatFeed](https://github.com/1NobleCyber/ThreatFeed) publishes refreshed S3, Cloudfront, and generic proxy-host feeds. To list candidates that are not already on this repo:
+
+```bash
+python3 scripts/suggest_threatfeed_links.py
+python3 scripts/suggest_threatfeed_links.py --feeds s3,cloudfront,generic --limit 200
+```
+
+Output defaults to `scripts/threatfeed_candidates.txt`. These are **unverified** discovery candidates — check each URL before adding it to `list.md` or `unsorted.md`.
+
 # Common Questions
 ### Will these links show on both `list.md` and the website?
 Yes, they are automatically synced.

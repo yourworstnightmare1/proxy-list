@@ -44,7 +44,6 @@ SECTION_ALIASES: dict[str, str] = {
     "nebulo": "🚀 Nebulo",
     "lucide": "🤍 Lucide",
     "luicide": "🤍 Lucide",
-    "tung tung": "🪵 Tung Tung",
     "dogeub": "🐶 dogeub",
     "dogub": "🐶 dogeub",
     "dominium": "🏛️ Dominum",

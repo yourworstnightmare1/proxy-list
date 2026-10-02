@@ -1,0 +1,28 @@
+{
+  "_note": "Curated GitHub source repos for providers that publish open-source / self-hostable code. Keys are provider titles with leading emoji/symbols stripped (case-insensitive match). Edit this file and run scripts/convert_list_to_json.py.",
+  "sources": {
+    "Selenite": "https://github.com/selenite-cc/Selenite",
+    "Interstellar": "https://github.com/UseInterstellar/Interstellar",
+    "Shuttle": "https://github.com/shuttlenetwork/shuttle",
+    "dogeub": "https://github.com/dogenetwork/dogeub",
+    "PeteZah": "https://github.com/PeteZah-Games/PeteZahGames",
+    "Duckmath": "https://github.com/Neruvy/duckmath",
+    "Velara": "https://github.com/GDuip/velara",
+    "Arsenic": "https://github.com/smartfoloo/arsenic",
+    "InvisiProxy": "https://github.com/QuiteAFancyEmerald/InvisiProxy",
+    "Zinc": "https://github.com/0800WebDev/zinc",
+    "DayDream X": "https://github.com/jkjkjiin/DaydreamX-",
+    "Flamed Lite": "https://github.com/Flamed-Games/Flamed-Lite",
+    "frogie's arcade": "https://github.com/FrogiesArcade/FrogiesArcade-v3-Portable",
+    "BloxCraft Games": "https://github.com/tharun9772/Bloxcraft-UBG",
+    "Gust": "https://github.com/nautilus-os/GUST",
+    "Velcro": "https://github.com/riftaway7-code/velcro",
+    "Rhodium": "https://github.com/LudicrousDevelopment/Rhodium",
+    "Nova": "https://github.com/4c30fSp4des/NOVA-Proxy",
+    "CanLite": "https://github.com/CanLite/CanLite",
+    "Nettle Web": "https://github.com/NettleWeb/NettleWeb",
+    "BestSpark": "https://github.com/BestSpark687090/BestSpark687090",
+    "Zane's Arcade": "https://github.com/Zanez-Arcade-Games/Zanez-Arcade",
+    "Vapor": "https://github.com/VaporNetwork/Vapor"
+  }
+}

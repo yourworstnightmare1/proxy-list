@@ -2558,6 +2558,21 @@
       color: var(--muted);
       overflow-wrap: anywhere;
     }
+    a.provider-github-link {
+      margin-left: 0.35rem;
+      font-size: 0.78em;
+      font-weight: 600;
+      color: var(--accent, #6cb3ff);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    a.provider-github-link:hover {
+      text-decoration: underline;
+    }
+    .summary-provider-name a.provider-github-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
     .summary-body {
       padding: 0.85rem 1rem 1rem;
       overflow-x: hidden;
@@ -5687,10 +5702,30 @@
         .trim();
     }
 
-    function formatProviderCell(provider) {
+    function providerGithubUrl(rowOrUrl) {
+      if (!rowOrUrl) return "";
+      if (typeof rowOrUrl === "string") {
+        const s = rowOrUrl.trim();
+        return /^https?:\/\/(?:www\.)?github\.com\//i.test(s) ? s : "";
+      }
+      const u = rowOrUrl.github_url != null ? String(rowOrUrl.github_url).trim() : "";
+      return /^https?:\/\/(?:www\.)?github\.com\//i.test(u) ? u : "";
+    }
+
+    function formatProviderGithubLink(githubUrl) {
+      const href = providerGithubUrl(githubUrl);
+      if (!href) return "";
+      return (
+        '<a class="provider-github-link" href="' +
+        escapeAttr(href) +
+        '" rel="noopener noreferrer" target="_blank" title="Open GitHub source (self-host / browse code)">GitHub</a>'
+      );
+    }
+
+    function formatProviderCell(provider, githubUrl) {
       const text = String(provider || "");
       const shown = appSettings.renderEmojis === false ? stripEmojisFromText(text) : text;
-      return escapeHtml(shown);
+      return escapeHtml(shown) + formatProviderGithubLink(githubUrl);
     }
 
     function showAppToast(message) {
@@ -11119,7 +11154,7 @@
       return (
         '<div class="folder-trusted-row">' +
         '<span class="folder-trusted-row-main">' +
-        formatProviderCell(r.provider) +
+        formatProviderCell(r.provider, r.github_url) +
         '<span class="folder-trusted-row-url">' +
         escapeHtml(link) +
         "</span></span>" +
@@ -12051,7 +12086,7 @@
       const ratingCell = ratingCellTdHtml(r.link);
       return (
         "<tr><td>" +
-        formatProviderCell(r.provider) +
+        formatProviderCell(r.provider, r.github_url) +
         '</td><td class="link-cell">' +
         buildSaveLinkButtonHtml(r.link) +
         folderToolsHtml +
@@ -12937,6 +12972,7 @@
       el.innerHTML =
         '<div class="summary-provider-name">' +
         escapeHtml(shownProvider) +
+        formatProviderGithubLink(row.github_url) +
         "</div>" +
         '<div class="summary-provider-details">' +
         "Category: " +
