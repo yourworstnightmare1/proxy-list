@@ -8,6 +8,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from submission_url_key import submission_url_key
 
@@ -19,6 +20,7 @@ CONTRIBUTOR_TOTALS = ROOT / "docs" / "contributor_link_totals.json"
 LINK_CHECK_META = ROOT / "docs" / "link_check_meta.json"
 LINK_STATUS = ROOT / "link_status.json"
 POPULAR_LINKS = ROOT / "docs" / "popular_links.json"
+PROVIDER_GITHUB_SOURCES = ROOT / "docs" / "provider_github_sources.json"
 UNSORTED_INPUT = ROOT / "unsorted.md"
 UNSORTED_OUTPUT = ROOT / "docs" / "unsorted.json"
 SUBMISSION_URL_KEYS = ROOT / "docs" / "submission_url_keys.json"
@@ -310,6 +312,62 @@ def resolve_popular_entries(all_links: list[dict], urls: list[str]) -> list[dict
         row = by_key.get(_normalize_url_key(u))
         if row:
             out.append(row)
+    return out
+
+
+def provider_name_key(name: str) -> str:
+    """Strip leading emoji/symbols for stable GitHub-source lookup."""
+    s = str(name or "").strip()
+    s = re.sub(
+        r"^[\W_]+",
+        "",
+        s,
+        flags=re.UNICODE,
+    ).strip()
+    return s.casefold()
+
+
+def canonical_github_repo_url(raw: str) -> str | None:
+    """Return a canonical GitHub repository URL, rejecting lookalike/ambiguous URLs."""
+    try:
+        parsed = urlsplit(str(raw or "").strip())
+        port = parsed.port
+    except ValueError:
+        return None
+    hostname = (parsed.hostname or "").casefold()
+    path_parts = [part for part in parsed.path.split("/") if part]
+    if (
+        parsed.scheme.casefold() != "https"
+        or hostname not in {"github.com", "www.github.com"}
+        or parsed.username is not None
+        or parsed.password is not None
+        or port is not None
+        or bool(parsed.query)
+        or bool(parsed.fragment)
+        or len(path_parts) != 2
+        or not all(re.fullmatch(r"[A-Za-z0-9_.-]+", part) for part in path_parts)
+    ):
+        return None
+    return f"https://github.com/{path_parts[0]}/{path_parts[1]}"
+
+
+def load_provider_github_sources() -> dict[str, str]:
+    """Return casefolded provider-key -> github URL from provider_github_sources.json."""
+    if not PROVIDER_GITHUB_SOURCES.is_file():
+        return {}
+    try:
+        raw = json.loads(PROVIDER_GITHUB_SOURCES.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    sources = raw.get("sources")
+    if not isinstance(sources, dict):
+        return {}
+    out: dict[str, str] = {}
+    for k, v in sources.items():
+        key = provider_name_key(str(k))
+        url = canonical_github_repo_url(str(v) if v is not None else "")
+        if key and url:
+            out[key] = url
     return out
 
 
@@ -742,11 +800,13 @@ def build_compact_payload(payload: dict) -> dict:
     provider_index: dict[str, int] = {}
     contributors_list: list[dict] = []
     contributor_index: dict[tuple[str, str | None], int] = {}
+    github_sources = load_provider_github_sources()
 
     def provider_idx(row: dict) -> int:
         name = str(row.get("provider") or "")
         if name not in provider_index:
             provider_index[name] = len(providers_list)
+            gh = github_sources.get(provider_name_key(name))
             providers_list.append(
                 {
                     "name": name,
@@ -756,6 +816,7 @@ def build_compact_payload(payload: dict) -> dict:
                     "protocols": row.get("protocols") or "",
                     "protocol_tags": row.get("protocol_tags") or [],
                     "additional_notes": row.get("additional_notes") or "",
+                    "github_url": gh,
                 }
             )
         return provider_index[name]

@@ -31,6 +31,7 @@
       protocols: p.protocols || "",
       protocol_tags: opts.shareProviderArrays ? p.protocol_tags || [] : (p.protocol_tags || []).slice(),
       additional_notes: p.additional_notes || "",
+      github_url: p.github_url || null,
       locked: "",
       link: entry[2] || "",
       found: entry[3] || "",

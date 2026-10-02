@@ -20,3 +20,6 @@ commit_info.txt
 streamdeck.ps1
 _tmp
 docs/welcome-demo/*.mp4
+
+# ThreatFeed discovery output
+scripts/threatfeed_candidates.txt
