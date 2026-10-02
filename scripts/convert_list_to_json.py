@@ -8,6 +8,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from submission_url_key import submission_url_key
 
@@ -326,6 +327,30 @@ def provider_name_key(name: str) -> str:
     return s.casefold()
 
 
+def canonical_github_repo_url(raw: str) -> str | None:
+    """Return a canonical GitHub repository URL, rejecting lookalike/ambiguous URLs."""
+    try:
+        parsed = urlsplit(str(raw or "").strip())
+        port = parsed.port
+    except ValueError:
+        return None
+    hostname = (parsed.hostname or "").casefold()
+    path_parts = [part for part in parsed.path.split("/") if part]
+    if (
+        parsed.scheme.casefold() != "https"
+        or hostname not in {"github.com", "www.github.com"}
+        or parsed.username is not None
+        or parsed.password is not None
+        or port is not None
+        or bool(parsed.query)
+        or bool(parsed.fragment)
+        or len(path_parts) != 2
+        or not all(re.fullmatch(r"[A-Za-z0-9_.-]+", part) for part in path_parts)
+    ):
+        return None
+    return f"https://github.com/{path_parts[0]}/{path_parts[1]}"
+
+
 def load_provider_github_sources() -> dict[str, str]:
     """Return casefolded provider-key -> github URL from provider_github_sources.json."""
     if not PROVIDER_GITHUB_SOURCES.is_file():
@@ -340,8 +365,8 @@ def load_provider_github_sources() -> dict[str, str]:
     out: dict[str, str] = {}
     for k, v in sources.items():
         key = provider_name_key(str(k))
-        url = str(v).strip() if v is not None else ""
-        if key and url.startswith(("http://", "https://")) and "github.com/" in url.casefold():
+        url = canonical_github_repo_url(str(v) if v is not None else "")
+        if key and url:
             out[key] = url
     return out
 
