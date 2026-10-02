@@ -3154,24 +3154,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://unstable-smp.vercel.app | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://tharun9772gaming.vercel.app | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 
-# 🗝️ 1Key
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | unknown | unknown | 9 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://exam-prepwork.garethmusic.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://practice-routine.isfacat.net | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://knowledge-flow.maverickden.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://focus-system.ncknms.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://think-learn-improve.bo-kite.com | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://plan-focus-succeed.carcano.me | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://study-hard-smart.derekcturner.net | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://learn-build-grow.findelschnecke.com | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://focus-train-achieve.horizonpublishingllc.com | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-
 # 🟨 Noahs Tutoring
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
