@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v7.4 | Released: October 2, 2026
-> r302 | Last Updated: October 2, 2026
+> r303 | Last Updated: October 04, 2026
 > Total onsite links: 51930 (51051 sorted + 879 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -49549,15 +49549,13 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 3 |
+> | pending | - | - | 1 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://health.acne-support.info/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/daplayboicarti/arsenic@main/arsenic.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://read.new-updates.info/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 💨 Gust
 > [!NOTE]
