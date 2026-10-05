@@ -162,7 +162,8 @@
       color: var(--muted);
       font-size: 0.8rem;
     }
-    /* Skeleton loading (matches main-list table-row-skeleton shimmer) */
+
+/* Skeleton loading (matches main-list table-row-skeleton shimmer) */
     @keyframes stats-sk-shimmer {
       0% { background-position: 100% 0; }
       100% { background-position: -100% 0; }
@@ -252,6 +253,7 @@
         background: #222;
       }
     }
+
     .card {
       border: 1px solid var(--border);
       border-radius: 10px;
@@ -856,6 +858,29 @@
               <div class="l">Top domain links</div>
             </div>
           </div>
+              <div class="l">Sorted links</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="statUnsorted">—</div>
+              <div class="l">Unsorted links</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="statProviders">—</div>
+              <div class="l">Providers</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="statOpens">—</div>
+              <div class="l">Tracked opens (top 100)</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="statUniqueDomains">—</div>
+              <div class="l">Unique domains</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="statTopDomain">—</div>
+              <div class="l">Top domain links</div>
+            </div>
+          </div>
 
           <section class="card" id="providerExplorerCard">
             <h2>Provider explorer</h2>
@@ -959,7 +984,12 @@
                 </tr>
               </thead>
               <tbody id="providerTableBody">
-                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
                   </tbody>
             </table>
           </section>
@@ -989,11 +1019,10 @@
                 lookbacks roll off.
               </p>
               <div class="chart-wrap is-loading tall">
-                <<tbody id="domainsTableBody">
-                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-lin<tbody id="filterTableBody">
-                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
-                  </tbody> class="sk-line" aria-hidden="true"></span></td></tr>
-                  </tbody>          <section class="card">
+                <canvas id="opensMonthlyArchiveChart" aria-label="Opens by month archive"></canvas>
+              </div>
+            </section>
+            <section class="card">
               <h2>Opens by year (archive)</h2>
               <p class="hint">Site-wide open totals archived per UTC year.</p>
               <div class="chart-wrap is-loading tall">
@@ -1014,17 +1043,22 @@
               <h2>Domain ranking</h2>
               <p class="hint" id="domainsHint">Domains ranked by how many sorted links use that hostname.</p>
               <div class="scroll-table">
-<tbody id="blockedDomainsTableBody">
-                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"<tbody id="blockReasonsTableBody">
-                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
-                  </tbody>ine" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
-                  </tbody>main</th>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Domain</th>
                       <th class="num">Links</th>
                       <th class="num">Share</th>
                     </tr>
                   </thead>
                   <tbody id="domainsTableBody">
-                    <tr><td class="muted" colspan="4">Loading…</td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
                   </tbody>
                 </table>
               </div>
@@ -1040,6 +1074,13 @@
             </div>
             <div class="stat is-loading">
               <div class="n" id="statFilterChecked"><span class="sk-line" aria-hidden="true"></span></div>
+              <div class="l">Links with filter data</div>
+            </div>
+          </div>
+              <div class="l">Web filters tracked</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="statFilterChecked">—</div>
               <div class="l">Links with filter data</div>
             </div>
           </div>
@@ -1065,8 +1106,13 @@
                   </tr>
                 </thead>
                 <tbody id="filterTableBody">
-                  <tr><td class="muted" colspan="5">Loading…</td></tr>
-                </tbody>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                  </tbody>
               </table>
             </div>
           </section>
@@ -1078,9 +1124,10 @@
               <div class="detail-stat">
                 <div class="n" id="filterDetailBlocked">—</div>
                 <div class="l">Blocked</div>
-       <tbody id="gamesCountsBody">
-                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
-                  </tbody>div class="l">Unblocked</div>
+              </div>
+              <div class="detail-stat">
+                <div class="n" id="filterDetailUnblocked">—</div>
+                <div class="l">Unblocked</div>
               </div>
               <div class="detail-stat">
                 <div class="n" id="filterDetailWarning">—</div>
@@ -1146,7 +1193,12 @@
                     </tr>
                   </thead>
                   <tbody id="blockedDomainsTableBody">
-                    <tr><td class="muted" colspan="5">Loading…</td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
                   </tbody>
                 </table>
               </div>
@@ -1169,8 +1221,13 @@
                   </tr>
                 </thead>
                 <tbody id="blockReasonsTableBody">
-                  <tr><td class="muted" colspan="4">Loading…</td></tr>
-                </tbody>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                  </tbody>
               </table>
             </div>
           </section>
@@ -1202,6 +1259,21 @@
             </div>
             <div class="stat is-loading">
               <div class="n" id="statUsersPeakHour"><span class="sk-line" aria-hidden="true"></span></div>
+              <div class="l">Busiest hour (UTC)</div>
+            </div>
+          </div>
+              <div class="l">Active today (UTC)</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="statUsers7d">—</div>
+              <div class="l">Avg daily (7d)</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="statUsersMonth">—</div>
+              <div class="l">This month (approx.)</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="statUsersPeakHour">—</div>
               <div class="l">Busiest hour (UTC)</div>
             </div>
           </div>
@@ -1278,6 +1350,21 @@
               <div class="l">Latest snapshot</div>
             </div>
           </div>
+              <div class="l">Databases</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="gamesStatEntries">—</div>
+              <div class="l">Total catalog entries (live)</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="gamesStatUnique">—</div>
+              <div class="l">Unique names (snapshot)</div>
+            </div>
+            <div class="stat">
+              <div class="n" id="gamesStatSnapshot">—</div>
+              <div class="l">Latest snapshot</div>
+            </div>
+          </div>
 
           <div class="charts-row">
             <section class="card">
@@ -1294,7 +1381,14 @@
                     </tr>
                   </thead>
                   <tbody id="gamesCountsBody">
-                    <tr><td colspan="4" class="muted">Loading catalogs…</td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
                   </tbody>
                 </table>
               </div>
