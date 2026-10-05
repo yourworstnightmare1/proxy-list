@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.4.3",
+      "revision": "r306",
+      "released": "October 5, 2026",
+      "update_notice": "### Fixed\n- Fixed a bug where new databases weren't appearing in statistics\n- Fixed a bug where user counts wouldn't load"
+    },
+    {
       "version": "v7.4.2",
       "revision": "r305",
       "released": "October 5, 2026",
