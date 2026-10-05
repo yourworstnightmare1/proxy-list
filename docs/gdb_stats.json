@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-05T07:15:31Z",
+  "generated_at": "2026-10-05T13:36:38Z",
   "snapshot_date": "2026-10-05",
   "catalog_count": 22,
-  "total_entries": 30243,
-  "unique_games": 25952,
+  "total_entries": 29834,
+  "unique_games": 25851,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -26,7 +26,7 @@
     {
       "tag": "gdb:noahs-tutoring",
       "label": "Noah's Tutoring",
-      "count": 406,
+      "count": 0,
       "empty": false
     },
     {
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 22,
+      "count": 19,
       "empty": false
     },
     {
@@ -1102,7 +1102,7 @@
         "gdb:unblockedzone": 0,
         "gdb:gn-math": 837,
         "gdb:luminsdk": 837,
-        "gdb:noahs-tutoring": 406,
+        "gdb:noahs-tutoring": 0,
         "gdb:elite-games": 325,
         "gdb:ultimate-game-stash": 2446,
         "gdb:seraph": 500,
@@ -1110,7 +1110,7 @@
         "gdb:lucide": 837,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 22,
+        "gdb:ccported": 19,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -1122,8 +1122,8 @@
         "gdb:dogeub": 20739,
         "gdb:utopia": 275
       },
-      "total_entries": 30243,
-      "unique_games": 25952
+      "total_entries": 29834,
+      "unique_games": 25851
     }
   ],
   "latest_changes": {
@@ -1160,11 +1160,112 @@
       "gdb:noahs-tutoring": {
         "label": "Noah's Tutoring",
         "added": [],
-        "removed": [],
+        "removed": [
+          "1v1.lol",
+          "20 Minutes Till Dawn",
+          "8Ball Pool",
+          "A Bite at Freddy",
+          "A Dance of Fire and Ice",
+          "A Difficult Game About Climbing",
+          "Abandoned",
+          "Ace Attorny",
+          "Achillies 2",
+          "Adventure Capitalist",
+          "Age of War 2",
+          "Ages of Conflict",
+          "Alien Hominid",
+          "Among Us (real)",
+          "Angry Birds",
+          "Animal Crossing",
+          "Antonblast",
+          "Apple Shooter",
+          "Apple Worm",
+          "Assessment Examination",
+          "Baby Sniper In Vietnam",
+          "Backrooms",
+          "Bacon May Die",
+          "Bad Parenting",
+          "Bad Piggies",
+          "Balatro",
+          "Baldis Basics",
+          "Bank Robbery 2",
+          "Bank Robbery 3",
+          "Bart Bash",
+          "Bart Blast",
+          "Baseball Bros",
+          "Basket Random",
+          "Basketball Stars",
+          "BeatBlock",
+          "Beeswarm Simulator (html version)",
+          "Bendy and the Ink Machine: All Chapters",
+          "Big Shot Boxing",
+          "Big Tower Tiny Square",
+          "Big Tower Tiny Square 2",
+          "Binding of Issac WOTL",
+          "Bitlife",
+          "BitPlanes",
+          "Blade Ball",
+          "Block Blast",
+          "Blocky Snakes",
+          "BloodMoney",
+          "Bloons TD 4",
+          "Bloons Tower Defense 1",
+          "Bloons Tower Defense 2",
+          "Bloons Tower Defense 3",
+          "Bloons Tower Defense 4",
+          "Bloons Tower Defense 5",
+          "Bloxorz",
+          "Blumgi Rocket",
+          "Bounce Masters",
+          "Bow Masters",
+          "Boxing Live 2",
+          "Boxing Random",
+          "Brawl Simulator",
+          "Brotato",
+          "Buckshot Roulette",
+          "Burrito Bison",
+          "Buster Jam",
+          "Call of Duty 4: Modern Warfare",
+          "Call of Duty: World at War",
+          "Candy Crush",
+          "Celeste",
+          "CheeseRoll",
+          "Chess",
+          "Christmas Massacre",
+          "Chrome Dino",
+          "Clash Royale",
+          "Class of",
+          "Cleggy Car",
+          "Cloverpit",
+          "Club Penguin",
+          "Clustertruck",
+          "COD Nazi Zombies Portable",
+          "Command & Conquer",
+          "Cookie Clicker",
+          "Cooking Mama",
+          "Cooking Mama 2",
+          "Cooking Mama 3",
+          "Crazy Cattle 3D",
+          "Crossy Road",
+          "Cruelty Squad",
+          "Cup Head",
+          "Customer Support",
+          "Cut The Rope",
+          "Dad",
+          "Daggerfall",
+          "Dan The Man",
+          "Death Run 3D",
+          "Deepest Sword",
+          "Deltarune",
+          "Deltarune Chapters 3 & 4",
+          "Deltatraveler",
+          "Dice A Million",
+          "Dimension Incident"
+        ],
         "added_count": 0,
-        "removed_count": 0,
+        "removed_count": 406,
         "added_truncated": 0,
-        "removed_truncated": 0
+        "removed_truncated": 306
       },
       "gdb:elite-games": {
         "label": "Elite Games",
@@ -1232,9 +1333,13 @@
       "gdb:ccported": {
         "label": "CCPorted",
         "added": [],
-        "removed": [],
+        "removed": [
+          "Dance of Fire and Ice",
+          "Mainland Wars",
+          "Orbitron 3"
+        ],
         "added_count": 0,
-        "removed_count": 0,
+        "removed_count": 3,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -1331,21 +1436,538 @@
     },
     "all": {
       "added": [],
-      "removed": [],
+      "removed": [
+        {
+          "name": "1v1.lol",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "20 Minutes Till Dawn",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "8Ball Pool",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "A Bite at Freddy",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "A Dance of Fire and Ice",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "A Difficult Game About Climbing",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Abandoned",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Ace Attorny",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Achillies 2",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Adventure Capitalist",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Age of War 2",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Ages of Conflict",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Alien Hominid",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Among Us (real)",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Angry Birds",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Animal Crossing",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Antonblast",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Apple Shooter",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Apple Worm",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Assessment Examination",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Baby Sniper In Vietnam",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Backrooms",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bacon May Die",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bad Parenting",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bad Piggies",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Balatro",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Baldis Basics",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bank Robbery 2",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bank Robbery 3",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bart Bash",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bart Blast",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Baseball Bros",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Basket Random",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Basketball Stars",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "BeatBlock",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Beeswarm Simulator (html version)",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bendy and the Ink Machine: All Chapters",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Big Shot Boxing",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Big Tower Tiny Square",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Big Tower Tiny Square 2",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Binding of Issac WOTL",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bitlife",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "BitPlanes",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Blade Ball",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Block Blast",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Blocky Snakes",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "BloodMoney",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bloons TD 4",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bloons Tower Defense 1",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bloons Tower Defense 2",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bloons Tower Defense 3",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bloons Tower Defense 4",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bloons Tower Defense 5",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bloxorz",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Blumgi Rocket",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bounce Masters",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Bow Masters",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Boxing Live 2",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Boxing Random",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Brawl Simulator",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Brotato",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Buckshot Roulette",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Burrito Bison",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Buster Jam",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Call of Duty 4: Modern Warfare",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Call of Duty: World at War",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Candy Crush",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Celeste",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "CheeseRoll",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Chess",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Christmas Massacre",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Chrome Dino",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Clash Royale",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Class of",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Cleggy Car",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Cloverpit",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Club Penguin",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Clustertruck",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "COD Nazi Zombies Portable",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Command & Conquer",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Cookie Clicker",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Cooking Mama",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Cooking Mama 2",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Cooking Mama 3",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Crazy Cattle 3D",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Crossy Road",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Cruelty Squad",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Cup Head",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Customer Support",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Cut The Rope",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Dad",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Daggerfall",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Dan The Man",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Dance of Fire and Ice",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Death Run 3D",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Deepest Sword",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Deltarune",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Deltarune Chapters 3 & 4",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Deltatraveler",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        },
+        {
+          "name": "Dice A Million",
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring"
+        }
+      ],
       "added_count": 0,
-      "removed_count": 0,
+      "removed_count": 409,
       "added_truncated": 0,
-      "removed_truncated": 0
+      "removed_truncated": 309
     }
   },
   "modifications": [
     {
       "date": "2026-10-05",
       "kind": "diff",
-      "catalogs_touched": [],
+      "catalogs_touched": [
+        "gdb:noahs-tutoring",
+        "gdb:ccported"
+      ],
       "added": 0,
-      "removed": 0,
-      "by_catalog": []
+      "removed": 409,
+      "by_catalog": [
+        {
+          "tag": "gdb:noahs-tutoring",
+          "label": "Noah's Tutoring",
+          "added": 0,
+          "removed": 406
+        },
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 0,
+          "removed": 3
+        }
+      ]
     },
     {
       "date": "2026-10-04",
