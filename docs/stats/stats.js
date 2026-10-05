@@ -640,6 +640,10 @@
     var chart = new Chart(canvas, config);
     if (type === "bar" || type === "line") attachCategoryChartZoom(chart);
     (bucket || charts).push(chart);
+    try {
+      var wrap = canvas.closest ? canvas.closest(".chart-wrap") : canvas.parentElement;
+      if (wrap) wrap.classList.remove("is-loading");
+    } catch (_) {}
     return chart;
   }
 
@@ -677,7 +681,46 @@
 
   function setText(id, value) {
     var el = $(id);
-    if (el) el.textContent = value;
+    if (!el) return;
+    el.textContent = value;
+    var host = el.closest ? el.closest(".stat, .detail-stat") : null;
+    if (host) {
+      host.classList.remove("is-loading");
+      var grid = host.parentElement;
+      if (grid && grid.classList.contains("stat-grid") && !grid.querySelector(".stat.is-loading, .detail-stat.is-loading")) {
+        grid.removeAttribute("aria-busy");
+      }
+    }
+  }
+
+  function setChartLoading(canvasId, loading) {
+    var canvas = $(canvasId);
+    if (!canvas) return;
+    var wrap = canvas.closest ? canvas.closest(".chart-wrap") : canvas.parentElement;
+    if (!wrap) return;
+    if (loading) wrap.classList.add("is-loading");
+    else wrap.classList.remove("is-loading");
+  }
+
+  function clearPanelChartLoading(panelEl) {
+    if (!panelEl) return;
+    panelEl.querySelectorAll(".chart-wrap.is-loading").forEach(function (wrap) {
+      wrap.classList.remove("is-loading");
+    });
+  }
+
+  function skeletonTableRowsHtml(cols, rows) {
+    var nCols = cols || 4;
+    var nRows = rows || 6;
+    var html = "";
+    for (var r = 0; r < nRows; r++) {
+      html += '<tr class="stats-row-skeleton" aria-hidden="true">';
+      for (var c = 0; c < nCols; c++) {
+        html += (c ? '<td class="num">' : "<td>") + '<span class="sk-line" aria-hidden="true"></span></td>';
+      }
+      html += "</tr>";
+    }
+    return html;
   }
 
   function formatInt(n) {
@@ -2793,6 +2836,9 @@
 
     if (typeof Chart === "undefined") {
       setNotice("Chart.js did not load — graphs are unavailable in this browser or proxy.", "err");
+      document.querySelectorAll(".chart-wrap.is-loading").forEach(function (wrap) {
+        wrap.classList.remove("is-loading");
+      });
     }
 
     var data;

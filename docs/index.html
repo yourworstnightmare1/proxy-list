@@ -9031,6 +9031,7 @@
         authStateReady = true;
         if (authStateReadyResolve) authStateReadyResolve();
         startFolderAndMyFoldersListeners();
+        startPresenceWorkerPings();
         return Promise.resolve(false);
       }
       try {
@@ -9233,15 +9234,23 @@
       presenceWorkerPingTimer = setInterval(function () {
         presencePingToWorker(false);
       }, PRESENCE_HEARTBEAT_MS);
+      function applyWorkerActive(n) {
+        if (n == null || !Number.isFinite(n) || n < 0) return;
+        workerActiveSessionsCount = n;
+        updateActiveUsersDisplay();
+      }
       if (
+        typeof window.ProxyListPresence !== "undefined" &&
+        typeof window.ProxyListPresence.startActiveCountPolling === "function"
+      ) {
+        // Poll GET /api/presence-active on an interval so Scramjet/UV hosts that
+        // drop keepalive POSTs still show a live count.
+        window.ProxyListPresence.startActiveCountPolling(applyWorkerActive, PRESENCE_HEARTBEAT_MS);
+      } else if (
         typeof window.ProxyListPresence !== "undefined" &&
         typeof window.ProxyListPresence.fetchActiveCount === "function"
       ) {
-        void window.ProxyListPresence.fetchActiveCount().then(function (n) {
-          if (n == null) return;
-          workerActiveSessionsCount = n;
-          updateActiveUsersDisplay();
-        });
+        void window.ProxyListPresence.fetchActiveCount().then(applyWorkerActive);
       }
     }
 

@@ -132,21 +132,26 @@
     rows.forEach(function (c) {
       liveTotal += Number(liveCounts[c.tag] || 0);
     });
+    function setKpi(id, value) {
+      var el = $(id);
+      if (!el) return;
+      el.textContent = value;
+      var host = el.closest ? el.closest(".stat") : null;
+      if (host) host.classList.remove("is-loading");
+    }
     if (selectedTag !== "all") {
-      if ($("gamesStatCatalogs")) $("gamesStatCatalogs").textContent = "1";
-      if ($("gamesStatEntries")) $("gamesStatEntries").textContent = fmt(liveCounts[selectedTag] || 0);
+      setKpi("gamesStatCatalogs", "1");
+      setKpi("gamesStatEntries", fmt(liveCounts[selectedTag] || 0));
       var sm = snapshotMap()[selectedTag];
-      if ($("gamesStatUnique")) $("gamesStatUnique").textContent = sm ? fmt(sm.count) : "—";
+      setKpi("gamesStatUnique", sm ? fmt(sm.count) : "—");
     } else {
-      if ($("gamesStatCatalogs")) $("gamesStatCatalogs").textContent = fmt(rows.length);
-      if ($("gamesStatEntries")) $("gamesStatEntries").textContent = fmt(liveTotal);
-      if ($("gamesStatUnique")) {
-        $("gamesStatUnique").textContent = snap ? fmt(snap.unique_games) : "—";
-      }
+      setKpi("gamesStatCatalogs", fmt(rows.length));
+      setKpi("gamesStatEntries", fmt(liveTotal));
+      setKpi("gamesStatUnique", snap ? fmt(snap.unique_games) : "—");
     }
-    if ($("gamesStatSnapshot")) {
-      $("gamesStatSnapshot").textContent = (snap && snap.snapshot_date) || "—";
-    }
+    setKpi("gamesStatSnapshot", (snap && snap.snapshot_date) || "—");
+    var grid = document.querySelector('#panel-games .stat-grid');
+    if (grid && !grid.querySelector(".stat.is-loading")) grid.removeAttribute("aria-busy");
   }
 
   function renderCountsTable() {
@@ -235,7 +240,10 @@
       });
 
     if (!rows.length || !global.Chart) {
-      if (wrap) wrap.hidden = true;
+      if (wrap) {
+        wrap.hidden = true;
+        wrap.classList.remove("is-loading");
+      }
       if (empty) empty.hidden = false;
       return;
     }
@@ -299,6 +307,7 @@
         },
       },
     });
+    if (wrap) wrap.classList.remove("is-loading");
   }
 
   function filterHistoryBySpan(history, span) {
@@ -350,7 +359,10 @@
         empty.textContent =
           "Need at least two snapshots before a growth chart can be drawn. A baseline was recorded; adds/removes appear after the next snapshot.";
       }
-      if (wrap) wrap.hidden = true;
+      if (wrap) {
+        wrap.hidden = true;
+        wrap.classList.remove("is-loading");
+      }
       return;
     }
     if (history.length < 1) {
@@ -358,7 +370,10 @@
         empty.hidden = false;
         empty.textContent = "No snapshots fall inside this time span yet. Try a wider range.";
       }
-      if (wrap) wrap.hidden = true;
+      if (wrap) {
+        wrap.hidden = true;
+        wrap.classList.remove("is-loading");
+      }
       return;
     }
     if (empty) empty.hidden = true;
@@ -429,6 +444,7 @@
         },
       },
     });
+    if (wrap) wrap.classList.remove("is-loading");
   }
 
   function latestChangesForScope() {

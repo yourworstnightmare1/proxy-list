@@ -58,6 +58,17 @@ CATALOG_META: list[tuple[str, str]] = [
     ("gdb:boredom", "Boredom"),
     ("gdb:dogeub", "dogeub"),
     ("gdb:utopia", "Utopia Education"),
+    ("gdb:flux", "Flux"),
+    ("gdb:greenis", "Greenis"),
+    ("gdb:melonsoda", "Melon Soda"),
+    ("gdb:edurocks", "EDU Rocks"),
+    ("gdb:timmy", "Timmy's Math Work"),
+    ("gdb:zane", "Zane's Arcade"),
+    ("gdb:3kh0", "3kh0"),
+    ("gdb:alexr", "AlexR"),
+    ("gdb:hydra", "Hydra"),
+    ("gdb:diesmos", "Diesmos"),
+    ("gdb:fyinx", "Fyinx"),
 ]
 
 EMPTY_TAGS = {
@@ -66,6 +77,17 @@ EMPTY_TAGS = {
     "gdb:totally-science",
     "gdb:frogies-arcade",
     "gdb:space",
+    "gdb:flux",
+    "gdb:greenis",
+    "gdb:melonsoda",
+    "gdb:edurocks",
+    "gdb:timmy",
+    "gdb:zane",
+    "gdb:3kh0",
+    "gdb:alexr",
+    "gdb:hydra",
+    "gdb:diesmos",
+    "gdb:fyinx",
 }
 
 
@@ -384,6 +406,17 @@ LOADERS = {
     "gdb:boredom": load_boredom,
     "gdb:dogeub": lambda: load_local("dogeub.json"),
     "gdb:utopia": lambda: load_local("utopia.json"),
+    "gdb:flux": load_empty,
+    "gdb:greenis": load_empty,
+    "gdb:melonsoda": load_empty,
+    "gdb:edurocks": load_empty,
+    "gdb:timmy": load_empty,
+    "gdb:zane": load_empty,
+    "gdb:3kh0": load_empty,
+    "gdb:alexr": load_empty,
+    "gdb:hydra": load_empty,
+    "gdb:diesmos": load_empty,
+    "gdb:fyinx": load_empty,
 }
 
 

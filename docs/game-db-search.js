@@ -150,6 +150,72 @@
       aliases: ["utopia", "utopia education", "gdb:utopia"],
       loader: loadUtopia,
     },
+    "gdb:flux": {
+      tag: "gdb:flux",
+      label: "Flux",
+      aliases: ["flux", "gdb:flux"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:greenis": {
+      tag: "gdb:greenis",
+      label: "Greenis",
+      aliases: ["greenis", "gdb:greenis"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:melonsoda": {
+      tag: "gdb:melonsoda",
+      label: "Melon Soda",
+      aliases: ["melonsoda", "melon soda", "gdb:melonsoda"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:edurocks": {
+      tag: "gdb:edurocks",
+      label: "EDU Rocks",
+      aliases: ["edurocks", "edu rocks", "gdb:edurocks"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:timmy": {
+      tag: "gdb:timmy",
+      label: "Timmy's Math Work",
+      aliases: ["timmy", "timmys", "timmy's math work", "gdb:timmy"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:zane": {
+      tag: "gdb:zane",
+      label: "Zane's Arcade",
+      aliases: ["zane", "zanes", "zane's arcade", "gdb:zane"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:3kh0": {
+      tag: "gdb:3kh0",
+      label: "3kh0",
+      aliases: ["3kh0", "gdb:3kh0"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:alexr": {
+      tag: "gdb:alexr",
+      label: "AlexR",
+      aliases: ["alexr", "alex r", "gdb:alexr"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:hydra": {
+      tag: "gdb:hydra",
+      label: "Hydra",
+      aliases: ["hydra", "gdb:hydra"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:diesmos": {
+      tag: "gdb:diesmos",
+      label: "Diesmos",
+      aliases: ["diesmos", "gdb:diesmos"],
+      loader: loadEmptyCatalog,
+    },
+    "gdb:fyinx": {
+      tag: "gdb:fyinx",
+      label: "Fyinx",
+      aliases: ["fyinx", "gdb:fyinx"],
+      loader: loadEmptyCatalog,
+    },
   };
 
   var SCRIPT_DIR = (function () {
@@ -208,6 +274,17 @@
     "gdb:boredom": "#c4b5fd",
     "gdb:dogeub": "#fde047",
     "gdb:utopia": "#f0abfc",
+    "gdb:flux": "#67e8f9",
+    "gdb:greenis": "#4ade80",
+    "gdb:melonsoda": "#fb7185",
+    "gdb:edurocks": "#94a3b8",
+    "gdb:timmy": "#fbbf24",
+    "gdb:zane": "#a78bfa",
+    "gdb:3kh0": "#38bdf8",
+    "gdb:alexr": "#f97316",
+    "gdb:hydra": "#ef4444",
+    "gdb:diesmos": "#14b8a6",
+    "gdb:fyinx": "#e879f9",
   };
 
   function normalizeQuery(q) {

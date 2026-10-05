@@ -162,6 +162,96 @@
       color: var(--muted);
       font-size: 0.8rem;
     }
+    /* Skeleton loading (matches main-list table-row-skeleton shimmer) */
+    @keyframes stats-sk-shimmer {
+      0% { background-position: 100% 0; }
+      100% { background-position: -100% 0; }
+    }
+    .sk-line {
+      display: block;
+      height: 0.85em;
+      max-width: 100%;
+      border-radius: 4px;
+      background: linear-gradient(
+        90deg,
+        var(--surface) 0%,
+        rgba(130, 160, 190, 0.22) 45%,
+        rgba(130, 160, 190, 0.28) 55%,
+        var(--surface) 100%
+      );
+      background-size: 220% 100%;
+      animation: stats-sk-shimmer 1.15s ease-in-out infinite;
+    }
+    .stat.is-loading .n {
+      min-height: 1.55rem;
+      display: flex;
+      align-items: center;
+    }
+    .stat.is-loading .n .sk-line {
+      height: 1.05rem;
+      width: 58%;
+    }
+    .stat.is-loading:nth-child(2n) .n .sk-line { width: 72%; }
+    .stat.is-loading:nth-child(3n) .n .sk-line { width: 46%; }
+    .detail-stat.is-loading .n {
+      min-height: 1.35rem;
+      display: flex;
+      align-items: center;
+    }
+    .detail-stat.is-loading .n .sk-line {
+      height: 0.95rem;
+      width: 52%;
+    }
+    .chart-wrap.is-loading {
+      overflow: hidden;
+    }
+    .chart-wrap.is-loading > canvas {
+      visibility: hidden;
+    }
+    .chart-wrap.is-loading::after {
+      content: "";
+      position: absolute;
+      inset: 0.65rem;
+      border-radius: 8px;
+      background: linear-gradient(
+        90deg,
+        #161616 0%,
+        rgba(130, 160, 190, 0.16) 45%,
+        rgba(130, 160, 190, 0.22) 55%,
+        #161616 100%
+      );
+      background-size: 220% 100%;
+      animation: stats-sk-shimmer 1.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+    tr.stats-row-skeleton td {
+      padding: 0.55rem 0.55rem;
+      vertical-align: middle;
+    }
+    tr.stats-row-skeleton .sk-line {
+      height: 0.72em;
+    }
+    tr.stats-row-skeleton td:nth-child(1) .sk-line { width: 68%; }
+    tr.stats-row-skeleton td:nth-child(2) .sk-line { width: 42%; margin-left: auto; }
+    tr.stats-row-skeleton td:nth-child(3) .sk-line { width: 38%; margin-left: auto; }
+    tr.stats-row-skeleton td:nth-child(4) .sk-line { width: 55%; }
+    tr.stats-row-skeleton td:nth-child(5) .sk-line { width: 48%; }
+    tr.stats-row-skeleton:nth-child(2n) td:nth-child(1) .sk-line { width: 78%; }
+    tr.stats-row-skeleton:nth-child(3n) td:nth-child(1) .sk-line { width: 54%; }
+    .games-list.is-loading .sk-line {
+      height: 0.78em;
+      width: 72%;
+      margin: 0.35rem 0;
+    }
+    .games-list.is-loading .sk-line:nth-child(2n) { width: 58%; }
+    .games-list.is-loading .sk-line:nth-child(3n) { width: 84%; }
+    @media (prefers-reduced-motion: reduce) {
+      .sk-line,
+      .chart-wrap.is-loading::after {
+        animation: none;
+        background: #222;
+      }
+    }
     .card {
       border: 1px solid var(--border);
       border-radius: 10px;
@@ -740,29 +830,29 @@
         <div id="statusNotice" class="notice" hidden></div>
 
         <div class="panel" id="panel-providers" data-panel="providers">
-          <div class="stat-grid" aria-label="Providers overview">
-            <div class="stat">
-              <div class="n" id="statSorted">—</div>
+          <div class="stat-grid" aria-label="Providers overview" aria-busy="true">
+            <div class="stat is-loading">
+              <div class="n" id="statSorted"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Sorted links</div>
             </div>
-            <div class="stat">
-              <div class="n" id="statUnsorted">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="statUnsorted"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Unsorted links</div>
             </div>
-            <div class="stat">
-              <div class="n" id="statProviders">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="statProviders"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Providers</div>
             </div>
-            <div class="stat">
-              <div class="n" id="statOpens">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="statOpens"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Tracked opens (top 100)</div>
             </div>
-            <div class="stat">
-              <div class="n" id="statUniqueDomains">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="statUniqueDomains"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Unique domains</div>
             </div>
-            <div class="stat">
-              <div class="n" id="statTopDomain">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="statTopDomain"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Top domain links</div>
             </div>
           </div>
@@ -819,7 +909,7 @@
                   <button type="button" class="btn" data-provider-links-span="3y">3y</button>
                   <button type="button" class="btn is-active" data-provider-links-span="all">All</button>
                 </div>
-                <div class="chart-wrap">
+                <div class="chart-wrap is-loading">
                   <canvas id="providerLinksOverTimeChart" aria-label="Provider links over time"></canvas>
                 </div>
               </div>
@@ -833,7 +923,7 @@
                   <button type="button" class="btn" data-provider-opens-span="1y">1y</button>
                   <button type="button" class="btn" data-provider-opens-span="all">All</button>
                 </div>
-                <div class="chart-wrap">
+                <div class="chart-wrap is-loading">
                   <canvas id="providerOpensOverTimeChart" aria-label="Provider opens over time"></canvas>
                 </div>
               </div>
@@ -844,14 +934,14 @@
             <section class="card">
               <h2>Top providers by link count</h2>
               <p class="hint">How many sorted links each provider has on the list. Click a bar to open that provider.</p>
-              <div class="chart-wrap tall">
+              <div class="chart-wrap is-loading tall">
                 <canvas id="providerLinksChart" aria-label="Providers by link count"></canvas>
               </div>
             </section>
             <section class="card">
               <h2>Categories</h2>
               <p class="hint">Share of sorted links by category.</p>
-              <div class="chart-wrap donut">
+              <div class="chart-wrap is-loading donut">
                 <canvas id="categoryChart" aria-label="Links by category"></canvas>
               </div>
             </section>
@@ -869,8 +959,8 @@
                 </tr>
               </thead>
               <tbody id="providerTableBody">
-                <tr><td class="muted" colspan="3">Loading…</td></tr>
-              </tbody>
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                  </tbody>
             </table>
           </section>
 
@@ -878,14 +968,14 @@
             <section class="card">
               <h2>Most opened links</h2>
               <p class="hint">Lifetime open counts from this site (top 15 of the top 100).</p>
-              <div class="chart-wrap tall">
+              <div class="chart-wrap is-loading tall">
                 <canvas id="topOpensChart" aria-label="Most opened links"></canvas>
               </div>
             </section>
             <section class="card">
               <h2>Opens by provider</h2>
               <p class="hint">Open totals rolled up to providers for links in the top 100.</p>
-              <div class="chart-wrap tall">
+              <div class="chart-wrap is-loading tall">
                 <canvas id="opensByProviderChart" aria-label="Opens by provider"></canvas>
               </div>
             </section>
@@ -898,14 +988,15 @@
                 Site-wide open totals archived per UTC month so longer history is not lost when daily
                 lookbacks roll off.
               </p>
-              <div class="chart-wrap tall">
-                <canvas id="opensMonthlyArchiveChart" aria-label="Opens by month archive"></canvas>
-              </div>
-            </section>
-            <section class="card">
+              <div class="chart-wrap is-loading tall">
+                <<tbody id="domainsTableBody">
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-lin<tbody id="filterTableBody">
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                  </tbody> class="sk-line" aria-hidden="true"></span></td></tr>
+                  </tbody>          <section class="card">
               <h2>Opens by year (archive)</h2>
               <p class="hint">Site-wide open totals archived per UTC year.</p>
-              <div class="chart-wrap tall">
+              <div class="chart-wrap is-loading tall">
                 <canvas id="opensYearlyArchiveChart" aria-label="Opens by year archive"></canvas>
               </div>
             </section>
@@ -915,7 +1006,7 @@
             <section class="card">
               <h2>Most used domains</h2>
               <p class="hint">Hostnames that appear most often on the sorted list (many links can share one domain).</p>
-              <div class="chart-wrap tall">
+              <div class="chart-wrap is-loading tall">
                 <canvas id="domainsChart" aria-label="Most used domains"></canvas>
               </div>
             </section>
@@ -923,11 +1014,11 @@
               <h2>Domain ranking</h2>
               <p class="hint" id="domainsHint">Domains ranked by how many sorted links use that hostname.</p>
               <div class="scroll-table">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Domain</th>
+<tbody id="blockedDomainsTableBody">
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"<tbody id="blockReasonsTableBody">
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                  </tbody>ine" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                  </tbody>main</th>
                       <th class="num">Links</th>
                       <th class="num">Share</th>
                     </tr>
@@ -942,13 +1033,13 @@
         </div>
 
         <div class="panel" id="panel-filters" data-panel="filters" hidden>
-          <div class="stat-grid" aria-label="Filter overview">
-            <div class="stat">
-              <div class="n" id="statFilters">—</div>
+          <div class="stat-grid" aria-label="Filter overview" aria-busy="true">
+            <div class="stat is-loading">
+              <div class="n" id="statFilters"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Web filters tracked</div>
             </div>
-            <div class="stat">
-              <div class="n" id="statFilterChecked">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="statFilterChecked"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Links with filter data</div>
             </div>
           </div>
@@ -959,7 +1050,7 @@
               Per-filter blocked / unblocked / warning counts across sorted links that have gn-math data.
               Click a filter for its top block reasons.
             </p>
-            <div class="chart-wrap tall filter-tall">
+            <div class="chart-wrap is-loading tall filter-tall">
               <canvas id="filterStatusChart" aria-label="Filter blocked and unblocked counts"></canvas>
             </div>
             <div class="scroll-table" style="margin-top:0.85rem;">
@@ -987,10 +1078,9 @@
               <div class="detail-stat">
                 <div class="n" id="filterDetailBlocked">—</div>
                 <div class="l">Blocked</div>
-              </div>
-              <div class="detail-stat">
-                <div class="n" id="filterDetailUnblocked">—</div>
-                <div class="l">Unblocked</div>
+       <tbody id="gamesCountsBody">
+                    <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr><tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
+                  </tbody>div class="l">Unblocked</div>
               </div>
               <div class="detail-stat">
                 <div class="n" id="filterDetailWarning">—</div>
@@ -1003,7 +1093,7 @@
             </div>
             <h2 style="font-size:0.95rem;margin:0 0 0.35rem;">Top block reasons for this filter</h2>
             <p class="hint">How often this filter blocks sorted links for each category/reason.</p>
-            <div class="chart-wrap">
+            <div class="chart-wrap is-loading">
               <canvas id="filterReasonChart" aria-label="Block reasons for selected filter"></canvas>
             </div>
             <div class="scroll-table" style="margin-top:0.75rem;">
@@ -1024,7 +1114,7 @@
           <section class="card">
             <h2>Top block reasons</h2>
             <p class="hint">Most common block categories across all filters (a link can contribute once per filter).</p>
-            <div class="chart-wrap tall">
+            <div class="chart-wrap is-loading tall">
               <canvas id="blockReasonsChart" aria-label="Top block reasons"></canvas>
             </div>
           </section>
@@ -1035,7 +1125,7 @@
               <p class="hint">
                 Domains ranked by total blocked filter matches across sorted links (one count per filter per link).
               </p>
-              <div class="chart-wrap tall">
+              <div class="chart-wrap is-loading tall">
                 <canvas id="blockedDomainsChart" aria-label="Most blocked domains"></canvas>
               </div>
             </section>
@@ -1090,28 +1180,28 @@
           <section class="card">
             <h2>Top contributors</h2>
             <p class="hint">Cumulative link counts attributed to contributors on the sorted list.</p>
-            <div class="chart-wrap tall">
+            <div class="chart-wrap is-loading tall">
               <canvas id="contributorsChart" aria-label="Top contributors"></canvas>
             </div>
           </section>
         </div>
 
         <div class="panel" id="panel-users" data-panel="users" hidden>
-          <div class="stat-grid" aria-label="Users overview">
-            <div class="stat">
-              <div class="n" id="statUsersToday">—</div>
+          <div class="stat-grid" aria-label="Users overview" aria-busy="true">
+            <div class="stat is-loading">
+              <div class="n" id="statUsersToday"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Active today (UTC)</div>
             </div>
-            <div class="stat">
-              <div class="n" id="statUsers7d">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="statUsers7d"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Avg daily (7d)</div>
             </div>
-            <div class="stat">
-              <div class="n" id="statUsersMonth">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="statUsersMonth"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">This month (approx.)</div>
             </div>
-            <div class="stat">
-              <div class="n" id="statUsersPeakHour">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="statUsersPeakHour"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Busiest hour (UTC)</div>
             </div>
           </div>
@@ -1131,7 +1221,7 @@
               <button type="button" class="btn" data-users-span="3y">3y</button>
               <button type="button" class="btn" data-users-span="5y">5y</button>
             </div>
-            <div class="chart-wrap tall">
+            <div class="chart-wrap is-loading tall">
               <canvas id="usersActiveOverTimeChart" aria-label="Active users over time"></canvas>
             </div>
           </section>
@@ -1142,7 +1232,7 @@
               Average unique visitors by UTC hour over the last 30 days with data (heartbeats
               also shape which hours feel busiest).
             </p>
-            <div class="chart-wrap tall">
+            <div class="chart-wrap is-loading tall">
               <canvas id="usersActiveHoursChart" aria-label="Most active hours"></canvas>
             </div>
           </section>
@@ -1152,7 +1242,7 @@
             <p class="hint">
               Approximate monthly unique visitors (a visitor counting once per calendar month).
             </p>
-            <div class="chart-wrap tall">
+            <div class="chart-wrap is-loading tall">
               <canvas id="usersMonthlyChart" aria-label="Active users per month"></canvas>
             </div>
           </section>
@@ -1170,21 +1260,21 @@
 
           <div id="gamesBaselineNotice" class="notice warn" hidden></div>
 
-          <div class="stat-grid" aria-label="Game databases overview">
-            <div class="stat">
-              <div class="n" id="gamesStatCatalogs">—</div>
+          <div class="stat-grid" aria-label="Game databases overview" aria-busy="true">
+            <div class="stat is-loading">
+              <div class="n" id="gamesStatCatalogs"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Databases</div>
             </div>
-            <div class="stat">
-              <div class="n" id="gamesStatEntries">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="gamesStatEntries"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Total catalog entries (live)</div>
             </div>
-            <div class="stat">
-              <div class="n" id="gamesStatUnique">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="gamesStatUnique"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Unique names (snapshot)</div>
             </div>
-            <div class="stat">
-              <div class="n" id="gamesStatSnapshot">—</div>
+            <div class="stat is-loading">
+              <div class="n" id="gamesStatSnapshot"><span class="sk-line" aria-hidden="true"></span></div>
               <div class="l">Latest snapshot</div>
             </div>
           </div>
@@ -1212,7 +1302,7 @@
             <section class="card">
               <h2>Share by database</h2>
               <p class="hint">How the live game counts are distributed across every game database.</p>
-              <div class="chart-wrap donut games-share-donut" id="gamesShareWrap">
+              <div class="chart-wrap is-loading donut games-share-donut" id="gamesShareWrap">
                 <canvas id="gamesShareChart" aria-label="Games share by database"></canvas>
               </div>
               <p id="gamesShareEmpty" class="muted" hidden>No catalog counts available yet.</p>
@@ -1231,7 +1321,7 @@
               <button type="button" class="btn" data-games-history-span="3y">3y</button>
               <button type="button" class="btn" data-games-history-span="5y">5y</button>
             </div>
-            <div class="chart-wrap tall" id="gamesHistoryWrap">
+            <div class="chart-wrap is-loading tall" id="gamesHistoryWrap">
               <canvas id="gamesHistoryChart" aria-label="Catalog size over time"></canvas>
             </div>
             <p id="gamesHistoryEmpty" class="muted" hidden>
