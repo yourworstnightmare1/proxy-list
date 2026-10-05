@@ -77,16 +77,8 @@ EMPTY_TAGS = {
     "gdb:totally-science",
     "gdb:frogies-arcade",
     "gdb:space",
-    "gdb:flux",
-    "gdb:greenis",
-    "gdb:melonsoda",
     "gdb:edurocks",
     "gdb:timmy",
-    "gdb:zane",
-    "gdb:3kh0",
-    "gdb:alexr",
-    "gdb:hydra",
-    "gdb:diesmos",
     "gdb:fyinx",
 }
 
@@ -356,6 +348,108 @@ def load_boredom() -> list[str]:
     return []
 
 
+def load_flux() -> list[str]:
+    rows = fetch_cdn("/gh/blockfreeubg/fluxv3@main/games.json")
+    return names_from_rows(rows if isinstance(rows, list) else [], "name", "title")
+
+
+def load_greenis() -> list[str]:
+    names: list[str] = []
+    for path in (
+        "/gh/greeniYT/gug@latest/json/game.json",
+        "/gh/greeniYT/gug@latest/json/roms.json",
+    ):
+        try:
+            rows = fetch_cdn(path)
+            names.extend(names_from_rows(rows if isinstance(rows, list) else [], "name", "title"))
+        except Exception:
+            continue
+    return unique_names(names)
+
+
+def load_melonsoda() -> list[str]:
+    rows = http_json(
+        "https://raw.githubusercontent.com/linuxfandudeguy/turbo-meme/refs/heads/main/games.json"
+    )
+    return names_from_rows(rows if isinstance(rows, list) else [], "name", "title")
+
+
+def load_zane() -> list[str]:
+    rows = http_json("https://cdn.jsdelivr.net/npm/@arcade-v/arcade_v/navigation/games/games.json")
+    names = []
+    for row in rows if isinstance(rows, list) else []:
+        if not isinstance(row, dict):
+            continue
+        title = str(row.get("title") or row.get("name") or "").strip()
+        if not title or re.search(r"^request a feature$", title, re.I):
+            continue
+        names.append(title)
+    return unique_names(names)
+
+
+def load_3kh0() -> list[str]:
+    try:
+        tree = http_json("https://api.github.com/repos/3kh0/3kh0-lite/git/trees/main?recursive=1")
+    except Exception:
+        return []
+    names = []
+    for node in (tree.get("tree") if isinstance(tree, dict) else []) or []:
+        if not isinstance(node, dict) or node.get("type") != "tree":
+            continue
+        path = str(node.get("path") or "")
+        if not re.match(r"^projects/[^/]+$", path):
+            continue
+        names.append(path.replace("projects/", "").replace("-", " "))
+    return unique_names(names)
+
+
+def load_alexr() -> list[str]:
+    rows = fetch_cdn("/gh/dskjfoisjfsjio/alexrsworld@main/singlefilegames.json")
+    names = []
+    for row in rows if isinstance(rows, list) else []:
+        if not isinstance(row, dict):
+            continue
+        title = str(row.get("title") or "").strip()
+        path = str(row.get("path") or "")
+        if not title:
+            continue
+        if re.search(r"alexr code editor", title, re.I):
+            continue
+        if re.search(r"codeeditor\.html", path, re.I):
+            continue
+        names.append(title)
+    return unique_names(names)
+
+
+def load_hydra() -> list[str]:
+    rows = fetch_cdn("/gh/zennedu/hydra@main/gmes.json")
+    return names_from_rows(rows if isinstance(rows, list) else [], "title", "name")
+
+
+def load_diesmos() -> list[str]:
+    try:
+        tree = http_json(
+            "https://api.github.com/repos/aDiesmos/HTMLFILES/git/trees/main?recursive=1"
+        )
+    except Exception:
+        return []
+    names = []
+    for node in (tree.get("tree") if isinstance(tree, dict) else []) or []:
+        if not isinstance(node, dict):
+            continue
+        path = str(node.get("path") or "")
+        if not re.search(r"\.html$", path, re.I):
+            continue
+        raw = path[path.rfind("/") + 1 :].replace(".html", "").replace(".HTML", "")
+        if not raw:
+            continue
+        title = re.sub(r"([a-z])([A-Z0-9])", r"\1 \2", raw)
+        title = re.sub(r"[-_.]+", " ", title).strip()
+        if title:
+            names.append(title)
+    return unique_names(names)
+
+
 def load_selenite() -> list[str]:
     rows = fetch_cdn("/gh/selenite-cc/selenite-old@main/games.json")
     return names_from_rows(rows if isinstance(rows, list) else [], "name", "title")
@@ -406,16 +500,16 @@ LOADERS = {
     "gdb:boredom": load_boredom,
     "gdb:dogeub": lambda: load_local("dogeub.json"),
     "gdb:utopia": lambda: load_local("utopia.json"),
-    "gdb:flux": load_empty,
-    "gdb:greenis": load_empty,
-    "gdb:melonsoda": load_empty,
+    "gdb:flux": load_flux,
+    "gdb:greenis": load_greenis,
+    "gdb:melonsoda": load_melonsoda,
     "gdb:edurocks": load_empty,
     "gdb:timmy": load_empty,
-    "gdb:zane": load_empty,
-    "gdb:3kh0": load_empty,
-    "gdb:alexr": load_empty,
-    "gdb:hydra": load_empty,
-    "gdb:diesmos": load_empty,
+    "gdb:zane": load_zane,
+    "gdb:3kh0": load_3kh0,
+    "gdb:alexr": load_alexr,
+    "gdb:hydra": load_hydra,
+    "gdb:diesmos": load_diesmos,
     "gdb:fyinx": load_empty,
 }
 

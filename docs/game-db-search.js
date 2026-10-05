@@ -154,19 +154,19 @@
       tag: "gdb:flux",
       label: "Flux",
       aliases: ["flux", "gdb:flux"],
-      loader: loadEmptyCatalog,
+      loader: loadFlux,
     },
     "gdb:greenis": {
       tag: "gdb:greenis",
       label: "Greenis",
       aliases: ["greenis", "gdb:greenis"],
-      loader: loadEmptyCatalog,
+      loader: loadGreenis,
     },
     "gdb:melonsoda": {
       tag: "gdb:melonsoda",
       label: "Melon Soda",
       aliases: ["melonsoda", "melon soda", "gdb:melonsoda"],
-      loader: loadEmptyCatalog,
+      loader: loadMelonsoda,
     },
     "gdb:edurocks": {
       tag: "gdb:edurocks",
@@ -178,42 +178,44 @@
       tag: "gdb:timmy",
       label: "Timmy's Math Work",
       aliases: ["timmy", "timmys", "timmy's math work", "gdb:timmy"],
+      // Shell/browser UI — no public game-name catalog yet.
       loader: loadEmptyCatalog,
     },
     "gdb:zane": {
       tag: "gdb:zane",
       label: "Zane's Arcade",
       aliases: ["zane", "zanes", "zane's arcade", "gdb:zane"],
-      loader: loadEmptyCatalog,
+      loader: loadZane,
     },
     "gdb:3kh0": {
       tag: "gdb:3kh0",
       label: "3kh0",
       aliases: ["3kh0", "gdb:3kh0"],
-      loader: loadEmptyCatalog,
+      loader: load3kh0,
     },
     "gdb:alexr": {
       tag: "gdb:alexr",
       label: "AlexR",
       aliases: ["alexr", "alex r", "gdb:alexr"],
-      loader: loadEmptyCatalog,
+      loader: loadAlexr,
     },
     "gdb:hydra": {
       tag: "gdb:hydra",
       label: "Hydra",
       aliases: ["hydra", "gdb:hydra"],
-      loader: loadEmptyCatalog,
+      loader: loadHydra,
     },
     "gdb:diesmos": {
       tag: "gdb:diesmos",
       label: "Diesmos",
       aliases: ["diesmos", "gdb:diesmos"],
-      loader: loadEmptyCatalog,
+      loader: loadDiesmos,
     },
     "gdb:fyinx": {
       tag: "gdb:fyinx",
       label: "Fyinx",
       aliases: ["fyinx", "gdb:fyinx"],
+      // Rift serves /fyinx-catalog only on-origin; no public mirror yet.
       loader: loadEmptyCatalog,
     },
   };
@@ -779,6 +781,159 @@
     var rows = await fetchLocalCatalog("utopia.json");
     if (!Array.isArray(rows)) return [];
     return normalizeEntries(rows);
+  }
+
+  async function loadFlux() {
+    var rows = await fetchViaCdns("/gh/blockfreeubg/fluxv3@main/games.json");
+    if (!Array.isArray(rows)) return [];
+    return normalizeEntries(
+      rows.map(function (g) {
+        return {
+          name: g && (g.name || g.title),
+          publisher: "",
+          description: "",
+          thumbnail: (g && (g.thumbnail || g.image || g.cover)) || "",
+        };
+      })
+    );
+  }
+
+  async function loadGreenis() {
+    var games = [];
+    try {
+      var list = await fetchViaCdns("/gh/greeniYT/gug@latest/json/game.json");
+      if (Array.isArray(list)) games = games.concat(list);
+    } catch (_) {}
+    try {
+      var roms = await fetchViaCdns("/gh/greeniYT/gug@latest/json/roms.json");
+      if (Array.isArray(roms)) games = games.concat(roms);
+    } catch (_) {}
+    return normalizeEntries(
+      games.map(function (g) {
+        return {
+          name: g && (g.name || g.title),
+          publisher: (g && g.creator) || "",
+          description: "",
+          thumbnail: (g && (g.image || g.cover)) || "",
+        };
+      })
+    );
+  }
+
+  async function loadMelonsoda() {
+    var rows = await fetchJson(
+      "https://raw.githubusercontent.com/linuxfandudeguy/turbo-meme/refs/heads/main/games.json"
+    );
+    if (!Array.isArray(rows)) return [];
+    return normalizeEntries(
+      rows.map(function (g) {
+        return {
+          name: g && (g.name || g.title),
+          publisher: "",
+          description: "",
+          thumbnail: "",
+        };
+      })
+    );
+  }
+
+  async function loadZane() {
+    var rows = await fetchJson(
+      "https://cdn.jsdelivr.net/npm/@arcade-v/arcade_v/navigation/games/games.json"
+    );
+    if (!Array.isArray(rows)) return [];
+    return normalizeEntries(
+      rows
+        .filter(function (g) {
+          var title = String((g && (g.title || g.name)) || "").trim();
+          return title && !/^request a feature$/i.test(title);
+        })
+        .map(function (g) {
+          return {
+            name: g && (g.title || g.name),
+            publisher: "",
+            description: "",
+            thumbnail: (g && (g.image || g.cover)) || "",
+          };
+        })
+    );
+  }
+
+  async function load3kh0() {
+    var tree = await fetchJson(
+      "https://api.github.com/repos/3kh0/3kh0-lite/git/trees/main?recursive=1"
+    );
+    var nodes = (tree && tree.tree) || [];
+    var names = [];
+    nodes.forEach(function (node) {
+      if (!node || node.type !== "tree") return;
+      var path = String(node.path || "");
+      if (!/^projects\/[^/]+$/.test(path)) return;
+      names.push(path.replace(/^projects\//, "").replace(/-/g, " "));
+    });
+    return uniqueNames(names);
+  }
+
+  async function loadAlexr() {
+    var rows = await fetchViaCdns("/gh/dskjfoisjfsjio/alexrsworld@main/singlefilegames.json");
+    if (!Array.isArray(rows)) return [];
+    return normalizeEntries(
+      rows
+        .filter(function (g) {
+          var title = String((g && g.title) || "");
+          var path = String((g && g.path) || "");
+          if (/alexr code editor/i.test(title)) return false;
+          if (/codeeditor\.html/i.test(path)) return false;
+          return !!title;
+        })
+        .map(function (g) {
+          return {
+            name: g.title,
+            publisher: "",
+            description: (g && g.description) || "",
+            thumbnail: (g && g.img) || "",
+          };
+        })
+    );
+  }
+
+  async function loadHydra() {
+    var rows = await fetchViaCdns("/gh/zennedu/hydra@main/gmes.json");
+    if (!Array.isArray(rows)) return [];
+    return normalizeEntries(
+      rows.map(function (g) {
+        return {
+          name: g && (g.title || g.name),
+          publisher: "",
+          description: "",
+          thumbnail: g && g.thumb
+            ? "https://cdn.jsdelivr.net/gh/zennedu/hydra@main/" +
+              (String(g.thumb).indexOf("thumbs/") === 0 ? g.thumb : "thumbs/" + g.thumb)
+            : "",
+        };
+      })
+    );
+  }
+
+  async function loadDiesmos() {
+    var tree = await fetchJson(
+      "https://api.github.com/repos/aDiesmos/HTMLFILES/git/trees/main?recursive=1"
+    );
+    var nodes = (tree && tree.tree) || [];
+    var names = [];
+    nodes.forEach(function (node) {
+      if (!node || !node.path || !/\.html$/i.test(node.path)) return;
+      var raw = String(node.path)
+        .substring(String(node.path).lastIndexOf("/") + 1)
+        .replace(/\.html$/i, "");
+      if (!raw) return;
+      var title = raw
+        .replace(/([a-z])([A-Z0-9])/g, "$1 $2")
+        .replace(/[-_.]+/g, " ")
+        .trim();
+      if (title) names.push(title);
+    });
+    return uniqueNames(names);
   }
 
   async function loadEmptyCatalog() {

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-05T13:08:38Z",
+  "generated_at": "2026-10-05T14:00:07Z",
   "snapshot_date": "2026-10-05",
   "catalog_count": 33,
-  "total_entries": 30243,
-  "unique_games": 25952,
+  "total_entries": 36253,
+  "unique_games": 28772,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -140,20 +140,20 @@
     {
       "tag": "gdb:flux",
       "label": "Flux",
-      "count": 0,
-      "empty": true
+      "count": 1741,
+      "empty": false
     },
     {
       "tag": "gdb:greenis",
       "label": "Greenis",
-      "count": 0,
-      "empty": true
+      "count": 208,
+      "empty": false
     },
     {
       "tag": "gdb:melonsoda",
       "label": "Melon Soda",
-      "count": 0,
-      "empty": true
+      "count": 42,
+      "empty": false
     },
     {
       "tag": "gdb:edurocks",
@@ -170,32 +170,32 @@
     {
       "tag": "gdb:zane",
       "label": "Zane's Arcade",
-      "count": 0,
-      "empty": true
+      "count": 382,
+      "empty": false
     },
     {
       "tag": "gdb:3kh0",
       "label": "3kh0",
-      "count": 0,
-      "empty": true
+      "count": 145,
+      "empty": false
     },
     {
       "tag": "gdb:alexr",
       "label": "AlexR",
-      "count": 0,
-      "empty": true
+      "count": 676,
+      "empty": false
     },
     {
       "tag": "gdb:hydra",
       "label": "Hydra",
-      "count": 0,
-      "empty": true
+      "count": 1641,
+      "empty": false
     },
     {
       "tag": "gdb:diesmos",
       "label": "Diesmos",
-      "count": 0,
-      "empty": true
+      "count": 1175,
+      "empty": false
     },
     {
       "tag": "gdb:fyinx",
@@ -1186,10 +1186,21 @@
         "gdb:space": 0,
         "gdb:boredom": 11,
         "gdb:dogeub": 20739,
-        "gdb:utopia": 275
+        "gdb:utopia": 275,
+        "gdb:flux": 1741,
+        "gdb:greenis": 208,
+        "gdb:melonsoda": 42,
+        "gdb:edurocks": 0,
+        "gdb:timmy": 0,
+        "gdb:zane": 382,
+        "gdb:3kh0": 145,
+        "gdb:alexr": 676,
+        "gdb:hydra": 1641,
+        "gdb:diesmos": 1175,
+        "gdb:fyinx": 0
       },
-      "total_entries": 30243,
-      "unique_games": 25952
+      "total_entries": 36253,
+      "unique_games": 28772
     }
   ],
   "latest_changes": {
@@ -1393,14 +1404,1364 @@
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
+      },
+      "gdb:flux": {
+        "label": "Flux",
+        "added": [
+          "1 Date Danger",
+          "10 Minutes Till Dawn",
+          "12 Mini Battles",
+          "1v1.LoL",
+          "2048",
+          "2048 Merge Run",
+          "3D Bolt Master",
+          "3D Bowling",
+          "64 in 1 NES",
+          "8 Ball Classic",
+          "8 Ball Pool",
+          "99 Balls",
+          "[!] COMMENTS",
+          "A Bite at Freddy's",
+          "A Dance of Fire and Ice",
+          "A Difficult Game About Climbing",
+          "A Game About Feeding A Black Hole",
+          "A Small World Cup",
+          "Abandoned",
+          "Achievement Unlocked",
+          "Achievement Unlocked 2",
+          "Achievement Unlocked 3",
+          "Adventure Capatalist",
+          "Adventure Drivers",
+          "Ages of Conflict",
+          "Alien Hominid",
+          "Amanda the Adventurer",
+          "Amaze",
+          "Andy's Apple Farm",
+          "Angry Birds",
+          "Angry Birds Chrome",
+          "Angry Birds Showdown",
+          "Antonblast",
+          "Aquapark.io",
+          "Archery World Tour",
+          "Arthur's Nightmare",
+          "Attack Hole",
+          "Aviamasters",
+          "Awesome Tanks",
+          "Awesome Tanks 2",
+          "Backrooms",
+          "Bacon May Die",
+          "Bad Ice Cream",
+          "Bad Ice Cream 2",
+          "Bad Ice Cream 3",
+          "Bad Monday Simulator",
+          "Bad Parenting 1",
+          "Bad Piggies",
+          "Bad Time Simulator",
+          "Baldi's Basics",
+          "Baldi's Basics Classic Remastered",
+          "Baldi's Basics Plus",
+          "Ball Blast",
+          "Bank Robbery",
+          "Bank Robbery 2",
+          "Bank Robbery 3",
+          "Bart Blast",
+          "Baseball Bros",
+          "Basket Battle",
+          "Basket Bros",
+          "Basket Random",
+          "Basketball Frvr",
+          "Basketball Stars",
+          "Bazooka Boy",
+          "Bendy and the Ink Machine",
+          "BERGENTRUCK 201x",
+          "BFDIA 5b",
+          "BFDIA 5b: 5*30",
+          "Big ICE Tower Tiny Square",
+          "Big NEON Tower Tiny Square",
+          "Big Tower Tiny Square",
+          "Big Tower Tiny Square 2",
+          "Binding of Issac: Wrath of the Lamb",
+          "BitGun.io",
+          "BitLife",
+          "BitPlanes",
+          "BlackJack",
+          "Blade Ball",
+          "Block Blast",
+          "BlockPost",
+          "Blocky Snakes",
+          "BLOODMONEY!",
+          "Bloons TD",
+          "Bloons TD 2",
+          "Bloons TD 3",
+          "Bloons TD 4",
+          "Bloons TD 5",
+          "Bloxorz",
+          "Blumgi Rocket",
+          "Bob The Robber 2",
+          "Boom Slingers: Reboom",
+          "Bottle Jump 3D",
+          "Bouncemasters",
+          "Bowmasters",
+          "Boxing Random",
+          "Brawl Guys.io",
+          "Brawl Simulator 3D",
+          "Breaklock",
+          "Breath of the Wild NDS",
+          "Bridge Race"
+        ],
+        "removed": [],
+        "added_count": 1741,
+        "removed_count": 0,
+        "added_truncated": 1641,
+        "removed_truncated": 0
+      },
+      "gdb:greenis": {
+        "label": "Greenis",
+        "added": [
+          "12 Minigame Battles",
+          "3Dash",
+          "A Dance of Fire and Ice (Scratch)",
+          "A Koopas Revenge",
+          "A Koopas Revenge 2",
+          "Angry Birds",
+          "Angry Birds Chrome",
+          "Angry Birds RIO",
+          "Angry Birds Showdown",
+          "Angry Birds Space",
+          "Animator Vs Animation",
+          "Apple Knight: Mini Dungeons",
+          "Bad Piggies",
+          "Baldis Basics",
+          "Bank Robbery 2",
+          "Baseball Bros",
+          "Basket Bros",
+          "Basket Random",
+          "Basketball Legends 2020",
+          "Basketball Stars",
+          "Battle Racing Stars",
+          "Battle Simulator",
+          "Battle Starr",
+          "BFDIA 5B",
+          "BitLife",
+          "Block Blast",
+          "Bloxorz",
+          "Bouncemasters",
+          "Boxing Random",
+          "Brawl Simulator 3D",
+          "Brotato",
+          "Buckshot Roulette",
+          "Candy Crush",
+          "Cat Mario (Sybon Action)",
+          "Catch the Candy",
+          "Chicken CS",
+          "Clover Pit",
+          "Cluster Rush",
+          "Criminal Russia 3D",
+          "Crossy Road",
+          "Cut The Rope",
+          "Dan The Man",
+          "Death Run 3D",
+          "Deltarune",
+          "Destroy The Car 3D",
+          "Diggy",
+          "Donkey Kong Country",
+          "Dragon Ball Z Devolution",
+          "Dragon vs Icy Bricks",
+          "Draw Jousting",
+          "Drift Boss",
+          "DTA6",
+          "Duck Life",
+          "Escape Road",
+          "Flash Sonic",
+          "FNAF",
+          "FNAF 3D",
+          "Football Bros",
+          "Four Colors",
+          "Friday Night Funkin",
+          "Friday Night Funkin Mods",
+          "Fruit Ninja",
+          "G-Switch",
+          "G-Switch 2",
+          "G-Switch 3",
+          "Geometry Dash",
+          "Getting Over It",
+          "Gladihoppers",
+          "Grand Action Simulator: New York",
+          "Granny",
+          "Granny 2",
+          "Granny 3",
+          "Grindcraft",
+          "GTA III",
+          "GTA: Vice City",
+          "Gun Spin",
+          "Henry Stickmin",
+          "House Of Hazards",
+          "Infinite Mario Bros",
+          "Javelin Fighting",
+          "Jelly Mario",
+          "Jetpack Joyride",
+          "Johnny Trigger",
+          "Knife Hit",
+          "KS2 Teams",
+          "Level Devil",
+          "Level UP - Mario's Minigames Mayhem",
+          "Magic Tiles 3",
+          "Mari0",
+          "Mario Kart 64",
+          "Monkey Mart",
+          "MotoX3M",
+          "Mr. Dude King of the Hill",
+          "Mutilate-a-Doll 2",
+          "New Super Mario Bros",
+          "New Super Mario Bros 2",
+          "NZP",
+          "Om Nom Bounce",
+          "OneShot",
+          "Orange Roulette"
+        ],
+        "removed": [],
+        "added_count": 208,
+        "removed_count": 0,
+        "added_truncated": 108,
+        "removed_truncated": 0
+      },
+      "gdb:melonsoda": {
+        "label": "Melon Soda",
+        "added": [
+          "-b",
+          "Bad Time Simulator",
+          "Baldi Balds The Universe",
+          "Baldis Basics Classic Remastered",
+          "Bart Bash",
+          "Bart Blast",
+          "BloodMoney",
+          "CaseOh's Basics in Eating and Fast Food",
+          "Cat Mario",
+          "CrazyCattle3D",
+          "Dinosaur Game",
+          "Doki Doki Liturature Club",
+          "Doom",
+          "Eggy Car",
+          "Friday Night Funkin",
+          "Gacha Life",
+          "Geometry Dash Lite",
+          "Gravity Mod",
+          "Happy Wheels",
+          "Jelly Mario",
+          "Mario's Mystery Meat",
+          "Minus THREE",
+          "Minus Three (remastered)",
+          "osu!",
+          "OVO",
+          "Pneumonoultramicroscopicsilicovolcanoconiosis",
+          "Raldi's Crackhouse",
+          "Rodha",
+          "Sandboxels",
+          "Sprunki",
+          "The Math Is Leaking",
+          "Three",
+          "t\u00b3 (T cubed)",
+          "UvuvwevwevweOnyetenvewveUgwemubwemOssas (Baldi Mod)",
+          "We Become What We Behold",
+          "Yume Nikki",
+          "\u592a\u9f13\u306e\u9054\u4ebaDS \u30bf\u30c3\u30c1\u3067\u30c9\u30b3\u30c9\u30f3\uff01",
+          "\u6771\u65b9\u5922\u6642\u7a7a",
+          "\u6771\u65b9\u5c01\u9b54\u9332",
+          "\u6771\u65b9\u5e7b\u60f3\u90f7",
+          "\u6771\u65b9\u602a\u7dba\u8ac7",
+          "\u6771\u65b9\u9748\u7570\u4f1d"
+        ],
+        "removed": [],
+        "added_count": 42,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:edurocks": {
+        "label": "EDU Rocks",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:timmy": {
+        "label": "Timmy's Math Work",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
+      },
+      "gdb:zane": {
+        "label": "Zane's Arcade",
+        "added": [
+          "2 Player Battle",
+          "2048",
+          "2Doom",
+          "3Dash",
+          "A Koopa\u2019s Revenge",
+          "A Koopa\u2019s Revenge 2",
+          "A Plumber For All Seasons",
+          "Achievement Unlocked 1",
+          "Achievement Unlocked 2",
+          "Achievement Unlocked 3",
+          "Age of War",
+          "Age of War 2",
+          "Alien Hominid",
+          "Among Us",
+          "Angry Birds",
+          "Angry Birds Space",
+          "Animdustry",
+          "Appel",
+          "Arena",
+          "Arrow Gaem",
+          "Asteroids",
+          "Awesome Tanks",
+          "Awesome Tanks 2",
+          "Bad Piggies",
+          "Baldi\u2019s Basics",
+          "Basket Bros",
+          "Basketball Legends",
+          "Basketball Stars",
+          "Battle Mage",
+          "Bendy & The Ink Machine",
+          "Big Ice Tower Tiny Square",
+          "Big Tower Tiny Square 2",
+          "Bitlife",
+          "Block Blast",
+          "Bloons TD 1",
+          "Bloons TD 2",
+          "Bloons TD 3",
+          "Bloons TD 4",
+          "Bloxorz",
+          "Buckshot Roulette",
+          "Burgertime",
+          "Burrito Bison",
+          "Burrito Bison Revenge",
+          "Cactus Mccoy",
+          "Cactus Mccoy 2",
+          "Candy Clicker",
+          "Candy Crush",
+          "Candy Grabber",
+          "Carving Jack-O-Lanterns",
+          "Castlevania",
+          "Castlevania 2",
+          "Castlevania 3",
+          "Castlevania 64",
+          "Castlevania: Aria of Sorrow",
+          "Castlevania: Circle of the Moon",
+          "Cat Clicker!",
+          "Centipede",
+          "Chess",
+          "Chessmo",
+          "Connect 4",
+          "Cookie Clicker",
+          "Crazy Cattle 3D",
+          "Crossy Road",
+          "CUBES",
+          "Cut The Rope",
+          "Cyber Switch",
+          "Deadtree Defender",
+          "Defender",
+          "Deltarune",
+          "Deltatraveler",
+          "Dig Dug",
+          "Dino Game",
+          "Donkey Kong",
+          "Doodle God",
+          "Doodle God 2",
+          "Doom",
+          "Doom 64",
+          "Dreamazon",
+          "Drift Boss",
+          "Drive Mad",
+          "Duck Hunt",
+          "Duck Life 1",
+          "Duck Life 2",
+          "Duck Life 3",
+          "Duck Life 4",
+          "Duck Life Treasure Hunt",
+          "Dune",
+          "Dungeon Dash",
+          "DUNGEONS",
+          "Dunk Shot",
+          "E.T",
+          "Earthbound",
+          "EarthBound Beginnings",
+          "Eat The Level",
+          "Ecco The Dolphin",
+          "Egg dash",
+          "Elemental Ultra",
+          "Escape Road",
+          "Escape Road 2",
+          "F Zero"
+        ],
+        "removed": [],
+        "added_count": 382,
+        "removed_count": 0,
+        "added_truncated": 282,
+        "removed_truncated": 0
+      },
+      "gdb:3kh0": {
+        "label": "3kh0",
+        "added": [
+          "1",
+          "1v1space",
+          "2048",
+          "9007199254740992",
+          "achievementunlocked",
+          "adrenalinechallenge",
+          "among us",
+          "avalanche",
+          "backrooms",
+          "basketball stars",
+          "battleforgondor",
+          "bigredbutton",
+          "blackknight",
+          "bloonstd",
+          "bloonstd2",
+          "bloxors",
+          "boxhead2play",
+          "breakingthebank",
+          "btts",
+          "cannon basketball 4",
+          "canyondefense",
+          "cell machine",
+          "championarcher",
+          "chrome dino",
+          "circlo",
+          "connect3",
+          "cookie clicker",
+          "craftmine",
+          "creativekillchamber",
+          "csgo clicker",
+          "ctr",
+          "ctr holiday",
+          "ctr tr",
+          "cubefield",
+          "cupcake2048",
+          "deal or no deal",
+          "death run 3d",
+          "defend the tank",
+          "doge2048",
+          "DogeMiner",
+          "doodle jump",
+          "doublewires",
+          "draw the hill",
+          "ducklife1",
+          "ducklife2",
+          "ducklife3",
+          "edgenotfound",
+          "elasticman",
+          "endlesswar3",
+          "evil glitch",
+          "exo",
+          "factoryballs",
+          "fake virus",
+          "flappy 2048",
+          "flappy bird",
+          "flashtetris",
+          "game inside",
+          "geodash",
+          "getaway shootout",
+          "gimme the airpod",
+          "glass city",
+          "google snake",
+          "grindcraft",
+          "hackertype",
+          "hba",
+          "helicopter",
+          "hexempire",
+          "HexGL",
+          "hextris",
+          "idle breakout",
+          "idle shark",
+          "impossiblequiz",
+          "interactivebuddy",
+          "just one boss",
+          "kittencannon",
+          "krunker",
+          "learntofly",
+          "mario",
+          "matrixrampage",
+          "meme2048",
+          "minecraft",
+          "minecraft classic",
+          "minesweeper",
+          "miniputt",
+          "missiles",
+          "motox3m",
+          "motox3m pool",
+          "motox3m spooky",
+          "motox3m winter",
+          "n gon",
+          "ns shaft",
+          "om bounce",
+          "pandemic2",
+          "papaspizzaria",
+          "paperio2",
+          "papery planes",
+          "particle clicker",
+          "polybranch",
+          "portalflash",
+          "precision client"
+        ],
+        "removed": [],
+        "added_count": 145,
+        "removed_count": 0,
+        "added_truncated": 45,
+        "removed_truncated": 0
+      },
+      "gdb:alexr": {
+        "label": "AlexR",
+        "added": [
+          "10 Minutes Till Dawn",
+          "1v1 LOL",
+          "2048",
+          "2048 Cupcakes",
+          "30 Dollar Website",
+          "3D Bowling",
+          "3Dash",
+          "60 Second Burger Run",
+          "60 Second Santa Run",
+          "64 in one NES",
+          "8 Ball Pool",
+          "99 Nights in the Forest",
+          "A Dance of Fire and Ice",
+          "A Difficult Game About Climbing",
+          "A Game About Feeding A Black Hole",
+          "A Koopa's Revenge",
+          "A Koopa's Revenge 2",
+          "A Small World Cup",
+          "Achievement Unlocked",
+          "Achievement Unlocked 2",
+          "Achievement Unlocked 3",
+          "Achilles",
+          "Achilles 2",
+          "Adventure Capitalist",
+          "Adventure Time Jumping Finn",
+          "Age of Defense",
+          "Age of War",
+          "Age of War 2",
+          "AI Chatbot",
+          "Alien Hominid",
+          "Amanda the Adventurer",
+          "Amaze",
+          "Among Us (Web Version)",
+          "Angry Birds",
+          "Angry Birds Halloween",
+          "Angry Birds Showdown",
+          "Angry Birds Space",
+          "Anton Blast",
+          "Apple Shooter",
+          "Archery World Tour",
+          "Arthurs Nightmare",
+          "Astra",
+          "Astra Client (Minecraft)",
+          "Awesome Tanks",
+          "Awesome Tanks 2",
+          "Axis Football League",
+          "B-Cubed",
+          "Backrooms",
+          "Bacon May Die",
+          "Bad Ice Cream",
+          "Bad Ice Cream 2",
+          "Bad Ice Cream 3",
+          "Bad Monday Simulator",
+          "Bad Parenting",
+          "Bad Piggies",
+          "Bad Time Simulator",
+          "Baldi's New Fun School",
+          "Baldis Basics",
+          "Baldis Basics Plus",
+          "Banjo-Kazooie",
+          "Bank Robbery",
+          "Bank Robbery 2",
+          "Bank Robbery 3",
+          "Bart Blast",
+          "Baseball Bros",
+          "Basket Bros",
+          "Basket Random",
+          "Basketball Legends",
+          "Bejeweled Twist",
+          "Bendy & The Ink Machine",
+          "Big Ice Tower Tiny Square",
+          "Big Neon Tower Tiny Square",
+          "Big Tower Tiny Square",
+          "Big Tower Tiny Square 2",
+          "Bitlife",
+          "Bitplanes",
+          "Blackjack",
+          "Blaze Drifter",
+          "Block Blast",
+          "Block the Pig",
+          "Blockpost",
+          "Blocky Demolition Derby",
+          "Blocky Snakes",
+          "Bloodmoney",
+          "Bloons",
+          "Bloons Player Pack 2",
+          "Bloons Player Pack 3",
+          "Bloons Player Pack 4",
+          "Bloons Player Pack 5",
+          "Bloons Super Monkey",
+          "Bloons Tower Defense",
+          "Bloons Tower Defense 2",
+          "Bloons Tower Defense 3",
+          "Bloons Tower Defense 4",
+          "Bloons Tower Defense 4 Expansion",
+          "Bloons Tower Defense 5",
+          "Bloxorz",
+          "Bob the Robber",
+          "Bob the Robber 2",
+          "Bomb Slingers"
+        ],
+        "removed": [],
+        "added_count": 676,
+        "removed_count": 0,
+        "added_truncated": 576,
+        "removed_truncated": 0
+      },
+      "gdb:hydra": {
+        "label": "Hydra",
+        "added": [
+          "1",
+          "1 Date Danger",
+          "10 Bullets",
+          "10 Minutes Till Dawn",
+          "12 Mini Battles",
+          "1v1.LoL",
+          "2048",
+          "2048 Merge Run",
+          "3D Bolt Master",
+          "3D Bowling",
+          "40 Escape",
+          "60 Seconds Burger Run",
+          "60 Seconds Santa Run",
+          "64 in 1 NES",
+          "8 Ball Classic",
+          "8 Ball Pool",
+          "9007199254740992",
+          "99 Balls",
+          "A Bite at Freddy's",
+          "A Dark Room",
+          "A Difficult Game About Climbing",
+          "A Game About Feeding A Black Hole",
+          "A Small World Cup",
+          "Abandoned",
+          "Abandoned 3",
+          "Absolute Madness",
+          "Ace Attorney",
+          "Ace Combat 2",
+          "Ace Combat 3",
+          "Ace Gangster Taxi",
+          "Achievement Unlocked",
+          "Achievement Unlocked 2",
+          "Achievement Unlocked 3",
+          "Achillies 1 Fr",
+          "Achillies 2",
+          "Advance Wars",
+          "Advance Wars 2",
+          "Advent Neon",
+          "Adventure Capatalist",
+          "Adventure Drivers",
+          "Agario Lite",
+          "Age of War",
+          "Age of War 2",
+          "Ages of Conflict",
+          "Ahoy Survival",
+          "Akopa S Revenge",
+          "Akopa S Revenge 2",
+          "Akumanor Gaiden",
+          "Alien Hominid",
+          "Alien Hominid GBA",
+          "Alien Sky Invasion",
+          "Alien Transporter",
+          "Alien vs Predator",
+          "Allocation",
+          "Amanda the Adventurer",
+          "Amaze",
+          "Amidst the Sky",
+          "Amigo Pancho",
+          "Amigo Pancho 2",
+          "Amigo Pancho 3",
+          "Amigo Pancho 4",
+          "Amigo Pancho 5",
+          "Amigo Pancho 6",
+          "Amigo Pancho 7",
+          "Among Us",
+          "Amorphous",
+          "Ancient Sins",
+          "Andy's Apple Farm",
+          "Angry Birds",
+          "Angry Birds Chrome",
+          "Angry Birds Showdown",
+          "Angry Birds Space",
+          "Animal Crossing Wild World",
+          "Another World",
+          "Antonblast",
+          "Apple Shooter",
+          "Apple Worm",
+          "Aqua Park IO",
+          "Archery World Tour",
+          "Are We There Yet",
+          "Armor Mayhem 2",
+          "Arsonate",
+          "Arthur's Nightmare",
+          "Ascent",
+          "Asteroids",
+          "Attack Hole",
+          "Avalanche",
+          "Aviamasters",
+          "Awesome Pirates",
+          "Awesome Planes",
+          "Awesome Tanks",
+          "Awesome Tanks 2",
+          "B 3313",
+          "Babel Tower",
+          "Back Rooms",
+          "Back Rooms 2 D",
+          "Backyard Baseball",
+          "Backyards Occ Er",
+          "Bacon May Die",
+          "Bad Ice Cream"
+        ],
+        "removed": [],
+        "added_count": 1641,
+        "removed_count": 0,
+        "added_truncated": 1541,
+        "removed_truncated": 0
+      },
+      "gdb:diesmos": {
+        "label": "Diesmos",
+        "added": [
+          "10 minutes till dawn",
+          "100ng",
+          "1010deluxe",
+          "17bucks",
+          "1v 1 lol 3",
+          "1v 1lol",
+          "2048",
+          "2048 merge run",
+          "2drocketleague",
+          "2hot",
+          "2hotbf",
+          "3d bowling",
+          "3dasheditor",
+          "3dbowling",
+          "3line",
+          "3pandas",
+          "3x 3",
+          "4c 766a 2a 7b 39b 5d 52173bbb 6 flash",
+          "60sburgerrun",
+          "8 ball classic",
+          "8ball billards classic",
+          "99 balls 3d",
+          "aceattorney",
+          "aceattorneyinvestigations",
+          "achievementunlocked",
+          "adarkroom",
+          "adofai",
+          "adrenalinechallenge",
+          "adventure capitalist",
+          "aethos",
+          "aflac",
+          "ageofwar",
+          "agoti",
+          "agotitest",
+          "akage",
+          "alany",
+          "alien invaders io",
+          "alienhominid",
+          "all",
+          "amanda the adventurer",
+          "amaze",
+          "amazin amazon adventure",
+          "amazing rope police",
+          "among us",
+          "amongrampage",
+          "amorphous",
+          "anemaniac",
+          "angry birds showdown",
+          "animalcrossingwildworld",
+          "annie",
+          "another",
+          "anotherbrother",
+          "antbuster",
+          "anti terrorist rush",
+          "antonblast",
+          "aquapark io",
+          "arandomclicker",
+          "arcade wizard",
+          "archerfish bug rush",
+          "arrow",
+          "asciispace",
+          "aspiring artist",
+          "assets",
+          "asteroids",
+          "astray",
+          "atrocity",
+          "audio",
+          "avalanche",
+          "awesomecalculator",
+          "awesometanks",
+          "awesometanks 2",
+          "ayun",
+          "b 3",
+          "Babyblue",
+          "backcountry",
+          "backflip dive 3d",
+          "backrooms",
+          "bacon",
+          "bad ice cream",
+          "bad ice cream 2",
+          "bad ice cream 3",
+          "bad monday simulator",
+          "bad pig",
+          "baddies",
+          "badending",
+          "badfnf",
+          "badtimesimulator",
+          "balatro",
+          "baldi",
+          "baldicaseoh",
+          "baldiepstein",
+          "baldis basics",
+          "ballisticchickens",
+          "balloonrun",
+          "bartblast",
+          "baseballbros",
+          "basket bros io",
+          "basketandball",
+          "basketball io",
+          "basketball legends 2020"
+        ],
+        "removed": [],
+        "added_count": 1175,
+        "removed_count": 0,
+        "added_truncated": 1075,
+        "removed_truncated": 0
+      },
+      "gdb:fyinx": {
+        "label": "Fyinx",
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
+        "added_truncated": 0,
+        "removed_truncated": 0
       }
     },
     "all": {
-      "added": [],
+      "added": [
+        {
+          "name": "-b",
+          "tag": "gdb:melonsoda",
+          "label": "Melon Soda"
+        },
+        {
+          "name": "1",
+          "tag": "gdb:3kh0",
+          "label": "3kh0"
+        },
+        {
+          "name": "1",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "1 Date Danger",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "1 Date Danger",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "10 Bullets",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "10 Minutes Till Dawn",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "10 Minutes Till Dawn",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "10 Minutes Till Dawn",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "10 minutes till dawn",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "100ng",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "1010deluxe",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "12 Mini Battles",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "12 Mini Battles",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "12 Minigame Battles",
+          "tag": "gdb:greenis",
+          "label": "Greenis"
+        },
+        {
+          "name": "17bucks",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "1v 1 lol 3",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "1v 1lol",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "1v1 LOL",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "1v1.LoL",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "1v1.LoL",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "1v1space",
+          "tag": "gdb:3kh0",
+          "label": "3kh0"
+        },
+        {
+          "name": "2 Player Battle",
+          "tag": "gdb:zane",
+          "label": "Zane's Arcade"
+        },
+        {
+          "name": "2048",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "2048",
+          "tag": "gdb:zane",
+          "label": "Zane's Arcade"
+        },
+        {
+          "name": "2048",
+          "tag": "gdb:3kh0",
+          "label": "3kh0"
+        },
+        {
+          "name": "2048",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "2048",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "2048",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "2048 Cupcakes",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "2048 Merge Run",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "2048 Merge Run",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "2048 merge run",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "2Doom",
+          "tag": "gdb:zane",
+          "label": "Zane's Arcade"
+        },
+        {
+          "name": "2drocketleague",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "2hot",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "2hotbf",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "30 Dollar Website",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "3D Bolt Master",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "3D Bolt Master",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "3D Bowling",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "3D Bowling",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "3D Bowling",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "3d bowling",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "3Dash",
+          "tag": "gdb:greenis",
+          "label": "Greenis"
+        },
+        {
+          "name": "3Dash",
+          "tag": "gdb:zane",
+          "label": "Zane's Arcade"
+        },
+        {
+          "name": "3Dash",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "3dasheditor",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "3dbowling",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "3line",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "3pandas",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "3x 3",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "40 Escape",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "4c 766a 2a 7b 39b 5d 52173bbb 6 flash",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "60 Second Burger Run",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "60 Second Santa Run",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "60 Seconds Burger Run",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "60 Seconds Santa Run",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "60sburgerrun",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "64 in 1 NES",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "64 in 1 NES",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "64 in one NES",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "8 Ball Classic",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "8 Ball Classic",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "8 ball classic",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "8 Ball Pool",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "8 Ball Pool",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "8 Ball Pool",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "8ball billards classic",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "9007199254740992",
+          "tag": "gdb:3kh0",
+          "label": "3kh0"
+        },
+        {
+          "name": "9007199254740992",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "99 Balls",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "99 Balls",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "99 balls 3d",
+          "tag": "gdb:diesmos",
+          "label": "Diesmos"
+        },
+        {
+          "name": "99 Nights in the Forest",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "[!] COMMENTS",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "A Bite at Freddy's",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "A Bite at Freddy's",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "A Dance of Fire and Ice",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "A Dance of Fire and Ice",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "A Dance of Fire and Ice (Scratch)",
+          "tag": "gdb:greenis",
+          "label": "Greenis"
+        },
+        {
+          "name": "A Dark Room",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "A Difficult Game About Climbing",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "A Difficult Game About Climbing",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "A Difficult Game About Climbing",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "A Game About Feeding A Black Hole",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "A Game About Feeding A Black Hole",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "A Game About Feeding A Black Hole",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "A Koopa's Revenge",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "A Koopa's Revenge 2",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "A Koopas Revenge",
+          "tag": "gdb:greenis",
+          "label": "Greenis"
+        },
+        {
+          "name": "A Koopas Revenge 2",
+          "tag": "gdb:greenis",
+          "label": "Greenis"
+        },
+        {
+          "name": "A Koopa\u2019s Revenge",
+          "tag": "gdb:zane",
+          "label": "Zane's Arcade"
+        },
+        {
+          "name": "A Koopa\u2019s Revenge 2",
+          "tag": "gdb:zane",
+          "label": "Zane's Arcade"
+        },
+        {
+          "name": "A Plumber For All Seasons",
+          "tag": "gdb:zane",
+          "label": "Zane's Arcade"
+        },
+        {
+          "name": "A Small World Cup",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "A Small World Cup",
+          "tag": "gdb:alexr",
+          "label": "AlexR"
+        },
+        {
+          "name": "A Small World Cup",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        },
+        {
+          "name": "Abandoned",
+          "tag": "gdb:flux",
+          "label": "Flux"
+        },
+        {
+          "name": "Abandoned",
+          "tag": "gdb:hydra",
+          "label": "Hydra"
+        }
+      ],
       "removed": [],
-      "added_count": 0,
+      "added_count": 6010,
       "removed_count": 0,
-      "added_truncated": 0,
+      "added_truncated": 5910,
       "removed_truncated": 0
     }
   },
@@ -1408,10 +2769,68 @@
     {
       "date": "2026-10-05",
       "kind": "diff",
-      "catalogs_touched": [],
-      "added": 0,
+      "catalogs_touched": [
+        "gdb:flux",
+        "gdb:hydra",
+        "gdb:diesmos",
+        "gdb:alexr",
+        "gdb:zane",
+        "gdb:greenis",
+        "gdb:3kh0",
+        "gdb:melonsoda"
+      ],
+      "added": 6010,
       "removed": 0,
-      "by_catalog": []
+      "by_catalog": [
+        {
+          "tag": "gdb:flux",
+          "label": "Flux",
+          "added": 1741,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:hydra",
+          "label": "Hydra",
+          "added": 1641,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:diesmos",
+          "label": "Diesmos",
+          "added": 1175,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:alexr",
+          "label": "AlexR",
+          "added": 676,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:zane",
+          "label": "Zane's Arcade",
+          "added": 382,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:greenis",
+          "label": "Greenis",
+          "added": 208,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:3kh0",
+          "label": "3kh0",
+          "added": 145,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:melonsoda",
+          "label": "Melon Soda",
+          "added": 42,
+          "removed": 0
+        }
+      ]
     },
     {
       "date": "2026-10-04",
