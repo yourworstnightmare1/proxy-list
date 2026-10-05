@@ -232,6 +232,23 @@
     return cachedSessionId;
   }
 
+  function defaultWorkerOrigin() {
+    try {
+      return new URL(DEFAULT_WORKER_ORIGIN).origin;
+    } catch (_) {
+      return DEFAULT_WORKER_ORIGIN;
+    }
+  }
+
+  function primaryUsesDefaultWorkerOrigin(urlStr) {
+    try {
+      var base = (global.location && global.location.href) || DEFAULT_WORKER_ORIGIN;
+      return new URL(String(urlStr), base).origin === defaultWorkerOrigin();
+    } catch (_) {
+      return false;
+    }
+  }
+
   function parseJsonResponse(res) {
     return res
       .json()
@@ -272,7 +289,7 @@
 
     return attempt(primary).catch(function (firstErr) {
       var fallback = DEFAULT_WORKER_ORIGIN + (path.charAt(0) === "/" ? path : "/" + path);
-      if (primary === fallback || primary.indexOf(DEFAULT_WORKER_ORIGIN) === 0) {
+      if (primary === fallback || primaryUsesDefaultWorkerOrigin(primary)) {
         throw firstErr;
       }
       return attempt(fallback);
