@@ -883,3 +883,4 @@ Move links from here into `list.md` once sorted.
 - https://zenithgrid.thinkbiglearn.college
 - https://zenithwave.learntoinvest.trade
 - https://zenithx.neverstop.study
+- https://site-49pbrdm9.myoxypages.com/doesn.svg
