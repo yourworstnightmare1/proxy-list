@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v7.4.2",
+      "revision": "r305",
+      "released": "October 5, 2026",
+      "update_notice": "### New\n- Updated all provider category/capability/protocol tags including the newly added links from 7.4.1"
+    },
+    {
       "version": "v7.4.1",
       "revision": "r304",
       "released": "October 5, 2026",
