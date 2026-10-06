@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-05T23:48:29Z",
-  "checked_at_display": "2026-10-05 23:48 UTC",
+  "checked_at": "2026-10-06T04:32:57Z",
+  "checked_at_display": "2026-10-06 04:32 UTC",
   "added_count": 0,
-  "removed_count": 0,
+  "removed_count": 1,
   "added_links": [],
-  "removed_links": []
+  "removed_links": [
+    "https://sub.to.square-hippo.meshtastic.hu"
+  ]
 }

@@ -2954,7 +2954,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:utopia | Ultraviolet | 31 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 30 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
@@ -2967,7 +2967,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://this-is-the-future.casadotricolor.com.br/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bum.education/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sub.to.square-hippo.fritsche.org | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://sub.to.square-hippo.meshtastic.hu | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://gov.usa.agmlabs.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://utopia-da-best.310386.xyz | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://educationlessons.crabdance.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
@@ -49687,7 +49686,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://student-1627.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://student-6433.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://student-3328.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://student-3412.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://student-1562.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://student-5051.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://student-2112.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49751,7 +49749,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://fastly.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/33ddff3a830e5a02.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://gcore.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/33ddff3a830e5a02.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://testingcf.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/33ddff3a830e5a02.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://cdn.jsdelivr.us/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/33ddff3a830e5a02.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsdelivr.codeqihan.com/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/33ddff3a830e5a02.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.proxy.aks.moe/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/33ddff3a830e5a02.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.jsdmirror.com/gh/seattleschools/media/batch/Linklet/hourly/20261001030014612/33ddff3a830e5a02.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49766,7 +49763,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://fastly.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/5bd2a03abc24d7d9.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://gcore.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/5bd2a03abc24d7d9.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://testingcf.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/5bd2a03abc24d7d9.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://cdn.jsdelivr.us/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/5bd2a03abc24d7d9.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsdelivr.codeqihan.com/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/5bd2a03abc24d7d9.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.proxy.aks.moe/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/5bd2a03abc24d7d9.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.jsdmirror.com/gh/seattleschools/media/batch/Linklet/hourly/20261001030014612/5bd2a03abc24d7d9.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49781,7 +49777,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://fastly.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/27e40d0f575b81d6.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://gcore.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/27e40d0f575b81d6.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://testingcf.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/27e40d0f575b81d6.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://cdn.jsdelivr.us/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/27e40d0f575b81d6.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsdelivr.codeqihan.com/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/27e40d0f575b81d6.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.proxy.aks.moe/gh/seattleschools/media@main/batch/Linklet/hourly/20261001030014612/27e40d0f575b81d6.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.jsdmirror.com/gh/seattleschools/media/batch/Linklet/hourly/20261001030014612/27e40d0f575b81d6.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50382,7 +50377,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://student-1653.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://student-2309.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://student-6992.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://student-9600.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ☠️ Arsenic
 > [!NOTE]
@@ -50526,7 +50520,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://fastly.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/0633263335bbdadb.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://gcore.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/0633263335bbdadb.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://testingcf.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/0633263335bbdadb.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://cdn.jsdelivr.us/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/0633263335bbdadb.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsdelivr.codeqihan.com/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/0633263335bbdadb.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.proxy.aks.moe/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/0633263335bbdadb.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.jsdmirror.com/gh/seattleschools/media/batch/Linklet/hourly/20261001040024840/0633263335bbdadb.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50541,7 +50534,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://fastly.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/83fc54fbb4b67aac.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://gcore.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/83fc54fbb4b67aac.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://testingcf.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/83fc54fbb4b67aac.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://cdn.jsdelivr.us/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/83fc54fbb4b67aac.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsdelivr.codeqihan.com/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/83fc54fbb4b67aac.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.proxy.aks.moe/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/83fc54fbb4b67aac.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.jsdmirror.com/gh/seattleschools/media/batch/Linklet/hourly/20261001040024840/83fc54fbb4b67aac.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50556,7 +50548,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://fastly.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/554c30a9b3deed19.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://gcore.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/554c30a9b3deed19.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://testingcf.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/554c30a9b3deed19.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://cdn.jsdelivr.us/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/554c30a9b3deed19.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsdelivr.codeqihan.com/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/554c30a9b3deed19.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.proxy.aks.moe/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/554c30a9b3deed19.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.jsdmirror.com/gh/seattleschools/media/batch/Linklet/hourly/20261001040024840/554c30a9b3deed19.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50571,7 +50562,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://fastly.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/25ae8afd7bf66c2a.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://gcore.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/25ae8afd7bf66c2a.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://testingcf.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/25ae8afd7bf66c2a.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://cdn.jsdelivr.us/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/25ae8afd7bf66c2a.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsdelivr.codeqihan.com/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/25ae8afd7bf66c2a.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://jsd.proxy.aks.moe/gh/seattleschools/media@main/batch/Linklet/hourly/20261001040024840/25ae8afd7bf66c2a.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.jsdmirror.com/gh/seattleschools/media/batch/Linklet/hourly/20261001040024840/25ae8afd7bf66c2a.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
