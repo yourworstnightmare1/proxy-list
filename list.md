@@ -47789,7 +47789,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | N/A | 416 |
+> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | N/A | 404 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -48270,18 +48270,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://ireallylikemath.s3.us-east-2.amazonaws.com/index.html | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://ccisd.s3.us-east-2.amazonaws.com/index.html | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://desmoscalculator.s3.us-east-2.amazonaws.com/index.html | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648584719-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648587013-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648596139-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648597625-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648617839-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648619944-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648628954-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648630529-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648638200-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648639609-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648648550-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648649924-index.svg | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/UBZone.svg?1 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/UBZone.svg?2 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/UBZone.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
