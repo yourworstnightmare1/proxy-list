@@ -5,8 +5,9 @@
  *   - Rate limit: 40 clicks / hour / IP (Cache API)
  *   - Increments Firestore link_clicks/{sha256(normUrl)} via Admin REST when
  *     FIREBASE_PROJECT_ID + FIREBASE_CLIENT_EMAIL + FIREBASE_PRIVATE_KEY are set.
- *   - Also increments click_daily/{yyyy-mm-dd}.counts.{hash}, plus click_monthly/
- *     click_yearly totals for long-term archives.
+ *   - Also increments click_daily/{yyyy-mm-dd}.counts.{hash}. click_monthly /
+ *     click_yearly archive totals are batched via the Cache API (flush every
+ *     ~10 min or 50 pending) so one open is not 4 Firestore writes.
  *   - Without Firebase secrets, increments an in-edge Cache counter (Cloudflare-only).
  *
  * POST /api/link-clicks/get  { "urls": ["https://..."] }
@@ -554,7 +555,7 @@ function parseCountFromCommitJson(body) {
   return null;
 }
 
-async function firestoreIncrementClick(env, docId, displayUrl) {
+async function firestoreIncrementClick(env, docId, displayUrl, ctx) {
   const token = await getGoogleAccessToken(env);
   const project = env.FIREBASE_PROJECT_ID;
   const docName = `projects/${project}/databases/(default)/documents/link_clicks/${docId}`;
@@ -595,7 +596,7 @@ async function firestoreIncrementClick(env, docId, displayUrl) {
 
   if (commitRes.ok) {
     const commitBody = await commitRes.json().catch(() => ({}));
-    await firestoreIncrementDailyClick(env, token, project, docId, displayUrl).catch((err) => {
+    await firestoreIncrementDailyClick(env, token, project, docId, displayUrl, ctx).catch((err) => {
       console.error("daily_click_failed", err);
     });
     return { created: false, count: parseCountFromCommitJson(commitBody) };
@@ -619,7 +620,7 @@ async function firestoreIncrementClick(env, docId, displayUrl) {
     }
   );
   if (createRes.ok) {
-    await firestoreIncrementDailyClick(env, token, project, docId, displayUrl).catch((err) => {
+    await firestoreIncrementDailyClick(env, token, project, docId, displayUrl, ctx).catch((err) => {
       console.error("daily_click_failed", err);
     });
     return { created: true, count: 1 };
@@ -638,7 +639,7 @@ async function firestoreIncrementClick(env, docId, displayUrl) {
     throw new Error(`firestore write failed: ${createRes.status}/${retry.status} ${t}`);
   }
   const retryBody = await retry.json().catch(() => ({}));
-  await firestoreIncrementDailyClick(env, token, project, docId, displayUrl).catch((err) => {
+  await firestoreIncrementDailyClick(env, token, project, docId, displayUrl, ctx).catch((err) => {
     console.error("daily_click_failed", err);
   });
   return { created: false, count: parseCountFromCommitJson(retryBody) };
@@ -657,17 +658,18 @@ function utcYearId(d = new Date()) {
 }
 
 /**
- * Increment a period archive doc's `total` (day→month→year rollups).
+ * Increment a period archive doc's `total` by `amount` (day→month→year rollups).
  * Keeps historical aggregates even after UI lookbacks move on.
  */
-async function firestoreIncrementPeriodTotal(env, token, project, collection, docId, idField, idValue) {
+async function firestoreIncrementPeriodTotal(env, token, project, collection, docId, idField, idValue, amount) {
+  const n = Math.max(1, Math.floor(Number(amount) || 1));
   const docName = `projects/${project}/databases/(default)/documents/${collection}/${docId}`;
   const commitUrl = `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents:commit`;
   const transformWrite = {
     transform: {
       document: docName,
       fieldTransforms: [
-        { fieldPath: "total", increment: { integerValue: "1" } },
+        { fieldPath: "total", increment: { integerValue: String(n) } },
         { fieldPath: "updated", setToServerValue: "REQUEST_TIME" },
       ],
     },
@@ -693,7 +695,7 @@ async function firestoreIncrementPeriodTotal(env, token, project, collection, do
       body: JSON.stringify({
         fields: {
           [idField]: { stringValue: idValue },
-          total: { integerValue: "1" },
+          total: { integerValue: String(n) },
           updated: { timestampValue: new Date().toISOString() },
         },
       }),
@@ -705,8 +707,113 @@ async function firestoreIncrementPeriodTotal(env, token, project, collection, do
   }
 }
 
+/** Batch month/year archive writes: ~1 Firestore write per colo per flush window, not per click. */
+const PERIOD_TOTAL_FLUSH_SEC = 600;
+const PERIOD_TOTAL_FLUSH_PENDING = 50;
+
+async function firestoreIncrementPeriodTotalBatched(
+  env,
+  token,
+  project,
+  collection,
+  docId,
+  idField,
+  idValue,
+  ctx
+) {
+  const cache = caches.default;
+  const pendingReq = new Request(
+    `https://click-period.proxy-list.internal/${collection}/${encodeURIComponent(docId)}/pending`
+  );
+  const metaReq = new Request(
+    `https://click-period.proxy-list.internal/${collection}/${encodeURIComponent(docId)}/meta`
+  );
+  let pending = 1;
+  try {
+    const hit = await cache.match(pendingReq);
+    if (hit) pending = (Number(await hit.text()) || 0) + 1;
+  } catch (_) {}
+  let lastFlush = 0;
+  try {
+    const metaHit = await cache.match(metaReq);
+    if (metaHit) lastFlush = Number(await metaHit.text()) || 0;
+  } catch (_) {}
+  const now = Date.now();
+  const due =
+    pending >= PERIOD_TOTAL_FLUSH_PENDING || now - lastFlush >= PERIOD_TOTAL_FLUSH_SEC * 1000;
+  if (!due) {
+    const putPending = cache.put(
+      pendingReq,
+      new Response(String(pending), {
+        headers: { "Cache-Control": "public, max-age=86400", "Content-Type": "text/plain" },
+      })
+    );
+    if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(putPending);
+    else await putPending;
+    return;
+  }
+  const flushAmount = pending;
+  const flushWork = (async () => {
+    try {
+      await firestoreIncrementPeriodTotal(env, token, project, collection, docId, idField, idValue, flushAmount);
+      await Promise.all([
+        cache.put(
+          pendingReq,
+          new Response("0", {
+            headers: { "Cache-Control": "public, max-age=86400", "Content-Type": "text/plain" },
+          })
+        ),
+        cache.put(
+          metaReq,
+          new Response(String(now), {
+            headers: { "Cache-Control": "public, max-age=86400", "Content-Type": "text/plain" },
+          })
+        ),
+      ]);
+    } catch (err) {
+      // Keep pending so a later click can retry the flush.
+      try {
+        await cache.put(
+          pendingReq,
+          new Response(String(flushAmount), {
+            headers: { "Cache-Control": "public, max-age=86400", "Content-Type": "text/plain" },
+          })
+        );
+      } catch (_) {}
+      throw err;
+    }
+  })();
+  if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(flushWork);
+  else await flushWork;
+}
+
+function schedulePeriodArchiveTotals(env, token, project, month, year, ctx) {
+  return Promise.all([
+    firestoreIncrementPeriodTotalBatched(
+      env,
+      token,
+      project,
+      "click_monthly",
+      month,
+      "month",
+      month,
+      ctx
+    ).catch((err) => console.error("click_monthly_failed", err)),
+    firestoreIncrementPeriodTotalBatched(
+      env,
+      token,
+      project,
+      "click_yearly",
+      year,
+      "year",
+      year,
+      ctx
+    ).catch((err) => console.error("click_yearly_failed", err)),
+  ]);
+}
+
 /** Lifetime totals stay on link_clicks; daily docs power provider time-series on /stats/. */
-async function firestoreIncrementDailyClick(env, token, project, docId, displayUrl) {
+async function firestoreIncrementDailyClick(env, token, project, docId, displayUrl, ctx) {
   const day = utcDateId();
   const month = utcMonthId();
   const year = utcYearId();
@@ -734,14 +841,7 @@ async function firestoreIncrementDailyClick(env, token, project, docId, displayU
     body: JSON.stringify({ writes: [transformWrite] }),
   });
   if (commitRes.ok) {
-    await Promise.all([
-      firestoreIncrementPeriodTotal(env, token, project, "click_monthly", month, "month", month).catch((err) =>
-        console.error("click_monthly_failed", err)
-      ),
-      firestoreIncrementPeriodTotal(env, token, project, "click_yearly", year, "year", year).catch((err) =>
-        console.error("click_yearly_failed", err)
-      ),
-    ]);
+    await schedulePeriodArchiveTotals(env, token, project, month, year, ctx);
     return;
   }
 
@@ -770,14 +870,7 @@ async function firestoreIncrementDailyClick(env, token, project, docId, displayU
     }
   );
   if (createRes.ok) {
-    await Promise.all([
-      firestoreIncrementPeriodTotal(env, token, project, "click_monthly", month, "month", month).catch((err) =>
-        console.error("click_monthly_failed", err)
-      ),
-      firestoreIncrementPeriodTotal(env, token, project, "click_yearly", year, "year", year).catch((err) =>
-        console.error("click_yearly_failed", err)
-      ),
-    ]);
+    await schedulePeriodArchiveTotals(env, token, project, month, year, ctx);
     return;
   }
 
@@ -793,14 +886,7 @@ async function firestoreIncrementDailyClick(env, token, project, docId, displayU
     const t = await retry.text();
     throw new Error(`daily click write failed: ${createRes.status}/${retry.status} ${t}`);
   }
-  await Promise.all([
-    firestoreIncrementPeriodTotal(env, token, project, "click_monthly", month, "month", month).catch((err) =>
-      console.error("click_monthly_failed", err)
-    ),
-    firestoreIncrementPeriodTotal(env, token, project, "click_yearly", year, "year", year).catch((err) =>
-      console.error("click_yearly_failed", err)
-    ),
-  ]);
+  await schedulePeriodArchiveTotals(env, token, project, month, year, ctx);
 }
 
 async function edgeIncrement(norm, ctx) {
@@ -1126,7 +1212,7 @@ async function handleRecordClick(request, env, ctx) {
   const docId = await sha256Hex(norm);
   try {
     if (hasFirebaseAdmin(env)) {
-      const result = await firestoreIncrementClick(env, docId, displayUrl || norm);
+      const result = await firestoreIncrementClick(env, docId, displayUrl || norm, ctx);
       let count = Number.isFinite(result.count) ? result.count : null;
       if (count == null) {
         try {
