@@ -1,21 +1,8 @@
 {
-  "checked_at": "2026-10-07T03:58:23Z",
-  "checked_at_display": "2026-10-07 03:58 UTC",
+  "checked_at": "2026-10-07T12:39:53Z",
+  "checked_at_display": "2026-10-07 12:39 UTC",
   "added_count": 0,
-  "removed_count": 12,
+  "removed_count": 0,
   "added_links": [],
-  "removed_links": [
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648584719-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648587013-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648596139-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648597625-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648617839-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648619944-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648628954-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648630529-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648638200-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648639609-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648648550-index.svg",
-    "https://cianvjzoyvcaphojsfsd.supabase.co/storage/v1/object/public/site-assets/07d42670-2e79-489e-9007-ab2e9350abc9/1788648649924-index.svg"
-  ]
+  "removed_links": []
 }

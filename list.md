@@ -51902,7 +51902,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://substances.conduit.fyi/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://site-cxegpaxk.myoxypages.com/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://site-cxegpaxk.myoxypages.com/glalaxyyoutube | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://hope.onlyforscholarship.online/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # Σ Sigma Games
 > [!NOTE]
