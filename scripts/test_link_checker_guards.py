@@ -94,6 +94,61 @@ def test_mass_fail_aborts() -> None:
     expect(status == before, "status unchanged on mass fail")
 
 
+def test_fern_s3_hold_skips_purge_and_streak() -> None:
+    """During the Fern AWS outage hold, Fern-section S3 URLs are not purged."""
+    urls = [
+        "https://example.com/ok",
+        "https://s3.amazonaws.com/angelfern/index.html",
+        "https://angelfern.s3.amazonaws.com/index.html",
+        "https://other-bucket.s3.amazonaws.com/index.html",  # not under Fern H1
+    ]
+    lines = [
+        "# Proxy List",
+        "",
+        "# Other Provider",
+        "| Locked | Link | Found Date | Username | Password | Contributor |",
+        "| - | - | - | - | - | - |",
+        f"| | {urls[0]} | 1/1/2026 | N/A | N/A | tester",
+        f"| | {urls[3]} | 1/1/2026 | N/A | N/A | tester",
+        "",
+        "# 🪴 Fern",
+        "| Locked | Link | Found Date | Username | Password | Contributor |",
+        "| - | - | - | - | - | - |",
+        f"| | {urls[1]} | 1/1/2026 | N/A | N/A | tester",
+        f"| | {urls[2]} | 1/1/2026 | N/A | N/A | tester",
+        "",
+    ]
+    content = "\n".join(lines) + "\n"
+    status = {lc.normalize_url(u): 2 for u in urls}
+    results = {lc.normalize_url(u): False for u in urls}
+    before_fern = {
+        lc.normalize_url(urls[1]): status[lc.normalize_url(urls[1])],
+        lc.normalize_url(urls[2]): status[lc.normalize_url(urls[2])],
+    }
+
+    os.environ["LINK_CHECK_FERN_S3_HOLD_UNTIL"] = "2099-01-01T00:00:00+00:00"
+    lc.MASS_FAIL_RATIO = 1.1
+    lc.MAX_PURGE_ABS = 250
+    lc.MAX_PURGE_RATIO = 1.0
+
+    with tempfile.TemporaryDirectory() as td:
+        old = Path.cwd()
+        os.chdir(td)
+        try:
+            out, kept, removed, guard = lc.process(content, results, status)
+        finally:
+            os.chdir(old)
+            os.environ["LINK_CHECK_FERN_S3_HOLD_UNTIL"] = "0"
+
+    expect(guard.get("aborted") is False, f"unexpected abort {guard}")
+    expect(urls[1] in out and urls[2] in out, "Fern S3 links must remain")
+    expect(urls[3] not in out, "non-Fern S3 link should still purge")
+    expect(urls[0] not in out, "dead non-S3 should purge")
+    expect(removed == 2, f"removed={removed}")
+    expect(status[lc.normalize_url(urls[1])] == before_fern[lc.normalize_url(urls[1])], "Fern streak frozen")
+    expect(status[lc.normalize_url(urls[2])] == before_fern[lc.normalize_url(urls[2])], "Fern streak frozen")
+
+
 def test_small_purge_still_works() -> None:
     urls = [f"https://example.com/ok{i}" for i in range(20)] + ["https://example.com/dead"]
     content = _table(urls)
@@ -166,11 +221,18 @@ def test_is_working_treats_soft_statuses_as_alive() -> None:
 
 
 def main() -> int:
-    test_purge_cap_partial_purge_drains_backlog()
-    test_mass_fail_aborts()
-    test_small_purge_still_works()
-    test_classify_status_soft_ok()
-    test_is_working_treats_soft_statuses_as_alive()
+    # Disable the temporary Fern S3 hold by default so other cases stay quiet;
+    # the dedicated hold test sets its own until-date.
+    os.environ["LINK_CHECK_FERN_S3_HOLD_UNTIL"] = "0"
+    try:
+        test_purge_cap_partial_purge_drains_backlog()
+        test_mass_fail_aborts()
+        test_fern_s3_hold_skips_purge_and_streak()
+        test_small_purge_still_works()
+        test_classify_status_soft_ok()
+        test_is_working_treats_soft_statuses_as_alive()
+    finally:
+        os.environ.pop("LINK_CHECK_FERN_S3_HOLD_UNTIL", None)
     print("ok")
     return 0
 

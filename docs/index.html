@@ -2967,6 +2967,21 @@
       color: #ffb4b4;
       word-break: normal;
     }
+    .important-notices .notice-added-at {
+      margin: -0.15rem 0 0.45rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .important-notices .notice-alert-info .notice-added-at,
+    .important-notices .notice-alert-success .notice-added-at,
+    .important-notices .notice-alert-warning .notice-added-at,
+    .important-notices .notice-alert-danger .notice-added-at {
+      opacity: 0.9;
+    }
+    .important-notices .notice-alert-danger .notice-added-at {
+      color: #ffb4b4;
+    }
     #firebaseQuotaBanner {
       border: 1px solid #a83d3d;
       background: #3a1212;
@@ -13889,6 +13904,7 @@
 
     function importantNoticeAlertClass(title) {
       const t = String(title || "").trim();
+      if (/fern aws outage/i.test(t)) return "notice-alert-danger";
       if (/proxy connections fully operational/i.test(t)) return "notice-alert-success";
       if (/canary branch coming soon/i.test(t)) return "notice-alert-info";
       if (/link ratings back up/i.test(t)) return "notice-alert-info";
@@ -13900,8 +13916,27 @@
     // Escaped so this inline script never contains a literal HTML comment open/close:
     // Scramjet's HTML rewriter strips those and breaks the whole script.
     const NOTICE_EXPIRES_RE = /<\!--\s*expires:\s*([^>]+?)\s*--\>/i;
+    const NOTICE_ADDED_RE = /<\!--\s*added:\s*([^>]+?)\s*--\>/i;
     /** Earliest future "expires: ISO" notice comment seen in the last notices render (ms), or 0. */
     let nextImportantNoticeExpiryMs = 0;
+
+    function formatNoticeAddedAt(isoOrRaw) {
+      const ms = Date.parse(String(isoOrRaw || "").trim());
+      if (!Number.isFinite(ms)) return "";
+      try {
+        return (
+          "Added " +
+          new Date(ms).toLocaleString(undefined, {
+            dateStyle: "medium",
+            timeStyle: "short",
+            timeZone: "UTC",
+          }) +
+          " UTC"
+        );
+      } catch (_) {
+        return "Added " + new Date(ms).toISOString().replace("T", " ").replace(/\.\d+Z$/, " UTC");
+      }
+    }
 
     function renderUpdateNoticeMarkdown(noticesText) {
       const text = String(noticesText || "").replace(/\r\n/g, "\n").trim();
@@ -13954,10 +13989,25 @@
               }
             }
           }
+          const am = body.match(NOTICE_ADDED_RE);
+          let addedLabel = "";
+          if (am) {
+            body = body.replace(NOTICE_ADDED_RE, "").trim();
+            addedLabel = formatNoticeAddedAt(am[1]);
+          }
           const tag = level <= 2 ? "h2" : "h3";
           const alertClass = importantNoticeAlertClass(title);
           if (alertClass) chunks.push('<div class="' + alertClass + '">');
           chunks.push("<" + tag + ">" + renderMarkdownInline(title) + "</" + tag + ">");
+          if (addedLabel) {
+            chunks.push(
+              '<p class="notice-added-at"><time datetime="' +
+                escapeAttr(String(am[1]).trim()) +
+                '">' +
+                escapeHtml(addedLabel) +
+                "</time></p>"
+            );
+          }
           if (body) renderNoticeSectionBody(chunks, body);
           if (alertClass) chunks.push("</div>");
         } else {
