@@ -175,6 +175,16 @@ def test_small_purge_still_works() -> None:
     expect("https://example.com/dead" not in out, "dead link should be purged")
 
 
+def test_is_s3_amazonaws_url_uses_hostname() -> None:
+    expect(lc.is_s3_amazonaws_url("https://s3.amazonaws.com/angelfern/index.html"), "path-style")
+    expect(lc.is_s3_amazonaws_url("https://angelfern.s3.amazonaws.com/index.html"), "virtual-hosted")
+    expect(lc.is_s3_amazonaws_url("https://angelfern.s3.amazonaws.com:443/index.html"), "with port")
+    expect(not lc.is_s3_amazonaws_url("https://evil.example/s3.amazonaws.com/x"), "path spoof")
+    expect(not lc.is_s3_amazonaws_url("https://s3.amazonaws.com.evil.example/"), "suffix spoof")
+    expect(not lc.is_s3_amazonaws_url("https://not-s3.amazonaws.com/"), "lookalike host")
+    expect(not lc.is_s3_amazonaws_url("https://example.com/?q=s3.amazonaws.com"), "query spoof")
+
+
 def test_classify_status_soft_ok() -> None:
     expect(lc.classify_status(200) == "ok", "200")
     expect(lc.classify_status(301) == "ok", "301")
@@ -229,6 +239,7 @@ def main() -> int:
         test_mass_fail_aborts()
         test_fern_s3_hold_skips_purge_and_streak()
         test_small_purge_still_works()
+        test_is_s3_amazonaws_url_uses_hostname()
         test_classify_status_soft_ok()
         test_is_working_treats_soft_statuses_as_alive()
     finally:

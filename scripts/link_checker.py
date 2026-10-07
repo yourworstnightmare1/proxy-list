@@ -8,6 +8,7 @@ import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 _SCRIPTS = Path(__file__).resolve().parent
 if str(_SCRIPTS) not in sys.path:
@@ -85,7 +86,15 @@ def fern_s3_purge_held(now: datetime | None = None) -> bool:
 
 
 def is_s3_amazonaws_url(url: str) -> bool:
-    return "s3.amazonaws.com" in (url or "").lower()
+    """True when the URL host is S3 (path-style or virtual-hosted), not a substring spoof."""
+    try:
+        host = (urlparse(url).hostname or "").lower()
+    except ValueError:
+        return False
+    if not host:
+        return False
+    # s3.amazonaws.com / bucket.s3.amazonaws.com (not evil.com/...?s3.amazonaws.com)
+    return host == "s3.amazonaws.com" or host.endswith(".s3.amazonaws.com")
 
 
 def is_fern_section_heading(line: str) -> bool:
