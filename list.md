@@ -15,14 +15,22 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 
 ## Important Notices
 
+### Fern AWS Outage
+<!-- added: 2026-10-07T19:24:00Z -->
+<!-- expires: 2026-10-10T19:30:00Z -->
+Fern’s AWS service is currently suspended by Amazon. All Fern s3.amazonaws.com links are currently offline (shows XML error). They should be back up within 48 hours or less. [Click to view Discord message](https://discord.com/channels/1353774986258808932/1511556186950996028/1557454997405306963)
+
 ### Having Trouble Viewing The List?
+<!-- added: 2026-08-01T00:00:00Z -->
 If the list is appearing as a blank screen or throws an error message, [follow the steps on this page based on your browser to fix the issue](./fix-loading/index.html).
 
 ### Errors with Link Clicks and Ratings
+<!-- added: 2026-09-20T00:00:00Z -->
 <!-- expires: 2026-09-27T07:00:00Z -->
 I am aware that link click counts, ratings, and other things dependent on Firebase are currently not working because our quota is being exceeded constantly, I am working to resolve these issues as quickly as I can to get the list back up and running properly by heavily optimizing the site. Should be fixed by September 27.
 
 ### Develop For Proxies With Ease
+<!-- added: 2026-09-28T00:00:00Z -->
 Try out my newest project, the [Proxy Development Toolkit](https://github.com/yourworstnightmare1/proxy-development-toolkit)! Easily design and test your websites around proxy functionality, with support for Scramjet and Ultraviolet, modern transports (epoxy-tls, wisp-js, and libcurl-transport), and more, supercharged with MCP support for your favorite AI coding agents such as Cursor, Claude, Codex, and more.
 
 ## Update Notice

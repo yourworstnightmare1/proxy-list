@@ -6,8 +6,9 @@ import time
 import threading
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 _SCRIPTS = Path(__file__).resolve().parent
 if str(_SCRIPTS) not in sys.path:
@@ -53,6 +54,57 @@ NOTE_SEP_LINE_RE = re.compile(r"^> \| - \|")
 
 # Only proxy table rows should be purged by link failure — not blockquotes or prose with URLs.
 _TABLE_LINK_ROW = re.compile(r"^\|\s*\|\s*(https?://[^\s|]+)", re.IGNORECASE)
+
+# Temporary hold: Fern's AWS/S3 outage — do not auto-remove Fern s3.amazonaws.com
+# links (or advance their failure streaks toward purge) until this UTC time.
+# Override with LINK_CHECK_FERN_S3_HOLD_UNTIL=ISO8601, or disable with empty / "0".
+_DEFAULT_FERN_S3_HOLD_UNTIL = "2026-10-10T19:30:00+00:00"
+
+
+def fern_s3_purge_hold_until() -> datetime | None:
+    raw = os.environ.get("LINK_CHECK_FERN_S3_HOLD_UNTIL", _DEFAULT_FERN_S3_HOLD_UNTIL)
+    raw = (raw or "").strip()
+    if not raw or raw in ("0", "false", "off", "none"):
+        return None
+    try:
+        dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt
+
+
+def fern_s3_purge_held(now: datetime | None = None) -> bool:
+    until = fern_s3_purge_hold_until()
+    if until is None:
+        return False
+    now = now or datetime.now(timezone.utc)
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    return now < until
+
+
+def is_s3_amazonaws_url(url: str) -> bool:
+    """True when the URL host is S3 (path-style or virtual-hosted), not a substring spoof."""
+    try:
+        host = (urlparse(url).hostname or "").lower()
+    except ValueError:
+        return False
+    if not host:
+        return False
+    # s3.amazonaws.com / bucket.s3.amazonaws.com (not evil.com/...?s3.amazonaws.com)
+    return host == "s3.amazonaws.com" or host.endswith(".s3.amazonaws.com")
+
+
+def is_fern_section_heading(line: str) -> bool:
+    """True for the Fern provider H1 (emoji/name variants)."""
+    s = line.lstrip("\ufeff \t")
+    if not (s.startswith("# ") and not s.startswith("##")):
+        return False
+    title = s[2:].strip().casefold()
+    return "fern" in title
+
 
 _thread_local = threading.local()
 
@@ -308,13 +360,31 @@ def process(content, results, status):
       drains across runs instead of aborting forever.
     """
     no_purge = _env_flag("LINK_CHECK_NO_PURGE")
+    hold_fern_s3 = fern_s3_purge_held()
+    if hold_fern_s3:
+        until = fern_s3_purge_hold_until()
+        print(
+            "[link_checker] Fern S3 purge hold active until "
+            f"{until.isoformat() if until else '?'}: Fern-section "
+            "s3.amazonaws.com links will not be purged or streak-advanced.",
+            flush=True,
+        )
 
     lines = content.splitlines()
     table_norms: list[str] = []
+    # Map normalized URL -> True when the URL sits under the Fern H1 and is S3.
+    fern_s3_norms: set[str] = set()
+    current_is_fern = False
     for line in lines:
+        if _is_top_level_h1(line):
+            current_is_fern = is_fern_section_heading(line)
         match = _TABLE_LINK_ROW.search(line)
         if match:
-            table_norms.append(normalize_url(match.group(1)))
+            url = match.group(1)
+            norm = normalize_url(url)
+            table_norms.append(norm)
+            if hold_fern_s3 and current_is_fern and is_s3_amazonaws_url(url):
+                fern_s3_norms.add(norm)
 
     unique_n, failed_n = count_unique_failures(table_norms, results)
     fail_ratio = (failed_n / unique_n) if unique_n else 0.0
@@ -324,6 +394,8 @@ def process(content, results, status):
     would_purge_norms: list[str] = []
     if not no_purge and not mass_fail:
         for norm in dict.fromkeys(table_norms):
+            if norm in fern_s3_norms:
+                continue
             if results.get(norm, False):
                 continue
             prev = int(status.get(norm, 0) or 0)
@@ -394,6 +466,13 @@ def process(content, results, status):
                     kept += 1
                 else:
                     removed += 1
+                continue
+
+            # Fern S3 outage hold: keep the row and freeze failure streak.
+            if norm in fern_s3_norms:
+                new_lines.append(line)
+                kept += 1
+                keep_duplicate_row[norm] = True
                 continue
 
             working = results.get(norm, False)
