@@ -38709,18 +38709,16 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://fastly.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001050000729/c281a4825ed3c7ce.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://gcore.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001050000729/c281a4825ed3c7ce.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://testingcf.jsdelivr.net/gh/seattleschools/media@main/batch/Linklet/hourly/20261001050000729/c281a4825ed3c7ce.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-49pbrdm9.myoxypages.com/artic.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ❄️ Frosted
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | captcha, tab-cloak | Scramjet, Ultraviolet | 5 |
+> | Proxy | captcha, tab-cloak | Scramjet, Ultraviolet | 4 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://gcore.jsdelivr.net/gh/mrdavidsz/svgfrosted@main/deltarealm6357.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://gcore.jsdelivr.net/gh/mrdavidsz/svgfrosted@main/neonmesh6933.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://sites.google.com/view/frostedbrowserstatic/frosted | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sites.google.com/view/rainbowsvg/chudding | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sites.google.com/view/statichtmlsite/static | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -47644,7 +47642,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/xcloud%20(1).svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/xcloud%20(1).svg?4 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/xcloud%20(1).svg?5 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-cxegpaxk.myoxypages.com/xcloud-9002.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌬️ Aether
 > [!NOTE]
@@ -49671,8 +49668,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://student-2112.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://student-3422.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://student-1544.freeresearchmaterialforstudents.courses/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-cxegpaxk.myoxypages.com/zaka.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-cxegpaxk.myoxypages.com/zaka%20copy.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌙 Nocturne
 > [!NOTE]
@@ -50335,7 +50330,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://static.observableusercontent.com/files/46caaef3c1269964504830e586d24f963e6da1e72a7af7a0755642ee5c594549dadc3a0eead1d1ead1db6f0e9aaa73db85469a69472572221eb4a2ec5eaf15b2 | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://script.google.com/macros/s/AKfycbyliWUNAx-HVdmFDNqS_yTt9zXi_u2wBR8rWcRydvl5cjYYlHXANxK5wjSmZxp0fwa6fw/exec?id=1zI2u9RF1iT-WLYUJAP-Zp4JdL-FURwqD | 9/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://script.google.com/macros/s/AKfycbyliWUNAx-HVdmFDNqS_yTt9zXi_u2wBR8rWcRydvl5cjYYlHXANxK5wjSmZxp0fwa6fw/exec?id=14Qhy75hrvPoyLug5kUuvtAo7NiIsWQzi | 9/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-49pbrdm9.myoxypages.com/Deserted.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🪨 EDU Rocks
 > [!NOTE]
@@ -52017,7 +52011,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/milk.svg?3 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/milk.svg?4 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/milk.svg?5 | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-cxegpaxk.myoxypages.com/milk.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🎮 UGS
 > [!NOTE]
@@ -52416,7 +52409,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://rawcdn.githack.com/Real-Nightmare/aeos-ub/0d19b5b7149c03f045ce494083b27108b95955a8/icon-0003.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://cdn.statically.io/gh/Real-Nightmare/aeos-ub@0d19b5b7149c03f045ce494083b27108b95955a8/icon-0003.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://raw.githubusercontent.com/Real-Nightmare/aeos-ub/0d19b5b7149c03f045ce494083b27108b95955a8/icon-0003.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-49pbrdm9.myoxypages.com/aeos-v4.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🦇 Nyx
 > [!NOTE]
@@ -52504,7 +52496,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://fastly.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-9-de0l.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-9-de0l.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/megadrop-wdasdu@main/1-learning-005847b5039fb2c8f4515165e0d79a17-9-de0l.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-cxegpaxk.myoxypages.com/nyx.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 📚 Study Zone
 > [!NOTE]
@@ -52734,7 +52725,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://quantil.jsdelivr.net/gh/dorianhagar506-coder/idk-1tlupq@main/DarkNUX-9-sttg.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://u1.padletusercontent.com/uploads/padlet-uploads-usc1/6201856624/18dbb6bf9d1842fbd2fa9eb30541fd7e/DarkNUX.svg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8dmxJqYDvE2-MDbblcM-ZrVekXW99RReKkJFIoMoKio28vaguHqr5o9Dy9EYkUj-xfkhj8VQroN-9F3I9nT1ibEU3eXMFa0A0anFBy8O2ICgQfxC4m0DA85iWoKBkZxkDMCBzflfHgluoa_puMBPDKFgyD3h2m4g6lsJgQSIbesg==darknux | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://u1.padletusercontent.com/uploads/padlet-uploads-usc1/6201856624/fb6426227dfe1fe95929d4f9bf594f16/windows10background.svg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8dmxJqYDvE2-MDbblcM-ZrVekXW99RReKkJFIoMoKio28vaguHqr5o9Dy9EYkUj-wVSbS1_9S6WGEiIdamcHlwR0GUVKbSHSbo4t1ryY2K7nIqGrZxXOdKrbf-0xK3hld8GgcshnLXFTWgLWYQ4OZ2e8a3Do34M7tKrcwDmqHUWDHgxfSoBIgjAzXFT7rqSuI= | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-49pbrdm9.myoxypages.com/DarkNUX.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧮 Timmy's Math Work
 > [!NOTE]
@@ -52947,7 +52937,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://fastly.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-9-fjot.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-9-fjot.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/melonsoda-hzg7ge@main/ixl-9-fjot.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-cxegpaxk.myoxypages.com/melonsoda.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ᚺ Hagalaz
 > [!NOTE]
@@ -53077,7 +53066,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://gcore.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-9-98tk.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/Aglet-0/niche-ldrgay@main/tuff-9-98tk.svg | 9/19/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://u1.padletusercontent.com/uploads/padlet-uploads-usc1/6201856624/cd47ffca1bc3b206e009e19e45642926/tuff.svg?expiry_token=5WaHZRdGG3LkUVQGy3SZ-zdRtq89aJeottSBaF_Hii8dmxJqYDvE2-MDbblcM-ZrVekXW99RReKkJFIoMoKio28vaguHqr5o9Dy9EYkUj-x64OCM1JvaM3DK_pO80nbxk4Ts8sm8B2uL57YYwagp0k2GcZBjKUJguyeIzmD42o1_n7rgiq1-pBQSZhg8FbgataH4wenmDey01CH-BzmWqg==%5C%5C%5C | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-cxegpaxk.myoxypages.com/tuff.svg | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌍 Alexer's World
 > [!NOTE]
