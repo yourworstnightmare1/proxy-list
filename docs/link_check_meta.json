@@ -1,10 +1,8 @@
 {
-  "checked_at": "2026-10-08T04:14:30Z",
-  "checked_at_display": "2026-10-08 04:14 UTC",
+  "checked_at": "2026-10-08T13:01:54Z",
+  "checked_at_display": "2026-10-08 13:01 UTC",
   "added_count": 0,
-  "removed_count": 1,
+  "removed_count": 0,
   "added_links": [],
-  "removed_links": [
-    "https://alphageo.eclipsecastellon.net"
-  ]
+  "removed_links": []
 }
