@@ -11,7 +11,9 @@
   var lastPingAt = 0;
   var MIN_PING_GAP_MS = 45 * 1000;
   var inFlight = false;
-  var SESSION_KEY = "proxyList_presence_session_v1";
+  /** Prefer localStorage so reloads keep one session; sessionStorage alone churned IDs. */
+  var SESSION_KEY = "proxyList_presence_session_v2";
+  var SESSION_KEY_LEGACY = "proxyList_presence_session_v1";
   var cachedSessionId = "";
   /** Same-origin on Cloudflare Workers; cross-origin fallback for GitHub Pages / proxies. */
   var DEFAULT_WORKER_ORIGIN = "https://proxy-list.jasonthegamer48.workers.dev";
@@ -201,15 +203,46 @@
     return DEFAULT_WORKER_ORIGIN + p;
   }
 
+  function readStoredSessionId() {
+    var stores = [];
+    try {
+      if (global.localStorage) stores.push(global.localStorage);
+    } catch (_) {}
+    try {
+      if (global.sessionStorage) stores.push(global.sessionStorage);
+    } catch (_) {}
+    var keys = [SESSION_KEY, SESSION_KEY_LEGACY];
+    for (var si = 0; si < stores.length; si++) {
+      for (var ki = 0; ki < keys.length; ki++) {
+        try {
+          var existing = stores[si].getItem(keys[ki]);
+          if (existing && String(existing).length >= 8) {
+            var cleaned = String(existing).replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 128);
+            if (cleaned.length >= 8) return cleaned;
+          }
+        } catch (_) {}
+      }
+    }
+    return "";
+  }
+
+  function persistSessionId(id) {
+    try {
+      if (global.localStorage) global.localStorage.setItem(SESSION_KEY, id);
+    } catch (_) {}
+    try {
+      if (global.sessionStorage) global.sessionStorage.setItem(SESSION_KEY, id);
+    } catch (_) {}
+  }
+
   function getSessionId() {
     if (cachedSessionId && cachedSessionId.length >= 8) return cachedSessionId;
-    try {
-      var existing = global.sessionStorage && global.sessionStorage.getItem(SESSION_KEY);
-      if (existing && String(existing).length >= 8) {
-        cachedSessionId = String(existing).replace(/[^a-zA-Z0-9_-]/g, "").slice(0, 128);
-        if (cachedSessionId.length >= 8) return cachedSessionId;
-      }
-    } catch (_) {}
+    var existing = readStoredSessionId();
+    if (existing) {
+      cachedSessionId = existing;
+      persistSessionId(cachedSessionId);
+      return cachedSessionId;
+    }
     var id = "";
     try {
       if (global.crypto && typeof global.crypto.getRandomValues === "function") {
@@ -226,9 +259,7 @@
       id = "s" + String(Date.now()) + String(Math.floor(Math.random() * 1e9));
     }
     cachedSessionId = id.slice(0, 128);
-    try {
-      if (global.sessionStorage) global.sessionStorage.setItem(SESSION_KEY, cachedSessionId);
-    } catch (_) {}
+    persistSessionId(cachedSessionId);
     return cachedSessionId;
   }
 

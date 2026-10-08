@@ -25,10 +25,13 @@
  *   - Rate limit: 90 pings / hour / IP
  *   - Writes presence_daily / presence_monthly aggregates + optional user totals
  *     for the Statistics → Users panel (unique visitors, hour buckets, top users).
- *   - Tracks ~5-minute live sessions in the edge Cache and returns { active }.
+ *   - Tracks ~3-minute live sessions in the edge Cache and returns { active }.
+ *   - Signed-in users are keyed by uid (proxy + raw tabs count once); anonymous
+ *     by session id (not anonymous Firebase uid — those churn under web proxies).
  *
  * GET  /api/presence-active
  *   - Returns { ok, active } for the live-session count (no Firebase required).
+ *   - Prunes and persists the edge session map so abandoned ids do not linger.
  *
  * GET /api/steam/search?term=...
  *   - Proxies store.steampowered.com/api/storesearch (CORS + edge cache).
@@ -44,7 +47,8 @@ const RATE_LIMIT_MAX = 40;
 const RATE_LIMIT_WINDOW_SEC = 3600;
 const PRESENCE_RATE_LIMIT_MAX = 90;
 const PRESENCE_RATE_LIMIT_WINDOW_SEC = 3600;
-const PRESENCE_ACTIVE_STALE_MS = 5 * 60 * 1000;
+/** Drop sessions with no heartbeat for this long (client pings ~every 60s). */
+const PRESENCE_ACTIVE_STALE_MS = 3 * 60 * 1000;
 const PRESENCE_ACTIVE_CACHE_REQ = new Request("https://presence-active.proxy-list.internal/sessions");
 const STEAM_RATE_LIMIT_MAX = 120;
 const STEAM_RATE_LIMIT_WINDOW_SEC = 3600;
@@ -161,7 +165,7 @@ export default {
       return cors(new Response(null, { status: 204 }));
     }
     if (url.pathname === "/api/presence-active" && request.method === "GET") {
-      return handlePresenceActive();
+      return handlePresenceActive(ctx);
     }
     if (url.pathname === "/api/presence-active" && request.method === "OPTIONS") {
       return cors(new Response(null, { status: 204 }));
@@ -390,24 +394,65 @@ function pruneActiveSessionMap(map, now) {
   return out;
 }
 
-async function touchActiveSession(sessionId, ctx) {
-  const now = Date.now();
-  const map = pruneActiveSessionMap(await readActiveSessionMap(), now);
-  if (sessionId) map[sessionId] = now;
-  const count = Object.keys(map).length;
+/**
+ * Stable map key for live presence.
+ * Signed-in accounts collapse proxy + raw tabs to one entry (uid).
+ * Anonymous / no-auth use the browser session id — do not key by anonymous
+ * Firebase uid (proxies often mint a new anonymous auth uid per load).
+ */
+function activePresenceKey(sessionId, uid, anonymous) {
+  const u = String(uid || "").trim();
+  if (u && !anonymous) return "u:" + u.slice(0, 128);
+  const s = String(sessionId || "").trim();
+  if (s) return "s:" + s.slice(0, 128);
+  return "";
+}
+
+async function writeActiveSessionMap(map, ctx) {
   const res = new Response(JSON.stringify(map), {
     headers: {
       "Cache-Control": "public, max-age=600",
       "Content-Type": "application/json; charset=utf-8",
     },
   });
-  ctx.waitUntil(caches.default.put(PRESENCE_ACTIVE_CACHE_REQ, res.clone()));
+  const put = caches.default.put(PRESENCE_ACTIVE_CACHE_REQ, res.clone());
+  if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(put);
+  else await put;
+  return res;
+}
+
+async function touchActiveSession(sessionId, ctx, opts) {
+  const now = Date.now();
+  const map = pruneActiveSessionMap(await readActiveSessionMap(), now);
+  const uid = opts && opts.uid ? String(opts.uid) : "";
+  const anonymous = !!(opts && opts.anonymous);
+  const key = activePresenceKey(sessionId, uid, anonymous);
+  if (key) {
+    map[key] = now;
+    // Signed-in: drop the anonymous session key so proxy↔raw does not double-count.
+    if (key.startsWith("u:") && sessionId) {
+      delete map["s:" + String(sessionId).trim().slice(0, 128)];
+      delete map[String(sessionId).trim().slice(0, 128)]; // legacy unprefixed keys
+    }
+  }
+  const count = Object.keys(map).length;
+  await writeActiveSessionMap(map, ctx);
   return count;
 }
 
-async function handlePresenceActive() {
-  const map = pruneActiveSessionMap(await readActiveSessionMap(), Date.now());
-  return json({ ok: true, active: Object.keys(map).length });
+async function handlePresenceActive(ctx) {
+  const now = Date.now();
+  const before = await readActiveSessionMap();
+  const map = pruneActiveSessionMap(before, now);
+  // Persist prune so abandoned sessions leave the edge Cache entry.
+  if (Object.keys(before).length !== Object.keys(map).length) {
+    await writeActiveSessionMap(map, ctx);
+  }
+  return json({
+    ok: true,
+    active: Object.keys(map).length,
+    staleMs: PRESENCE_ACTIVE_STALE_MS,
+  });
 }
 
 function sanitizeDisplayName(raw) {
@@ -1626,14 +1671,15 @@ async function handlePresencePing(request, env, ctx) {
     return json({ ok: false, error: "invalid_session" }, 400);
   }
 
-  const active = await touchActiveSession(sessionId, ctx);
-
   const uid = String((body && body.uid) || "")
     .trim()
     .slice(0, MAX_UID_LEN)
     .replace(/[^a-zA-Z0-9]/g, "");
   const anonymous = !!(body && body.anonymous);
   const displayName = sanitizeDisplayName(body && body.displayName);
+
+  // Count after parsing uid so signed-in users collapse across proxy/raw tabs.
+  const active = await touchActiveSession(sessionId, ctx, { uid, anonymous });
 
   const ip = clientIp(request);
   const rate = await rateLimitOk(ip, ctx, {
