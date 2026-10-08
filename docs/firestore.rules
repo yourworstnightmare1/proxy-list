@@ -186,6 +186,10 @@ service cloud.firestore {
       allow read: if true;
       allow create, update, delete: if false;
     }
+    match /presence_yearly/{yearId} {
+      allow read: if true;
+      allow create, update, delete: if false;
+    }
     match /presence_user_totals/{uidHash} {
       allow read: if true;
       allow create, update, delete: if false;
