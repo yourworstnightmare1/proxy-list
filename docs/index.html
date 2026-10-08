@@ -4487,8 +4487,8 @@
     let failThreshold = 3;
     let useFirebaseClicks = false;
     let firebaseDb = null;
-    /** Realtime DB: session nodes under presence/ for approximate “active now” count. */
-    const PRESENCE_STALE_MS = 5 * 60 * 1000;
+    /** Realtime DB: session nodes under presence/ (fallback if Worker count unavailable). */
+    const PRESENCE_STALE_MS = 3 * 60 * 1000;
     const PRESENCE_HEARTBEAT_MS = 60 * 1000;
     let firebasePresenceDb = null;
     let activeSessionsCount = null;
@@ -9177,12 +9177,13 @@
     function updateActiveUsersDisplay() {
       const line = $("activeUsersFooterLine");
       if (!line) return;
-      const n =
-        Number.isFinite(activeSessionsCount) && activeSessionsCount > 0
+      // Prefer Worker edge count: Firebase RTDB often over-counts under Scramjet/UV
+      // (new anonymous auth uids + failed onDisconnect leave stale presence nodes).
+      const n = Number.isFinite(workerActiveSessionsCount)
+        ? workerActiveSessionsCount
+        : Number.isFinite(activeSessionsCount) && activeSessionsCount > 0
           ? activeSessionsCount
-          : Number.isFinite(workerActiveSessionsCount)
-            ? workerActiveSessionsCount
-            : null;
+          : null;
       if (n == null) {
         line.hidden = true;
         line.textContent = "";
@@ -9195,6 +9196,8 @@
           escapeHtml(String(n)) +
           "</span>"
       );
+      line.title =
+        "Approximate browsers with a heartbeat in the last few minutes (Cloudflare Worker). Proxied and direct tabs for the same signed-in account count once.";
     }
 
     function countActivePresenceSessions(snap) {
