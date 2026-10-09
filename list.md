@@ -47791,7 +47791,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | N/A | 404 |
+> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | N/A | 402 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -48246,8 +48246,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://raw.esm.sh/eggdog@1.0.0/index.html | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/eggdog@1.0.0/index.html | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://unpkg.com/eggdog@1.0.0/index.html | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://learnspace.lat | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://desmoscalc.lol | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://icon.horse/icon/classroomwork.neocities.org | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://www.faviconextractor.com/favicon/classroomwork.neocities.org | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://getfavicon.dev/classroomwork.neocities.org | 9/13/2026 | Class code is: m1 | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48318,7 +48316,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1091 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1090 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49075,7 +49073,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://mewl-mew30.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mewl-vector69.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://model-research43.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://modulo-catnip68.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://modulo-quiz97.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://music-class68.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://music-hiss10.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
