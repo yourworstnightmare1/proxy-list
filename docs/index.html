@@ -7838,6 +7838,22 @@
           if (fid && (val === 1 || val === -1)) void handleFolderRatingButtonClick(fid, val);
         }
       });
+      // Load a single link's rating on hover/focus — never while scrolling the list.
+      const ensureRatingFromCellEvent = (ev) => {
+        const cell = ev.target && ev.target.closest ? ev.target.closest("td.link-rating-cell") : null;
+        if (!cell) return;
+        const url =
+          cell.getAttribute("data-rating-url") ||
+          (cell.closest("tr") &&
+            cell.closest("tr").querySelector("a.js-link-summary[data-link]") &&
+            cell.closest("tr").querySelector("a.js-link-summary[data-link]").getAttribute("data-link")) ||
+          "";
+        if (!url) return;
+        if (ratingAggForNorm(normalizeUrlKeyForClicks(url)) != null) return;
+        void ensureLinkRatingLoaded(url, { prefetchSelfVotes: false });
+      };
+      document.addEventListener("pointerenter", ensureRatingFromCellEvent, true);
+      document.addEventListener("focusin", ensureRatingFromCellEvent);
       updateAccountUI();
     }
 
@@ -8698,17 +8714,44 @@
       const norm = normalizeUrlKeyForClicks(link);
       if (!norm) return "—";
       const agg = ratingAggForNorm(norm);
-      const up = agg ? Number(agg.up) || 0 : 0;
-      const down = agg ? Number(agg.down) || 0 : 0;
+      const blocked = communityFeaturesBlocked;
+      const dis = blocked ? " disabled aria-disabled=\"true\"" : "";
+      const titleExtra = blocked ? " (suspended — ratings disabled)" : "";
+      // Unloaded: show vote buttons but no fabricated 0/0 (avoids scroll-driven Firestore reads).
+      if (!agg) {
+        return (
+          '<button type="button" class="rating-vote-btn' +
+          '" data-link-rating-vote="1" data-link-rating-url="' +
+          escapeAttr(link) +
+          '" title="Thumbs up' +
+          titleExtra +
+          '" aria-label="Thumbs up"' +
+          dis +
+          '><img src="' +
+          escapeAttr(RATING_THUMB_UP_IMG) +
+          '" alt="" width="18" height="18" decoding="async" /></button>' +
+          '<span class="rating-score" title="Rating loads when you interact">…</span>' +
+          '<button type="button" class="rating-vote-btn' +
+          '" data-link-rating-vote="-1" data-link-rating-url="' +
+          escapeAttr(link) +
+          '" title="Thumbs down' +
+          titleExtra +
+          '" aria-label="Thumbs down"' +
+          dis +
+          '><img src="' +
+          escapeAttr(RATING_THUMB_DOWN_IMG) +
+          '" alt="" width="18" height="18" decoding="async" /></button>' +
+          '<span class="sub rating-count-hint" title="Up / down counts">·/·</span>'
+        );
+      }
+      const up = Number(agg.up) || 0;
+      const down = Number(agg.down) || 0;
       const primaryHash = normToHashCache.get(norm) || "";
       const self = primaryHash ? linkRatingSelfByHash.get(primaryHash) || 0 : 0;
       const upOn = self === 1 ? " is-active" : "";
       const dnOn = self === -1 ? " is-active" : "";
       const net = up - down;
       const netStr = net > 0 ? "+" + net : String(net);
-      const blocked = communityFeaturesBlocked;
-      const dis = blocked ? " disabled aria-disabled=\"true\"" : "";
-      const titleExtra = blocked ? " (suspended — ratings disabled)" : "";
       return (
         '<button type="button" class="rating-vote-btn' +
         upOn +
@@ -8748,11 +8791,70 @@
       const hash = norm ? normToHashCache.get(norm) || "" : "";
       return (
         '<td class="link-rating-cell"' +
+        (link ? ' data-rating-url="' + escapeAttr(link) + '"' : "") +
         (hash ? ' data-rating-hash="' + escapeAttr(hash) + '"' : "") +
         ">" +
         ratingCellInnerHtmlForLinkUrl(link) +
         "</td>"
       );
+    }
+
+    /** In-flight single-link rating loads (norm → Promise) to coalesce hover + click. */
+    const linkRatingEnsureInflight = new Map();
+
+    /**
+     * Load rating aggregates for one link only (Worker/Firestore). Used on hover/focus/vote —
+     * not while scrolling — so Spark read quota is not spent painting the list.
+     */
+    async function ensureLinkRatingLoaded(linkUrl, opts) {
+      const norm = normalizeUrlKeyForClicks(linkUrl);
+      if (!norm) return false;
+      const wantSelf = !!(opts && opts.prefetchSelfVotes);
+      if (ratingAggForNorm(norm) != null) {
+        const primaryHash = normToHashCache.get(norm) || "";
+        if (!wantSelf || !primaryHash || linkRatingSelfByHash.has(primaryHash)) return true;
+      }
+      let p = linkRatingEnsureInflight.get(norm);
+      if (!p) {
+        p = (async () => {
+          try {
+            await prefetchLinkRatingsForNorms([norm], {
+              skipLinkSaveCounts: true,
+              prefetchSelfVotes: wantSelf,
+            });
+            return ratingAggForNorm(norm) != null;
+          } finally {
+            linkRatingEnsureInflight.delete(norm);
+          }
+        })();
+        linkRatingEnsureInflight.set(norm, p);
+      }
+      const ok = await p;
+      repaintLinkRatingCellsForUrl(linkUrl);
+      return ok;
+    }
+
+    function repaintLinkRatingCellsForUrl(linkUrl) {
+      const link = String(linkUrl || "");
+      if (!link) return;
+      const norm = normalizeUrlKeyForClicks(link);
+      const hash = norm ? normToHashCache.get(norm) || "" : "";
+      withStableLinkRows(() => {
+        document.querySelectorAll("td.link-rating-cell").forEach((td) => {
+          const tdUrl = td.getAttribute("data-rating-url") || "";
+          const a = td.closest("tr") && td.closest("tr").querySelector("a.js-link-summary[data-link]");
+          const rowUrl = a ? a.getAttribute("data-link") || "" : "";
+          const match =
+            tdUrl === link ||
+            rowUrl === link ||
+            (norm && normalizeUrlKeyForClicks(tdUrl) === norm) ||
+            (norm && normalizeUrlKeyForClicks(rowUrl) === norm);
+          if (!match) return;
+          if (hash) td.setAttribute("data-rating-hash", hash);
+          if (link && !tdUrl) td.setAttribute("data-rating-url", link);
+          setHtml(td, ratingCellInnerHtmlForLinkUrl(link || rowUrl || tdUrl));
+        });
+      });
     }
 
     async function applyLinkRatingVote(norm, nextVote) {
@@ -8862,6 +8964,7 @@
         openSignInRequiredModal("You need to be signed in to rate links.");
         return;
       }
+      await ensureLinkRatingLoaded(url, { prefetchSelfVotes: true });
       let hash = normToHashCache.get(norm);
       if (!hash) {
         hash = await sha256Hex(norm);
@@ -9981,9 +10084,7 @@
         noteEl.textContent = note;
         noteEl.hidden = false;
       }
-      await prefetchLinkRatingsForNorms(
-        finalPicked.map(({ row }) => normalizeUrlKeyForClicks(row && row.link))
-      );
+      // Ratings load on interaction (hover/vote), not as a bulk Most-opened prefetch.
       setHtml(thead, linkTableTheadRowHtml());
       setHtml(tbody, finalPicked.map(({ row, count }) => buildRowTrHtml(row, count)).join(""));
     }
@@ -12145,25 +12246,10 @@
       const start = Number.isFinite(startIndex) ? Math.max(0, startIndex) : 0;
       const shouldContinue = options && typeof options.shouldContinue === "function" ? options.shouldContinue : null;
       const virtualSlice = !!(options && options.virtualSlice);
-      await prefetchLinkRatingsForNorms(
-        rowsSlice.map((r) => normalizeUrlKeyForClicks(r && r.link)),
-        { skipLinkSaveCounts: listSortMode !== LINK_SORT_SAVED_DESC }
-      );
+      // Do not prefetch link ratings here — scroll/chunk paint was burning Spark reads.
+      // Ratings load on hover/focus/vote via ensureLinkRatingLoaded().
       if (shouldContinue && !shouldContinue()) return;
       if (!tbody.isConnected) return;
-      const dataRows = virtualSlice
-        ? tbody.querySelectorAll("tr:not(.virtual-pad-top):not(.virtual-pad-bottom):not(.table-row-skeleton)")
-        : null;
-      const rowAt = (i) => (virtualSlice ? dataRows[i] : tbody.children[start + i]);
-      withStableLinkRows(() => {
-        for (let i = 0; i < rowsSlice.length; i++) {
-          const tr = rowAt(i);
-          if (!tr || !tr.querySelector) continue;
-          const ratingTd = tr.querySelector("td.link-rating-cell");
-          const link = rowsSlice[i] && rowsSlice[i].link ? String(rowsSlice[i].link) : "";
-          if (ratingTd && link) setHtml(ratingTd, ratingCellInnerHtmlForLinkUrl(link));
-        }
-      });
       if (!shouldLoadLinkClicks()) return;
       const targets = [];
       for (let i = 0; i < rowsSlice.length; i++) {
@@ -12222,10 +12308,7 @@
         const slice = st.filtered.slice(st.rendered, next);
         sliceLen = slice.length;
         const tPrefetch0 = performance.now();
-        await prefetchLinkRatingsForNorms(
-          slice.map((r) => normalizeUrlKeyForClicks(r && r.link)),
-          { skipLinkSaveCounts: listSortMode !== LINK_SORT_SAVED_DESC }
-        );
+        // Ratings are not bulk-fetched on scroll (Spark quota). Optional disk hydrate only.
         const prefetchMs = performance.now() - tPrefetch0;
         insertAdjacentHtmlSafe(tbody, "beforeend", buildSkeletonChunkHtml(slice.length));
         await yieldForSkeletonPaint(tbody);
@@ -12525,7 +12608,7 @@
       }
       if (linkSortNeedsFullFirestoreForLinks()) {
         reportContentLoadingProgress(22, "Loading link ratings…");
-        // Cap bulk rating reads — fetching every row exhausts Spark quota and blocks likes.
+        // Sort-by-rating/saved still needs a small sample; never fetch the full list.
         const ratingPrefetchCap = Math.min(24, getTableChunkSize(), filtered.length);
         await prefetchLinkRatingsForNorms(
           filtered.slice(0, ratingPrefetchCap).map((r) => normalizeUrlKeyForClicks(r && r.link)),
@@ -12534,10 +12617,8 @@
           }
         );
       } else {
+        // Default list order: no Firestore rating reads on paint — load on hover/vote.
         reportContentLoadingProgress(22, "Preparing list…");
-        const quickCount = Math.min(24, getTableChunkSize(), filtered.length);
-        const quickNorms = filtered.slice(0, quickCount).map((r) => normalizeUrlKeyForClicks(r && r.link));
-        await prefetchLinkRatingsForNorms(quickNorms, { skipLinkSaveCounts: true });
       }
       filtered = sortFilteredRowsByListSort(filtered);
       scheduleUpdateFilterCounts(rows);
