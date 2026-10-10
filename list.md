@@ -49996,20 +49996,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cow.deepee.com/ | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verymuch.deepee.com | 8/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# 🖋️ Ink
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | wisp | Scramjet, Ultraviolet, Tor | 1 |
-> [!IMPORTANT]
-> you can disable ads by going to settings > web prefs > turn "enable ads" off and refresh by doing ctrl+shift+r or cmd+shift+r
->
-> tor is routed through ultraviolet, expect it to be slow
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://inkmathgoateducation.berugy.hu/ | 8/11/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 # ⚡ Hyperion Hub
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
