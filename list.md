@@ -15,6 +15,10 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 
 ## Important Notices
 
+### Slowing development temporarily
+<!-- added: 2026-10-13T19:02:00Z -->
+I will be taking a break from adding new features for now, I will still be adding links and filter data.
+
 ### Fern AWS Outage
 <!-- added: 2026-10-07T19:24:00Z -->
 <!-- expires: 2026-10-10T19:30:00Z -->
