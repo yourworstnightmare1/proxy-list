@@ -2408,6 +2408,66 @@
     };
   }
 
+  function presenceStatsApiUrl() {
+    if (typeof window.ProxyListPresence !== "undefined" && window.ProxyListPresence.apiUrl) {
+      return window.ProxyListPresence.apiUrl("/api/presence-stats");
+    }
+    return "../api/presence-stats";
+  }
+
+  /**
+   * Prefer Worker Admin read of presence aggregates. Client Firestore often fails
+   * under Scramjet/UV (rewritten hosts / API_KEY_HTTP_REFERRER_BLOCKED).
+   */
+  async function fetchPresenceStatsViaWorker() {
+    try {
+      var res = await fetch(presenceStatsApiUrl(), {
+        method: "GET",
+        mode: "cors",
+        credentials: "omit",
+        cache: "no-store",
+      });
+      if (!res.ok) return null;
+      var data = await res.json();
+      if (!(data && data.ok)) return null;
+      var daily = Array.isArray(data.daily) ? data.daily : [];
+      var monthly = Array.isArray(data.monthly) ? data.monthly : [];
+      var yearly = Array.isArray(data.yearly) ? data.yearly : [];
+      // Empty arrays with a warning usually mean Worker Firebase secrets missing —
+      // fall through to client Firestore when available.
+      if (data.warning && !daily.length && !monthly.length && !yearly.length) return null;
+      return {
+        daily: daily.map(function (row) {
+          return {
+            date: String((row && row.date) || ""),
+            uniqueVisitors: Number(row && row.uniqueVisitors) || 0,
+            heartbeats: Number(row && row.heartbeats) || 0,
+            signedInUniques: Number(row && row.signedInUniques) || 0,
+            hourHeartbeats:
+              row && row.hourHeartbeats && typeof row.hourHeartbeats === "object" ? row.hourHeartbeats : {},
+            hourUniques: row && row.hourUniques && typeof row.hourUniques === "object" ? row.hourUniques : {},
+          };
+        }),
+        monthly: monthly.map(function (row) {
+          return {
+            month: String((row && row.month) || ""),
+            uniqueVisitors: Number(row && row.uniqueVisitors) || 0,
+            heartbeats: Number(row && row.heartbeats) || 0,
+          };
+        }),
+        yearly: yearly.map(function (row) {
+          return {
+            year: String((row && row.year) || ""),
+            uniqueVisitors: Number(row && row.uniqueVisitors) || 0,
+            heartbeats: Number(row && row.heartbeats) || 0,
+          };
+        }),
+      };
+    } catch (_) {
+      return null;
+    }
+  }
+
   async function loadPresenceDaily(db) {
     if (state.presenceDaily) return state.presenceDaily;
     var days = utcDayIds(PRESENCE_DAILY_LOOKBACK);
@@ -2709,6 +2769,19 @@
 
   async function loadAndRenderUserStats(db) {
     wireUsersRangeToggle();
+    try {
+      var viaWorker = await fetchPresenceStatsViaWorker();
+      if (viaWorker) {
+        state.presenceDaily = viaWorker.daily;
+        state.presenceMonthly = viaWorker.monthly;
+        state.presenceYearly = viaWorker.yearly;
+        updateUsersKpis();
+        renderUserStatsCharts();
+        return;
+      }
+    } catch (err) {
+      console.warn("[stats] presence worker load failed", err);
+    }
     if (!db) {
       setText("statUsersToday", "—");
       setText("statUsers7d", "—");
@@ -2898,11 +2971,26 @@
     var clicks = [];
     if (!state.db) {
       setNotice(
-        "Firebase is not configured here, so open activity and user charts are empty. Provider and filter stats still work.",
+        "Firebase client is unavailable here (common under Scramjet/UV). Open activity and user charts load via the Worker API when possible; provider and filter stats still work.",
         "warn"
       );
       setText("statOpens", "—");
-      renderOpenCharts([], state.urlToProvider);
+      // Prefer Worker top-opens even without a client Firestore handle.
+      try {
+        clicks = await fetchTopClicksLive(null, 25);
+        if (clicks.length) {
+          setText(
+            "statOpens",
+            formatInt(
+              clicks.reduce(function (sum, r) {
+                return sum + r.count;
+              }, 0)
+            )
+          );
+          if (clicks.stale) state.topOpensStale = true;
+        }
+      } catch (_) {}
+      renderOpenCharts(clicks, state.urlToProvider);
       void loadAndRenderOpenArchives(null);
       void loadAndRenderUserStats(null);
       return;
