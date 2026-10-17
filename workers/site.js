@@ -33,6 +33,10 @@
  *   - Returns { ok, active } for the live-session count (no Firebase required).
  *   - Prunes and persists the edge session map so abandoned ids do not linger.
  *
+ * GET /api/presence-stats
+ *   - Cached presence_daily / presence_monthly / presence_yearly aggregates for
+ *     Statistics → Users. Used when client Firestore is blocked (Scramjet/UV).
+ *
  * GET /api/steam/search?term=...
  *   - Proxies store.steampowered.com/api/storesearch (CORS + edge cache).
  *
@@ -67,6 +71,12 @@ const TOP_OPENS_FAIL_TTL_SEC = 180;
 const TOP_OPENS_LAST_GOOD_TTL_SEC = 7 * 86400;
 const TOP_OPENS_LAST_GOOD_REQ = new Request("https://top-opens.proxy-list.internal/last-good");
 const TOP_OPENS_LIMIT = 80;
+/** Match docs/stats/stats.js lookbacks for Statistics → Users. */
+const PRESENCE_STATS_DAILY_LOOKBACK = 32;
+const PRESENCE_STATS_MONTHLY_LOOKBACK = 36;
+const PRESENCE_STATS_YEARLY_LOOKBACK = 10;
+const PRESENCE_STATS_CACHE_TTL_SEC = 300;
+const PRESENCE_STATS_CACHE_REQ = new Request("https://presence-stats.proxy-list.internal/v1");
 const MEM_CACHE_MAX = 20000;
 
 /**
@@ -168,6 +178,12 @@ export default {
       return handlePresenceActive(ctx);
     }
     if (url.pathname === "/api/presence-active" && request.method === "OPTIONS") {
+      return cors(new Response(null, { status: 204 }));
+    }
+    if (url.pathname === "/api/presence-stats" && request.method === "GET") {
+      return handlePresenceStats(request, env, ctx);
+    }
+    if (url.pathname === "/api/presence-stats" && request.method === "OPTIONS") {
       return cors(new Response(null, { status: 204 }));
     }
     if (url.pathname === "/api/steam/search" && request.method === "GET") {
@@ -1247,6 +1263,187 @@ function fsNumberField(field) {
   if (field.integerValue != null) return Number(field.integerValue) || 0;
   if (field.doubleValue != null) return Math.trunc(Number(field.doubleValue)) || 0;
   return 0;
+}
+
+function fsMapNumberFields(field) {
+  const out = {};
+  const fields = field && field.mapValue && field.mapValue.fields;
+  if (!fields || typeof fields !== "object") return out;
+  for (const [k, v] of Object.entries(fields)) {
+    out[k] = fsNumberField(v);
+  }
+  return out;
+}
+
+function utcDayIds(lookback, d = new Date()) {
+  const out = [];
+  for (let i = lookback - 1; i >= 0; i--) {
+    const x = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() - i));
+    out.push(x.toISOString().slice(0, 10));
+  }
+  return out;
+}
+
+function utcMonthIds(lookback, d = new Date()) {
+  const out = [];
+  for (let i = lookback - 1; i >= 0; i--) {
+    const x = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() - i, 1));
+    out.push(x.toISOString().slice(0, 7));
+  }
+  return out;
+}
+
+function utcYearIds(lookback, d = new Date()) {
+  const out = [];
+  const y = d.getUTCFullYear();
+  for (let i = lookback - 1; i >= 0; i--) out.push(String(y - i));
+  return out;
+}
+
+/**
+ * Admin batchGet of presence aggregates for Statistics → Users (Scramjet/UV fallback).
+ */
+async function firestoreGetPresenceStats(env) {
+  const project = env.FIREBASE_PROJECT_ID;
+  const empty = { daily: [], monthly: [], yearly: [] };
+  if (!project || !hasFirebaseAdmin(env)) return empty;
+
+  const days = utcDayIds(PRESENCE_STATS_DAILY_LOOKBACK);
+  const months = utcMonthIds(PRESENCE_STATS_MONTHLY_LOOKBACK);
+  const years = utcYearIds(PRESENCE_STATS_YEARLY_LOOKBACK);
+
+  const docs = [
+    ...days.map((id) => ({ collection: "presence_daily", id })),
+    ...months.map((id) => ({ collection: "presence_monthly", id })),
+    ...years.map((id) => ({ collection: "presence_yearly", id })),
+  ];
+
+  const token = await getGoogleAccessToken(env);
+  const batchUrl = `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents:batchGet`;
+  const byName = new Map();
+
+  for (let i = 0; i < docs.length; i += 100) {
+    const chunk = docs.slice(i, i + 100);
+    const res = await fetch(batchUrl, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        documents: chunk.map(
+          (d) => `projects/${project}/databases/(default)/documents/${d.collection}/${d.id}`
+        ),
+      }),
+    });
+    if (!res.ok) {
+      const t = await res.text().catch(() => "");
+      throw new Error(`presence_stats batchGet failed: ${res.status} ${t.slice(0, 200)}`);
+    }
+    const rows = await res.json();
+    if (!Array.isArray(rows)) continue;
+    for (const row of rows) {
+      const found = row && row.found;
+      if (!found || !found.name) continue;
+      byName.set(found.name, found.fields || {});
+    }
+  }
+
+  const docPath = (collection, id) =>
+    `projects/${project}/databases/(default)/documents/${collection}/${id}`;
+
+  const daily = days.map((date) => {
+    const fields = byName.get(docPath("presence_daily", date)) || {};
+    return {
+      date,
+      uniqueVisitors: fsNumberField(fields.uniqueVisitors),
+      heartbeats: fsNumberField(fields.heartbeats),
+      signedInUniques: fsNumberField(fields.signedInUniques),
+      hourHeartbeats: fsMapNumberFields(fields.hourHeartbeats),
+      hourUniques: fsMapNumberFields(fields.hourUniques),
+    };
+  });
+  const monthly = months.map((month) => {
+    const fields = byName.get(docPath("presence_monthly", month)) || {};
+    return {
+      month,
+      uniqueVisitors: fsNumberField(fields.uniqueVisitors),
+      heartbeats: fsNumberField(fields.heartbeats),
+    };
+  });
+  const yearly = years.map((year) => {
+    const fields = byName.get(docPath("presence_yearly", year)) || {};
+    return {
+      year,
+      uniqueVisitors: fsNumberField(fields.uniqueVisitors),
+      heartbeats: fsNumberField(fields.heartbeats),
+    };
+  });
+
+  return { daily, monthly, yearly };
+}
+
+async function handlePresenceStats(request, env, ctx) {
+  const memHit = memGet("presence-stats");
+  if (memHit !== undefined) {
+    return cors(
+      new Response(memHit, {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Cache-Control": `public, max-age=${PRESENCE_STATS_CACHE_TTL_SEC}`,
+          "X-Cache": "MEM",
+        },
+      })
+    );
+  }
+
+  try {
+    const hit = await caches.default.match(PRESENCE_STATS_CACHE_REQ);
+    if (hit) {
+      const body = await hit.text();
+      memSet("presence-stats", body, PRESENCE_STATS_CACHE_TTL_SEC);
+      return cors(
+        new Response(body, {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "X-Cache": "HIT",
+          },
+        })
+      );
+    }
+  } catch (_) {}
+
+  try {
+    if (!hasFirebaseAdmin(env)) {
+      return json({
+        ok: true,
+        daily: [],
+        monthly: [],
+        yearly: [],
+        warning: "firebase_admin_unavailable",
+      });
+    }
+    const stats = await firestoreGetPresenceStats(env);
+    const payload = JSON.stringify({ ok: true, ...stats });
+    memSet("presence-stats", payload, PRESENCE_STATS_CACHE_TTL_SEC);
+    const res = new Response(payload, {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Cache-Control": `public, max-age=${PRESENCE_STATS_CACHE_TTL_SEC}`,
+        "X-Cache": "MISS",
+      },
+    });
+    if (ctx && typeof ctx.waitUntil === "function") {
+      ctx.waitUntil(caches.default.put(PRESENCE_STATS_CACHE_REQ, res.clone()));
+    }
+    return cors(res);
+  } catch (err) {
+    console.error("presence_stats_failed", err);
+    return json({ ok: false, error: "internal_error" }, 500);
+  }
 }
 
 async function firestoreGetRatings(env, norms, ctx) {
