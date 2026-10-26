@@ -1131,9 +1131,18 @@
     return byProvider.size;
   }
 
+  /** Drop leading all-zero rows so sparse archives (e.g. Aug–Oct) are readable. */
+  function trimLeadingEmpty(rows, valueKey) {
+    var list = Array.isArray(rows) ? rows.slice() : [];
+    while (list.length > 1 && !(Number(list[0] && list[0][valueKey]) > 0)) {
+      list.shift();
+    }
+    return list;
+  }
+
   function renderOpenArchiveCharts() {
-    var monthly = state.clickMonthly || [];
-    var yearly = state.clickYearly || [];
+    var monthly = trimLeadingEmpty(state.clickMonthly || [], "total");
+    var yearly = trimLeadingEmpty(state.clickYearly || [], "total");
     makeChart($("opensMonthlyArchiveChart"), {
       type: "bar",
       data: {
