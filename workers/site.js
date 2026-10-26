@@ -31,7 +31,9 @@
  * GET  /api/click-stats/daily?days=90
  * POST /api/click-stats/daily  { hashes?, days? }
  * GET  /api/click-stats/period?kind=month|year&lookback=36
- *   - D1 rollups for /stats/ (replaces Firestore click_daily / monthly / yearly).
+ *   - D1 rollups for /stats/, Math.max-merged with legacy Firestore click_daily /
+ *     click_monthly / click_yearly so pre-D1 months (e.g. Aug/Sep) still appear
+ *     for Scramjet/Tor clients that cannot reach Firebase from the browser.
  *
  * POST /api/presence-ping  { sessionId, uid?, anonymous?, displayName?, os?, osVersion?, browser?, ram?, cores?, arch? }
  *   - Rate limit: 90 pings / hour / IP
@@ -48,7 +50,8 @@
  * GET /api/presence-stats/period?kind=month|year&lookback=36
  * GET /api/presence-stats/os?days=32
  * GET /api/presence-stats/hardware?days=32
- *   - D1 presence rollups for /stats/ (replaces client Firestore presence_* reads).
+ *   - D1 presence rollups for /stats/, Math.max-merged with legacy Firestore
+ *     presence_daily / monthly / yearly for pre-D1 history (Scramjet-safe).
  *
  * GET  /api/presence-active
  *   - Returns { ok, active } for the live-session count (no Firebase required).
@@ -1170,6 +1173,175 @@ function parseLookback(raw, fallback, max) {
   return Math.max(1, Math.min(Math.trunc(n), max));
 }
 
+/** Parse a Firestore mapValue of numeric fields into a plain { key: number } object. */
+function fsMapNumberFields(mapField) {
+  const out = {};
+  const fields = mapField && mapField.mapValue && mapField.mapValue.fields;
+  if (!fields || typeof fields !== "object") return out;
+  for (const [k, v] of Object.entries(fields)) {
+    out[k] = fsNumberField(v);
+  }
+  return out;
+}
+
+function mergeHourNumberMaps(a, b) {
+  const out = {};
+  for (const src of [a, b]) {
+    if (!src || typeof src !== "object") continue;
+    for (const [k, v] of Object.entries(src)) {
+      out[k] = Math.max(Number(out[k]) || 0, Number(v) || 0);
+    }
+  }
+  return out;
+}
+
+/**
+ * Batch-get Firestore docs by id (public-read archives; admin token optional).
+ * Returns Map<docId, fields>.
+ */
+async function firestoreBatchGetFields(env, collection, docIds) {
+  const project = firebaseProjectIdPublic(env) || String(env.FIREBASE_PROJECT_ID || "").trim();
+  const out = new Map();
+  if (!project || !collection || !docIds.length) return out;
+  const unique = [...new Set(docIds.map((id) => String(id || "").trim()).filter(Boolean))];
+  if (!unique.length) return out;
+
+  const cacheKey = `fsdocs:${collection}:${unique.join(",")}`;
+  const cached = memGet(cacheKey);
+  if (cached && cached instanceof Map) return cached;
+
+  let token = null;
+  if (hasFirebaseAdmin(env)) {
+    try {
+      token = await getGoogleAccessToken(env);
+    } catch (err) {
+      console.error("firestore_batch_get_token_failed", err);
+    }
+  }
+
+  const batchUrl = `https://firestore.googleapis.com/v1/projects/${project}/databases/(default)/documents:batchGet`;
+  for (let i = 0; i < unique.length; i += 100) {
+    const chunk = unique.slice(i, i + 100);
+    try {
+      const headers = { "Content-Type": "application/json" };
+      if (token) headers.Authorization = `Bearer ${token}`;
+      const res = await fetch(batchUrl, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({
+          documents: chunk.map(
+            (id) => `projects/${project}/databases/(default)/documents/${collection}/${id}`
+          ),
+        }),
+      });
+      if (!res.ok) {
+        console.error("firestore_batch_get_http", collection, res.status);
+        continue;
+      }
+      const rows = await res.json();
+      if (!Array.isArray(rows)) continue;
+      for (const row of rows) {
+        const found = row && row.found;
+        if (!found || !found.name) continue;
+        const id = found.name.split("/").pop();
+        out.set(id, found.fields || {});
+      }
+    } catch (err) {
+      console.error("firestore_batch_get_failed", collection, err);
+    }
+  }
+
+  // Short isolate cache so stats panels sharing one page load hit FS once.
+  memSet(cacheKey, out, 120);
+  return out;
+}
+
+async function mergeClickPeriodWithFirestore(env, kind, periods) {
+  const collection = kind === "year" ? "click_yearly" : "click_monthly";
+  const fsDocs = await firestoreBatchGetFields(
+    env,
+    collection,
+    periods.map((row) => row.period)
+  );
+  return periods.map((row) => {
+    const fields = fsDocs.get(row.period);
+    const fsTotal = fields ? fsNumberField(fields.total) : 0;
+    return { period: row.period, total: Math.max(Number(row.total) || 0, fsTotal) };
+  });
+}
+
+async function mergePresencePeriodWithFirestore(env, kind, periods) {
+  const collection = kind === "year" ? "presence_yearly" : "presence_monthly";
+  const fsDocs = await firestoreBatchGetFields(
+    env,
+    collection,
+    periods.map((row) => row.period)
+  );
+  return periods.map((row) => {
+    const fields = fsDocs.get(row.period);
+    return {
+      period: row.period,
+      uniqueVisitors: Math.max(
+        Number(row.uniqueVisitors) || 0,
+        fields ? fsNumberField(fields.uniqueVisitors) : 0
+      ),
+      heartbeats: Math.max(Number(row.heartbeats) || 0, fields ? fsNumberField(fields.heartbeats) : 0),
+    };
+  });
+}
+
+async function mergePresenceDailyWithFirestore(env, days) {
+  const fsDocs = await firestoreBatchGetFields(
+    env,
+    "presence_daily",
+    days.map((row) => row.date)
+  );
+  return days.map((row) => {
+    const fields = fsDocs.get(row.date);
+    if (!fields) return row;
+    return {
+      date: row.date,
+      uniqueVisitors: Math.max(Number(row.uniqueVisitors) || 0, fsNumberField(fields.uniqueVisitors)),
+      heartbeats: Math.max(Number(row.heartbeats) || 0, fsNumberField(fields.heartbeats)),
+      signedInUniques: Math.max(Number(row.signedInUniques) || 0, fsNumberField(fields.signedInUniques)),
+      hourHeartbeats: mergeHourNumberMaps(row.hourHeartbeats, fsMapNumberFields(fields.hourHeartbeats)),
+      hourUniques: mergeHourNumberMaps(row.hourUniques, fsMapNumberFields(fields.hourUniques)),
+    };
+  });
+}
+
+async function mergeClickDailyTotalsWithFirestore(env, days) {
+  const fsDocs = await firestoreBatchGetFields(
+    env,
+    "click_daily",
+    days.map((row) => row.date)
+  );
+  return days.map((row) => {
+    const fields = fsDocs.get(row.date);
+    const fsTotal = fields ? fsNumberField(fields.total) : 0;
+    return { date: row.date, total: Math.max(Number(row.total) || 0, fsTotal) };
+  });
+}
+
+async function mergeClickDailyCountsWithFirestore(env, days, hashes) {
+  if (!hashes.length) return days;
+  const fsDocs = await firestoreBatchGetFields(
+    env,
+    "click_daily",
+    days.map((row) => row.date)
+  );
+  return days.map((row) => {
+    const fields = fsDocs.get(row.date);
+    const fsCounts = fields ? fsMapNumberFields(fields.counts) : {};
+    const counts = { ...(row.counts || {}) };
+    for (const hash of hashes) {
+      const next = Math.max(Number(counts[hash]) || 0, Number(fsCounts[hash]) || 0);
+      if (next > 0) counts[hash] = next;
+    }
+    return { date: row.date, counts };
+  });
+}
+
 async function handleClickStatsDaily(request, env) {
   if (!preferD1Stats(env)) {
     return json({ ok: true, via: "none", days: [] });
@@ -1196,10 +1368,20 @@ async function handleClickStatsDaily(request, env) {
   }
   try {
     if (hashes.length) {
-      const days = await d1DailyCountsForHashes(env, lookback, hashes);
+      let days = await d1DailyCountsForHashes(env, lookback, hashes);
+      try {
+        days = await mergeClickDailyCountsWithFirestore(env, days, hashes);
+      } catch (err) {
+        console.error("click_stats_daily_fs_merge_failed", err);
+      }
       return json({ ok: true, via: "d1", days });
     }
-    const days = await d1DailyTotals(env, lookback);
+    let days = await d1DailyTotals(env, lookback);
+    try {
+      days = await mergeClickDailyTotalsWithFirestore(env, days);
+    } catch (err) {
+      console.error("click_stats_daily_fs_merge_failed", err);
+    }
     return json({ ok: true, via: "d1", days });
   } catch (err) {
     console.error("click_stats_daily_failed", err);
@@ -1215,7 +1397,12 @@ async function handleClickStatsPeriod(request, env) {
   const kind = String(url.searchParams.get("kind") || "month").toLowerCase() === "year" ? "year" : "month";
   const lookback = parseLookback(url.searchParams.get("lookback"), kind === "year" ? 10 : 36, kind === "year" ? 10 : 36);
   try {
-    const periods = await d1PeriodTotals(env, kind, lookback);
+    let periods = await d1PeriodTotals(env, kind, lookback);
+    try {
+      periods = await mergeClickPeriodWithFirestore(env, kind, periods);
+    } catch (err) {
+      console.error("click_stats_period_fs_merge_failed", err);
+    }
     return json({ ok: true, via: "d1", kind, periods });
   } catch (err) {
     console.error("click_stats_period_failed", err);
@@ -1508,7 +1695,12 @@ async function handlePresenceStatsDaily(request, env) {
   const url = new URL(request.url);
   const lookback = parseLookback(url.searchParams.get("days"), 32, 32);
   try {
-    const days = await d1PresenceDaily(env, lookback);
+    let days = await d1PresenceDaily(env, lookback);
+    try {
+      days = await mergePresenceDailyWithFirestore(env, days);
+    } catch (err) {
+      console.error("presence_stats_daily_fs_merge_failed", err);
+    }
     return json({ ok: true, via: "d1", days });
   } catch (err) {
     console.error("presence_stats_daily_failed", err);
@@ -1644,7 +1836,12 @@ async function handlePresenceStatsPeriod(request, env) {
   const kind = String(url.searchParams.get("kind") || "month").toLowerCase() === "year" ? "year" : "month";
   const lookback = parseLookback(url.searchParams.get("lookback"), kind === "year" ? 10 : 36, kind === "year" ? 10 : 36);
   try {
-    const periods = await d1PresencePeriod(env, kind, lookback);
+    let periods = await d1PresencePeriod(env, kind, lookback);
+    try {
+      periods = await mergePresencePeriodWithFirestore(env, kind, periods);
+    } catch (err) {
+      console.error("presence_stats_period_fs_merge_failed", err);
+    }
     return json({ ok: true, via: "d1", kind, periods });
   } catch (err) {
     console.error("presence_stats_period_failed", err);
