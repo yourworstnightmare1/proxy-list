@@ -51352,7 +51352,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, panic | Scramjet, Ultraviolet | 49 |
+> | Proxy/Games | tab-cloak, panic | Scramjet, Ultraviolet | 47 |
 > [!IMPORTANT]
 > popups and ads in the bottom left
 
@@ -51362,8 +51362,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://enter.agrointegral.cl/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://location.ronginbari.com/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://enter.srivaishnavam.org.au/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://looking.loskks.org/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://secured.remiosenifoundation.org/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://chanka-stores.chanka.com/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://social.50friends.com.mx/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://apis.extratechsolutions.com/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
