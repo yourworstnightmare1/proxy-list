@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-30T22:06:23Z",
-  "snapshot_date": "2026-10-30",
+  "generated_at": "2026-10-31T03:58:41Z",
+  "snapshot_date": "2026-10-31",
   "catalog_count": 33,
-  "total_entries": 35970,
+  "total_entries": 35971,
   "unique_games": 28733,
   "catalogs": [
     {
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 21,
+      "count": 22,
       "empty": false
     },
     {
@@ -2201,10 +2201,50 @@
       },
       "total_entries": 35970,
       "unique_games": 28733
+    },
+    {
+      "date": "2026-10-31",
+      "counts": {
+        "gdb:unblockedzone": 0,
+        "gdb:gn-math": 846,
+        "gdb:luminsdk": 846,
+        "gdb:noahs-tutoring": 0,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 846,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 498,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275,
+        "gdb:flux": 1741,
+        "gdb:greenis": 208,
+        "gdb:melonsoda": 42,
+        "gdb:edurocks": 0,
+        "gdb:timmy": 0,
+        "gdb:zane": 479,
+        "gdb:3kh0": 145,
+        "gdb:alexr": 676,
+        "gdb:hydra": 1641,
+        "gdb:diesmos": 1175,
+        "gdb:fyinx": 0
+      },
+      "total_entries": 35971,
+      "unique_games": 28733
     }
   ],
   "latest_changes": {
-    "date": "2026-10-30",
+    "date": "2026-10-31",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
@@ -2308,12 +2348,12 @@
       },
       "gdb:ccported": {
         "label": "CCPorted",
-        "added": [],
-        "removed": [
+        "added": [
           "Riddle Transfer 2"
         ],
-        "added_count": 0,
-        "removed_count": 1,
+        "removed": [],
+        "added_count": 1,
+        "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -2454,115 +2494,10 @@
       },
       "gdb:zane": {
         "label": "Zane's Arcade",
-        "added": [
-          "99 Nights In The Forest",
-          "AdVenture Capitalist",
-          "Alien vs Predator",
-          "Aliens Eradication",
-          "Angry Birds 2",
-          "B3313",
-          "Bacon May Die",
-          "Balatro",
-          "Blood",
-          "Castlevania: Harmony of Dissonance",
-          "Castlevania: Order of Ecclesia",
-          "Castlevania: Portrait of Ruin",
-          "Celeste Mario's Zap & Dash",
-          "ClockTower",
-          "Deltarune: A Different Snowgrave",
-          "Doki Doki Literature Club",
-          "Doom 2",
-          "Effing Machines",
-          "Effing Worms",
-          "Effing Zombies",
-          "Famidash",
-          "Five Nights at Frickbear’s",
-          "Five Nights at Frickbear’s 2",
-          "Five Nights at Frickbear’s 3",
-          "FNAF Into The Pit",
-          "FNAF Shooter",
-          "Friday Night Funkin Vs Chara",
-          "Friday Night Funkin Vs FNAF",
-          "Friday Night Funkin Vs FNAF 2",
-          "Friday Night Funkin Vs FNAF 3",
-          "Friday Night Funkin Vs Herobrine",
-          "Friday Night Funkin Vs Zardy",
-          "Friday Night Funkin Vs. Miku",
-          "Gladihoppers",
-          "GoldenEye 007",
-          "Half Life",
-          "Hollow Knight",
-          "I WANNA BE THE GUY",
-          "Idle Dice",
-          "Iron Lung",
-          "Jelly Mario",
-          "LSD Dream Emulator",
-          "Majora's Mask",
-          "Mario Combat",
-          "Mega Man",
-          "Mega Man 2",
-          "Mega Man 3",
-          "Mega Man 4",
-          "Mega Man 5",
-          "Mega Man 6",
-          "Mega Man 7",
-          "Mega Man 8",
-          "Mega Man X 4",
-          "Mega Man X 5",
-          "Mega Man X 6",
-          "Metroid Prime Hunters",
-          "Minecraft 26.2",
-          "Mortal Kombat",
-          "Mortal Kombat 2",
-          "Mortal Kombat 3",
-          "Mortal Kombat 4",
-          "Murder",
-          "MyHouse",
-          "New Super Mario Bros DS",
-          "Newer Super Mario Bros DS",
-          "Nova craft",
-          "One Night As Freddy",
-          "Perfect Dark",
-          "Phantom Dash",
-          "Pokemon Unbound",
-          "Resident Evil",
-          "Resident Evil 3",
-          "Road of the Dead",
-          "Sonic Advance",
-          "Sonic Advance 2",
-          "Sonic Advance 3",
-          "Sonic Battle",
-          "Sonic Hellfire Saga",
-          "Sonic Mania",
-          "Sonic Robo Blast 2",
-          "Sonic.exe",
-          "Space Frenzy",
-          "Super Mario 64",
-          "Super Mario 64 DS",
-          "Super Mario 64: Liminal Dream",
-          "Super Smash Flash 2",
-          "The Legend of Zelda",
-          "The Legend of Zelda 2",
-          "The Legend of Zelda 3",
-          "The Man From The Window",
-          "The Ocarina of Time",
-          "Tiny Fishing",
-          "Undertale Last Breath",
-          "Vampire Survivors",
-          "WITCH",
-          "Wrestle Bros",
-          "Zombie Rush",
-          "Zombies Ate My Neighbors",
-          "Zombotron",
-          "Zombotron 2"
-        ],
-        "removed": [
-          "Basketball Legends",
-          "Friday Night Funkin vs. Hatsune Miku",
-          "New Super Mario Bros"
-        ],
-        "added_count": 100,
-        "removed_count": 3,
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -2615,535 +2550,36 @@
     "all": {
       "added": [
         {
-          "name": "99 Nights In The Forest",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "AdVenture Capitalist",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Alien vs Predator",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Aliens Eradication",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Angry Birds 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "B3313",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Bacon May Die",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Balatro",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Blood",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Castlevania: Harmony of Dissonance",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Castlevania: Order of Ecclesia",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Castlevania: Portrait of Ruin",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Celeste Mario's Zap & Dash",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "ClockTower",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Deltarune: A Different Snowgrave",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Doki Doki Literature Club",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Doom 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Effing Machines",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Effing Worms",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Effing Zombies",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Famidash",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights at Frickbear’s",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights at Frickbear’s 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights at Frickbear’s 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF Into The Pit",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF Shooter",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Friday Night Funkin Vs Chara",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Friday Night Funkin Vs FNAF",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Friday Night Funkin Vs FNAF 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Friday Night Funkin Vs FNAF 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Friday Night Funkin Vs Herobrine",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Friday Night Funkin Vs Zardy",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Friday Night Funkin Vs. Miku",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Gladihoppers",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "GoldenEye 007",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Half Life",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Hollow Knight",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "I WANNA BE THE GUY",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Idle Dice",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Iron Lung",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Jelly Mario",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "LSD Dream Emulator",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Majora's Mask",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mario Combat",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man 4",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man 5",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man 6",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man 7",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man 8",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man X 4",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man X 5",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mega Man X 6",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Metroid Prime Hunters",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Minecraft 26.2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mortal Kombat",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mortal Kombat 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mortal Kombat 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mortal Kombat 4",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Murder",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "MyHouse",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "New Super Mario Bros DS",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Newer Super Mario Bros DS",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Nova craft",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "One Night As Freddy",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Perfect Dark",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Phantom Dash",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Pokemon Unbound",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Resident Evil",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Resident Evil 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Road of the Dead",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Sonic Advance",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Sonic Advance 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Sonic Advance 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Sonic Battle",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Sonic Hellfire Saga",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Sonic Mania",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Sonic Robo Blast 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Sonic.exe",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Space Frenzy",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Super Mario 64",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Super Mario 64 DS",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Super Mario 64: Liminal Dream",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Super Smash Flash 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Legend of Zelda",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Legend of Zelda 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Legend of Zelda 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Man From The Window",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Ocarina of Time",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Tiny Fishing",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Undertale Last Breath",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Vampire Survivors",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "WITCH",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Wrestle Bros",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Zombie Rush",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Zombies Ate My Neighbors",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Zombotron",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Zombotron 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        }
-      ],
-      "removed": [
-        {
-          "name": "Basketball Legends",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Friday Night Funkin vs. Hatsune Miku",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "New Super Mario Bros",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
           "name": "Riddle Transfer 2",
           "tag": "gdb:ccported",
           "label": "CCPorted"
         }
       ],
-      "added_count": 100,
-      "removed_count": 4,
+      "removed": [],
+      "added_count": 1,
+      "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-10-31",
+      "kind": "diff",
+      "catalogs_touched": [
+        "gdb:ccported"
+      ],
+      "added": 1,
+      "removed": 0,
+      "by_catalog": [
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 1,
+          "removed": 0
+        }
+      ]
+    },
     {
       "date": "2026-10-30",
       "kind": "diff",
