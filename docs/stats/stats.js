@@ -1131,9 +1131,18 @@
     return byProvider.size;
   }
 
+  /** Drop leading all-zero rows so sparse archives (e.g. Aug–Oct) are readable. */
+  function trimLeadingEmpty(rows, valueKey) {
+    var list = Array.isArray(rows) ? rows.slice() : [];
+    while (list.length > 1 && !(Number(list[0] && list[0][valueKey]) > 0)) {
+      list.shift();
+    }
+    return list;
+  }
+
   function renderOpenArchiveCharts() {
-    var monthly = state.clickMonthly || [];
-    var yearly = state.clickYearly || [];
+    var monthly = trimLeadingEmpty(state.clickMonthly || [], "total");
+    var yearly = trimLeadingEmpty(state.clickYearly || [], "total");
     makeChart($("opensMonthlyArchiveChart"), {
       type: "bar",
       data: {
@@ -1962,46 +1971,75 @@
   async function loadDailyClickDocs(db) {
     if (state.dailyCache) return state.dailyCache;
     var days = utcDayIds(DAILY_LOOKBACK_DAYS);
+    var byDate = {};
+    var fromWorker = false;
     try {
       var res = await fetch(statsApiUrl("/api/click-stats/daily?days=" + DAILY_LOOKBACK_DAYS), { mode: "cors" });
       if (res.ok) {
         var payload = await res.json();
         if (payload && payload.ok && payload.via === "d1" && Array.isArray(payload.days)) {
-          var byDate = {};
-          payload.days.forEach(function (row) {
-            if (row && row.date) byDate[row.date] = Number(row.total) || 0;
-          });
+          fromWorker = true;
           state.dailyVia = "d1";
-          state.dailyCache = days.map(function (date) {
-            return { date: date, counts: {}, total: byDate[date] || 0 };
+          payload.days.forEach(function (row) {
+            if (row && row.date) {
+              byDate[row.date] = {
+                date: row.date,
+                counts: row.counts && typeof row.counts === "object" ? row.counts : {},
+                total: Number(row.total) || 0,
+              };
+            }
           });
-          return state.dailyCache;
         }
       }
     } catch (_) {}
-    if (!db) {
+    if (db) {
+      try {
+        var snaps = [];
+        for (var i = 0; i < days.length; i += 8) {
+          var part = days.slice(i, i + 8);
+          var partSnaps = await Promise.all(
+            part.map(function (day) {
+              return db.collection("click_daily").doc(day).get();
+            })
+          );
+          snaps.push.apply(snaps, partSnaps);
+        }
+        snaps.forEach(function (snap, idx) {
+          var date = days[idx];
+          var data = snap.exists ? snap.data() || {} : {};
+          var fsCounts = data.counts && typeof data.counts === "object" ? data.counts : {};
+          var fsTotal = Number(data.total) || 0;
+          var prev = byDate[date] || { date: date, counts: {}, total: 0 };
+          var mergedCounts = {};
+          var key;
+          for (key in prev.counts) {
+            if (Object.prototype.hasOwnProperty.call(prev.counts, key)) {
+              mergedCounts[key] = Math.max(Number(prev.counts[key]) || 0, Number(fsCounts[key]) || 0);
+            }
+          }
+          for (key in fsCounts) {
+            if (Object.prototype.hasOwnProperty.call(fsCounts, key)) {
+              mergedCounts[key] = Math.max(Number(mergedCounts[key]) || 0, Number(fsCounts[key]) || 0);
+            }
+          }
+          byDate[date] = {
+            date: date,
+            counts: mergedCounts,
+            total: Math.max(Number(prev.total) || 0, fsTotal),
+          };
+        });
+      } catch (err) {
+        console.warn("[stats] click_daily Firestore merge skipped", err);
+      }
+    }
+    if (!fromWorker && !db) {
       state.dailyCache = days.map(function (date) {
         return { date: date, counts: {}, total: 0 };
       });
       return state.dailyCache;
     }
-    var snaps = [];
-    for (var i = 0; i < days.length; i += 8) {
-      var part = days.slice(i, i + 8);
-      var partSnaps = await Promise.all(
-        part.map(function (day) {
-          return db.collection("click_daily").doc(day).get();
-        })
-      );
-      snaps.push.apply(snaps, partSnaps);
-    }
-    state.dailyCache = snaps.map(function (snap, i) {
-      var counts = {};
-      if (snap.exists) {
-        var data = snap.data() || {};
-        counts = data.counts && typeof data.counts === "object" ? data.counts : {};
-      }
-      return { date: days[i], counts: counts };
+    state.dailyCache = days.map(function (date) {
+      return byDate[date] || { date: date, counts: {}, total: 0 };
     });
     return state.dailyCache;
   }
@@ -2395,6 +2433,7 @@
   async function loadClickMonthly(db) {
     if (state.clickMonthly) return state.clickMonthly;
     var months = utcMonthIds(CLICK_MONTHLY_LOOKBACK);
+    var byMonth = {};
     try {
       var res = await fetch(
         statsApiUrl("/api/click-stats/period?kind=month&lookback=" + CLICK_MONTHLY_LOOKBACK),
@@ -2403,31 +2442,30 @@
       if (res.ok) {
         var payload = await res.json();
         if (payload && payload.ok && payload.via === "d1" && Array.isArray(payload.periods)) {
-          var byPeriod = {};
           payload.periods.forEach(function (row) {
-            if (row && row.period) byPeriod[row.period] = Number(row.total) || 0;
+            if (row && row.period) byMonth[row.period] = Number(row.total) || 0;
           });
-          state.clickMonthly = months.map(function (month) {
-            return { month: month, total: byPeriod[month] || 0 };
-          });
-          return state.clickMonthly;
         }
       }
     } catch (_) {}
-    if (!db) {
-      state.clickMonthly = months.map(function (month) {
-        return { month: month, total: 0 };
-      });
-      return state.clickMonthly;
+    if (db) {
+      try {
+        var snaps = await Promise.all(
+          months.map(function (month) {
+            return db.collection("click_monthly").doc(month).get();
+          })
+        );
+        snaps.forEach(function (snap, i) {
+          var data = snap.exists ? snap.data() || {} : {};
+          var month = months[i];
+          byMonth[month] = Math.max(Number(byMonth[month]) || 0, Number(data.total) || 0);
+        });
+      } catch (err) {
+        console.warn("[stats] click_monthly Firestore merge skipped", err);
+      }
     }
-    var snaps = await Promise.all(
-      months.map(function (month) {
-        return db.collection("click_monthly").doc(month).get();
-      })
-    );
-    state.clickMonthly = snaps.map(function (snap, i) {
-      var data = snap.exists ? snap.data() || {} : {};
-      return { month: months[i], total: Number(data.total) || 0 };
+    state.clickMonthly = months.map(function (month) {
+      return { month: month, total: byMonth[month] || 0 };
     });
     return state.clickMonthly;
   }
@@ -2435,6 +2473,7 @@
   async function loadClickYearly(db) {
     if (state.clickYearly) return state.clickYearly;
     var years = utcYearIds(CLICK_YEARLY_LOOKBACK);
+    var byYear = {};
     try {
       var res = await fetch(
         statsApiUrl("/api/click-stats/period?kind=year&lookback=" + CLICK_YEARLY_LOOKBACK),
@@ -2443,31 +2482,30 @@
       if (res.ok) {
         var payload = await res.json();
         if (payload && payload.ok && payload.via === "d1" && Array.isArray(payload.periods)) {
-          var byPeriod = {};
           payload.periods.forEach(function (row) {
-            if (row && row.period) byPeriod[row.period] = Number(row.total) || 0;
+            if (row && row.period) byYear[row.period] = Number(row.total) || 0;
           });
-          state.clickYearly = years.map(function (year) {
-            return { year: year, total: byPeriod[year] || 0 };
-          });
-          return state.clickYearly;
         }
       }
     } catch (_) {}
-    if (!db) {
-      state.clickYearly = years.map(function (year) {
-        return { year: year, total: 0 };
-      });
-      return state.clickYearly;
+    if (db) {
+      try {
+        var snaps = await Promise.all(
+          years.map(function (year) {
+            return db.collection("click_yearly").doc(year).get();
+          })
+        );
+        snaps.forEach(function (snap, i) {
+          var data = snap.exists ? snap.data() || {} : {};
+          var year = years[i];
+          byYear[year] = Math.max(Number(byYear[year]) || 0, Number(data.total) || 0);
+        });
+      } catch (err) {
+        console.warn("[stats] click_yearly Firestore merge skipped", err);
+      }
     }
-    var snaps = await Promise.all(
-      years.map(function (year) {
-        return db.collection("click_yearly").doc(year).get();
-      })
-    );
-    state.clickYearly = snaps.map(function (snap, i) {
-      var data = snap.exists ? snap.data() || {} : {};
-      return { year: years[i], total: Number(data.total) || 0 };
+    state.clickYearly = years.map(function (year) {
+      return { year: year, total: byYear[year] || 0 };
     });
     return state.clickYearly;
   }
