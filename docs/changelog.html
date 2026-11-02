@@ -106,6 +106,7 @@
     <a class="btn" href="./">← Back to proxy list</a>
     <div id="changelogRoot"><p class="sub" style="margin-top:1rem;">Loading changelog…</p></div>
   </main>
+  <script src="datetime.js?v=tz-12h"></script>
   <script>
     function escapeHtml(s) {
       return String(s)
@@ -191,7 +192,18 @@
     function renderEntry(entry) {
       var version = escapeHtml(entry.version || "Unknown");
       var revision = entry.revision ? " " + escapeHtml(entry.revision) : "";
-      var released = entry.released ? escapeHtml(entry.released) : "";
+      var released = "";
+      if (entry.released) {
+        try {
+          if (window.ProxyListDateTime && typeof window.ProxyListDateTime.formatLoose === "function") {
+            released = escapeHtml(window.ProxyListDateTime.formatLoose(entry.released, { dateOnly: true }) || entry.released);
+          } else {
+            released = escapeHtml(entry.released);
+          }
+        } catch (_) {
+          released = escapeHtml(entry.released);
+        }
+      }
       return (
         '<article class="entry">' +
         '<div class="entry-head">' +

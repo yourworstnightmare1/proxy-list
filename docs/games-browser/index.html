@@ -819,6 +819,34 @@ main {
     return selectedTags.slice();
   }
 
+  function applyGdbQueryParam() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var raw = String(params.get("gdb") || params.get("tag") || "").trim();
+      if (!raw) return;
+      var wanted = raw.split(/[,+\s]+/).map(function (s) {
+        s = String(s || "").trim().toLowerCase();
+        if (!s) return "";
+        if (s.indexOf("gdb:") !== 0) s = "gdb:" + s;
+        return s;
+      }).filter(Boolean);
+      if (!wanted.length) return;
+      var catalogs = api.listCatalogs();
+      var resolved = [];
+      wanted.forEach(function (tag) {
+        catalogs.forEach(function (c) {
+          if (!c || !c.tag || resolved.indexOf(c.tag) !== -1) return;
+          var aliases = (c.aliases || []).map(function (a) { return String(a || "").toLowerCase(); });
+          var shortTag = tag.replace(/^gdb:/, "");
+          if (c.tag === tag || aliases.indexOf(tag) !== -1 || aliases.indexOf(shortTag) !== -1) {
+            resolved.push(c.tag);
+          }
+        });
+      });
+      if (resolved.length) selectedTags = resolved;
+    } catch (_) {}
+  }
+
   function updateDropdownLabel() {
     var all = api.listCatalogs().length;
     var n = selectedTags === null ? all : selectedTags.length;
@@ -1668,6 +1696,7 @@ main {
       return;
     }
     wire();
+    applyGdbQueryParam();
     await loadProviderCounts();
     renderDropdownOptions();
     await reloadGames();

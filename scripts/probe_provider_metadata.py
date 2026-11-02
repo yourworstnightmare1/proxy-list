@@ -84,6 +84,7 @@ GDB_SIGS = {
     "GDB:fyinx": [r"fyinx"],
     "GDB:totally-science": [r"totally[-_]?science"],
     "GDB:chicken-kings-vault": [r"chicken[-_]?kings?[-_]?vault"],
+    "GDB:nexora": [r"nexora", r"nexorainteractives", r"game-info\.json"],
 }
 
 GAMES_HINTS = [

@@ -177,12 +177,25 @@ service cloud.firestore {
       allow read: if true;
       allow create, update, delete: if false;
     }
+    // Month/year open archives (pre-D1 history; Worker merges these into /api/click-stats/*).
+    match /click_monthly/{monthId} {
+      allow read: if true;
+      allow create, update, delete: if false;
+    }
+    match /click_yearly/{yearId} {
+      allow read: if true;
+      allow create, update, delete: if false;
+    }
     // Presence aggregates for Statistics → Users (Worker/Admin writes only).
     match /presence_daily/{dayId} {
       allow read: if true;
       allow create, update, delete: if false;
     }
     match /presence_monthly/{monthId} {
+      allow read: if true;
+      allow create, update, delete: if false;
+    }
+    match /presence_yearly/{yearId} {
       allow read: if true;
       allow create, update, delete: if false;
     }

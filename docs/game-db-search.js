@@ -218,6 +218,12 @@
       // Rift serves /fyinx-catalog only on-origin; no public mirror yet.
       loader: loadEmptyCatalog,
     },
+    "gdb:nexora": {
+      tag: "gdb:nexora",
+      label: "Nexora",
+      aliases: ["nexora", "gdb:nexora"],
+      loader: loadNexora,
+    },
   };
 
   var SCRIPT_DIR = (function () {
@@ -287,6 +293,7 @@
     "gdb:hydra": "#ef4444",
     "gdb:diesmos": "#14b8a6",
     "gdb:fyinx": "#e879f9",
+    "gdb:nexora": "#fbbf24",
   };
 
   function normalizeQuery(q) {
@@ -790,6 +797,12 @@
 
   async function loadDogeub() {
     var rows = await fetchLocalCatalog("dogeub.json");
+    if (!Array.isArray(rows)) return [];
+    return normalizeEntries(rows);
+  }
+
+  async function loadNexora() {
+    var rows = await fetchLocalCatalog("nexora.json");
     if (!Array.isArray(rows)) return [];
     return normalizeEntries(rows);
   }

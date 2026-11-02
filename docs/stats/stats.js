@@ -46,6 +46,7 @@
     clickMonthly: null,
     clickYearly: null,
     usersSpan: "7d",
+    osVersionQuery: "",
     providerLinksSpan: "all",
     providerOpensSpan: "1m",
     providerOpensSeries: null,
@@ -70,7 +71,7 @@
     users: {
       title: "Users",
       sub:
-        "Active visitors over time from presence heartbeats, busiest UTC hours, monthly uniques, and operating systems.",
+        "Active visitors over time from presence heartbeats, busiest hours, monthly uniques, and operating systems.",
     },
     games: {
       title: "Game databases",
@@ -199,6 +200,99 @@
     return pct.toFixed(1) + "%";
   }
 
+  function parsedBarValue(ctx) {
+    var parsed = ctx && ctx.parsed;
+    if (parsed && typeof parsed === "object") {
+      var horizontal = ctx.chart && ctx.chart.options && ctx.chart.options.indexAxis === "y";
+      var n = Number(horizontal ? parsed.x : parsed.y);
+      if (Number.isFinite(n)) return n;
+    }
+    return Number(ctx && ctx.raw) || 0;
+  }
+
+  function attachCountPercentTooltip(options, total) {
+    options.plugins = options.plugins || {};
+    var prev = options.plugins.tooltip || {};
+    var prevCb = prev.callbacks || {};
+    options.plugins.tooltip = Object.assign({}, prev, {
+      callbacks: Object.assign({}, prevCb, {
+        label: function (ctx) {
+          var n = parsedBarValue(ctx);
+          if (ctx.chart && (ctx.chart.config.type === "doughnut" || ctx.chart.config.type === "pie")) {
+            n = Number(ctx.raw) || 0;
+          }
+          var name = ctx.label || "";
+          if (!name && ctx.dataset) name = ctx.dataset.label || "";
+          return (name ? name + ": " : "") + n.toLocaleString() + " (" + formatSharePct(n, total) + ")";
+        },
+      }),
+    });
+  }
+
+  function doughnutLegendWithPercents(total) {
+    return {
+      position: "bottom",
+      labels: {
+        boxWidth: 12,
+        padding: 10,
+        font: { size: 11 },
+        generateLabels: function (chart) {
+          var gen =
+            Chart.overrides &&
+            Chart.overrides.doughnut &&
+            Chart.overrides.doughnut.plugins &&
+            Chart.overrides.doughnut.plugins.legend &&
+            Chart.overrides.doughnut.plugins.legend.labels &&
+            Chart.overrides.doughnut.plugins.legend.labels.generateLabels;
+          if (typeof gen !== "function") {
+            gen = Chart.defaults.plugins.legend.labels.generateLabels;
+          }
+          var items = typeof gen === "function" ? gen(chart) : [];
+          items.forEach(function (item) {
+            var n = Number(chart.data.datasets[0] && chart.data.datasets[0].data[item.index]) || 0;
+            var base = (chart.data.labels && chart.data.labels[item.index]) || item.text || "";
+            item.text = base + "  " + formatSharePct(n, total);
+          });
+          return items;
+        },
+      },
+    };
+  }
+
+  function renderShareTable(elId, rows) {
+    var el = $(elId);
+    if (!el) return;
+    var list = (rows || []).filter(function (row) {
+      return (Number(row.count) || 0) > 0;
+    });
+    var total = list.reduce(function (s, row) {
+      return s + (Number(row.count) || 0);
+    }, 0);
+    if (!list.length || total <= 0) {
+      el.innerHTML = "";
+      el.hidden = true;
+      return;
+    }
+    el.hidden = false;
+    el.innerHTML =
+      '<table class="share-table"><thead><tr><th>Value</th><th class="num">Users</th><th class="num">Share</th></tr></thead><tbody>' +
+      list
+        .map(function (row) {
+          var n = Number(row.count) || 0;
+          return (
+            "<tr><td>" +
+            escapeHtml(row.label) +
+            '</td><td class="num">' +
+            formatInt(n) +
+            '</td><td class="num">' +
+            formatSharePct(n, total) +
+            "</td></tr>"
+          );
+        })
+        .join("") +
+      "</tbody></table>";
+  }
+
   function applyLinePointHighlights(config) {
     var datasets = config && config.data && config.data.datasets;
     if (!Array.isArray(datasets)) return;
@@ -229,33 +323,26 @@
     );
   }
 
-  /** Doughnut/pie: require pointer over the arc (global nearest+intersect:false picks wrong slices). */
-  function applyArcHoverOptions(options) {
-    options.interaction = Object.assign(
-      { mode: "nearest", intersect: true },
-      options.interaction || {}
-    );
-    options.hover = Object.assign({ mode: "nearest", intersect: true }, options.hover || {});
+  function mergeTooltipOptions(options, extra) {
     options.plugins = options.plugins || {};
-    options.plugins.tooltip = Object.assign(
-      { enabled: true, mode: "nearest", intersect: true },
-      options.plugins.tooltip || {}
-    );
+    options.plugins.tooltip = Object.assign({}, extra || {}, options.plugins.tooltip || {}, extra || {});
   }
 
-  /** Bars: score distance only along the category axis so adjacent rows/columns don't steal hover. */
+  /** Doughnut/pie: require pointer over the arc (global nearest+intersect:false picks wrong slices). */
+  function applyArcHoverOptions(options) {
+    var hover = { mode: "nearest", intersect: true };
+    options.interaction = Object.assign({}, options.interaction || {}, hover);
+    options.hover = Object.assign({}, options.hover || {}, hover);
+    mergeTooltipOptions(options, { enabled: true, mode: "nearest", intersect: true });
+  }
+
+  /** Bars: the whole category column/row is the hover target, not only the filled bar. */
   function applyBarHoverOptions(options, indexAxis) {
     var axis = indexAxis === "y" ? "y" : "x";
-    options.interaction = Object.assign(
-      { mode: "nearest", intersect: true, axis: axis },
-      options.interaction || {}
-    );
-    options.hover = Object.assign({ mode: "nearest", intersect: true }, options.hover || {});
-    options.plugins = options.plugins || {};
-    options.plugins.tooltip = Object.assign(
-      { enabled: true, mode: "nearest", intersect: true },
-      options.plugins.tooltip || {}
-    );
+    var hover = { mode: "index", intersect: false, axis: axis };
+    options.interaction = Object.assign({}, options.interaction || {}, hover);
+    options.hover = Object.assign({}, options.hover || {}, hover);
+    mergeTooltipOptions(options, { enabled: true, mode: "index", intersect: false, axis: axis });
   }
 
   function categoryAxisId(chart) {
@@ -382,12 +469,38 @@
     if (outBtn) outBtn.disabled = !canZoomOut;
   }
 
+  function chartWrapOf(canvas) {
+    if (!canvas) return null;
+    return (canvas.closest && canvas.closest(".chart-wrap")) || canvas.parentElement;
+  }
+
+  /**
+   * Chart.js maps pointer events using the canvas parent's box. Putting the
+   * zoom toolbar in that same box (then forcing canvas CSS height) shifted
+   * hitboxes so you had to hover below a bar to select it.
+   */
+  function ensureChartCanvasHost(canvas) {
+    if (!canvas) return null;
+    var parent = canvas.parentElement;
+    if (parent && parent.classList.contains("chart-canvas-host")) return parent;
+    var wrap = chartWrapOf(canvas) || parent;
+    if (!wrap) return null;
+    var host = document.createElement("div");
+    host.className = "chart-canvas-host";
+    wrap.insertBefore(host, canvas);
+    host.appendChild(canvas);
+    return host;
+  }
+
   function ensureChartZoomToolbar(chart) {
     var canvas = chart.canvas;
-    var wrap = canvas && canvas.parentElement;
+    var wrap = chartWrapOf(canvas);
     if (!wrap) return null;
     wrap.classList.add("chart-wrap-zoomable");
     wrap.$barZoomChart = chart;
+    try {
+      if (typeof chart.resize === "function") chart.resize();
+    } catch (_) {}
     var tools = wrap.querySelector(".chart-zoom-tools");
     if (!tools) {
       tools = document.createElement("div");
@@ -426,7 +539,7 @@
     if (type !== "bar" && type !== "line") return;
     if (labelCount(chart) < 4) return;
     var canvas = chart.canvas;
-    var wrap = canvas && canvas.parentElement;
+    var wrap = chartWrapOf(canvas);
     if (!canvas || !wrap) return;
     wrap.$barZoomChart = chart;
     ensureChartZoomToolbar(chart);
@@ -648,6 +761,7 @@
       applyLineHoverOptions(config.options);
     }
 
+    ensureChartCanvasHost(canvas);
     var chart = new Chart(canvas, config);
     if (type === "bar" || type === "line") attachCategoryChartZoom(chart);
     (bucket || charts).push(chart);
@@ -742,6 +856,44 @@
     }
   }
 
+  function dtApi() {
+    return window.ProxyListDateTime || null;
+  }
+
+  function zoneLabel() {
+    var dt = dtApi();
+    try {
+      if (dt && typeof dt.zoneAbbr === "function") return dt.zoneAbbr();
+    } catch (_) {}
+    return "UTC";
+  }
+
+  function formatDayId(id, opts) {
+    var dt = dtApi();
+    try {
+      if (dt && typeof dt.formatUtcDateId === "function") return dt.formatUtcDateId(id, opts || { short: true });
+    } catch (_) {}
+    var s = String(id || "");
+    return s.length >= 10 ? s.slice(5) : s;
+  }
+
+  function formatMonthId(id) {
+    var dt = dtApi();
+    try {
+      if (dt && typeof dt.formatUtcMonthId === "function") return dt.formatUtcMonthId(id);
+    } catch (_) {}
+    return String(id || "");
+  }
+
+  function formatHourTick(hour) {
+    var dt = dtApi();
+    try {
+      if (dt && typeof dt.formatHourLabel === "function") return dt.formatHourLabel(hour);
+    } catch (_) {}
+    var n = Number(hour) || 0;
+    return (n < 10 ? "0" : "") + n + ":00";
+  }
+
   function parseFoundDate(s) {
     var m = String(s || "").trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     if (!m) return null;
@@ -750,10 +902,53 @@
   }
 
   function formatShortDate(d) {
+    var dt = dtApi();
+    try {
+      if (dt && typeof dt.formatCalendar === "function" && d instanceof Date) {
+        return dt.formatCalendar(d.getFullYear(), d.getMonth() + 1, d.getDate());
+      }
+    } catch (_) {}
     try {
       return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
     } catch (_) {
       return d.toISOString().slice(0, 10);
+    }
+  }
+
+  function applyDateTimeCopy() {
+    var z = zoneLabel();
+    var todayL = $("statUsersTodayLabel");
+    if (todayL) todayL.textContent = "Active today (" + z + ")";
+    var peakL = $("statUsersPeakHourLabel");
+    if (peakL) peakL.textContent = "Busiest hour (" + z + ")";
+    var overHint = $("usersOverTimeHint");
+    if (overHint) {
+      overHint.textContent =
+        "Approximate unique visitors from presence heartbeats (anonymous + signed-in). Data starts accumulating after this feature ships. Times are shown in " +
+        z +
+        ".";
+    }
+    var hoursHint = $("usersActiveHoursHint");
+    if (hoursHint) {
+      hoursHint.textContent =
+        "Average unique visitors by hour (" +
+        z +
+        ") over the last 30 days with data (heartbeats also shape which hours feel busiest).";
+    }
+    var osHint = $("usersOsHint");
+    if (osHint) {
+      osHint.textContent =
+        "Share of unique visitors by OS over the last 32 days. Collected from visitors who opt into the Hardware Survey (not Sentry). Only the OS family and a coarse version are stored.";
+    }
+    var opensHint = $("providerOpensHint");
+    if (opensHint) {
+      opensHint.textContent =
+        "Daily opens for this provider’s links (empty until new opens are recorded). Dates follow your date format.";
+    }
+    var gamesHint = $("gamesHistoryHint");
+    if (gamesHint) {
+      gamesHint.textContent =
+        "Catalog size from daily snapshots. Dates follow your timezone and date format settings. Updated automatically on each link-check run.";
     }
   }
 
@@ -949,12 +1144,15 @@
     var hasDaily = sliced.values.some(function (v) {
       return v > 0;
     });
+    var openLabels = sliced.labels.map(function (id) {
+      return formatDayId(id, { short: true });
+    });
     makeChart(
       $("providerOpensOverTimeChart"),
       {
         type: "line",
         data: {
-          labels: sliced.labels.length ? sliced.labels : ["—"],
+          labels: openLabels.length ? openLabels : ["—"],
           datasets: [
             {
               label: "Daily opens",
@@ -1131,14 +1329,23 @@
     return byProvider.size;
   }
 
+  /** Drop leading all-zero rows so sparse archives (e.g. Aug–Oct) are readable. */
+  function trimLeadingEmpty(rows, valueKey) {
+    var list = Array.isArray(rows) ? rows.slice() : [];
+    while (list.length > 1 && !(Number(list[0] && list[0][valueKey]) > 0)) {
+      list.shift();
+    }
+    return list;
+  }
+
   function renderOpenArchiveCharts() {
-    var monthly = state.clickMonthly || [];
-    var yearly = state.clickYearly || [];
+    var monthly = trimLeadingEmpty(state.clickMonthly || [], "total");
+    var yearly = trimLeadingEmpty(state.clickYearly || [], "total");
     makeChart($("opensMonthlyArchiveChart"), {
       type: "bar",
       data: {
         labels: monthly.map(function (m) {
-          return m.month;
+          return formatMonthId(m.month);
         }),
         datasets: [
           {
@@ -1599,6 +1806,26 @@
       .join("");
   }
 
+  function fillFilterStatsHint(payload) {
+    var hint = $("filterStatsHint");
+    if (!hint || !payload) return;
+    var generatedAt = payload.generated_at || "";
+    try {
+      if (generatedAt && dtApi() && typeof dtApi().formatLoose === "function") {
+        generatedAt = dtApi().formatLoose(generatedAt) || generatedAt;
+      }
+    } catch (_) {}
+    var generated = generatedAt ? " Updated " + generatedAt + "." : "";
+    hint.textContent =
+      "Per-filter blocked / unblocked / warning counts across " +
+      formatInt(payload.links_with_filter_data || 0) +
+      " sorted links with gn-math data (" +
+      formatInt(payload.links_without_filter_data || 0) +
+      " unchecked)." +
+      generated +
+      " Click a filter for its top block reasons.";
+  }
+
   function renderFilterStats(payload) {
     state.filterStats = payload || null;
     destroyChartList(filterDetailCharts);
@@ -1611,18 +1838,7 @@
       formatInt(payload && payload.links_with_filter_data != null ? payload.links_with_filter_data : "—")
     );
 
-    var hint = $("filterStatsHint");
-    if (hint && payload) {
-      var generated = payload.generated_at ? " Updated " + payload.generated_at + "." : "";
-      hint.textContent =
-        "Per-filter blocked / unblocked / warning counts across " +
-        formatInt(payload.links_with_filter_data || 0) +
-        " sorted links with gn-math data (" +
-        formatInt(payload.links_without_filter_data || 0) +
-        " unchecked)." +
-        generated +
-        " Click a filter for its top block reasons.";
-    }
+    fillFilterStatsHint(payload);
 
     var sortedFilters = filters.slice().sort(function (a, b) {
       return (Number(b.blocked) || 0) - (Number(a.blocked) || 0) || String(a.name).localeCompare(String(b.name));
@@ -1962,46 +2178,75 @@
   async function loadDailyClickDocs(db) {
     if (state.dailyCache) return state.dailyCache;
     var days = utcDayIds(DAILY_LOOKBACK_DAYS);
+    var byDate = {};
+    var fromWorker = false;
     try {
       var res = await fetch(statsApiUrl("/api/click-stats/daily?days=" + DAILY_LOOKBACK_DAYS), { mode: "cors" });
       if (res.ok) {
         var payload = await res.json();
         if (payload && payload.ok && payload.via === "d1" && Array.isArray(payload.days)) {
-          var byDate = {};
-          payload.days.forEach(function (row) {
-            if (row && row.date) byDate[row.date] = Number(row.total) || 0;
-          });
+          fromWorker = true;
           state.dailyVia = "d1";
-          state.dailyCache = days.map(function (date) {
-            return { date: date, counts: {}, total: byDate[date] || 0 };
+          payload.days.forEach(function (row) {
+            if (row && row.date) {
+              byDate[row.date] = {
+                date: row.date,
+                counts: row.counts && typeof row.counts === "object" ? row.counts : {},
+                total: Number(row.total) || 0,
+              };
+            }
           });
-          return state.dailyCache;
         }
       }
     } catch (_) {}
-    if (!db) {
+    if (db) {
+      try {
+        var snaps = [];
+        for (var i = 0; i < days.length; i += 8) {
+          var part = days.slice(i, i + 8);
+          var partSnaps = await Promise.all(
+            part.map(function (day) {
+              return db.collection("click_daily").doc(day).get();
+            })
+          );
+          snaps.push.apply(snaps, partSnaps);
+        }
+        snaps.forEach(function (snap, idx) {
+          var date = days[idx];
+          var data = snap.exists ? snap.data() || {} : {};
+          var fsCounts = data.counts && typeof data.counts === "object" ? data.counts : {};
+          var fsTotal = Number(data.total) || 0;
+          var prev = byDate[date] || { date: date, counts: {}, total: 0 };
+          var mergedCounts = {};
+          var key;
+          for (key in prev.counts) {
+            if (Object.prototype.hasOwnProperty.call(prev.counts, key)) {
+              mergedCounts[key] = Math.max(Number(prev.counts[key]) || 0, Number(fsCounts[key]) || 0);
+            }
+          }
+          for (key in fsCounts) {
+            if (Object.prototype.hasOwnProperty.call(fsCounts, key)) {
+              mergedCounts[key] = Math.max(Number(mergedCounts[key]) || 0, Number(fsCounts[key]) || 0);
+            }
+          }
+          byDate[date] = {
+            date: date,
+            counts: mergedCounts,
+            total: Math.max(Number(prev.total) || 0, fsTotal),
+          };
+        });
+      } catch (err) {
+        console.warn("[stats] click_daily Firestore merge skipped", err);
+      }
+    }
+    if (!fromWorker && !db) {
       state.dailyCache = days.map(function (date) {
         return { date: date, counts: {}, total: 0 };
       });
       return state.dailyCache;
     }
-    var snaps = [];
-    for (var i = 0; i < days.length; i += 8) {
-      var part = days.slice(i, i + 8);
-      var partSnaps = await Promise.all(
-        part.map(function (day) {
-          return db.collection("click_daily").doc(day).get();
-        })
-      );
-      snaps.push.apply(snaps, partSnaps);
-    }
-    state.dailyCache = snaps.map(function (snap, i) {
-      var counts = {};
-      if (snap.exists) {
-        var data = snap.data() || {};
-        counts = data.counts && typeof data.counts === "object" ? data.counts : {};
-      }
-      return { date: days[i], counts: counts };
+    state.dailyCache = days.map(function (date) {
+      return byDate[date] || { date: date, counts: {}, total: 0 };
     });
     return state.dailyCache;
   }
@@ -2122,7 +2367,7 @@
           var n = Number(day.counts[h]);
           if (Number.isFinite(n)) sum += n;
         });
-        openLabels.push(day.date.slice(5));
+        openLabels.push(day.date);
         openValues.push(sum);
         var ts = Date.parse(day.date + "T00:00:00Z");
         openTimes.push(Number.isFinite(ts) ? ts : null);
@@ -2395,6 +2640,7 @@
   async function loadClickMonthly(db) {
     if (state.clickMonthly) return state.clickMonthly;
     var months = utcMonthIds(CLICK_MONTHLY_LOOKBACK);
+    var byMonth = {};
     try {
       var res = await fetch(
         statsApiUrl("/api/click-stats/period?kind=month&lookback=" + CLICK_MONTHLY_LOOKBACK),
@@ -2403,31 +2649,30 @@
       if (res.ok) {
         var payload = await res.json();
         if (payload && payload.ok && payload.via === "d1" && Array.isArray(payload.periods)) {
-          var byPeriod = {};
           payload.periods.forEach(function (row) {
-            if (row && row.period) byPeriod[row.period] = Number(row.total) || 0;
+            if (row && row.period) byMonth[row.period] = Number(row.total) || 0;
           });
-          state.clickMonthly = months.map(function (month) {
-            return { month: month, total: byPeriod[month] || 0 };
-          });
-          return state.clickMonthly;
         }
       }
     } catch (_) {}
-    if (!db) {
-      state.clickMonthly = months.map(function (month) {
-        return { month: month, total: 0 };
-      });
-      return state.clickMonthly;
+    if (db) {
+      try {
+        var snaps = await Promise.all(
+          months.map(function (month) {
+            return db.collection("click_monthly").doc(month).get();
+          })
+        );
+        snaps.forEach(function (snap, i) {
+          var data = snap.exists ? snap.data() || {} : {};
+          var month = months[i];
+          byMonth[month] = Math.max(Number(byMonth[month]) || 0, Number(data.total) || 0);
+        });
+      } catch (err) {
+        console.warn("[stats] click_monthly Firestore merge skipped", err);
+      }
     }
-    var snaps = await Promise.all(
-      months.map(function (month) {
-        return db.collection("click_monthly").doc(month).get();
-      })
-    );
-    state.clickMonthly = snaps.map(function (snap, i) {
-      var data = snap.exists ? snap.data() || {} : {};
-      return { month: months[i], total: Number(data.total) || 0 };
+    state.clickMonthly = months.map(function (month) {
+      return { month: month, total: byMonth[month] || 0 };
     });
     return state.clickMonthly;
   }
@@ -2435,6 +2680,7 @@
   async function loadClickYearly(db) {
     if (state.clickYearly) return state.clickYearly;
     var years = utcYearIds(CLICK_YEARLY_LOOKBACK);
+    var byYear = {};
     try {
       var res = await fetch(
         statsApiUrl("/api/click-stats/period?kind=year&lookback=" + CLICK_YEARLY_LOOKBACK),
@@ -2443,31 +2689,30 @@
       if (res.ok) {
         var payload = await res.json();
         if (payload && payload.ok && payload.via === "d1" && Array.isArray(payload.periods)) {
-          var byPeriod = {};
           payload.periods.forEach(function (row) {
-            if (row && row.period) byPeriod[row.period] = Number(row.total) || 0;
+            if (row && row.period) byYear[row.period] = Number(row.total) || 0;
           });
-          state.clickYearly = years.map(function (year) {
-            return { year: year, total: byPeriod[year] || 0 };
-          });
-          return state.clickYearly;
         }
       }
     } catch (_) {}
-    if (!db) {
-      state.clickYearly = years.map(function (year) {
-        return { year: year, total: 0 };
-      });
-      return state.clickYearly;
+    if (db) {
+      try {
+        var snaps = await Promise.all(
+          years.map(function (year) {
+            return db.collection("click_yearly").doc(year).get();
+          })
+        );
+        snaps.forEach(function (snap, i) {
+          var data = snap.exists ? snap.data() || {} : {};
+          var year = years[i];
+          byYear[year] = Math.max(Number(byYear[year]) || 0, Number(data.total) || 0);
+        });
+      } catch (err) {
+        console.warn("[stats] click_yearly Firestore merge skipped", err);
+      }
     }
-    var snaps = await Promise.all(
-      years.map(function (year) {
-        return db.collection("click_yearly").doc(year).get();
-      })
-    );
-    state.clickYearly = snaps.map(function (snap, i) {
-      var data = snap.exists ? snap.data() || {} : {};
-      return { year: years[i], total: Number(data.total) || 0 };
+    state.clickYearly = years.map(function (year) {
+      return { year: year, total: byYear[year] || 0 };
     });
     return state.clickYearly;
   }
@@ -2530,6 +2775,58 @@
       var payload = await res.json();
       if (!(payload && payload.ok && payload.via === "d1" && Array.isArray(payload.periods))) return null;
       return payload.periods;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  /**
+   * Combined daily/monthly/yearly payload (one round-trip under Scramjet/UV).
+   * Empty arrays plus a warning usually mean Worker stats are unavailable —
+   * fall through to per-endpoint + client Firestore.
+   */
+  async function fetchPresenceStatsViaWorker() {
+    try {
+      var res = await fetch(statsApiUrl("/api/presence-stats"), {
+        method: "GET",
+        mode: "cors",
+        credentials: "omit",
+        cache: "no-store",
+      });
+      if (!res.ok) return null;
+      var data = await res.json();
+      if (!(data && data.ok)) return null;
+      var daily = Array.isArray(data.daily) ? data.daily : [];
+      var monthly = Array.isArray(data.monthly) ? data.monthly : [];
+      var yearly = Array.isArray(data.yearly) ? data.yearly : [];
+      if (data.warning && !daily.length && !monthly.length && !yearly.length) return null;
+      return {
+        daily: daily.map(function (row) {
+          return {
+            date: String((row && row.date) || ""),
+            uniqueVisitors: Number(row && row.uniqueVisitors) || 0,
+            heartbeats: Number(row && row.heartbeats) || 0,
+            signedInUniques: Number(row && row.signedInUniques) || 0,
+            hourHeartbeats:
+              row && row.hourHeartbeats && typeof row.hourHeartbeats === "object" ? row.hourHeartbeats : {},
+            hourUniques: row && row.hourUniques && typeof row.hourUniques === "object" ? row.hourUniques : {},
+          };
+        }),
+        monthly: monthly.map(function (row) {
+          return {
+            month: String((row && row.month) || ""),
+            uniqueVisitors: Number(row && row.uniqueVisitors) || 0,
+            heartbeats: Number(row && row.heartbeats) || 0,
+          };
+        }),
+        yearly: yearly.map(function (row) {
+          return {
+            year: String((row && row.year) || ""),
+            uniqueVisitors: Number(row && row.uniqueVisitors) || 0,
+            heartbeats: Number(row && row.heartbeats) || 0,
+          };
+        }),
+      };
     } catch (_) {
       return null;
     }
@@ -2681,6 +2978,7 @@
     if (span === "24h") {
       var labels = [];
       var values = [];
+      var clock = dtApi();
       for (var h = 23; h >= 0; h--) {
         var dt = new Date(now.getTime() - h * 3600 * 1000);
         var day = dt.toISOString().slice(0, 10);
@@ -2692,7 +2990,14 @@
         if (row) {
           n = Number(row.hourUniques[hour] != null ? row.hourUniques[hour] : row.hourUniques[String(Number(hour))]) || 0;
         }
-        labels.push(hour + ":00");
+        var tick = hour + ":00";
+        try {
+          if (clock && typeof clock.partsInZone === "function") {
+            var parts = clock.partsInZone(dt, clock.activeTimeZone());
+            if (parts) tick = formatHourTick(parts.hour);
+          }
+        } catch (_) {}
+        labels.push(tick);
         values.push(n);
       }
       return { labels: labels, values: values, yLabel: "Unique visitors / hour" };
@@ -2704,7 +3009,7 @@
       var monthSlice = months.slice(Math.max(0, months.length - monthCount));
       return {
         labels: monthSlice.map(function (m) {
-          return m.month;
+          return formatMonthId(m.month);
         }),
         values: monthSlice.map(function (m) {
           return m.uniqueVisitors;
@@ -2729,7 +3034,7 @@
     var slice = daily.slice(Math.max(0, daily.length - days));
     return {
       labels: slice.map(function (d) {
-        return d.date.slice(5);
+        return formatDayId(d.date, { short: true });
       }),
       values: slice.map(function (d) {
         return d.uniqueVisitors;
@@ -2743,6 +3048,7 @@
     var sums = [];
     var counts = [];
     var i;
+    var clock = dtApi();
     for (i = 0; i < 24; i++) {
       sums[i] = 0;
       counts[i] = 0;
@@ -2755,8 +3061,16 @@
         var beats = Number(day.hourHeartbeats[key] != null ? day.hourHeartbeats[key] : day.hourHeartbeats[String(i)]) || 0;
         var v = uniq > 0 ? uniq : beats > 0 ? beats : 0;
         if (v > 0) {
-          sums[i] += v;
-          counts[i] += 1;
+          var bucket = i;
+          try {
+            if (clock && typeof clock.utcDateHourDate === "function" && typeof clock.partsInZone === "function") {
+              var instant = clock.utcDateHourDate(day.date, i);
+              var parts = instant ? clock.partsInZone(instant, clock.activeTimeZone()) : null;
+              if (parts && Number.isFinite(parts.hour)) bucket = parts.hour;
+            }
+          } catch (_) {}
+          sums[bucket] += v;
+          counts[bucket] += 1;
           has = true;
         }
       }
@@ -2768,14 +3082,15 @@
     var values = [];
     var peakHour = "—";
     var peakVal = -1;
+    var z = zoneLabel();
     for (i = 0; i < 24; i++) {
-      var label = String(i).padStart(2, "0") + ":00";
+      var label = formatHourTick(i);
       var avg = counts[i] ? sums[i] / counts[i] : 0;
       labels.push(label);
       values.push(Math.round(avg * 10) / 10);
       if (avg > peakVal) {
         peakVal = avg;
-        peakHour = label + " UTC";
+        peakHour = label + " " + z;
       }
     }
     return { labels: labels, values: values, peakHour: peakVal > 0 ? peakHour : "—" };
@@ -2830,15 +3145,95 @@
     linux: "Linux",
     other: "Other",
   };
+  var OS_ICONS = {
+    windows: "./os-icons/windows.svg",
+    macos: "./os-icons/apple.svg?v=2",
+    ios: "./os-icons/apple.svg?v=2",
+    android: "./os-icons/android.png",
+    chromeos: "./os-icons/chromeos.svg?v=3",
+    linux: "./os-icons/linux.png?v=2",
+    other: "./os-icons/other.svg",
+  };
 
   function osFamilyLabel(os) {
     return OS_LABELS[String(os || "")] || "Other";
+  }
+
+  function osIconSrc(os) {
+    return OS_ICONS[String(os || "")] || OS_ICONS.other;
   }
 
   function osVersionLabel(ver) {
     var v = String(ver || "").trim();
     if (!v || v === "unknown") return "Unknown version";
     return v;
+  }
+
+  function isUnknownOsVersion(ver) {
+    var v = String(ver || "").trim().toLowerCase();
+    return !v || v === "unknown";
+  }
+
+  function compareVersionIds(a, b) {
+    var au = isUnknownOsVersion(a);
+    var bu = isUnknownOsVersion(b);
+    if (au && bu) return 0;
+    if (au) return -1;
+    if (bu) return 1;
+    return String(a).localeCompare(String(b), undefined, { numeric: true, sensitivity: "base" });
+  }
+
+  /** Shipping Windows names. UA-CH majors 1–12 are Windows 10, not "Windows 12". */
+  var WINDOWS_MARKETING_VERSIONS = {
+    "7": true,
+    "8": true,
+    "8.1": true,
+    "10": true,
+    "11": true,
+  };
+
+  function shouldHideOsVersion(os, ver) {
+    return String(os || "") === "windows" && String(ver || "") === "12";
+  }
+
+  function latestOsVersion(os, rows) {
+    var family = String(os || "");
+    if (family === "linux" || family === "other") return "";
+    var best = "";
+    (rows || []).forEach(function (row) {
+      var v = String((row && row.osVersion) || "");
+      if (isUnknownOsVersion(v)) return;
+      if (family === "windows" && !WINDOWS_MARKETING_VERSIONS[v]) return;
+      if (!best || compareVersionIds(v, best) > 0) best = v;
+    });
+    return best;
+  }
+
+  function osVersionMatchesQuery(row, osKey, query) {
+    var q = String(query || "")
+      .trim()
+      .toLowerCase();
+    if (!q) return true;
+    var ver = osVersionLabel(row && row.osVersion).toLowerCase();
+    var raw = String((row && row.osVersion) || "").toLowerCase();
+    var family = osFamilyLabel(osKey).toLowerCase();
+    return ver.indexOf(q) !== -1 || raw.indexOf(q) !== -1 || family.indexOf(q) !== -1;
+  }
+
+  function wireOsVersionSearch() {
+    var input = $("osVersionSearch");
+    if (!input || input.dataset.wired === "1") return;
+    input.dataset.wired = "1";
+    if (state.osVersionQuery) input.value = state.osVersionQuery;
+    input.addEventListener("input", function () {
+      state.osVersionQuery = String(input.value || "");
+      var totals = (state.presenceOs && state.presenceOs.totals) || [];
+      var uniqueSum = 0;
+      totals.forEach(function (row) {
+        uniqueSum += osRowCount(row);
+      });
+      renderOsVersionGroups(totals, uniqueSum);
+    });
   }
 
   async function loadPresenceOs() {
@@ -2913,55 +3308,161 @@
             },
           ],
         },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              position: "bottom",
-              labels: { boxWidth: 12, padding: 10, font: { size: 11 } },
+        options: (function () {
+          var opts = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: hasData
+                ? doughnutLegendWithPercents(uniqueSum)
+                : {
+                    position: "bottom",
+                    labels: { boxWidth: 12, padding: 10, font: { size: 11 } },
+                  },
+              subtitle: hasData
+                ? undefined
+                : emptySubtitle("OS share appears after presence pings with platform info."),
             },
-            subtitle: hasData
-              ? undefined
-              : emptySubtitle("OS share appears after presence pings with platform info."),
-          },
-        },
+          };
+          if (hasData) attachCountPercentTooltip(opts, uniqueSum);
+          return opts;
+        })(),
       },
       userCharts
     );
-
-    var body = $("usersOsTableBody");
-    if (!body) return;
-    var versionRows = totals
-      .filter(function (row) {
-        return (Number(row.uniqueVisitors) || 0) > 0 || (Number(row.heartbeats) || 0) > 0;
+    renderShareTable(
+      "usersOsShare",
+      familyRows.map(function (r) {
+        return { label: osFamilyLabel(r[0]), count: r[1] };
       })
-      .slice()
-      .sort(function (a, b) {
-        var an = (Number(a.uniqueVisitors) || 0) || (Number(a.heartbeats) || 0);
-        var bn = (Number(b.uniqueVisitors) || 0) || (Number(b.heartbeats) || 0);
-        return bn - an || String(a.os).localeCompare(String(b.os));
-      });
-    if (!versionRows.length) {
-      body.innerHTML = '<tr><td class="muted" colspan="5">No OS data yet — visit the main list to start collecting.</td></tr>';
+    );
+
+    wireOsVersionSearch();
+    renderOsVersionGroups(totals, uniqueSum);
+  }
+
+  function osRowCount(row) {
+    var uniques = Number(row && row.uniqueVisitors) || 0;
+    var beats = Number(row && row.heartbeats) || 0;
+    return uniques > 0 ? uniques : beats;
+  }
+
+  function compareOsVersions(a, b) {
+    var an = osRowCount(a);
+    var bn = osRowCount(b);
+    if (bn !== an) return bn - an;
+    var av = String(a.osVersion || "");
+    var bv = String(b.osVersion || "");
+    if (av === "unknown" && bv !== "unknown") return 1;
+    if (bv === "unknown" && av !== "unknown") return -1;
+    return av.localeCompare(bv, undefined, { numeric: true, sensitivity: "base" });
+  }
+
+  function renderOsVersionGroups(totals, uniqueSum) {
+    var wrap = $("usersOsVersionGroups");
+    if (!wrap) return;
+    var groups = new Map();
+    (totals || []).forEach(function (row) {
+      var n = osRowCount(row);
+      if (n <= 0) return;
+      var key = row.os || "other";
+      if (shouldHideOsVersion(key, row.osVersion)) return;
+      var group = groups.get(key);
+      if (!group) {
+        group = {
+          os: key,
+          rows: [],
+          uniqueVisitors: 0,
+          heartbeats: 0,
+          count: 0,
+        };
+        groups.set(key, group);
+      }
+      group.rows.push(row);
+      group.uniqueVisitors += Number(row.uniqueVisitors) || 0;
+      group.heartbeats += Number(row.heartbeats) || 0;
+      group.count += n;
+    });
+    var ordered = Array.from(groups.values()).sort(function (a, b) {
+      return b.count - a.count || String(a.os).localeCompare(String(b.os));
+    });
+    wrap.classList.remove("is-loading");
+    wrap.setAttribute("aria-busy", "false");
+    if (!ordered.length) {
+      wrap.innerHTML = '<p class="muted" style="margin:0">No OS data yet — visit the main list to start collecting.</p>';
       return;
     }
-    body.innerHTML = versionRows
-      .map(function (row) {
-        var n = (Number(row.uniqueVisitors) || 0) || (Number(row.heartbeats) || 0);
-        var share = uniqueSum ? Math.round((n / uniqueSum) * 1000) / 10 : 0;
+    var query = state.osVersionQuery || "";
+    var visible = ordered
+      .map(function (group) {
+        var rows = group.rows.slice().sort(compareOsVersions);
+        var matched = rows.filter(function (row) {
+          return osVersionMatchesQuery(row, group.os, query);
+        });
+        return { group: group, rows: rows, matched: matched, latest: latestOsVersion(group.os, group.rows) };
+      })
+      .filter(function (item) {
+        return item.matched.length > 0;
+      });
+    if (!visible.length) {
+      wrap.innerHTML =
+        '<p class="muted" style="margin:0">No versions match “' + escapeHtml(query.trim()) + '”.</p>';
+      return;
+    }
+    wrap.innerHTML = visible
+      .map(function (item) {
+        var group = item.group;
+        var rows = item.matched;
+        var latest = item.latest;
+        var versionWord = group.rows.length === 1 ? "version" : "versions";
+        var versionMeta = query.trim()
+          ? formatInt(rows.length) + " of " + formatInt(group.rows.length) + " " + versionWord
+          : formatInt(group.rows.length) + " " + versionWord;
         return (
-          "<tr><td>" +
-          escapeHtml(osFamilyLabel(row.os)) +
-          "</td><td>" +
-          escapeHtml(osVersionLabel(row.osVersion)) +
-          '</td><td class="num">' +
-          formatInt(row.uniqueVisitors) +
-          '</td><td class="num">' +
-          formatInt(row.heartbeats) +
-          '</td><td class="num">' +
-          share.toFixed(1) +
-          "%</td></tr>"
+          '<section class="os-version-group">' +
+          '<div class="os-version-group-head">' +
+          '<span class="os-version-group-title">' +
+          '<img class="os-version-group-icon" src="' +
+          escapeHtml(osIconSrc(group.os)) +
+          '" width="22" height="22" alt="" aria-hidden="true" />' +
+          '<span class="os-version-group-copy">' +
+          '<span class="os-version-group-name">' +
+          escapeHtml(osFamilyLabel(group.os)) +
+          "</span>" +
+          (latest
+            ? '<span class="os-version-group-latest">Latest ' + escapeHtml(latest) + "</span>"
+            : "") +
+          "</span></span>" +
+          '<span class="os-version-group-meta">' +
+          "<span>" +
+          versionMeta +
+          "</span>" +
+          '<span class="num">' +
+          formatInt(group.uniqueVisitors) +
+          " users</span>" +
+          '<span class="num">' +
+          formatSharePct(group.count, uniqueSum) +
+          "</span>" +
+          "</span></div>" +
+          '<div class="os-version-group-list" tabindex="0">' +
+          '<table><thead><tr><th>Version</th><th class="num">Uniques</th><th class="num">Heartbeats</th><th class="num">Share</th></tr></thead><tbody>' +
+          rows
+            .map(function (row) {
+              var n = osRowCount(row);
+              return (
+                "<tr><td>" +
+                escapeHtml(osVersionLabel(row.osVersion)) +
+                '</td><td class="num">' +
+                formatInt(row.uniqueVisitors) +
+                '</td><td class="num">' +
+                formatInt(row.heartbeats) +
+                '</td><td class="num">' +
+                formatSharePct(n, uniqueSum) +
+                "</td></tr>"
+              );
+            })
+            .join("") +
+          "</tbody></table></div></section>"
         );
       })
       .join("");
@@ -3018,21 +3519,33 @@
             },
           ],
         },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              position: "bottom",
-              labels: { boxWidth: 12, padding: 10, font: { size: 11 } },
+        options: (function () {
+          var opts = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: hasData
+                ? doughnutLegendWithPercents(total)
+                : {
+                    position: "bottom",
+                    labels: { boxWidth: 12, padding: 10, font: { size: 11 } },
+                  },
+              subtitle: hasData
+                ? undefined
+                : emptySubtitle("Browser share appears after presence pings with platform info."),
             },
-            subtitle: hasData
-              ? undefined
-              : emptySubtitle("Browser share appears after presence pings with platform info."),
-          },
-        },
+          };
+          if (hasData) attachCountPercentTooltip(opts, total);
+          return opts;
+        })(),
       },
       userCharts
+    );
+    renderShareTable(
+      "usersBrowserShare",
+      rows.map(function (row) {
+        return { label: browserFamilyLabel(row.value), count: hardwareCount(row) };
+      })
     );
   }
 
@@ -3042,18 +3555,82 @@
     "2gb": "2 GB",
     "4gb": "4 GB",
     "8gb": "8 GB",
-    "8gb+": "8 GB+",
     "16gb": "16 GB",
     "32gb+": "32 GB+",
-    unknown: "Unknown",
+    unknown: "Not reported",
   };
   var ARCH_LABELS = {
     x64: "x64",
     x86: "x86",
     arm64: "ARM64",
     arm: "ARM",
-    unknown: "Unknown",
+    unknown: "Not reported",
   };
+
+  function foldRamValue(value) {
+    var v = String(value || "").toLowerCase();
+    if (v === "8gb+") return "8gb";
+    if (v === "32gb") return "32gb+";
+    return v || "unknown";
+  }
+
+  function ramSortKey(value) {
+    var v = String(value || "");
+    if (v === "under_1gb") return 0;
+    if (v === "32gb+") return 32.5;
+    if (v === "unknown") return 1000;
+    var m = /^(\d+)gb$/.exec(v);
+    if (m) return parseInt(m[1], 10);
+    return 999;
+  }
+
+  function mergeRamRows(rows) {
+    var map = new Map();
+    (rows || []).forEach(function (row) {
+      var value = foldRamValue(row.value);
+      var prev = map.get(value);
+      if (!prev) {
+        prev = { value: value, uniqueVisitors: 0, heartbeats: 0 };
+        map.set(value, prev);
+      }
+      prev.uniqueVisitors += Number(row.uniqueVisitors) || 0;
+      prev.heartbeats += Number(row.heartbeats) || 0;
+    });
+    return Array.from(map.values()).sort(function (a, b) {
+      return ramSortKey(a.value) - ramSortKey(b.value) || hardwareCount(b) - hardwareCount(a);
+    });
+  }
+
+  function ramLabel(value) {
+    var v = String(value || "");
+    if (RAM_LABELS[v]) return RAM_LABELS[v];
+    var m = /^(\d+)gb$/.exec(v);
+    if (m) return m[1] + " GB";
+    return v;
+  }
+
+  function coresLabel(value) {
+    if (value === "unknown") return "Not reported";
+    return value === "1" ? "1 core" : value + " cores";
+  }
+
+  function coresChartLabel(value) {
+    if (value === "unknown") return "Not reported";
+    return String(value);
+  }
+
+  function coresSortKey(value) {
+    var v = String(value || "");
+    if (v === "unknown") return 1000;
+    var n = parseInt(v, 10);
+    return Number.isFinite(n) ? n : 999;
+  }
+
+  function sortCoreRows(rows) {
+    return rows.slice().sort(function (a, b) {
+      return coresSortKey(a.value) - coresSortKey(b.value);
+    });
+  }
 
   function hardwareCount(row) {
     var uniques = Number(row && row.uniqueVisitors) || 0;
@@ -3100,14 +3677,38 @@
     return state.presenceHardware;
   }
 
-  function renderHardwareBar(canvasId, rows, labelFn, emptyText, colorIndex) {
+  function renderHardwareBar(canvasId, tableId, rows, labelFn, emptyText, colorIndex, chartLabelFn) {
     var hasData = rows.length > 0;
+    var total = rows.reduce(function (s, row) {
+      return s + hardwareCount(row);
+    }, 0);
+    var axisLabelFn = chartLabelFn || labelFn;
+    var options = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        subtitle: hasData ? undefined : emptySubtitle(emptyText),
+      },
+      scales: {
+        x: {
+          ticks: {
+            maxRotation: 0,
+            minRotation: 0,
+            autoSkip: false,
+            font: { size: rows.length > 12 ? 11 : 12 },
+          },
+        },
+        y: { beginAtZero: true, ticks: { precision: 0 } },
+      },
+    };
+    if (hasData) attachCountPercentTooltip(options, total);
     makeChart(
       $(canvasId),
       {
         type: "bar",
         data: {
-          labels: hasData ? rows.map(labelFn) : ["No data"],
+          labels: hasData ? rows.map(axisLabelFn) : ["No data"],
           datasets: [
             {
               label: "Visitors",
@@ -3118,23 +3719,20 @@
                 : [0],
               backgroundColor: CHART_COLORS[colorIndex % CHART_COLORS.length],
               borderRadius: 4,
+              categoryPercentage: 0.72,
+              barPercentage: 0.86,
             },
           ],
         },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false },
-            subtitle: hasData ? undefined : emptySubtitle(emptyText),
-          },
-          scales: {
-            x: { ticks: { maxRotation: 0, autoSkip: false } },
-            y: { beginAtZero: true, ticks: { precision: 0 } },
-          },
-        },
+        options: options,
       },
       userCharts
+    );
+    renderShareTable(
+      tableId,
+      rows.map(function (row) {
+        return { label: labelFn(row), count: hardwareCount(row) };
+      })
     );
   }
 
@@ -3142,25 +3740,30 @@
     var hw = state.presenceHardware || { ram: [], cores: [], arch: [] };
     renderHardwareBar(
       "usersRamChart",
-      hardwareRows(hw.ram),
+      "usersRamShare",
+      hardwareRows(mergeRamRows(hw.ram)),
       function (row) {
-        return RAM_LABELS[row.value] || row.value;
+        return ramLabel(row.value);
       },
       "RAM buckets appear after Chrome/Edge presence pings.",
       2
     );
     renderHardwareBar(
       "usersCoresChart",
-      hardwareRows(hw.cores),
+      "usersCoresShare",
+      sortCoreRows(hardwareRows(hw.cores)),
       function (row) {
-        if (row.value === "unknown") return "Unknown";
-        return row.value === "1" ? "1 core" : row.value + " cores";
+        return coresLabel(row.value);
       },
       "CPU core counts appear after presence pings.",
-      3
+      3,
+      function (row) {
+        return coresChartLabel(row.value);
+      }
     );
     renderHardwareBar(
       "usersArchChart",
+      "usersArchShare",
       hardwareRows(hw.arch),
       function (row) {
         return ARCH_LABELS[row.value] || row.value;
@@ -3212,7 +3815,7 @@
 
     var monthly = state.presenceMonthly || [];
     var mLabels = monthly.map(function (m) {
-      return m.month;
+      return formatMonthId(m.month);
     });
     var mValues = monthly.map(function (m) {
       return m.uniqueVisitors;
@@ -3257,7 +3860,17 @@
 
   function updateUsersKpis() {
     var daily = state.presenceDaily || [];
-    var today = daily.length ? daily[daily.length - 1] : null;
+    var clock = dtApi();
+    var todayId = "";
+    try {
+      if (clock && typeof clock.localDateId === "function") todayId = clock.localDateId();
+    } catch (_) {}
+    var today =
+      (todayId &&
+        daily.find(function (d) {
+          return d.date === todayId;
+        })) ||
+      (daily.length ? daily[daily.length - 1] : null);
     setText("statUsersToday", today ? formatInt(today.uniqueVisitors) : "—");
     var last7 = daily.slice(-7);
     var sum7 = last7.reduce(function (s, d) {
@@ -3266,7 +3879,16 @@
     var avg7 = last7.length ? Math.round((sum7 / last7.length) * 10) / 10 : 0;
     setText("statUsers7d", last7.some(function (d) { return d.uniqueVisitors > 0; }) ? formatInt(avg7) : "—");
     var monthly = state.presenceMonthly || [];
-    var thisMonth = monthly.length ? monthly[monthly.length - 1] : null;
+    var monthId = "";
+    try {
+      if (clock && typeof clock.localMonthId === "function") monthId = clock.localMonthId();
+    } catch (_) {}
+    var thisMonth =
+      (monthId &&
+        monthly.find(function (m) {
+          return m.month === monthId;
+        })) ||
+      (monthly.length ? monthly[monthly.length - 1] : null);
     setText("statUsersMonth", thisMonth && thisMonth.uniqueVisitors ? formatInt(thisMonth.uniqueVisitors) : "—");
   }
 
@@ -3289,6 +3911,20 @@
 
   async function loadAndRenderUserStats(db) {
     wireUsersRangeToggle();
+    try {
+      var viaWorker = await fetchPresenceStatsViaWorker();
+      if (viaWorker) {
+        state.presenceDaily = viaWorker.daily;
+        state.presenceMonthly = viaWorker.monthly;
+        state.presenceYearly = viaWorker.yearly;
+        await Promise.all([loadPresenceOs(), loadPresenceHardware()]);
+        updateUsersKpis();
+        renderUserStatsCharts();
+        return;
+      }
+    } catch (err) {
+      console.warn("[stats] presence worker load failed", err);
+    }
     try {
       await Promise.all([
         loadPresenceDaily(db),
@@ -3398,8 +4034,57 @@
     });
   }
 
+  function rerenderDateTimeDependent() {
+    applyDateTimeCopy();
+    try {
+      if (state.clickMonthly || state.clickYearly) renderOpenArchiveCharts();
+    } catch (_) {}
+    try {
+      if (state.presenceDaily || state.presenceMonthly) {
+        updateUsersKpis();
+        renderUserStatsCharts();
+      }
+    } catch (_) {}
+    try {
+      if (state.selectedProvider) {
+        var provider = state.providers.find(function (p) {
+          return p.name === state.selectedProvider;
+        });
+        if (provider) {
+          state.providerLinksSeries = linksOverTimeSeries(provider.links);
+          setText(
+            "detailFirstFound",
+            state.providerLinksSeries.earliest ? formatShortDate(state.providerLinksSeries.earliest) : "—"
+          );
+          renderProviderLinksChart(state.providerLinksSeries);
+        }
+      }
+    } catch (_) {}
+    try {
+      if (state.providerOpensSeries) renderProviderOpensChart(state.providerOpensSeries);
+    } catch (_) {}
+    try {
+      if (window.ProxyListGamesStats && typeof window.ProxyListGamesStats.render === "function") {
+        window.ProxyListGamesStats.render();
+      }
+    } catch (_) {}
+    try {
+      fillFilterStatsHint(state.filterStats);
+    } catch (_) {}
+  }
+
+  function wireDateTimeSettings() {
+    applyDateTimeCopy();
+    var clock = dtApi();
+    if (clock && typeof clock.onChange === "function" && !window.__proxyListStatsDtWired) {
+      window.__proxyListStatsDtWired = true;
+      clock.onChange(rerenderDateTimeDependent);
+    }
+  }
+
   async function main() {
     chartDefaults();
+    wireDateTimeSettings();
     destroyChartList(charts);
     destroyChartList(detailCharts);
     wireProviderUi();
@@ -3476,11 +4161,25 @@
     var clicks = [];
     if (!state.db) {
       setNotice(
-        "Firebase is not configured here, so open activity and user charts are empty. Provider and filter stats still work.",
+        "Firebase client is unavailable here (common under Scramjet/UV). Open activity and user charts load via the Worker API when possible; provider and filter stats still work.",
         "warn"
       );
       setText("statOpens", "—");
-      renderOpenCharts([], state.urlToProvider);
+      try {
+        clicks = await fetchTopClicksLive(null, 25);
+        if (clicks.length) {
+          setText(
+            "statOpens",
+            formatInt(
+              clicks.reduce(function (sum, r) {
+                return sum + r.count;
+              }, 0)
+            )
+          );
+          if (clicks.stale) state.topOpensStale = true;
+        }
+      } catch (_) {}
+      renderOpenCharts(clicks, state.urlToProvider);
       void loadAndRenderOpenArchives(null);
       void loadAndRenderUserStats(null);
       return;

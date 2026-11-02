@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v9.0",
+      "revision": "r316",
+      "released": "November 2, 2026",
+      "update_notice": "### New\n- Added sorting by recently added links\n- Switched around the featured sites and made it cleaner\n- Added Nexora database (gdb:nexora)\n- Hardware charts now get horizontal sections so they have more space\n- OS versions are now searchable instead of showing all versions at once\n- Improved Firebase quota usage saving\n- Added Eruda DevTools to debug mode\n- Added ability to change timezone/time notation/date formatting\n\n### Fixed\n- Fixed a bug causing localStorage to have oversized caches\n- Fixed a bug where bar graph sections were squished\n- Fixed a bug where bar/chart hitboxes were very off center\n- Fixed a bug where some users were reporting a Windows version of 12\n- Fixed a bug where icons were missing colors or parts/off center.\n- Fixed a bug for users on Scramjet over Wisp where the site would not load and bug out; app.js/site.css are now split to allow proxy rewrite to work properly.\n- Fixed a bug where there was an \"8 GB+\" section in RAM metrics; it is now removed"
+    },
+    {
       "version": "v8.0",
       "revision": "r313",
       "released": "October 25, 2026",

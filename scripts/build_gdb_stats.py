@@ -69,6 +69,7 @@ CATALOG_META: list[tuple[str, str]] = [
     ("gdb:hydra", "Hydra"),
     ("gdb:diesmos", "Diesmos"),
     ("gdb:fyinx", "Fyinx"),
+    ("gdb:nexora", "Nexora"),
 ]
 
 EMPTY_TAGS = {
@@ -511,6 +512,7 @@ LOADERS = {
     "gdb:hydra": load_hydra,
     "gdb:diesmos": load_diesmos,
     "gdb:fyinx": load_empty,
+    "gdb:nexora": lambda: load_local("nexora.json"),
 }
 
 

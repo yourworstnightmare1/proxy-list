@@ -207,7 +207,7 @@
     .chart-wrap.is-loading {
       overflow: hidden;
     }
-    .chart-wrap.is-loading > canvas {
+    .chart-wrap.is-loading canvas {
       visibility: hidden;
     }
     .chart-wrap.is-loading::after {
@@ -277,19 +277,25 @@
       max-width: 100%;
       height: 280px;
     }
+    .chart-canvas-host {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .chart-wrap canvas {
+      display: block;
+    }
     .chart-wrap-zoomable {
       height: auto;
     }
-    .chart-wrap-zoomable canvas {
-      display: block;
-      width: 100% !important;
-      height: 280px !important;
+    .chart-wrap-zoomable .chart-canvas-host {
+      height: 280px;
     }
-    .chart-wrap.tall.chart-wrap-zoomable canvas {
-      height: 340px !important;
+    .chart-wrap.tall.chart-wrap-zoomable .chart-canvas-host {
+      height: 340px;
     }
-    .chart-wrap.filter-tall.chart-wrap-zoomable canvas {
-      height: min(720px, 85vh) !important;
+    .chart-wrap.filter-tall.chart-wrap-zoomable .chart-canvas-host {
+      height: min(720px, 85vh);
     }
     .chart-zoom-tools {
       display: flex;
@@ -336,10 +342,14 @@
       gap: 1rem;
       margin-bottom: 1rem;
     }
+    .charts-row.two {
+      grid-template-columns: 1fr 1fr;
+    }
     .charts-row.three {
       grid-template-columns: 1fr 1fr 1fr;
     }
     @media (max-width: 1100px) {
+      .charts-row.two,
       .charts-row.three { grid-template-columns: 1fr; }
     }
     @media (max-width: 800px) {
@@ -362,6 +372,137 @@
       font-size: 0.78rem;
     }
     tr:last-child td { border-bottom: 0; }
+    .share-table-wrap {
+      margin-top: 0.65rem;
+      overflow-x: auto;
+    }
+    .share-table {
+      font-size: 0.8rem;
+    }
+    .share-table th:first-child,
+    .share-table td:first-child {
+      width: 55%;
+    }
+    .hw-stat-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 26rem);
+      gap: 0.75rem 1.75rem;
+      align-items: start;
+    }
+    .hw-stat-body .share-table-wrap {
+      margin-top: 0;
+    }
+    .hw-stat-body .share-table {
+      font-size: 0.9rem;
+    }
+    .hw-stat-body .share-table th,
+    .hw-stat-body .share-table td {
+      padding: 0.55rem 0.9rem;
+    }
+    .hw-stat-body .share-table th:first-child,
+    .hw-stat-body .share-table td:first-child {
+      width: auto;
+    }
+    .hw-stat-body .share-table th.num,
+    .hw-stat-body .share-table td.num {
+      min-width: 5.5rem;
+    }
+    @media (max-width: 900px) {
+      .hw-stat-body {
+        grid-template-columns: 1fr;
+      }
+      .hw-stat-body .share-table-wrap {
+        margin-top: 0.5rem;
+      }
+    }
+    .os-version-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
+      gap: 0.85rem;
+      align-items: start;
+    }
+    .os-version-group {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #141414;
+      min-width: 0;
+    }
+    .os-version-group-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.55rem;
+      padding: 0.55rem 0.75rem 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .os-version-group-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 0;
+      padding-top: 0.08rem;
+    }
+    .os-version-group-icon {
+      width: 1.35rem;
+      height: 1.35rem;
+      flex: 0 0 1.35rem;
+      object-fit: contain;
+      display: block;
+      overflow: visible;
+    }
+    .os-version-group-copy {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      gap: 0.08rem;
+    }
+    .os-version-group-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    .os-version-group-latest {
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .os-version-search-row {
+      margin-top: 0.15rem;
+    }
+    .os-version-group-meta {
+      color: var(--muted);
+      font-size: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.55rem 0.85rem;
+      white-space: nowrap;
+    }
+    .os-version-group-list {
+      max-height: 11.5rem;
+      overflow: auto;
+      overscroll-behavior: contain;
+    }
+    .os-version-group-list table {
+      font-size: 0.8rem;
+    }
+    .os-version-group-list th,
+    .os-version-group-list td {
+      padding: 0.38rem 0.55rem;
+    }
+    .os-version-group-list thead th {
+      position: sticky;
+      top: 0;
+      background: #161616;
+      z-index: 1;
+    }
+    .os-version-groups.is-loading .os-version-group-head .sk-line {
+      height: 0.72em;
+      width: 42%;
+    }
+    .os-version-groups.is-loading .os-version-group-list {
+      max-height: 5.5rem;
+      overflow: hidden;
+    }
     .num {
       font-variant-numeric: tabular-nums;
       text-align: right;
@@ -924,7 +1065,7 @@
               </div>
               <div>
                 <h2 style="font-size:0.95rem;margin:0 0 0.35rem;">Opens over time</h2>
-                <p class="hint">Daily opens for this provider’s links (UTC days; empty until new opens are recorded).</p>
+                <p class="hint" id="providerOpensHint">Daily opens for this provider’s links (empty until new opens are recorded).</p>
                 <div class="range-toggle" id="providerOpensRangeToggle" role="group" aria-label="Opens over time span">
                   <button type="button" class="btn" data-provider-opens-span="7d">7d</button>
                   <button type="button" class="btn is-active" data-provider-opens-span="1m">1m</button>
@@ -1224,7 +1365,7 @@
           <div class="stat-grid" aria-label="Users overview" aria-busy="true">
             <div class="stat is-loading">
               <div class="n" id="statUsersToday"><span class="sk-line" aria-hidden="true"></span></div>
-              <div class="l">Active today (UTC)</div>
+              <div class="l" id="statUsersTodayLabel">Active today</div>
             </div>
             <div class="stat is-loading">
               <div class="n" id="statUsers7d"><span class="sk-line" aria-hidden="true"></span></div>
@@ -1236,15 +1377,15 @@
             </div>
             <div class="stat is-loading">
               <div class="n" id="statUsersPeakHour"><span class="sk-line" aria-hidden="true"></span></div>
-              <div class="l">Busiest hour (UTC)</div>
+              <div class="l" id="statUsersPeakHourLabel">Busiest hour</div>
             </div>
           </div>
 
           <section class="card">
             <h2>Active users over time</h2>
-            <p class="hint">
+            <p class="hint" id="usersOverTimeHint">
               Approximate unique visitors from presence heartbeats (anonymous + signed-in).
-              Data starts accumulating after this feature ships. Times use UTC.
+              Data starts accumulating after this feature ships. Times follow your timezone setting.
             </p>
             <div class="range-toggle" id="usersRangeToggle" role="group" aria-label="Time span">
               <button type="button" class="btn" data-users-span="24h">24h</button>
@@ -1262,8 +1403,8 @@
 
           <section class="card">
             <h2>Most active times</h2>
-            <p class="hint">
-              Average unique visitors by UTC hour over the last 30 days with data (heartbeats
+            <p class="hint" id="usersActiveHoursHint">
+              Average unique visitors by hour over the last 30 days with data (heartbeats
               also shape which hours feel busiest).
             </p>
             <div class="chart-wrap is-loading tall">
@@ -1281,17 +1422,18 @@
             </div>
           </section>
 
-          <div class="charts-row three">
+          <div class="charts-row two">
             <section class="card">
               <h2>Operating systems</h2>
-              <p class="hint">
-                Share of unique visitors by OS over the last 32 UTC days. Collected from visitors
+              <p class="hint" id="usersOsHint">
+                Share of unique visitors by OS over the last 32 days. Collected from visitors
                 who opt into the Hardware Survey (not Sentry). Only the OS family and a coarse
                 version are stored.
               </p>
               <div class="chart-wrap is-loading donut">
                 <canvas id="usersOsChart" aria-label="Visitors by operating system"></canvas>
               </div>
+              <div class="share-table-wrap" id="usersOsShare" hidden></div>
             </section>
             <section class="card">
               <h2>Browsers</h2>
@@ -1302,64 +1444,87 @@
               <div class="chart-wrap is-loading donut">
                 <canvas id="usersBrowserChart" aria-label="Visitors by browser"></canvas>
               </div>
-            </section>
-            <section class="card">
-              <h2>OS versions</h2>
-              <p class="hint">Unique visitors by OS version in the same window.</p>
-              <div style="overflow-x:auto">
-              <table>
-                <thead>
-                  <tr>
-                    <th>OS</th>
-                    <th>Version</th>
-                    <th class="num">Uniques</th>
-                    <th class="num">Heartbeats</th>
-                    <th class="num">Share</th>
-                  </tr>
-                </thead>
-                <tbody id="usersOsTableBody">
-                  <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
-                  <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
-                  <tr class="stats-row-skeleton" aria-hidden="true"><td><span class="sk-line" aria-hidden="true"></span></td><td><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td><td class="num"><span class="sk-line" aria-hidden="true"></span></td></tr>
-                </tbody>
-              </table>
-              </div>
+              <div class="share-table-wrap" id="usersBrowserShare" hidden></div>
             </section>
           </div>
 
-          <div class="charts-row three">
-            <section class="card">
-              <h2>RAM</h2>
-              <p class="hint">
-                Browser-reported device memory buckets from Hardware Survey opt-ins (Chrome/Edge).
-                Safari and Firefox usually report unknown. Desktop Chrome can report up to 32 GB+
-                (the browser’s top bucket, not an exact size). Android still typically tops out at 8 GB.
-              </p>
+          <section class="card">
+            <h2>OS versions</h2>
+            <p class="hint">
+              Reported builds grouped by operating system. Search any version; each group lists its
+              newest reported build. Scroll inside a group to see every version.
+            </p>
+            <div class="provider-search-row os-version-search-row">
+              <input
+                type="search"
+                id="osVersionSearch"
+                placeholder="Search versions…"
+                autocomplete="off"
+                aria-label="Search OS versions"
+              />
+            </div>
+            <div class="os-version-groups is-loading" id="usersOsVersionGroups" aria-busy="true">
+              <section class="os-version-group" aria-hidden="true">
+                <div class="os-version-group-head"><span class="sk-line"></span></div>
+                <div class="os-version-group-list"></div>
+              </section>
+              <section class="os-version-group" aria-hidden="true">
+                <div class="os-version-group-head"><span class="sk-line"></span></div>
+                <div class="os-version-group-list"></div>
+              </section>
+              <section class="os-version-group" aria-hidden="true">
+                <div class="os-version-group-head"><span class="sk-line"></span></div>
+                <div class="os-version-group-list"></div>
+              </section>
+            </div>
+          </section>
+
+          <section class="card">
+            <h2>RAM</h2>
+            <p class="hint">
+              Chrome and Edge expose RAM only as coarse buckets (typically 1, 2, 4, 8, 16, or 32 GB
+              via <code>deviceMemory</code> — not 5 GB or 6 GB). 32 GB+ is the browser’s top bucket,
+              not an exact size. Android still typically tops out at 8 GB. Older “8 GB+” pings are
+              counted as 8 GB. <strong>Not reported</strong> is Safari, Firefox, and other browsers
+              that do not provide <code>deviceMemory</code>.
+            </p>
+            <div class="hw-stat-body">
               <div class="chart-wrap is-loading tall">
                 <canvas id="usersRamChart" aria-label="Visitors by RAM bucket"></canvas>
               </div>
-            </section>
-            <section class="card">
-              <h2>CPU cores</h2>
-              <p class="hint">
-                Logical processors from the browser (<code>hardwareConcurrency</code>). Common on
-                most browsers; not the physical core count.
-              </p>
+              <div class="share-table-wrap" id="usersRamShare" hidden></div>
+            </div>
+          </section>
+          <section class="card">
+            <h2>CPU cores</h2>
+            <p class="hint">
+              Logical processors from the browser (<code>hardwareConcurrency</code>). Common on
+              most browsers; not the physical core count. <strong>Not reported</strong> means the
+              browser omitted that field.
+            </p>
+            <div class="hw-stat-body">
               <div class="chart-wrap is-loading tall">
                 <canvas id="usersCoresChart" aria-label="Visitors by CPU core count"></canvas>
               </div>
-            </section>
-            <section class="card">
-              <h2>CPU architecture</h2>
-              <p class="hint">
-                Coarse ISA from Client Hints or the user-agent (x64, x86, arm64, arm). Safari on
-                Apple Silicon often still reports Intel.
-              </p>
+              <div class="share-table-wrap" id="usersCoresShare" hidden></div>
+            </div>
+          </section>
+          <section class="card">
+            <h2>CPU architecture</h2>
+            <p class="hint">
+              Coarse ISA from Client Hints or the user-agent (x64, x86, ARM64, ARM). iPhone, iPad,
+              and Android are counted as ARM64 because those user-agents usually omit the ISA.
+              Safari on Apple Silicon desktops often still looks like Intel.
+              <strong>Not reported</strong> is typically desktop Safari (no Client Hints and no
+              architecture token in the user-agent).
+            </p>
+            <div class="hw-stat-body">
               <div class="chart-wrap is-loading tall">
                 <canvas id="usersArchChart" aria-label="Visitors by CPU architecture"></canvas>
               </div>
-            </section>
-          </div>
+              <div class="share-table-wrap" id="usersArchShare" hidden></div>
+            </div>
+          </section>
         </div>
 
         <div class="panel" id="panel-games" data-panel="games" hidden>
@@ -1432,7 +1597,7 @@
 
           <section class="card">
             <h2>Games added / removed over time</h2>
-            <p class="hint">Catalog size from UTC-day snapshots. Updated automatically on each link-check run.</p>
+            <p class="hint" id="gamesHistoryHint">Catalog size from daily snapshots. Updated automatically on each link-check run.</p>
             <div class="range-toggle" id="gamesHistoryRangeToggle" role="group" aria-label="History time span">
               <button type="button" class="btn" data-games-history-span="1w">1w</button>
               <button type="button" class="btn" data-games-history-span="2w">2w</button>
@@ -1494,6 +1659,7 @@
     </section>
   </div>
 
+  <script src="../datetime.js?v=tz-12h"></script>
   <script src="../vendor/chart.umd.min.js"></script>
   <script src="../game-db-search.js"></script>
   <script src="./games-stats.js"></script>
@@ -1504,6 +1670,6 @@
   <script src="../firebase-config.local.js"></script>
   <script src="../firebase-auth-ready.js"></script>
   <script src="../presence-client.js"></script>
-  <script src="./stats.js"></script>
+  <script src="./stats.js?v=tz-local"></script>
 </body>
 </html>

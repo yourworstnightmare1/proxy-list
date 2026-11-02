@@ -139,10 +139,10 @@
    * Independent of Sentry consent. Never stores the raw user-agent string.
    */
   var cachedPlatform = detectOsFromUa();
-  cachedPlatform.arch = detectArchFromUa();
+  cachedPlatform.arch = detectArchFromUa(null, cachedPlatform.os);
   cachedPlatform.browser = detectBrowserFromUa();
 
-  function detectArchFromUa(uaRaw) {
+  function detectArchFromUa(uaRaw, osHint) {
     var ua = "";
     try {
       ua = String(uaRaw || (global.navigator && global.navigator.userAgent) || "");
@@ -150,9 +150,19 @@
       ua = "";
     }
     if (/aarch64|arm64/i.test(ua)) return "arm64";
-    if (/\barm\b/i.test(ua)) return "arm";
+    if (/\barm\b/i.test(ua) && !/arm64|aarch64/i.test(ua)) return "arm";
     if (/Win64|x86_64|amd64|\bx64\b/i.test(ua)) return "x64";
     if (/WOW64|Win32|i686|i386|\bx86\b/i.test(ua)) return "x86";
+    var os = String(osHint || "");
+    if (!os) {
+      if (/\b(?:iPhone|iPad|iPod)\b/i.test(ua) || (/\bMacintosh\b/i.test(ua) && Number((global.navigator && global.navigator.maxTouchPoints) || 0) > 1)) {
+        os = "ios";
+      } else if (/\bAndroid\b/i.test(ua)) os = "android";
+    }
+    // Mobile UAs almost never include ISA. Current iOS is ARM64; Android phones are too
+    // unless the UA explicitly says x86 (emulator / some Chromebooks).
+    if (os === "ios") return "arm64";
+    if (os === "android" && !/x86|i686|amd64/i.test(ua)) return "arm64";
     return "unknown";
   }
 
@@ -203,21 +213,23 @@
     return "other";
   }
 
+  function ramBucketFromDeviceMemory(dm) {
+    if (!Number.isFinite(dm) || dm <= 0) return "unknown";
+    if (dm < 1) return "under_1gb";
+    if (dm >= 32) return "32gb+";
+    // Round to whole GB so non-power-of-two reports (5, 6, 12, …) are kept
+    // instead of snapping down to 4/8/16. Chrome still only emits 0.25/0.5/1/2/4/8/16/32.
+    var n = Math.round(dm);
+    if (n < 1) return "under_1gb";
+    if (n >= 32) return "32gb+";
+    return n + "gb";
+  }
+
   function detectHardware() {
     var ram = "unknown";
     try {
       var dm = Number(global.navigator && global.navigator.deviceMemory);
-      if (Number.isFinite(dm) && dm > 0) {
-        // Chrome 147+ desktop reports 2/4/8/16/32 (32 is the top bucket). Older
-        // Chrome capped at 8. Do not collapse 16/32 into 8.
-        if (dm >= 32) ram = "32gb+";
-        else if (dm >= 16) ram = "16gb";
-        else if (dm >= 8) ram = "8gb";
-        else if (dm >= 4) ram = "4gb";
-        else if (dm >= 2) ram = "2gb";
-        else if (dm >= 1) ram = "1gb";
-        else ram = "under_1gb";
-      }
+      ram = ramBucketFromDeviceMemory(dm);
     } catch (_) {}
     var cores = "unknown";
     try {
@@ -227,7 +239,7 @@
     return {
       ram: ram,
       cores: cores,
-      arch: cachedPlatform.arch || detectArchFromUa() || "unknown",
+      arch: cachedPlatform.arch || detectArchFromUa(null, cachedPlatform.os) || "unknown",
     };
   }
 
@@ -293,9 +305,9 @@
     if (platform === "windows" || out.os === "windows") {
       out.os = "windows";
       if (Number.isFinite(major)) {
+        // UA-CH platformVersion: 13+ is Windows 11; 1–12 are Windows 10 (not "Windows 12").
         if (major >= 13) out.osVersion = "11";
-        else if (major === 10) out.osVersion = "10";
-        else if (major > 0) out.osVersion = String(major);
+        else if (major >= 1) out.osVersion = "10";
       }
     } else if (platform === "macos" || platform === "mac os") {
       out.os = "macos";
@@ -313,6 +325,10 @@
     else if (a === "arm") out.arch = b === "32" ? "arm" : "arm64";
     else if (a === "x86" && b === "64") out.arch = "x64";
     else if (a === "x86") out.arch = "x86";
+    if (!a && (out.os === "ios" || out.arch === "unknown")) {
+      if (out.os === "ios") out.arch = "arm64";
+      else if (out.os === "android" && out.arch === "unknown") out.arch = "arm64";
+    }
     var brandList = (hints && (hints.fullVersionList || hints.brands)) || [];
     var hinted = browserFromBrands(brandList);
     if (hinted) out.browser = hinted;

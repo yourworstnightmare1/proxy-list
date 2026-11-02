@@ -363,6 +363,7 @@
     </div>
   </div>
 
+  <script src="../datetime.js?v=tz-12h"></script>
   <script src="../vendor/purify.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
@@ -466,6 +467,9 @@
       function formatWhen(ms) {
         if (!ms) return "—";
         try {
+          if (window.ProxyListDateTime && typeof window.ProxyListDateTime.formatDateTime === "function") {
+            return window.ProxyListDateTime.formatDateTime(new Date(ms)) || "—";
+          }
           return new Date(ms).toLocaleString(undefined, {
             dateStyle: "medium",
             timeStyle: "short",

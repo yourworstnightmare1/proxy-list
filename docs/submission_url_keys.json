@@ -1,6 +1,6 @@
 {
-  "version": "v8.0",
-  "revision": "r315",
+  "version": "v9.0",
+  "revision": "r316",
   "keys": [
     "http://auon00.xhost.ro",
     "http://brepsacodi.roostish.com",
@@ -5953,6 +5953,7 @@
     "https://hur0.s3.amazonaws.com/index.html",
     "https://hur0.s3.dualstack.us-east-1.amazonaws.com/index.html",
     "https://hur0.s3.us-east-1.amazonaws.com/index.html",
+    "https://hvtzw.reformarchive.com",
     "https://hvydb.altimiras-chile.cl",
     "https://hypergrid.minicdn.rest",
     "https://i.am.learning.streetdirectory.sg",

@@ -1,0 +1,2007 @@
+[
+  {
+    "name": "1 on 1 Soccer",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl1on1soccer.webp",
+    "description": "A single-player sports game where you play 1-on-1 soccer matches."
+  },
+  {
+    "name": "1 on 1 Tennis",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl1on1tennis.webp",
+    "description": "A single-player sports game where you play 1-on-1 tennis matches."
+  },
+  {
+    "name": "10 Bullets",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl10bullets.webp",
+    "description": "A single-player action game where you must survive using only 10 bullets against waves of enemies."
+  },
+  {
+    "name": "10 Minutes Till Dawn",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl10minutestildawn.webp",
+    "description": "A horror survival game where you must survive the night until dawn in a haunted environment."
+  },
+  {
+    "name": "100 Skibidi",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl100skibidistillwaterthosewhoknow.webp",
+    "description": "A chaotic multiplayer arcade game where players control toilets in a battle for dominance."
+  },
+  {
+    "name": "12 Mini Battles",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl12minibattles.webp",
+    "description": "An arcade game featuring 12 mini-battles with various action-packed challenges."
+  },
+  {
+    "name": "1v1.lol",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl1v1lol.webp",
+    "description": "A multiplayer battle royale shooter where players compete in 1v1 duels."
+  },
+  {
+    "name": "2048",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl2048.webp",
+    "description": "Slide numbered tiles on a grid to combine them and reach the 2048 tile in this addictive puzzle game."
+  },
+  {
+    "name": "2D Shooting",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl2dshooting(1).webp",
+    "description": "A 2D arcade shooter where you must defeat waves of enemies with your gun."
+  },
+  {
+    "name": "3 Slices 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl3slices2.webp",
+    "description": "Slice fruits and vegetables in this cooking arcade game."
+  },
+  {
+    "name": "4th and Goal",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl4thandgoal.webp",
+    "description": "A single-player sports game where you play football and aim for touchdowns."
+  },
+  {
+    "name": "60 Seconds Burger Run",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl60secondsburgerrun.webp",
+    "description": "A fast-paced arcade game where you must run and collect ingredients to make burgers in 60 seconds."
+  },
+  {
+    "name": "60 Seconds Santa Run",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl60secondssantarun.webp",
+    "description": "A holiday-themed arcade game where Santa must collect gifts in 60 seconds."
+  },
+  {
+    "name": "8 Ball Classic",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cl8ballclassic.webp",
+    "description": "A single-player sports game where you play 8-ball pool against computer opponents."
+  },
+  {
+    "name": "A Dance of Fire and Ice",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clADOFAI.webp",
+    "description": "A single-player adventure game set in a fantasy world with elements of fire and ice."
+  },
+  {
+    "name": "A Dark Room",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clADarkRoom.webp",
+    "description": "A single-player horror survival game where you must escape a dark room."
+  },
+  {
+    "name": "A Day in the Office",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cladayintheoffice.webp",
+    "description": "A single-player simulation game where you experience a day in an office environment."
+  },
+  {
+    "name": "A Small World Cup",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clasmallworldcup.webp",
+    "description": "A sports arcade game where players compete in a miniature soccer tournament."
+  },
+  {
+    "name": "Abandoned",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clabandoned.webp",
+    "description": "A single-player horror survival game where you explore an abandoned building."
+  },
+  {
+    "name": "Ace Gangster Taxi",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clacegangstertaxi.webp",
+    "description": "A single-player simulation game where you drive a taxi and complete missions."
+  },
+  {
+    "name": "Achievement Unlocked",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clachievementunlocked.webp",
+    "description": "A casual arcade game where you unlock achievements by completing various tasks."
+  },
+  {
+    "name": "Achievement Unlocked 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clachievmentunlocked2.webp",
+    "description": "A casual arcade game where you unlock achievements by completing various tasks."
+  },
+  {
+    "name": "Achievement Unlocked 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clachievmentunlocked3.webp",
+    "description": "A casual arcade game where you unlock achievements by completing various tasks."
+  },
+  {
+    "name": "Achilles 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clachillies2.webp",
+    "description": "A single-player action adventure game where you play as Achilles in a mythological setting."
+  },
+  {
+    "name": "Advent Neon",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cladventneon.webp",
+    "description": "A neon-themed arcade runner game where you navigate through neon-lit environments."
+  },
+  {
+    "name": "Age of War",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clageofwar.webp",
+    "description": "A single-player strategy game where you defend your base against waves of enemies."
+  },
+  {
+    "name": "Age of War 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clageofwar2.webp",
+    "description": "A single-player strategy game where you defend your base against waves of enemies."
+  },
+  {
+    "name": "Ages of Conflict",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clagesofconflict.webp",
+    "description": "A single-player strategy game where you lead armies in historical conflicts."
+  },
+  {
+    "name": "Ahoy Survival",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clahoysurvival.webp",
+    "description": "A single-player survival adventure game where you must survive on a deserted island."
+  },
+  {
+    "name": "Akumanor Gaiden",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clakumanorgaiden.webp",
+    "description": "An RPG adventure game with a unique storyline and character development."
+  },
+  {
+    "name": "Alien Hominid",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clalienhominid.webp",
+    "description": "A top-down shooter game featuring intense action and alien combat."
+  },
+  {
+    "name": "Alien Sky Invasion",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clalienskyinvasion.webp",
+    "description": "A shooter game where players defend against waves of invading aliens."
+  },
+  {
+    "name": "Alien Transporter",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clalientransporter.webp",
+    "description": "A puzzle game where players transport aliens to their destinations in a maze."
+  },
+  {
+    "name": "Alien vs Predator",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clalienvspredator.webp",
+    "description": "An action game where players choose to be either an alien or a predator in a deadly battle."
+  },
+  {
+    "name": "Allocation",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clallocation.webp",
+    "description": "A puzzle game where players allocate resources to solve challenges."
+  },
+  {
+    "name": "Amaze",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clamaze.webp",
+    "description": "A maze game where players navigate through increasingly complex paths."
+  },
+  {
+    "name": "Amidst the Sky",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clamidstthesky.webp",
+    "description": "An adventure game set in a fantastical sky world with exploration and combat."
+  },
+  {
+    "name": "Amigo Pancho",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clamigopancho.webp",
+    "description": "A platformer game where players guide a character through various levels."
+  },
+  {
+    "name": "Amigo Pancho 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clamigopancho2.webp",
+    "description": "The sequel to Amigo Pancho with new levels and challenges."
+  },
+  {
+    "name": "Amigo Pancho 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clamigopancho3.webp",
+    "description": "The third installment in the Amigo Pancho series with enhanced gameplay."
+  },
+  {
+    "name": "Amigo Pancho 4",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clamigopancho4.webp",
+    "description": "The fourth game in the Amigo Pancho series, continuing the platforming adventure."
+  },
+  {
+    "name": "Amigo Pancho 5",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clamigopancho5.webp",
+    "description": "The fifth game in the Amigo Pancho series, featuring new levels and mechanics."
+  },
+  {
+    "name": "Amigo Pancho 6",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clamigopancho6.webp",
+    "description": "The sixth game in the Amigo Pancho series, expanding on the platforming experience."
+  },
+  {
+    "name": "Amigo Pancho 7",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clamigopancho7.webp",
+    "description": "The seventh game in the Amigo Pancho series, with new challenges and levels."
+  },
+  {
+    "name": "Amorphous+",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clamorphous.webp",
+    "description": "A puzzle game where players manipulate amorphous shapes to solve challenges."
+  },
+  {
+    "name": "Ancient Sins",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clancientsins.webp",
+    "description": "An RPG adventure game set in a historical fantasy world with deep lore."
+  },
+  {
+    "name": "Another World",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clanotherworld.webp",
+    "description": "A classic platformer adventure game with a unique storyline and challenging gameplay."
+  },
+  {
+    "name": "Apotris",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clapotris.webp",
+    "description": "A puzzle game where players rotate tiles to match colors and clear levels."
+  },
+  {
+    "name": "Apple Shooter",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clappleshooter.webp",
+    "description": "A casual arcade game where players aim and shoot apples at targets."
+  },
+  {
+    "name": "Apple Worm",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clappleworm.webp",
+    "description": "A casual arcade game where players control a worm eating apples."
+  },
+  {
+    "name": "Aquapark.io",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/claquaparkio.webp",
+    "description": "A multiplayer IO game where players manage and expand their own water park."
+  },
+  {
+    "name": "Archery World Tour",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clarcheryworldtour.webp",
+    "description": "A sports arcade game where players compete in archery tournaments around the world."
+  },
+  {
+    "name": "Are We There Yet?",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clarewethereyet.webp",
+    "description": "An adventure game where players navigate through various environments to reach their destination."
+  },
+  {
+    "name": "Armor Mayhem 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clarmormayhem2.webp",
+    "description": "An action game where players control armored vehicles in intense combat scenarios."
+  },
+  {
+    "name": "Asteroids",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clasteroids.webp",
+    "description": "A classic arcade game where players control a spaceship and destroy asteroids."
+  },
+  {
+    "name": "Attack Hole",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clattackhole.webp",
+    "description": "A casual arcade game where players aim to hit a target by throwing objects."
+  },
+  {
+    "name": "Avalanche",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clavalanche.webp",
+    "description": "A casual arcade game where players control a character navigating through an avalanche."
+  },
+  {
+    "name": "Awesome Pirates",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clAwesomePirates.webp",
+    "description": "An adventure game where players control pirates on a quest for treasure."
+  },
+  {
+    "name": "Awesome Planes",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clawesomeplanes.webp",
+    "description": "A casual arcade game where players control airplanes and perform stunts."
+  },
+  {
+    "name": "Awesome Tanks",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clawesometanks.webp",
+    "description": "A casual arcade game where players control tanks and engage in combat."
+  },
+  {
+    "name": "Awesome Tanks 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clawesometanks2.webp",
+    "description": "The sequel to Awesome Tanks with new tanks and levels."
+  },
+  {
+    "name": "B3313",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clB3313.webp",
+    "description": "A casual arcade game with unique mechanics and challenges."
+  },
+  {
+    "name": "Babel Tower",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbabeltower.webp",
+    "description": "A puzzle game where players build a tower to reach the top."
+  },
+  {
+    "name": "Baby Chicco Adventure",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbabychiccoadventure.webp",
+    "description": "An adventure game where players guide a baby through various challenges."
+  },
+  {
+    "name": "Baby Kaizo",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbabykaizo.webp",
+    "description": "Navigate a challenging platformer inspired by classic Kaizo-style games."
+  },
+  {
+    "name": "Backrooms",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbackrooms.webp",
+    "description": "Explore the eerie and disorienting Backrooms in this atmospheric horror escape game."
+  },
+  {
+    "name": "Backrooms 2D",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbackrooms2D.webp",
+    "description": "Navigate the unsettling and maze-like Backrooms in this 2D horror escape game."
+  },
+  {
+    "name": "Bacon May Die",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbaconmaydie.webp",
+    "description": "Help bacon slices escape from a frying pan in this action-packed arcade game."
+  },
+  {
+    "name": "Bad Ice Cream",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbadicecream.webp",
+    "description": "Drive a truck through hordes of zombies while collecting ice cream in this action-packed game."
+  },
+  {
+    "name": "Bad Monday Simulator",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbadmondaysimulator.webp",
+    "description": "Experience the chaos of a bad Monday in this quirky simulation game."
+  },
+  {
+    "name": "Baldi's Basics",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbaldisbasics.webp",
+    "description": "Navigate a school filled with puzzles and chases in this horror escape game."
+  },
+  {
+    "name": "Ball Blast",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clballblast.webp",
+    "description": "Shoot balls to clear levels in this fast-paced arcade game."
+  },
+  {
+    "name": "Balls and Bricks",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clballsandbricks.webp",
+    "description": "Break bricks by bouncing balls in this classic arcade puzzle game."
+  },
+  {
+    "name": "Banana Simulator",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbananasimulator.webp",
+    "description": "Experience the life of a banana in this quirky simulation game."
+  },
+  {
+    "name": "Bandit Gunslingers",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbanditgunslingers.webp",
+    "description": "Engage in wild west shootouts with bandits in this multiplayer action game."
+  },
+  {
+    "name": "Bank Breakout 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbankbreakout2.webp",
+    "description": "Break out of prison and escape in this action-packed arcade game."
+  },
+  {
+    "name": "Bank Robbery 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbankrobbery2.webp",
+    "description": "Plan and execute a bank robbery in this action-packed simulation game."
+  },
+  {
+    "name": "Barry Has a Secret",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbarryhasasecret.webp",
+    "description": "Discover Barry's secret in this intriguing adventure puzzle game."
+  },
+  {
+    "name": "BAS",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbas.webp",
+    "description": "Solve puzzles and uncover mysteries in this adventure puzzle game."
+  },
+  {
+    "name": "Baseball Bros",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbaseballbros.webp",
+    "description": "Play a fast-paced multiplayer baseball game with friends."
+  },
+  {
+    "name": "Basket Battle",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbasketbattle.webp",
+    "description": "Compete in intense basketball battles in this multiplayer sports game."
+  },
+  {
+    "name": "Basket Bros",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbasketbros.webp",
+    "description": "Play a fun and fast-paced basketball game with friends."
+  },
+  {
+    "name": "Basket Random",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbasketrandom.webp",
+    "description": "Engage in chaotic and random basketball matches in this multiplayer sports game."
+  },
+  {
+    "name": "Basket Slam Dunk 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbasketslamdunk2.webp",
+    "description": "Show off your dunk skills in this exciting basketball game."
+  },
+  {
+    "name": "Basketball FRVR",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbasketballfrvr.webp",
+    "description": "Play a realistic basketball game with friends in this multiplayer sports game."
+  },
+  {
+    "name": "Basketball Legends",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbasketballlegends.webp",
+    "description": "Compete in basketball matches and become a legend in this multiplayer sports game."
+  },
+  {
+    "name": "Basketball Stars",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbasketballstars.webp",
+    "description": "Showcase your basketball skills in this competitive multiplayer sports game."
+  },
+  {
+    "name": "Batter Up",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbatterup.webp",
+    "description": "Play a realistic baseball game with friends in this multiplayer sports game."
+  },
+  {
+    "name": "Battle Simulator",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbattlesim.webp",
+    "description": "Simulate battles and strategize in this multiplayer simulation game."
+  },
+  {
+    "name": "Battles",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbattles.webp",
+    "description": "Engage in strategic battles with players worldwide in this multiplayer strategy game."
+  },
+  {
+    "name": "Bazooka Boy",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbazookaboy.webp",
+    "description": "Defend your base from invaders using a bazooka in this action-packed arcade game."
+  },
+  {
+    "name": "Bearbarians",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbearbarians.webp",
+    "description": "Defend your village from invading bearbarians in this action-packed arcade game."
+  },
+  {
+    "name": "Big Ice Tower Tiny Square",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbigicetowertinysquare.webp",
+    "description": "Navigate Tiny Square through a giant ice tower in this challenging puzzle game."
+  },
+  {
+    "name": "Big Neon Tower Tiny Square",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbigneontowertinysquare.webp",
+    "description": "Guide Tiny Square through a neon-lit tower in this addictive puzzle game."
+  },
+  {
+    "name": "Big Shot Boxing",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbigshotboxing.webp",
+    "description": "Step into the ring and box your way to victory in this arcade boxing game."
+  },
+  {
+    "name": "Big Time Butter Baron",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clBig_Time_Butter_Baron.webp",
+    "description": "Manage a butter empire and compete against other barons in this simulation game."
+  },
+  {
+    "name": "Big Tower Tiny Square",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbigtowertinysquare.webp",
+    "description": "Help Tiny Square climb a massive tower by navigating through obstacles in this puzzle game."
+  },
+  {
+    "name": "Big Tower Tiny Square 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbigtowertinysquare2.webp",
+    "description": "Continue Tiny Square's journey in a new tower filled with challenges in this puzzle game."
+  },
+  {
+    "name": "Bit Planes",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbitplanes.webp",
+    "description": "Fly and battle with planes in this arcade action game."
+  },
+  {
+    "name": "Blackjack",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblackjack.webp",
+    "description": "Play a classic game of blackjack against the dealer in this card game."
+  },
+  {
+    "name": "Blackjack Battle",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblackjackbattle.webp",
+    "description": "Compete against others in a multiplayer blackjack battle in this card game."
+  },
+  {
+    "name": "Blacksmith Lab",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblacksmithlab.webp",
+    "description": "Create and upgrade weapons in a blacksmith lab simulation game."
+  },
+  {
+    "name": "Blastronaut",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblastronaut.webp",
+    "description": "Navigate a blastronaut through space, avoiding obstacles in this arcade game."
+  },
+  {
+    "name": "Blob's Story 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblobsstory2.webp",
+    "description": "Continue Blob's adventure in this sequel filled with challenges and puzzles."
+  },
+  {
+    "name": "Block Blast",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblockblast.webp",
+    "description": "Match and blast blocks in this addictive puzzle game."
+  },
+  {
+    "name": "Block the Pig",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblockthepig.webp",
+    "description": "Block the pig from reaching the cheese in this challenging puzzle game."
+  },
+  {
+    "name": "Blockcraft Parkour",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblockcraftparkour.webp",
+    "description": "Navigate through blocky environments in this parkour adventure game."
+  },
+  {
+    "name": "Blockcraft Shooter",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblockcraftshooter.webp",
+    "description": "Engage in shooter combat in a blocky world in this action game."
+  },
+  {
+    "name": "Blockpost",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblockpost.webp",
+    "description": "Defend your block post from waves of enemies in this strategy game."
+  },
+  {
+    "name": "Blocky Snakes",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clblockysnakes.webp",
+    "description": "Control a blocky snake and eat food to grow longer in this casual game."
+  },
+  {
+    "name": "Bubble Tanks",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbubbletanks.webp",
+    "description": "Shoot bubbles at opponents in this arcade action game."
+  },
+  {
+    "name": "Bubble Tanks 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbubbletanks2.webp",
+    "description": "Return to bubble tank battles with new tanks and upgrades in this arcade game."
+  },
+  {
+    "name": "Bubble Tanks 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbubbletanks3.webp",
+    "description": "Continue the bubble tank action with new features in this arcade game."
+  },
+  {
+    "name": "Bubble Tanks Arenas",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbubbletanksarenas.webp",
+    "description": "Compete in bubble tank arenas against other players in this multiplayer arcade game."
+  },
+  {
+    "name": "Bubble Tanks TD",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbubbletankstd.webp",
+    "description": "Defend your base by placing tanks that shoot bubbles at incoming enemies in this tower defense game."
+  },
+  {
+    "name": "Bubsy",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbubsy.webp",
+    "description": "Navigate Bubsy through various levels filled with enemies and obstacles in this classic platformer."
+  },
+  {
+    "name": "Bunny Land",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbunnyland.webp",
+    "description": "Help a bunny navigate through various levels filled with challenges in this platformer adventure game."
+  },
+  {
+    "name": "Burger and Frights",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clburgerandfrights.webp",
+    "description": "Solve puzzles and escape a haunted burger restaurant in this horror adventure game."
+  },
+  {
+    "name": "Burrito Bison",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clburritobison.webp",
+    "description": "Control Burrito Bison as he navigates through levels filled with enemies and obstacles in this platformer adventure game."
+  },
+  {
+    "name": "Burrito Bison 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clburritobison2.webp",
+    "description": "Continue the adventure with Burrito Bison in this sequel platformer game filled with new challenges."
+  },
+  {
+    "name": "Burrito Bison Revenge",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clburritobisonrevenge.webp",
+    "description": "Revenge is served as Burrito Bison takes on new challenges in this platformer adventure game."
+  },
+  {
+    "name": "Burrito Bison: Launcha Libre",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clburritobisonlaunchalibre.webp",
+    "description": "Help Burrito Bison reach the end of each level in this platformer adventure game."
+  },
+  {
+    "name": "Bushido Blade",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clbushidoblade.webp",
+    "description": "Engage in sword fighting with various characters in this action-packed fighting game."
+  },
+  {
+    "name": "Cactus McCoy",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcactusmccoy.webp",
+    "description": "Control Cactus McCoy as he navigates through various levels filled with enemies and obstacles in this platformer adventure game."
+  },
+  {
+    "name": "Cactus McCoy 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcactusmccoy2.webp",
+    "description": "Continue the adventure with Cactus McCoy in this sequel platformer game filled with new challenges."
+  },
+  {
+    "name": "Cannon Balls 3D",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcannonballs3d.webp",
+    "description": "Shoot cannonballs at targets in this 3D arcade action game."
+  },
+  {
+    "name": "Cannon Fodder",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcannonfodder.webp",
+    "description": "Control soldiers in a top-down shooter where you must survive waves of enemies in this arcade action game."
+  },
+  {
+    "name": "Capybara Clicker",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcapybaraclicker.webp",
+    "description": "Click to collect capybaras and unlock new upgrades in this idle clicker game."
+  },
+  {
+    "name": "Car Crash 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcarcrash3.webp",
+    "description": "Experience the thrill of car crashes in this arcade action game."
+  },
+  {
+    "name": "Car Drawing",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcardrawing.webp",
+    "description": "Draw cars in this casual drawing game."
+  },
+  {
+    "name": "Car Eats Car 2 Deluxe",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcareatscar2deluxe.webp",
+    "description": "Drive and crash cars in this action-packed arcade game."
+  },
+  {
+    "name": "Car King Arena",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcarkingarena.webp",
+    "description": "Compete in car races and arena battles in this multiplayer arcade game."
+  },
+  {
+    "name": "Car Mods",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcarmods.webp",
+    "description": "Customize and build cars in this simulation building game."
+  },
+  {
+    "name": "Car Stunts Driving",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcarstuntsdriving.webp",
+    "description": "Perform stunts and tricks with cars in this arcade driving game."
+  },
+  {
+    "name": "Castle Wars: Modern",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcastlewarsmodern.webp",
+    "description": "Command modern armies and build your castle in this strategy simulation multiplayer game."
+  },
+  {
+    "name": "Cats Love Cake 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcatslovecake2.webp",
+    "description": "Match cakes and solve puzzles in this casual puzzle game."
+  },
+  {
+    "name": "Cave Story",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcavestory.webp",
+    "description": "Explore a cave and uncover its secrets in this platformer adventure game."
+  },
+  {
+    "name": "Cellar Door",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcellardoor.webp",
+    "description": "Solve puzzles to escape a mysterious cellar in this adventure game."
+  },
+  {
+    "name": "Chaos Faction 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clchaosfaction2.webp",
+    "description": "Engage in faction warfare in this action multiplayer strategy game."
+  },
+  {
+    "name": "Checkers",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcheckers.webp",
+    "description": "Play the classic board game of checkers in this strategy game."
+  },
+  {
+    "name": "Cheshire in a Chatroom",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcheshireinachatroom.webp",
+    "description": "Solve puzzles and navigate through a chatroom in this adventure puzzle game."
+  },
+  {
+    "name": "Chess",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clchess.webp",
+    "description": "Play the classic board game of chess in this strategy game."
+  },
+  {
+    "name": "Chess Classic",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clchessclassic.webp",
+    "description": "Play the classic board game of chess in this strategy game."
+  },
+  {
+    "name": "Chibi Knight",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clchibiknight.webp",
+    "description": "Navigate through levels as a chibi knight in this platformer adventure game."
+  },
+  {
+    "name": "Chicken Scream",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clchickenscream.webp",
+    "description": "Solve puzzles and escape a horror scenario in this adventure game."
+  },
+  {
+    "name": "Chicken War",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clchickenwar.webp",
+    "description": "Engage in strategic battles with chickens in this multiplayer action strategy game."
+  },
+  {
+    "name": "Choppy Orc",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clchoppyorc.webp",
+    "description": "Control an orc and chop enemies in this action arcade game."
+  },
+  {
+    "name": "CircloO 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clCircloO2.webp",
+    "description": "Navigate a ball through levels in this puzzle arcade game."
+  },
+  {
+    "name": "Civiballs",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clciviballs.webp",
+    "description": "Solve puzzles by launching balls in this arcade puzzle game."
+  },
+  {
+    "name": "Civiballs 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clciviballs2.webp",
+    "description": "Continue solving puzzles by launching balls in this sequel arcade puzzle game."
+  },
+  {
+    "name": "Clear Vision",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clclearvision.webp",
+    "description": "Match colored lenses to clear the vision in this addictive puzzle game."
+  },
+  {
+    "name": "Clear Vision 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clclearvision2.webp",
+    "description": "Continue the challenge of matching colored lenses in this sequel puzzle game."
+  },
+  {
+    "name": "Clear Vision 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clclearvision3.webp",
+    "description": "New puzzles await in the third installment of the Clear Vision series."
+  },
+  {
+    "name": "Clear Vision 4",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clclearvision4.webp",
+    "description": "The fourth game in the Clear Vision series offers more challenging puzzles."
+  },
+  {
+    "name": "Clear Vision 5",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clclearvision5.webp",
+    "description": "The fifth game in the Clear Vision series continues the puzzle fun."
+  },
+  {
+    "name": "Cluster Rush",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clclusterrush.webp",
+    "description": "Compete in a fast-paced arcade game where clusters of objects rush towards you."
+  },
+  {
+    "name": "Coffee Maker",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcoffeemaker.webp",
+    "description": "Manage a coffee shop and serve customers in this casual simulation game."
+  },
+  {
+    "name": "Color Burst 3D",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcolorburst3d.webp",
+    "description": "Match colors in a 3D environment to clear levels in this puzzle game."
+  },
+  {
+    "name": "Color Match",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcolormatch.webp",
+    "description": "Match colors in a fun and engaging puzzle game."
+  },
+  {
+    "name": "Color Water Sort 3D",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcolorwatersort3d.webp",
+    "description": "Sort colored water in containers to match colors in this 3D puzzle game."
+  },
+  {
+    "name": "Combo Pool",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcombopool.webp",
+    "description": "Play a fast-paced arcade pool game with combo shots."
+  },
+  {
+    "name": "Cookie Clicker",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcookieclicker.webp",
+    "description": "Click to bake cookies and upgrade your bakery in this idle game."
+  },
+  {
+    "name": "Core Ball",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcoreball.webp",
+    "description": "Play a unique arcade sports game where you control a core ball."
+  },
+  {
+    "name": "Counter Snipe",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcountersnipe.webp",
+    "description": "Engage in sniper combat in this casual shooter game."
+  },
+  {
+    "name": "Crazy Cars",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcrazycars.webp",
+    "description": "Race and drift in a chaotic car racing game."
+  },
+  {
+    "name": "Crazy Cattle 3D",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcrazycattle3d.webp",
+    "description": "Herd cattle in a 3D environment in this casual arcade game."
+  },
+  {
+    "name": "Crazy Chicken 3D",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcrazychicken3D.webp",
+    "description": "Guide a chicken through obstacles in this 3D arcade game."
+  },
+  {
+    "name": "Crunchball 3000",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcrunchball3000.webp",
+    "description": "Play a futuristic sports game with unique rules and mechanics."
+  },
+  {
+    "name": "Curveball",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcurveball.webp",
+    "description": "Play a unique twist on baseball in this arcade sports game."
+  },
+  {
+    "name": "Cyber Bun Racing",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clcyberbungracing.webp",
+    "description": "Race through futuristic tracks in this arcade racing game."
+  },
+  {
+    "name": "Dad N Me",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldadnme.webp",
+    "description": "Embark on an adventure with your dad in this casual game."
+  },
+  {
+    "name": "Dank Tomb",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldanktomb.webp",
+    "description": "Solve puzzles and navigate a dank tomb in this adventure game."
+  },
+  {
+    "name": "Dead Estate",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldeadestate.webp",
+    "description": "Survive in a haunted estate filled with deadly threats."
+  },
+  {
+    "name": "Decision",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldecision.webp",
+    "description": "Make decisions to navigate through a challenging puzzle game."
+  },
+  {
+    "name": "Decision 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldecision2.webp",
+    "description": "The sequel to Decision with new puzzles and challenges."
+  },
+  {
+    "name": "Decision 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldecision3.webp",
+    "description": "Manage resources and make decisions to survive in a post-apocalyptic world."
+  },
+  {
+    "name": "Decision: Medieval",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldecisionmedieval.webp",
+    "description": "Navigate the challenges of medieval life by making critical decisions."
+  },
+  {
+    "name": "Deep Sleep",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldeepsleep.webp",
+    "description": "Solve puzzles to escape a mysterious and eerie dream."
+  },
+  {
+    "name": "Deeper Sleep",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldeepersleep.webp",
+    "description": "Solve puzzles to escape a terrifying dream world."
+  },
+  {
+    "name": "Deepest Sword",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldeepestsword.webp",
+    "description": "Embark on a quest to retrieve the legendary Deepest Sword."
+  },
+  {
+    "name": "Defend Your Castle",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldefendyourcastle.webp",
+    "description": "Build defenses to protect your castle from invading enemies."
+  },
+  {
+    "name": "Defend Your Nuts",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldefendyournuts.webp",
+    "description": "Protect your nuts from invaders in this humorous defense game."
+  },
+  {
+    "name": "Defend Your Nuts 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldefendyournuts2.webp",
+    "description": "Return to defend your nuts in this sequel to the original nuts defense game."
+  },
+  {
+    "name": "Deltarune",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldeltarune.webp",
+    "description": "Embark on a journey with Kris in a mysterious world filled with unique characters."
+  },
+  {
+    "name": "Diamond Hollow",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldiamondhollow.webp",
+    "description": "Explore a mysterious town and solve puzzles to uncover its secrets."
+  },
+  {
+    "name": "Diamond Hollow 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldiamondhollow2.webp",
+    "description": "Continue the adventure in Diamond Hollow, solving puzzles and uncovering mysteries."
+  },
+  {
+    "name": "Die in the Dungeon",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldieinthedungeon.webp",
+    "description": "Survive in a dungeon filled with deadly traps and enemies."
+  },
+  {
+    "name": "Dig Deep",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldigdeep.webp",
+    "description": "Dig as deep as you can to uncover treasures and avoid obstacles."
+  },
+  {
+    "name": "Dig to China",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldigtochina.webp",
+    "description": "Dig through layers of the Earth to reach China in this fun arcade game."
+  },
+  {
+    "name": "Dino Dudes",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldinodudes.webp",
+    "description": "Fight dinosaurs and explore a prehistoric world in this action-packed game."
+  },
+  {
+    "name": "Dire Decks",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldiredecks.webp",
+    "description": "Build and battle with decks of cards in this strategic card game."
+  },
+  {
+    "name": "Doge Miner",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldogeminer.webp",
+    "description": "Click to mine and upgrade in this idle game featuring Doge."
+  },
+  {
+    "name": "Doge Miner 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldogeminer2.webp",
+    "description": "Return to the idle mining game with new upgrades and features."
+  },
+  {
+    "name": "Don't Escape",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldontescape.webp",
+    "description": "Solve puzzles to escape from a locked room in this challenging game."
+  },
+  {
+    "name": "Don't Escape 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldontescape2.webp",
+    "description": "Continue the escape room challenges in this sequel with new puzzles."
+  },
+  {
+    "name": "Don't Escape 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldontescape3.webp",
+    "description": "Face new escape room challenges in the third installment of the series."
+  },
+  {
+    "name": "Douchebag Life",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldouchebaglife.webp",
+    "description": "Live the life of a wealthy douchebag, making choices that affect your lifestyle."
+  },
+  {
+    "name": "Douchebag Workout",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldouchebagworkout.webp",
+    "description": "Work out and humiliate your gym instructor in this humorous action game."
+  },
+  {
+    "name": "Down the Mountain",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldownthemountain.webp",
+    "description": "Navigate through a mountain and solve puzzles to reach the bottom."
+  },
+  {
+    "name": "Draw Climber",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldrawclimber.webp",
+    "description": "Draw lines to help the climber reach the top of the screen."
+  },
+  {
+    "name": "Draw the Line",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldrawtheline.webp",
+    "description": "Draw lines to guide the character through obstacles in each level."
+  },
+  {
+    "name": "Dreader",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldreader.webp",
+    "description": "Solve puzzles in a haunted house to uncover its dark secrets."
+  },
+  {
+    "name": "Dreadhead Parkour",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldreadheadparkour.webp",
+    "description": "Navigate through urban environments using parkour skills in this action game."
+  },
+  {
+    "name": "Drift Boss",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldriftboss.webp",
+    "description": "Master the art of drifting in this racing simulation game."
+  },
+  {
+    "name": "Drive Mad",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldrivemad.webp",
+    "description": "Drive through various tracks and obstacles in this chaotic racing game."
+  },
+  {
+    "name": "Driven Wild",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldrivenwild.webp",
+    "description": "Experience the thrill of off-road racing in this simulation game."
+  },
+  {
+    "name": "Dubstep",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldubstep.webp",
+    "description": "Play along with music and navigate through a rhythmic arcade game."
+  },
+  {
+    "name": "Duck Life",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clducklife.webp",
+    "description": "Train and race ducks in various events to become the ultimate champion in this simulation sports game."
+  },
+  {
+    "name": "Duck Life 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clducklife2.webp",
+    "description": "Train and race ducks in various events to become the ultimate champion in this simulation sports game."
+  },
+  {
+    "name": "Duck Life 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clducklife3.webp",
+    "description": "Train and race ducks in various events to become the ultimate champion in this simulation sports game."
+  },
+  {
+    "name": "Duck Life 4",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clducklife4.webp",
+    "description": "Train and race ducks in various events to become the ultimate champion in this simulation sports game."
+  },
+  {
+    "name": "Duck Life 5",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clducklfe5.webp",
+    "description": "Train and race ducks in various events to become the ultimate champion in this simulation sports game."
+  },
+  {
+    "name": "Dud",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldud.webp",
+    "description": "A simple yet addictive arcade game where you control a character with a single action."
+  },
+  {
+    "name": "Dungeon Raid",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldungeonraid.webp",
+    "description": "Explore dungeons, defeat enemies, and collect loot in this action-adventure game."
+  },
+  {
+    "name": "Dunk Shot",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldunkshot.webp",
+    "description": "A basketball arcade game where you aim and shoot hoops with precision."
+  },
+  {
+    "name": "Dusk Child",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clduskchild.webp",
+    "description": "Solve puzzles and navigate through a mysterious world in this adventure puzzle game."
+  },
+  {
+    "name": "Dying Dreams",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cldyingdreams.webp",
+    "description": "Explore a dream world and solve puzzles to uncover the truth in this adventure puzzle game."
+  },
+  {
+    "name": "Eagle Ride",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cleagleride.webp",
+    "description": "Embark on an action-packed adventure as you ride an eagle through various challenges."
+  },
+  {
+    "name": "Earth Taken",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clearthtaken.webp",
+    "description": "Defend Earth from alien invasions in this strategy simulation game."
+  },
+  {
+    "name": "Earth Taken 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clearthtaken2.webp",
+    "description": "Continue the fight against alien invaders in this strategy simulation sequel."
+  },
+  {
+    "name": "Earth Taken 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clearthtaken3.webp",
+    "description": "The third installment in the Earth Taken series, defending Earth from alien threats."
+  },
+  {
+    "name": "Edelweiss",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cledelweiss.webp",
+    "description": "Solve intricate puzzles and navigate through a mysterious world in this adventure puzzle game."
+  },
+  {
+    "name": "Edy's Car Simulator",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cledyscarsimulator.webp",
+    "description": "Drive various cars in a realistic driving simulator."
+  },
+  {
+    "name": "Effing Hail",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cleffinghail.webp",
+    "description": "A chaotic action game where you control hailstones to cause mayhem."
+  },
+  {
+    "name": "Effing Machines",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cleffingmachines.webp",
+    "description": "A chaotic action game where you control various machines to cause destruction."
+  },
+  {
+    "name": "Eggy Car",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cleggycar.webp",
+    "description": "Drive a car made of eggs and navigate through various levels in this arcade game."
+  },
+  {
+    "name": "Elastic Face",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clelasticface.webp",
+    "description": "Stretch and manipulate a face in this fun and quirky arcade game."
+  },
+  {
+    "name": "Electric Man 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clelectricman2.webp",
+    "description": "Control a character with electric powers in this action-packed arcade game."
+  },
+  {
+    "name": "Enchain",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clenchain.webp",
+    "description": "Solve puzzles by connecting chains in this challenging puzzle game."
+  },
+  {
+    "name": "Endless War 4",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clendlesswar4.webp",
+    "description": "Command armies and strategize in this turn-based strategy simulation game."
+  },
+  {
+    "name": "Endless War 5",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clendlesswar5.webp",
+    "description": "The fifth installment in the Endless War series, featuring new strategies and armies."
+  },
+  {
+    "name": "Endless War 7",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clendlesswar7.webp",
+    "description": "The seventh installment in the Endless War series, offering new strategic challenges."
+  },
+  {
+    "name": "Epic Battle Fantasy 5",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clepicbattlefantasy5.webp",
+    "description": "Embark on a fantasy adventure and engage in epic battles in this RPG strategy game."
+  },
+  {
+    "name": "Escalating Duel",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clescalatingduel.webp",
+    "description": "Engage in escalating duels with increasing intensity in this action arcade game."
+  },
+  {
+    "name": "Escape Road",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clescaperoad.webp",
+    "description": "Drive through dangerous roads and escape in this action arcade game."
+  },
+  {
+    "name": "Escape Road 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clescaperoad2.webp",
+    "description": "The sequel to Escape Road, featuring new challenges and levels in this action arcade game."
+  },
+  {
+    "name": "Evil Glitch",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clevilglitch.webp",
+    "description": "Navigate through a glitchy world and battle enemies in this action-adventure game."
+  },
+  {
+    "name": "Evolution",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clevolution.webp",
+    "description": "Simulate the process of evolution in this strategy simulation game."
+  },
+  {
+    "name": "Factory Balls",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfactoryballs.webp",
+    "description": "Solve puzzles by painting balls to match the target configuration in each level."
+  },
+  {
+    "name": "Factory Balls 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfactoryballs2.webp",
+    "description": "Continue solving puzzles by painting balls to match the target configuration in each level."
+  },
+  {
+    "name": "Factory Balls 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfactoryballs3.webp",
+    "description": "Solve more intricate puzzles by painting balls to match the target configuration in each level."
+  },
+  {
+    "name": "Factory Balls 4",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfactoryballs4.webp",
+    "description": "Solve increasingly complex puzzles by painting balls to match the target configuration in each level."
+  },
+  {
+    "name": "Fami Dash",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfamidash.webp",
+    "description": "A fast-paced runner game where you control a family through various levels."
+  },
+  {
+    "name": "Fancy Pants Adventure",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfancypantsadventure.webp",
+    "description": "Navigate through various levels as a fancy-dressed adventurer in a platforming game."
+  },
+  {
+    "name": "Fancy Pants Adventure 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfancypantsadventure2.webp",
+    "description": "Continue the adventure with more levels and challenges in this platforming game."
+  },
+  {
+    "name": "Fancy Pants Adventure 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfancypantsadventure3.webp",
+    "description": "Complete the trilogy with new levels and obstacles in this platforming adventure."
+  },
+  {
+    "name": "Fancy Pants Adventure 4 Part 1",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfpa4p1.webp",
+    "description": "Navigate through various levels in this classic platformer adventure game."
+  },
+  {
+    "name": "Fancy Pants Adventure 4 Part 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfpa4p2.webp",
+    "description": "Continue the adventure in the second part of this classic platformer game."
+  },
+  {
+    "name": "Fancy Snowboarding",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfancysnowboarding.webp",
+    "description": "Perform tricks and stunts while snowboarding down slopes in an arcade-style game."
+  },
+  {
+    "name": "Fashion Battle",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfashionbattle.webp",
+    "description": "Compete in fashion challenges by selecting outfits and accessories in a strategic game."
+  },
+  {
+    "name": "Fatty Genius",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfattygenius.webp",
+    "description": "Solve puzzles by guiding a character through mazes and obstacles in a casual game."
+  },
+  {
+    "name": "Feed Us",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfeedus.webp",
+    "description": "Feed a growing character by consuming food items in this arcade-style game."
+  },
+  {
+    "name": "Feed Us 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfeedus2.webp",
+    "description": "Continue feeding the growing character with new food items in this arcade-style game."
+  },
+  {
+    "name": "Feed Us 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfeedus3.webp",
+    "description": "Feed the ever-growing character with new challenges in this arcade-style game."
+  },
+  {
+    "name": "Feed Us 4",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfeedus4.webp",
+    "description": "Feed the character with new obstacles and food items in this arcade-style game."
+  },
+  {
+    "name": "Feed Us 5",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfeedus5.webp",
+    "description": "Feed the character with new challenges and food items in this arcade-style game."
+  },
+  {
+    "name": "Final Earth 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfinalearth2.webp",
+    "description": "Defend Earth from alien invasions in this action-packed shooter game."
+  },
+  {
+    "name": "Final Ninja",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfinalninja.webp",
+    "description": "Play as a ninja in an action-packed arcade game filled with combat and stealth."
+  },
+  {
+    "name": "Fire Blob",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfireblob.webp",
+    "description": "Control a fire blob and navigate through levels filled with obstacles and enemies."
+  },
+  {
+    "name": "Fireboy and Watergirl",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfireboyandwatergirl.webp",
+    "description": "Control Fireboy and Watergirl as they navigate through elemental-themed levels."
+  },
+  {
+    "name": "Fireboy and Watergirl 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfireboyandwatergirl2.webp",
+    "description": "Continue the adventure with new levels and challenges in this elemental-themed platformer."
+  },
+  {
+    "name": "Fireboy and Watergirl 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfireboyandwatergirl3.webp",
+    "description": "Navigate through new levels and obstacles in this elemental-themed platformer."
+  },
+  {
+    "name": "Fireboy and Watergirl 5",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfireboyandwatergirl5.webp",
+    "description": "Complete the series with new levels and challenges in this elemental-themed platformer."
+  },
+  {
+    "name": "Fireboy and Watergirl 6",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfireboyandwatergirl6.webp",
+    "description": "Finish the series with new levels and challenges in this elemental-themed platformer."
+  },
+  {
+    "name": "Fisquarium",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfisquarium.webp",
+    "description": "Manage and grow a fish tank ecosystem in this simulation game."
+  },
+  {
+    "name": "Five Nights at Baldi's Redone",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfivenightsatbaldisredone.webp",
+    "description": "Survive five nights in a school with a creepy teacher in this horror-themed game."
+  },
+  {
+    "name": "Five Nights at Shrek's Hotel",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfivenightsatshrekshotel.webp",
+    "description": "Survive five nights in a hotel with Shrek in this horror-themed game."
+  },
+  {
+    "name": "Flappy Dunk",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clflappydunk.webp",
+    "description": "Control a character in a basketball game with a twist in this arcade-style sports game."
+  },
+  {
+    "name": "Flood Runner",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfloodrunner.webp",
+    "description": "Navigate through flooded levels while avoiding obstacles in this arcade-style runner game."
+  },
+  {
+    "name": "Flood Runner 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfloodrunner2.webp",
+    "description": "Continue navigating through flooded levels with new challenges in this arcade-style runner game."
+  },
+  {
+    "name": "Flood Runner 4",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfloodrunner4.webp",
+    "description": "Navigate through flooded levels with new obstacles in this arcade-style runner game."
+  },
+  {
+    "name": "Fluidism",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfluidism.webp",
+    "description": "Solve puzzles by guiding liquid through pipes in this casual puzzle game."
+  },
+  {
+    "name": "Focus",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfocus.webp",
+    "description": "Match falling blocks to clear the screen in this challenging puzzle game."
+  },
+  {
+    "name": "Folder Dungeon",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfolderdungeon.webp",
+    "description": "Navigate through folders to solve puzzles and progress in this unique adventure game."
+  },
+  {
+    "name": "Football Bros",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfootballbros.webp",
+    "description": "Control football players in a multiplayer soccer game with simple controls and fun gameplay."
+  },
+  {
+    "name": "Football Legends",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfootballlegends.webp",
+    "description": "Manage your own football team and lead them to victory in this soccer simulation game."
+  },
+  {
+    "name": "Fork N Sausage",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clforknsausage.webp",
+    "description": "Prepare delicious meals by flipping and cooking sausages in this casual cooking game."
+  },
+  {
+    "name": "Fort Zone",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfortzone.webp",
+    "description": "Build and defend your fort against waves of enemies in this strategy game."
+  },
+  {
+    "name": "Free Gemas",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfreegemas.webp",
+    "description": "Match and clear gems in this addictive puzzle game."
+  },
+  {
+    "name": "Free Rider",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfreerider.webp",
+    "description": "Race through various tracks on a skateboard in this fast-paced arcade game."
+  },
+  {
+    "name": "Free Rider 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfreerider2.webp",
+    "description": "Continue the high-speed skateboarding adventure in the sequel to Free Rider."
+  },
+  {
+    "name": "Free Rider 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfreerider3.webp",
+    "description": "Experience more thrilling races and tracks in the third installment of the Free Rider series."
+  },
+  {
+    "name": "Friday Night Funkin'",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfridaynightfunkin.webp",
+    "description": "Rhythm-based music game where you battle against various characters through song."
+  },
+  {
+    "name": "Friday Night Funkin': B-Side",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfnfbside.webp",
+    "description": "Participate in musical battles with Boyfriend in this rhythm-based game."
+  },
+  {
+    "name": "Friday Night Funkin': Garcello",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgarcello.webp",
+    "description": "Special rhythm-based music battle featuring the character Garcello from Friday Night Funkin'."
+  },
+  {
+    "name": "Friday Night Funkin': Hex",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfnfhex.webp",
+    "description": "Participate in musical battles with Boyfriend in this rhythm-based game."
+  },
+  {
+    "name": "Friday Night Funkin': Mid-Fight",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfnfmidfight.webp",
+    "description": "Participate in musical battles with Boyfriend in this rhythm-based game."
+  },
+  {
+    "name": "Friday Night Funkin': Miku",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfnfmiku.webp",
+    "description": "Participate in musical battles with Boyfriend in this rhythm-based game."
+  },
+  {
+    "name": "Friday Night Funkin': Neo",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfnfneo.webp",
+    "description": "Participate in musical battles with Boyfriend in this rhythm-based game."
+  },
+  {
+    "name": "Friday Night Funkin': Tricky",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfnftricky.webp",
+    "description": "Participate in musical battles with Boyfriend in this rhythm-based game."
+  },
+  {
+    "name": "Friday Night Funkin': Whitty",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfnfwhitty.webp",
+    "description": "Participate in musical battles with Boyfriend in this rhythm-based game."
+  },
+  {
+    "name": "Funny Shooter 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clfunnyshooter2.webp",
+    "description": "Engage in humorous shooter gameplay with quirky characters and levels."
+  },
+  {
+    "name": "Gangster Bros",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgangsterbros.webp",
+    "description": "Control gangster brothers in a stylized world, engaging in action-packed combat."
+  },
+  {
+    "name": "Geometry Vibes",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgeometryvibes.webp",
+    "description": "Navigate through geometric shapes and obstacles in this puzzle game."
+  },
+  {
+    "name": "Get on Top",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgetontop.webp",
+    "description": "Navigate through levels by climbing to the top in this platformer adventure game."
+  },
+  {
+    "name": "Get to the Top",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clGettothetopalthoughthereisnotop.webp",
+    "description": "Climb to the top of various levels in this challenging platformer game."
+  },
+  {
+    "name": "Getaway Shootout",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgetawayshootout.webp",
+    "description": "Engage in intense shootouts while trying to escape in this action-packed game."
+  },
+  {
+    "name": "Gimmie the Airpod",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgimmietheairpod.webp",
+    "description": "Collect Airpods while avoiding obstacles in this casual arcade game."
+  },
+  {
+    "name": "Gladihoppers",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgladdihoppers.webp",
+    "description": "Engage in gladiator battles with hoppers in this multiplayer action game."
+  },
+  {
+    "name": "Glory Hunters",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgloryhunters.webp",
+    "description": "Embark on a quest for glory in this action-packed single-player game."
+  },
+  {
+    "name": "Goal South Africa",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgoalsouthafrica.webp",
+    "description": "Manage a soccer team and aim for victory in this simulation game set in South Africa."
+  },
+  {
+    "name": "Gobble",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgobble.webp",
+    "description": "Control a creature that gobbles up food and grows in size in this casual arcade game."
+  },
+  {
+    "name": "Gold Digger FRVR",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgolddiggerfrvr.webp",
+    "description": "Dig for gold and collect treasures in this addictive arcade game."
+  },
+  {
+    "name": "Golf Orbit",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgolforbit.webp",
+    "description": "Play a unique golf game where you control the orbit of the ball in this simulation game."
+  },
+  {
+    "name": "Golf Sunday",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgolfsunday.webp",
+    "description": "Enjoy a round of golf in this simulation game with realistic gameplay."
+  },
+  {
+    "name": "Good Big Tower Tiny Square",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgoodbigtowertinysquare.webp",
+    "description": "Build a tower with blocks of different sizes in this casual puzzle game."
+  },
+  {
+    "name": "Good Big Tower Tiny Square 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgoodbigtowertinysquare2.webp",
+    "description": "Continue building towers with blocks of different sizes in the sequel to Good Big Tower Tiny Square."
+  },
+  {
+    "name": "Good Boy Galaxy",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgoodboygalaxy.webp",
+    "description": "Navigate through a galaxy with a good boy in this adventure puzzle game."
+  },
+  {
+    "name": "Good Monkey Mart",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgoodmonkeymart.webp",
+    "description": "Manage a monkey-themed store in this casual simulation game."
+  },
+  {
+    "name": "Google Baseball",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgooglebaseball.webp",
+    "description": "Play a simplified version of baseball in this arcade game."
+  },
+  {
+    "name": "Google Dino",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgoogledino.webp",
+    "description": "Control a dinosaur running through obstacles in this endless runner arcade game."
+  },
+  {
+    "name": "Gravity Mod",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgravitymod.webp",
+    "description": "Modify gravity and physics in a sandbox environment to create unique scenarios."
+  },
+  {
+    "name": "Grey Box Testing",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgrey-box-testing.webp",
+    "description": "Solve puzzles to understand the concept of grey box testing in software development."
+  },
+  {
+    "name": "Grimace Birthday",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgrimacebirthday.webp",
+    "description": "Celebrate Grimace's birthday with mini-games and fun challenges in this arcade-style game."
+  },
+  {
+    "name": "Grindcraft",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgrindcraft.webp",
+    "description": "Craft and build your way through a grinding adventure in this idle simulation game."
+  },
+  {
+    "name": "GRN",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgrn.webp",
+    "description": "Solve puzzles by manipulating the grid in this unique puzzle game."
+  },
+  {
+    "name": "Guess Their Answer",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clguesstheiranswer.webp",
+    "description": "Guess the most popular answer to a question in this trivia game."
+  },
+  {
+    "name": "Gun Knight",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgunknight.webp",
+    "description": "Control a knight with a gun in a fast-paced arcade action game."
+  },
+  {
+    "name": "Gun Mayhem",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgunmayhem.webp",
+    "description": "Engage in intense gun battles in this arcade-style action game."
+  },
+  {
+    "name": "Gun Mayhem 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgunmayhem2.webp",
+    "description": "The sequel to Gun Mayhem with more intense gun battles and levels."
+  },
+  {
+    "name": "Gun Mayhem Redux",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgunmayhemredux.webp",
+    "description": "An enhanced version of Gun Mayhem with new features and levels."
+  },
+  {
+    "name": "Gun Night",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgunnight.webp",
+    "description": "Survive waves of enemies in this intense arcade action game."
+  },
+  {
+    "name": "Guncho",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clguncho.webp",
+    "description": "A fast-paced arcade game where you control a gun-wielding character through levels."
+  },
+  {
+    "name": "Gunspin",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgunspin.webp",
+    "description": "Spin and shoot your way through enemies in this fast-paced arcade game."
+  },
+  {
+    "name": "Gym Stack",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clgymstack.webp",
+    "description": "Stack weights in the gym while solving puzzles in this stacking game."
+  },
+  {
+    "name": "Handshakes",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhandshakes.webp",
+    "description": "A casual arcade game where you shake hands with various characters."
+  },
+  {
+    "name": "Handulum",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhandulum.webp",
+    "description": "Swing a pendulum and hit targets in this simple arcade game."
+  },
+  {
+    "name": "Hardware Tycoon",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhardwaretycoon.webp",
+    "description": "Manage and expand your hardware business in this simulation game."
+  },
+  {
+    "name": "Harold's Bad Day",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clHaroldsbadday.webp",
+    "description": "Help Harold navigate through a series of obstacles in this casual arcade game."
+  },
+  {
+    "name": "Harvest.io",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clharvestio.webp",
+    "description": "Grow crops and expand your farm in this idle simulation game."
+  },
+  {
+    "name": "Haunt the House",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhauntthehouse.webp",
+    "description": "Explore a haunted house and uncover its dark secrets in this horror adventure game."
+  },
+  {
+    "name": "Hei$t",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhei$t.webp",
+    "description": "Plan and execute a heist in this action-strategy game."
+  },
+  {
+    "name": "Helix Jump",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhelixjump.webp",
+    "description": "Jump through colorful helix towers in this addictive arcade game."
+  },
+  {
+    "name": "Hextris",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhextris.webp",
+    "description": "Play a unique twist on Tetris with hexagonal blocks in this puzzle game."
+  },
+  {
+    "name": "High Stakes",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhighstakes.webp",
+    "description": "Play high-stakes poker in this card game strategy game."
+  },
+  {
+    "name": "Highway Racer 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhighwayracer2.webp",
+    "description": "Race on highways and compete against other drivers in this arcade racing game."
+  },
+  {
+    "name": "Highway Traffic 3D",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhighwaytraffic3d.webp",
+    "description": "Manage traffic and avoid accidents in this 3D driving simulation game."
+  },
+  {
+    "name": "Hipster Kickball",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhipsterkickball.webp",
+    "description": "Play a unique version of kickball with hipster characters in this arcade sports game."
+  },
+  {
+    "name": "Hit 8 Ox",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhit8ox.webp",
+    "description": "A casual arcade game where you hit targets in a unique setting."
+  },
+  {
+    "name": "Hit Single Real",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhitsinglereal.webp",
+    "description": "A casual arcade game focused on hitting singles in a unique context."
+  },
+  {
+    "name": "Hole.io",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clholeio.webp",
+    "description": "Grow your hole by consuming smaller players and avoid being eaten in this multiplayer IO game."
+  },
+  {
+    "name": "House of Hazards",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhouseofhazards.webp",
+    "description": "Navigate through a series of increasingly difficult obstacles in this challenging arcade game."
+  },
+  {
+    "name": "Hover Racer Drive",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhoverracerdrive.webp",
+    "description": "Race hovercrafts through various tracks in this fast-paced arcade racing game."
+  },
+  {
+    "name": "Hungry Knight",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhungryknight.webp",
+    "description": "Control a knight on a quest to eat everything in sight in this action-packed arcade game."
+  },
+  {
+    "name": "Hungry Lamu",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clhungrylamu.webp",
+    "description": "Guide a character through various levels, collecting food and defeating enemies in this action-packed game."
+  },
+  {
+    "name": "Ice Age Baby",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clice age baby.webp",
+    "description": "Help a baby navigate through an icy environment in this fun and challenging arcade game."
+  },
+  {
+    "name": "Ice Dodo",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clicedodo.webp",
+    "description": "Control a dodo bird sliding on ice in this fun and quirky arcade game."
+  },
+  {
+    "name": "Icy Purple Head",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clicypurplehead.webp",
+    "description": "Help a character slide on ice while avoiding obstacles in this fun arcade game."
+  },
+  {
+    "name": "Idle Breakout",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clidlebreakout.webp",
+    "description": "Break bricks by clicking or letting the ball hit them in this idle arcade game."
+  },
+  {
+    "name": "Idle Dice",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clidledice.webp",
+    "description": "Roll dice to earn resources and upgrades in this idle game."
+  },
+  {
+    "name": "Idle Idle Game Dev",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clidleidlegamedev.webp",
+    "description": "Manage and develop your own idle game in this simulation game."
+  },
+  {
+    "name": "Impossible Quiz",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/climpossiblequiz (1).webp",
+    "description": "Answer tricky and absurd questions in this challenging quiz game."
+  },
+  {
+    "name": "Impossible Quiz 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/climpossiblequiz2.webp",
+    "description": "Continue the challenge with more absurd and tricky questions in this quiz game."
+  },
+  {
+    "name": "Indian Truck Simulator",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clindiantrucksimiulator.webp",
+    "description": "Drive and park trucks in this realistic truck simulator game."
+  },
+  {
+    "name": "Infinite Craft",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clinfinitecraft.webp",
+    "description": "Combine elements to create new items in this creative crafting game."
+  },
+  {
+    "name": "Innkeeper",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clinnkeeper.webp",
+    "description": "Manage an inn and serve guests in this simulation management game."
+  },
+  {
+    "name": "Inside Story",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clinsidestory.webp",
+    "description": "Solve puzzles and navigate through an intriguing story in this adventure game."
+  },
+  {
+    "name": "Into Ruins",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clintoruins.webp",
+    "description": "Explore ruins and solve puzzles in this adventure game."
+  },
+  {
+    "name": "Into Space",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clintospace.webp",
+    "description": "Explore space and solve puzzles in this adventure game."
+  },
+  {
+    "name": "Into Space 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clintospace2.webp",
+    "description": "Continue the space adventure and solve more puzzles in this sequel."
+  },
+  {
+    "name": "Into Space 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clintospace3.webp",
+    "description": "Explore further into space and solve puzzles in this third installment."
+  },
+  {
+    "name": "Intrusion",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clintrusion.webp",
+    "description": "Stealthily navigate through a facility to complete missions in this arcade game."
+  },
+  {
+    "name": "IQ Ball",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cliqball.webp",
+    "description": "Control a ball and navigate through mazes in this puzzle arcade game."
+  },
+  {
+    "name": "Iron Snout",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clironsnout.webp",
+    "description": "Control a pig with a sword and fight enemies in this action-packed arcade game."
+  },
+  {
+    "name": "Iron Soldier",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clironsoldier.webp",
+    "description": "Control a soldier and fight enemies in this action-packed arcade game."
+  },
+  {
+    "name": "Jacksmith",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cljacksmith.webp",
+    "description": "Forge weapons and defeat enemies in this action-packed arcade game."
+  },
+  {
+    "name": "Jailbreak",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cljailbreakobbbobob.webp",
+    "description": "Escape from prison and complete missions in this multiplayer arcade game."
+  },
+  {
+    "name": "Jefflings",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cljefflings.webp",
+    "description": "Control a character and solve puzzles in this arcade puzzle game."
+  },
+  {
+    "name": "Jelly Truck",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cljellytruck.webp",
+    "description": "Drive a truck and collect jelly in this fun arcade game."
+  },
+  {
+    "name": "Jet Rush",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cljetrush.webp",
+    "description": "Race jet skis through various tracks in this fast-paced arcade game."
+  },
+  {
+    "name": "Johnny Upgrade",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cljohnnyupgrade.webp",
+    "description": "Upgrade your character and defeat enemies in this action-packed arcade game."
+  },
+  {
+    "name": "Jumping Shell",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cljumpingshell.webp",
+    "description": "Control a shell and jump through various obstacles in this fun arcade game."
+  },
+  {
+    "name": "Just Fall.lol",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cljustfalllol.webp",
+    "description": "Compete in a battle royale where players fall and try to be the last one standing."
+  },
+  {
+    "name": "Just One Boss",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cljustoneboss.webp",
+    "description": "Defeat a series of bosses in this action-packed arcade game."
+  },
+  {
+    "name": "Kalikan",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clkalikan.webp",
+    "description": "Match tiles to clear the board in this fun and challenging puzzle game."
+  },
+  {
+    "name": "Karate Bros",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clkaratebros.webp",
+    "description": "Engage in martial arts combat with your friends in this action-packed fighting game."
+  },
+  {
+    "name": "Kart Bros",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clkartbros.webp",
+    "description": "Race go-karts in a fun and fast-paced arcade racing game."
+  },
+  {
+    "name": "Kitten Cannon",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clkittencannon.webp",
+    "description": "Launch kittens as far as possible using a cannon in this quirky arcade game."
+  },
+  {
+    "name": "Klifur",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clklifur.webp",
+    "description": "Navigate through challenging platformer levels by solving puzzles in this engaging game."
+  },
+  {
+    "name": "Knife Hit",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clknifehit.webp",
+    "description": "Throw knives at targets in this addictive arcade game."
+  },
+  {
+    "name": "Knightmare Tower",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clknightmaretower.webp",
+    "description": "Embark on a dark fantasy adventure in a tower filled with challenges and enemies."
+  },
+  {
+    "name": "Last Horizon",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllasthorizon.webp",
+    "description": "Explore a post-apocalyptic world in this immersive RPG adventure."
+  },
+  {
+    "name": "Leader Strike",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clleaderstrike.webp",
+    "description": "Lead your troops in strategic battles in this action-packed strategy game."
+  },
+  {
+    "name": "Learn to Fly",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllearntofly.webp",
+    "description": "Master the art of flying in this fun and challenging arcade game."
+  },
+  {
+    "name": "Learn to Fly 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllearntofly2.webp",
+    "description": "Continue your flying adventure in this sequel to the popular Learn to Fly game."
+  },
+  {
+    "name": "Learn to Fly 3",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllearntofly3.webp",
+    "description": "Take to the skies once more in the third installment of the Learn to Fly series."
+  },
+  {
+    "name": "Learn to Fly Idle",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllearntoflyidle.webp",
+    "description": "Earn coins and upgrades while flying in this idle arcade game."
+  },
+  {
+    "name": "Level Devil",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clleveldevil.webp",
+    "description": "Solve puzzles by manipulating levels in this challenging arcade game."
+  },
+  {
+    "name": "Lever Warriors",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clleverwarriors.webp",
+    "description": "Use levers to solve puzzles and defeat enemies in this engaging arcade game."
+  },
+  {
+    "name": "Light It Up",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllightitup.webp",
+    "description": "Light up all the blocks in each level by strategically placing lights in this puzzle game."
+  },
+  {
+    "name": "Lil Runmo",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllilrunmo.webp",
+    "description": "Help Lil Runmo navigate through various challenges in this fun arcade game."
+  },
+  {
+    "name": "Line Rider",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllinerider.webp",
+    "description": "Create and ride custom sleds on tracks in this unique simulation game."
+  },
+  {
+    "name": "Little Runmo",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllittlerunmo.webp",
+    "description": "Help Little Runmo overcome obstacles in this charming arcade game."
+  },
+  {
+    "name": "Lock the Door",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllockthedoor.webp",
+    "description": "Solve puzzles by locking and unlocking doors in this engaging arcade game."
+  },
+  {
+    "name": "Lone Wolf",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllonewolf.webp",
+    "description": "Embark on a journey as a lone wolf in this immersive RPG adventure."
+  },
+  {
+    "name": "Los Angeles Shark",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllosangelesshark.webp",
+    "description": "Survive as a shark in the streets of Los Angeles in this action-packed game."
+  },
+  {
+    "name": "Low Knight",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/cllowknight.webp",
+    "description": "Embark on a dark fantasy adventure as a low knight in this action-packed game."
+  },
+  {
+    "name": "Lucky Blocks",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clluckyblocks.webp",
+    "description": "Navigate through levels filled with lucky blocks in this adventurous arcade game."
+  },
+  {
+    "name": "Mad Skills Motocross 2",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clmadskillsmotocross2.webp",
+    "description": "Race motocross bikes in this thrilling arcade racing game."
+  },
+  {
+    "name": "Madalin Stunt Cars",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clmadalinstuntcars.webp",
+    "description": "Perform stunts with Madalin cars in this adrenaline-fueled arcade game."
+  },
+  {
+    "name": "Retro Bowl",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/nexorainteractives/Nexora-Assets@main/images/clretrobowl.webp",
+    "description": "Manage a football team and lead them to victory in this retro-styled sports game."
+  }
+]

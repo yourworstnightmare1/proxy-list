@@ -225,12 +225,25 @@
     } catch (_) {}
     try {
       var loc = global.location || {};
-      return /\/uv\/|ultraviolet|\/scramjet|\/sj\/|bare-mux|\/service\/|\/proxy\/|\/eclipse\//i.test(
-        String(loc.href || "") + String(loc.pathname || "") + String(loc.search || "")
-      );
-    } catch (_) {
-      return false;
-    }
+      if (
+        /\/uv\/|ultraviolet|\/scramjet|\/sj\/|bare-mux|\/service\/|\/proxy\/|\/eclipse\//i.test(
+          String(loc.href || "") + String(loc.pathname || "") + String(loc.search || "")
+        )
+      ) {
+        return true;
+      }
+    } catch (_) {}
+    try {
+      if (global.__uv$config || global.__uv || global.$scramjet || global.scramjet || global.BareMux || global.__eclipse$config) {
+        return true;
+      }
+    } catch (_) {}
+    try {
+      var ctrl = global.navigator && global.navigator.serviceWorker && global.navigator.serviceWorker.controller;
+      var swUrl = ctrl && (ctrl.scriptURL || "");
+      if (/uv\.|\/uv\/|scramjet|\/sj\/|eclipse|bare-mux/i.test(String(swUrl))) return true;
+    } catch (_) {}
+    return false;
   }
 
   function abortError(ms) {
@@ -351,7 +364,13 @@
             opts.onProgress(i / total);
           } catch (_) {}
         }
-        await yieldToMainThread();
+        if (opts.yieldFast) {
+          await new Promise(function (resolve) {
+            setTimeout(resolve, 0);
+          });
+        } else {
+          await yieldToMainThread();
+        }
       }
     }
     if (typeof opts.onProgress === "function") {
@@ -471,7 +490,20 @@
             remain
           );
           if (file.endsWith(".gz")) {
-            return await parseJsonBytes(buf);
+            // Scramjet/Ultraviolet often gunzip in the proxy and return JSON (or
+            // rewrite the JSON). Accept either real gzip or a JSON body so we do
+            // not fall through to a 5MB data.json rewrite that never finishes.
+            try {
+              return await parseJsonBytes(buf);
+            } catch (err) {
+              errors.push(
+                fetchUrl +
+                  " (gzip/json: " +
+                  (err && err.message ? err.message : String(err)) +
+                  ")"
+              );
+              return MISS;
+            }
           }
           if (!canDecompress) {
             errors.push(fetchUrl + " (brotli unsupported)");
@@ -493,6 +525,9 @@
       for (var c = 0; c < candidates.length; c++) {
         var got = await tryFile(files[f], candidates[c]);
         if (got !== MISS) return got;
+        // Scramjet/wisp often corrupts gzip; extra URL variants of the same
+        // .gz file just waste ~5s each. Fall through to data.json.
+        if (onProxy && files[f].endsWith(".gz")) break;
       }
     }
     if (opts.remoteFallback !== false) {

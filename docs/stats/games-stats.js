@@ -55,9 +55,31 @@
     return document.getElementById(id);
   }
 
+  function ensureChartCanvasHost(canvas) {
+    if (!canvas) return null;
+    var parent = canvas.parentElement;
+    if (parent && parent.classList.contains("chart-canvas-host")) return parent;
+    var wrap = (canvas.closest && canvas.closest(".chart-wrap")) || parent;
+    if (!wrap) return null;
+    var host = document.createElement("div");
+    host.className = "chart-canvas-host";
+    wrap.insertBefore(host, canvas);
+    host.appendChild(canvas);
+    return host;
+  }
+
   function fmt(n) {
     if (n == null || !Number.isFinite(Number(n))) return "—";
     return Number(n).toLocaleString();
+  }
+
+  function formatDayLabel(id, opts) {
+    try {
+      if (global.ProxyListDateTime && typeof global.ProxyListDateTime.formatUtcDateId === "function") {
+        return global.ProxyListDateTime.formatUtcDateId(id, opts || { short: true });
+      }
+    } catch (_) {}
+    return String(id || "");
   }
 
   function escapeHtml(s) {
@@ -254,6 +276,7 @@
       return sum + r.count;
     }, 0);
 
+    ensureChartCanvasHost(canvas);
     shareChart = new global.Chart(canvas, {
       type: "doughnut",
       data: {
@@ -381,7 +404,7 @@
     if (!global.Chart) return;
 
     var labels = history.map(function (h) {
-      return h.date;
+      return formatDayLabel(h.date);
     });
     var data;
     var label;
@@ -401,6 +424,7 @@
     }
 
     var shortSpan = historySpan === "1w" || historySpan === "2w";
+    ensureChartCanvasHost(canvas);
     historyChart = new global.Chart(canvas, {
       type: "line",
       data: {
@@ -499,7 +523,7 @@
       if (hint) {
         hint.textContent =
           "Baseline snapshot" +
-          (ch.date ? " (" + ch.date + ")" : "") +
+          (ch.date ? " (" + formatDayLabel(ch.date) + ")" : "") +
           ". Newly found games will appear after the next snapshot.";
       }
       list.innerHTML =
@@ -509,7 +533,7 @@
     if (hint) {
       hint.textContent =
         "Games newly present as of " +
-        (ch.date || "latest snapshot") +
+        (ch.date ? formatDayLabel(ch.date) : "latest snapshot") +
         (ch.addedCount ? " (" + ch.addedCount.toLocaleString() + " added)" : "") +
         ".";
     }
@@ -1046,7 +1070,7 @@
     backdropPayload = payload || null;
     if (title) {
       title.textContent =
-        "Database modifications" + (payload.date ? " — " + payload.date : "");
+        "Database modifications" + (payload.date ? " — " + formatDayLabel(payload.date, { short: false }) : "");
     }
     if (hint) hint.textContent = gdbDiffHintForTab("changes", payload);
     changes.innerHTML =
@@ -1194,7 +1218,7 @@
             '<li class="games-mod-item" data-mod-date="' +
             escapeHtml(m.date) +
             '"><div class="games-mod-row"><strong>' +
-            escapeHtml(m.date) +
+            escapeHtml(formatDayLabel(m.date, { short: false })) +
             '</strong><span class="muted">Baseline recorded</span></div>' +
             '<span class="meta">First snapshot — no add/remove diff yet. Click to inspect.</span></li>'
           );
@@ -1217,7 +1241,7 @@
             '<li class="games-mod-item" data-mod-date="' +
             escapeHtml(m.date) +
             '" role="button" tabindex="0"><div class="games-mod-row"><strong>' +
-            escapeHtml(m.date) +
+            escapeHtml(formatDayLabel(m.date, { short: false })) +
             "</strong><span>" +
             detail +
             "</span></div>" +
@@ -1239,7 +1263,7 @@
           '<li class="games-mod-item" data-mod-date="' +
           escapeHtml(m.date) +
           '" role="button" tabindex="0"><div class="games-mod-row"><strong>' +
-          escapeHtml(m.date) +
+          escapeHtml(formatDayLabel(m.date, { short: false })) +
           "</strong><span>" +
           detail +
           "</span></div>" +

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 26 26" aria-hidden="true">
+  <!-- Full red disc first so the top wedge cannot disappear; yellow/green overlay the other 240°. -->
+  <circle cx="12" cy="12" r="11" fill="#EA4335"/>
+  <path fill="#FBBC04" d="M12 12 L21.526 6.5 A11 11 0 0 1 12 23 Z"/>
+  <path fill="#34A853" d="M12 12 L12 23 A11 11 0 0 1 2.474 6.5 Z"/>
+  <circle cx="12" cy="12" r="4.35" fill="#4285F4"/>
+</svg>

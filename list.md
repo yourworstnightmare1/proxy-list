@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
-> v8.0 | Released: October 24, 2026
-> r315 | Last Updated: November 01, 2026
+> v9.0 | Released: November 2, 2026
+> r316 | Last Updated: November 2, 2026
 > Total onsite links: 56623 (55761 sorted + 862 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -36,16 +36,23 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 ## Update Notice
 
 ### New
-- Increased security of accounts and logins/signups
-- Made changes to sign up flow to comply with legal regulations
-- Added analytic collection powered by Sentry to collect error logs
-- Added hardware data collection to improve development flow
-- Moved fonts locally instead of loading them directly from Google's servers
-- Added 600+ new links (no filter data yet)
+- Added sorting by recently added links
+- Switched around the featured sites and made it cleaner
+- Added Nexora database (gdb:nexora)
+- Hardware charts now get horizontal sections so they have more space
+- OS versions are now searchable instead of showing all versions at once
+- Improved Firebase quota usage saving
+- Added Eruda DevTools to debug mode
+- Added ability to change timezone/time notation/date formatting
 
 ### Fixed
-- Fixed bug on Ultraviolet when using the libcurl transport method that caused the list data to not load, causing the site to time out and throw an error
-- Fixed bug where Noah's Tutoring GDB was throwing a 404 because its original jsDelivr mirror did not exist; it has now been replaced with a working domain
+- Fixed a bug causing localStorage to have oversized caches
+- Fixed a bug where bar graph sections were squished
+- Fixed a bug where bar/chart hitboxes were very off center
+- Fixed a bug where some users were reporting a Windows version of 12
+- Fixed a bug where icons were missing colors or parts/off center.
+- Fixed a bug for users on Scramjet over Wisp where the site would not load and bug out; app.js/site.css are now split to allow proxy rewrite to work properly.
+- Fixed a bug where there was an "8 GB+" section in RAM metrics; it is now removed
 
 # 💜 Selenite
 > [!NOTE]
@@ -65,11 +72,11 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha | Scramjet | 67 |
+> | Proxy/Games | captcha | Scramjet | 66 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://noterplus-157.firebaseapp.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://hvtzw.reformarchive.com | 5/18/2026 | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | http://sni.educations.mytunnel.org | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu.worldplus-intl.org/ | 6/7/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://velara.turbo-education.com | 7/10/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -3653,11 +3660,12 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | unknown | Ultraviolet | 1 |
+> | Games | GDB:nexora | N/A | 2 |
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://noterplusfire02.web.app/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
+| | https://noterplus-157.firebaseapp.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🧑‍🧒‍🧒 Soul
 > [!NOTE]

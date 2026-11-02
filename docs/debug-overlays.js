@@ -42,10 +42,25 @@
   var IDB_STORE = "appSettings";
   var STYLE_ID = "proxyListDebugOverlayStyles";
   var MAX_LOG_ENTRIES = 500;
+  var WORKER_ORIGIN = "https://proxy-list.jasonthegamer48.workers.dev";
+  var SCRIPT_DIR = (function () {
+    try {
+      var cur = document.currentScript && document.currentScript.src;
+      if (cur) return String(cur).replace(/[^/]+$/, "");
+      var scripts = document.getElementsByTagName("script");
+      for (var i = 0; i < scripts.length; i++) {
+        var src = scripts[i].src || "";
+        if (/debug-overlays\.js(\?|$)/i.test(src)) return src.replace(/[^/]+$/, "");
+      }
+    } catch (_) {}
+    return "";
+  })();
+  var erudaLoading = false;
 
   var settings = {
     debugMode: false,
     debugShowUserAgent: true,
+    debugEruda: true,
     debugPerfGraph: false,
     debugCullingTest: false,
   };
@@ -80,6 +95,7 @@
     var out = {
       debugMode: false,
       debugShowUserAgent: true,
+      debugEruda: true,
       debugPerfGraph: false,
       debugCullingTest: false,
     };
@@ -88,6 +104,9 @@
     else if (raw.debugMode === "enabled") out.debugMode = true;
     else if (raw.debugMode === "disabled") out.debugMode = false;
     if (typeof raw.debugShowUserAgent === "boolean") out.debugShowUserAgent = raw.debugShowUserAgent;
+    if (typeof raw.debugEruda === "boolean") out.debugEruda = raw.debugEruda;
+    else if (raw.debugEruda === "enabled") out.debugEruda = true;
+    else if (raw.debugEruda === "disabled") out.debugEruda = false;
     if (typeof raw.debugPerfGraph === "boolean") out.debugPerfGraph = raw.debugPerfGraph;
     if (typeof raw.debugCullingTest === "boolean") out.debugCullingTest = raw.debugCullingTest;
     else if (raw.debugCullingTest === "enabled") out.debugCullingTest = true;
@@ -125,6 +144,7 @@
         JSON.stringify({
           debugMode: n.debugMode === true,
           debugShowUserAgent: n.debugShowUserAgent !== false,
+          debugEruda: n.debugEruda !== false,
           debugPerfGraph: n.debugPerfGraph === true,
           debugCullingTest: n.debugCullingTest === true,
         })
@@ -549,6 +569,10 @@
         "</div>" +
         '<p class="debug-menu-hint">Toggle with <kbd>`</kbd>. Drag the header to move. Logs persist across pages in this tab.</p>' +
         '<div class="debug-menu-field">' +
+        '<label for="debugMenuErudaSelect">Eruda DevTools</label>' +
+        '<select id="debugMenuErudaSelect"><option value="enabled">Enabled</option><option value="disabled">Disabled</option></select>' +
+        "</div>" +
+        '<div class="debug-menu-field">' +
         '<label for="debugMenuUaSelect">User agent HUD</label>' +
         '<select id="debugMenuUaSelect"><option value="show">Show</option><option value="hide">Hide</option></select>' +
         "</div>" +
@@ -602,6 +626,7 @@
       var cur = readLocalStorageSettings() || {};
       cur.debugMode = settings.debugMode === true;
       cur.debugShowUserAgent = settings.debugShowUserAgent !== false;
+      cur.debugEruda = settings.debugEruda !== false;
       cur.debugPerfGraph = settings.debugPerfGraph === true;
       cur.debugCullingTest = settings.debugCullingTest === true;
       localStorage.setItem(LS_KEY, JSON.stringify(cur));
@@ -617,10 +642,12 @@
 
   function syncDebugMenuForm() {
     var ua = $("debugMenuUaSelect");
+    var erudaSel = $("debugMenuErudaSelect");
     var perf = $("debugMenuPerfSelect");
     var cull = $("debugMenuCullingSelect");
     var meta = $("debugQuickMenuMeta");
     if (ua) ua.value = settings.debugShowUserAgent === false ? "hide" : "show";
+    if (erudaSel) erudaSel.value = settings.debugEruda === false ? "disabled" : "enabled";
     if (perf) perf.value = settings.debugPerfGraph === true ? "enabled" : "disabled";
     if (cull) cull.value = settings.debugCullingTest === true ? "enabled" : "disabled";
     if (meta) {
@@ -652,6 +679,13 @@
       closeBtn.dataset.wired = "1";
       closeBtn.addEventListener("click", function () {
         setDebugMenuOpen(false);
+      });
+    }
+    var erudaSel = $("debugMenuErudaSelect");
+    if (erudaSel && erudaSel.dataset.wired !== "1") {
+      erudaSel.dataset.wired = "1";
+      erudaSel.addEventListener("change", function () {
+        patchDebugSettings({ debugEruda: erudaSel.value !== "disabled" });
       });
     }
     var ua = $("debugMenuUaSelect");
@@ -1399,6 +1433,88 @@
     });
   }
 
+  function erudaIsInit() {
+    try {
+      return !!(global.eruda && global.eruda._isInit);
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function initEruda() {
+    if (!global.eruda || typeof global.eruda.init !== "function") return;
+    if (erudaIsInit()) return;
+    try {
+      var ls = global.localStorage;
+      var raw = JSON.parse((ls && ls.getItem("eruda-dev-tools")) || "{}") || {};
+      var theme = String(raw.theme || "");
+      if (!theme || theme.toLowerCase() === "dark") raw.theme = "Dark";
+      if (ls) ls.setItem("eruda-dev-tools", JSON.stringify(raw));
+    } catch (_) {}
+    try {
+      global.eruda.init({
+        defaults: {
+          theme: "Dark",
+          displaySize: 50,
+          transparency: 0.95,
+        },
+      });
+    } catch (_) {
+      return;
+    }
+    try {
+      if (typeof global.eruda.position === "function") {
+        var w = global.innerWidth || 360;
+        var h = global.innerHeight || 640;
+        global.eruda.position({ x: Math.max(16, w - 72), y: Math.max(16, h - 96) });
+      }
+    } catch (_) {}
+  }
+
+  function destroyEruda() {
+    try {
+      if (erudaIsInit() && typeof global.eruda.destroy === "function") global.eruda.destroy();
+    } catch (_) {}
+  }
+
+  function loadErudaScript(src, onerror) {
+    var s = document.createElement("script");
+    s.src = src;
+    s.async = true;
+    s.onload = function () {
+      erudaLoading = false;
+      if (isErudaEnabled()) initEruda();
+      else destroyEruda();
+    };
+    s.onerror = typeof onerror === "function" ? onerror : function () {
+      erudaLoading = false;
+    };
+    (document.head || document.documentElement).appendChild(s);
+  }
+
+  function isErudaEnabled() {
+    return isDebugMode() && settings.debugEruda !== false;
+  }
+
+  function ensureEruda() {
+    if (!isErudaEnabled()) {
+      destroyEruda();
+      return;
+    }
+    if (global.eruda) {
+      initEruda();
+      return;
+    }
+    if (erudaLoading) return;
+    erudaLoading = true;
+    var localSrc = (SCRIPT_DIR || "") + "vendor/eruda.min.js";
+    loadErudaScript(localSrc, function () {
+      loadErudaScript(WORKER_ORIGIN + "/vendor/eruda.min.js", function () {
+        erudaLoading = false;
+      });
+    });
+  }
+
   function sync() {
     injectStyles();
     ensureDom();
@@ -1406,6 +1522,7 @@
     wireDebugMenuHotkey();
     syncHudBar();
     syncCullingTest();
+    ensureEruda();
     var stack = $("debugToastStack");
     if (stack && !isDebugMode()) stack.replaceChildren();
     if (!isDebugMode()) {

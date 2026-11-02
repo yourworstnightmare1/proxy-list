@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
     <script src="../sentry-init.js"></script>
     <script src="../data-loader.js"></script>
+    <script src="../datetime.js?v=tz-12h"></script>
     <script src="../debug-overlays.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Proxy list</title>
@@ -382,7 +383,13 @@
 
           setText("aboutVersion", meta.version || "—");
           setText("aboutRevision", meta.revision || "—");
-          setText("aboutLastUpdated", meta.last_updated || "—");
+          var lastUpdated = meta.last_updated || "—";
+          try {
+            if (window.ProxyListDateTime && typeof window.ProxyListDateTime.formatLoose === "function" && meta.last_updated) {
+              lastUpdated = window.ProxyListDateTime.formatLoose(meta.last_updated, { dateOnly: true }) || lastUpdated;
+            }
+          } catch (_) {}
+          setText("aboutLastUpdated", lastUpdated);
           setText("aboutSortedCount", formatCount(sorted));
           setText("aboutUnsortedCount", formatCount(unsorted));
           setText("faqSortedCount", formatCount(sorted));
