@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-02T04:08:17Z",
+  "generated_at": "2026-11-02T14:45:33Z",
   "snapshot_date": "2026-11-02",
   "catalog_count": 33,
-  "total_entries": 35971,
-  "unique_games": 28733,
+  "total_entries": 35969,
+  "unique_games": 28732,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 22,
+      "count": 20,
       "empty": false
     },
     {
@@ -2296,7 +2296,7 @@
         "gdb:lucide": 846,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 22,
+        "gdb:ccported": 20,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -2319,8 +2319,8 @@
         "gdb:diesmos": 1175,
         "gdb:fyinx": 0
       },
-      "total_entries": 35971,
-      "unique_games": 28733
+      "total_entries": 35969,
+      "unique_games": 28732
     }
   ],
   "latest_changes": {
@@ -2429,9 +2429,12 @@
       "gdb:ccported": {
         "label": "CCPorted",
         "added": [],
-        "removed": [],
+        "removed": [
+          "Agar Lite",
+          "Tetris"
+        ],
         "added_count": 0,
-        "removed_count": 0,
+        "removed_count": 2,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -2627,9 +2630,20 @@
     },
     "all": {
       "added": [],
-      "removed": [],
+      "removed": [
+        {
+          "name": "Agar Lite",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Tetris",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        }
+      ],
       "added_count": 0,
-      "removed_count": 0,
+      "removed_count": 2,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -2638,10 +2652,19 @@
     {
       "date": "2026-11-02",
       "kind": "diff",
-      "catalogs_touched": [],
+      "catalogs_touched": [
+        "gdb:ccported"
+      ],
       "added": 0,
-      "removed": 0,
-      "by_catalog": []
+      "removed": 2,
+      "by_catalog": [
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 0,
+          "removed": 2
+        }
+      ]
     },
     {
       "date": "2026-11-01",
