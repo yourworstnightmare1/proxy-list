@@ -1227,7 +1227,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:truffled | Scramjet | 246 |
+> | Proxy/Games | GDB:truffled | Scramjet | 245 |
 
 > [!IMPORTANT]
 > when visiting truffled on a google script (script.google.com) domain, the proxy likely won't work. most games are unaffected
@@ -1306,7 +1306,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://band.info.gf/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://beat.gigaportal.pl/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://beau.coral-shop.ro/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bear.saucedchicago.com/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bein.mza.com.ar/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bede.dinator.com/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bees.jaytex.org/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55458,18 +55457,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.jsdelivr.net/gh/GSNhub-network/hub@main/hub.svg?link=00008 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/GSNhub-network/hub@main/hub.svg?link=00009 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/GSNhub-network/hub@main/hub.svg?link=00010 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
-# 💫 Quasar
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | pending | - | - | 1 |
-> [!IMPORTANT]
-> This section has not been categorized or checked for protocol(s) and capabilities.
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://churchsw.org/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ✨ Astral
 > [!NOTE]
