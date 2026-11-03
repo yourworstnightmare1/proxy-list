@@ -3181,12 +3181,20 @@
         });
       }
 
-      function featuredPhotoSrc(slide) {
-        if (!slide) return "";
-        const key = slide.getAttribute("data-featured-photo-key");
+      const FEATURED_PHOTO_KEYS = [
+        "catclass",
+        "duckmath",
+        "studyhub",
+        "voidnetwork",
+        "c00lkidtech",
+        "pgis3",
+      ];
+
+      function featuredPhotoSrc(photoIndex) {
+        const key = FEATURED_PHOTO_KEYS[photoIndex];
         const photos = window.__proxyListFeaturedPhotos;
         if (key && photos && photos[key]) return photos[key];
-        return slide.getAttribute("data-featured-photo") || "";
+        return "";
       }
 
       /** Allow only http(s) or data:image URLs so DOM attributes cannot inject javascript: into <img src>. */
@@ -3201,9 +3209,9 @@
         return "";
       }
 
-      function ensureFeaturedPhoto(slide) {
+      function ensureFeaturedPhoto(slide, photoIndex) {
         if (!slide) return;
-        const src = sanitizeFeaturedPhotoSrc(featuredPhotoSrc(slide));
+        const src = sanitizeFeaturedPhotoSrc(featuredPhotoSrc(photoIndex));
         if (!src) return;
         let img = slide.querySelector(".featured-slide-photo");
         if (!img) {
@@ -3226,10 +3234,11 @@
           const active = i === index;
           slide.classList.toggle("is-active", active);
           slide.setAttribute("aria-hidden", active ? "false" : "true");
-          if (active) ensureFeaturedPhoto(slide);
+          if (active) ensureFeaturedPhoto(slide, i);
         });
-        const upcoming = slides[(index + 1) % total];
-        if (upcoming) ensureFeaturedPhoto(upcoming);
+        const upcomingIndex = (index + 1) % total;
+        const upcoming = slides[upcomingIndex];
+        if (upcoming) ensureFeaturedPhoto(upcoming, upcomingIndex);
         renderDots();
         if (userInitiated) restartTimer();
       }

@@ -11,11 +11,11 @@
   function applyFeaturedPhotos() {
     var photos = global.__proxyListFeaturedPhotos;
     if (!photos) return;
-    var slides = document.querySelectorAll('.featured-slide[data-featured-photo-key]');
+    var photoKeys = ['catclass', 'duckmath', 'studyhub', 'voidnetwork', 'c00lkidtech', 'pgis3'];
+    var slides = document.querySelectorAll('.featured-slide');
     for (var i = 0; i < slides.length; i++) {
       var slide = slides[i];
-      var key = slide.getAttribute('data-featured-photo-key');
-      var src = key && photos[key];
+      var src = photos[photoKeys[i]];
       if (!src) continue;
       var img = slide.querySelector('.featured-slide-photo');
       if (!img) {
