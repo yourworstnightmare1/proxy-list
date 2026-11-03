@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-03T13:42:04Z",
+  "generated_at": "2026-11-03T23:01:36Z",
   "snapshot_date": "2026-11-03",
   "catalog_count": 34,
-  "total_entries": 36372,
-  "unique_games": 28791,
+  "total_entries": 36375,
+  "unique_games": 28792,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -14,13 +14,13 @@
     {
       "tag": "gdb:gn-math",
       "label": "gn-math",
-      "count": 846,
+      "count": 847,
       "empty": false
     },
     {
       "tag": "gdb:luminsdk",
       "label": "Lumin SDK",
-      "count": 846,
+      "count": 847,
       "empty": false
     },
     {
@@ -56,7 +56,7 @@
     {
       "tag": "gdb:lucide",
       "label": "Lucide",
-      "count": 846,
+      "count": 847,
       "empty": false
     },
     {
@@ -2332,14 +2332,14 @@
       "date": "2026-11-03",
       "counts": {
         "gdb:unblockedzone": 0,
-        "gdb:gn-math": 846,
-        "gdb:luminsdk": 846,
+        "gdb:gn-math": 847,
+        "gdb:luminsdk": 847,
         "gdb:noahs-tutoring": 0,
         "gdb:elite-games": 325,
         "gdb:ultimate-game-stash": 2446,
         "gdb:seraph": 500,
         "gdb:chicken-kings-vault": 821,
-        "gdb:lucide": 846,
+        "gdb:lucide": 847,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
         "gdb:ccported": 22,
@@ -2366,8 +2366,8 @@
         "gdb:fyinx": 0,
         "gdb:nexora": 401
       },
-      "total_entries": 36372,
-      "unique_games": 28791
+      "total_entries": 36375,
+      "unique_games": 28792
     }
   ],
   "latest_changes": {
@@ -2385,18 +2385,22 @@
       },
       "gdb:gn-math": {
         "label": "gn-math",
-        "added": [],
+        "added": [
+          "Garten of Banban 1"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 1,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
       "gdb:luminsdk": {
         "label": "Lumin SDK",
-        "added": [],
+        "added": [
+          "Garten of Banban 1"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 1,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -2448,9 +2452,11 @@
       },
       "gdb:lucide": {
         "label": "Lucide",
-        "added": [],
+        "added": [
+          "Garten of Banban 1"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 1,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -3289,9 +3295,9 @@
         }
       ],
       "removed": [],
-      "added_count": 403,
+      "added_count": 406,
       "removed_count": 0,
-      "added_truncated": 303,
+      "added_truncated": 306,
       "removed_truncated": 0
     }
   },
@@ -3301,9 +3307,12 @@
       "kind": "diff",
       "catalogs_touched": [
         "gdb:nexora",
-        "gdb:ccported"
+        "gdb:ccported",
+        "gdb:gn-math",
+        "gdb:lucide",
+        "gdb:luminsdk"
       ],
-      "added": 403,
+      "added": 406,
       "removed": 0,
       "by_catalog": [
         {
@@ -3316,6 +3325,24 @@
           "tag": "gdb:ccported",
           "label": "CCPorted",
           "added": 2,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:gn-math",
+          "label": "gn-math",
+          "added": 1,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:lucide",
+          "label": "Lucide",
+          "added": 1,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK",
+          "added": 1,
           "removed": 0
         }
       ]
