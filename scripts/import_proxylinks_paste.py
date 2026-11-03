@@ -220,7 +220,14 @@ def should_skip_url(u: str) -> str | None:
         return "invalid"
     if not ALLOW_BUNNYCDN and (h == "b-cdn.net" or h.endswith(".b-cdn.net")):
         return "bunnycdn"
-    if h.endswith("chesscomfiles.com") or h == "chess.com":
+    # Exact host or dotted subdomain only (endswith("chesscomfiles.com") also
+    # matched prefix-evil hosts like "notchesscomfiles.com").
+    if (
+        h == "chesscomfiles.com"
+        or h.endswith(".chesscomfiles.com")
+        or h == "chess.com"
+        or h.endswith(".chess.com")
+    ):
         return "garbage"
     if h == "registry.npmjs.org":
         return "npm-registry"

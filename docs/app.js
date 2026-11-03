@@ -3189,9 +3189,21 @@
         return slide.getAttribute("data-featured-photo") || "";
       }
 
+      /** Allow only http(s) or data:image URLs so DOM attributes cannot inject javascript: into <img src>. */
+      function sanitizeFeaturedPhotoSrc(raw) {
+        const s = String(raw || "").trim();
+        if (!s) return "";
+        if (/^data:image\/[a-z0-9.+-]+(?:;charset=[^;,\s]+)?;base64,/i.test(s)) return s;
+        try {
+          const u = new URL(s, location.href);
+          if (u.protocol === "http:" || u.protocol === "https:") return u.href;
+        } catch (_) {}
+        return "";
+      }
+
       function ensureFeaturedPhoto(slide) {
         if (!slide) return;
-        const src = featuredPhotoSrc(slide);
+        const src = sanitizeFeaturedPhotoSrc(featuredPhotoSrc(slide));
         if (!src) return;
         let img = slide.querySelector(".featured-slide-photo");
         if (!img) {
