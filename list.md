@@ -53620,7 +53620,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | captcha, tab-cloak, GDB:selenite | - | 244 |
+> | Proxy/Games | captcha, tab-cloak, GDB:selenite | - | 242 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -54013,8 +54013,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://aeos-site.yapp.page/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://aeos.statichost.page/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://aeos.droply.id/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rare-fur-syv6a.ship.place/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://truth-tiglon-5oyo6.ship.place/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?submission_id=845636643667&module_item_id=730&user_id=815611&download=1 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?id=2&key=2 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://script.google.com/macros/s/AKfycbxLxOIe8ECyYNRTGK7QN2uQg9-8kq3b2qDb8BzPvhC8mLGW8L9X22AauHmZcBI6BMyj/exec?usp=drive_web&authuser=6&resourcekey=QbwRcxSdy&id=3 | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
