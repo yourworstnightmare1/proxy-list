@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-03T23:01:36Z",
-  "snapshot_date": "2026-11-03",
+  "generated_at": "2026-11-04T04:41:39Z",
+  "snapshot_date": "2026-11-04",
   "catalog_count": 34,
   "total_entries": 36375,
   "unique_games": 28792,
@@ -2368,10 +2368,51 @@
       },
       "total_entries": 36375,
       "unique_games": 28792
+    },
+    {
+      "date": "2026-11-04",
+      "counts": {
+        "gdb:unblockedzone": 0,
+        "gdb:gn-math": 847,
+        "gdb:luminsdk": 847,
+        "gdb:noahs-tutoring": 0,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 847,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 498,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275,
+        "gdb:flux": 1741,
+        "gdb:greenis": 208,
+        "gdb:melonsoda": 42,
+        "gdb:edurocks": 0,
+        "gdb:timmy": 0,
+        "gdb:zane": 479,
+        "gdb:3kh0": 145,
+        "gdb:alexr": 676,
+        "gdb:hydra": 1641,
+        "gdb:diesmos": 1175,
+        "gdb:fyinx": 0,
+        "gdb:nexora": 401
+      },
+      "total_entries": 36375,
+      "unique_games": 28792
     }
   ],
   "latest_changes": {
-    "date": "2026-11-03",
+    "date": "2026-11-04",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
@@ -2385,22 +2426,18 @@
       },
       "gdb:gn-math": {
         "label": "gn-math",
-        "added": [
-          "Garten of Banban 1"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 1,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
       "gdb:luminsdk": {
         "label": "Lumin SDK",
-        "added": [
-          "Garten of Banban 1"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 1,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -2452,11 +2489,9 @@
       },
       "gdb:lucide": {
         "label": "Lucide",
-        "added": [
-          "Garten of Banban 1"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 1,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -2481,12 +2516,9 @@
       },
       "gdb:ccported": {
         "label": "CCPorted",
-        "added": [
-          "Agar Lite",
-          "Tetris"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 2,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -2682,626 +2714,32 @@
       },
       "gdb:nexora": {
         "label": "Nexora",
-        "added": [
-          "1 on 1 Soccer",
-          "1 on 1 Tennis",
-          "10 Bullets",
-          "10 Minutes Till Dawn",
-          "100 Skibidi",
-          "12 Mini Battles",
-          "1v1.lol",
-          "2048",
-          "2D Shooting",
-          "3 Slices 2",
-          "4th and Goal",
-          "60 Seconds Burger Run",
-          "60 Seconds Santa Run",
-          "8 Ball Classic",
-          "A Dance of Fire and Ice",
-          "A Dark Room",
-          "A Day in the Office",
-          "A Small World Cup",
-          "Abandoned",
-          "Ace Gangster Taxi",
-          "Achievement Unlocked",
-          "Achievement Unlocked 2",
-          "Achievement Unlocked 3",
-          "Achilles 2",
-          "Advent Neon",
-          "Age of War",
-          "Age of War 2",
-          "Ages of Conflict",
-          "Ahoy Survival",
-          "Akumanor Gaiden",
-          "Alien Hominid",
-          "Alien Sky Invasion",
-          "Alien Transporter",
-          "Alien vs Predator",
-          "Allocation",
-          "Amaze",
-          "Amidst the Sky",
-          "Amigo Pancho",
-          "Amigo Pancho 2",
-          "Amigo Pancho 3",
-          "Amigo Pancho 4",
-          "Amigo Pancho 5",
-          "Amigo Pancho 6",
-          "Amigo Pancho 7",
-          "Amorphous+",
-          "Ancient Sins",
-          "Another World",
-          "Apotris",
-          "Apple Shooter",
-          "Apple Worm",
-          "Aquapark.io",
-          "Archery World Tour",
-          "Are We There Yet?",
-          "Armor Mayhem 2",
-          "Asteroids",
-          "Attack Hole",
-          "Avalanche",
-          "Awesome Pirates",
-          "Awesome Planes",
-          "Awesome Tanks",
-          "Awesome Tanks 2",
-          "B3313",
-          "Babel Tower",
-          "Baby Chicco Adventure",
-          "Baby Kaizo",
-          "Backrooms",
-          "Backrooms 2D",
-          "Bacon May Die",
-          "Bad Ice Cream",
-          "Bad Monday Simulator",
-          "Baldi's Basics",
-          "Ball Blast",
-          "Balls and Bricks",
-          "Banana Simulator",
-          "Bandit Gunslingers",
-          "Bank Breakout 2",
-          "Bank Robbery 2",
-          "Barry Has a Secret",
-          "BAS",
-          "Baseball Bros",
-          "Basket Battle",
-          "Basket Bros",
-          "Basket Random",
-          "Basket Slam Dunk 2",
-          "Basketball FRVR",
-          "Basketball Legends",
-          "Basketball Stars",
-          "Batter Up",
-          "Battle Simulator",
-          "Battles",
-          "Bazooka Boy",
-          "Bearbarians",
-          "Big Ice Tower Tiny Square",
-          "Big Neon Tower Tiny Square",
-          "Big Shot Boxing",
-          "Big Time Butter Baron",
-          "Big Tower Tiny Square",
-          "Big Tower Tiny Square 2",
-          "Bit Planes",
-          "Blackjack"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 401,
+        "added_count": 0,
         "removed_count": 0,
-        "added_truncated": 301,
+        "added_truncated": 0,
         "removed_truncated": 0
       }
     },
     "all": {
-      "added": [
-        {
-          "name": "1 on 1 Soccer",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "1 on 1 Tennis",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "10 Bullets",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "10 Minutes Till Dawn",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "100 Skibidi",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "12 Mini Battles",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "1v1.lol",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "2048",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "2D Shooting",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "3 Slices 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "4th and Goal",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "60 Seconds Burger Run",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "60 Seconds Santa Run",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "8 Ball Classic",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "A Dance of Fire and Ice",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "A Dark Room",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "A Day in the Office",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "A Small World Cup",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Abandoned",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Ace Gangster Taxi",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Achievement Unlocked",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Achievement Unlocked 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Achievement Unlocked 3",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Achilles 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Advent Neon",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Agar Lite",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        },
-        {
-          "name": "Age of War",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Age of War 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Ages of Conflict",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Ahoy Survival",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Akumanor Gaiden",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Alien Hominid",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Alien Sky Invasion",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Alien Transporter",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Alien vs Predator",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Allocation",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Amaze",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Amidst the Sky",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Amigo Pancho",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Amigo Pancho 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Amigo Pancho 3",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Amigo Pancho 4",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Amigo Pancho 5",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Amigo Pancho 6",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Amigo Pancho 7",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Amorphous+",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Ancient Sins",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Another World",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Apotris",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Apple Shooter",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Apple Worm",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Aquapark.io",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Archery World Tour",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Are We There Yet?",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Armor Mayhem 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Asteroids",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Attack Hole",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Avalanche",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Awesome Pirates",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Awesome Planes",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Awesome Tanks",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Awesome Tanks 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "B3313",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Babel Tower",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Baby Chicco Adventure",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Baby Kaizo",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Backrooms",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Backrooms 2D",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Bacon May Die",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Bad Ice Cream",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Bad Monday Simulator",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Baldi's Basics",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Ball Blast",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Balls and Bricks",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Banana Simulator",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Bandit Gunslingers",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Bank Breakout 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Bank Robbery 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Barry Has a Secret",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "BAS",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Baseball Bros",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Basket Battle",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Basket Bros",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Basket Random",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Basket Slam Dunk 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Basketball FRVR",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Basketball Legends",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Basketball Stars",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Batter Up",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Battle Simulator",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Battles",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Bazooka Boy",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Bearbarians",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Big Ice Tower Tiny Square",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Big Neon Tower Tiny Square",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Big Shot Boxing",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Big Time Butter Baron",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Big Tower Tiny Square",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Big Tower Tiny Square 2",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        },
-        {
-          "name": "Bit Planes",
-          "tag": "gdb:nexora",
-          "label": "Nexora"
-        }
-      ],
+      "added": [],
       "removed": [],
-      "added_count": 406,
+      "added_count": 0,
       "removed_count": 0,
-      "added_truncated": 306,
+      "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-11-04",
+      "kind": "diff",
+      "catalogs_touched": [],
+      "added": 0,
+      "removed": 0,
+      "by_catalog": []
+    },
     {
       "date": "2026-11-03",
       "kind": "diff",
@@ -4059,23 +3497,6 @@
           "tag": "gdb:luminsdk",
           "label": "Lumin SDK",
           "added": 4,
-          "removed": 0
-        }
-      ]
-    },
-    {
-      "date": "2026-08-31",
-      "kind": "diff",
-      "catalogs_touched": [
-        "gdb:unblockedzone"
-      ],
-      "added": 20,
-      "removed": 0,
-      "by_catalog": [
-        {
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone",
-          "added": 20,
           "removed": 0
         }
       ]
