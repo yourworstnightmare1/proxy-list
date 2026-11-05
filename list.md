@@ -2686,14 +2686,13 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math, GDB:Seraph | unknown | 84 |
+> | Proxy/Games | GDB:gn-math, GDB:Seraph | unknown | 83 |
 
 > [!IMPORTANT]
 > StudyHub does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://study.cazaresulina.ro/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://learning.lastarria43.cl/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://cranky-clarke.152-53-246-17.plesk.page | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://www.cranky-clarke.152-53-246-17.plesk.page | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -2785,7 +2784,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | tab-cloak, panic | Ultraviolet, Rammerhead | 30 |
+> | Proxy | tab-cloak, panic | Ultraviolet, Rammerhead | 29 |
 > [!IMPORTANT]
 > if you were looking for ford links, ford no longer exists and all of its links are now strawberri links
 
@@ -2795,7 +2794,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://strawberry.autos/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://strawberryv2.sbs/ | 4/21/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://Strawberryv2.sbs | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://learning.colloky.com.pe/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://cipher.alalalal.com | 5/11/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://makes.gcpservicios.cl | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://what.cthulhu.li | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
