@@ -53480,8 +53480,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 |  | https://nyfu.altimiras-chile.cl | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://seicp.altimiras-chile.cl | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 |  | https://substances.conduit.fyi/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-cxegpaxk.myoxypages.com/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://site-cxegpaxk.myoxypages.com/glalaxyyoutube | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://sixseven.costasur.cl | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://democrat.govt.hu | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://lsbull.govt.hu | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
