@@ -2647,7 +2647,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:gn-math | Scramjet | 11 |
+> | Proxy/Games | GDB:gn-math | Scramjet | 10 |
 
 > [!IMPORTANT]
 > Rosin does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2664,7 +2664,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://vipfilm21.sbs/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://whataburgervisit.cfd/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://zone-telechargement.sbs/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://oil-up.now.eminescusm.ro/ | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ♈ Zodiac
 > [!NOTE]

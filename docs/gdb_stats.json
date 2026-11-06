@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-05T23:16:47Z",
-  "snapshot_date": "2026-11-05",
+  "generated_at": "2026-11-06T04:50:19Z",
+  "snapshot_date": "2026-11-06",
   "catalog_count": 34,
   "total_entries": 36375,
   "unique_games": 28792,
@@ -2450,10 +2450,51 @@
       },
       "total_entries": 36375,
       "unique_games": 28792
+    },
+    {
+      "date": "2026-11-06",
+      "counts": {
+        "gdb:unblockedzone": 0,
+        "gdb:gn-math": 847,
+        "gdb:luminsdk": 847,
+        "gdb:noahs-tutoring": 0,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 847,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 498,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275,
+        "gdb:flux": 1741,
+        "gdb:greenis": 208,
+        "gdb:melonsoda": 42,
+        "gdb:edurocks": 0,
+        "gdb:timmy": 0,
+        "gdb:zane": 479,
+        "gdb:3kh0": 145,
+        "gdb:alexr": 676,
+        "gdb:hydra": 1641,
+        "gdb:diesmos": 1175,
+        "gdb:fyinx": 0,
+        "gdb:nexora": 401
+      },
+      "total_entries": 36375,
+      "unique_games": 28792
     }
   ],
   "latest_changes": {
-    "date": "2026-11-05",
+    "date": "2026-11-06",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
@@ -2773,6 +2814,14 @@
     }
   },
   "modifications": [
+    {
+      "date": "2026-11-06",
+      "kind": "diff",
+      "catalogs_touched": [],
+      "added": 0,
+      "removed": 0,
+      "by_catalog": []
+    },
     {
       "date": "2026-11-05",
       "kind": "diff",
@@ -3501,23 +3550,6 @@
       "added": 0,
       "removed": 0,
       "by_catalog": []
-    },
-    {
-      "date": "2026-09-02",
-      "kind": "diff",
-      "catalogs_touched": [
-        "gdb:unblockedzone"
-      ],
-      "added": 0,
-      "removed": 1,
-      "by_catalog": [
-        {
-          "tag": "gdb:unblockedzone",
-          "label": "Unblockedzone",
-          "added": 0,
-          "removed": 1
-        }
-      ]
     }
   ],
   "_note": "Built by scripts/build_gdb_stats.py. Live UI may also refresh counts via game-db-search.js."
