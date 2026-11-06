@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-06T13:46:57Z",
+  "generated_at": "2026-11-06T22:49:18Z",
   "snapshot_date": "2026-11-06",
   "catalog_count": 34,
-  "total_entries": 36375,
-  "unique_games": 28792,
+  "total_entries": 36387,
+  "unique_games": 28796,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -14,13 +14,13 @@
     {
       "tag": "gdb:gn-math",
       "label": "gn-math",
-      "count": 847,
+      "count": 851,
       "empty": false
     },
     {
       "tag": "gdb:luminsdk",
       "label": "Lumin SDK",
-      "count": 847,
+      "count": 851,
       "empty": false
     },
     {
@@ -56,7 +56,7 @@
     {
       "tag": "gdb:lucide",
       "label": "Lucide",
-      "count": 847,
+      "count": 851,
       "empty": false
     },
     {
@@ -2455,14 +2455,14 @@
       "date": "2026-11-06",
       "counts": {
         "gdb:unblockedzone": 0,
-        "gdb:gn-math": 847,
-        "gdb:luminsdk": 847,
+        "gdb:gn-math": 851,
+        "gdb:luminsdk": 851,
         "gdb:noahs-tutoring": 0,
         "gdb:elite-games": 325,
         "gdb:ultimate-game-stash": 2446,
         "gdb:seraph": 500,
         "gdb:chicken-kings-vault": 821,
-        "gdb:lucide": 847,
+        "gdb:lucide": 851,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
         "gdb:ccported": 22,
@@ -2489,8 +2489,8 @@
         "gdb:fyinx": 0,
         "gdb:nexora": 401
       },
-      "total_entries": 36375,
-      "unique_games": 28792
+      "total_entries": 36387,
+      "unique_games": 28796
     }
   ],
   "latest_changes": {
@@ -2508,18 +2508,28 @@
       },
       "gdb:gn-math": {
         "label": "gn-math",
-        "added": [],
+        "added": [
+          "Castle Crashers",
+          "Feed and Grow Fish",
+          "Minecraft: Story Mode",
+          "The Joy of Creation: Story Mode"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 4,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
       "gdb:luminsdk": {
         "label": "Lumin SDK",
-        "added": [],
+        "added": [
+          "Castle Crashers",
+          "Feed and Grow Fish",
+          "Minecraft: Story Mode",
+          "The Joy of Creation: Story Mode"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 4,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -2571,9 +2581,14 @@
       },
       "gdb:lucide": {
         "label": "Lucide",
-        "added": [],
+        "added": [
+          "Castle Crashers",
+          "Feed and Grow Fish",
+          "Minecraft: Story Mode",
+          "The Joy of Creation: Story Mode"
+        ],
         "removed": [],
-        "added_count": 0,
+        "added_count": 4,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -2805,9 +2820,70 @@
       }
     },
     "all": {
-      "added": [],
+      "added": [
+        {
+          "name": "Castle Crashers",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Castle Crashers",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Castle Crashers",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Feed and Grow Fish",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Feed and Grow Fish",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Feed and Grow Fish",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "Minecraft: Story Mode",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "Minecraft: Story Mode",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "Minecraft: Story Mode",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        },
+        {
+          "name": "The Joy of Creation: Story Mode",
+          "tag": "gdb:gn-math",
+          "label": "gn-math"
+        },
+        {
+          "name": "The Joy of Creation: Story Mode",
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK"
+        },
+        {
+          "name": "The Joy of Creation: Story Mode",
+          "tag": "gdb:lucide",
+          "label": "Lucide"
+        }
+      ],
       "removed": [],
-      "added_count": 0,
+      "added_count": 12,
       "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
@@ -2817,10 +2893,33 @@
     {
       "date": "2026-11-06",
       "kind": "diff",
-      "catalogs_touched": [],
-      "added": 0,
+      "catalogs_touched": [
+        "gdb:gn-math",
+        "gdb:lucide",
+        "gdb:luminsdk"
+      ],
+      "added": 12,
       "removed": 0,
-      "by_catalog": []
+      "by_catalog": [
+        {
+          "tag": "gdb:gn-math",
+          "label": "gn-math",
+          "added": 4,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:lucide",
+          "label": "Lucide",
+          "added": 4,
+          "removed": 0
+        },
+        {
+          "tag": "gdb:luminsdk",
+          "label": "Lumin SDK",
+          "added": 4,
+          "removed": 0
+        }
+      ]
     },
     {
       "date": "2026-11-05",
