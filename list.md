@@ -1668,7 +1668,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 142 |
+> | Proxy/Games | wisp, GDB:dogeub | Scramjet, Ultraviolet | 141 |
 
 > [!IMPORTANT]
 > when visiting dogeub on a google script (script.google.com) domain, the proxy won't load and if it does it's just a white screen. most games are unaffected
@@ -1703,7 +1703,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.jsdelivr.net/gh/rykcbaoolNEW/dogeub/index.svg | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://s3.amazonaws.com/lsrelay-a/index.html | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://lsrelay-a.s3.amazonaws.com/index.html | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
-| | https://getaway.champagnewishesandrvdreams.com/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://educationbull.asturkiters.es/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://software.config.bull.stuff.ldeazevedo.com/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://dodge.ball.pe.activities.fun.colloky.com.pe/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
@@ -2850,7 +2849,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:utopia | Ultraviolet | 23 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 21 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
@@ -2858,10 +2857,8 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | - | - | - | - | - | - |
 | | https://alexlol.mooo.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bum.education/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://sub.to.square-hippo.fritsche.org | 5/1/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://educationlessons.crabdance.com | 5/2/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)|
 | | https://totallynotsuspicious.at.all.biblosconsulting.ru/ | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
-| | https://tatata12345678910e2.chickenkiller.com | 5/9/2026 | N/A | N/A | [1NobleCyber](https://github.com/1NobleCyber)
 | | https://qowerschool.com/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | https://4l3x19the562oh.twilightparadox.com | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://mhi.banglam.com | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49376,7 +49373,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1445 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1440 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50613,7 +50610,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://crispdesk1325.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://boldfocus1915.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://bravehub6998.govt.hu/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://brightgrid1348.50friends.com.mx/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cattitude-byte94.fukushimastudy.org | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.esm.sh/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50639,7 +50635,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.cdn.zzko.cn/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/task4z/classroom-15x/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://keenbook3884.cascadesterling.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://originfastly.jsdelivr.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quantil.jsdelivr.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50653,9 +50648,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://script.google.com/macros/s/AKfycbyACzDXCUqCxu8q0nEWFvx_tyK3bWdHM1_mVRvmk5aBE6x70P6gMaDThjZmz6xspHUy/exec?id=EcZi3Y8819 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://script.google.com/macros/s/AKfycbyACzDXCUqCxu8q0nEWFvx_tyK3bWdHM1_mVRvmk5aBE6x70P6gMaDThjZmz6xspHUy/exec?id=qrEjwD1838 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://scruff-prime59.becasuniversitarias.org | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://simpleroom4135.bclib.org/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://solidsite2603.alabasgames.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://solidtutor2735.e1racecar.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/task4z/classroom-15x@06756d7defe336614ed15f20125268b5e094d02c/files/catclass/logo.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://site-u5fkb23e.myoxypages.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51092,7 +51084,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy | wisp | Unknown | 6 |
+> | Proxy | wisp | Unknown | 5 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://script.google.com/macros/s/AKfycbyBpXVWW5SVdx91Ve2LniAMUx6raXMpGq8jK5nmeomRkbGRmfaVVl78ytbt2mocu3oszQ/exec | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51100,7 +51092,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://zc13.pages.dev/v5.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/zaka13fr/k12_logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://zaka13fr.storage.googleapis.com/k12_logo.svg | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://zka.govt.hu/study.html | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌙 Nocturne
 > [!NOTE]
