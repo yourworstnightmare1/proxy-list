@@ -1,14 +1,26 @@
 {
-  "checked_at": "2026-11-08T12:45:44Z",
-  "checked_at_display": "2026-11-08 12:45 UTC",
+  "checked_at": "2026-11-08T21:41:44Z",
+  "checked_at_display": "2026-11-08 21:41 UTC",
   "added_count": 0,
-  "removed_count": 5,
+  "removed_count": 17,
   "added_links": [],
   "removed_links": [
-    "https://educationbull.asturkiters.es",
-    "https://software.config.bull.stuff.ldeazevedo.com",
-    "https://dodge.ball.pe.activities.fun.colloky.com.pe",
-    "https://learning.lastarria43.cl",
-    "https://business.lastarria43.cl"
+    "https://raw.esm.sh/schoolwork@1.0.0/index.html",
+    "https://classroomc47c1455.s3.us-east-1.amazonaws.com/index.html",
+    "https://s3.amazonaws.com/classroomc47c1455/index.html",
+    "https://classroomc47c1455.s3.amazonaws.com/index.html",
+    "https://classroomc47c1455.s3-external-1.amazonaws.com/index.html",
+    "https://s3.us-east-1.amazonaws.com/classroomc47c1455/index.html",
+    "https://s3-external-1.amazonaws.com/classroomc47c1455/index.html",
+    "https://storage.googleapis.com/c47cl455/index.html",
+    "https://c47cl455.storage.googleapis.com/index.html",
+    "https://catclassgoat.s3.amazonaws.com/index.html",
+    "https://catclassgoat.s3.us-east-1.amazonaws.com/index.html",
+    "https://catclassgoat.s3-external-1.amazonaws.com/index.html",
+    "https://s3.amazonaws.com/catclassgoat/index.html",
+    "https://s3.us-east-1.amazonaws.com/catclassgoat/index.html",
+    "https://s3-external-1.amazonaws.com/catclassgoat/index.html",
+    "https://storage.googleapis.com/catgoat/index.html",
+    "https://catgoat.storage.googleapis.com/index.html"
   ]
 }
