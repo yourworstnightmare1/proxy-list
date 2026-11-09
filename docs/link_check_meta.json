@@ -1,8 +1,23 @@
 {
-  "checked_at": "2026-11-09T04:15:38Z",
-  "checked_at_display": "2026-11-09 04:15 UTC",
+  "checked_at": "2026-11-09T15:05:43Z",
+  "checked_at_display": "2026-11-09 15:05 UTC",
   "added_count": 0,
-  "removed_count": 0,
+  "removed_count": 14,
   "added_links": [],
-  "removed_links": []
+  "removed_links": [
+    "https://educationlessons.crabdance.com",
+    "https://education.mannzur.xyz",
+    "https://cdn.esm.sh/desmoswork@1.0.0/index.html",
+    "https://cdn.esm.sh/desmoshomework@1.0.0/index.html",
+    "https://esm.sh/ilovedesmos@1.0.0/index.html",
+    "https://raw.esm.sh/ilovedesmos@1.0.0/index.html",
+    "https://voya.mannzur.xyz",
+    "https://quickmind8233.mannzur.xyz",
+    "https://puretutor1052.mannzur.xyz",
+    "https://solidpath2204.mannzur.xyz",
+    "https://quietzone3469.mannzur.xyz",
+    "https://boldroom5392.mannzur.xyz",
+    "https://tt.mannzur.xyz",
+    "https://au.mannzur.xyz"
+  ]
 }
