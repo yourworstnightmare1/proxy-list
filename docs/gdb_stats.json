@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-09T15:05:56Z",
-  "snapshot_date": "2026-11-09",
+  "generated_at": "2026-11-10T01:16:34Z",
+  "snapshot_date": "2026-11-10",
   "catalog_count": 34,
   "total_entries": 36387,
   "unique_games": 28796,
@@ -2614,10 +2614,51 @@
       },
       "total_entries": 36387,
       "unique_games": 28796
+    },
+    {
+      "date": "2026-11-10",
+      "counts": {
+        "gdb:unblockedzone": 0,
+        "gdb:gn-math": 851,
+        "gdb:luminsdk": 851,
+        "gdb:noahs-tutoring": 0,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 851,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 498,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275,
+        "gdb:flux": 1741,
+        "gdb:greenis": 208,
+        "gdb:melonsoda": 42,
+        "gdb:edurocks": 0,
+        "gdb:timmy": 0,
+        "gdb:zane": 479,
+        "gdb:3kh0": 145,
+        "gdb:alexr": 676,
+        "gdb:hydra": 1641,
+        "gdb:diesmos": 1175,
+        "gdb:fyinx": 0,
+        "gdb:nexora": 401
+      },
+      "total_entries": 36387,
+      "unique_games": 28796
     }
   ],
   "latest_changes": {
-    "date": "2026-11-09",
+    "date": "2026-11-10",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
@@ -2721,12 +2762,9 @@
       },
       "gdb:ccported": {
         "label": "CCPorted",
-        "added": [
-          "Bloons Tower Defense 1",
-          "Burrito Bison"
-        ],
+        "added": [],
         "removed": [],
-        "added_count": 2,
+        "added_count": 0,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -2931,26 +2969,23 @@
       }
     },
     "all": {
-      "added": [
-        {
-          "name": "Bloons Tower Defense 1",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        },
-        {
-          "name": "Burrito Bison",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        }
-      ],
+      "added": [],
       "removed": [],
-      "added_count": 2,
+      "added_count": 0,
       "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-11-10",
+      "kind": "diff",
+      "catalogs_touched": [],
+      "added": 0,
+      "removed": 0,
+      "by_catalog": []
+    },
     {
       "date": "2026-11-09",
       "kind": "diff",
@@ -3715,14 +3750,6 @@
     },
     {
       "date": "2026-09-07",
-      "kind": "diff",
-      "catalogs_touched": [],
-      "added": 0,
-      "removed": 0,
-      "by_catalog": []
-    },
-    {
-      "date": "2026-09-06",
       "kind": "diff",
       "catalogs_touched": [],
       "added": 0,
