@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-11T04:23:53Z",
+  "generated_at": "2026-11-11T13:33:08Z",
   "snapshot_date": "2026-11-11",
   "catalog_count": 34,
-  "total_entries": 36387,
-  "unique_games": 28796,
+  "total_entries": 36383,
+  "unique_games": 28794,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 22,
+      "count": 18,
       "empty": false
     },
     {
@@ -2670,7 +2670,7 @@
         "gdb:lucide": 851,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 22,
+        "gdb:ccported": 18,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -2694,8 +2694,8 @@
         "gdb:fyinx": 0,
         "gdb:nexora": 401
       },
-      "total_entries": 36387,
-      "unique_games": 28796
+      "total_entries": 36383,
+      "unique_games": 28794
     }
   ],
   "latest_changes": {
@@ -2804,9 +2804,14 @@
       "gdb:ccported": {
         "label": "CCPorted",
         "added": [],
-        "removed": [],
+        "removed": [
+          "Bloons Tower Defense 1",
+          "Ovo Modded",
+          "Riddle Transfer",
+          "Tetris"
+        ],
         "added_count": 0,
-        "removed_count": 0,
+        "removed_count": 4,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -3011,9 +3016,30 @@
     },
     "all": {
       "added": [],
-      "removed": [],
+      "removed": [
+        {
+          "name": "Bloons Tower Defense 1",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Ovo Modded",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Riddle Transfer",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Tetris",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        }
+      ],
       "added_count": 0,
-      "removed_count": 0,
+      "removed_count": 4,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -3022,10 +3048,19 @@
     {
       "date": "2026-11-11",
       "kind": "diff",
-      "catalogs_touched": [],
+      "catalogs_touched": [
+        "gdb:ccported"
+      ],
       "added": 0,
-      "removed": 0,
-      "by_catalog": []
+      "removed": 4,
+      "by_catalog": [
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 0,
+          "removed": 4
+        }
+      ]
     },
     {
       "date": "2026-11-10",
