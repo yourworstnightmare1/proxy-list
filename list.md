@@ -3494,7 +3494,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://edu-tutor.deepee.com/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://math-tutor.priestella.xyz/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edu-tutor.priestella.xyz/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-|  | https://d283k641vp536n.cloudfront.net/ | 10/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/6huGt/index_2_1-o6pk6@main/assets/v0001/index_2_1.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/6huGt/index_2_1-o6pk6@main/assets/v0001/index_2_1.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://testingcf.jsdelivr.net/gh/6huGt/index_2_1-o6pk6@main/assets/v0001/index_2_1.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -55158,7 +55157,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 68 |
+> | pending | - | - | 67 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -55178,7 +55177,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://raw.githubusercontent.com/donoEla/Algebraic-Formulation-1/main/v0008/index.svg?id=7&key=7 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://esm.sh/gh/donoEla/Algebraic-Formulation-1@main/v0009/index.svg?usp=drive_web&authuser=9&resourcekey=1MChqa&id=8 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://raw.esm.sh/gh/donoEla/Algebraic-Formulation-1@main/v0010/index.svg?id=9&edge=cf_8ff347&v=0009 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://gcore.jsdelivr.net/gh/Turnip5o9/tryoutbalatro@main/index.svg | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/donoEla/Algebraic-Formulation-1@main/v0011/index.svg?authuser=6312146161&resourcekey=XDtjua&usp=sharing&assignment_id=425692331 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/donoEla/Algebraic-Formulation-1@main/v0012/index.svg?submission_id=72039707775&module_item_id=36&user_id=688597799402&download=1 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/donoEla/Algebraic-Formulation-1@main/v0013/index.svg?id=12&key=12 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
