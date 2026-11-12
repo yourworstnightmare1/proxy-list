@@ -9951,6 +9951,7 @@
     function importantNoticeAlertClass(title) {
       const t = String(title || "").trim();
       if (/fern aws outage/i.test(t)) return "notice-alert-danger";
+      if (/beware of fake sites/i.test(t)) return "notice-alert-warning";
       if (/slowing development temporarily/i.test(t)) return "notice-alert-info";
       if (/proxy connections fully operational/i.test(t)) return "notice-alert-success";
       if (/canary branch coming soon/i.test(t)) return "notice-alert-info";
