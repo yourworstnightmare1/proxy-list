@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T14:53:11Z",
+  "generated_at": "2026-11-12T22:22:38Z",
   "snapshot_date": "2026-11-12",
   "catalog_count": 34,
-  "total_entries": 36383,
-  "unique_games": 28795,
+  "total_entries": 36387,
+  "unique_games": 28796,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 18,
+      "count": 22,
       "empty": false
     },
     {
@@ -2711,7 +2711,7 @@
         "gdb:lucide": 851,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 18,
+        "gdb:ccported": 22,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -2735,8 +2735,8 @@
         "gdb:fyinx": 0,
         "gdb:nexora": 401
       },
-      "total_entries": 36383,
-      "unique_games": 28795
+      "total_entries": 36387,
+      "unique_games": 28796
     }
   ],
   "latest_changes": {
@@ -2850,14 +2850,9 @@
           "Riddle Transfer",
           "Tetris"
         ],
-        "removed": [
-          "Agar Lite",
-          "BallZ",
-          "Basket Random",
-          "Escape Road"
-        ],
+        "removed": [],
         "added_count": 4,
-        "removed_count": 4,
+        "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -3083,30 +3078,9 @@
           "label": "CCPorted"
         }
       ],
-      "removed": [
-        {
-          "name": "Agar Lite",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        },
-        {
-          "name": "BallZ",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        },
-        {
-          "name": "Basket Random",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        },
-        {
-          "name": "Escape Road",
-          "tag": "gdb:ccported",
-          "label": "CCPorted"
-        }
-      ],
+      "removed": [],
       "added_count": 4,
-      "removed_count": 4,
+      "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -3119,13 +3093,13 @@
         "gdb:ccported"
       ],
       "added": 4,
-      "removed": 4,
+      "removed": 0,
       "by_catalog": [
         {
           "tag": "gdb:ccported",
           "label": "CCPorted",
           "added": 4,
-          "removed": 4
+          "removed": 0
         }
       ]
     },

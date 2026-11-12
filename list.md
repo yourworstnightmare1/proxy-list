@@ -21128,16 +21128,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/DuckMath.svg?1019 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/obamamegagon/linkmaker@main/DuckMath.svg?1020 | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
-# ⚛️ Rhodium
-> [!NOTE]
-> | Category | Capabilities | Protocol(s) | Links |
-> | - | - | - | - |
-> | Proxy/Games | unknown | Scramjet | 1 |
-
-| Locked | Link | Found Date | Username | Password | Contributor |
-| - | - | - | - | - | - |
-| | https://edu.paschools.cfd/ | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-
 # ✨ Equinox
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
@@ -55255,7 +55245,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 127 |
+> | pending | - | - | 126 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -55387,7 +55377,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://s3.amazonaws.com/opiumbull/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/opiumbull/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://www.brammersathletic.net/uploaded/files/product_options/20260928_232843_902866_singlefile.svg | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://opm.d2otav0547hwz0.amplifyapp.com/ | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🌟 Astra
 > [!NOTE]
