@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-12T00:22:29Z",
+  "generated_at": "2026-11-12T06:04:32Z",
   "snapshot_date": "2026-11-12",
   "catalog_count": 34,
-  "total_entries": 36386,
+  "total_entries": 36387,
   "unique_games": 28796,
   "catalogs": [
     {
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 21,
+      "count": 22,
       "empty": false
     },
     {
@@ -2711,7 +2711,7 @@
         "gdb:lucide": 851,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 21,
+        "gdb:ccported": 22,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -2735,7 +2735,7 @@
         "gdb:fyinx": 0,
         "gdb:nexora": 401
       },
-      "total_entries": 36386,
+      "total_entries": 36387,
       "unique_games": 28796
     }
   ],
@@ -2847,10 +2847,11 @@
         "added": [
           "Bloons Tower Defense 1",
           "Ovo Modded",
-          "Riddle Transfer"
+          "Riddle Transfer",
+          "Tetris"
         ],
         "removed": [],
-        "added_count": 3,
+        "added_count": 4,
         "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
@@ -3070,10 +3071,15 @@
           "name": "Riddle Transfer",
           "tag": "gdb:ccported",
           "label": "CCPorted"
+        },
+        {
+          "name": "Tetris",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
         }
       ],
       "removed": [],
-      "added_count": 3,
+      "added_count": 4,
       "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
@@ -3086,13 +3092,13 @@
       "catalogs_touched": [
         "gdb:ccported"
       ],
-      "added": 3,
+      "added": 4,
       "removed": 0,
       "by_catalog": [
         {
           "tag": "gdb:ccported",
           "label": "CCPorted",
-          "added": 3,
+          "added": 4,
           "removed": 0
         }
       ]

@@ -51279,7 +51279,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | - | - | 101 |
+> | Proxy/Games | - | - | 100 |
 > [!IMPORTANT]
 > proxy is slow + links suck and are blocked instantly
 
@@ -51372,7 +51372,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://verygood.joyitasparejas.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.allysports.com.ar/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.alalalal.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://verygood.pulsaudio.ro/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.trhd.ro/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.inzagreb.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://verygood.jyotsnapandey.com.np/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
