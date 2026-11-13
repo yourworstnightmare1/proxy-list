@@ -337,7 +337,6 @@ Move links from here into `list.md` once sorted.
 - https://solidpoems.eclipsecastellon.net
 - https://easygeo.eclipsecastellon.net
 - https://bigmoney.cc
-- https://businessschool.cc
 - https://crypto-college.cc
 - https://fulcrumtheatreinc.com
 - https://homeworkhelp.cc
@@ -496,7 +495,6 @@ Move links from here into `list.md` once sorted.
 - https://gsuiteclassroom.s3.amazonaws.com/index.html
 - https://gsuiteclassroom.s3.dualstack.us-east-1.amazonaws.com/index.html
 - https://gsuiteclassroom.s3.us-east-1.amazonaws.com/index.html
-- https://h7ww.s3.amazonaws.com/index.html
 - https://h7ww.s3.dualstack.us-east-1.amazonaws.com/index.html
 - https://h7ww.s3.us-east-1.amazonaws.com/index.html
 - https://hihu249.s3.amazonaws.com/index.html
@@ -565,7 +563,6 @@ Move links from here into `list.md` once sorted.
 - https://kitepr0xy.s3.amazonaws.com/index.html
 - https://kitepr0xy.s3.dualstack.us-east-1.amazonaws.com/index.html
 - https://kitepr0xy.s3.us-east-1.amazonaws.com/index.html
-- https://kitestudy.s3.amazonaws.com/index.html
 - https://kitestudy.s3.dualstack.us-east-1.amazonaws.com/index.html
 - https://kitestudy.s3.us-east-1.amazonaws.com/index.html
 - https://lcfy.s3.amazonaws.com/index.html
