@@ -2,6 +2,12 @@
   "_note": "Archived site update notices. Regenerate history with: python3 scripts/build_update_changelog.py",
   "entries": [
     {
+      "version": "v9.1",
+      "revision": "r317",
+      "released": "November 12, 2026",
+      "update_notice": "### New\n- Added 900+ links (currently getting filter data)\n- Added \"Hide CDN Links\" button which hides all mass-produced links from CDN networks/link generators\n- Updated README.md\n\n### Fixed\n- Fixed bug causing allowlisted accounts to not be able to access the admin panel\n- Fixed InvisiProxy GitHub link to direct you to unmaintained version instead of LTS\n- Fixed security issues with uploaded images\n- Fixed security issues with hostname checks"
+    },
+    {
       "version": "v9.0",
       "revision": "r316",
       "released": "November 2, 2026",

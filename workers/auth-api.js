@@ -104,7 +104,11 @@ export function submissionAdminUidList(env) {
   const adminCsv = String((env && env.SUBMISSION_ADMIN_UIDS) || "").trim();
   return adminCsv
     ? adminCsv.split(/[,\s]+/).map((s) => s.trim()).filter(Boolean)
-    : ["OiMY32eTKcSnEX73W6oBUKgT6pG3"];
+    : [
+        // Fallback when SUBMISSION_ADMIN_UIDS is unset (local + current production).
+        "OiMY32eTKcSnEX73W6oBUKgT6pG3",
+        "QDaYz2ETKCSlEK70N3U8UKgTezX2", // yourworstnightmare_
+      ];
 }
 
 export function isSubmissionAdminUid(env, uid) {

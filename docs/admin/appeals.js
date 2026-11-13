@@ -46,6 +46,7 @@
 
   async function ensureAdmin(user) {
     if (!SU.isSignedInNonAnonymous(user) || !(await SU.checkSubmissionAdmin(user))) {
+      if (SU.denyAdminAccess(user, gateNotice)) return false;
       redirectToMainList();
       return false;
     }
@@ -322,9 +323,10 @@
     await Promise.all([loadAppeals(), loadBans(), loadFlagged()]);
   }
 
-  function init() {
+  async function init() {
     var cfg = window.__FIREBASE_CONFIG__;
     if (!cfg || !cfg.apiKey || typeof firebase === "undefined") {
+      if (SU.denyAdminAccess(null, gateNotice)) return;
       redirectToMainList();
       return;
     }
@@ -333,12 +335,17 @@
     document.getElementById("refreshBtn").addEventListener("click", function () {
       void refreshAll();
     });
-    firebase.auth().onAuthStateChanged(async function (user) {
+    var auth = firebase.auth();
+    await SU.whenAuthReady(auth);
+    currentUser = auth.currentUser;
+    if (!(await ensureAdmin(currentUser))) return;
+    await refreshAll();
+    auth.onAuthStateChanged(async function (user) {
       currentUser = user;
       if (!(await ensureAdmin(user))) return;
       await refreshAll();
     });
   }
 
-  init();
+  void init();
 })();

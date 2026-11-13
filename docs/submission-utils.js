@@ -147,31 +147,219 @@
 
   var adminCheckCache = { uid: "", admin: false, at: 0 };
   var ADMIN_CACHE_MS = 60 * 1000;
+  var adminCheckInflight = { uid: "", promise: null };
+  // Keep in sync with workers/auth-api.js submissionAdminUidList fallback.
+  // Used when /api/admin/me fails (common on localhost→production) so the owner
+  // account is not stuck behind a false "not an admin" gate.
+  var DEFAULT_ADMIN_UIDS = [
+    "OiMY32eTKcSnEX73W6oBUKgT6pG3",
+    "QDaYz2ETKCSlEK70N3U8UKgTezX2",
+  ];
+
+  function isDefaultAdminUid(uid) {
+    var id = String(uid || "").trim();
+    return !!(id && DEFAULT_ADMIN_UIDS.indexOf(id) !== -1);
+  }
+
+  function clearSubmissionAdminCache() {
+    adminCheckCache = { uid: "", admin: false, at: 0 };
+    adminCheckInflight = { uid: "", promise: null };
+  }
+
+  function hasSubmissionAdminCache(user) {
+    return !!(
+      user &&
+      adminCheckCache.uid === user.uid &&
+      Date.now() - adminCheckCache.at < ADMIN_CACHE_MS
+    );
+  }
 
   function isSubmissionAdminUser(user) {
     if (!isSignedInNonAnonymous(user)) return false;
-    if (adminCheckCache.uid === user.uid && Date.now() - adminCheckCache.at < 5 * 60 * 1000) {
-      return adminCheckCache.admin;
-    }
+    if (hasSubmissionAdminCache(user)) return adminCheckCache.admin;
     return false;
   }
 
+  function delayMs(ms) {
+    return new Promise(function (resolve) {
+      setTimeout(resolve, ms);
+    });
+  }
+
+  /** Wait briefly for auth-security.js when scripts load in parallel with app.js. */
+  function waitForFetchAdminMe(attemptsLeft) {
+    var sec = global.ProxyListAuthSecurity;
+    var fetchMe = sec && typeof sec.fetchAdminMe === "function" ? sec.fetchAdminMe : null;
+    if (fetchMe) return Promise.resolve(fetchMe);
+    if (attemptsLeft <= 0) return Promise.resolve(null);
+    return delayMs(50).then(function () {
+      return waitForFetchAdminMe(attemptsLeft - 1);
+    });
+  }
+
+  /**
+   * Worker allowlist (SUBMISSION_ADMIN_UIDS via /api/admin/me).
+   * Resolves { status: "ok"|"error", admin?: boolean }.
+   */
+  function checkWorkerAdmin(user) {
+    return waitForFetchAdminMe(40).then(function (fetchMe) {
+      if (!fetchMe) return { status: "error" };
+      return fetchMe(user).then(
+        function (ok) {
+          return { status: "ok", admin: !!ok };
+        },
+        function () {
+          return { status: "error" };
+        }
+      );
+    });
+  }
+
+  /**
+   * Firestore config/submissions.adminUids — same list rules use for writes.
+   * Readable by any signed-in non-anonymous user. Critical on localhost:8080 where
+   * /api hits production Worker and may disagree with (or fail before) the Firestore list.
+   */
+  function checkFirestoreAdminUids(user) {
+    if (!user || !user.uid) return Promise.resolve({ status: "error" });
+    try {
+      if (!global.firebase || typeof firebase.firestore !== "function") {
+        return Promise.resolve({ status: "error" });
+      }
+      return firebase
+        .firestore()
+        .collection("config")
+        .doc("submissions")
+        .get()
+        .then(function (snap) {
+          if (!snap.exists) return { status: "ok", admin: false };
+          var data = snap.data() || {};
+          var uids = data.adminUids;
+          var ok = Array.isArray(uids) && uids.indexOf(user.uid) !== -1;
+          return { status: "ok", admin: ok };
+        })
+        .catch(function () {
+          return { status: "error" };
+        });
+    } catch (_) {
+      return Promise.resolve({ status: "error" });
+    }
+  }
+
   function checkSubmissionAdmin(user) {
-    if (!isSignedInNonAnonymous(user)) return Promise.resolve(false);
+    if (!isSignedInNonAnonymous(user)) {
+      clearSubmissionAdminCache();
+      return Promise.resolve(false);
+    }
     if (adminCheckCache.uid === user.uid && Date.now() - adminCheckCache.at < ADMIN_CACHE_MS) {
       return Promise.resolve(adminCheckCache.admin);
     }
-    var sec = global.ProxyListAuthSecurity;
-    var fetchMe = sec && typeof sec.fetchAdminMe === "function" ? sec.fetchAdminMe : null;
-    if (!fetchMe) return Promise.resolve(false);
-    return fetchMe(user)
-      .then(function (ok) {
-        adminCheckCache = { uid: user.uid, admin: !!ok, at: Date.now() };
-        return adminCheckCache.admin;
+    if (adminCheckInflight.uid === user.uid && adminCheckInflight.promise) {
+      return adminCheckInflight.promise;
+    }
+
+    var uid = user.uid;
+    // Fast path: known owner UIDs (matches Worker default allowlist).
+    if (isDefaultAdminUid(uid)) {
+      adminCheckCache = { uid: uid, admin: true, at: Date.now() };
+      return Promise.resolve(true);
+    }
+
+    var promise = Promise.all([checkWorkerAdmin(user), checkFirestoreAdminUids(user)])
+      .then(function (parts) {
+        var worker = parts[0] || { status: "error" };
+        var firestore = parts[1] || { status: "error" };
+        var isAdmin =
+          isDefaultAdminUid(uid) ||
+          (worker.status === "ok" && worker.admin) ||
+          (firestore.status === "ok" && firestore.admin);
+        // Cache when either source answered, or default allowlist matched.
+        if (isAdmin || worker.status === "ok" || firestore.status === "ok") {
+          adminCheckCache = { uid: uid, admin: !!isAdmin, at: Date.now() };
+          return adminCheckCache.admin;
+        }
+        // Both failed transiently — do not cache as non-admin.
+        return Promise.reject(new Error("admin_check_unavailable"));
       })
       .catch(function () {
-        return false;
+        return delayMs(200)
+          .then(function () {
+            return Promise.all([checkWorkerAdmin(user), checkFirestoreAdminUids(user)]);
+          })
+          .then(function (parts) {
+            var worker = parts[0] || { status: "error" };
+            var firestore = parts[1] || { status: "error" };
+            var isAdmin =
+              isDefaultAdminUid(uid) ||
+              (worker.status === "ok" && worker.admin) ||
+              (firestore.status === "ok" && firestore.admin);
+            if (isAdmin || worker.status === "ok" || firestore.status === "ok") {
+              adminCheckCache = { uid: uid, admin: !!isAdmin, at: Date.now() };
+              return adminCheckCache.admin;
+            }
+            return false;
+          })
+          .catch(function () {
+            return isDefaultAdminUid(uid);
+          });
+      })
+      .then(function (result) {
+        if (adminCheckInflight.promise === promise) {
+          adminCheckInflight = { uid: "", promise: null };
+        }
+        return result;
       });
+
+    adminCheckInflight = { uid: uid, promise: promise };
+    return promise;
+  }
+
+  function escAdminHtml(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  /** Wait until Firebase Auth finishes restoring a session (avoids false "signed out" gates). */
+  function whenAuthReady(auth) {
+    var Auth = global.ProxyListAuth;
+    if (Auth && typeof Auth.prepare === "function") return Auth.prepare(auth);
+    if (Auth && typeof Auth.waitForAuthReady === "function") return Auth.waitForAuthReady(auth);
+    if (auth && typeof auth.authStateReady === "function") return auth.authStateReady();
+    return Promise.resolve();
+  }
+
+  /**
+   * Show why /admin is blocked instead of silently bouncing to the homepage.
+   * Returns true when the caller should stay on the page (message shown or
+   * signed-in non-admin). Only returns false when there is no gate element and
+   * the visitor is signed out — callers may then redirect.
+   */
+  function denyAdminAccess(user, gateEl) {
+    var signedIn = isSignedInNonAnonymous(user);
+    var html;
+    if (!signedIn) {
+      html =
+        'Sign in with an admin account to open this page. ' +
+        '<a href="../login/?next=admin/">Sign in</a>';
+    } else {
+      html =
+        "This signed-in account is not an admin. Your Firebase UID is " +
+        "<code>" +
+        escAdminHtml(user.uid) +
+        "</code>. Add it to the Worker secret <code>SUBMISSION_ADMIN_UIDS</code> " +
+        "and Firestore <code>config/submissions.adminUids</code>, then refresh.";
+    }
+    if (gateEl) {
+      gateEl.hidden = false;
+      gateEl.className = "notice err";
+      gateEl.innerHTML = html;
+      return true;
+    }
+    // Stay put for signed-in users so they can copy their UID; bounce only if signed out.
+    return signedIn;
   }
 
   function submitterLabelFromUser(user, profileDoc) {
@@ -241,7 +429,11 @@
     contributorMdFromFields: contributorMdFromFields,
     isSignedInNonAnonymous: isSignedInNonAnonymous,
     isSubmissionAdminUser: isSubmissionAdminUser,
+    hasSubmissionAdminCache: hasSubmissionAdminCache,
     checkSubmissionAdmin: checkSubmissionAdmin,
+    clearSubmissionAdminCache: clearSubmissionAdminCache,
+    whenAuthReady: whenAuthReady,
+    denyAdminAccess: denyAdminAccess,
     submitterLabelFromUser: submitterLabelFromUser,
     contributorMdFromUser: contributorMdFromUser,
     formatListMdRow: formatListMdRow,

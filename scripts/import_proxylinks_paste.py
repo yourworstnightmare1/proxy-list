@@ -19,9 +19,10 @@ ALLOW_BUNNYCDN = False
 
 FILTER_LABELS = re.compile(
     r"\b(Lightspeed|Linewize|GoGuardian|Securly|Fortiguard|FortiGuard|"
-    r"Cisco Umbrella|Blocksi(?:\s+(?:Web|Ai|AI))?|LanSchool|Deledao|Iboss|"
-    r"Sophos|Barracuda|Qustodio|DNSFiter|DNSFilter|ZScaler|Palo Alto|"
-    r"ContentKeeper|AristotleK12|SensoCloud|Senso Cloud)\b",
+    r"Cisco(?:\s+Umbrella)?|Blocksi(?:\s+(?:Web|Ai|AI))?|LanSchool|Deledao|Iboss|iboss|"
+    r"Sophos|Barracuda|Qustodio|DNSFiter|DNSFilter|ZScaler|Palo[\s.]*Alto|"
+    r"Content[\s.]*Keeper|Aristotle(?:K12)?|Senso(?:\s*Cloud)?|NextDNS|"
+    r"@?(?:Linewize|GoGuardian|Palo\.Alto|Content\.Keeper|iBoss))\b",
     re.IGNORECASE,
 )
 
@@ -37,7 +38,9 @@ NOISE_RE = re.compile(
     r"poortung|fortiguard|all blockers|check-your-links|results for|"
     r"allow popups|type \d|click (?:viewer|the play|re-run)|"
     r"for some reason this gets marked|wildcard|nocaptions|"
-    r"the links below|^\(gn=",
+    r"the links below|^\(gn=|cdn slop|other (?:links|unblocker)|"
+    r"premium unblocker|ignore the filter|buncha void|start void|"
+    r"end void links|now has proxy",
     re.IGNORECASE,
 )
 
@@ -125,11 +128,14 @@ SECTION_ALIASES: dict[str, str] = {
     "opium": "💊 Opium",
     "astra": "🌟 Astra",
     "abstract": "Abstract",
-    "revault": "Revault",
+    "revault": "🔐 Re: Vault",
+    "re vault": "🔐 Re: Vault",
+    "re: vault": "🔐 Re: Vault",
     "glim": "✨ Glim",
     "kite": "Kite",
     "daydream x": "⭐ DayDream X",
     "daydreamx": "⭐ DayDream X",
+    "daydream": "⭐ DayDream X",
     "doge": "Doge",
     "flver": "Flver",
     "rook": "Rook",
@@ -141,6 +147,7 @@ SECTION_ALIASES: dict[str, str] = {
     "interstellar": "🌠 Interstellar",
     "stroberri": "🍓 Strawberri",
     "steobrri": "🍓 Strawberri",
+    "strobri": "🍓 Strawberri",
     "yukios": "❄️ Yuki",
     "yuki os": "❄️ Yuki",
     "luna": "🌕 Luna",
@@ -153,6 +160,17 @@ SECTION_ALIASES: dict[str, str] = {
     "rayzhusz links": "🐂 Bull",
     "material": "🧱 Material",
     "tungtung": "🪵 Tung Tung",
+    "xylora": "🔮 Xylora",
+    "toby web": "🦥 Toby Web",
+    "toby": "🦥 Toby Web",
+    "surreal": "🌀 Surreal",
+    "coolkid": "🧊 C00lkidtech",
+    "cool kid": "🧊 C00lkidtech",
+    "c00lkid": "🧊 C00lkidtech",
+    "julian": "🪴 Fern",
+    "jullians drop": "🪴 Fern",
+    "julian s drop": "🪴 Fern",
+    "jullian": "🪴 Fern",
 }
 
 # Longest-first for scanning
@@ -233,6 +251,27 @@ def should_skip_url(u: str) -> str | None:
         return "npm-registry"
     if "<" in u or "br<" in u:
         return "garbage"
+    # Truncated / incomplete paste fragments (cannot be completed safely)
+    if "..." in u:
+        return "incomplete"
+    try:
+        p = urlsplit(u if "://" in u else "https://" + u)
+    except Exception:
+        return "invalid"
+    path = p.path or ""
+    # Ends mid-token: .../in.  .../ro.  .../theplayernat.  .../ind.  .../strawberrii/.
+    if re.search(r"/(?:in|ro|ind|gl|ki|i)\.?$", path) or path.endswith("/."):
+        return "incomplete"
+    if re.search(r"/theplayernat\.?$", path, re.I):
+        return "incomplete"
+    # Host itself truncated (e.g. s3.us-east-1.amazon..., *.dualstack.us-eas)
+    if h.endswith(".") or "amazon..." in h or h.endswith("amazon"):
+        return "incomplete"
+    tld = h.rsplit(".", 1)[-1]
+    if not re.fullmatch(r"[a-z0-9-]{2,24}", tld) or tld in {"us-eas", "amazon", "amazona"}:
+        return "incomplete"
+    if re.search(r"\.(?:dualstack\.)?us-eas$", h):
+        return "incomplete"
     return None
 
 
@@ -277,15 +316,27 @@ def match_section_at(words: list[str], i: int) -> tuple[str, int] | None:
     return None
 
 
+def header_key(line: str) -> str:
+    """Normalize a possible section header (strip @, :, parens commentary)."""
+    s = line.strip().lstrip("@").rstrip(":")
+    s = re.sub(r"\([^)]*\)", " ", s)
+    return norm_key(s)
+
+
 def is_pure_section_header(line: str) -> bool:
     line = line.strip()
     if not line or len(line) > 80:
         return False
-    if NOISE_RE.search(line):
+    if re.search(r"cdn slop|other (?:links|unblocker)|premium unblocker|"
+                 r"ignore the filter|buncha void|start void|end void",
+                 line, re.I):
         return False
     if HTTP_URL.search(line) or BARE_HOST.search(line):
         return False
-    key = norm_key(line.lstrip("@").rstrip(":"))
+    # Pure filter-name lines are never providers
+    if FILTER_LABELS.fullmatch(line.strip().lstrip("@").rstrip(":")):
+        return False
+    key = header_key(line)
     return key in SECTION_ALIASES
 
 
@@ -402,10 +453,28 @@ def parse_input(text: str) -> OrderedDict[str, list[str]]:
     groups: OrderedDict[str, list[str]] = OrderedDict()
     current: str | None = None
     skip_storage_block = False
+    force_void = False
+    void_title = SECTION_ALIASES["void network"]
 
     for raw in text.splitlines():
         line = raw.strip()
         if not line:
+            continue
+
+        lower = line.lower()
+        if "start void links" in lower or "ignore the filter names" in lower:
+            force_void = True
+            current = void_title
+            groups.setdefault(current, [])
+            continue
+        if "end void links" in lower:
+            force_void = False
+            continue
+        if force_void and (
+            FILTER_LABELS.fullmatch(line.lstrip("@").rstrip(":"))
+            or re.fullmatch(r"(?i)buncha void sorted by blocker:?", line)
+        ):
+            current = void_title
             continue
 
         if SKIP_FROM_MARKER.search(line):
@@ -431,28 +500,34 @@ def parse_input(text: str) -> OrderedDict[str, list[str]]:
         if should_skip_entire_line(line):
             continue
 
-        # Truncate Discord filter dumps that start mid-line after real links
-        # Keep content before first "poortung" for salvageable prefix
-        lower = line.lower()
-        if "poortung" in lower:
-            # Parse full line with known-section-only rules (poortung tokens skipped)
-            pass
-
         if is_pure_section_header(line):
-            current = SECTION_ALIASES[norm_key(line.lstrip("@").rstrip(":"))]
+            if force_void:
+                current = void_title
+            else:
+                current = SECTION_ALIASES[header_key(line)]
             groups.setdefault(current, [])
+            continue
+
+        # Standalone filter-name lines (outside void block): ignore, keep section
+        if FILTER_LABELS.fullmatch(line.lstrip("@").rstrip(":")):
+            if force_void:
+                current = void_title
             continue
 
         if is_domain_only_line(line):
             urls: list[str] = []
             for p in line.split():
                 urls.extend(extract_urls_from_token(p))
+            if force_void:
+                current = void_title
             current = append_urls(groups, current, urls)
             continue
 
         tokens = tokenize_line(line)
         if not tokens:
             continue
+        if force_void:
+            current = void_title
         current = parse_tokens_into(groups, current, tokens)
 
     return groups
@@ -533,7 +608,7 @@ def make_pending_section(name: str, items: list[str]) -> str:
         f"> [!NOTE]\n"
         f"> | Category | Capabilities | Protocol(s) | Links |\n"
         f"> | - | - | - | - |\n"
-        f"> | pending | pending | pending | {n} |\n"
+        f"> | pending | - | - | {n} |\n"
         f"> [!IMPORTANT]\n"
         f"> This section has not been categorized or checked for protocol(s) and capabilities.\n"
         f"\n"
@@ -598,6 +673,7 @@ def main() -> None:
         "dup-list": 0,
         "dup-batch": 0,
         "invalid": 0,
+        "incomplete": 0,
         "npm-registry": 0,
         "garbage": 0,
     }

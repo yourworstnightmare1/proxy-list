@@ -150,6 +150,7 @@
     let selectedGnMathFilter = "";
     let hideBlockedBySelectedFilter = false;
     let hideLinksWithoutLensCheck = false;
+    let hideCdnLinks = false;
     let failingLinks = {};
     let failThreshold = 3;
     let useFirebaseClicks = false;
@@ -2101,6 +2102,7 @@
       selectedGnMathFilter = "";
       hideBlockedBySelectedFilter = false;
       hideLinksWithoutLensCheck = false;
+      hideCdnLinks = false;
       listSortMode = LINK_SORT_DEFAULT;
       try {
         localStorage.setItem(LS_LINK_LIST_SORT_KEY, listSortMode);
@@ -2793,6 +2795,66 @@
       if (btn) btn.setAttribute("aria-expanded", accountMenuOpen ? "true" : "false");
     }
 
+    let adminUiCheckGen = 0;
+    let adminUiRetryTimer = null;
+
+    function updateSidebarAdminVisibility() {
+      const sidebarAdminLink = $("sidebarAdminLink");
+      if (!sidebarAdminLink) return;
+      if (!isSignedInUser()) {
+        sidebarAdminLink.hidden = true;
+        return;
+      }
+      const cachedAdmin =
+        !!(window.SubmissionUtils && window.SubmissionUtils.isSubmissionAdminUser(authUser));
+      // Show immediately from cache; never force-hide on a cold cache (async check decides).
+      if (cachedAdmin) sidebarAdminLink.hidden = false;
+
+      const gen = ++adminUiCheckGen;
+      const uid = authUser && authUser.uid;
+      let softRetries = 0;
+      const apply = function (ok) {
+        if (gen !== adminUiCheckGen) return;
+        if (!isSignedInUser() || !authUser || authUser.uid !== uid) return;
+        sidebarAdminLink.hidden = !ok;
+      };
+      const runCheck = function () {
+        if (!window.SubmissionUtils || typeof window.SubmissionUtils.checkSubmissionAdmin !== "function") {
+          if (adminUiRetryTimer) clearTimeout(adminUiRetryTimer);
+          adminUiRetryTimer = setTimeout(function () {
+            adminUiRetryTimer = null;
+            if (gen !== adminUiCheckGen) return;
+            if (isSignedInUser()) runCheck();
+          }, 75);
+          return;
+        }
+        window.SubmissionUtils.checkSubmissionAdmin(authUser).then(function (ok) {
+          apply(ok);
+          // Transient API failure returns false without caching — retry so Admin is not stuck hidden.
+          if (
+            !ok &&
+            softRetries < 3 &&
+            gen === adminUiCheckGen &&
+            isSignedInUser() &&
+            authUser &&
+            authUser.uid === uid &&
+            window.SubmissionUtils &&
+            typeof window.SubmissionUtils.hasSubmissionAdminCache === "function" &&
+            !window.SubmissionUtils.hasSubmissionAdminCache(authUser)
+          ) {
+            softRetries += 1;
+            if (adminUiRetryTimer) clearTimeout(adminUiRetryTimer);
+            adminUiRetryTimer = setTimeout(function () {
+              adminUiRetryTimer = null;
+              if (gen !== adminUiCheckGen) return;
+              if (isSignedInUser()) runCheck();
+            }, 1500 * softRetries);
+          }
+        });
+      };
+      runCheck();
+    }
+
     function updateAccountUI() {
       const btn = $("accountMenuBtn");
       const signInLink = $("headerSignInLink");
@@ -2801,16 +2863,7 @@
       const sidebarAppealLink = $("sidebarAppealLink");
       const cluster = $("accountSignedInCluster");
       if (!btn && !signInLink && !sidebarSignInLink) return;
-      if (sidebarAdminLink) {
-        const cachedAdmin =
-          !!(window.SubmissionUtils && window.SubmissionUtils.isSubmissionAdminUser(authUser));
-        sidebarAdminLink.hidden = !(isSignedInUser() && cachedAdmin);
-        if (isSignedInUser() && window.SubmissionUtils && window.SubmissionUtils.checkSubmissionAdmin) {
-          window.SubmissionUtils.checkSubmissionAdmin(authUser).then(function (ok) {
-            if (sidebarAdminLink) sidebarAdminLink.hidden = !ok;
-          });
-        }
-      }
+      if (sidebarAdminLink) updateSidebarAdminVisibility();
       if (sidebarAppealLink && !isSignedInUser()) sidebarAppealLink.hidden = true;
       if (isSignedInUser()) {
         if (btn) {
@@ -2912,6 +2965,7 @@
         webFilter: selectedGnMathFilter || "",
         hideBlocked: !!hideBlockedBySelectedFilter,
         hideUnchecked: !!hideLinksWithoutLensCheck,
+        hideCdnLinks: !!hideCdnLinks,
         search: $("q") ? String($("q").value || "") : "",
         providers: selectedIn("providerTags"),
         categories: selectedIn("categoryTags"),
@@ -2930,6 +2984,7 @@
         webFilter: selectedGnMathFilter || "",
         hideBlocked: !!hideBlockedBySelectedFilter,
         hideUnchecked: !!hideLinksWithoutLensCheck,
+        hideCdnLinks: !!hideCdnLinks,
         search: $("q") ? String($("q").value || "") : "",
         providers: selectedIn("providerTags"),
         categories: selectedIn("categoryTags"),
@@ -2978,6 +3033,7 @@
         selectedGnMathFilter = settings.webFilter ? String(settings.webFilter) : "";
         hideBlockedBySelectedFilter = !!settings.hideBlocked;
         hideLinksWithoutLensCheck = !!settings.hideUnchecked;
+        hideCdnLinks = !!settings.hideCdnLinks;
         const filterSel = $("filterSelect");
         if (filterSel) filterSel.value = selectedGnMathFilter;
         updateSelectedFilterUI();
@@ -3311,6 +3367,7 @@
         selectedGnMathFilter = settings.webFilter ? String(settings.webFilter) : "";
         hideBlockedBySelectedFilter = !!settings.hideBlocked;
         hideLinksWithoutLensCheck = !!settings.hideUnchecked;
+        hideCdnLinks = !!settings.hideCdnLinks;
         const filterSel = $("filterSelect");
         if (filterSel) filterSel.value = selectedGnMathFilter;
         updateSelectedFilterUI();
@@ -3419,6 +3476,7 @@
         applySiteProfileFromDoc({});
         applySavedLinks(readSavedLinksCache(user.uid));
         if (pageContext) scheduleRenderFromPageContext();
+        updateAccountUI();
       }
     }
 
@@ -3650,9 +3708,18 @@
     }
 
     function handleAuthUserChanged(user) {
+      const prevAuthUid = authUser && !authUser.isAnonymous ? authUser.uid : "";
       authUser = user || null;
       authDisplayName = user && user.displayName ? String(user.displayName) : "";
       githubLogin = githubLoginFromUser(user);
+      const nextAuthUid = isSignedInUser() ? authUser.uid : "";
+      if (
+        prevAuthUid !== nextAuthUid &&
+        window.SubmissionUtils &&
+        typeof window.SubmissionUtils.clearSubmissionAdminCache === "function"
+      ) {
+        window.SubmissionUtils.clearSubmissionAdminCache();
+      }
       if (!isSignedInUser()) {
         savedLinks = new Set();
         githubRepoStarred = false;
@@ -4013,8 +4080,8 @@
       );
     }
 
-    // v2: do not hydrate 0/0 from disk (v1 poisoned maps after Worker failures and skipped Firestore).
-    const LS_LINK_RATING_AGG_DISK = "proxyList_linkRatingAggDisk_v2";
+    // v3: invalidate v2 zeros poisoned while D1 link_ratings was empty (all Worker replies were 0/0).
+    const LS_LINK_RATING_AGG_DISK = "proxyList_linkRatingAggDisk_v3";
     const LS_LINK_SAVE_COUNT_DISK = "proxyList_linkSaveCountDisk_v1";
     const LS_DISK_CACHE_MAX_CHARS = 750000;
 
@@ -4627,16 +4694,25 @@
 
         // Clicks/ratings live on the Worker D1 store. Do not .get() linkRatings or
         // linkRatingVotes — those per-row reads were the bulk of Spark quota.
+        let workerFetched = false;
         if (normsNeedingFetch.length) {
           try {
-            await fetchLinkRatingsViaWorker(normsNeedingFetch, stamp);
+            const wr = await fetchLinkRatingsViaWorker(normsNeedingFetch, stamp);
+            workerFetched = !!(wr && wr.fetchedAny);
           } catch (_) {}
         }
 
-        hashes.forEach((h) => {
-          if (!linkRatingAggByHash.has(h)) linkRatingAggByHash.set(h, { up: 0, down: 0 });
-          markLinkRatingConfirmed(h);
-        });
+        // Only fill missing aggregates after a successful Worker reply. Blind 0/0 +
+        // markConfirmed here used to poison the UI when D1 had no rating rows yet.
+        if (workerFetched) {
+          for (const n of normsNeedingFetch) {
+            const list = normToHashList.get(n) || [];
+            for (const h of list) {
+              if (!linkRatingAggByHash.has(h)) linkRatingAggByHash.set(h, { up: 0, down: 0 });
+              markLinkRatingConfirmed(h);
+            }
+          }
+        }
 
         for (const n of rawNorms) {
           const list = normToHashList.get(n) || [];
@@ -7684,6 +7760,57 @@
       }
     }
 
+    function hostEndsWith(host, suffix) {
+      return host === suffix || host.endsWith("." + suffix);
+    }
+
+    function hostnameFromLink(urlStr) {
+      const raw = String(urlStr || "").trim();
+      if (!raw) return "";
+      try {
+        return new URL(raw).hostname.toLowerCase();
+      } catch (_) {}
+      try {
+        return new URL(raw.includes("://") ? raw : "https://" + raw).hostname.toLowerCase();
+      } catch (_) {
+        return "";
+      }
+    }
+
+    /** CDN / "CDN slop" hosts mass-produced in this list (S3, GCS, jsDelivr mirrors, etc.). */
+    function isCdnHostedLink(urlStr) {
+      const raw = String(urlStr || "").trim().toLowerCase();
+      const host = hostnameFromLink(urlStr);
+      const hay = host || raw;
+      if (!hay) return false;
+      // Required / high-volume CDN + mass-host patterns (substring or host-suffix).
+      if (hay.includes("amazonaws")) return true;
+      if (hay.includes("jsdelivr")) return true;
+      if (hostEndsWith(hay, "unpkg.com") || hay.includes("unpkg.com")) return true;
+      if (hostEndsWith(hay, "esm.sh") || hay.includes("esm.sh")) return true;
+      if (hostEndsWith(hay, "media.blooket.com") || hay.includes("media.blooket.com")) return true;
+      if (hostEndsWith(hay, "githack.com") || hay.includes("githack.com")) return true;
+      if (hostEndsWith(hay, "statically.io") || hay.includes("statically.io")) return true;
+      if (hay.includes("githubraw")) return true;
+      if (hostEndsWith(hay, "quizizz.com") || hay.includes("quizizz.com")) return true;
+      if (hostEndsWith(hay, "wayground.com") || hay.includes("wayground.com")) return true;
+      if (hostEndsWith(hay, "storage.googleapis.com") || hay.includes("storage.googleapis.com")) return true;
+      if (hay === "script.google.com" || hay === "scripts.google.com" || hay.includes("script.google.com") || hay.includes("scripts.google.com")) {
+        return true;
+      }
+      // Other CDN hosts already used in this repo / dataset.
+      if (hostEndsWith(hay, "cloudfront.net") || hay.includes("cloudfront.net")) return true;
+      if (hostEndsWith(hay, "b-cdn.net") || hay.includes("b-cdn.net")) return true;
+      if (hostEndsWith(hay, "r2.dev") || hay.includes(".r2.dev")) return true;
+      if (hay.includes("staticdelivr")) return true;
+      if (hay.includes("jsdeliver")) return true;
+      if (hay.includes("jsdmirror")) return true;
+      if (hostEndsWith(hay, "googleusercontent.com") || hay.includes("googleusercontent.com")) return true;
+      if (hay === "storage.cloud.google.com" || hay.includes("storage.cloud.google.com")) return true;
+      if (hay === "jsd.cdn.zzko.cn" || hay.includes("jsd.cdn.zzko.cn")) return true;
+      return false;
+    }
+
     function filterRowsBase(rows, opts) {
       const q = $("q").value.trim().toLowerCase();
       const applyHideUnchecked =
@@ -7695,6 +7822,7 @@
         if (q && !haystack(row).includes(q)) return false;
         if (hideBlockedBySelectedFilter && isBlockedBySelectedFilter(row.link)) return false;
         if (applyHideUnchecked && !linkHasParsableLensCheck(row.link)) return false;
+        if (hideCdnLinks && isCdnHostedLink(row.link)) return false;
         const folderNormSet = opts && opts.folderNormSet;
         if (folderNormSet) {
           const norm = normalizeUrlKeyForClicks(row.link);
@@ -7728,6 +7856,7 @@
         if (q && !haystack(row).includes(q)) return false;
         if (hideBlockedBySelectedFilter && isBlockedBySelectedFilter(row.link)) return false;
         if (applyHideUnchecked && !linkHasParsableLensCheck(row.link)) return false;
+        if (hideCdnLinks && isCdnHostedLink(row.link)) return false;
         for (const group of ["providerTags", "categoryTags", "protocolTags", "capTags"]) {
           if (group === exclude) continue;
           if (!rowMatchesGroup(row, group, selections[group], mode)) return false;
@@ -8840,6 +8969,7 @@
       const btn = $("selectFilterBtn");
       const hideBtn = $("hideBlockedBtn");
       const hideUncheckedBtn = $("hideUncheckedBtn");
+      const hideCdnCb = $("hideCdnLinksCb");
       const settingsHideBtn = $("settingsHideBlockedBtn");
       const settingsHideUncheckedBtn = $("settingsHideUncheckedBtn");
       const settingsFilterSel = $("settingsFilterSelect");
@@ -8861,6 +8991,7 @@
         if (hideLinksWithoutLensCheck) hideUncheckedBtn.classList.add("btn-active");
         else hideUncheckedBtn.classList.remove("btn-active");
       }
+      if (hideCdnCb) hideCdnCb.checked = !!hideCdnLinks;
       if (settingsHideBtn) {
         settingsHideBtn.textContent = "Hide blocked links: " + (hideBlockedBySelectedFilter ? "On" : "Off");
         if (hideBlockedBySelectedFilter) settingsHideBtn.classList.add("btn-active");
@@ -10894,6 +11025,7 @@
           if (filterSel) filterSel.value = "";
           hideBlockedBySelectedFilter = false;
           hideLinksWithoutLensCheck = false;
+          hideCdnLinks = false;
           updateSelectedFilterUI();
           if (moProvSel) {
             moProvSel.value = "";
@@ -11066,6 +11198,13 @@
           hideLinksWithoutLensCheck = !hideLinksWithoutLensCheck;
           updateSelectedFilterUI();
           void renderAfterHeavyFilter(links, meta, link_check);
+          scheduleUserProfileWrite();
+        });
+        onEl("hideCdnLinksCb", "change", (ev) => {
+          const t = ev && ev.target;
+          hideCdnLinks = !!(t && t.checked);
+          updateSelectedFilterUI();
+          scheduleRenderFromPageContext();
           scheduleUserProfileWrite();
         });
         const openSettingsBtn = $("openSettingsBtn");

@@ -37,10 +37,13 @@
    - Bug / feature / QoL reports from Contribute go to Firestore collection siteFeedback
      and are reviewed at docs/admin/feedback.html.
    - users/{uid} profile writes require non-anonymous auth and field size limits.
-   - In Firestore, create document config/submissions with field adminUids (array of Firebase Auth UIDs
-     for accounts that may approve/reject/ban). Example: { "adminUids": ["abc123uid"] }.
-   - Admin UI access is decided by GET /api/admin/me on the Worker (SUBMISSION_ADMIN_UIDS secret),
-     not by a client-side UID/GitHub list. Firestore rules remain the write gate.
+   - In Firestore, create/update document config/submissions with field adminUids (array of
+     Firebase Auth UIDs for accounts that may approve/reject/ban). Keep in sync with Worker:
+     { "adminUids": ["OiMY32eTKcSnEX73W6oBUKgT6pG3", "QDaYz2ETKCSlEK70N3U8UKgTezX2"] }.
+   - Admin UI access is true if either GET /api/admin/me (Worker SUBMISSION_ADMIN_UIDS, or the
+     code default when that secret is unset) OR Firestore config/submissions.adminUids includes
+     the signed-in UID. Firestore rules remain the write gate — UI access alone is not enough
+     to approve/reject until the UID is also in adminUids.
 
    Enable Authentication → Sign-in method → Anonymous, GitHub (OAuth app in Firebase Console),
    Google, and Email/Password. For authenticator 2FA, upgrade to Identity Platform and enable

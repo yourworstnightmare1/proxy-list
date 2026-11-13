@@ -159,6 +159,7 @@ async function batchCachePut(kind, norms, obj, ttlSec, ctx) {
   } catch (_) {}
 }
 const FIREBASE_AUTH_HELPER_ORIGIN = "https://proxy-list-c06ea.firebaseapp.com";
+const FIREBASE_WEB_API_KEY_FALLBACK = "AIzaSyBPXPOxZeezDBn2YtgzTsj-Dxje62lYYOQ";
 
 export default {
   async fetch(request, env, ctx) {
@@ -613,6 +614,25 @@ function firebaseProjectIdPublic(env) {
  * Verify a Firebase ID token via Google's tokeninfo endpoint (no admin SDK needed).
  * Returns { uid } or null.
  */
+function firebaseTokenAudienceOk(env, audRaw) {
+  const aud = String(audRaw || "").trim();
+  if (!aud) return true;
+  // Prefer checking PUBLIC and secret project ids separately — secrets can differ
+  // from the web client project id used as token `aud`.
+  const projectSecret = String((env && env.FIREBASE_PROJECT_ID) || "").trim();
+  const projectPublic = String((env && env.FIREBASE_PROJECT_ID_PUBLIC) || "").trim();
+  const apiKey = String(
+    (env && (env.FIREBASE_WEB_API_KEY || env.FIREBASE_API_KEY)) || FIREBASE_WEB_API_KEY_FALLBACK || ""
+  ).trim();
+  // Firebase ID tokens normally use projectId as aud; some Identity Toolkit
+  // responses surface the web API key instead. Accept any configured match.
+  if (projectPublic && aud === projectPublic) return true;
+  if (projectSecret && aud === projectSecret) return true;
+  if (apiKey && aud === apiKey) return true;
+  if (!projectPublic && !projectSecret && !apiKey) return true;
+  return false;
+}
+
 async function verifyFirebaseIdToken(env, rawToken) {
   const token = String(rawToken || "").trim();
   if (!token) return null;
@@ -624,9 +644,7 @@ async function verifyFirebaseIdToken(env, rawToken) {
     const info = await tip.json();
     const uid = String(info.user_id || info.sub || "").trim();
     if (!uid) return null;
-    const aud = String(info.aud || "");
-    const expected = firebaseProjectIdPublic(env);
-    if (expected && aud && aud !== expected) return null;
+    if (!firebaseTokenAudienceOk(env, info.aud)) return null;
     // Reject anonymous Firebase sessions (sign_in_provider not always on tokeninfo).
     const firebaseClaim = info.firebase;
     if (firebaseClaim && typeof firebaseClaim === "object") {
@@ -2704,18 +2722,37 @@ async function handleGetRatings(request, env, ctx) {
     if (preferD1Stats(env)) {
       ratings = await d1GetRatings(env, norms);
       via = "d1";
-    } else if (hasFirebaseAdmin(env)) {
-      ratings = await firestoreGetRatings(env, norms, ctx);
-      via = "firestore";
-    } else {
-      return json({ ok: true, ratings: {}, warning: "stats_store_unavailable" });
-    }
-    if (via === "d1") {
+      // If D1 has no row yet (migration gap / never voted in D1), fall back to Firestore
+      // before synthesizing confirmed 0/0 — empty D1 previously made the whole list show 0/0.
+      const missing = norms.filter((n) => !Object.prototype.hasOwnProperty.call(ratings, n));
+      if (missing.length && hasFirebaseAdmin(env)) {
+        try {
+          const fromFs = await firestoreGetRatings(env, missing, ctx);
+          let filled = 0;
+          for (const norm of missing) {
+            if (!Object.prototype.hasOwnProperty.call(fromFs, norm)) continue;
+            const ag = fromFs[norm] || {};
+            const up = Number(ag.up) || 0;
+            const down = Number(ag.down) || 0;
+            if (up <= 0 && down <= 0) continue;
+            ratings[norm] = { up, down };
+            filled++;
+          }
+          if (filled) via = "d1+firestore";
+        } catch (err) {
+          console.error("get_ratings_firestore_fallback_failed", err);
+        }
+      }
       for (const norm of norms) {
         if (!Object.prototype.hasOwnProperty.call(ratings, norm)) {
           ratings[norm] = { up: 0, down: 0 };
         }
       }
+    } else if (hasFirebaseAdmin(env)) {
+      ratings = await firestoreGetRatings(env, norms, ctx);
+      via = "firestore";
+    } else {
+      return json({ ok: true, ratings: {}, warning: "stats_store_unavailable" });
     }
     const payload = { ok: true, ratings, via };
     const token = bearerToken(request);
@@ -3415,9 +3452,7 @@ async function handleSubmissionsSync(request, env) {
     if (!tip.ok) return json({ ok: false, error: "invalid_token" }, 401);
     const info = await tip.json();
     uid = String(info.user_id || info.sub || "");
-    const aud = String(info.aud || "");
-    const expectedAud = String(env.FIREBASE_PROJECT_ID || "").trim();
-    if (expectedAud && aud && aud !== expectedAud) {
+    if (!firebaseTokenAudienceOk(env, info.aud)) {
       return json({ ok: false, error: "wrong_audience" }, 401);
     }
   } catch (err) {

@@ -125,10 +125,21 @@ service cloud.firestore {
         && request.auth.token.firebase.sign_in_provider != 'anonymous';
     }
 
+    function isHardcodedSubmissionAdmin() {
+      // Keep in sync with workers/auth-api.js default SUBMISSION_ADMIN_UIDS fallback.
+      return request.auth.uid == 'OiMY32eTKcSnEX73W6oBUKgT6pG3'
+        || request.auth.uid == 'QDaYz2ETKCSlEK70N3U8UKgTezX2';
+    }
+
     function isSubmissionAdmin() {
       return isSignedInNonAnonymous()
-        && exists(/databases/$(database)/documents/config/submissions)
-        && request.auth.uid in get(/databases/$(database)/documents/config/submissions).data.adminUids;
+        && (
+          isHardcodedSubmissionAdmin()
+          || (
+            exists(/databases/$(database)/documents/config/submissions)
+            && request.auth.uid in get(/databases/$(database)/documents/config/submissions).data.adminUids
+          )
+        );
     }
 
     function banDoc(uid) {

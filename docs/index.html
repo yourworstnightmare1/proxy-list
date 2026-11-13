@@ -402,7 +402,7 @@
         } catch (err) {
           window.__proxyListDataPromise = Promise.reject(err);
         }
-        add("app.js?v=codeql-19-v2", function () {});
+        add("app.js?v=ratings-d1-1", function () {});
       });
       [
         "featured-photos.js?v=featured-hq",
@@ -411,10 +411,12 @@
         "firebase-auth-ready.js",
         "game-db-search.js",
         "presence-client.js",
-        "auth-security.js",
-        "submission-utils.js",
         "site-notifications.js"
       ].forEach(function (src) { add(src, function () {}); });
+      // Admin UI needs auth-security before submission-utils (fetchAdminMe).
+      load("auth-security.js?v=admin-sidebar-3").then(function () {
+        return load("submission-utils.js?v=admin-sidebar-3");
+      });
       try {
         var debug = false;
         var raw = localStorage.getItem("proxyList_app_settings_v1");
@@ -615,6 +617,11 @@
             <option value="rating_asc">Lowest rated first</option>
             <option value="saved_desc">Most saved (all users)</option>
           </select>
+        </div>
+        <div class="match-mode" style="margin-top:0.5rem;">
+          <label title="CDN links (also commonly refered to as CDN slop in the UBG community) are mass-produced links using CDN domains like s3.amazonaws.com, scripts.google.com, and others. These are known to have problems or restrictions that regular domains don't have with the advantage of being blocked much less often, and many users would prefer to not view them at all to lessen clutter.">
+            <input type="checkbox" id="hideCdnLinksCb" /> Hide CDN Links
+          </label>
         </div>
       </fieldset>
 

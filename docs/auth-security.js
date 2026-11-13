@@ -161,20 +161,40 @@
     });
   }
 
+  /**
+   * Resolves true/false only for a definitive Worker answer.
+   * Rejects on network / HTTP / auth failures so callers do not cache "not admin".
+   */
   function fetchAdminMe(user) {
     if (!user || user.isAnonymous) return Promise.resolve(false);
-    return user.getIdToken().then(function (token) {
-      return fetch(apiUrl("/api/admin/me"), {
-        method: "GET",
-        mode: "cors",
-        headers: { Authorization: "Bearer " + token, Accept: "application/json" },
-      }).then(function (res) {
-        if (!res.ok) return false;
-        return parseJson(res).then(function (data) {
-          return !!(data && data.ok && data.admin);
+
+    function request(forceRefresh) {
+      return user.getIdToken(!!forceRefresh).then(function (token) {
+        return fetch(apiUrl("/api/admin/me"), {
+          method: "GET",
+          mode: "cors",
+          headers: { Authorization: "Bearer " + token, Accept: "application/json" },
+        }).then(function (res) {
+          // Stale ID token right after session restore — refresh once.
+          if (res.status === 401 && !forceRefresh) {
+            return request(true);
+          }
+          if (!res.ok) {
+            var httpErr = new Error("admin_me_http_" + res.status);
+            httpErr.status = res.status;
+            return Promise.reject(httpErr);
+          }
+          return parseJson(res).then(function (data) {
+            if (!data || data.ok !== true) {
+              return Promise.reject(new Error("admin_me_bad_body"));
+            }
+            return !!data.admin;
+          });
         });
       });
-    });
+    }
+
+    return request(false);
   }
 
   function storeGithubAccessToken(token) {

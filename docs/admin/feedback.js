@@ -66,6 +66,7 @@
 
   async function ensureAdmin(user) {
     if (!SU.isSignedInNonAnonymous(user) || !(await SU.checkSubmissionAdmin(user))) {
+      if (SU.denyAdminAccess(user, gateNotice)) return false;
       redirectToMainList();
       return false;
     }
@@ -481,15 +482,19 @@
       var cfg = window.__FIREBASE_CONFIG__;
       if (!cfg || !cfg.apiKey) {
         showGate("Missing Firebase config.");
-        redirectToMainList();
         return;
       }
       firebase.initializeApp(cfg);
     }
     db = firebase.firestore();
-    firebase.auth().onAuthStateChanged(function (user) {
-      currentUser = user;
+    var auth = firebase.auth();
+    SU.whenAuthReady(auth).then(function () {
+      currentUser = auth.currentUser;
       void refresh();
+      auth.onAuthStateChanged(function (user) {
+        currentUser = user;
+        void refresh();
+      });
     });
   }
 
