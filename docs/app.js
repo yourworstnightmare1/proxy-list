@@ -7777,37 +7777,55 @@
       }
     }
 
+    /** True when a DNS label equals `label` (avoids incomplete URL substring checks). */
+    function hostHasDnsLabel(host, label) {
+      if (!host || !label) return false;
+      return host.split(".").indexOf(label) !== -1;
+    }
+
     /** CDN / "CDN slop" hosts mass-produced in this list (S3, GCS, jsDelivr mirrors, etc.). */
     function isCdnHostedLink(urlStr) {
-      const raw = String(urlStr || "").trim().toLowerCase();
+      // Parse hostname only — never match CDN markers as substrings of the raw URL.
       const host = hostnameFromLink(urlStr);
-      const hay = host || raw;
-      if (!hay) return false;
-      // Required / high-volume CDN + mass-host patterns (substring or host-suffix).
-      if (hay.includes("amazonaws")) return true;
-      if (hay.includes("jsdelivr")) return true;
-      if (hostEndsWith(hay, "unpkg.com") || hay.includes("unpkg.com")) return true;
-      if (hostEndsWith(hay, "esm.sh") || hay.includes("esm.sh")) return true;
-      if (hostEndsWith(hay, "media.blooket.com") || hay.includes("media.blooket.com")) return true;
-      if (hostEndsWith(hay, "githack.com") || hay.includes("githack.com")) return true;
-      if (hostEndsWith(hay, "statically.io") || hay.includes("statically.io")) return true;
-      if (hay.includes("githubraw")) return true;
-      if (hostEndsWith(hay, "quizizz.com") || hay.includes("quizizz.com")) return true;
-      if (hostEndsWith(hay, "wayground.com") || hay.includes("wayground.com")) return true;
-      if (hostEndsWith(hay, "storage.googleapis.com") || hay.includes("storage.googleapis.com")) return true;
-      if (hay === "script.google.com" || hay === "scripts.google.com" || hay.includes("script.google.com") || hay.includes("scripts.google.com")) {
+      if (!host) return false;
+
+      if (hostEndsWith(host, "amazonaws.com")) return true;
+      if (
+        hostEndsWith(host, "jsdelivr.net") ||
+        hostEndsWith(host, "jsdelivr.net.cn") ||
+        hostEndsWith(host, "jsdelivr.com") ||
+        hostHasDnsLabel(host, "jsdelivr")
+      ) {
         return true;
       }
-      // Other CDN hosts already used in this repo / dataset.
-      if (hostEndsWith(hay, "cloudfront.net") || hay.includes("cloudfront.net")) return true;
-      if (hostEndsWith(hay, "b-cdn.net") || hay.includes("b-cdn.net")) return true;
-      if (hostEndsWith(hay, "r2.dev") || hay.includes(".r2.dev")) return true;
-      if (hay.includes("staticdelivr")) return true;
-      if (hay.includes("jsdeliver")) return true;
-      if (hay.includes("jsdmirror")) return true;
-      if (hostEndsWith(hay, "googleusercontent.com") || hay.includes("googleusercontent.com")) return true;
-      if (hay === "storage.cloud.google.com" || hay.includes("storage.cloud.google.com")) return true;
-      if (hay === "jsd.cdn.zzko.cn" || hay.includes("jsd.cdn.zzko.cn")) return true;
+      if (hostEndsWith(host, "unpkg.com")) return true;
+      if (hostEndsWith(host, "esm.sh")) return true;
+      if (hostEndsWith(host, "media.blooket.com")) return true;
+      if (hostEndsWith(host, "githack.com")) return true;
+      if (hostEndsWith(host, "statically.io")) return true;
+      if (hostEndsWith(host, "githubraw.com")) return true;
+      if (hostEndsWith(host, "quizizz.com")) return true;
+      if (hostEndsWith(host, "wayground.com")) return true;
+      if (hostEndsWith(host, "storage.googleapis.com")) return true;
+      if (host === "script.google.com" || host === "scripts.google.com") return true;
+      if (hostEndsWith(host, "cloudfront.net")) return true;
+      if (hostEndsWith(host, "b-cdn.net")) return true;
+      if (hostEndsWith(host, "r2.dev")) return true;
+      if (hostEndsWith(host, "staticdelivr.com")) return true;
+      if (
+        hostEndsWith(host, "jsdeliver.us") ||
+        hostEndsWith(host, "jsdeliver.net") ||
+        hostEndsWith(host, "jsdeliver.com") ||
+        hostHasDnsLabel(host, "jsdeliver")
+      ) {
+        return true;
+      }
+      if (hostEndsWith(host, "jsdmirror.com") || hostHasDnsLabel(host, "jsdmirror")) return true;
+      if (hostEndsWith(host, "googleusercontent.com")) return true;
+      if (host === "storage.cloud.google.com" || hostEndsWith(host, "storage.cloud.google.com")) {
+        return true;
+      }
+      if (host === "jsd.cdn.zzko.cn" || hostEndsWith(host, "jsd.cdn.zzko.cn")) return true;
       return false;
     }
 
