@@ -49612,7 +49612,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1437 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1436 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -49645,7 +49645,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://cdn.staticdelivr.com/gh/task4z/classroom-15x/main/images/57cc835ea2/catclass/logo.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fastly.jsdelivr.net/gh/task4z/classroom-15x@main/images/57cc835ea2/catclass/logo.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://gcore.jsdelivr.net/gh/task4z/classroom-15x@main/images/57cc835ea2/catclass/logo.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://honors-limit31.mathmatics.ccwu.cc | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quizizz-static.s3-accelerate.amazonaws.com/_media/catclass/1d4eca65-97e2-4bce-a17d-4c50806af66d-v2 | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quizizz-static.s3-accelerate.amazonaws.com/_media/catclass/4e41cf0b-037e-4a67-9a69-d216614528e6-v2 | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://quizizz-static.s3-accelerate.amazonaws.com/_media/catclass/a3d30de7-b0d3-4495-838d-83d2ff5c67c6-v2 | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51435,7 +51434,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, panic | Scramjet, Ultraviolet | 54 |
+> | Proxy/Games | tab-cloak, panic | Scramjet, Ultraviolet | 49 |
 > [!IMPORTANT]
 > popups and ads in the bottom left
 
@@ -51482,14 +51481,9 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://alicechuhazel.topmoto.pl | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://muffinsinfo4school.iiiii.info | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://zyfchessstudying.govt.hu | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ah.myk.sh/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://rdw.myk.sh/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://appeal.tozsugianto.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://eta.tozsugianto.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jzxgm.tozsugianto.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ah.shantifurnishing.com.np/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://dleqe.shantifurnishing.com.np/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://amath.drbijaytamang.com.np/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jpkf.myk.sh/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://axx.myk.sh/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://vxdws.myk.sh/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -51714,7 +51708,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | - | - | 284 |
+> | Proxy/Games | - | - | 274 |
 > [!IMPORTANT]
 > proxy is slow + links suck and are blocked instantly
 
@@ -51992,18 +51986,8 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://apply.shekogolfclub.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://apply.mastergolfpro.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://apply.macaugolfclub.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://mnafbkkpbh.naughtybaptistbrewery.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jblceawnww.naughtybaptistbrewery.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ywnheeqkmg.naughtybaptistbrewery.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://tlbthqjslb.naughtybaptistbrewery.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://yiopdlgvbu.naughtybaptistbrewery.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://finance.daev.ca/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://finance.tribeoftwo.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://bgtxucejkb.proasist.cl/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://builfaybvv.proasist.cl/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://wmvgspjmsf.proasist.cl/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://kirhkrutos.proasist.cl/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://jupbgadxbu.proasist.cl/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ❤️ SDXP
 > [!NOTE]
@@ -53845,7 +53829,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, bare, GDB:selenite | Scramjet, Ultraviolet | 150 |
+> | Proxy/Games | epoxy, libcurl, bare, GDB:selenite | Scramjet, Ultraviolet | 145 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -53962,11 +53946,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://aura.kinesaludlaserena.cl/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://aura.mutsuura.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://aura.propertyshots.net/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://aura.extremewheeler.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://aura.ez4u2nvme.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://aura.ez4u2nvme.org/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://aura.ezwebsites.com/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://aura.fabricatmanual.ro/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://beta.7dejunio.com.ar/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://online.cjournal.ir/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://edge.sunil7.com.np/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
