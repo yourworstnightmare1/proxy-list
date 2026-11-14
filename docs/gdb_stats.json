@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T21:48:59Z",
+  "generated_at": "2026-11-14T22:00:49Z",
   "snapshot_date": "2026-11-14",
   "catalog_count": 34,
-  "total_entries": 36387,
-  "unique_games": 28796,
+  "total_entries": 36384,
+  "unique_games": 28795,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 22,
+      "count": 19,
       "empty": false
     },
     {
@@ -2793,7 +2793,7 @@
         "gdb:lucide": 851,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 22,
+        "gdb:ccported": 19,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -2817,8 +2817,8 @@
         "gdb:fyinx": 0,
         "gdb:nexora": 401
       },
-      "total_entries": 36387,
-      "unique_games": 28796
+      "total_entries": 36384,
+      "unique_games": 28795
     }
   ],
   "latest_changes": {
@@ -2927,9 +2927,13 @@
       "gdb:ccported": {
         "label": "CCPorted",
         "added": [],
-        "removed": [],
+        "removed": [
+          "Escape Road",
+          "Minecraft 1.12",
+          "Minecraft 1.12 (WASM)"
+        ],
         "added_count": 0,
-        "removed_count": 0,
+        "removed_count": 3,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -3134,9 +3138,25 @@
     },
     "all": {
       "added": [],
-      "removed": [],
+      "removed": [
+        {
+          "name": "Escape Road",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Minecraft 1.12",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Minecraft 1.12 (WASM)",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        }
+      ],
       "added_count": 0,
-      "removed_count": 0,
+      "removed_count": 3,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -3145,10 +3165,19 @@
     {
       "date": "2026-11-14",
       "kind": "diff",
-      "catalogs_touched": [],
+      "catalogs_touched": [
+        "gdb:ccported"
+      ],
       "added": 0,
-      "removed": 0,
-      "by_catalog": []
+      "removed": 3,
+      "by_catalog": [
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 0,
+          "removed": 3
+        }
+      ]
     },
     {
       "date": "2026-11-13",
