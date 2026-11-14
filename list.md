@@ -15,6 +15,10 @@ Welcome to the official Proxy List! This has a running list of hundreds of unblo
 
 ## Important Notices
 
+### Beware of Fake Sites
+<!-- added: 2026-11-12T22:04:00Z -->
+Unfortunately due to the popularity of this site, people have started making fake GitHub repositories and sites that advertise themselves as similar or the same as this site and try to pass it as their own original work. [yourworstnightmare1.github.io/proxy-list](https://yourworstnightmare1.github.io/proxy-list) and [github.com/yourworstnightmare1/proxy-list](https://github.com/yourworstnightmare1/proxy-list) are the only official places for the Proxy List site and the source code. Any other place is either a fork of my code or is a fake site. I will be actively reporting accounts/repos that are attempting to use my site’s recognition as a front for sketchy repos/code.
+
 ### Slowing development temporarily
 <!-- added: 2026-10-13T19:02:00Z -->
 I will be taking a break from adding new features for now, I will still be adding links and filter data.
