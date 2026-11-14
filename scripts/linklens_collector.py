@@ -93,18 +93,35 @@ def normalize_payload(payload: Any) -> list[dict[str, Any]]:
 
 
 def load_links(path: Path) -> list[str]:
+    """Load http(s) URLs from docs/data.json (object rows or compact format v2 arrays)."""
     raw = json.loads(path.read_text(encoding="utf-8"))
-    rows = normalize_payload(raw)
     out: list[str] = []
     seen: set[str] = set()
-    for row in rows:
-        link = str(row.get("link", "")).strip()
-        if not link.startswith(("http://", "https://")):
-            continue
-        if link in seen:
-            continue
-        seen.add(link)
-        out.append(link)
+
+    def add(link: object) -> None:
+        url = str(link or "").strip()
+        if not url.startswith(("http://", "https://")):
+            return
+        if url in seen:
+            return
+        seen.add(url)
+        out.append(url)
+
+    rows = normalize_payload(raw)
+    if rows:
+        for row in rows:
+            add(row.get("link", ""))
+        return out
+
+    # Compact format v2: links are [providerIdx, contributorIdx, url, found]
+    if isinstance(raw, dict):
+        links = raw.get("links", [])
+        if isinstance(links, list):
+            for row in links:
+                if isinstance(row, (list, tuple)) and len(row) >= 3:
+                    add(row[2])
+                elif isinstance(row, dict):
+                    add(row.get("link", ""))
     return out
 
 
