@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v9.1 | Released: November 12, 2026
-> r317 | Last Updated: November 12, 2026
+> r318 | Last Updated: November 15, 2026
 > Total onsite links: 56623 (55761 sorted + 862 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -2993,7 +2993,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:utopia | Ultraviolet | 21 |
+> | Proxy/Games | GDB:utopia | Ultraviolet | 20 |
 > [!IMPORTANT]
 > this site uses highly detectable domains, very likely all of these are blocked for you
 
@@ -3004,7 +3004,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://qowerschool.com/ | N/A | N/A | N/A | [Vexo Sirramenboi](https://github.com/Vexo-Sirramenboi)
 | | https://mhi.banglam.com | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://hcpss.org.bitds.eu | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://skebob.my.neptune.cdpa.cc/ | N/A | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://trade.my.job.skebob.rdt2.co | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://shida.bonk.phonk.grouper.cl | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://training-for-history.dalicias.cl | 5/22/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)

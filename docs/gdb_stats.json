@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T22:00:49Z",
-  "snapshot_date": "2026-11-14",
+  "generated_at": "2026-11-15T04:32:14Z",
+  "snapshot_date": "2026-11-15",
   "catalog_count": 34,
-  "total_entries": 36384,
-  "unique_games": 28795,
+  "total_entries": 36387,
+  "unique_games": 28796,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 19,
+      "count": 22,
       "empty": false
     },
     {
@@ -2819,10 +2819,51 @@
       },
       "total_entries": 36384,
       "unique_games": 28795
+    },
+    {
+      "date": "2026-11-15",
+      "counts": {
+        "gdb:unblockedzone": 0,
+        "gdb:gn-math": 851,
+        "gdb:luminsdk": 851,
+        "gdb:noahs-tutoring": 0,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 851,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 498,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275,
+        "gdb:flux": 1741,
+        "gdb:greenis": 208,
+        "gdb:melonsoda": 42,
+        "gdb:edurocks": 0,
+        "gdb:timmy": 0,
+        "gdb:zane": 479,
+        "gdb:3kh0": 145,
+        "gdb:alexr": 676,
+        "gdb:hydra": 1641,
+        "gdb:diesmos": 1175,
+        "gdb:fyinx": 0,
+        "gdb:nexora": 401
+      },
+      "total_entries": 36387,
+      "unique_games": 28796
     }
   ],
   "latest_changes": {
-    "date": "2026-11-14",
+    "date": "2026-11-15",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
@@ -2926,14 +2967,14 @@
       },
       "gdb:ccported": {
         "label": "CCPorted",
-        "added": [],
-        "removed": [
+        "added": [
           "Escape Road",
           "Minecraft 1.12",
           "Minecraft 1.12 (WASM)"
         ],
-        "added_count": 0,
-        "removed_count": 3,
+        "removed": [],
+        "added_count": 3,
+        "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -3137,8 +3178,7 @@
       }
     },
     "all": {
-      "added": [],
-      "removed": [
+      "added": [
         {
           "name": "Escape Road",
           "tag": "gdb:ccported",
@@ -3155,13 +3195,31 @@
           "label": "CCPorted"
         }
       ],
-      "added_count": 0,
-      "removed_count": 3,
+      "removed": [],
+      "added_count": 3,
+      "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-11-15",
+      "kind": "diff",
+      "catalogs_touched": [
+        "gdb:ccported"
+      ],
+      "added": 3,
+      "removed": 0,
+      "by_catalog": [
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 3,
+          "removed": 0
+        }
+      ]
+    },
     {
       "date": "2026-11-14",
       "kind": "diff",
@@ -3937,14 +3995,6 @@
     },
     {
       "date": "2026-09-17",
-      "kind": "diff",
-      "catalogs_touched": [],
-      "added": 0,
-      "removed": 0,
-      "by_catalog": []
-    },
-    {
-      "date": "2026-09-16",
       "kind": "diff",
       "catalogs_touched": [],
       "added": 0,
