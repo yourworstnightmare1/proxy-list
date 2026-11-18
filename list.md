@@ -2650,7 +2650,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:luminsdk | Scramjet | 7 |
+> | Proxy/Games | GDB:luminsdk | Scramjet | 6 |
 
 > [!IMPORTANT]
 > Imp Proxy does not have CAPTCHA support. Websites that require human verification (like YouTube) will not work or display properly.
@@ -2663,7 +2663,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://learningdash.edu-spark.top/ | 4/25/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://studythemes.com/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://v.v2202508297531378155.powersrv.de/ | 4/30/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://nthr.airlinemeals.net/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # 🍫 Practice
 > [!NOTE]
@@ -49593,7 +49592,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | libcurl, epoxy | Scramjet | 1435 |
+> | Proxy/Games | libcurl, epoxy | Scramjet | 1434 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://catclass.brtk.eu | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -50190,7 +50189,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://root-quiz84.mathmatics.ccwu.cc | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://algo-diploma10.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://algo-vector67.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://byte-physics70.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cattest.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://course-quiz99.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://integral-pounce98.becasuniversitarias.org | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -52175,7 +52173,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | GDB:edurocks | - | 5 |
+> | Proxy/Games | GDB:edurocks | - | 4 |
 > [!IMPORTANT]
 > doesn't work, probably gonna remove it
 
@@ -52185,7 +52183,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://unpkg.com/learnmathedu@2.1.8/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/lexiacdn/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/edurocksg/index.html | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://secure-prod-s3.brendavegaministries.com/index.html?edurocks_return=gfra | 9/13/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
 # ☠️ Arsenic
 > [!NOTE]
@@ -55859,13 +55856,12 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 15 |
+> | pending | - | - | 14 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
-| | https://apearinghelp.com/ | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/studyharder/index.html | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/upperlevel/index.html | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://storage.googleapis.com/studyk12/index.html | 10/17/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
