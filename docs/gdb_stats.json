@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T14:14:00Z",
+  "generated_at": "2026-11-21T22:51:16Z",
   "snapshot_date": "2026-11-21",
   "catalog_count": 34,
   "total_entries": 36435,
-  "unique_games": 28826,
+  "unique_games": 28825,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -3105,7 +3105,7 @@
         "gdb:nexora": 401
       },
       "total_entries": 36435,
-      "unique_games": 28826
+      "unique_games": 28825
     }
   ],
   "latest_changes": {
@@ -3396,7 +3396,6 @@
           "Mario & Luigi Partners In Time",
           "Mario & Luigi Superstar Saga",
           "Melon Sandbox",
-          "Minecraft Story Mode",
           "Minesweeper Plus",
           "MyHouse X Lawn Of The Dead",
           "Neon Foosball",
@@ -3413,6 +3412,7 @@
           "Star Fox",
           "Star Fox 2",
           "Star Fox 64",
+          "Stick RPG",
           "Strange Aeons",
           "Super Mario Crossover",
           "Super Mario Maker",
@@ -3710,11 +3710,6 @@
           "label": "Zane's Arcade"
         },
         {
-          "name": "Minecraft Story Mode",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
           "name": "Minesweeper Plus",
           "tag": "gdb:zane",
           "label": "Zane's Arcade"
@@ -3791,6 +3786,11 @@
         },
         {
           "name": "Star Fox 64",
+          "tag": "gdb:zane",
+          "label": "Zane's Arcade"
+        },
+        {
+          "name": "Stick RPG",
           "tag": "gdb:zane",
           "label": "Zane's Arcade"
         },
