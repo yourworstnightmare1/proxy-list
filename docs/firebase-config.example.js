@@ -49,6 +49,10 @@
    Google, and Email/Password. For authenticator 2FA, upgrade to Identity Platform and enable
    TOTP multi-factor (Authentication → Sign-in method → Advanced → Multi-factor).
 
+   Email verification continue URLs must use an Authorized domain (Authentication → Settings).
+   Include proxy-list.jasonthegamer48.workers.dev (and github.io / firebaseapp.com). Without it,
+   sendEmailVerification fails with auth/unauthorized-continue-uri.
+
    Mobile / in-app browsers block third-party cookies, so signInWithRedirect cannot finish when
    authDomain is *.firebaseapp.com while the site is on GitHub Pages. The login page bridges
    Google (mobile) and GitHub (all GitHub Pages) through Firebase Hosting at

@@ -99,12 +99,7 @@
           try {
             var target = new URL(returnUrl);
             var host = String(target.hostname || "").toLowerCase();
-            var ok =
-              host === "yourworstnightmare1.github.io" ||
-              host.endsWith(".github.io") ||
-              host === "localhost" ||
-              host === "127.0.0.1";
-            if (!ok) {
+            if (!returnHostAllowed(host)) {
               setStatus("Sign-in return URL was not allowed.", "error");
               return;
             }
@@ -127,9 +122,41 @@
           ]);
         }
 
+        function returnHostAllowed(host) {
+          var h = String(host || "").toLowerCase();
+          return (
+            h === "yourworstnightmare1.github.io" ||
+            h.endsWith(".github.io") ||
+            h === "localhost" ||
+            h === "127.0.0.1" ||
+            h === "proxy-list.jasonthegamer48.workers.dev" ||
+            h.endsWith(".workers.dev")
+          );
+        }
+
         var params = new URLSearchParams(window.location.search);
         var returnUrl = params.get("pl_return");
         var providerId = params.get("pl_provider");
+
+        // Email-verification continue URL lands here when the Worker host was not
+        // (or is not) on Firebase Authorized domains. Bounce back to the real login page.
+        if (params.get("pl_email_verify") === "1") {
+          if (returnUrl) {
+            try {
+              var ret = new URL(returnUrl);
+              if (returnHostAllowed(ret.hostname)) {
+                setStatus("Email verified. Returning to sign-in…");
+                window.location.replace(ret.toString());
+                return;
+              }
+            } catch (_) {}
+          }
+          setStatus(
+            "Email verified. Open the proxy list Sign in page and click “I've verified — continue”.",
+            "error"
+          );
+          return;
+        }
 
         if (!returnUrl || !providerId) {
           setStatus(

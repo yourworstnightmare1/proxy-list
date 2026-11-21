@@ -650,6 +650,11 @@ async function verifyFirebaseIdToken(env, rawToken) {
     if (firebaseClaim && typeof firebaseClaim === "object") {
       const provider = String(firebaseClaim.sign_in_provider || "");
       if (provider === "anonymous") return null;
+      // Password accounts must verify email ownership (tokeninfo uses string "true"/"false").
+      if (provider === "password") {
+        const verified = info.email_verified === true || String(info.email_verified) === "true";
+        if (!verified) return null;
+      }
     }
     return { uid, email: String(info.email || "") };
   } catch (err) {

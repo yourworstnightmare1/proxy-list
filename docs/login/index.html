@@ -333,10 +333,16 @@
       font-size: 0.85rem;
     }
     #mfaPanel[hidden],
-    #mfaEnrollWrap[hidden] {
+    #mfaEnrollWrap[hidden],
+    #emailVerifyPanel[hidden] {
       display: none !important;
     }
-
+    .email-verify-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.85rem;
+    }
 
   </style>
 </head>
@@ -352,7 +358,7 @@
       <p class="muted">Your first visit may start as an anonymous session. Signing in links that session to your account.</p>
 
       <h2 class="email-heading" id="email">Email &amp; password</h2>
-      <p class="muted">Use a standard email account. Google and email sign-in do not unlock GitHub-only extras listed below.</p>
+      <p class="muted">Use a standard email account. New email accounts must verify ownership via a link we send before account features unlock. Google and email sign-in do not unlock GitHub-only extras listed below.</p>
       <form class="email-form" id="emailAuthForm" novalidate>
         <label>
           Email
@@ -428,6 +434,24 @@
         <a class="btn" href="../">Back to list</a>
       </div>
       <p class="status" id="authStatus" hidden></p>
+    </section>
+
+    <section class="card" id="emailVerifyPanel" hidden>
+      <h2>Verify your email</h2>
+      <p class="muted">
+        We need to confirm you own
+        <strong id="emailVerifyAddress"></strong>
+        before account features unlock. Open the link we sent, then continue here.
+      </p>
+      <p class="status" id="emailVerifyStatus"></p>
+      <div class="email-verify-actions actions">
+        <button type="button" class="btn btn-primary" id="emailVerifyRefreshBtn">I've verified — continue</button>
+        <button type="button" class="btn" id="emailVerifyResendBtn">Resend email</button>
+        <button type="button" class="btn" id="emailVerifySignOutBtn">Sign out</button>
+      </div>
+      <div class="actions" style="margin-top:0.75rem;">
+        <a class="btn" href="../">Back to list</a>
+      </div>
     </section>
 
     <section class="card signed-in-panel" id="signedInPanel" hidden>
@@ -527,6 +551,12 @@
     (function () {
       const signedOutPanel = document.getElementById("signedOutPanel");
       const signedInPanel = document.getElementById("signedInPanel");
+      const emailVerifyPanel = document.getElementById("emailVerifyPanel");
+      const emailVerifyAddress = document.getElementById("emailVerifyAddress");
+      const emailVerifyStatus = document.getElementById("emailVerifyStatus");
+      const emailVerifyRefreshBtn = document.getElementById("emailVerifyRefreshBtn");
+      const emailVerifyResendBtn = document.getElementById("emailVerifyResendBtn");
+      const emailVerifySignOutBtn = document.getElementById("emailVerifySignOutBtn");
       const signedInName = document.getElementById("signedInName");
       const githubSignInBtn = document.getElementById("githubSignInBtn");
       const googleSignInBtn = document.getElementById("googleSignInBtn");
@@ -535,6 +565,22 @@
       const emailModeSignInBtn = document.getElementById("emailModeSignInBtn");
       const emailModeCreateBtn = document.getElementById("emailModeCreateBtn");
       let emailAccountMode = "signin";
+      const VERIFY_SENT_KEY = "proxyList_verify_email_sent_uid";
+
+      function getVerificationEmailSentUid() {
+        try {
+          return sessionStorage.getItem(VERIFY_SENT_KEY) || "";
+        } catch (_) {
+          return "";
+        }
+      }
+
+      function setVerificationEmailSentUid(uid) {
+        try {
+          if (uid) sessionStorage.setItem(VERIFY_SENT_KEY, String(uid));
+          else sessionStorage.removeItem(VERIFY_SENT_KEY);
+        } catch (_) {}
+      }
 
       function setEmailAccountMode(mode) {
         emailAccountMode = mode === "create" ? "create" : "signin";
@@ -551,14 +597,86 @@
         const ageGate = document.getElementById("ageGate");
         if (ageGate) ageGate.hidden = emailAccountMode !== "create";
         if (emailAccountMode === "create") {
-          setPasswordHint("New accounts need 10+ characters with upper, lower, and a number. We also block leaked passwords.", "");
+          setPasswordHint(
+            "New accounts need 10+ characters with upper, lower, and a number. We also block leaked passwords. You’ll verify your email before the account unlocks.",
+            ""
+          );
         }
       }
       const signOutBtn = document.getElementById("signOutBtn");
       const authStatus = document.getElementById("authStatus");
 
+      /** Password accounts must verify email ownership before account features unlock. */
+      function needsEmailVerification(user) {
+        if (!user || user.isAnonymous) return false;
+        if (user.emailVerified) return false;
+        const providers = (user.providerData || [])
+          .map((p) => (p && p.providerId ? String(p.providerId) : ""))
+          .filter(Boolean);
+        if (providers.indexOf("password") !== -1) return true;
+        // Right after email signup, providerData can be empty for a tick while email is set.
+        // Treat that as needing verification so we never skip into profile setup.
+        if (user.email && providers.length === 0) return true;
+        return false;
+      }
+
       function isSignedInUser(user) {
-        return !!(user && !user.isAnonymous);
+        return !!(user && !user.isAnonymous && !needsEmailVerification(user));
+      }
+
+      function hostIsFirebaseAuthorizedContinue(host) {
+        const h = String(host || "").toLowerCase();
+        return (
+          h === "localhost" ||
+          h === "127.0.0.1" ||
+          h.endsWith(".firebaseapp.com") ||
+          h.endsWith(".web.app") ||
+          h.endsWith(".github.io") ||
+          h === "proxy-list.jasonthegamer48.workers.dev"
+        );
+      }
+
+      function emailVerificationContinueUrl() {
+        // Firebase reject continue URLs whose host is not under Authentication →
+        // Authorized domains (auth/unauthorized-continue-uri). Prefer this page when
+        // allowlisted; otherwise bounce through the Firebase Hosting auth bridge.
+        try {
+          const here = new URL("./", window.location.href);
+          here.hash = "";
+          here.search = "";
+          if (hostIsFirebaseAuthorizedContinue(here.hostname)) {
+            return here.href;
+          }
+        } catch (_) {}
+        try {
+          const bridge = new URL("/", authBridgeOrigin());
+          bridge.searchParams.set("pl_email_verify", "1");
+          try {
+            const ret = new URL("./", window.location.href);
+            ret.hash = "";
+            ret.search = "";
+            bridge.searchParams.set("pl_return", ret.href);
+          } catch (_) {}
+          return bridge.href;
+        } catch (_) {
+          return "https://proxy-list-c06ea.firebaseapp.com/";
+        }
+      }
+
+      function setEmailVerifyStatus(message, kind) {
+        if (!emailVerifyStatus) return;
+        emailVerifyStatus.textContent = message || "";
+        emailVerifyStatus.className = "status" + (kind ? " status--" + kind : "");
+      }
+
+      function sendEmailVerificationForUser(user) {
+        if (!user || typeof user.sendEmailVerification !== "function") {
+          return Promise.reject(new Error("Verification email is unavailable."));
+        }
+        return user.sendEmailVerification({
+          url: emailVerificationContinueUrl(),
+          handleCodeInApp: false,
+        });
       }
 
       function accountLabelFromUser(user) {
@@ -788,8 +906,16 @@
       }
 
       function showProfileSetupUI(auth, db, user) {
+        if (needsEmailVerification(user)) {
+          updatePanels(user);
+          void ensureVerificationEmailSent(user);
+          return;
+        }
         profileSetupAuth = auth;
         profileSetupDb = db;
+        signedOutPanel.hidden = true;
+        if (emailVerifyPanel) emailVerifyPanel.hidden = true;
+        signedInPanel.hidden = false;
         if (signedInNormal) signedInNormal.hidden = true;
         if (profileSetupWrap) profileSetupWrap.hidden = false;
         if (profileSetupUsername) {
@@ -876,6 +1002,23 @@
           });
       }
 
+      async function ensureVerificationEmailSent(user) {
+        if (!user || !needsEmailVerification(user)) return;
+        if (getVerificationEmailSentUid() === user.uid) {
+          setEmailVerifyStatus("Check your inbox for the verification link.", "");
+          return;
+        }
+        try {
+          await sendEmailVerificationForUser(user);
+          setVerificationEmailSentUid(user.uid);
+          setEmailVerifyStatus("Verification email sent. Check your inbox (and spam folder).", "ok");
+        } catch (err) {
+          console.error(err);
+          const info = authErrorMessage(err);
+          setEmailVerifyStatus(info.message || "Could not send verification email. Use Resend.", "error");
+        }
+      }
+
       async function afterSignIn(auth, db, allowRedirect) {
         const user = auth.currentUser;
         // Never treat anonymous (or missing) sessions as a completed provider sign-in.
@@ -885,6 +1028,13 @@
           if (allowRedirect) {
             setStatus("Sign-in did not finish. Please try Google or GitHub again.", "error");
           }
+          return;
+        }
+        if (needsEmailVerification(user)) {
+          setOauthPending(false);
+          updatePanels(user);
+          setStatus("", "");
+          await ensureVerificationEmailSent(user);
           return;
         }
         try {
@@ -907,6 +1057,12 @@
           showProfileSetupUI(auth, db, user);
         } catch (err) {
           console.warn("[login] profile check failed", err);
+          // Never send unverified password accounts to the list from an error path.
+          if (needsEmailVerification(auth.currentUser)) {
+            setOauthPending(false);
+            updatePanels(auth.currentUser);
+            return;
+          }
           if (allowRedirect) {
             setStatus("Signed in. Open Account to finish your profile if needed.", "ok");
             redirectToList();
@@ -917,9 +1073,20 @@
       }
 
       function updatePanels(user) {
+        const needsVerify = needsEmailVerification(user);
         const signedIn = isSignedInUser(user);
-        signedOutPanel.hidden = signedIn;
-        signedInPanel.hidden = !signedIn;
+        if (emailVerifyPanel) emailVerifyPanel.hidden = !needsVerify;
+        signedOutPanel.hidden = signedIn || needsVerify;
+        // Never show profile/signed-in chrome while email verification is pending.
+        signedInPanel.hidden = !signedIn || needsVerify;
+        if (needsVerify) {
+          if (signedInNormal) signedInNormal.hidden = true;
+          if (profileSetupWrap) profileSetupWrap.hidden = true;
+          if (emailVerifyAddress) {
+            emailVerifyAddress.textContent = user.email || "your email";
+          }
+          return;
+        }
         if (signedInNormal) signedInNormal.hidden = false;
         if (profileSetupWrap) profileSetupWrap.hidden = true;
         if (signedIn) {
@@ -1214,7 +1381,7 @@
             kind: "error",
           };
         }
-        if (code === "auth/email-already-in-use") {
+        if (code === "auth/email-already-in-use" || code === "auth/credential-already-in-use") {
           return { message: "That email already has an account. Use Sign in instead.", kind: "error" };
         }
         if (code === "auth/invalid-email") return { message: "Enter a valid email address.", kind: "error" };
@@ -1656,19 +1823,52 @@
             if (!allowed) return null;
             setStatus(mode === "create" ? "Creating account…" : "Signing in…", "");
             const credential = firebase.auth.EmailAuthProvider.credential(email, password);
+            const emailKey = email.toLowerCase();
             return ensureAnonymousSession(auth).then((user) => {
+              // Already signed in as this email (often unverified) — don't call signUp again.
+              if (
+                user &&
+                !user.isAnonymous &&
+                String(user.email || "").toLowerCase() === emailKey
+              ) {
+                if (mode === "create" || needsEmailVerification(user)) {
+                  return { user: user, _existingSession: true };
+                }
+                return { user: user, _existingSession: true };
+              }
               if (mode === "create") {
-                if (user.isAnonymous) return user.linkWithCredential(credential);
-                return auth.createUserWithEmailAndPassword(email, password);
+                const linkOrCreate = user.isAnonymous
+                  ? user.linkWithCredential(credential)
+                  : auth.createUserWithEmailAndPassword(email, password);
+                // Existing email → sign in instead of leaving a bare signUp 400 on screen.
+                return linkOrCreate.catch((err) => {
+                  const code = err && err.code ? String(err.code) : "";
+                  if (
+                    code === "auth/email-already-in-use" ||
+                    code === "auth/credential-already-in-use"
+                  ) {
+                    return auth.signInWithEmailAndPassword(email, password).catch(() => {
+                      throw err;
+                    });
+                  }
+                  throw err;
+                });
               }
               if (user.isAnonymous) {
-                return user.linkWithCredential(credential).catch(() => auth.signInWithEmailAndPassword(email, password));
+                return user
+                  .linkWithCredential(credential)
+                  .catch(() => auth.signInWithEmailAndPassword(email, password));
               }
               return auth.signInWithEmailAndPassword(email, password);
             });
           })
           .then((cred) => {
             if (!cred) return;
+            const user = cred.user || auth.currentUser;
+            if (mode === "create" && user && !cred._existingSession) {
+              // Force a fresh verification send for brand-new password accounts.
+              setVerificationEmailSentUid("");
+            }
             return afterSignIn(auth, db, true);
           })
           .catch((err) => {
@@ -1678,7 +1878,12 @@
               return;
             }
             const info = authErrorMessage(err);
+            // signedOutPanel may be hidden during verify — surface errors on both statuses.
             setStatus(info.message, info.kind);
+            if (needsEmailVerification(auth.currentUser)) {
+              setEmailVerifyStatus(info.message, info.kind || "error");
+              updatePanels(auth.currentUser);
+            }
           })
           .finally(() => setAuthBusy(false));
       }
@@ -1739,13 +1944,96 @@
                   } catch (_) {}
                 });
           return authReady.finally(() => {
+            let verifyReloadAttempted = false;
             auth.onAuthStateChanged((user) => {
               updatePanels(user);
+              if (needsEmailVerification(user)) {
+                // After the email link is opened, Firebase may still serve a stale
+                // emailVerified=false claim until reload(). Never leave this panel
+                // for profile setup / list redirect while verification is pending.
+                if (!verifyReloadAttempted) {
+                  verifyReloadAttempted = true;
+                  user
+                    .reload()
+                    .then(() => {
+                      const refreshed = auth.currentUser;
+                      updatePanels(refreshed);
+                      if (needsEmailVerification(refreshed)) {
+                        void ensureVerificationEmailSent(refreshed);
+                        return;
+                      }
+                      if (isSignedInUser(refreshed)) {
+                        void afterSignIn(auth, db, true);
+                      }
+                    })
+                    .catch(() => {
+                      updatePanels(user);
+                      void ensureVerificationEmailSent(user);
+                    });
+                  return;
+                }
+                void ensureVerificationEmailSent(user);
+                return;
+              }
               if (isSignedInUser(user)) void afterSignIn(auth, db, false);
             });
             updatePanels(auth.currentUser);
           });
         });
+
+      if (emailVerifyRefreshBtn) {
+        emailVerifyRefreshBtn.addEventListener("click", () => {
+          const user = auth.currentUser;
+          if (!user) {
+            setEmailVerifyStatus("Sign in again, then continue.", "error");
+            return;
+          }
+          setAuthBusy(true);
+          setEmailVerifyStatus("Checking verification…", "");
+          user
+            .reload()
+            .then(() => {
+              const refreshed = auth.currentUser;
+              if (needsEmailVerification(refreshed)) {
+                setEmailVerifyStatus(
+                  "Still waiting on verification. Open the link in your email, then try again.",
+                  "error"
+                );
+                updatePanels(refreshed);
+                return null;
+              }
+              setEmailVerifyStatus("Email verified. Finishing sign-in…", "ok");
+              return afterSignIn(auth, db, true);
+            })
+            .catch((err) => {
+              console.error(err);
+              setEmailVerifyStatus(
+                (err && err.message) || "Could not refresh verification status.",
+                "error"
+              );
+            })
+            .finally(() => setAuthBusy(false));
+        });
+      }
+      if (emailVerifyResendBtn) {
+        emailVerifyResendBtn.addEventListener("click", () => {
+          const user = auth.currentUser;
+          if (!user || !needsEmailVerification(user)) {
+            setEmailVerifyStatus("No pending verification for this session.", "error");
+            return;
+          }
+          setAuthBusy(true);
+          setVerificationEmailSentUid("");
+          ensureVerificationEmailSent(user).finally(() => setAuthBusy(false));
+        });
+      }
+      if (emailVerifySignOutBtn) {
+        emailVerifySignOutBtn.addEventListener("click", () => {
+          setVerificationEmailSentUid("");
+          setEmailVerifyStatus("", "");
+          auth.signOut().catch(() => {});
+        });
+      }
 
       githubSignInBtn.addEventListener("click", () => {
         const provider = new firebase.auth.GithubAuthProvider();

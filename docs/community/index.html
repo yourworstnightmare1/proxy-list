@@ -795,8 +795,19 @@
         if (el) el.hidden = !on;
       }
 
+      function needsEmailVerification(user) {
+        if (!user || user.isAnonymous) return false;
+        if (user.emailVerified) return false;
+        const providers = (user.providerData || [])
+          .map((p) => (p && p.providerId ? String(p.providerId) : ""))
+          .filter(Boolean);
+        if (providers.indexOf("password") !== -1) return true;
+        if (user.email && providers.length === 0) return true;
+        return false;
+      }
+
       function isSignedInUser(user) {
-        return !!(user && !user.isAnonymous);
+        return !!(user && !user.isAnonymous && !needsEmailVerification(user));
       }
 
       function ownerLabelForUser(user) {

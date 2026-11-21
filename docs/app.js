@@ -2705,8 +2705,52 @@
       authStateReadyResolve = resolve;
     });
 
+    /** Password accounts must verify email before account features unlock. */
+    function needsEmailVerification(user) {
+      if (!user || user.isAnonymous) return false;
+      if (user.emailVerified) return false;
+      const providers = (user.providerData || [])
+        .map((p) => (p && p.providerId ? String(p.providerId) : ""))
+        .filter(Boolean);
+      if (providers.indexOf("password") !== -1) return true;
+      // Email/password signup can briefly omit providerData; also catch password
+      // sessions from the ID token claim when providerData is incomplete.
+      if (user.email && providers.length === 0) return true;
+      try {
+        const provider =
+          user.providerId ||
+          (user.reloadUserInfo && user.reloadUserInfo.providerId) ||
+          "";
+        if (String(provider) === "password") return true;
+      } catch (_) {}
+      return false;
+    }
+
     function isSignedInUser() {
-      return !!(authUser && !authUser.isAnonymous);
+      return !!(authUser && !authUser.isAnonymous && !needsEmailVerification(authUser));
+    }
+
+    function loginUrlForEmailVerification() {
+      try {
+        return new URL("./login/", window.location.href).href;
+      } catch (_) {
+        return "./login/";
+      }
+    }
+
+    /** Unverified password sessions must finish on /login/ — don't treat them as signed-in on the list. */
+    function enforceEmailVerificationGate(user) {
+      if (!needsEmailVerification(user)) return false;
+      try {
+        const here = String(window.location.pathname || "");
+        if (/\/login\/?$/i.test(here) || here.indexOf("/login/") !== -1) return true;
+      } catch (_) {}
+      try {
+        window.location.replace(loginUrlForEmailVerification());
+      } catch (_) {
+        window.location.href = loginUrlForEmailVerification();
+      }
+      return true;
     }
 
     function accountUsername() {
@@ -3712,6 +3756,9 @@
       authUser = user || null;
       authDisplayName = user && user.displayName ? String(user.displayName) : "";
       githubLogin = githubLoginFromUser(user);
+      if (enforceEmailVerificationGate(user)) {
+        // Still update chrome as signed-out while redirecting / gating.
+      }
       const nextAuthUid = isSignedInUser() ? authUser.uid : "";
       if (
         prevAuthUid !== nextAuthUid &&

@@ -122,7 +122,12 @@ service cloud.firestore {
 
     function isSignedInNonAnonymous() {
       return request.auth != null
-        && request.auth.token.firebase.sign_in_provider != 'anonymous';
+        && request.auth.token.firebase.sign_in_provider != 'anonymous'
+        // Password accounts must verify email ownership before write-capable access.
+        && (
+          request.auth.token.firebase.sign_in_provider != 'password'
+          || request.auth.token.email_verified == true
+        );
     }
 
     function isHardcodedSubmissionAdmin() {
