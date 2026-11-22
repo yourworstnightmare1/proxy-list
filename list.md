@@ -1,7 +1,7 @@
 # Proxy List
 > [!NOTE]
 > v9.1 | Released: November 12, 2026
-> r318 | Last Updated: November 15, 2026
+> r319 | Last Updated: November 22, 2026
 > Total onsite links: 56623 (55761 sorted + 862 unsorted)\
 > https://yourworstnightmare1.github.io/proxy-list/
 <br>
@@ -51401,7 +51401,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | tab-cloak, panic | Scramjet, Ultraviolet | 49 |
+> | Proxy/Games | tab-cloak, panic | Scramjet, Ultraviolet | 48 |
 > [!IMPORTANT]
 > popups and ads in the bottom left
 
@@ -51425,7 +51425,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://igu.govt.hu/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://short.shor.ch/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://fried.silvaharo.com/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://software.bsfa.info/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://software.cnstefancelmare.ro/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://software.sundby.com/ | 8/5/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://newdropsdaily.granular.com.au/ | 8/29/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)

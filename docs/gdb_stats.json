@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-21T22:51:16Z",
-  "snapshot_date": "2026-11-21",
+  "generated_at": "2026-11-22T04:47:41Z",
+  "snapshot_date": "2026-11-22",
   "catalog_count": 34,
   "total_entries": 36435,
   "unique_games": 28825,
@@ -3106,10 +3106,51 @@
       },
       "total_entries": 36435,
       "unique_games": 28825
+    },
+    {
+      "date": "2026-11-22",
+      "counts": {
+        "gdb:unblockedzone": 0,
+        "gdb:gn-math": 851,
+        "gdb:luminsdk": 851,
+        "gdb:noahs-tutoring": 0,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 851,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 498,
+        "gdb:ccported": 22,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275,
+        "gdb:flux": 1741,
+        "gdb:greenis": 208,
+        "gdb:melonsoda": 42,
+        "gdb:edurocks": 0,
+        "gdb:timmy": 0,
+        "gdb:zane": 527,
+        "gdb:3kh0": 145,
+        "gdb:alexr": 676,
+        "gdb:hydra": 1641,
+        "gdb:diesmos": 1175,
+        "gdb:fyinx": 0,
+        "gdb:nexora": 401
+      },
+      "total_entries": 36435,
+      "unique_games": 28825
     }
   ],
   "latest_changes": {
-    "date": "2026-11-21",
+    "date": "2026-11-22",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
@@ -3357,108 +3398,10 @@
       },
       "gdb:zane": {
         "label": "Zane's Arcade",
-        "added": [
-          "Advent Neon",
-          "Bad Time Simulator",
-          "Baseball Bros",
-          "Bloons Tower Defence 1",
-          "Bloons Tower Defence 2",
-          "Bloons Tower Defence 3",
-          "Bloons Tower Defence 4",
-          "Bloons Tower Defence 5",
-          "Brotato",
-          "Captain Toad World",
-          "CaTRL",
-          "Deltarune A Different Snowgrave",
-          "Doom Lawn Of The Dead",
-          "Doom RPG",
-          "Drift Hunters",
-          "Duck Life Space",
-          "Escape Road 3",
-          "Feed and Grow Fish",
-          "Five Nights At Candy's 1",
-          "Five Nights At Candy's 2",
-          "Five Nights At Freddy's 1",
-          "Five Nights At Freddy's 2",
-          "Five Nights At Freddy's 3",
-          "Five Nights At Freddy's 4",
-          "Five Nights At Freddy's 4 Halloween",
-          "Five Nights At Freddy's 5",
-          "Five Nights At Freddy's 6",
-          "Five Nights At Freddy's Into The Pit",
-          "Five Nights At Freddy's Shooter",
-          "Five Nights At Freddy's Ultimate Custom night",
-          "Five Nights At Freddy's World",
-          "Football Bros",
-          "Gun Mayhem Redux",
-          "Karate Bros",
-          "Mario & Luigi Bowser's Inside Story",
-          "Mario & Luigi Partners In Time",
-          "Mario & Luigi Superstar Saga",
-          "Melon Sandbox",
-          "Minesweeper Plus",
-          "MyHouse X Lawn Of The Dead",
-          "Neon Foosball",
-          "Odd Bot Out",
-          "Oh, Flip!",
-          "Plague Inc",
-          "Pokemon Black",
-          "Pokemon Heart Gold",
-          "Pokemon Pearl",
-          "Poor Bunny",
-          "Random Game",
-          "REKKR",
-          "Snake.io",
-          "Star Fox",
-          "Star Fox 2",
-          "Star Fox 64",
-          "Stick RPG",
-          "Strange Aeons",
-          "Super Mario Crossover",
-          "Super Mario Maker",
-          "Tasty Planet",
-          "Tasty Planet DinoTime",
-          "Team Fortress",
-          "The Binding of Isaac Demo",
-          "The Binding of Isaac Wrath of the Lamb",
-          "The Henry Stickmin Collection",
-          "The Legend of Zelda Majora's Mask",
-          "The Legend of Zelda Ocarina of Time",
-          "The Visitor",
-          "Undertale 2",
-          "Unicycle Hero",
-          "Vib Ribbon",
-          "Zoop!",
-          "Zuma’s Revenge"
-        ],
-        "removed": [
-          "Bloons TD 1",
-          "Bloons TD 2",
-          "Bloons TD 3",
-          "Bloons TD 4",
-          "Deltarune: A Different Snowgrave",
-          "Fnac 1",
-          "Fnac 2",
-          "FNAF 1",
-          "FNAF 2",
-          "FNAF 3",
-          "FNAF 4",
-          "FNAF 4 Halloween",
-          "FNAF 5",
-          "FNAF 6",
-          "FNAF Into The Pit",
-          "FNAF Shooter",
-          "FNAF Ultimate Custom night",
-          "FNAF World",
-          "Majora's Mask",
-          "Mario & Luigi - Bowser's Inside Story",
-          "Mario & Luigi - Partners In Time",
-          "Mario & Luigi - Superstar Saga",
-          "Snow Rider 3D",
-          "The Ocarina of Time"
-        ],
-        "added_count": 72,
-        "removed_count": 24,
+        "added": [],
+        "removed": [],
+        "added_count": 0,
+        "removed_count": 0,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -3518,497 +3461,23 @@
       }
     },
     "all": {
-      "added": [
-        {
-          "name": "Advent Neon",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Bad Time Simulator",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Baseball Bros",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Bloons Tower Defence 1",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Bloons Tower Defence 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Bloons Tower Defence 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Bloons Tower Defence 4",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Bloons Tower Defence 5",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Brotato",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Captain Toad World",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "CaTRL",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Deltarune A Different Snowgrave",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Doom Lawn Of The Dead",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Doom RPG",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Drift Hunters",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Duck Life Space",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Escape Road 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Feed and Grow Fish",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Candy's 1",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Candy's 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's 1",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's 4",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's 4 Halloween",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's 5",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's 6",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's Into The Pit",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's Shooter",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's Ultimate Custom night",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Five Nights At Freddy's World",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Football Bros",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Gun Mayhem Redux",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Karate Bros",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mario & Luigi Bowser's Inside Story",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mario & Luigi Partners In Time",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mario & Luigi Superstar Saga",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Melon Sandbox",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Minesweeper Plus",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "MyHouse X Lawn Of The Dead",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Neon Foosball",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Odd Bot Out",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Oh, Flip!",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Plague Inc",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Pokemon Black",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Pokemon Heart Gold",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Pokemon Pearl",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Poor Bunny",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Random Game",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "REKKR",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Snake.io",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Star Fox",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Star Fox 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Star Fox 64",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Stick RPG",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Strange Aeons",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Super Mario Crossover",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Super Mario Maker",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Tasty Planet",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Tasty Planet DinoTime",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Team Fortress",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Binding of Isaac Demo",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Binding of Isaac Wrath of the Lamb",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Henry Stickmin Collection",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Legend of Zelda Majora's Mask",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Legend of Zelda Ocarina of Time",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Visitor",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Undertale 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Unicycle Hero",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Vib Ribbon",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Zoop!",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Zuma’s Revenge",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        }
-      ],
-      "removed": [
-        {
-          "name": "Bloons TD 1",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Bloons TD 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Bloons TD 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Bloons TD 4",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Deltarune: A Different Snowgrave",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Fnac 1",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Fnac 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF 1",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF 2",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF 3",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF 4",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF 4 Halloween",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF 5",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF 6",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF Into The Pit",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF Shooter",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF Ultimate Custom night",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "FNAF World",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Majora's Mask",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mario & Luigi - Bowser's Inside Story",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mario & Luigi - Partners In Time",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Mario & Luigi - Superstar Saga",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "Snow Rider 3D",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        },
-        {
-          "name": "The Ocarina of Time",
-          "tag": "gdb:zane",
-          "label": "Zane's Arcade"
-        }
-      ],
-      "added_count": 72,
-      "removed_count": 24,
+      "added": [],
+      "removed": [],
+      "added_count": 0,
+      "removed_count": 0,
       "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-11-22",
+      "kind": "diff",
+      "catalogs_touched": [],
+      "added": 0,
+      "removed": 0,
+      "by_catalog": []
+    },
     {
       "date": "2026-11-21",
       "kind": "diff",
@@ -4802,14 +4271,6 @@
     },
     {
       "date": "2026-09-24",
-      "kind": "diff",
-      "catalogs_touched": [],
-      "added": 0,
-      "removed": 0,
-      "by_catalog": []
-    },
-    {
-      "date": "2026-09-23",
       "kind": "diff",
       "catalogs_touched": [],
       "added": 0,

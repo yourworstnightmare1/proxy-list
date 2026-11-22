@@ -1,6 +1,6 @@
 {
   "version": "v9.1",
-  "revision": "r318",
+  "revision": "r319",
   "keys": [
     "http://auon00.xhost.ro",
     "http://brepsacodi.roostish.com",
@@ -12583,7 +12583,6 @@
     "https://sobackicl.s3.dualstack.us-east-1.amazonaws.com/index.html",
     "https://sobackicl.s3.us-east-1.amazonaws.com/index.html",
     "https://social.50friends.com.mx/",
-    "https://software.bsfa.info/",
     "https://software.cnstefancelmare.ro/",
     "https://software.sundby.com/",
     "https://solara.calebx.org",
