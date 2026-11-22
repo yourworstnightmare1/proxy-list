@@ -1,10 +1,17 @@
 {
-  "checked_at": "2026-11-22T04:47:24Z",
-  "checked_at_display": "2026-11-22 04:47 UTC",
+  "checked_at": "2026-11-22T14:05:51Z",
+  "checked_at_display": "2026-11-22 14:05 UTC",
   "added_count": 0,
-  "removed_count": 1,
+  "removed_count": 8,
   "added_links": [],
   "removed_links": [
-    "https://software.bsfa.info"
+    "https://bade.jmmipequenomundo.com.ar",
+    "https://esm.sh/schoolwork@1.0.0/index.html",
+    "https://ilovevoidnetwork.pisi.cat",
+    "https://yes.pisi.cat",
+    "https://njty.pisi.cat",
+    "https://ope.pisi.cat",
+    "https://1.pisi.cat",
+    "https://a.pisi.cat"
   ]
 }
