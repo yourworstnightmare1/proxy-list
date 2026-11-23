@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-23T05:25:34Z",
+  "generated_at": "2026-11-23T17:16:34Z",
   "snapshot_date": "2026-11-23",
   "catalog_count": 34,
-  "total_entries": 36435,
+  "total_entries": 36434,
   "unique_games": 28825,
   "catalogs": [
     {
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 22,
+      "count": 21,
       "empty": false
     },
     {
@@ -3162,7 +3162,7 @@
         "gdb:lucide": 851,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 22,
+        "gdb:ccported": 21,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -3186,7 +3186,7 @@
         "gdb:fyinx": 0,
         "gdb:nexora": 401
       },
-      "total_entries": 36435,
+      "total_entries": 36434,
       "unique_games": 28825
     }
   ],
@@ -3296,9 +3296,11 @@
       "gdb:ccported": {
         "label": "CCPorted",
         "added": [],
-        "removed": [],
+        "removed": [
+          "Bloons Tower Defense 2"
+        ],
         "added_count": 0,
-        "removed_count": 0,
+        "removed_count": 1,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -3503,9 +3505,15 @@
     },
     "all": {
       "added": [],
-      "removed": [],
+      "removed": [
+        {
+          "name": "Bloons Tower Defense 2",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        }
+      ],
       "added_count": 0,
-      "removed_count": 0,
+      "removed_count": 1,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -3514,10 +3522,19 @@
     {
       "date": "2026-11-23",
       "kind": "diff",
-      "catalogs_touched": [],
+      "catalogs_touched": [
+        "gdb:ccported"
+      ],
       "added": 0,
-      "removed": 0,
-      "by_catalog": []
+      "removed": 1,
+      "by_catalog": [
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 0,
+          "removed": 1
+        }
+      ]
     },
     {
       "date": "2026-11-22",
