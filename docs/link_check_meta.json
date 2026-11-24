@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-11-24T03:54:14Z",
-  "checked_at_display": "2026-11-24 03:54 UTC",
+  "checked_at": "2026-11-24T17:02:16Z",
+  "checked_at_display": "2026-11-24 17:02 UTC",
   "added_count": 0,
-  "removed_count": 0,
+  "removed_count": 1,
   "added_links": [],
-  "removed_links": []
+  "removed_links": [
+    "https://studyhubv2.optioflow.com"
+  ]
 }
