@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-24T17:02:32Z",
-  "snapshot_date": "2026-11-24",
+  "generated_at": "2026-11-25T02:01:39Z",
+  "snapshot_date": "2026-11-25",
   "catalog_count": 34,
-  "total_entries": 36435,
+  "total_entries": 36433,
   "unique_games": 28825,
   "catalogs": [
     {
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 22,
+      "count": 20,
       "empty": false
     },
     {
@@ -3229,10 +3229,51 @@
       },
       "total_entries": 36435,
       "unique_games": 28825
+    },
+    {
+      "date": "2026-11-25",
+      "counts": {
+        "gdb:unblockedzone": 0,
+        "gdb:gn-math": 851,
+        "gdb:luminsdk": 851,
+        "gdb:noahs-tutoring": 0,
+        "gdb:elite-games": 325,
+        "gdb:ultimate-game-stash": 2446,
+        "gdb:seraph": 500,
+        "gdb:chicken-kings-vault": 821,
+        "gdb:lucide": 851,
+        "gdb:sdxp": 0,
+        "gdb:duckmath": 498,
+        "gdb:ccported": 20,
+        "gdb:selenite": 266,
+        "gdb:radon": 302,
+        "gdb:truffled": 0,
+        "gdb:totally-science": 0,
+        "gdb:petezah": 1121,
+        "gdb:frogies-arcade": 0,
+        "gdb:space": 0,
+        "gdb:boredom": 11,
+        "gdb:dogeub": 20739,
+        "gdb:utopia": 275,
+        "gdb:flux": 1741,
+        "gdb:greenis": 208,
+        "gdb:melonsoda": 42,
+        "gdb:edurocks": 0,
+        "gdb:timmy": 0,
+        "gdb:zane": 527,
+        "gdb:3kh0": 145,
+        "gdb:alexr": 676,
+        "gdb:hydra": 1641,
+        "gdb:diesmos": 1175,
+        "gdb:fyinx": 0,
+        "gdb:nexora": 401
+      },
+      "total_entries": 36433,
+      "unique_games": 28825
     }
   ],
   "latest_changes": {
-    "date": "2026-11-24",
+    "date": "2026-11-25",
     "is_baseline": false,
     "by_catalog": {
       "gdb:unblockedzone": {
@@ -3336,12 +3377,13 @@
       },
       "gdb:ccported": {
         "label": "CCPorted",
-        "added": [
-          "Bloons Tower Defense 2"
+        "added": [],
+        "removed": [
+          "Minecraft 1.12",
+          "Soccer Random"
         ],
-        "removed": [],
-        "added_count": 1,
-        "removed_count": 0,
+        "added_count": 0,
+        "removed_count": 2,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -3545,21 +3587,43 @@
       }
     },
     "all": {
-      "added": [
+      "added": [],
+      "removed": [
         {
-          "name": "Bloons Tower Defense 2",
+          "name": "Minecraft 1.12",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Soccer Random",
           "tag": "gdb:ccported",
           "label": "CCPorted"
         }
       ],
-      "removed": [],
-      "added_count": 1,
-      "removed_count": 0,
+      "added_count": 0,
+      "removed_count": 2,
       "added_truncated": 0,
       "removed_truncated": 0
     }
   },
   "modifications": [
+    {
+      "date": "2026-11-25",
+      "kind": "diff",
+      "catalogs_touched": [
+        "gdb:ccported"
+      ],
+      "added": 0,
+      "removed": 2,
+      "by_catalog": [
+        {
+          "tag": "gdb:ccported",
+          "label": "CCPorted",
+          "added": 0,
+          "removed": 2
+        }
+      ]
+    },
     {
       "date": "2026-11-24",
       "kind": "diff",
@@ -4362,14 +4426,6 @@
     },
     {
       "date": "2026-09-27",
-      "kind": "diff",
-      "catalogs_touched": [],
-      "added": 0,
-      "removed": 0,
-      "by_catalog": []
-    },
-    {
-      "date": "2026-09-26",
       "kind": "diff",
       "catalogs_touched": [],
       "added": 0,
