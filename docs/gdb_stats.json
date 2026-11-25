@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-25T02:01:39Z",
+  "generated_at": "2026-11-25T16:48:15Z",
   "snapshot_date": "2026-11-25",
   "catalog_count": 34,
-  "total_entries": 36433,
-  "unique_games": 28825,
+  "total_entries": 36431,
+  "unique_games": 28824,
   "catalogs": [
     {
       "tag": "gdb:unblockedzone",
@@ -74,7 +74,7 @@
     {
       "tag": "gdb:ccported",
       "label": "CCPorted",
-      "count": 20,
+      "count": 18,
       "empty": false
     },
     {
@@ -3244,7 +3244,7 @@
         "gdb:lucide": 851,
         "gdb:sdxp": 0,
         "gdb:duckmath": 498,
-        "gdb:ccported": 20,
+        "gdb:ccported": 18,
         "gdb:selenite": 266,
         "gdb:radon": 302,
         "gdb:truffled": 0,
@@ -3268,8 +3268,8 @@
         "gdb:fyinx": 0,
         "gdb:nexora": 401
       },
-      "total_entries": 36433,
-      "unique_games": 28825
+      "total_entries": 36431,
+      "unique_games": 28824
     }
   ],
   "latest_changes": {
@@ -3379,11 +3379,13 @@
         "label": "CCPorted",
         "added": [],
         "removed": [
-          "Minecraft 1.12",
-          "Soccer Random"
+          "Minecraft 1.12 (WASM)",
+          "Moto X3M",
+          "Riddle Transfer 2",
+          "Space Huggers"
         ],
         "added_count": 0,
-        "removed_count": 2,
+        "removed_count": 4,
         "added_truncated": 0,
         "removed_truncated": 0
       },
@@ -3590,18 +3592,28 @@
       "added": [],
       "removed": [
         {
-          "name": "Minecraft 1.12",
+          "name": "Minecraft 1.12 (WASM)",
           "tag": "gdb:ccported",
           "label": "CCPorted"
         },
         {
-          "name": "Soccer Random",
+          "name": "Moto X3M",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Riddle Transfer 2",
+          "tag": "gdb:ccported",
+          "label": "CCPorted"
+        },
+        {
+          "name": "Space Huggers",
           "tag": "gdb:ccported",
           "label": "CCPorted"
         }
       ],
       "added_count": 0,
-      "removed_count": 2,
+      "removed_count": 4,
       "added_truncated": 0,
       "removed_truncated": 0
     }
@@ -3614,13 +3626,13 @@
         "gdb:ccported"
       ],
       "added": 0,
-      "removed": 2,
+      "removed": 4,
       "by_catalog": [
         {
           "tag": "gdb:ccported",
           "label": "CCPorted",
           "added": 0,
-          "removed": 2
+          "removed": 4
         }
       ]
     },
