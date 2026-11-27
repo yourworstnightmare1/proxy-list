@@ -49002,7 +49002,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | N/A | 380 |
+> | Games | GDB:gn-math, GDB:unblockedzone, GDB:noahs-tutoring, GDB:luminsdk, GDB:ultimate-game-stash, GDB:elite-games, GDB:Seraph, GDB:chicken-kings-vault | N/A | 379 |
 > [!IMPORTANT]
 > if you see a block screen it's likely fake, wait a few seconds and it will disappear
 
@@ -49062,7 +49062,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://unpkg.com/youareabadapple@1.0.0/assets/index.html | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/googleaccountuser/myfirstrepo@main/windows10background.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/googleaccountuser/myfirstrepo@master/windows10background.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://cdn.staticdelivr.com/gh/googleaccountuser/myfirstrepo/master/windows10background.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/gh/googleaccountuser/myfirstrepo/windows10background.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/combine/gh/googleaccountuser/myfirstrepo@latest/windows10background.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://jsd.onmicrosoft.cn/combine/gh/googleaccountuser/myfirstrepo@main/windows10background.svg | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -53721,7 +53720,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | epoxy, libcurl, bare, GDB:selenite | Scramjet, Ultraviolet | 134 |
+> | Proxy/Games | epoxy, libcurl, bare, GDB:selenite | Scramjet, Ultraviolet | 113 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -53832,34 +53831,13 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://docs.sunil7.com.np/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://host.dentist4you.com.au/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://blog.i-umix.com.ar/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-fern-61.derpy.click/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-elm-92.lunabot.lol/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-honey-68.codingforkids.site/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-bloom-60.freeresearchmaterialforstudents.courses/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-tulip-14.basalt.site/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-oasis-14.educationland.site/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-birch-35.anko.rest/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-cedar-62.anobody.im/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-shore-64.anko.lol/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-panda-25.meowd.rest/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-wren-97.derpy.click/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-lotus-85.lunabot.lol/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-peach-44.codingforkids.site/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-wave-59.freeresearchmaterialforstudents.courses/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-cosmos-28.basalt.site/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-honey-20.educationland.site/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-shore-47.anko.rest/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-sprout-26.anobody.im/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-grove-70.anko.lol/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-dream-40.sunny.lat/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-ocean-30.derpy.click/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-honey-36.codingforkids.site/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-pearl-41.lunabot.lol/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-willow-61.freeresearchmaterialforstudents.courses/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-cloud-26.basalt.site/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-coral-57.educationland.site/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-stone-42.anko.rest/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-stone-72.anobody.im/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-leaf-60.anko.lol/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-willow-18.meowd.rest/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
@@ -56100,7 +56078,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | pending | - | - | 20 |
+> | pending | - | - | 15 |
 > [!IMPORTANT]
 > This section has not been categorized or checked for protocol(s) and capabilities.
 
@@ -56116,11 +56094,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://s3.amazonaws.com/learn-for-free/index.html | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://s3.amazonaws.com/jacob-institute/index.html | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://cdn.jsdelivr.net/gh/dragonx-astra/astra-svg@latest/logo.svg#/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://oqyo.corea.is | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://ryym.corea.is | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://svoe.corea.is | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://dvkfb.corea.is | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://nxxzx.corea.is | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-f97cc07db2.sunny.lat/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-def735c8fb.meowd.rest/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-75b989d088.sunny.lat/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
