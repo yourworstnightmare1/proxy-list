@@ -1,13 +1,8 @@
 {
-  "checked_at": "2026-11-28T01:10:54Z",
-  "checked_at_display": "2026-11-28 01:10 UTC",
+  "checked_at": "2026-11-28T15:06:54Z",
+  "checked_at_display": "2026-11-28 15:06 UTC",
   "added_count": 0,
-  "removed_count": 4,
+  "removed_count": 0,
   "added_links": [],
-  "removed_links": [
-    "https://student-32f890d35b.meowd.rest",
-    "https://student-5508ffaf1e.sunny.lat",
-    "https://student-53f32b24ab.meowd.rest",
-    "https://student-66b45a9be9.sunny.lat"
-  ]
+  "removed_links": []
 }
