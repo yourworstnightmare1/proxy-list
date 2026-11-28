@@ -39621,7 +39621,7 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 > [!NOTE]
 > | Category | Capabilities | Protocol(s) | Links |
 > | - | - | - | - |
-> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8981 |
+> | Proxy/Games | wisp, epoxy, libcurl, user-agent | Unknown | 8977 |
 | Locked | Link | Found Date | Username | Password | Contributor |
 | - | - | - | - | - | - |
 | | https://awidjawjfofaaa.educationlearningcollege.lovestoblog.com | 8/1/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
@@ -48687,10 +48687,6 @@ Try out my newest project, the [Proxy Development Toolkit](https://github.com/yo
 | | https://8t14.s3.dualstack.us-east-1.amazonaws.com/index.html | 10/24/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-34cb84f66c.meowd.rest/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-78dce80d70.sunny.lat/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-32f890d35b.meowd.rest/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-5508ffaf1e.sunny.lat/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-53f32b24ab.meowd.rest/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
-| | https://student-66b45a9be9.sunny.lat/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-1c7ef902b4.meowd.rest/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 | | https://student-dc91667c0f.sunny.lat/ | 11/8/2026 | N/A | N/A | [yourworstnightmare1](https://github.com/yourworstnightmare1)
 
